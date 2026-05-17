@@ -50,3 +50,17 @@
 | 2026-05-18 00:50 | /research-refine | refine-logs/DORMANT_TOPIC_REASSESSMENT.md | research-refine | latest copy |
 | 2026-05-18 00:50 | /research-refine | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated to pause OPE gate pending reassessment review |
 | 2026-05-18 00:50 | /research-refine | findings.md | research-refine | append-only topic reassessment finding |
+| 2026-05-18 01:01 | git | codex/lifecycle-transition-reassessment | implementation | new branch for fresh lifecycle-transition idea-discovery |
+| 2026-05-18 01:01 | /idea-discovery | AGENTS.md | idea-discovery | active branch and skill updated |
+| 2026-05-18 01:01 | /idea-discovery | RESEARCH_BRIEF_20260518_010158.md | idea-discovery | timestamped brief for lifecycle-transition evidence-validity topic |
+| 2026-05-18 01:01 | /idea-discovery | RESEARCH_BRIEF.md | idea-discovery | latest copy |
+| 2026-05-18 01:01 | /research-lit | idea-stage/LITERATURE_REVIEW_20260518_010158.md | idea-discovery | timestamped landscape review |
+| 2026-05-18 01:01 | /research-lit | idea-stage/LITERATURE_REVIEW.md | idea-discovery | latest copy |
+| 2026-05-18 01:01 | /idea-creator | idea-stage/IDEA_REPORT_20260518_010158.md | idea-discovery | timestamped ranked ideas for lifecycle-transition evidence validity |
+| 2026-05-18 01:01 | /idea-creator | idea-stage/IDEA_REPORT.md | idea-discovery | latest copy |
+| 2026-05-18 01:01 | /novelty-check | refine-logs/NOVELTY_CHECK_20260518_010158.md | idea-discovery | timestamped first-pass novelty check |
+| 2026-05-18 01:01 | /novelty-check | refine-logs/NOVELTY_CHECK.md | idea-discovery | latest copy |
+| 2026-05-18 01:01 | /idea-discovery | README.md | idea-discovery | entrypoint updated to lifecycle-transition reassessment |
+| 2026-05-18 01:01 | /idea-discovery | START_HERE_PUBLIC_OPE.md | idea-discovery | start-here updated for new topic |
+| 2026-05-18 01:01 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after fresh idea-discovery |
+| 2026-05-18 01:01 | /idea-discovery | findings.md | idea-discovery | append-only idea-discovery verdict |

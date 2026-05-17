@@ -1,4 +1,4 @@
-# Public OPE Preflight Experiment Tracker
+# Lifecycle Transition Reassessment Tracker
 
 | ID | Task | Status | Evidence / Output | Notes |
 |---|---|---|---|---|
@@ -16,6 +16,8 @@
 | P031 | Delete misleading early plan snapshots | DONE | removed early idea/plan/tracker snapshots and protocol-only plan snapshot | Avoids carrying pre-literature/pre-novelty or resource-first artifacts into later work. |
 | P032 | Rethink direction after resource-only concern | DONE | `refine-logs/METHOD_DIRECTION_RETHINK.md`, `refine-logs/METHOD_DIRECTION_RETHINK_20260517_225333.md` | Pivot recommendation: lifecycle-adaptive shrinkage DR as method route; protocol becomes diagnostic layer. |
 | P033 | Reassess dormant/lifecycle topic from research wiki | DONE | `refine-logs/DORMANT_TOPIC_REASSESSMENT.md`, `refine-logs/DORMANT_TOPIC_REASSESSMENT_20260518_005053.md` | Verdict: do not continue OPE as mainline; prioritize preference evidence validity / lifecycle transition decision problem if workspace is upgraded. |
+| P034 | Create lifecycle-transition reassessment branch | DONE | `codex/lifecycle-transition-reassessment` | Fresh idea-discovery branch for new topic. |
+| P035 | Run fresh idea-discovery for lifecycle-transition evidence validity | DONE | `RESEARCH_BRIEF.md`, `idea-stage/LITERATURE_REVIEW.md`, `idea-stage/IDEA_REPORT.md`, `refine-logs/NOVELTY_CHECK.md` | Top idea: Evidence Validity Modeling for Lifecycle Transitions; novelty 6/10, proceed with caution. |
 | P040 | Dataset feasibility matrix | DONE | `docs/PUBLIC_DATASETS.md` | First-pass public dataset role and readiness labels drafted. |
 | P050 | OBP estimator API smoke | PAUSED | TBD | Paused until user decides whether to upgrade away from OPE mainline. |
 | P060 | KuaiRand lifecycle-state feasibility | PAUSED | TBD | Paused until reassessment review; may be reused for lifecycle-transition idea discovery. |
@@ -24,6 +26,6 @@
 
 ## Current Decision
 
-Pause the OPE preflight as the mainline. The wiki-grounded reassessment says the better next problem is not public OPE, but preference evidence validity / lifecycle transition decision under stale, sparse, and conflicting evidence.
+Pause the OPE preflight as the mainline. The new idea-discovery run selects Preference Evidence Validity for Lifecycle Transitions as the top candidate, with first-pass novelty `6/10` and a strict condition: define an explicit evidence-validity target before any experiment plan.
 
-Before any dataset gate or experiment, review `refine-logs/DORMANT_TOPIC_REASSESSMENT.md` and decide whether to upgrade the workspace into a dormant/lifecycle reassessment branch. If yes, the next artifact should be a new idea report focused on preference evidence validity, lifecycle transition decision policy, and deployable support conversion beyond CASP.
+Next artifact should be a `research-refine` proposal for Idea 1. If it collapses into CASP/CALB source gating, stop rather than forcing another weak dormant-return method paper.

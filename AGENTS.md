@@ -3,8 +3,8 @@
 ## Pipeline Status
 
 language: zh
-active_skill: /research-refine
-active_branch: codex/public-ope-preflight
+active_skill: /idea-discovery
+active_branch: codex/lifecycle-transition-reassessment
 remote: git@github.com:jdding/lifecycle-ope-preflight.git
 
 ## Project Contract

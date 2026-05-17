@@ -1,8 +1,8 @@
-# Lifecycle OPE Preflight
+# Lifecycle Transition Reassessment
 
-This repository tracks the public-data preflight for lifecycle-adaptive off-policy evaluation (OPE) in sequential recommendation.
+This repository tracks a fresh idea-discovery pass for lifecycle-transition recommendation under stale, sparse, and conflicting preference evidence.
 
-The current goal is to test whether public datasets can support a method paper around lifecycle-adaptive shrinkage/switching for sparse-support OPE before any production deployment or internal business-data study.
+The current goal is to find a method-level direction beyond the now-paused public OPE line.
 
 ## Start Here
 
@@ -10,13 +10,15 @@ The current goal is to test whether public datasets can support a method paper a
 - `RESEARCH_BRIEF.md`
 - `idea-stage/IDEA_REPORT.md`
 - `refine-logs/METHOD_DIRECTION_RETHINK.md`
+- `refine-logs/DORMANT_TOPIC_REASSESSMENT.md`
+- `refine-logs/NOVELTY_CHECK.md`
 - `docs/PUBLIC_DATASETS.md`
 - `refine-logs/EXPERIMENT_PLAN.md`
 - `refine-logs/EXPERIMENT_TRACKER.md`
 
 ## Current Thesis
 
-Lifecycle transitions can create structured support and positivity failures. The method thesis is that global DR/switch/clipping rules are miscalibrated under this structure, and lifecycle-adaptive shrinkage can improve worst-state reliability without sacrificing aggregate value accuracy.
+Lifecycle transitions create stale and conflicting preference evidence. The new leading thesis is that recommender systems need to estimate evidence validity before deploying source-level interventions; support expansion alone is not enough.
 
 ## Stage Boundary
 
