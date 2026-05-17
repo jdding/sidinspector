@@ -4,6 +4,20 @@
 
 `codex/public-ope-preflight`
 
+## Required Skill Protocol
+
+Use the ARIS skill implementation strictly:
+
+`/Users/timber/aris-source/skills/skills-codex/idea-discovery/SKILL.md`
+
+Before writing or refreshing artifacts, follow:
+
+- `shared-references/output-versioning.md`
+- `shared-references/output-manifest.md`
+- `shared-references/output-language.md`
+
+Do not create advisory-only notes that bypass the skill's staged workflow, timestamped output convention, manifest schema, or tracker updates.
+
 ## Remote
 
 Private GitHub repository:
