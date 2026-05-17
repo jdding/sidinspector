@@ -64,3 +64,11 @@
 | 2026-05-18 01:01 | /idea-discovery | START_HERE_PUBLIC_OPE.md | idea-discovery | start-here updated for new topic |
 | 2026-05-18 01:01 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after fresh idea-discovery |
 | 2026-05-18 01:01 | /idea-discovery | findings.md | idea-discovery | append-only idea-discovery verdict |
+| 2026-05-18 01:53 | closeout | docs/EXPLORATION_CLOSEOUT_20260518_015342.md | implementation | timestamped closeout for public OPE and lifecycle-transition exploratory branches |
+| 2026-05-18 01:53 | closeout | docs/EXPLORATION_CLOSEOUT.md | implementation | latest copy |
+| 2026-05-18 01:53 | closeout | docs/FUTURE_DIRECTIONS_20260518_015342.md | implementation | timestamped future direction notes |
+| 2026-05-18 01:53 | closeout | docs/FUTURE_DIRECTIONS.md | implementation | latest copy |
+| 2026-05-18 01:53 | closeout | _archive_pending_delete/DELETE_CANDIDATES_20260518_015342.md | implementation | timestamped archive-pending-delete ledger |
+| 2026-05-18 01:53 | closeout | _archive_pending_delete/DELETE_CANDIDATES.md | implementation | latest copy |
+| 2026-05-18 01:53 | closeout | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker closed as no-experiment |
+| 2026-05-18 01:53 | closeout | findings.md | implementation | append-only closeout finding |

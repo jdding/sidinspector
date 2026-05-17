@@ -18,6 +18,8 @@
 | P033 | Reassess dormant/lifecycle topic from research wiki | DONE | `refine-logs/DORMANT_TOPIC_REASSESSMENT.md`, `refine-logs/DORMANT_TOPIC_REASSESSMENT_20260518_005053.md` | Verdict: do not continue OPE as mainline; prioritize preference evidence validity / lifecycle transition decision problem if workspace is upgraded. |
 | P034 | Create lifecycle-transition reassessment branch | DONE | `codex/lifecycle-transition-reassessment` | Fresh idea-discovery branch for new topic. |
 | P035 | Run fresh idea-discovery for lifecycle-transition evidence validity | DONE | `RESEARCH_BRIEF.md`, `idea-stage/LITERATURE_REVIEW.md`, `idea-stage/IDEA_REPORT.md`, `refine-logs/NOVELTY_CHECK.md` | Top idea: Evidence Validity Modeling for Lifecycle Transitions; novelty 6/10, proceed with caution. |
+| P036 | Close low-novelty exploratory branches | DONE | `docs/EXPLORATION_CLOSEOUT.md`, `_archive_pending_delete/DELETE_CANDIDATES.md` | Close both OPE and lifecycle-transition exploratory branches as no-experiment; local files are archived pending explicit deletion approval. |
+| P037 | Record future direction notes | DONE | `docs/FUTURE_DIRECTIONS.md` | Records TOIS synthesis, device-switch return recommendation, and LLM-assisted RecOps as separate future workstreams. |
 | P040 | Dataset feasibility matrix | DONE | `docs/PUBLIC_DATASETS.md` | First-pass public dataset role and readiness labels drafted. |
 | P050 | OBP estimator API smoke | PAUSED | TBD | Paused until user decides whether to upgrade away from OPE mainline. |
 | P060 | KuaiRand lifecycle-state feasibility | PAUSED | TBD | Paused until reassessment review; may be reused for lifecycle-transition idea discovery. |
@@ -26,6 +28,6 @@
 
 ## Current Decision
 
-Pause the OPE preflight as the mainline. The new idea-discovery run selects Preference Evidence Validity for Lifecycle Transitions as the top candidate, with first-pass novelty `6/10` and a strict condition: define an explicit evidence-validity target before any experiment plan.
+Close the current exploratory branches as no-experiment. Public OPE and lifecycle-transition evidence-validity both remain useful as archived reasoning, but neither justifies a new experiment cycle.
 
-Next artifact should be a `research-refine` proposal for Idea 1. If it collapses into CASP/CALB source gating, stop rather than forcing another weak dormant-return method paper.
+Next active work should move to a separate workstream: TOIS 5+1 synthesis after AC information, internal device-switch return recommendation feasibility, or LLM-assisted RecOps task definition.

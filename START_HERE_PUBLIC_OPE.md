@@ -1,4 +1,4 @@
-# Start Here: Lifecycle Transition Reassessment
+# Start Here: Closed Exploration Archive
 
 ## Current Branch
 
@@ -31,35 +31,34 @@ Tracked branch:
 
 ## Current Goal
 
-Run a fresh idea-discovery pass for lifecycle-transition recommendation:
+This workspace is now a closed exploration archive:
 
-1. Public/wiki-grounded phase: identify method-level ideas beyond OPE and beyond exhausted dormant-return variants.
-2. Later production phase: only after a strong problem survives novelty review, map it to internal business logs or A/B evidence.
+1. Public OPE preflight was closed as low novelty / no experiment.
+2. Lifecycle-transition evidence-validity was closed because the top idea scored only `6/10` and risked collapsing into CASP/CALB source gating.
 
 ## Read Order
 
 1. `RESEARCH_BRIEF.md`
-2. `refine-logs/DORMANT_TOPIC_REASSESSMENT.md`
-3. `idea-stage/LITERATURE_REVIEW.md`
-4. `idea-stage/IDEA_REPORT.md`
-5. `refine-logs/NOVELTY_CHECK.md`
-6. `refine-logs/EXPERIMENT_TRACKER.md`
+2. `docs/EXPLORATION_CLOSEOUT.md`
+3. `docs/FUTURE_DIRECTIONS.md`
+4. `_archive_pending_delete/DELETE_CANDIDATES.md`
+5. `refine-logs/DORMANT_TOPIC_REASSESSMENT.md`
+6. `idea-stage/IDEA_REPORT.md`
+7. `refine-logs/NOVELTY_CHECK.md`
+8. `refine-logs/EXPERIMENT_TRACKER.md`
 
 ## Active Decision
 
-The first method target is:
+Closed method target:
 
 > Evidence Validity Modeling for Lifecycle Transitions.
 
-OPE is paused as the mainline. It remains a later validation layer if production logging evidence becomes available.
-
-The first execution gate is novelty/refinement, not model training.
+Decision: do not start experiments. Keep the artifacts only as archived reasoning.
 
 ## Next Concrete Task
 
-Start with method refinement for Idea 1:
+Do not continue this workspace unless explicitly reopened. Future work should move to separate branches:
 
-- Define the explicit evidence-validity target.
-- Prove it does not collapse into CASP/CALB source gating.
-- Only then write an experiment plan.
-- Update `refine-logs/EXPERIMENT_TRACKER.md` before launching any larger data processing.
+- TOIS 5+1 journal synthesis.
+- Internal device-switch return recommendation feasibility.
+- LLM-assisted RecOps task/benchmark definition.

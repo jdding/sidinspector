@@ -1,12 +1,15 @@
 # Lifecycle Transition Reassessment
 
-This repository tracks a fresh idea-discovery pass for lifecycle-transition recommendation under stale, sparse, and conflicting preference evidence.
+This repository archives two closed exploratory passes: public OPE preflight and lifecycle-transition preference evidence.
 
-The current goal is to find a method-level direction beyond the now-paused public OPE line.
+The current status is closed/no-experiment. The artifacts are retained as anti-repetition memory and pending-delete candidates.
 
 ## Start Here
 
 - `START_HERE_PUBLIC_OPE.md`
+- `docs/EXPLORATION_CLOSEOUT.md`
+- `docs/FUTURE_DIRECTIONS.md`
+- `_archive_pending_delete/DELETE_CANDIDATES.md`
 - `RESEARCH_BRIEF.md`
 - `idea-stage/IDEA_REPORT.md`
 - `refine-logs/METHOD_DIRECTION_RETHINK.md`
@@ -18,7 +21,7 @@ The current goal is to find a method-level direction beyond the now-paused publi
 
 ## Current Thesis
 
-Lifecycle transitions create stale and conflicting preference evidence. The new leading thesis is that recommender systems need to estimate evidence validity before deploying source-level interventions; support expansion alone is not enough.
+The durable thesis from this workspace is negative: public OPE and lifecycle-transition evidence-validity are not strong enough to justify experiments right now. Future work should move to TOIS synthesis, internal device-switch return recommendation, or LLM-assisted RecOps as separate workstreams.
 
 ## Stage Boundary
 
