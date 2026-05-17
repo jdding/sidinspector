@@ -9,10 +9,8 @@
 | P010 | Draft research brief | DONE | `RESEARCH_BRIEF.md` | Defines two-stage public then production strategy. |
 | P020 | Draft idea report | DONE | `idea-stage/IDEA_REPORT.md` | Ranks lifecycle-stratified OPE protocol first. |
 | P021 | Expand public-data idea report | DONE | `idea-stage/IDEA_REPORT_20260517_222854.md` | Generated 10 concrete ideas and selected top 3 novelty-check candidates: lifecycle credibility protocol, lifecycle-conservative policy selection, lifecycle-targeted exploration budget. |
-| P021A | Reconstruct literature review | DONE | `idea-stage/LITERATURE_REVIEW.md`, `idea-stage/LITERATURE_REVIEW_20260517_223308.md` | Restored missing `/research-lit` evidence chain before relying on downstream plans. |
 | P022 | Strict novelty check for top 3 ideas | DONE | `refine-logs/NOVELTY_CHECK.md`, `refine-logs/NOVELTY_CHECK_20260517_224105.md` | Verdict: Idea 1 PROCEED as protocol/resource only; Idea 2 CAUTION as group-constrained LCB selection risk; Idea 3 CAUTION as simulator/logging-design module. |
-| P023 | Align idea report after novelty gate | DONE | `idea-stage/IDEA_REPORT_POST_NOVELTY_20260517_224546.md`, `idea-stage/IDEA_REPORT.md` | Added post-novelty decision: protocol/resource mainline; no new-estimator claim. |
-| P030 | Draft experiment plan | GATED | `refine-logs/EXPERIMENT_PLAN.md`, `refine-logs/EXPERIMENT_PLAN_20260517_224546.md` | Rewritten as novelty-aware feasibility/protocol preflight; final claim-driven plan waits for Gate A schema audit. |
+| P030 | Draft experiment plan | DONE | `refine-logs/EXPERIMENT_PLAN.md` | Public-data run order and stop rules. |
 | P040 | Dataset feasibility matrix | DONE | `docs/PUBLIC_DATASETS.md` | First-pass public dataset role and readiness labels drafted. |
 | P050 | OBP estimator API smoke | TODO | TBD | No dataset download yet. |
 | P060 | KuaiRand lifecycle-state feasibility | TODO | TBD | Needs schema inspection. |
@@ -21,6 +19,4 @@
 
 ## Current Decision
 
-Proceed with public research preflight first, but frame the novelty conservatively. The current novelty check says the strongest public-only package is a lifecycle-state OPE credibility protocol/resource, with lifecycle-targeted exploration as a logging-design simulator and lifecycle-conservative selection as a baseline decision rule. Do not claim a new OPE estimator without additional theory or estimator work.
-
-The next executable gate is dataset schema feasibility, not model training. Stop after producing a dataset-field audit and updated D0/D1/D2 readiness labels for OBP, KuaiRand, KuaiRec, and MIND.
+Proceed with public research preflight first, but frame the novelty conservatively. The current novelty check says the strongest public-only package is a lifecycle-state OPE credibility protocol/resource, with lifecycle-targeted exploration as a logging-design simulator and lifecycle-conservative selection as a baseline decision rule. Do not claim a new OPE estimator without additional theory or estimator work. Treat later production validation as a separate stage that requires logging-policy provenance, candidate sets, propensities or reconstructable randomization, and A/B or gray-release ground truth.
