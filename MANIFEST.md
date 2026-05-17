@@ -46,3 +46,7 @@
 | 2026-05-17 22:53 | /research-refine | RESEARCH_BRIEF.md | research-refine | brief updated from protocol-first to lifecycle-adaptive OPE method hypothesis |
 | 2026-05-17 22:53 | /research-refine | docs/PUBLIC_DATASETS_20260517_225333.md | research-refine | timestamped method-support dataset matrix |
 | 2026-05-17 22:53 | /research-refine | docs/PUBLIC_DATASETS.md | research-refine | dataset matrix updated with method-support audit question |
+| 2026-05-18 00:50 | /research-refine | refine-logs/DORMANT_TOPIC_REASSESSMENT_20260518_005053.md | research-refine | timestamped wiki-grounded dormant/lifecycle topic reassessment |
+| 2026-05-18 00:50 | /research-refine | refine-logs/DORMANT_TOPIC_REASSESSMENT.md | research-refine | latest copy |
+| 2026-05-18 00:50 | /research-refine | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated to pause OPE gate pending reassessment review |
+| 2026-05-18 00:50 | /research-refine | findings.md | research-refine | append-only topic reassessment finding |

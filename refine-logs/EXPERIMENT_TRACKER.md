@@ -15,14 +15,15 @@
 | P030 | Draft experiment plan | GATED | `refine-logs/EXPERIMENT_PLAN.md`, `refine-logs/EXPERIMENT_PLAN_20260517_225333.md` | Rewritten as method-first feasibility preflight; final claim-driven plan waits for Gate A schema audit and method-support check. |
 | P031 | Delete misleading early plan snapshots | DONE | removed early idea/plan/tracker snapshots and protocol-only plan snapshot | Avoids carrying pre-literature/pre-novelty or resource-first artifacts into later work. |
 | P032 | Rethink direction after resource-only concern | DONE | `refine-logs/METHOD_DIRECTION_RETHINK.md`, `refine-logs/METHOD_DIRECTION_RETHINK_20260517_225333.md` | Pivot recommendation: lifecycle-adaptive shrinkage DR as method route; protocol becomes diagnostic layer. |
+| P033 | Reassess dormant/lifecycle topic from research wiki | DONE | `refine-logs/DORMANT_TOPIC_REASSESSMENT.md`, `refine-logs/DORMANT_TOPIC_REASSESSMENT_20260518_005053.md` | Verdict: do not continue OPE as mainline; prioritize preference evidence validity / lifecycle transition decision problem if workspace is upgraded. |
 | P040 | Dataset feasibility matrix | DONE | `docs/PUBLIC_DATASETS.md` | First-pass public dataset role and readiness labels drafted. |
-| P050 | OBP estimator API smoke | TODO | TBD | No dataset download yet. |
-| P060 | KuaiRand lifecycle-state feasibility | TODO | TBD | Needs schema inspection. |
-| P070 | KuaiRec oracle stress-test design | TODO | TBD | Needs schema inspection. |
-| P080 | MIND strict-OPE limitation note | TODO | TBD | Should not be used for strict IPS/DR claim without propensity. |
+| P050 | OBP estimator API smoke | PAUSED | TBD | Paused until user decides whether to upgrade away from OPE mainline. |
+| P060 | KuaiRand lifecycle-state feasibility | PAUSED | TBD | Paused until reassessment review; may be reused for lifecycle-transition idea discovery. |
+| P070 | KuaiRec oracle stress-test design | PAUSED | TBD | Paused until reassessment review; may be reused for deployable-support stress tests. |
+| P080 | MIND strict-OPE limitation note | PAUSED | TBD | Keep limitation, but do not advance OPE-specific work now. |
 
 ## Current Decision
 
-Proceed with public research preflight first, but frame the novelty conservatively. The current novelty check says the strongest public-only package is a lifecycle-state OPE credibility protocol/resource, with lifecycle-targeted exploration as a logging-design simulator and lifecycle-conservative selection as a baseline decision rule. Do not claim a new OPE estimator without additional theory or estimator work.
+Pause the OPE preflight as the mainline. The wiki-grounded reassessment says the better next problem is not public OPE, but preference evidence validity / lifecycle transition decision under stale, sparse, and conflicting evidence.
 
-The next executable gate is dataset schema feasibility, not model training. Stop after producing a dataset-field audit, updated D0/D1/D2 readiness labels for OBP, KuaiRand, KuaiRec, and MIND, and a method-support answer: can public data compare global vs lifecycle-adaptive DR/switch/clipping under measurable or oracle support sparsity?
+Before any dataset gate or experiment, review `refine-logs/DORMANT_TOPIC_REASSESSMENT.md` and decide whether to upgrade the workspace into a dormant/lifecycle reassessment branch. If yes, the next artifact should be a new idea report focused on preference evidence validity, lifecycle transition decision policy, and deployable support conversion beyond CASP.
