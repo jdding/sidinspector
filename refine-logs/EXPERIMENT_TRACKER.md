@@ -4,6 +4,7 @@
 |---|---|---|---|---|
 | P000 | Create public OPE branch | DONE | `codex/public-ope-preflight` | Empty repo initialized as a research branch. |
 | P001 | Invoke idea-discovery skill | DONE | Codex meta logger best-effort call | Scope narrowed to public OPE preflight. |
+| P002 | Create private GitHub repo and track branch | DONE | `git@github.com:jdding/lifecycle-ope-preflight.git`, `origin/codex/public-ope-preflight` | `gh` was unavailable; repo created through GitHub UI and pushed over SSH. |
 | P010 | Draft research brief | DONE | `RESEARCH_BRIEF.md` | Defines two-stage public then production strategy. |
 | P020 | Draft idea report | DONE | `idea-stage/IDEA_REPORT.md` | Ranks lifecycle-stratified OPE protocol first. |
 | P030 | Draft experiment plan | DONE | `refine-logs/EXPERIMENT_PLAN.md` | Public-data run order and stop rules. |

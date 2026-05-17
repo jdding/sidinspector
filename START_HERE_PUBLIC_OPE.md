@@ -4,6 +4,16 @@
 
 `codex/public-ope-preflight`
 
+## Remote
+
+Private GitHub repository:
+
+`git@github.com:jdding/lifecycle-ope-preflight.git`
+
+Tracked branch:
+
+`origin/codex/public-ope-preflight`
+
 ## Current Goal
 
 Run the public-data phase of a two-stage OPE research program:

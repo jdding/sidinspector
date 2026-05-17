@@ -15,3 +15,4 @@
 | 2026-05-17 | `START_HERE_PUBLIC_OPE.md` | Recovery entrypoint for the public OPE branch. |
 | 2026-05-17 | `README.md` | GitHub-facing repository entrypoint. |
 | 2026-05-17 | `.gitignore` | Excludes local skill logs and macOS metadata. |
+| 2026-05-17 | remote `jdding/lifecycle-ope-preflight` | Private GitHub repository tracking `codex/public-ope-preflight`. |
