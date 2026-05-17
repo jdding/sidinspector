@@ -11,7 +11,7 @@
 **Updated**: 2026-05-17 22:45:46 CST
 **Novelty report**: `refine-logs/NOVELTY_CHECK.md`
 
-严格 novelty check 已完成。结论是：当前 top-3 idea 都不应按“新 OPE estimator / 新 OPE method”来写；最稳妥路线是把 **Lifecycle-State Credibility Protocol for OPE** 作为 public-data protocol/resource 主线推进。`Lifecycle-Targeted Exploration Budget Simulator` 可以作为 logging-design 模块，`Lifecycle-Conservative Policy Selection` 只能作为 conservative decision-rule baseline，不能作为主创新点。
+严格 novelty check 已完成。结论是：当前 top-3 idea 都不应按“新 OPE estimator / 新 OPE method”来写；其中 **Lifecycle-State Credibility Protocol for OPE** 只能作为 public-data protocol/resource 形态成立。后续 `research-refine` 已经覆盖这个结论：protocol 不再作为最终主线，而是作为 method-first 路线的诊断层。
 
 | Idea | Novelty | Decision | How to Use |
 |---|---:|---|---|
@@ -19,7 +19,7 @@
 | Lifecycle-Conservative Policy Selection | 3/10 | CAUTION | Baseline decision rule only unless later adds theory or strong reversals. |
 | Lifecycle-Targeted Exploration Budget Simulator | 4/10 | CAUTION | Auxiliary logging-design simulator and future production bridge. |
 
-因此，后续 experiment plan 不能再沿用早期“method-paper”假设。下一步只允许做 schema feasibility 和 protocol pilot：验证公开数据能否支撑 lifecycle-state label、support diagnostics、aggregate-vs-state disagreement、oracle stress test。正式 claim-driven plan 必须等 Gate A schema feasibility 通过后再冻结。
+因此，后续 experiment plan 不能再沿用早期未经 novelty 支撑的 method-paper 假设，也不能退成 resource-only 默认路线。当前主线改为 **Lifecycle-Adaptive Shrinkage DR for Sparse-Support Sequential Recommendation**：先验证公开数据能否支撑 global vs lifecycle-adaptive DR/switch/clipping 的方法比较；protocol/resource 部分只作为诊断和证据基础。
 
 ## Landscape Summary
 

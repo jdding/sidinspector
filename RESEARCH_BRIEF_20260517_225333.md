@@ -2,15 +2,17 @@
 
 ## Working Title
 
-Lifecycle-stratified off-policy evaluation under sparse support in sequential recommendation.
+Lifecycle-adaptive off-policy evaluation under sparse support in sequential recommendation.
 
 ## Problem Statement
 
-We want to study whether off-policy evaluation (OPE) can give reliable offline evidence for recommendation policies when users move across lifecycle states such as onboarding, active use, pre-churn, and dormant return. The public phase should identify which estimators, diagnostics, and logging requirements remain stable under lifecycle-like sparse support before any Huawei production deployment is attempted.
+We want to study whether off-policy evaluation (OPE) can give reliable offline evidence for recommendation policies when users move across lifecycle states such as onboarding, active use, pre-churn, and dormant return. The public phase should test a method-level hypothesis: global DR/switch/clipping rules are miscalibrated when support sparsity is lifecycle-structured, and lifecycle-adaptive shrinkage can improve worst-state reliability.
 
 ## Core Hypothesis
 
-Lifecycle transitions create structured support and positivity failures. Standard aggregate OPE can look stable while specific lifecycle states have inflated variance, weak overlap, or invalid counterfactual support. A lifecycle-stratified OPE protocol should expose these failure modes and define when a policy-value estimate is credible, weakly credible, or only observational.
+Lifecycle transitions create structured support and positivity failures. Standard aggregate OPE can look stable while specific lifecycle states have inflated variance, weak overlap, or invalid counterfactual support. A single global shrinkage, clipping, or switch threshold can be wrong in both directions: too conservative for well-supported states and too optimistic for sparse states.
+
+The revised method hypothesis is that a lifecycle-adaptive DR/switch estimator, driven by state-level support diagnostics, can improve worst-state RMSE, coverage, and policy-ranking stability while preserving aggregate value accuracy.
 
 ## Context
 
@@ -19,14 +21,14 @@ This project follows a two-stage strategy:
 1. Public research preflight: use public logged, randomized, or fully observed recommendation datasets to build and stress-test the methodology.
 2. Production validation: only after the public protocol is stable, map the required logging schema to internal business data and compare OPE estimates against real deployment or A/B outcomes.
 
-The public stage is not meant to make production claims. It should produce a method/protocol package and a clear checklist for what internal logs must contain before stronger claims are possible.
+The public stage is not meant to make production claims. It should first decide whether a method paper is viable. The protocol/checklist package is supporting infrastructure, not the desired final ceiling.
 
 ## Constraints
 
 - Data: start with public datasets only. No Huawei data in this repository.
 - Compute: prefer reproducible CPU/small-GPU pilots first; avoid large training runs until the protocol is fixed.
 - Timeline: first public preflight package should be useful within 2-4 months.
-- Target venues for public phase: RecSys, WSDM, SIGIR Resource, TKDD/TORS fallback. Strong-A targets require either genuine estimator/theory novelty or later production validation.
+- Target venues for public phase: RecSys, WSDM, SIGIR, WWW/KDD only if the estimator/theory contribution is real. A resource-only fallback is explicitly lower priority.
 
 ## Candidate Public Datasets
 
@@ -47,6 +49,7 @@ The public stage is not meant to make production claims. It should produce a met
 
 - A public-dataset feasibility matrix.
 - A lifecycle-like cohort definition for each selected dataset.
-- An estimator benchmark plan covering DM, IPS/IPW, SNIPS, clipped IPS, DR, and switch-style variants where supported.
+- An estimator benchmark plan covering DM, IPS/IPW, SNIPS, clipped IPS, DR, switch-style variants, and a lifecycle-adaptive shrinkage/switch candidate where supported.
 - A sparse-support diagnostic kit: support violation rate, effective sample size, weight tail metrics, per-state confidence interval inflation, and aggregate-vs-state disagreement.
+- A method-support decision: whether public datasets can support a lifecycle-adaptive OPE method claim, or whether the line should pause before becoming a resource-only paper.
 - A logging checklist for the later production stage.

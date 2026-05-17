@@ -1,8 +1,9 @@
 # Public OPE Preflight Experiment Plan
 
-**Generated**: 2026-05-17 22:45:46 CST
-**Status**: GATED / NOVELTY-AWARE PROTOCOL PREFLIGHT
-**Primary idea**: Lifecycle-State Credibility Protocol for OPE
+**Generated**: 2026-05-17 22:53:33 CST
+**Status**: GATED / METHOD-FIRST PREFLIGHT
+**Primary method route**: Lifecycle-Adaptive Shrinkage DR for Sparse-Support Sequential Recommendation
+**Diagnostic layer**: Lifecycle-State Credibility Protocol for OPE
 **Novelty basis**: `refine-logs/NOVELTY_CHECK.md`
 **Scope**: public-data phase only; no Huawei/internal data; no production OPE claim.
 
@@ -10,9 +11,9 @@
 
 The project has now completed the required `/research-lit -> /idea-creator -> /novelty-check` chain.
 
-The novelty gate rejects a “new OPE estimator” framing. The defensible public-data route is a protocol/resource paper: show that lifecycle-like states expose structured support and positivity failures that aggregate OPE can hide.
+The novelty gate rejects the first top-3 ideas as standalone "new OPE estimator" contributions. This should not force a resource-only paper. The updated direction is method-first: use lifecycle-state diagnostics to build and test a state-adaptive DR/switch/clipping estimator under sparse support.
 
-Therefore this plan is not a model-training plan. It is a gated feasibility and protocol-pilot plan. A final claim-driven experiment plan should be written only after Gate A confirms that the public datasets expose the fields needed for lifecycle-state OPE credibility diagnostics.
+Therefore this plan is still gated, but the gate now asks whether public datasets can support a method claim. A final claim-driven experiment plan should be written only after Gate A confirms that at least one public setting can compare global vs lifecycle-adaptive OPE estimators under measurable or oracle support sparsity.
 
 ## Claim Ladder Under Test
 
@@ -20,13 +21,13 @@ Therefore this plan is not a model-training plan. It is a gated feasibility and 
 
 Some public datasets support strict OPE or oracle stress tests; others only support observational diagnostics. The output should be a D0/D1/D2 readiness card per dataset.
 
-### C2: Lifecycle-state diagnostics expose failures hidden by aggregate OPE
+### C2: Global OPE shrinkage/switching is miscalibrated under lifecycle-structured support
 
-If lifecycle states can be computed from pre-exposure information, state-level support, ESS, confidence width, and estimator stability may reveal weak or non-credible OPE estimates even when aggregate diagnostics look acceptable.
+If lifecycle states have sharply different support and variance, a single global clipping/switch threshold should either over-shrink well-supported states or under-shrink sparse states.
 
-### C3: Public-data protocol can specify production logging requirements
+### C3: Lifecycle-adaptive OPE can improve worst-state reliability
 
-The public pilot should produce a concrete checklist for later internal deployment: required logging policy fields, propensities or randomization, candidate sets, state labels, reward windows, and minimum support thresholds.
+The candidate method should improve worst-state RMSE, confidence coverage, policy-ranking stability, or credibility downgrade accuracy relative to global IPS/SNIPS/DR/switch baselines, while not materially damaging aggregate value accuracy.
 
 ## Gate A: Dataset Schema Feasibility
 
@@ -39,6 +40,10 @@ Do this before any full experiment.
 | KuaiRec | Fully observed user-item matrix and temporal/user metadata | Can construct oracle-style support thinning and aggregate-vs-state reversal stress tests | Use only as non-temporal oracle toy |
 | MIND | Impression lists, timestamps, user histories, candidate/click labels | Can define temporal/lifecycle diagnostics while explicitly marking propensity missing | Keep as D0/D1 auxiliary; no strict IPS/DR claims |
 
+For every dataset, add this method-specific audit question:
+
+> Can this dataset compare global vs lifecycle-adaptive DR/switch/clipping under measurable or oracle support sparsity?
+
 ## Gate B: Minimal Protocol Pilot
 
 Only run after Gate A passes for at least OBP plus one recommender dataset.
@@ -46,8 +51,10 @@ Only run after Gate A passes for at least OBP plus one recommender dataset.
 1. Implement dataset readiness cards: D0 observational, D1 estimated-propensity or partial-randomization, D2 logged-propensity/randomized or oracle.
 2. Compute lifecycle states using only pre-exposure fields: onboarding/history length, active, pre-churn/inactivity trend, return-like gap where available.
 3. Report support diagnostics by state: state size, action coverage, ESS, max/percentile importance weight, CI width, support violation rate.
-4. Compare aggregate vs state-level OPE: value ranking, estimator disagreement, confidence interval inflation, and credibility downgrade cases.
-5. Use KuaiRec-style oracle stress tests to check whether estimated aggregate winners can fail in sparse lifecycle states.
+4. Implement baseline global IPS/SNIPS/DR/switch/clipping estimators.
+5. Implement a minimal lifecycle-adaptive shrinkage/switch rule.
+6. Compare aggregate vs state-level OPE: value ranking, estimator disagreement, confidence interval inflation, and credibility downgrade cases.
+7. Use KuaiRec-style oracle stress tests to check whether lifecycle-adaptive estimators improve sparse-state reliability.
 
 ## Gate C: Plan Freeze
 
@@ -59,15 +66,15 @@ Rewrite this file as a final experiment plan only after Gate A and a minimal Gat
 - success/failure criteria for each claim;
 - baseline subgroup definitions, including non-lifecycle activity/support bins;
 - stop rules for downgrading the paper to a dataset-readiness tool;
-- paper positioning: protocol/resource, not new estimator.
+- paper positioning: method-first if lifecycle-adaptive estimation passes; otherwise stop or pivot, not automatic resource-only submission.
 
 ## Explicit Non-Claims
 
-- Do not claim a new OPE estimator.
+- Do not claim a new OPE estimator until the lifecycle-adaptive mechanism beats global DR/switch/clipping and has a clean risk argument.
 - Do not claim strict IPS/DR on MIND.
 - Do not claim production validity without Huawei/internal logging-policy evidence.
 - Do not use lifecycle labels unless they are pre-exposure and compared against generic subgroup/support baselines.
 
 ## Next Action
 
-Run Gate A schema feasibility. Stop after producing a dataset-field audit and updated readiness labels; do not launch full experiments until the schema audit is reviewed.
+Run Gate A schema feasibility. Stop after producing a dataset-field audit, updated readiness labels, and a yes/no answer on whether public data can support the lifecycle-adaptive estimator comparison.

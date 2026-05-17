@@ -3,7 +3,7 @@
 ## Pipeline Status
 
 language: zh
-active_skill: /idea-discovery
+active_skill: /research-refine
 active_branch: codex/public-ope-preflight
 remote: git@github.com:jdding/lifecycle-ope-preflight.git
 
@@ -12,6 +12,7 @@ remote: git@github.com:jdding/lifecycle-ope-preflight.git
 This repository must follow the ARIS skill protocols from:
 
 - `/Users/timber/aris-source/skills/skills-codex/idea-discovery/SKILL.md`
+- `/Users/timber/aris-source/skills/skills-codex/research-refine/SKILL.md`
 - `/Users/timber/aris-source/skills/skills-codex/shared-references/output-versioning.md`
 - `/Users/timber/aris-source/skills/skills-codex/shared-references/output-manifest.md`
 - `/Users/timber/aris-source/skills/skills-codex/shared-references/output-language.md`
@@ -24,4 +25,3 @@ This repository must follow the ARIS skill protocols from:
 - Keep `findings.md` append-only once it exists.
 - Keep all public-stage artifacts free of Huawei internal data, business logs, and proprietary implementation details.
 - Update `refine-logs/EXPERIMENT_TRACKER.md` whenever a gate, run, or decision changes.
-
