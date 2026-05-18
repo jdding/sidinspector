@@ -6,6 +6,10 @@ CARD_DIR="${CARD_DIR:-$ROOT_DIR/_gate0_repos/CARD}"
 ITEM_METADATA="${ITEM_METADATA:-$ROOT_DIR/_gate0_artifacts/resid_musical_normalized/item_metadata.parquet}"
 INTERACTIONS="${INTERACTIONS:-$ROOT_DIR/_gate0_artifacts/resid_musical_normalized/interactions.parquet}"
 RUN_ROOT="${RUN_ROOT:-$ROOT_DIR/_gate0_artifacts/autodl_runs}"
+case "$RUN_ROOT" in
+  /*) ;;
+  *) RUN_ROOT="$ROOT_DIR/$RUN_ROOT" ;;
+esac
 EXP_ID="${EXP_ID:-card_rqvae_e${CARD_EPOCHS:-20}_seed${SEED:-42}_$(date +%Y%m%d_%H%M%S)}"
 OUT_DIR="$RUN_ROOT/$EXP_ID"
 INPUT_PARQUET="$OUT_DIR/item_emb.parquet"

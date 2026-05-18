@@ -100,6 +100,8 @@ print("[AUDIT-SID preflight] CUDA_REQUIRED_OK")
 PY
 fi
 
+"$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/repair_card_source.py" --card-dir "$ROOT_DIR/_gate0_repos/CARD"
+
 if "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" --card-dir "$ROOT_DIR/_gate0_repos/CARD"; then
   echo "[AUDIT-SID preflight] CARD_SOURCE_READY"
 else

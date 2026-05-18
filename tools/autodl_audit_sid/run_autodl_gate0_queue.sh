@@ -16,6 +16,8 @@ mkdir -p "$ROOT_DIR/_gate0_artifacts/autodl_runs"
 REQUIRE_CUDA=1 bash "$ROOT_DIR/tools/autodl_audit_sid/preflight_autodl.sh"
 
 CARD_READY=1
+"$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/repair_card_source.py" \
+  --card-dir "$ROOT_DIR/_gate0_repos/CARD"
 if ! "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" \
     --card-dir "$ROOT_DIR/_gate0_repos/CARD"; then
   CARD_READY=0

@@ -380,3 +380,12 @@
 | 2026-05-18 21:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_212037.md | implementation | timestamped tracker after AutoDL no-GPU remote staging |
 | 2026-05-18 21:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after AutoDL no-GPU remote staging |
 | 2026-05-18 21:20 | /idea-discovery | findings.md | idea-discovery | append-only AutoDL no-GPU staging finding |
+| 2026-05-18 22:07 | /autodl-cloud-deploy | docs/CARD_SOURCE_REPAIR_20260518_220726.md | implementation | timestamped CARD no-GPU source repair and CPU smoke report |
+| 2026-05-18 22:07 | /autodl-cloud-deploy | docs/CARD_SOURCE_REPAIR.md | implementation | latest CARD no-GPU source repair and CPU smoke report |
+| 2026-05-18 22:07 | /autodl-cloud-deploy | tools/autodl_audit_sid/repair_card_source.py | implementation | idempotent CARD source repair utility for local and AutoDL staging |
+| 2026-05-18 22:07 | /autodl-cloud-deploy | tools/autodl_audit_sid/card_source_repair/ | implementation | tracked CARD RQ-VAE compatibility templates for missing rq/vq modules |
+| 2026-05-18 22:07 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_220726.md | implementation | timestamped tracker after CARD source repair and remote no-GPU verification |
+| 2026-05-18 22:07 | /autodl-cloud-deploy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with CARD source repair status |
+| 2026-05-18 22:07 | /autodl-cloud-deploy | findings.md | implementation | append-only CARD source repair finding |
+| 2026-05-18 22:12 | /autodl-cloud-deploy | _gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_221208.tar.gz | implementation | ignored AutoDL bundle refreshed after CARD repair; SHA256 d4746d73cb4b1b4c4a30875d37cb7166833dc24b2de1207549eaffb408473dc3 |
+| 2026-05-18 22:12 | /autodl-cloud-deploy | docs/AUTODL_BUNDLE_PROVENANCE.md | implementation | latest bundle provenance for CARD-repaired AutoDL archive |
