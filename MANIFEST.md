@@ -421,3 +421,10 @@
 | 2026-05-19 00:08 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_000804.md | implementation | timestamped tracker after GRID Cluster A local smoke |
 | 2026-05-19 00:08 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker updated with GRID Cluster A candidate path |
 | 2026-05-19 00:08 | /idea-discovery | findings.md | implementation | append-only GRID Cluster A candidate finding |
+| 2026-05-19 00:28 | /run-experiment | docs/GRID_CLUSTER_A_EXPORT_PREP_20260519_002827.md | implementation | timestamped GRID Cluster A 5k local export report |
+| 2026-05-19 00:28 | /run-experiment | docs/GRID_CLUSTER_A_EXPORT_PREP.md | implementation | latest GRID Cluster A export report with 5k evidence |
+| 2026-05-19 00:28 | /run-experiment | docs/GATE0_DECISION_20260519_002827.md | implementation | timestamped Gate 0 artifact-feasibility pass decision |
+| 2026-05-19 00:28 | /run-experiment | docs/GATE0_DECISION.md | implementation | latest Gate 0 artifact-feasibility decision |
+| 2026-05-19 00:28 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_002827.md | implementation | timestamped tracker after Gate 0 artifact-feasibility pass |
+| 2026-05-19 00:28 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks Gate 0 passed and Gate 0A open |
+| 2026-05-19 00:28 | /idea-discovery | findings.md | implementation | append-only Gate 0 artifact-feasibility pass finding |
