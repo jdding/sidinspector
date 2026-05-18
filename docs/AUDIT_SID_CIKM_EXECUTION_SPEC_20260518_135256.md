@@ -19,6 +19,14 @@ CIKM 2026 版本必须收敛为：
 - 覆盖所有 2026 新论文的 survey；
 - 工业部署结论。
 
+**2026-05-18 重要修正**：RQ-VAE/TIGER-style SID + ReSID 不能自动视为“足够代表社区”。它们只是 CIKM sprint 的候选最小组合。是否足够，必须先过 **Method Representativeness Gate**。
+
+如果最终只是：
+
+> 两个容易跑的 tokenizer + 浅层 utilization/collision 表格，
+
+则不应投 CIKM Resource Track。这个版本对社区贡献不足，会浪费时间。
+
 ## CIKM Resource Paper 的最小贡献
 
 4-page 版本只保留三个贡献：
@@ -70,7 +78,31 @@ CIKM 2026 版本必须收敛为：
 
 ## 对比方法决策
 
-### Must-run Method 1: RQ-VAE / TIGER-style SID
+### Method Representativeness Gate
+
+CIKM v0 的方法选择必须覆盖至少两个不同代表性层级：
+
+| Layer | 代表什么 | 候选方法 | CIKM v0 要求 |
+|---|---|---|---|
+| Canonical baseline | generative recommendation 中经典 residual quantization / semantic ID 路线 | TIGER / RQ-VAE / GenRec-style SID / GRID-style SID | 必须至少一个 |
+| Recent tokenizer innovation | 2026 年围绕 tokenizer/codebook 的新设计 | ReSID, DACT, CapsID, AsymRec, DIG, AdaSID, CARD, DRIL | 必须至少一个可导出 artifact |
+| Diagnostic sanity lower bound | 验证 metrics 是否有基本区分度 | Random SID, popularity-balanced SID, category-prefix SID | 必须至少一个 |
+
+Gate 通过条件：
+
+1. 能解释为什么 chosen methods 分别代表 canonical baseline 与 recent tokenizer innovation；
+2. chosen recent method 的技术点必须和 AUDIT-SID diagnostics 有直接关系，如 recsys-native quantization、drift stability、soft routing、ranking alignment、collision adaptation；
+3. 至少一个诊断结果必须揭示方法间非平凡差异，而不是“ReSID 比 RQ-VAE 分数高”；
+4. paper 中必须有一张 **Method Coverage Table**，说明当前 toolkit 支持的 artifact interface 能覆盖更多近期方法，即使 CIKM v0 未全部复现。
+
+Gate 失败条件：
+
+- 只能跑 RQ-VAE + sanity baseline；
+- ReSID 跑通但无法导出可解释 tokenizer artifact；
+- 两个方法都属于同一类 quantization family，无法覆盖近期 tokenizer innovation；
+- 诊断结果只是浅层 utilization table，没有 collision harm / head-tail / alignment 发现。
+
+### Preferred Must-run Method 1: RQ-VAE / TIGER-style SID
 
 **实现入口**：GenRec 或同类 RQ-VAE/TIGER implementation。
 
@@ -89,7 +121,7 @@ CIKM 2026 版本必须收敛为：
 - utilization / collision / prefix imbalance 在 RQ-VAE 上最容易解释；
 - 即使 ReSID/DACT 出问题，RQ-VAE baseline 也能支撑 toolkit demo。
 
-### Must-run Method 2: ReSID
+### Preferred Must-run Method 2: ReSID
 
 **实现入口**：`FuCongResearchSquad/ReSID` 官方实现。
 
@@ -104,9 +136,27 @@ CIKM 2026 版本必须收敛为：
 
 **为什么必须有**：
 
-- ReSID 是近期最直接针对 tokenizer/codebook 的方法；
+- ReSID 是近期最直接针对 tokenizer/codebook 的 recommendation-native 方法之一；
 - 它有官方代码和 processed dataset；
 - 它可以与 RQ-VAE/TIGER-style baseline 形成清晰 contrast：generic quantization vs recommendation-native quantization。
+
+**代表性风险**：
+
+- 如果 ReSID 的 artifact 只能展示它自己方法的 pipeline，而不能映射到通用 SID diagnostics，则代表性不足；
+- 如果无法导出 per-item SID / codebook assignments，它不能作为 CIKM v0 的主要 recent tokenizer method。
+
+### Alternative Recent Tokenizer Candidates
+
+如果 ReSID 不够稳，按下面顺序替换或补充：
+
+1. **DACT**：代表 drift-aware continual tokenization；适合 D6 drift stability，但工程风险较高。
+2. **CapsID**：代表 soft-routed variable-length SID；适合 utilization、tail capacity、token length diagnostics，但需确认代码/可复现性。
+3. **DIG**：代表 ranking-aligned tokenizer；最贴 D3 ranking/semantic-collaborative alignment，但若无代码只能作为 literature-motivated target，不适合 CIKM v0 主实验。
+4. **AdaSID / CARD / DRIL**：代表 adaptive collision / utilization / differentiable SID；如果代码可用，可作为 stronger recent method。
+
+CIKM v0 不需要覆盖这些全部方法，但必须在文档和 paper 中解释：
+
+> AUDIT-SID 的资源价值在于提供 artifact-level diagnostics，使后续方法可以被快速接入，而不是在 v0 复现所有新 tokenizer。
 
 ### Sanity Baseline: Frequency / Random / Category ID
 
@@ -301,10 +351,11 @@ AUDIT-SID: An Open Diagnostic Toolkit for Semantic-ID Tokenizers in Generative R
 Gate 0 passes only if all are true:
 
 1. at least two SID sources produce item-to-SID mappings;
-2. one primary dataset has joinable item ids, metadata, interactions, and popularity;
-3. D1-D4 metrics can run without downstream model training;
-4. artifact extraction can be documented in commands/scripts;
-5. no proprietary or internal data is involved.
+2. the two SID sources cover canonical baseline and recent tokenizer innovation, not merely two variants of the same family;
+3. one primary dataset has joinable item ids, metadata, interactions, and popularity;
+4. D1-D4 metrics can run without downstream model training;
+5. artifact extraction can be documented in commands/scripts;
+6. no proprietary or internal data is involved.
 
 If Gate 0 fails, stop CIKM 2026 submission.
 

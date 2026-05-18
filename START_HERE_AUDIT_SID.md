@@ -61,9 +61,10 @@ Read `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md` before changing scope.
 
 - Primary dataset: ReSID processed Amazon-2023 `Musical_Instruments`.
 - Backup dataset: Amazon 2014 Beauty/Sports.
-- Must-run methods: RQ-VAE/TIGER-style SID, ReSID, sanity ID baseline.
+- Must-run method layers: canonical RQ-VAE/TIGER-style SID, one representative recent tokenizer innovation such as ReSID if artifact export is meaningful, and a sanity ID baseline.
 - Must-have diagnostics: D1 utilization, D2 collision harm, D3 semantic-collaborative alignment, D4 head-tail capacity allocation.
 - Optional only: DACT/drift and deployment-cost proxy.
+- Do not treat RQ-VAE + ReSID as automatically sufficient; Gate 0A must verify method representativeness.
 
 ## Venue Plan
 

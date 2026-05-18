@@ -32,7 +32,7 @@ Do not launch full experiments before Gate 0 and dataset support audit pass.
 ## Frozen CIKM v0 Scope
 
 - Dataset: ReSID processed Amazon-2023 `Musical_Instruments`; Amazon 2014 Beauty/Sports as backup.
-- Methods: RQ-VAE/TIGER-style SID, ReSID, and random/popularity/category sanity ID baseline.
+- Methods: canonical RQ-VAE/TIGER-style SID, one representative recent tokenizer innovation such as ReSID if artifact export is meaningful, and random/popularity/category sanity ID baseline.
 - Diagnostics: codebook utilization, collision harm, semantic-collaborative alignment, and head-tail capacity allocation.
 - Optional only if cheap: deployment-cost proxy and DACT/drift stability.
 
@@ -46,6 +46,8 @@ Key dates:
 - Paper: 2026-06-06 AoE
 
 Gate 0 must pass by 2026-05-24. If not, do not force a weak CIKM submission. Longer-term backups are SIGIR 2027 Resource/Reproducibility-style track, RecSys 2027 Resource/Reproducibility, and CIKM 2027 Resource.
+
+Method representativeness is part of Gate 0. A shallow RQ-VAE + ReSID comparison is not enough for submission.
 
 ## Boundary
 

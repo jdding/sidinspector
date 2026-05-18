@@ -36,10 +36,12 @@ AUDIT-SID 应定位为 diagnostic methodology paper。核心 claim 是：semanti
 ## Frozen CIKM v0 Scope
 
 - Dataset：ReSID processed Amazon-2023 `Musical_Instruments` first；Amazon 2014 Beauty/Sports backup。
-- Methods：RQ-VAE/TIGER-style SID + ReSID + random/popularity/category sanity ID baseline。
+- Methods：canonical RQ-VAE/TIGER-style SID + one representative recent tokenizer innovation, preferably ReSID if artifact export is meaningful, plus random/popularity/category sanity ID baseline。
 - Diagnostics：D1 codebook utilization；D2 collision harm；D3 semantic-collaborative alignment；D4 head-tail capacity allocation。
 - Optional：D5 deployment-cost proxy；D6 drift stability / DACT。
 - Paper type：4-page CIKM 2026 Resource paper。
+
+Method representativeness is a hard gate. If the runnable methods do not cover both canonical SID and recent tokenizer innovation, or if the analysis remains shallow, do not submit CIKM 2026.
 
 ## Venue Decision
 

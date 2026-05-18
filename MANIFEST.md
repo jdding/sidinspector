@@ -121,3 +121,8 @@
 | 2026-05-18 13:52 | /experiment-plan | refine-logs/PIPELINE_SUMMARY.md | implementation | pipeline summary updated with frozen CIKM v0 scope |
 | 2026-05-18 13:52 | /experiment-plan | README.md | idea-discovery | entrypoint updated with frozen CIKM v0 scope |
 | 2026-05-18 13:52 | /experiment-plan | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with frozen CIKM v0 scope |
+| 2026-05-18 14:34 | /experiment-plan | docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md | implementation | method representativeness gate added after concern about shallow RQ-VAE plus ReSID comparison |
+| 2026-05-18 14:34 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | Gate 0A method representativeness added |
+| 2026-05-18 14:34 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with Gate 0A |
+| 2026-05-18 14:34 | /experiment-plan | README.md | idea-discovery | entrypoint updated to warn shallow comparison is insufficient |
+| 2026-05-18 14:34 | /experiment-plan | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with method representativeness rule |

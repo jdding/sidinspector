@@ -16,10 +16,10 @@
 |---|---|---|
 | Primary dataset | ReSID processed Amazon-2023 `Musical_Instruments` | ReSID 官方 processed dataset + 示例 category，降低数据处理成本 |
 | Backup dataset | Amazon 2014 Beauty/Sports | GenRec 支持；如果 ReSID dataset 与 RQ-VAE pipeline 不易对齐时兜底 |
-| Must-run method 1 | RQ-VAE / TIGER-style SID | classical semantic-ID baseline |
-| Must-run method 2 | ReSID | recommendation-native tokenizer with official code |
+| Preferred method 1 | RQ-VAE / TIGER-style SID | classical semantic-ID baseline |
+| Preferred method 2 | ReSID | candidate recent tokenizer innovation, not automatically sufficient |
 | Sanity baseline | Random / popularity-balanced / category-prefix ID | 确认 diagnostics 有基本区分度 |
-| Optional method | DACT | 仅在 2026-05-24 前可导出 updated SID mapping 时纳入 |
+| Alternative recent method | DACT / CapsID / DIG / AdaSID if artifact export is feasible | avoid shallow RQ-VAE + ReSID-only comparison if ReSID is not representative |
 | Must-have diagnostics | D1-D4 | utilization, collision harm, semantic-collaborative alignment, head-tail capacity |
 | Optional diagnostics | D5-D6 | deployment-cost proxy, drift stability |
 
@@ -44,10 +44,38 @@ Tasks：
 Pass condition：
 
 - 至少两个 tokenizer family 能在一个小公开数据集上导出 SID assignments。
+- 这两个 family 必须覆盖 **canonical baseline** 和 **recent tokenizer innovation**，不能只是两个同类 quantization 变体。
+- 至少一个 diagnostic result 能支撑非平凡 insight，而不是浅层 utilization 表格。
 
 Fail condition：
 
 - 只有一个实现可用，或所有方法都无法导出诊断所需 artifact。
+- 只能形成 RQ-VAE + sanity baseline 的弱对比。
+- ReSID 或其他 recent method 无法导出可解释 tokenizer artifact。
+
+## Gate 0A：Method Representativeness
+
+**Question**：选中的方法是否足以让社区相信 AUDIT-SID 的诊断资源有价值？
+
+Required layers：
+
+| Layer | Required? | Candidate |
+|---|---|---|
+| Canonical semantic-ID baseline | yes | RQ-VAE / TIGER / GenRec / GRID-style SID |
+| Recent tokenizer innovation | yes | ReSID / DACT / CapsID / DIG / AdaSID / CARD / DRIL |
+| Sanity lower bound | yes | random / popularity-balanced / category-prefix ID |
+
+Pass condition：
+
+- 写出一张 method coverage table；
+- 至少一个 recent method 的技术点能对应到 D1-D4 中的诊断轴；
+- 诊断结果能解释一个 community-relevant failure mode，如 harmful collision、tail capacity collapse、semantic-collaborative mismatch。
+
+Fail condition：
+
+- 只是“两个 repo 跑通”；
+- 只是“ReSID 指标高于 RQ-VAE”；
+- 只是 utilization/collision 的浅表统计，没有 case study。
 
 ## Gate 1：Dataset Support Audit
 
@@ -117,7 +145,7 @@ Datasets：
 Methods：
 
 - RQ-VAE/TIGER-style baseline；
-- ReSID；
+- ReSID or another recent tokenizer innovation that passes Gate 0A；
 - Random / popularity-balanced / category-prefix ID sanity baseline；
 - DACT optional only if artifact extraction is easy。
 
@@ -151,6 +179,7 @@ CIKM outputs：
 | Date | Milestone | Output | Decision |
 |---|---|---|---|
 | 2026-05-19 | ReSID + GenRec/RQ-VAE repo audit | `docs/GATE0_REPO_AUDIT.md` | continue only if mappings exportable |
+| 2026-05-19 | method representativeness audit | `docs/METHOD_REPRESENTATIVENESS_AUDIT.md` | continue only if methods cover canonical + recent tokenizer innovation |
 | 2026-05-20 | dataset schema audit | `docs/DATASET_SCHEMA_AUDIT.md` | freeze primary dataset |
 | 2026-05-21 | first SID mapping export | artifact sample | freeze input schema |
 | 2026-05-22 | second SID mapping export | artifact sample | Gate 0 likely pass |
