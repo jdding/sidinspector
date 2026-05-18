@@ -20,14 +20,30 @@ def patch_generate_code(card_dir: Path) -> str:
     if not path.exists():
         return "missing"
     text = path.read_text()
+    statuses = []
+
     old = "ckpt = torch.load(ckpt_path, map_location=torch.device('cpu'))"
     new = "ckpt = torch.load(ckpt_path, map_location=torch.device('cpu'), weights_only=False)"
     if new in text:
-        return "exists"
-    if old not in text:
-        return "unmatched"
-    path.write_text(text.replace(old, new))
-    return "patched"
+        statuses.append("weights_only_exists")
+    elif old in text:
+        text = text.replace(old, new)
+        statuses.append("weights_only_patched")
+    else:
+        statuses.append("weights_only_unmatched")
+
+    old = "tt = 0\n#There are often duplicate items in the dataset, and we no longer differentiate them\nwhile True:\n    if tt >= 30 or check_collision(all_indices_str):\n        break\n\n    collision_item_groups = get_collision_item(all_indices_str)\n    print(collision_item_groups)\n    print(len(collision_item_groups))\n"
+    new = "tt = 0\nmax_collision_rounds = int(os.environ.get('CARD_GENERATE_MAX_COLLISION_ROUNDS', '30'))\nprint_collision_groups = os.environ.get('CARD_GENERATE_PRINT_COLLISIONS', '1') == '1'\n#There are often duplicate items in the dataset, and we no longer differentiate them\nwhile True:\n    if tt >= max_collision_rounds or check_collision(all_indices_str):\n        break\n\n    collision_item_groups = get_collision_item(all_indices_str)\n    if print_collision_groups:\n        print(collision_item_groups)\n    print(len(collision_item_groups))\n"
+    if "max_collision_rounds = int(os.environ.get('CARD_GENERATE_MAX_COLLISION_ROUNDS'" in text:
+        statuses.append("collision_controls_exist")
+    elif old in text:
+        text = text.replace(old, new)
+        statuses.append("collision_controls_patched")
+    else:
+        statuses.append("collision_controls_unmatched")
+
+    path.write_text(text)
+    return ",".join(statuses)
 
 
 def main() -> None:
@@ -46,7 +62,7 @@ def main() -> None:
         status = copy_if_needed(src, dst, args.overwrite)
         print(f"[CARD repair] {status}: {dst}")
     status = patch_generate_code(args.card_dir)
-    print(f"[CARD repair] generate_code torch.load weights_only=False: {status}")
+    print(f"[CARD repair] generate_code patches: {status}")
 
 
 if __name__ == "__main__":
