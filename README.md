@@ -15,6 +15,7 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 9. `refine-logs/PIPELINE_SUMMARY.md`
 10. `refine-logs/EXPERIMENT_TRACKER.md`
 11. `docs/AUDIT_SID_VENUE_PLAN.md`
+12. `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`
 
 ## Current Thesis
 
@@ -27,6 +28,13 @@ Gate 0 is code/artifact feasibility:
 > verify whether at least two public SID/tokenizer implementations can export item-to-SID mappings and generator outputs on one small public dataset.
 
 Do not launch full experiments before Gate 0 and dataset support audit pass.
+
+## Frozen CIKM v0 Scope
+
+- Dataset: ReSID processed Amazon-2023 `Musical_Instruments`; Amazon 2014 Beauty/Sports as backup.
+- Methods: RQ-VAE/TIGER-style SID, ReSID, and random/popularity/category sanity ID baseline.
+- Diagnostics: codebook utilization, collision harm, semantic-collaborative alignment, and head-tail capacity allocation.
+- Optional only if cheap: deployment-cost proxy and DACT/drift stability.
 
 ## Venue Target
 

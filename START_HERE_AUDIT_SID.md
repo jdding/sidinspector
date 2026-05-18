@@ -55,6 +55,16 @@ Run Gate 0:
 
 No full training should start before Gate 0 passes.
 
+## Frozen CIKM v0 Scope
+
+Read `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md` before changing scope.
+
+- Primary dataset: ReSID processed Amazon-2023 `Musical_Instruments`.
+- Backup dataset: Amazon 2014 Beauty/Sports.
+- Must-run methods: RQ-VAE/TIGER-style SID, ReSID, sanity ID baseline.
+- Must-have diagnostics: D1 utilization, D2 collision harm, D3 semantic-collaborative alignment, D4 head-tail capacity allocation.
+- Optional only: DACT/drift and deployment-cost proxy.
+
 ## Venue Plan
 
 Read `docs/AUDIT_SID_VENUE_PLAN.md` before expanding experiments. Current recommendation:

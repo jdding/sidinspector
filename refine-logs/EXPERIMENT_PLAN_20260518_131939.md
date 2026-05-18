@@ -1,11 +1,27 @@
-# Experiment Plan：AUDIT-SID Feasibility First
+# Experiment Plan：AUDIT-SID for CIKM 2026 Resource
 
 **生成时间**：2026-05-18 13:19:39 CST  
-**Status**：GATED；Gate 0 之前不启动完整训练。
+**Status**：GATED；Gate 0 之前不启动完整训练。  
+**Venue target**：CIKM 2026 Resource Track。  
+**Abstract deadline**：2026-05-30 AoE。  
+**Paper deadline**：2026-06-06 AoE。
 
 ## Purpose
 
-这个 plan 用来判断 AUDIT-SID 是否能成为真实 public-first diagnostic paper。它还不是完整训练计划。
+这个 plan 用来把 AUDIT-SID 收敛成 CIKM 2026 Resource Track 可提交版本。核心产物是开源 diagnostic toolkit + 小规模 public case study。
+
+## CIKM v0 冻结配置
+
+| Component | Decision | Rationale |
+|---|---|---|
+| Primary dataset | ReSID processed Amazon-2023 `Musical_Instruments` | ReSID 官方 processed dataset + 示例 category，降低数据处理成本 |
+| Backup dataset | Amazon 2014 Beauty/Sports | GenRec 支持；如果 ReSID dataset 与 RQ-VAE pipeline 不易对齐时兜底 |
+| Must-run method 1 | RQ-VAE / TIGER-style SID | classical semantic-ID baseline |
+| Must-run method 2 | ReSID | recommendation-native tokenizer with official code |
+| Sanity baseline | Random / popularity-balanced / category-prefix ID | 确认 diagnostics 有基本区分度 |
+| Optional method | DACT | 仅在 2026-05-24 前可导出 updated SID mapping 时纳入 |
+| Must-have diagnostics | D1-D4 | utilization, collision harm, semantic-collaborative alignment, head-tail capacity |
+| Optional diagnostics | D5-D6 | deployment-cost proxy, drift stability |
 
 ## 未来主 claim
 
@@ -39,27 +55,25 @@ Fail condition：
 
 Candidate datasets：
 
-- Amazon category subset：metadata、category、long-tail、sequential histories。
-- MIND：text-rich items 和 temporal news dynamics。
-- H&M：catalog churn 和 seasonal/fashion drift。
-- Steam/Yelp/MovieLens：robustness datasets。
-- KuaiRec/KuaiRand：如果 metadata 足够，可作为 exposure-aware auxiliary。
+- Primary: ReSID processed Amazon-2023 `Musical_Instruments`。
+- Backup: Amazon 2014 Beauty/Sports。
+- Cut for CIKM v0: MIND, H&M, KuaiRec/KuaiRand。
 
 Pass condition：
 
-- 至少两个数据集支持 metadata、sequential interactions、item popularity buckets、temporal split。
+- CIKM v0 至少一个 primary dataset 支持 metadata、sequential interactions、item popularity buckets，并能与 SID mapping join。
+- 如果 backup dataset 也可用，作为 robustness，不作为 CIKM go/no-go 必要条件。
 
 ## Gate 2：Diagnostic Metric Implementation
 
-按优先级实现：
+按 CIKM v0 优先级实现：
 
 1. codebook utilization；
 2. collision harm；
 3. semantic-collaborative alignment；
 4. head-tail capacity allocation；
-5. token predictability；
-6. drift stability；
-7. deployment-cost proxy。
+5. deployment-cost proxy optional；
+6. drift stability optional。
 
 Pass condition：
 
@@ -93,19 +107,19 @@ Pass condition：
 - 可用方法/数据过于脆弱；
 - 工作变成维护成本很高但 scientific claim 很弱的 benchmark。
 
-## Full Experiment Package If Gates Pass
+## CIKM v0 Package If Gates Pass
 
 Datasets：
 
-- Amazon category subset；
-- MIND 或 H&M；
-- 一个 robustness dataset。
+- ReSID processed Amazon-2023 `Musical_Instruments`；
+- Amazon 2014 Beauty/Sports optional backup only。
 
 Methods：
 
 - RQ-VAE/TIGER-style baseline；
-- ReSID 或 equivalent recommendation-native tokenizer；
-- DACT/CapsID 若 code 稳定，否则用 controlled tokenizer-refresh simulation。
+- ReSID；
+- Random / popularity-balanced / category-prefix ID sanity baseline；
+- DACT optional only if artifact extraction is easy。
 
 Ablations：
 
@@ -116,10 +130,32 @@ Ablations：
 - head/tail bucket analysis；
 - beam size sweep。
 
-Outputs：
+CIKM outputs：
 
 - diagnostic tables；
-- correlation heatmap；
 - failure-case visualizations；
-- cost-vs-quality curves；
+- toolkit README and examples；
 - result-to-claim matrix。
+
+## Post-CIKM Expansion Candidates
+
+只有 CIKM 版本投出或 Gate 0 证明 artifact path 稳定后，再考虑：
+
+- MIND / H&M / KuaiRec 扩展；
+- DACT drift stability；
+- deployment-cost proxy with generated candidates；
+- WSDM/SIGIR main-track empirical finding version。
+
+## CIKM 19-Day Milestones
+
+| Date | Milestone | Output | Decision |
+|---|---|---|---|
+| 2026-05-19 | ReSID + GenRec/RQ-VAE repo audit | `docs/GATE0_REPO_AUDIT.md` | continue only if mappings exportable |
+| 2026-05-20 | dataset schema audit | `docs/DATASET_SCHEMA_AUDIT.md` | freeze primary dataset |
+| 2026-05-21 | first SID mapping export | artifact sample | freeze input schema |
+| 2026-05-22 | second SID mapping export | artifact sample | Gate 0 likely pass |
+| 2026-05-23 | D1-D4 metrics v0 | diagnostic table | decide if finding exists |
+| 2026-05-24 | formal Gate 0 | `docs/GATE0_DECISION.md` | go/no-go for CIKM |
+| 2026-05-28 | paper tables/figures | diagnostic case study | submit-ready evidence |
+| 2026-05-30 | CIKM abstract | EasyChair abstract | must submit |
+| 2026-06-06 | CIKM resource paper | 4-page paper + artifact | final submission |

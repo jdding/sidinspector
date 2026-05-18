@@ -33,6 +33,14 @@ AUDIT-SID 应定位为 diagnostic methodology paper。核心 claim 是：semanti
 
 如果 Gate 0 失败，应该早停，而不是把它硬做成弱 survey 或弱 benchmark。
 
+## Frozen CIKM v0 Scope
+
+- Dataset：ReSID processed Amazon-2023 `Musical_Instruments` first；Amazon 2014 Beauty/Sports backup。
+- Methods：RQ-VAE/TIGER-style SID + ReSID + random/popularity/category sanity ID baseline。
+- Diagnostics：D1 codebook utilization；D2 collision harm；D3 semantic-collaborative alignment；D4 head-tail capacity allocation。
+- Optional：D5 deployment-cost proxy；D6 drift stability / DACT。
+- Paper type：4-page CIKM 2026 Resource paper。
+
 ## Venue Decision
 
 目标不应按普通 recommender algorithm paper 选择。当前 venue plan：

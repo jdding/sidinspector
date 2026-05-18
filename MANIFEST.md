@@ -114,3 +114,10 @@
 | 2026-05-18 13:47 | strategy | refine-logs/PIPELINE_SUMMARY.md | implementation | pipeline summary updated with CIKM 2026 target |
 | 2026-05-18 13:47 | strategy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with CIKM 2026 target and Gate 0 deadline |
 | 2026-05-18 13:47 | strategy | findings.md | idea-discovery | append-only venue strategy change |
+| 2026-05-18 13:52 | /experiment-plan | docs/AUDIT_SID_CIKM_EXECUTION_SPEC_20260518_135256.md | implementation | timestamped CIKM execution spec with dataset/method/diagnostic decisions |
+| 2026-05-18 13:52 | /experiment-plan | docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md | implementation | latest copy |
+| 2026-05-18 13:52 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | experiment plan refreshed with frozen CIKM v0 scope |
+| 2026-05-18 13:52 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker expanded with Gate 0 audit tasks |
+| 2026-05-18 13:52 | /experiment-plan | refine-logs/PIPELINE_SUMMARY.md | implementation | pipeline summary updated with frozen CIKM v0 scope |
+| 2026-05-18 13:52 | /experiment-plan | README.md | idea-discovery | entrypoint updated with frozen CIKM v0 scope |
+| 2026-05-18 13:52 | /experiment-plan | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with frozen CIKM v0 scope |
