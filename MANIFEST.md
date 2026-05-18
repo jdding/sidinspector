@@ -400,3 +400,9 @@
 | 2026-05-18 22:20 | /autodl-cloud-deploy | tools/autodl_audit_sid/gate0_experiment_matrix.tsv | implementation | matrix CARD entries aligned with canonical Sports vertical |
 | 2026-05-18 22:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_222012.md | implementation | timestamped tracker after CARD canonical-vertical queue alignment |
 | 2026-05-18 22:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated before GPU launch with CARD canonical queue alignment |
+| 2026-05-18 23:33 | /run-experiment | docs/GATE0_RESULTS_20260518_233331.md | implementation | timestamped Gate 0 Sports diagnostic matrix result report |
+| 2026-05-18 23:33 | /run-experiment | docs/GATE0_RESULTS.md | implementation | latest Gate 0 Sports diagnostic matrix result report |
+| 2026-05-18 23:33 | /run-experiment | _gate0_artifacts/autodl_runs/gate0_summary_current.csv | implementation | ignored pulled AutoDL Gate 0 summary CSV with CARD, ReSID proxy, and sanity controls |
+| 2026-05-18 23:33 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_233331.md | implementation | timestamped tracker after Gate 0 Sports matrix closure |
+| 2026-05-18 23:33 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker updated with Gate 0 Sports matrix closure |
+| 2026-05-18 23:33 | /idea-discovery | findings.md | implementation | append-only Gate 0 closure finding |
