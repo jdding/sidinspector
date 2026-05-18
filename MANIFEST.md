@@ -283,3 +283,17 @@
 | 2026-05-18 19:06 | /idea-discovery | README.md | idea-discovery | entrypoint updated with Cluster A preflight link |
 | 2026-05-18 19:06 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with AutoDL CARD fallback queue |
 | 2026-05-18 19:06 | /idea-discovery | findings.md | idea-discovery | append-only Cluster A preflight finding |
+| 2026-05-18 19:13 | /run-experiment | tools/autodl_audit_sid/preflight_autodl.sh | implementation | AutoDL asset/runtime preflight script |
+| 2026-05-18 19:13 | /run-experiment | tools/autodl_audit_sid/run_autodl_gate0_queue.sh | implementation | AutoDL quick/robust/quality Gate 0 queue runner |
+| 2026-05-18 19:13 | /run-experiment | tools/autodl_audit_sid/summarize_gate0_runs.py | implementation | AutoDL Gate 0 metrics summarizer |
+| 2026-05-18 19:13 | /run-experiment | _gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_191357.tar.gz | implementation | ignored AutoDL transfer bundle refreshed with CARD fallback |
+| 2026-05-18 19:19 | /run-experiment | tools/autodl_audit_sid/run_remote_audit_sid.sh | implementation | AutoDL-cloud-deploy aligned remote runner with hardware/commit logging and archive |
+| 2026-05-18 19:19 | /run-experiment | docs/AUTODL_READY_HANDOFF_20260518_191357.md | implementation | timestamped AutoDL handoff corrected against autodl-cloud-deploy |
+| 2026-05-18 19:18 | /run-experiment | _gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_191815.tar.gz | implementation | ignored AutoDL transfer bundle refreshed with remote runner |
+| 2026-05-18 19:18 | /run-experiment | docs/AUTODL_READY_HANDOFF_20260518_191815.md | implementation | timestamped AutoDL handoff with latest bundle checksum |
+| 2026-05-18 19:19 | /run-experiment | docs/AUTODL_READY_HANDOFF.md | implementation | latest copy |
+| 2026-05-18 19:19 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_191912.md | implementation | timestamped tracker after AutoDL handoff alignment |
+| 2026-05-18 19:19 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after AutoDL handoff alignment |
+| 2026-05-18 19:19 | /idea-discovery | README.md | idea-discovery | entrypoint updated with AutoDL handoff link |
+| 2026-05-18 19:19 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with AutoDL remote runner |
+| 2026-05-18 19:19 | /idea-discovery | findings.md | idea-discovery | append-only AutoDL handoff finding |
