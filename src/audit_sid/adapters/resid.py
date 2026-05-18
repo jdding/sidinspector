@@ -83,6 +83,7 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--dataset-name", default="Musical_Instruments")
     parser.add_argument("--gaoq-mapping", type=Path, default=None)
+    parser.add_argument("--method", default="resid_gaoq")
     args = parser.parse_args()
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -96,7 +97,7 @@ def main() -> None:
     if args.gaoq_mapping:
         sid_assignments = normalize_gaoq_mapping(
             args.gaoq_mapping,
-            method="resid_gaoq",
+            method=args.method,
             dataset=args.dataset_name,
         )
         sid_assignments.to_parquet(args.output_dir / "sid_assignments.parquet", index=False)
