@@ -150,3 +150,7 @@
 | 2026-05-18 15:07 | /experiment-plan | README.md | idea-discovery | entrypoint updated with Cluster A + B + sanity rule |
 | 2026-05-18 15:07 | /experiment-plan | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with Cluster A + B + sanity rule |
 | 2026-05-18 15:07 | /idea-discovery | findings.md | idea-discovery | append-only correction documenting deprecated B/C split |
+| 2026-05-18 15:13 | /idea-discovery | docs/PROJECT_SPEC_20260518_151326.md | idea-discovery | timestamped unified AUDIT-SID project spec |
+| 2026-05-18 15:13 | /idea-discovery | docs/PROJECT_SPEC.md | idea-discovery | latest unified AUDIT-SID project spec |
+| 2026-05-18 15:13 | /idea-discovery | README.md | idea-discovery | entrypoint updated with project spec link |
+| 2026-05-18 15:13 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with project spec link |

@@ -15,9 +15,10 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 9. `refine-logs/PIPELINE_SUMMARY.md`
 10. `refine-logs/EXPERIMENT_TRACKER.md`
 11. `docs/AUDIT_SID_VENUE_PLAN.md`
-12. `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`
-13. `docs/SID_METHOD_CLUSTER_AUDIT.md`
-14. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
+12. `docs/PROJECT_SPEC.md`
+13. `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`
+14. `docs/SID_METHOD_CLUSTER_AUDIT.md`
+15. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
 
 ## Current Thesis
 

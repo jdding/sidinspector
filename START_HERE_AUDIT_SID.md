@@ -39,6 +39,7 @@ Evaluate whether AUDIT-SID can become a public-first methodology paper:
 8. `refine-logs/PIPELINE_SUMMARY.md`
 9. `refine-logs/EXPERIMENT_TRACKER.md`
 10. `docs/AUDIT_SID_VENUE_PLAN.md`
+11. `docs/PROJECT_SPEC.md`
 
 ## Active Decision
 
@@ -58,6 +59,7 @@ No full training should start before Gate 0 passes.
 ## Frozen CIKM v0 Scope
 
 Read `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md` before changing scope.
+Read `docs/PROJECT_SPEC.md` as the unified execution contract.
 Read `docs/SID_METHOD_CLUSTER_AUDIT.md` before deciding methods.
 Read `docs/METHOD_REPRESENTATIVENESS_AUDIT.md` before launching any artifact extraction or training.
 
