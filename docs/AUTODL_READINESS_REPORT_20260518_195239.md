@@ -4,9 +4,9 @@
 
 ## Bundle
 
-- Path: `_gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_195614.tar.gz`
-- Size bytes: `31134581`
-- SHA256: `bb5031a8a812ad03472fbd02e34f21c8757a06e84591f577a1a27682da59d4f5`
+- Path: `_gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_195228.tar.gz`
+- Size bytes: `31129169`
+- SHA256: `c53c6d96d18fb09cc34ea231c4c14e820d562ef9f092cd45459c4ef6eaef2de5`
 
 ## Input Artifacts
 

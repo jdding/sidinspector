@@ -213,11 +213,15 @@ def head_tail_capacity(sid: pd.DataFrame, interactions: pd.DataFrame) -> pd.Data
         key_values = dict(zip(_group_cols(sid), group_key))
         group_interactions = _filter_dataset(interactions, key_values.get("dataset"))
         popularity = _train_events(group_interactions).groupby("item_id").size().rename("popularity").reset_index()
-        popularity["bucket"] = pd.qcut(
-            popularity["popularity"].rank(method="first"),
-            q=3,
-            labels=["tail", "mid", "head"],
-        )
+        if popularity.empty:
+            popularity["bucket"] = pd.Series(dtype="object")
+        else:
+            pct_rank = popularity["popularity"].rank(method="first", pct=True)
+            popularity["bucket"] = np.select(
+                [pct_rank <= 1 / 3, pct_rank <= 2 / 3],
+                ["tail", "mid"],
+                default="head",
+            )
         merged = group.merge(popularity[["item_id", "bucket"]], on="item_id", how="left").fillna({"bucket": "tail"})
         for bucket, bucket_df in merged.groupby("bucket", observed=False):
             rows.append(

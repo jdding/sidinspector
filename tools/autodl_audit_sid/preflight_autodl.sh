@@ -3,6 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="${ROOT_DIR:-$(pwd)}"
 PYTHON_BIN="${PYTHON_BIN:-}"
+REQUIRE_CUDA="${REQUIRE_CUDA:-0}"
 
 if [ -z "$PYTHON_BIN" ]; then
   for candidate in python3 python /root/miniconda3/bin/python; do
@@ -27,6 +28,10 @@ if command -v nvidia-smi >/dev/null 2>&1; then
   nvidia-smi --query-gpu=index,name,memory.used,memory.total,driver_version --format=csv,noheader
 else
   echo "[AUDIT-SID preflight] nvidia-smi not found"
+  if [ "$REQUIRE_CUDA" = "1" ]; then
+    echo "[AUDIT-SID preflight] REQUIRE_CUDA=1 but nvidia-smi is unavailable" >&2
+    exit 4
+  fi
 fi
 
 if command -v screen >/dev/null 2>&1; then
@@ -58,8 +63,10 @@ done
 
 "$PYTHON_BIN" - <<'PY'
 import importlib
+import sys
 
 mods = ["numpy", "pandas", "pyarrow", "torch"]
+missing = []
 for mod in mods:
     try:
         m = importlib.import_module(mod)
@@ -67,6 +74,10 @@ for mod in mods:
         print(f"[AUDIT-SID preflight] import {mod}: OK {version}")
     except Exception as exc:
         print(f"[AUDIT-SID preflight] import {mod}: MISSING {type(exc).__name__}: {exc}")
+        missing.append(mod)
+if missing:
+    print(f"[AUDIT-SID preflight] missing required modules: {missing}", file=sys.stderr)
+    raise SystemExit(5)
 
 try:
     import torch
@@ -76,6 +87,18 @@ try:
 except Exception as exc:
     print(f"[AUDIT-SID preflight] torch cuda check failed: {exc}")
 PY
+
+if [ "$REQUIRE_CUDA" = "1" ]; then
+  "$PYTHON_BIN" - <<'PY'
+import sys
+import torch
+
+if not torch.cuda.is_available():
+    print("[AUDIT-SID preflight] REQUIRE_CUDA=1 but torch.cuda.is_available=False", file=sys.stderr)
+    raise SystemExit(4)
+print("[AUDIT-SID preflight] CUDA_REQUIRED_OK")
+PY
+fi
 
 if "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" --card-dir "$ROOT_DIR/_gate0_repos/CARD"; then
   echo "[AUDIT-SID preflight] CARD_SOURCE_READY"

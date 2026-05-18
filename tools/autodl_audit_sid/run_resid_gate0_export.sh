@@ -46,7 +46,7 @@ else
   echo "[AUDIT-SID] SKIP_PIP_INSTALL=1; using existing Python environment"
 fi
 
-"$PYTHON_BIN" - <<'PY'
+RESID_DIR="$RESID_DIR" "$PYTHON_BIN" - <<'PY'
 from pathlib import Path
 import os
 

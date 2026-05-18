@@ -1,6 +1,6 @@
 # AutoDL Ready Handoff
 
-**生成时间**：2026-05-18 19:56:14 CST
+**生成时间**：2026-05-18 19:53:02 CST
 **状态**：QUICK_SMOKE_READY / FORMAL_GATE0_BLOCKED_CARD_SOURCE
 **AutoDL skill**：aligned with `autodl-cloud-deploy` after correction
 
@@ -9,7 +9,7 @@
 Local bundle:
 
 ```text
-_gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_195614.tar.gz
+_gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_195228.tar.gz
 ```
 
 Size: `30M`
@@ -17,7 +17,7 @@ Size: `30M`
 SHA256:
 
 ```text
-bb5031a8a812ad03472fbd02e34f21c8757a06e84591f577a1a27682da59d4f5
+c53c6d96d18fb09cc34ea231c4c14e820d562ef9f092cd45459c4ef6eaef2de5
 ```
 
 The bundle includes:
@@ -44,7 +44,7 @@ After uploading the bundle to AutoDL:
 
 ```bash
 mkdir -p /root/autodl-tmp/Sec_phrase
-tar -xzf audit_sid_autodl_20260518_195614.tar.gz -C /root/autodl-tmp/Sec_phrase
+tar -xzf audit_sid_autodl_20260518_195228.tar.gz -C /root/autodl-tmp/Sec_phrase
 cd /root/autodl-tmp/Sec_phrase
 ```
 

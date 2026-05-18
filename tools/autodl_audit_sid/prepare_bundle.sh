@@ -5,8 +5,22 @@ ROOT_DIR="${ROOT_DIR:-$(pwd)}"
 OUT_DIR="${OUT_DIR:-$ROOT_DIR/_gate0_artifacts/autodl_bundle}"
 STAMP="$(date +%Y%m%d_%H%M%S)"
 BUNDLE="$OUT_DIR/audit_sid_autodl_$STAMP.tar.gz"
+PROVENANCE="docs/AUTODL_BUNDLE_PROVENANCE.md"
 
 mkdir -p "$OUT_DIR"
+
+{
+  echo "# AutoDL Bundle Provenance"
+  echo
+  echo "created_at=$(date +%Y-%m-%dT%H:%M:%S%z)"
+  echo "bundle=$BUNDLE"
+  echo "git_commit=$(git rev-parse --short HEAD 2>/dev/null || echo unknown)"
+  echo "git_message=$(git log -1 --format='%s' 2>/dev/null || echo N/A)"
+  echo
+  echo "## Git Status"
+  echo
+  git status --short 2>/dev/null || true
+} > "$PROVENANCE"
 
 tar -czf "$BUNDLE" \
   --exclude='*/.git' \

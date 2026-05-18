@@ -46,10 +46,24 @@ def main() -> None:
     matrix = pd.read_csv(args.matrix, sep="\t")
     card_status, card_missing = card_source_status()
 
+    if card_status == "OK":
+        status = "TRANSFER_READY / RUNNER_READY / FULL_REPRO_BLOCKED_NO_GPU"
+        preferred_label = "Preferred robust runner:"
+        preferred_mode = "robust"
+        followup = "Use `QUEUE_MODE=sweep` only after quick or robust passes."
+    else:
+        status = "QUICK_SMOKE_READY / FORMAL_GATE0_BLOCKED_CARD_SOURCE"
+        preferred_label = "Only bounded quick smoke is recommended until CARD/Cluster-A source is repaired:"
+        preferred_mode = "quick"
+        followup = (
+            "Do not run `robust`, `sweep`, or `quality` unless CARD source is repaired, "
+            "or unless `ALLOW_RESID_ONLY=1` is intentionally set for ReSID-only debugging."
+        )
+
     lines = [
         "# AUDIT-SID AutoDL Readiness Report",
         "",
-        "**Status**: TRANSFER_READY / RUNNER_READY / FULL_REPRO_BLOCKED_NO_GPU",
+        f"**Status**: {status}",
         "",
         "## Bundle",
         "",
@@ -106,15 +120,15 @@ def main() -> None:
             "",
             "## Launch Command",
             "",
-            "Preferred robust runner:",
+            preferred_label,
             "",
             "```bash",
             "cd /root/autodl-tmp/Sec_phrase",
-            "QUEUE_MODE=robust DEVICE=cuda:0 NUM_WORKERS=8 PYTHON_BIN=python3 \\",
+            f"QUEUE_MODE={preferred_mode} DEVICE=cuda:0 NUM_WORKERS=8 PYTHON_BIN=python3 \\",
             "bash tools/autodl_audit_sid/run_remote_audit_sid.sh",
             "```",
             "",
-            "Use `QUEUE_MODE=sweep` only after quick or robust passes.",
+            followup,
         ]
     )
 

@@ -8,8 +8,34 @@ NUM_WORKERS="${NUM_WORKERS:-8}"
 SUMMARY_PATH="${SUMMARY_PATH:-$ROOT_DIR/_gate0_artifacts/autodl_runs/gate0_summary.csv}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 CARD_SOURCE_FAIL="${CARD_SOURCE_FAIL:-skip}"
+SKIP_QUEUE_PIP_INSTALL="${SKIP_QUEUE_PIP_INSTALL:-0}"
+ALLOW_RESID_ONLY="${ALLOW_RESID_ONLY:-0}"
 
-bash "$ROOT_DIR/tools/autodl_audit_sid/preflight_autodl.sh"
+mkdir -p "$ROOT_DIR/_gate0_artifacts/autodl_runs"
+
+REQUIRE_CUDA=1 bash "$ROOT_DIR/tools/autodl_audit_sid/preflight_autodl.sh"
+
+CARD_READY=1
+if ! "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" \
+    --card-dir "$ROOT_DIR/_gate0_repos/CARD"; then
+  CARD_READY=0
+fi
+
+if [ "$CARD_READY" != "1" ] && [ "$QUEUE_MODE" != "quick" ] && [ "$ALLOW_RESID_ONLY" != "1" ]; then
+  echo "[AUDIT-SID queue] CARD/Cluster-A source is incomplete; refusing QUEUE_MODE=$QUEUE_MODE." >&2
+  echo "[AUDIT-SID queue] Run QUEUE_MODE=quick for bounded smoke, or set ALLOW_RESID_ONLY=1 explicitly." >&2
+  exit 21
+fi
+
+if [ "$SKIP_QUEUE_PIP_INSTALL" != "1" ]; then
+  "$PYTHON_BIN" -m pip install -q \
+    pyyaml tqdm pandas pyarrow transformers scikit-learn scipy \
+    numpy==1.26.4 k-means-constrained==0.7.3
+else
+  echo "[AUDIT-SID queue] SKIP_QUEUE_PIP_INSTALL=1; using existing Python environment"
+fi
+
+export SKIP_PIP_INSTALL=1
 
 run_card() {
   local exp_id="$1"
@@ -17,8 +43,7 @@ run_card() {
   local seed="$3"
   local widths="$4"
   local layers="$5"
-  if ! "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" \
-      --card-dir "$ROOT_DIR/_gate0_repos/CARD"; then
+  if [ "$CARD_READY" != "1" ]; then
     echo "[AUDIT-SID queue] CARD source incomplete for $exp_id"
     if [ "$CARD_SOURCE_FAIL" = "skip" ]; then
       mkdir -p "$ROOT_DIR/_gate0_artifacts/autodl_runs/$exp_id"
@@ -70,6 +95,7 @@ esac
 
 PYTHONPATH="$ROOT_DIR/src" "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/summarize_gate0_runs.py" \
   --run-root "$ROOT_DIR/_gate0_artifacts/autodl_runs" \
-  --output "$SUMMARY_PATH"
+  --output "$SUMMARY_PATH" \
+  --strict
 
 echo "[AUDIT-SID queue] summary=$SUMMARY_PATH"
