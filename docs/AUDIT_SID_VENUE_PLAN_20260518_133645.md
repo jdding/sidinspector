@@ -17,6 +17,21 @@ AUDIT-SID 的投稿目标不应按普通 recommender algorithm paper 选择。�
 
 如果某个会议只有普通 research track，而没有类似 track，则 AUDIT-SID 必须升级成强 empirical finding full paper，否则不应作为主目标。
 
+**2026-05-18 更新**：考虑到 SIGIR 2027 太晚，会导致持续追新疲劳，当前执行目标应改为：
+
+> CIKM 2026 Resource Track.
+
+理由很直接：CIKM 2026 Resource Track 明确接收 dataset/protocol、software resources、open-source frameworks、tools/libraries for evaluation and exploration；deadline 也最近，能迫使 AUDIT-SID 收敛成一个可交付的 v0 resource paper。
+
+关键日期：
+
+- Abstract deadline: 2026-05-30 AoE
+- Paper deadline: 2026-06-06 AoE
+- Notification: 2026-08-07
+- Camera-ready: 2026-08-20
+
+这意味着原本“28 天完成”不够；如果选择 CIKM 2026，必须按 **19 天 full-paper sprint** 执行。
+
 ## 28 天版本的定位
 
 如果 2026-06-15 前完成，最现实的产物是：
@@ -34,6 +49,7 @@ AUDIT-SID 的投稿目标不应按普通 recommender algorithm paper 选择。�
 
 | Venue / Track | 是否自然接收 AUDIT-SID | 当前判断 |
 |---|---|---|
+| CIKM 2026 Resource Track | 是 | 最近可投；当前应作为 primary execution target |
 | SIGIR Resource & Reproducibility-style track | 是 | 最自然主目标；需要等 SIGIR 2027 CFP 确认是否延续 |
 | RecSys Reproducibility / Resource | 是，但 2026 已错过 paper deadline | 2027 适合；2026 只剩 R&P / demo 可做曝光 |
 | CIKM Resource Track | 是 | 稳健目标；资源/toolkit/benchmark 形态匹配 |
@@ -45,11 +61,50 @@ AUDIT-SID 的投稿目标不应按普通 recommender algorithm paper 选择。�
 
 ## Venue Ranking
 
-### Tier 1: 主目标
+### Immediate Target: CIKM 2026 Resource Track
+
+**推荐度**：当前最高。
+
+理由：
+
+- track 类型明确匹配：resource / protocol / open-source framework / tool / evaluation library；
+- deadline 最近，可以避免 AUDIT-SID 被后续 SID 方法持续刷新拖垮；
+- 4-page resource paper 适合 v0：不要求展开完整 full-paper 级别的理论和大规模实验；
+- CIKM audience 覆盖 information retrieval、data mining、knowledge management、machine learning，AUDIT-SID 的 generative retrieval / recommendation tokenizer diagnostic 能自然落进去。
+
+应投的版本：
+
+> AUDIT-SID: An Open Diagnostic Toolkit for Semantic-ID Tokenizers in Generative Recommendation and Retrieval
+
+核心交付：
+
+1. 一个 public toolkit；
+2. 一个清楚的 diagnostic taxonomy；
+3. 至少两个 tokenizer family 的 artifact extraction；
+4. 至少一个公开数据集上的 non-trivial diagnostic case study；
+5. 文档、examples、reproducible scripts。
+
+不应承诺：
+
+- 完整覆盖所有 SID 方法；
+- 工业部署结论；
+- 大规模 benchmark leaderboard；
+- 新 tokenizer algorithm。
+
+Go/No-Go：
+
+- **2026-05-24 前**必须确认两个 tokenizer implementation 可导出 item-to-SID mapping；
+- **2026-05-28 前**必须有一个 dataset 上的 diagnostic table；
+- **2026-05-30 前**提交 abstract；
+- **2026-06-06 前**提交 4-page paper + artifact link。
+
+如果 2026-05-24 Gate 0 不过，放弃 CIKM 2026 Resource，不硬投。
+
+### Tier 1: Later Formal Targets
 
 #### SIGIR 2027 Resource & Reproducibility-style Track
 
-**推荐度**：最高。
+**推荐度**：长期最高，但不是当前执行目标。
 
 理由：
 
@@ -74,6 +129,7 @@ AUDIT-SID 的投稿目标不应按普通 recommender algorithm paper 选择。�
 关键依赖：
 
 - SIGIR 2027 必须继续设置 Resource/Reproducibility 或类似 track；若没有，则转 WSDM/SIGIR main 需要更强 empirical finding。
+- 如果 CIKM 2026 Resource 已投或已中，SIGIR 2027 只能作为显著扩展版，避免 self-plagiarism 和贡献重复。
 
 #### RecSys 2027 Reproducibility / Resource Track
 
@@ -105,6 +161,8 @@ AUDIT-SID 的投稿目标不应按普通 recommender algorithm paper 选择。�
 - 4-page resource paper 版本；
 - 必须提供公开 artifact、文档、examples、可复现 scripts；
 - 如果是 dataset/benchmark，需考虑 DOI/metadata/provenance。
+
+如果 CIKM 2026 没赶上或 Gate 0 未过，CIKM 2027 才重新成为稳健目标。
 
 #### NeurIPS 2027 Evaluations & Datasets
 
@@ -191,20 +249,22 @@ WSDM 接收 search/data mining/recommendation/evaluation 相关 research，但�
 
 ## 建议路线
 
-### Phase 0: 2026-05-18 至 2026-06-15
+### Phase 0: 2026-05-18 至 2026-06-06
 
 目标：
 
 - 完成 Gate 0；
 - 导出至少两个 tokenizer family 的 item-to-SID mappings；
 - 完成 diagnostic toolkit v0；
-- arXiv + GitHub 初版；
-- 明确 1-2 个非平凡发现。
+- 提交 CIKM 2026 Resource abstract and paper；
+- 明确至少 1 个非平凡 diagnostic case study。
 
 结果判定：
 
-- 如果只有 toolkit，没有 finding：只 arXiv，不急投。
-- 如果有强 finding：进入 SIGIR/WSDM full paper prep。
+- 如果 2026-05-24 Gate 0 未过：不投 CIKM 2026；
+- 如果只有 toolkit，没有 finding：可投 CIKM Resource，但风险较高；
+- 如果有至少一个 diagnostic finding：正常投 CIKM Resource；
+- paper 后再发布 arXiv/GitHub，注意与 CIKM policy 一致。
 
 ### Phase 1: 2026-06 至 2026-08
 
@@ -241,11 +301,11 @@ WSDM 接收 search/data mining/recommendation/evaluation 相关 research，但�
 
 短期：
 
-> 2026-06-15 左右发布 arXiv + GitHub v0。
+> 2026-06-06 前冲 CIKM 2026 Resource Track；是否 arXiv/GitHub v0 放在投稿策略之后处理。
 
 正式目标：
 
-> SIGIR 2027 Resource/Reproducibility-style track 优先；RecSys 2027 Resource/Reproducibility 与 CIKM 2027 Resource 是自然备选；WSDM 2027 只有在有强 empirical finding 时才作为 main-track 目标。
+> 当前 primary execution target 是 CIKM 2026 Resource Track。SIGIR 2027 / RecSys 2027 / CIKM 2027 作为后续扩展或错过 CIKM 2026 后的备选。
 
 可选曝光：
 

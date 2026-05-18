@@ -59,8 +59,9 @@ No full training should start before Gate 0 passes.
 
 Read `docs/AUDIT_SID_VENUE_PLAN.md` before expanding experiments. Current recommendation:
 
-- arXiv + GitHub v0 around 2026-06-15 if Gate 0 passes;
-- SIGIR 2027 as the primary full-paper target;
-- WSDM 2027 as the second target;
-- CIKM 2027 as a robust fallback;
-- RecSys 2026 workshop/demo/R&P only as optional visibility.
+- CIKM 2026 Resource Track is the immediate target;
+- abstract deadline: 2026-05-30 AoE;
+- paper deadline: 2026-06-06 AoE;
+- Gate 0 must pass by 2026-05-24;
+- if Gate 0 fails, do not force a weak CIKM submission;
+- SIGIR 2027 / RecSys 2027 / CIKM 2027 are later backup or expansion targets.

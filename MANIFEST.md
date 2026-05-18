@@ -108,3 +108,9 @@
 | 2026-05-18 13:36 | strategy | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with venue target |
 | 2026-05-18 13:36 | strategy | refine-logs/PIPELINE_SUMMARY.md | implementation | pipeline summary updated with venue target |
 | 2026-05-18 13:36 | strategy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with venue target |
+| 2026-05-18 13:47 | strategy | docs/AUDIT_SID_VENUE_PLAN.md | implementation | venue plan updated to target CIKM 2026 Resource Track |
+| 2026-05-18 13:47 | strategy | README.md | idea-discovery | entrypoint updated with CIKM 2026 target |
+| 2026-05-18 13:47 | strategy | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with CIKM 2026 target |
+| 2026-05-18 13:47 | strategy | refine-logs/PIPELINE_SUMMARY.md | implementation | pipeline summary updated with CIKM 2026 target |
+| 2026-05-18 13:47 | strategy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with CIKM 2026 target and Gate 0 deadline |
+| 2026-05-18 13:47 | strategy | findings.md | idea-discovery | append-only venue strategy change |

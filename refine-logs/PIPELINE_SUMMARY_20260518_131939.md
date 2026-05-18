@@ -37,8 +37,9 @@ AUDIT-SID 应定位为 diagnostic methodology paper。核心 claim 是：semanti
 
 目标不应按普通 recommender algorithm paper 选择。当前 venue plan：
 
-- 2026-06-15 左右：arXiv + GitHub v0；
-- 主目标：SIGIR 2027 Resource/Reproducibility-style track；
-- 自然备选：RecSys 2027 Resource/Reproducibility，CIKM 2027 Resource；
-- 条件性目标：WSDM 2027 main track，只有在有强 empirical finding 时成立；
-- 短期曝光：RecSys 2026 workshop/demo/R&P，如时间和 artifact 质量允许。
+- immediate target：CIKM 2026 Resource Track；
+- abstract deadline：2026-05-30 AoE；
+- paper deadline：2026-06-06 AoE；
+- Gate 0 deadline：2026-05-24，必须确认至少两个 tokenizer implementation 可导出 item-to-SID mapping；
+- later backup：SIGIR 2027 Resource/Reproducibility-style track，RecSys 2027 Resource/Reproducibility，CIKM 2027 Resource；
+- WSDM 2027 main 只有在出现强 empirical finding 时成立。

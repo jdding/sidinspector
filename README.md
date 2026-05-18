@@ -30,9 +30,14 @@ Do not launch full experiments before Gate 0 and dataset support audit pass.
 
 ## Venue Target
 
-Short-term target: arXiv + GitHub v0 around 2026-06-15 if Gate 0 passes.
+Short-term target: CIKM 2026 Resource Track.
 
-Formal target: SIGIR 2027 first, WSDM 2027 second, CIKM 2027 as robust fallback. RecSys 2026 workshop/demo/R&P is optional visibility only, not the main target.
+Key dates:
+
+- Abstract: 2026-05-30 AoE
+- Paper: 2026-06-06 AoE
+
+Gate 0 must pass by 2026-05-24. If not, do not force a weak CIKM submission. Longer-term backups are SIGIR 2027 Resource/Reproducibility-style track, RecSys 2027 Resource/Reproducibility, and CIKM 2027 Resource.
 
 ## Boundary
 
