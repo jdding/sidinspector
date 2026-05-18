@@ -75,6 +75,41 @@ def patch_gaoq(resid_dir: Path) -> list[str]:
     return changed
 
 
+def patch_custom_t5(resid_dir: Path) -> list[str]:
+    path = resid_dir / "model" / "module" / "custom_t5.py"
+    text = path.read_text()
+    changed = []
+
+    old = (
+        "from transformers.pytorch_utils import (\n"
+        "    find_pruneable_heads_and_indices,\n"
+        "    prune_linear_layer,\n"
+        ")\n"
+    )
+    new = (
+        "from transformers.pytorch_utils import prune_linear_layer\n"
+        "try:\n"
+        "    from transformers.pytorch_utils import find_pruneable_heads_and_indices\n"
+        "except ImportError:\n"
+        "    def find_pruneable_heads_and_indices(heads, n_heads, head_size, already_pruned_heads):\n"
+        "        mask = torch.ones(n_heads, head_size)\n"
+        "        heads = set(heads) - already_pruned_heads\n"
+        "        for head in heads:\n"
+        "            head = head - sum(1 if h < head else 0 for h in already_pruned_heads)\n"
+        "            mask[head] = 0\n"
+        "        mask = mask.view(-1).contiguous().eq(1)\n"
+        "        index = torch.arange(len(mask))[mask].long()\n"
+        "        return heads, index\n"
+    )
+    text, did_change = replace_once(text, old, new, "custom_t5.prune_heads_fallback")
+    if did_change:
+        changed.append("custom_t5.prune_heads_fallback")
+
+    if changed:
+        path.write_text(text)
+    return changed
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--resid-dir", type=Path, required=True)
@@ -86,6 +121,7 @@ def main() -> int:
     changed = []
     changed.extend(patch_utils(args.resid_dir))
     changed.extend(patch_gaoq(args.resid_dir))
+    changed.extend(patch_custom_t5(args.resid_dir))
 
     if changed:
         print("RESID_RUNTIME_PATCHED " + ",".join(changed))
