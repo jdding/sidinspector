@@ -481,3 +481,10 @@
 | 2026-05-19 02:59 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_025958.md | implementation | timestamped tracker after ReSID Sports GAOQ stop and Cluster B pivot |
 | 2026-05-19 02:59 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records ReSID Sports GAOQ stop and Cluster B pivot |
 | 2026-05-19 02:59 | /idea-discovery | findings.md | implementation | append-only Cluster B route pivot finding |
+| 2026-05-19 03:09 | /idea-discovery | docs/D3_COLLABORATIVE_ALIGNMENT_20260519_030945.md | implementation | timestamped D3 co-occurrence collaborative alignment upgrade |
+| 2026-05-19 03:09 | /idea-discovery | docs/D3_COLLABORATIVE_ALIGNMENT.md | implementation | latest D3 co-occurrence collaborative alignment upgrade |
+| 2026-05-19 03:09 | /idea-discovery | src/audit_sid/metrics.py | implementation | D3 now reports collaborative top-k prefix recall and split fallback |
+| 2026-05-19 03:09 | /idea-discovery | tests/test_metrics.py | validation | unit smoke for D3 collaborative reference and non-train split fallback |
+| 2026-05-19 03:09 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_030945.md | implementation | timestamped tracker after D3 upgrade |
+| 2026-05-19 03:09 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records D3 upgrade |
+| 2026-05-19 03:09 | /idea-discovery | findings.md | implementation | append-only D3 collaborative alignment finding |

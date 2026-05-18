@@ -34,7 +34,10 @@ def _group_cols(frame: pd.DataFrame) -> list[str]:
 
 
 def _train_events(interactions: pd.DataFrame) -> pd.DataFrame:
-    return interactions[interactions["split"] == "train"] if "split" in interactions.columns else interactions
+    if "split" not in interactions.columns:
+        return interactions
+    train = interactions[interactions["split"] == "train"]
+    return train if not train.empty else interactions
 
 
 def _filter_dataset(frame: pd.DataFrame, dataset: object) -> pd.DataFrame:
@@ -177,7 +180,7 @@ def collision(sid: pd.DataFrame, interactions: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def alignment(sid: pd.DataFrame, item_metadata: pd.DataFrame) -> pd.DataFrame:
+def _category_alignment(sid: pd.DataFrame, item_metadata: pd.DataFrame) -> pd.DataFrame:
     rows = []
     if item_metadata["category"].isna().any():
         raise ValueError("item_metadata contains null category values")
@@ -203,6 +206,140 @@ def alignment(sid: pd.DataFrame, item_metadata: pd.DataFrame) -> pd.DataFrame:
             }
         )
     return pd.DataFrame(rows)
+
+
+def _collaborative_neighbor_edges(
+    interactions: pd.DataFrame,
+    item_ids: set[int],
+    top_k: int,
+    max_pair_events: int,
+    max_user_items: int,
+) -> tuple[pd.DataFrame, dict[str, int]]:
+    events = _train_events(interactions)[["user_id", "item_id"]].drop_duplicates()
+    events = events[events["item_id"].astype(int).isin(item_ids)]
+    if events.empty:
+        return pd.DataFrame(columns=["item_id", "neighbor_item_id", "co_count", "rank"]), {
+            "users_used": 0,
+            "pair_events": 0,
+            "collab_items": 0,
+        }
+
+    user_sizes = events.groupby("user_id").size()
+    eligible = user_sizes[(user_sizes >= 2) & (user_sizes <= max_user_items)].sort_index()
+    selected_users = []
+    pair_events = 0
+    for user_id, size in eligible.items():
+        user_pairs = int(size * (size - 1) // 2)
+        if selected_users and pair_events + user_pairs > max_pair_events:
+            break
+        selected_users.append(user_id)
+        pair_events += user_pairs
+    if not selected_users:
+        return pd.DataFrame(columns=["item_id", "neighbor_item_id", "co_count", "rank"]), {
+            "users_used": 0,
+            "pair_events": 0,
+            "collab_items": 0,
+        }
+
+    selected = events[events["user_id"].isin(selected_users)]
+    pairs = selected.merge(selected, on="user_id", suffixes=("_i", "_j"))
+    pairs = pairs[pairs["item_id_i"] < pairs["item_id_j"]]
+    if pairs.empty:
+        return pd.DataFrame(columns=["item_id", "neighbor_item_id", "co_count", "rank"]), {
+            "users_used": len(selected_users),
+            "pair_events": pair_events,
+            "collab_items": 0,
+        }
+
+    counts = (
+        pairs.groupby(["item_id_i", "item_id_j"])
+        .size()
+        .rename("co_count")
+        .reset_index()
+        .sort_values(["item_id_i", "co_count", "item_id_j"], ascending=[True, False, True])
+    )
+    forward = counts.rename(columns={"item_id_i": "item_id", "item_id_j": "neighbor_item_id"})
+    backward = counts.rename(columns={"item_id_j": "item_id", "item_id_i": "neighbor_item_id"})
+    directed = pd.concat([forward, backward], ignore_index=True)
+    directed = directed.sort_values(["item_id", "co_count", "neighbor_item_id"], ascending=[True, False, True])
+    directed["rank"] = directed.groupby("item_id").cumcount() + 1
+    directed = directed[directed["rank"] <= top_k]
+    return directed, {
+        "users_used": len(selected_users),
+        "pair_events": pair_events,
+        "collab_items": int(directed["item_id"].nunique()),
+    }
+
+
+def alignment(
+    sid: pd.DataFrame,
+    item_metadata: pd.DataFrame,
+    interactions: pd.DataFrame,
+    top_k: int = 20,
+    max_pair_events: int = 2_000_000,
+    max_user_items: int = 200,
+) -> pd.DataFrame:
+    category = _category_alignment(sid, item_metadata)
+    rows = []
+    for group_key, group in sid.groupby(_group_cols(sid)):
+        if not isinstance(group_key, tuple):
+            group_key = (group_key,)
+        key_values = dict(zip(_group_cols(sid), group_key))
+        group_interactions = _filter_dataset(interactions, key_values.get("dataset"))
+        item_ids = set(group["item_id"].astype(int))
+        edges, stats = _collaborative_neighbor_edges(
+            group_interactions,
+            item_ids=item_ids,
+            top_k=top_k,
+            max_pair_events=max_pair_events,
+            max_user_items=max_user_items,
+        )
+        level_cols = _level_cols(group)
+        prefix_frame = group[["item_id", *level_cols]].copy()
+        prefix_frame["item_id"] = prefix_frame["item_id"].astype(int)
+        if edges.empty:
+            for depth in range(1, len(level_cols) + 1):
+                rows.append(
+                    {
+                        **key_values,
+                        "prefix_depth": depth,
+                        "collab_reference": "cooccurrence",
+                        "collab_top_k": top_k,
+                        **stats,
+                        "mean_collab_prefix_recall": 0.0,
+                        "weighted_collab_prefix_recall": 0.0,
+                        "collab_edges_same_prefix_rate": 0.0,
+                    }
+                )
+            continue
+
+        for depth in range(1, len(level_cols) + 1):
+            prefix_cols = level_cols[:depth]
+            prefixes = prefix_frame[["item_id"]].copy()
+            prefixes["prefix"] = prefix_frame[prefix_cols].astype(str).agg("-".join, axis=1)
+            item_prefix = prefixes.rename(columns={"prefix": "item_prefix"})
+            neighbor_prefix = prefixes.rename(columns={"item_id": "neighbor_item_id", "prefix": "neighbor_prefix"})
+            scored = edges.merge(item_prefix, on="item_id", how="left").merge(
+                neighbor_prefix, on="neighbor_item_id", how="left"
+            )
+            same_prefix = scored["item_prefix"] == scored["neighbor_prefix"]
+            per_item = same_prefix.groupby(scored["item_id"]).agg(["sum", "count"])
+            item_recall = per_item["sum"] / per_item["count"]
+            rows.append(
+                {
+                    **key_values,
+                    "prefix_depth": depth,
+                    "collab_reference": "cooccurrence",
+                    "collab_top_k": top_k,
+                    **stats,
+                    "mean_collab_prefix_recall": float(item_recall.mean()) if not item_recall.empty else 0.0,
+                    "weighted_collab_prefix_recall": float(same_prefix.sum() / len(scored)) if len(scored) else 0.0,
+                    "collab_edges_same_prefix_rate": float(same_prefix.mean()) if len(scored) else 0.0,
+                }
+            )
+
+    collab = pd.DataFrame(rows)
+    return collab.merge(category, on=_group_cols(sid), how="left")
 
 
 def head_tail_capacity(sid: pd.DataFrame, interactions: pd.DataFrame) -> pd.DataFrame:
@@ -265,6 +402,9 @@ def main() -> None:
     parser.add_argument("--interactions", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--allow-partial-coverage", action="store_true")
+    parser.add_argument("--d3-top-k", type=int, default=20)
+    parser.add_argument("--d3-max-pair-events", type=int, default=2_000_000)
+    parser.add_argument("--d3-max-user-items", type=int, default=200)
     args = parser.parse_args()
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -277,7 +417,14 @@ def main() -> None:
         "coverage_report.csv": coverage,
         "d1_utilization.csv": utilization(sid),
         "d2_collision.csv": collision(sid, interactions),
-        "d3_alignment.csv": alignment(sid, item_metadata),
+        "d3_alignment.csv": alignment(
+            sid,
+            item_metadata,
+            interactions,
+            top_k=args.d3_top_k,
+            max_pair_events=args.d3_max_pair_events,
+            max_user_items=args.d3_max_user_items,
+        ),
         "d4_head_tail.csv": head_tail_capacity(sid, interactions),
         "d5a_deployment_cost.csv": deployment_cost(sid),
     }
