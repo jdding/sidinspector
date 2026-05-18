@@ -406,3 +406,10 @@
 | 2026-05-18 23:33 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_233331.md | implementation | timestamped tracker after Gate 0 Sports matrix closure |
 | 2026-05-18 23:33 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker updated with Gate 0 Sports matrix closure |
 | 2026-05-18 23:33 | /idea-discovery | findings.md | implementation | append-only Gate 0 closure finding |
+| 2026-05-18 23:49 | /run-experiment | docs/GATE0_DECISION_20260518_234958.md | implementation | timestamped Gate 0 re-audit decision; Gate 0 remains open |
+| 2026-05-18 23:49 | /run-experiment | docs/GATE0_DECISION.md | implementation | latest Gate 0 re-audit decision |
+| 2026-05-18 23:49 | /run-experiment | docs/GATE0_RESULTS_20260518_234958.md | implementation | timestamped corrected Gate 0 results wording |
+| 2026-05-18 23:49 | /run-experiment | docs/GATE0_RESULTS.md | implementation | latest corrected Gate 0 results wording |
+| 2026-05-18 23:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_234958.md | implementation | timestamped tracker after Gate 0 verdict correction |
+| 2026-05-18 23:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker reopens Gate 0 and Gate 0A |
+| 2026-05-18 23:49 | /idea-discovery | findings.md | implementation | append-only Gate 0 verdict correction finding |
