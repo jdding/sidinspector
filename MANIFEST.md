@@ -509,3 +509,8 @@
 | 2026-05-19 03:21 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_032126.md | implementation | timestamped tracker after paper-plan handoff |
 | 2026-05-19 03:21 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records paper-plan handoff |
 | 2026-05-19 03:21 | /idea-discovery | findings.md | implementation | append-only paper-plan finding |
+| 2026-05-19 03:24 | /paper-plan | docs/CITATION_SCAFFOLD_20260519_032407.md | writing-plan | timestamped citation scaffold with source links and verification notes |
+| 2026-05-19 03:24 | /paper-plan | docs/CITATION_SCAFFOLD.md | writing-plan | latest citation scaffold with source links and verification notes |
+| 2026-05-19 03:24 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_032407.md | implementation | timestamped tracker after citation scaffold |
+| 2026-05-19 03:24 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records citation scaffold |
+| 2026-05-19 03:24 | /idea-discovery | findings.md | implementation | append-only citation scaffold finding |
