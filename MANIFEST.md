@@ -413,3 +413,11 @@
 | 2026-05-18 23:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_234958.md | implementation | timestamped tracker after Gate 0 verdict correction |
 | 2026-05-18 23:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker reopens Gate 0 and Gate 0A |
 | 2026-05-18 23:49 | /idea-discovery | findings.md | implementation | append-only Gate 0 verdict correction finding |
+| 2026-05-19 00:08 | /run-experiment | tools/autodl_audit_sid/prepare_amazon_text_grid_inputs.py | implementation | Amazon-2023 text metadata to GRID embedding input preparer |
+| 2026-05-19 00:08 | /run-experiment | tools/autodl_audit_sid/run_grid_rqkmeans_direct_export.py | implementation | bounded official GRID MiniBatchKMeans residual SID exporter |
+| 2026-05-19 00:08 | /run-experiment | tools/autodl_audit_sid/run_grid_cluster_a_smoke.sh | implementation | AutoDL/local wrapper for GRID Cluster A smoke |
+| 2026-05-19 00:08 | /run-experiment | docs/GRID_CLUSTER_A_EXPORT_PREP_20260519_000804.md | implementation | timestamped GRID Cluster A export prep and local smoke report |
+| 2026-05-19 00:08 | /run-experiment | docs/GRID_CLUSTER_A_EXPORT_PREP.md | implementation | latest GRID Cluster A export prep and local smoke report |
+| 2026-05-19 00:08 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_000804.md | implementation | timestamped tracker after GRID Cluster A local smoke |
+| 2026-05-19 00:08 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker updated with GRID Cluster A candidate path |
+| 2026-05-19 00:08 | /idea-discovery | findings.md | implementation | append-only GRID Cluster A candidate finding |
