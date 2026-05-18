@@ -2,9 +2,10 @@
 set -euo pipefail
 
 ROOT_DIR="${ROOT_DIR:-$(pwd)}"
+DATASET_NAME="${DATASET_NAME:-Musical_Instruments}"
 CARD_DIR="${CARD_DIR:-$ROOT_DIR/_gate0_repos/CARD}"
-ITEM_METADATA="${ITEM_METADATA:-$ROOT_DIR/_gate0_artifacts/resid_musical_normalized/item_metadata.parquet}"
-INTERACTIONS="${INTERACTIONS:-$ROOT_DIR/_gate0_artifacts/resid_musical_normalized/interactions.parquet}"
+ITEM_METADATA="${ITEM_METADATA:-$ROOT_DIR/_gate0_artifacts/resid_${DATASET_NAME}_normalized/item_metadata.parquet}"
+INTERACTIONS="${INTERACTIONS:-$ROOT_DIR/_gate0_artifacts/resid_${DATASET_NAME}_normalized/interactions.parquet}"
 RUN_ROOT="${RUN_ROOT:-$ROOT_DIR/_gate0_artifacts/autodl_runs}"
 case "$RUN_ROOT" in
   /*) ;;
@@ -27,9 +28,18 @@ SKIP_PIP_INSTALL="${SKIP_PIP_INSTALL:-0}"
 
 mkdir -p "$OUT_DIR" "$CKPT_DIR"
 
+if [ ! -f "$ITEM_METADATA" ] && [ "$DATASET_NAME" = "Musical_Instruments" ]; then
+  LEGACY_DIR="$ROOT_DIR/_gate0_artifacts/resid_musical_normalized"
+  if [ -f "$LEGACY_DIR/item_metadata.parquet" ]; then
+    ITEM_METADATA="$LEGACY_DIR/item_metadata.parquet"
+    INTERACTIONS="$LEGACY_DIR/interactions.parquet"
+  fi
+fi
+
 echo "[AUDIT-SID CARD] root=$ROOT_DIR"
 echo "[AUDIT-SID CARD] exp_id=$EXP_ID"
 echo "[AUDIT-SID CARD] card_dir=$CARD_DIR"
+echo "[AUDIT-SID CARD] dataset=$DATASET_NAME"
 echo "[AUDIT-SID CARD] item_metadata=$ITEM_METADATA"
 echo "[AUDIT-SID CARD] device=$DEVICE"
 
@@ -111,7 +121,7 @@ PYTHONPATH="$ROOT_DIR/src" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \
   "$PYTHON_BIN" -m audit_sid.adapters.card \
   --codes-path "$CODE_PATH" \
   --output-dir "$OUT_DIR/normalized" \
-  --dataset-name Musical_Instruments \
+  --dataset-name "$DATASET_NAME" \
   --method card_rqvae_feature_proxy
 
 PYTHONPATH="$ROOT_DIR/src" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \

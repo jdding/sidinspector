@@ -389,3 +389,8 @@
 | 2026-05-18 22:07 | /autodl-cloud-deploy | findings.md | implementation | append-only CARD source repair finding |
 | 2026-05-18 22:12 | /autodl-cloud-deploy | _gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_221208.tar.gz | implementation | ignored AutoDL bundle refreshed after CARD repair; SHA256 d4746d73cb4b1b4c4a30875d37cb7166833dc24b2de1207549eaffb408473dc3 |
 | 2026-05-18 22:12 | /autodl-cloud-deploy | docs/AUTODL_BUNDLE_PROVENANCE.md | implementation | latest bundle provenance for CARD-repaired AutoDL archive |
+| 2026-05-18 22:20 | /autodl-cloud-deploy | tools/autodl_audit_sid/run_card_rqvae_export.sh | implementation | CARD runner made dataset-aware for Sports canonical vertical |
+| 2026-05-18 22:20 | /autodl-cloud-deploy | tools/autodl_audit_sid/run_autodl_gate0_queue.sh | implementation | AutoDL CARD queue entries pass Sports dataset paths for canonical/robust/sweep/quality |
+| 2026-05-18 22:20 | /autodl-cloud-deploy | tools/autodl_audit_sid/gate0_experiment_matrix.tsv | implementation | matrix CARD entries aligned with canonical Sports vertical |
+| 2026-05-18 22:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_222012.md | implementation | timestamped tracker after CARD canonical-vertical queue alignment |
+| 2026-05-18 22:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated before GPU launch with CARD canonical queue alignment |
