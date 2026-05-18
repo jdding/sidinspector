@@ -437,3 +437,8 @@
 | 2026-05-19 00:55 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_005523.md | implementation | timestamped tracker after AutoDL Gate 0A transfer verification |
 | 2026-05-19 00:55 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks AutoDL Gate 0A staging transfer-verified |
 | 2026-05-19 00:55 | /idea-discovery | findings.md | implementation | append-only AutoDL Gate 0A transfer verification finding |
+| 2026-05-19 01:01 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_010103.md | implementation | timestamped current AUDIT-SID document map |
+| 2026-05-19 01:01 | /idea-discovery | docs/DOCUMENT_INDEX.md | implementation | latest current AUDIT-SID document map |
+| 2026-05-19 01:01 | /idea-discovery | README.md | implementation | entrypoint shortened to current Gate 0 and Gate 0A docs |
+| 2026-05-19 01:01 | /idea-discovery | START_HERE_AUDIT_SID.md | implementation | read order and next task updated after Gate 0 artifact-feasibility pass |
+| 2026-05-19 01:01 | /idea-discovery | findings.md | implementation | append-only local document organization finding |
