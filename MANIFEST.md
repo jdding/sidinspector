@@ -469,3 +469,10 @@
 | 2026-05-19 02:14 | /autodl-cloud-deploy | findings.md | implementation | append-only ReSID FAMAE-only backlog finding |
 | 2026-05-19 02:19 | /autodl-cloud-deploy | refine-logs/EXPERIMENT_TRACKER_20260519_021926.md | implementation | timestamped tracker after ReSID FAMAE-only seed44 completion |
 | 2026-05-19 02:19 | /autodl-cloud-deploy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker marks ReSID FAMAE-only seed44 done |
+| 2026-05-19 02:35 | /autodl-cloud-deploy | tools/autodl_audit_sid/patch_resid_runtime.py | implementation | opt-in ReSID GAOQ level-2 group parallelism runtime patch |
+| 2026-05-19 02:35 | /autodl-cloud-deploy | tools/autodl_audit_sid/run_resid_gate0_export.sh | implementation | runner exposes GAOQ level-2 parallelism and kmeans n_init controls |
+| 2026-05-19 02:35 | /autodl-cloud-deploy | docs/AUTODL_GAOQ_OPTIMIZATION_20260519_023503.md | implementation | timestamped GAOQ CPU optimization plan |
+| 2026-05-19 02:35 | /autodl-cloud-deploy | docs/AUTODL_GAOQ_OPTIMIZATION.md | implementation | latest GAOQ CPU optimization plan |
+| 2026-05-19 02:35 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_023503.md | implementation | timestamped tracker after GAOQ optimization patch readiness |
+| 2026-05-19 02:35 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks GAOQ optimization patch ready |
+| 2026-05-19 02:35 | /idea-discovery | findings.md | implementation | append-only GAOQ CPU optimization finding |
