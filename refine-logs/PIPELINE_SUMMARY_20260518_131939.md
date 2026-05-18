@@ -32,3 +32,13 @@ AUDIT-SID 应定位为 diagnostic methodology paper。核心 claim 是：semanti
 > 验证至少两个 public SID/tokenizer implementation 能否在一个小公开数据集上导出 item-to-SID mappings 和 generator outputs。
 
 如果 Gate 0 失败，应该早停，而不是把它硬做成弱 survey 或弱 benchmark。
+
+## Venue Decision
+
+目标不应按普通 recommender algorithm paper 选择。当前 venue plan：
+
+- 2026-06-15 左右：arXiv + GitHub v0；
+- 主目标：SIGIR 2027 Resource/Reproducibility-style track；
+- 自然备选：RecSys 2027 Resource/Reproducibility，CIKM 2027 Resource；
+- 条件性目标：WSDM 2027 main track，只有在有强 empirical finding 时成立；
+- 短期曝光：RecSys 2026 workshop/demo/R&P，如时间和 artifact 质量允许。

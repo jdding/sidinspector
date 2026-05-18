@@ -38,6 +38,7 @@ Evaluate whether AUDIT-SID can become a public-first methodology paper:
 7. `refine-logs/EXPERIMENT_PLAN.md`
 8. `refine-logs/PIPELINE_SUMMARY.md`
 9. `refine-logs/EXPERIMENT_TRACKER.md`
+10. `docs/AUDIT_SID_VENUE_PLAN.md`
 
 ## Active Decision
 
@@ -53,3 +54,13 @@ Run Gate 0:
 4. stop and report if artifact extraction is not feasible.
 
 No full training should start before Gate 0 passes.
+
+## Venue Plan
+
+Read `docs/AUDIT_SID_VENUE_PLAN.md` before expanding experiments. Current recommendation:
+
+- arXiv + GitHub v0 around 2026-06-15 if Gate 0 passes;
+- SIGIR 2027 as the primary full-paper target;
+- WSDM 2027 as the second target;
+- CIKM 2027 as a robust fallback;
+- RecSys 2026 workshop/demo/R&P only as optional visibility.

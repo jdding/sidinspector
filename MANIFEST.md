@@ -102,3 +102,9 @@
 | 2026-05-18 13:19 | /idea-discovery | findings.md | idea-discovery | append-only AUDIT-SID discovery finding |
 | 2026-05-18 13:19 | /idea-discovery | README.md | idea-discovery | branch entrypoint updated for AUDIT-SID |
 | 2026-05-18 13:19 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | AUDIT-SID recovery entrypoint |
+| 2026-05-18 13:36 | strategy | docs/AUDIT_SID_VENUE_PLAN_20260518_133645.md | implementation | timestamped AUDIT-SID venue plan |
+| 2026-05-18 13:36 | strategy | docs/AUDIT_SID_VENUE_PLAN.md | implementation | latest copy |
+| 2026-05-18 13:36 | strategy | README.md | idea-discovery | entrypoint updated with venue target |
+| 2026-05-18 13:36 | strategy | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with venue target |
+| 2026-05-18 13:36 | strategy | refine-logs/PIPELINE_SUMMARY.md | implementation | pipeline summary updated with venue target |
+| 2026-05-18 13:36 | strategy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with venue target |

@@ -13,6 +13,7 @@
 | A060 | Refine proposal | DONE | `refine-logs/FINAL_PROPOSAL.md`, `refine-logs/FINAL_PROPOSAL_20260518_131939.md` | Final thesis: representation-to-deployment diagnostics for SID tokenizers. |
 | A070 | Draft gated experiment plan | DONE | `refine-logs/EXPERIMENT_PLAN.md`, `refine-logs/EXPERIMENT_PLAN_20260518_131939.md` | Gate 0 is code/artifact feasibility, not training. |
 | A080 | Pipeline summary | DONE | `refine-logs/PIPELINE_SUMMARY.md`, `refine-logs/PIPELINE_SUMMARY_20260518_131939.md` | AUDIT-SID is public-first Top-1 methodology line. |
+| A090 | Venue plan | DONE | `docs/AUDIT_SID_VENUE_PLAN.md`, `docs/AUDIT_SID_VENUE_PLAN_20260518_133645.md` | Track-fit corrected: prioritize SIGIR/RecSys/CIKM resource-reproducibility tracks; WSDM only if strong empirical finding. |
 
 ## Current Decision
 
@@ -21,3 +22,5 @@ Proceed only to Gate 0 feasibility:
 > verify whether at least two public SID/tokenizer implementations can export item-to-SID mappings and generator outputs on one small public dataset.
 
 Do not launch full experiments until Gate 0 and dataset support audit pass.
+
+Venue direction: arXiv + GitHub v0 around 2026-06-15 if Gate 0 passes. Formal target should be SIGIR 2027 Resource/Reproducibility-style track first; RecSys 2027 Resource/Reproducibility and CIKM 2027 Resource are natural backups. WSDM 2027 is suitable only if AUDIT-SID produces a strong empirical finding beyond toolkit/resource value.

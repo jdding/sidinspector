@@ -14,6 +14,7 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 8. `refine-logs/EXPERIMENT_PLAN.md`
 9. `refine-logs/PIPELINE_SUMMARY.md`
 10. `refine-logs/EXPERIMENT_TRACKER.md`
+11. `docs/AUDIT_SID_VENUE_PLAN.md`
 
 ## Current Thesis
 
@@ -26,6 +27,12 @@ Gate 0 is code/artifact feasibility:
 > verify whether at least two public SID/tokenizer implementations can export item-to-SID mappings and generator outputs on one small public dataset.
 
 Do not launch full experiments before Gate 0 and dataset support audit pass.
+
+## Venue Target
+
+Short-term target: arXiv + GitHub v0 around 2026-06-15 if Gate 0 passes.
+
+Formal target: SIGIR 2027 first, WSDM 2027 second, CIKM 2027 as robust fallback. RecSys 2026 workshop/demo/R&P is optional visibility only, not the main target.
 
 ## Boundary
 
