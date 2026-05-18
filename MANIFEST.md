@@ -75,3 +75,8 @@
 | 2026-05-18 10:12 | strategy | docs/REA_REFRAME_20260518_101259.md | implementation | timestamped REA-informed RecOps reframe |
 | 2026-05-18 10:12 | strategy | docs/REA_REFRAME.md | implementation | latest copy |
 | 2026-05-18 10:12 | strategy | docs/FUTURE_DIRECTIONS.md | implementation | future directions updated with Ranking Experiment Agent scope |
+| 2026-05-18 13:03 | strategy | docs/SEMANTIC_ID_TREND_TOP1_20260518_130319.md | implementation | timestamped semantic-ID trend assessment and Top-1 new-direction ranking excluding TOIS |
+| 2026-05-18 13:03 | strategy | docs/SEMANTIC_ID_TREND_TOP1.md | implementation | latest copy |
+| 2026-05-18 13:03 | strategy | docs/FUTURE_DIRECTIONS.md | implementation | future directions updated to mark device-switch return recommendation as Top-1 excluding TOIS |
+| 2026-05-18 13:03 | strategy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with Top-1 ranking decision excluding TOIS |
+| 2026-05-18 13:03 | strategy | findings.md | implementation | append-only semantic-ID trend Top-1 finding |

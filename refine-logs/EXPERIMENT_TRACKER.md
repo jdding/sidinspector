@@ -20,6 +20,7 @@
 | P035 | Run fresh idea-discovery for lifecycle-transition evidence validity | DONE | `RESEARCH_BRIEF.md`, `idea-stage/LITERATURE_REVIEW.md`, `idea-stage/IDEA_REPORT.md`, `refine-logs/NOVELTY_CHECK.md` | Top idea: Evidence Validity Modeling for Lifecycle Transitions; novelty 6/10, proceed with caution. |
 | P036 | Close low-novelty exploratory branches | DONE | `docs/EXPLORATION_CLOSEOUT.md`, `_archive_pending_delete/DELETE_CANDIDATES.md` | Close both OPE and lifecycle-transition exploratory branches as no-experiment; local files are archived pending explicit deletion approval. |
 | P037 | Record future direction notes | DONE | `docs/FUTURE_DIRECTIONS.md` | Records TOIS synthesis, device-switch return recommendation, and LLM-assisted RecOps as separate future workstreams. |
+| P038 | Re-rank new directions excluding TOIS | DONE | `docs/SEMANTIC_ID_TREND_TOP1.md`, `docs/SEMANTIC_ID_TREND_TOP1_20260518_130319.md` | Verdict: TOIS is a waiting synthesis branch and is excluded from new-direction ranking; Top-1 becomes device-switch return recommendation with adaptive semantic evidence tokenization. |
 | P040 | Dataset feasibility matrix | DONE | `docs/PUBLIC_DATASETS.md` | First-pass public dataset role and readiness labels drafted. |
 | P050 | OBP estimator API smoke | PAUSED | TBD | Paused until user decides whether to upgrade away from OPE mainline. |
 | P060 | KuaiRand lifecycle-state feasibility | PAUSED | TBD | Paused until reassessment review; may be reused for lifecycle-transition idea discovery. |
@@ -30,4 +31,4 @@
 
 Close the current exploratory branches as no-experiment. Public OPE and lifecycle-transition evidence-validity both remain useful as archived reasoning, but neither justifies a new experiment cycle.
 
-Next active work should move to a separate workstream: TOIS 5+1 synthesis after AC information, internal device-switch return recommendation feasibility, or LLM-assisted RecOps task definition.
+TOIS 5+1 synthesis is a separate waiting branch after AC/review information. Excluding TOIS from new-direction ranking, the current Top-1 is internal device-switch return recommendation with adaptive semantic evidence tokenization. Ranking Experiment Agent remains the second candidate system direction.

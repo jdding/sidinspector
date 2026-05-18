@@ -26,7 +26,7 @@
 
 ## 2. Device-Switch Return Recommendation
 
-**Status**: promising internal method direction; not public-only.
+**Status**: Top-1 new method direction when TOIS synthesis is excluded from ranking; internal-data-first, not public-only.
 
 **Scenario**:
 
@@ -53,10 +53,19 @@ Users leave the Huawei ecosystem, switch to another device/ecosystem, and later 
 - device/context-conditioned restart policy;
 - early-session probing under retention risk;
 - old-vs-current preference conflict diagnostics.
+- adaptive semantic evidence tokenization: use the current `semantic ID / tokenizer / codebook` trend as a representation tool for re-entry evidence, rather than entering the generic SID race directly.
 
 **Key risk**:
 
 This direction requires internal data, compliance review, and a publishable abstraction of device-switch state. Without that, it will collapse into cold-start or dormant-return variants.
+
+**Updated ranking note, excluding TOIS**:
+
+After the 2026-05-18 paper-watch trend validation, this becomes the recommended Top-1 new direction:
+
+> Device-switch return recommendation with adaptive semantic evidence tokenization.
+
+The reason is that it combines a real external trend (`semantic ID / tokenizer / codebook`) with a rare internal scenario where this project has a defensible edge. The trend should be used to strengthen the switch-back recommendation problem, not to start a generic generative-retrieval paper.
 
 ## 3. LLM-Assisted Recommendation System Operations
 
@@ -209,5 +218,5 @@ Recommended sequencing:
 
 1. Close and archive current exploratory branches.
 2. Prepare a separate TOIS synthesis branch when review/AC information is available.
-3. Separately assess internal data feasibility for device-switch return recommendation.
+3. Separately assess internal data feasibility for device-switch return recommendation; when excluding TOIS, this is the current Top-1 new method direction.
 4. If exploring LLM-assisted RecOps, start with a Ranking Experiment Agent task definition and experiment-memory schema, not an e2e operations copilot.
