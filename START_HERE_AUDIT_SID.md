@@ -54,6 +54,7 @@ Evaluate whether AUDIT-SID can become a public-first methodology paper:
 23. `docs/CASE_STUDY_RESID_VS_SANITY.md`
 24. `docs/CODE_REVIEW_FIXES_ROUND2.md`
 25. `docs/LOCAL_RQKMEANS_PROXY.md`
+26. `docs/CLUSTER_A_PREFLIGHT.md`
 
 ## Active Decision
 
@@ -64,9 +65,10 @@ Proceed with caution to feasibility only. Novelty is about `7/10` if the work is
 Continue Gate 0:
 
 1. prepare Cluster A canonical SID mapping path, preferably GRID/RQ-VAE or RKMeans/TIGER-style;
-2. run AutoDL ReSID robustness/quality matrix once the fixed RTX 5090 instance is ready;
-3. compare real ReSID against sanity baselines and the first Cluster A mapping;
-4. stop with missing-asset list if Cluster A cannot export locally or on AutoDL by 2026-05-24.
+2. run AutoDL ReSID robustness matrix once the fixed RTX 5090 instance is ready;
+3. run CARD RQ-VAE fallback export if GRID remains too heavy;
+4. compare real ReSID against sanity baselines and the first Cluster A/CARD mapping;
+5. stop with missing-asset list if Cluster A cannot export locally or on AutoDL by 2026-05-24.
 
 No full training should start before Gate 0 passes.
 

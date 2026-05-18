@@ -33,6 +33,7 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 27. `docs/CASE_STUDY_RESID_VS_SANITY.md`
 28. `docs/CODE_REVIEW_FIXES_ROUND2.md`
 29. `docs/LOCAL_RQKMEANS_PROXY.md`
+30. `docs/CLUSTER_A_PREFLIGHT.md`
 
 ## Current Thesis
 
@@ -69,7 +70,7 @@ Method representativeness is part of Gate 0. A shallow RQ-VAE + ReSID comparison
 
 The must-run method coverage is cluster-based: canonical SID baseline + representative recent tokenizer/codebook innovation from Cluster B + sanity lower bound.
 
-Current public-code priority: GRID/RQ-VAE for Cluster A, ReSID for Cluster B, CARD fallback if GRID is too heavy. DIGER is backup only; CapsID/AdaSID/AsymRec stay future support unless runnable code appears. Repo-level artifact-path audit, ReSID `Musical_Instruments` schema probe, sanity SID adapter smoke, D1-D5a metric smoke, and GRID output-format adapter smoke are done. Local ReSID FAMAE -> GAOQ produced the first real Cluster B SID mapping and D1-D5a metrics. A local RQ-KMeans feature-proxy baseline is available for toolkit development, but Gate 0 remains open because Cluster A public implementation coverage is still missing.
+Current public-code priority: GRID/RQ-VAE for Cluster A, ReSID for Cluster B, CARD fallback if GRID is too heavy. DIGER is backup only; CapsID/AdaSID/AsymRec stay future support unless runnable code appears. Repo-level artifact-path audit, ReSID `Musical_Instruments` schema probe, sanity SID adapter smoke, D1-D5a metric smoke, and GRID output-format adapter smoke are done. Local ReSID FAMAE -> GAOQ produced the first real Cluster B SID mapping and D1-D5a metrics. A local RQ-KMeans feature-proxy baseline is available for toolkit development. CARD adapter and AutoDL fallback runner are now prepared; Gate 0 remains open until a real Cluster A/CARD fallback mapping is exported on AutoDL.
 
 ## Boundary
 

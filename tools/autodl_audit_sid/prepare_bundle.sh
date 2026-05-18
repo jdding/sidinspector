@@ -14,7 +14,8 @@ tar -czf "$BUNDLE" \
   --exclude='._*' \
   README.md START_HERE_AUDIT_SID.md MANIFEST.md findings.md AGENTS.md \
   RESEARCH_BRIEF.md idea-stage refine-logs docs src tools \
-  _gate0_repos/ReSID _gate0_repos/ReSID-dataset \
+  _gate0_repos/ReSID _gate0_repos/ReSID-dataset _gate0_repos/CARD \
+  _gate0_artifacts/resid_musical_normalized \
   _gate0_artifacts/resid_real_runs/logs/famae/Musical_Instruments/gate0_famae_cpu_1epoch/seed_42/2026-05-18_17-52-53/best_model.pth
 
 echo "$BUNDLE"

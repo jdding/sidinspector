@@ -273,3 +273,13 @@
 | 2026-05-18 18:16 | /idea-discovery | README.md | idea-discovery | entrypoint updated with local proxy baseline link |
 | 2026-05-18 18:16 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with local proxy baseline link |
 | 2026-05-18 18:16 | /idea-discovery | findings.md | idea-discovery | append-only local proxy baseline finding |
+| 2026-05-18 19:06 | /research-refine | src/audit_sid/adapters/card.py | implementation | CARD codes.npy plus item_ids adapter |
+| 2026-05-18 19:06 | /run-experiment | tools/autodl_audit_sid/run_card_rqvae_export.sh | implementation | AutoDL CARD RQ-VAE feature-proxy fallback runner |
+| 2026-05-18 19:06 | /run-experiment | tools/autodl_audit_sid/prepare_bundle.sh | implementation | AutoDL bundle expanded with CARD repo and normalized ReSID artifacts |
+| 2026-05-18 19:06 | /experiment-plan | docs/CLUSTER_A_PREFLIGHT_20260518_190659.md | implementation | timestamped Cluster A GRID/CARD preflight |
+| 2026-05-18 19:06 | /experiment-plan | docs/CLUSTER_A_PREFLIGHT.md | implementation | latest copy |
+| 2026-05-18 19:06 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_190659.md | implementation | timestamped tracker after Cluster A preflight |
+| 2026-05-18 19:06 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after Cluster A preflight |
+| 2026-05-18 19:06 | /idea-discovery | README.md | idea-discovery | entrypoint updated with Cluster A preflight link |
+| 2026-05-18 19:06 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with AutoDL CARD fallback queue |
+| 2026-05-18 19:06 | /idea-discovery | findings.md | idea-discovery | append-only Cluster A preflight finding |
