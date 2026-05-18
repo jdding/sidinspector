@@ -464,3 +464,8 @@
 | 2026-05-19 01:33 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_013300.md | implementation | timestamped document map with Gate 0A GRID result link |
 | 2026-05-19 01:33 | /idea-discovery | docs/DOCUMENT_INDEX.md | implementation | latest document map with Gate 0A GRID result link |
 | 2026-05-19 01:33 | /idea-discovery | findings.md | implementation | append-only Gate 0A GRID clean batch finding |
+| 2026-05-19 02:14 | /autodl-cloud-deploy | refine-logs/EXPERIMENT_TRACKER_20260519_021413.md | implementation | timestamped tracker after ReSID FAMAE-only seed43 completion and seed44 launch |
+| 2026-05-19 02:14 | /autodl-cloud-deploy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker marks ReSID FAMAE-only seed43 done and seed44 running |
+| 2026-05-19 02:14 | /autodl-cloud-deploy | findings.md | implementation | append-only ReSID FAMAE-only backlog finding |
+| 2026-05-19 02:19 | /autodl-cloud-deploy | refine-logs/EXPERIMENT_TRACKER_20260519_021926.md | implementation | timestamped tracker after ReSID FAMAE-only seed44 completion |
+| 2026-05-19 02:19 | /autodl-cloud-deploy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker marks ReSID FAMAE-only seed44 done |
