@@ -349,3 +349,29 @@
 | 2026-05-18 19:56 | /run-experiment | docs/AUTODL_READINESS_REPORT.md | implementation | latest copy |
 | 2026-05-18 19:56 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_195614.md | implementation | timestamped tracker with final reviewed bundle checksum |
 | 2026-05-18 19:56 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with final reviewed bundle checksum |
+| 2026-05-18 20:34 | /research-lit | docs/TOKENIZER_DATASET_CATEGORY_AUDIT_20260518_203431.md | implementation | timestamped audit of tokenizer-paper dataset verticals and Musical-only risk |
+| 2026-05-18 20:34 | /research-lit | docs/TOKENIZER_DATASET_CATEGORY_AUDIT.md | implementation | latest copy |
+| 2026-05-18 20:34 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_203431.md | implementation | timestamped tracker after dataset-category audit |
+| 2026-05-18 20:34 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after dataset-category audit |
+| 2026-05-18 20:34 | /idea-discovery | findings.md | idea-discovery | append-only dataset-category audit finding |
+| 2026-05-18 20:48 | /research-lit | docs/CANONICAL_VERTICAL_SCHEMA_AUDIT_20260518_204859.md | implementation | timestamped schema audit for Sports and Beauty canonical verticals |
+| 2026-05-18 20:48 | /research-lit | docs/CANONICAL_VERTICAL_SCHEMA_AUDIT.md | implementation | latest copy |
+| 2026-05-18 20:48 | /run-experiment | tools/autodl_audit_sid/download_resid_categories.py | implementation | ReSID processed category downloader with external dataset root support |
+| 2026-05-18 20:48 | /run-experiment | tools/autodl_audit_sid/run_resid_gate0_export.sh | implementation | ReSID export made dataset-aware with category-specific code sizes |
+| 2026-05-18 20:48 | /run-experiment | tools/autodl_audit_sid/run_resid_matrix.sh | implementation | matrix supports Musical quick smoke and Sports canonical run |
+| 2026-05-18 20:48 | /run-experiment | tools/autodl_audit_sid/run_autodl_gate0_queue.sh | implementation | queue supports canonical Sports data-readiness run while CARD remains incomplete |
+| 2026-05-18 20:48 | /run-experiment | tools/autodl_audit_sid/gate0_experiment_matrix.tsv | implementation | matrix updated with dataset-aware quick/canonical/robust entries |
+| 2026-05-18 20:48 | /run-experiment | tools/autodl_audit_sid/prepare_bundle.sh | implementation | bundle dereferences ReSID dataset symlink for AutoDL transfer |
+| 2026-05-18 20:48 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_204859.md | implementation | timestamped tracker after canonical vertical staging |
+| 2026-05-18 20:48 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after canonical vertical staging |
+| 2026-05-18 20:48 | /idea-discovery | findings.md | idea-discovery | append-only canonical vertical staging finding |
+| 2026-05-18 20:50 | /run-experiment | _gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_205057.tar.gz | implementation | ignored AutoDL bundle refreshed with dereferenced Musical/Sports/Beauty ReSID datasets |
+| 2026-05-18 20:50 | /run-experiment | docs/AUTODL_READINESS_REPORT_20260518_205057.md | implementation | timestamped readiness report with quick plus canonical queue |
+| 2026-05-18 20:50 | /run-experiment | docs/AUTODL_READINESS_REPORT.md | implementation | latest copy |
+| 2026-05-18 20:50 | /run-experiment | docs/AUTODL_READY_HANDOFF_20260518_205057.md | implementation | timestamped AutoDL handoff with canonical Sports command |
+| 2026-05-18 20:50 | /run-experiment | docs/AUTODL_READY_HANDOFF.md | implementation | latest copy |
+| 2026-05-18 20:52 | /run-experiment | _gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_205239.tar.gz | implementation | ignored final AutoDL bundle refreshed after latest manifest and handoff updates |
+| 2026-05-18 20:52 | /run-experiment | docs/AUTODL_READINESS_REPORT_20260518_205239.md | implementation | timestamped readiness report for final canonical bundle |
+| 2026-05-18 20:52 | /run-experiment | docs/AUTODL_READINESS_REPORT.md | implementation | latest copy |
+| 2026-05-18 20:52 | /run-experiment | docs/AUTODL_READY_HANDOFF_20260518_205239.md | implementation | timestamped handoff for final canonical bundle |
+| 2026-05-18 20:52 | /run-experiment | docs/AUTODL_READY_HANDOFF.md | implementation | latest copy |

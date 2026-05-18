@@ -3,9 +3,11 @@ set -euo pipefail
 
 ROOT_DIR="${ROOT_DIR:-$(pwd)}"
 RESID_DIR="${RESID_DIR:-$ROOT_DIR/_gate0_repos/ReSID}"
-DATASET_DIR="${DATASET_DIR:-$ROOT_DIR/_gate0_repos/ReSID-dataset/Musical_Instruments/leave_one_out/dataset}"
+DATASET_NAME="${DATASET_NAME:-Musical_Instruments}"
+RESID_DATASET_ROOT="${RESID_DATASET_ROOT:-$ROOT_DIR/_gate0_repos/ReSID-dataset}"
+DATASET_DIR="${DATASET_DIR:-$RESID_DATASET_ROOT/$DATASET_NAME/leave_one_out/dataset}"
 RUN_ROOT="${RUN_ROOT:-$ROOT_DIR/_gate0_artifacts/autodl_runs}"
-EXP_ID="${EXP_ID:-resid_gate0_e${FAMAE_EPOCHS:-3}_seed${SEED:-42}_$(date +%Y%m%d_%H%M%S)}"
+EXP_ID="${EXP_ID:-resid_${DATASET_NAME}_e${FAMAE_EPOCHS:-3}_seed${SEED:-42}_$(date +%Y%m%d_%H%M%S)}"
 OUT_DIR="$RUN_ROOT/$EXP_ID"
 CONFIG_DIR="$OUT_DIR/configs"
 LOG_DIR="$OUT_DIR/logs"
@@ -15,18 +17,69 @@ DEVICE="${DEVICE:-cuda:0}"
 GAOQ_DEVICE="${GAOQ_DEVICE:-cpu}"
 NUM_WORKERS="${NUM_WORKERS:-4}"
 BATCH_SIZE="${BATCH_SIZE:-2048}"
-B1="${B1:-32}"
-B2="${B2:-40}"
-G2="${G2:-40}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 SKIP_PIP_INSTALL="${SKIP_PIP_INSTALL:-0}"
+
+case "$DATASET_NAME" in
+  Musical_Instruments)
+    DEFAULT_B1=32
+    DEFAULT_B2=40
+    ;;
+  Video_Games)
+    DEFAULT_B1=32
+    DEFAULT_B2=64
+    ;;
+  Industrial_and_Scientific)
+    DEFAULT_B1=24
+    DEFAULT_B2=80
+    ;;
+  Baby_Products)
+    DEFAULT_B1=32
+    DEFAULT_B2=64
+    ;;
+  Arts_Crafts_and_Sewing)
+    DEFAULT_B1=64
+    DEFAULT_B2=96
+    ;;
+  Sports_and_Outdoors)
+    DEFAULT_B1=128
+    DEFAULT_B2=128
+    ;;
+  Toys_and_Games)
+    DEFAULT_B1=192
+    DEFAULT_B2=192
+    ;;
+  Health_and_Household)
+    DEFAULT_B1=50
+    DEFAULT_B2=512
+    ;;
+  Beauty_and_Personal_Care)
+    DEFAULT_B1=96
+    DEFAULT_B2=192
+    ;;
+  Books)
+    DEFAULT_B1=256
+    DEFAULT_B2=256
+    ;;
+  *)
+    echo "Unknown ReSID DATASET_NAME=$DATASET_NAME; set B1/B2/G2 explicitly." >&2
+    DEFAULT_B1="${B1:-32}"
+    DEFAULT_B2="${B2:-40}"
+    ;;
+esac
+
+B1="${B1:-$DEFAULT_B1}"
+B2="${B2:-$DEFAULT_B2}"
+G2="${G2:-$B2}"
 
 mkdir -p "$CONFIG_DIR" "$LOG_DIR"
 
 echo "[AUDIT-SID] root=$ROOT_DIR"
 echo "[AUDIT-SID] exp_id=$EXP_ID"
 echo "[AUDIT-SID] resid_dir=$RESID_DIR"
+echo "[AUDIT-SID] dataset_name=$DATASET_NAME"
 echo "[AUDIT-SID] dataset_dir=$DATASET_DIR"
+echo "[AUDIT-SID] code_size B1=$B1 B2=$B2 G2=$G2"
 echo "[AUDIT-SID] device=$DEVICE gaoq_device=$GAOQ_DEVICE"
 
 if [ ! -d "$RESID_DIR" ]; then
@@ -173,7 +226,7 @@ PYTHONPATH="$ROOT_DIR/src" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \
   "$PYTHON_BIN" -m audit_sid.adapters.resid \
   --dataset-root "$DATASET_DIR" \
   --output-dir "$OUT_DIR/normalized" \
-  --dataset-name Musical_Instruments \
+  --dataset-name "$DATASET_NAME" \
   --gaoq-mapping "$GAOQ_MAPPING"
 
 PYTHONPATH="$ROOT_DIR/src" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \

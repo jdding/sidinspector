@@ -52,10 +52,11 @@ def main() -> None:
         preferred_mode = "robust"
         followup = "Use `QUEUE_MODE=sweep` only after quick or robust passes."
     else:
-        status = "QUICK_SMOKE_READY / FORMAL_GATE0_BLOCKED_CARD_SOURCE"
-        preferred_label = "Only bounded quick smoke is recommended until CARD/Cluster-A source is repaired:"
+        status = "QUICK_AND_CANONICAL_RESID_READY / FORMAL_GATE0_BLOCKED_CARD_SOURCE"
+        preferred_label = "Run quick smoke first; after it passes, run canonical Sports data-readiness:"
         preferred_mode = "quick"
         followup = (
+            "After quick passes, use `QUEUE_MODE=canonical` for `Sports_and_Outdoors`. "
             "Do not run `robust`, `sweep`, or `quality` unless CARD source is repaired, "
             "or unless `ALLOW_RESID_ONLY=1` is intentionally set for ReSID-only debugging."
         )
@@ -77,6 +78,8 @@ def main() -> None:
         f"- interactions rows: `{count_rows(interactions)}`",
         f"- item_metadata SHA256: `{sha256(item_metadata)}`",
         f"- interactions SHA256: `{sha256(interactions)}`",
+        "- canonical verticals staged: `Sports_and_Outdoors`, `Beauty_and_Personal_Care`",
+        "- canonical storage: `_gate0_repos/ReSID-dataset` symlinked to external ReSID dataset root locally; bundle dereferences the symlink",
         "",
         "## Source Integrity",
         "",
@@ -129,6 +132,14 @@ def main() -> None:
             "```",
             "",
             followup,
+            "",
+            "Canonical follow-up command after quick succeeds:",
+            "",
+            "```bash",
+            "cd /root/autodl-tmp/Sec_phrase",
+            "QUEUE_MODE=canonical DEVICE=cuda:0 NUM_WORKERS=8 PYTHON_BIN=python3 \\",
+            "bash tools/autodl_audit_sid/run_remote_audit_sid.sh",
+            "```",
         ]
     )
 

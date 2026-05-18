@@ -23,6 +23,7 @@ mkdir -p "$OUT_DIR"
 } > "$PROVENANCE"
 
 tar -czf "$BUNDLE" \
+  --dereference \
   --exclude='*/.git' \
   --exclude='*/__pycache__' \
   --exclude='._*' \

@@ -1,13 +1,15 @@
 queue	priority	exp_id	runner	epochs	seed	capacity	layers	purpose	stop_if
-quick	P0	g0_e1_resid_famae1_seed42	resid	1	42	B1=32,B2=40,G2=40	-	Remote dependency/runtime smoke	No item_code_mapping.parquet or coverage failure
+quick	P0	g0_smoke_Musical_Instruments_resid_famae1_seed42	resid	1	42	DATASET=Musical_Instruments,B1=32,B2=40,G2=40	-	Remote dependency/runtime smoke only; not paper evidence	No item_code_mapping.parquet or coverage failure
 quick	P0	card_rqvae_feature_proxy_e5_seed42	card	5	42	widths=32,40,19	128,64	CARD fallback path smoke; skipped if source incomplete	No codes.npy or coverage failure
-robust	P1	g0_e2_resid_famae5_seed42	resid	5	42	B1=32,B2=40,G2=40	-	ReSID stronger export baseline	Coverage failure or duplicate full SID > 0
-robust	P1	g0_e3_resid_famae5_seed43	resid	5	43	B1=32,B2=40,G2=40	-	ReSID seed stability	Coverage failure
+canonical	P1	g0_canonical_Sports_and_Outdoors_resid_famae1_seed42	resid	1	42	DATASET=Sports_and_Outdoors,B1=128,B2=128,G2=128	-	Canonical vertical smoke for paper-facing Gate 0	Coverage failure
+canonical	P1	card_rqvae_feature_proxy_e20_seed42	card	20	42	widths=128,128,64	128,64	CARD fallback on canonical vertical; skipped if source incomplete	All-one-code collapse or coverage failure
+robust	P1	g0_canonical_Sports_and_Outdoors_resid_famae5_seed42	resid	5	42	DATASET=Sports_and_Outdoors,B1=128,B2=128,G2=128	-	ReSID stronger export baseline on canonical vertical	Coverage failure or duplicate full SID > 0
+robust	P1	g0_canonical_Sports_and_Outdoors_resid_famae5_seed43	resid	5	43	DATASET=Sports_and_Outdoors,B1=128,B2=128,G2=128	-	ReSID seed stability on canonical vertical	Coverage failure
 robust	P1	card_rqvae_feature_proxy_e20_seed42	card	20	42	widths=32,40,19	128,64	CARD fallback baseline; skipped if source incomplete	All-one-code collapse or coverage failure
-sweep	P2	g0_e4_resid_famae5_seed42_cap_small	resid	5	42	B1=16,B2=32,G2=32	-	ReSID capacity sensitivity	Coverage failure
-sweep	P2	g0_e5_resid_famae5_seed42_cap_large	resid	5	42	B1=64,B2=40,G2=40	-	ReSID capacity sensitivity	Coverage failure
+sweep	P2	g0_canonical_Sports_and_Outdoors_resid_famae5_seed42_cap_small	resid	5	42	DATASET=Sports_and_Outdoors,B1=64,B2=96,G2=96	-	ReSID capacity sensitivity on canonical vertical	Coverage failure
+sweep	P2	g0_canonical_Sports_and_Outdoors_resid_famae5_seed42_cap_large	resid	5	42	DATASET=Sports_and_Outdoors,B1=192,B2=192,G2=192	-	ReSID capacity sensitivity on canonical vertical	Coverage failure
 sweep	P2	card_rqvae_feature_proxy_e20_seed43	card	20	43	widths=32,40,19	128,64	CARD seed stability; skipped if source incomplete	Coverage failure
 sweep	P2	card_rqvae_feature_proxy_e20_seed42_cap_small	card	20	42	widths=16,32,16	128,64	CARD capacity sensitivity; skipped if source incomplete	All-one-code collapse or coverage failure
 sweep	P2	card_rqvae_feature_proxy_e20_seed42_cap_large	card	20	42	widths=64,64,32	256,128	CARD capacity sensitivity; skipped if source incomplete	All-one-code collapse or coverage failure
-quality	P3	g0_e4_resid_famae20_seed42	resid	20	42	B1=32,B2=40,G2=40	-	ReSID quality extension	Only after robust queue passes
+quality	P3	g0_canonical_Sports_and_Outdoors_resid_famae20_seed42	resid	20	42	DATASET=Sports_and_Outdoors,B1=128,B2=128,G2=128	-	ReSID quality extension on canonical vertical	Only after robust queue passes
 quality	P3	card_rqvae_feature_proxy_e50_seed42	card	50	42	widths=32,40,19	256,128	CARD quality extension; skipped if source incomplete	Only after robust queue passes

@@ -21,9 +21,9 @@ if ! "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" \
   CARD_READY=0
 fi
 
-if [ "$CARD_READY" != "1" ] && [ "$QUEUE_MODE" != "quick" ] && [ "$ALLOW_RESID_ONLY" != "1" ]; then
+if [ "$CARD_READY" != "1" ] && [ "$QUEUE_MODE" != "quick" ] && [ "$QUEUE_MODE" != "canonical" ] && [ "$ALLOW_RESID_ONLY" != "1" ]; then
   echo "[AUDIT-SID queue] CARD/Cluster-A source is incomplete; refusing QUEUE_MODE=$QUEUE_MODE." >&2
-  echo "[AUDIT-SID queue] Run QUEUE_MODE=quick for bounded smoke, or set ALLOW_RESID_ONLY=1 explicitly." >&2
+  echo "[AUDIT-SID queue] Run QUEUE_MODE=quick for bounded smoke, QUEUE_MODE=canonical for Sports-only data readiness, or set ALLOW_RESID_ONLY=1 explicitly." >&2
   exit 21
 fi
 
@@ -67,6 +67,11 @@ case "$QUEUE_MODE" in
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
     run_card "card_rqvae_feature_proxy_e5_seed42" 5 42 "32 40 19" "128 64"
     ;;
+  canonical)
+    MATRIX_MODE=canonical DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
+      bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
+    run_card "card_rqvae_feature_proxy_e20_seed42" 20 42 "128 128 64" "128 64"
+    ;;
   robust)
     MATRIX_MODE=robust DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
@@ -88,7 +93,7 @@ case "$QUEUE_MODE" in
     run_card "card_rqvae_feature_proxy_e50_seed42" 50 42 "32 40 19" "256 128"
     ;;
   *)
-    echo "Unknown QUEUE_MODE=$QUEUE_MODE. Use quick, robust, sweep, or quality." >&2
+    echo "Unknown QUEUE_MODE=$QUEUE_MODE. Use quick, canonical, robust, sweep, or quality." >&2
     exit 2
     ;;
 esac
