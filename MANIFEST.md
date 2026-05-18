@@ -375,3 +375,8 @@
 | 2026-05-18 20:52 | /run-experiment | docs/AUTODL_READINESS_REPORT.md | implementation | latest copy |
 | 2026-05-18 20:52 | /run-experiment | docs/AUTODL_READY_HANDOFF_20260518_205239.md | implementation | timestamped handoff for final canonical bundle |
 | 2026-05-18 20:52 | /run-experiment | docs/AUTODL_READY_HANDOFF.md | implementation | latest copy |
+| 2026-05-18 21:20 | /autodl-cloud-deploy | docs/AUTODL_REMOTE_STAGING_20260518_212037.md | implementation | timestamped no-GPU AutoDL staging report for ssh port 10197 |
+| 2026-05-18 21:20 | /autodl-cloud-deploy | docs/AUTODL_REMOTE_STAGING.md | implementation | latest copy |
+| 2026-05-18 21:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_212037.md | implementation | timestamped tracker after AutoDL no-GPU remote staging |
+| 2026-05-18 21:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after AutoDL no-GPU remote staging |
+| 2026-05-18 21:20 | /idea-discovery | findings.md | idea-discovery | append-only AutoDL no-GPU staging finding |
