@@ -60,7 +60,7 @@ This direction requires internal data, compliance review, and a publishable abst
 
 ## 3. LLM-Assisted Recommendation System Operations
 
-**Status**: promising separate topic, but must avoid low-quality LLM4Rec saturation.
+**Status**: promising separate topic, but the first viable version should be narrowed from end-to-end RecOps to a Ranking Experiment Agent.
 
 **Where the idea came from**:
 
@@ -70,9 +70,31 @@ This idea did not come from dormant-return mechanics. It came from combining thr
 2. LLM4Rec is crowded with direct-ranker, conversational recommender, and recommender-agent papers. Many are weak because they show demos or benchmark gains without production workflow grounding.
 3. Recommendation teams spend large effort on experiment diagnosis, policy-change review, metric regression analysis, launch decisions, and incident memory. These are high-value RecOps tasks where LLMs can help without pretending to be the recommender model.
 
-So the proposed angle is:
+The initial proposed angle was:
 
 > LLM-assisted RecOps: using LLM agents to improve recommendation experiment operations, diagnosis, policy auditing, and launch decisions.
+
+After reviewing Meta's Ranking Engineer Agent (REA), the better first paper/workstream should be narrower:
+
+> Ranking Experiment Agent: a long-running, budgeted, human-approved ML engineering agent for ranking-model experiment planning, execution, failure handling, result analysis, and iteration.
+
+This is not an online serving agent and not a recommender ranker. It lives in the offline/nearline model-development loop.
+
+### REA-Informed Reframe
+
+Meta REA is important because it validates the workflow shape:
+
+- planner/executor split;
+- hypothesis generation from historical experiment knowledge and research knowledge;
+- human-approved compute budgets;
+- multi-day hibernate-and-wake execution;
+- automated training launch, failure debugging, metric analysis, and iteration.
+
+The lesson is not "let an LLM invent models." The lesson is:
+
+> autonomous ML engineering only becomes credible when it is wrapped in state machines, experiment memory, scheduler integration, failure runbooks, budget gates, and human approval.
+
+Therefore the first Huawei-style version should target **ranking experiment automation**, not full RecOps decision automation.
 
 **What not to do**:
 
@@ -82,6 +104,40 @@ So the proposed angle is:
 - Do not claim model-quality improvements without production-style operational tasks.
 
 **Concrete idea candidates**:
+
+### A0. Ranking Experiment Agent
+
+Input: current ranking model config, experiment objective, historical experiment cards, available compute budget, training platform constraints, and evaluation protocol.
+
+Output: a budgeted experiment plan, generated config diffs, launched training jobs, monitored failures, analyzed metrics, and a structured next-step recommendation.
+
+Required modules:
+
+- Planner: hypothesis generator, historical experiment retrieval, research/paper retrieval, budgeted plan.
+- Executor: config writer, training launcher, log monitor, failure debugger, result analyzer.
+- Memory: experiment DB, failure runbook, model/dataset registry, previous decisions.
+- Governance: permission gate, GPU budget gate, CI/config validation gate, offline metric gate, human approval gate.
+
+Minimum viable version:
+
+1. Read configs, logs, and metric tables.
+2. Generate a next-round experiment plan.
+3. Write config only; do not edit core model code.
+4. Launch training through the existing scheduler.
+5. Detect OOM, NaN, loss explosion, non-learning, and infra failure.
+6. Summarize results into experiment cards.
+7. Recommend continue / stop / combine / abandon.
+
+Measurable tasks:
+
+- valid-plan rate under budget;
+- config correctness;
+- failed-run recovery rate;
+- experiment report accuracy;
+- manual engineer time saved;
+- improvement in successful experiment throughput.
+
+This is now the recommended entry point before broader RecOps.
 
 ### A. Metric Regression Investigator
 
@@ -154,4 +210,4 @@ Recommended sequencing:
 1. Close and archive current exploratory branches.
 2. Prepare a separate TOIS synthesis branch when review/AC information is available.
 3. Separately assess internal data feasibility for device-switch return recommendation.
-4. If exploring LLM-assisted RecOps, start from task/benchmark definition, not model implementation.
+4. If exploring LLM-assisted RecOps, start with a Ranking Experiment Agent task definition and experiment-memory schema, not an e2e operations copilot.

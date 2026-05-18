@@ -72,3 +72,6 @@
 | 2026-05-18 01:53 | closeout | _archive_pending_delete/DELETE_CANDIDATES.md | implementation | latest copy |
 | 2026-05-18 01:53 | closeout | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker closed as no-experiment |
 | 2026-05-18 01:53 | closeout | findings.md | implementation | append-only closeout finding |
+| 2026-05-18 10:12 | strategy | docs/REA_REFRAME_20260518_101259.md | implementation | timestamped REA-informed RecOps reframe |
+| 2026-05-18 10:12 | strategy | docs/REA_REFRAME.md | implementation | latest copy |
+| 2026-05-18 10:12 | strategy | docs/FUTURE_DIRECTIONS.md | implementation | future directions updated with Ranking Experiment Agent scope |
