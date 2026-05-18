@@ -25,6 +25,7 @@ CODEBOOK_WIDTHS="${CODEBOOK_WIDTHS:-32 40 19}"
 LAYERS="${LAYERS:-128 64}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 SKIP_PIP_INSTALL="${SKIP_PIP_INSTALL:-0}"
+CARD_FEATURE_MODE="${CARD_FEATURE_MODE:-onehot}"
 
 mkdir -p "$OUT_DIR" "$CKPT_DIR"
 
@@ -42,6 +43,7 @@ echo "[AUDIT-SID CARD] card_dir=$CARD_DIR"
 echo "[AUDIT-SID CARD] dataset=$DATASET_NAME"
 echo "[AUDIT-SID CARD] item_metadata=$ITEM_METADATA"
 echo "[AUDIT-SID CARD] device=$DEVICE"
+echo "[AUDIT-SID CARD] feature_mode=$CARD_FEATURE_MODE"
 
 if [ ! -d "$CARD_DIR" ]; then
   echo "Missing CARD repo: $CARD_DIR" >&2
@@ -58,20 +60,36 @@ else
   echo "[AUDIT-SID CARD] SKIP_PIP_INSTALL=1; using existing Python environment"
 fi
 
-ITEM_METADATA="$ITEM_METADATA" INPUT_PARQUET="$INPUT_PARQUET" "$PYTHON_BIN" - <<'PY'
+ITEM_METADATA="$ITEM_METADATA" INPUT_PARQUET="$INPUT_PARQUET" CARD_FEATURE_MODE="$CARD_FEATURE_MODE" "$PYTHON_BIN" - <<'PY'
 import os
 import numpy as np
 import pandas as pd
 
 src = os.environ["ITEM_METADATA"]
 dst = os.environ["INPUT_PARQUET"]
+mode = os.environ.get("CARD_FEATURE_MODE", "onehot")
 frame = pd.read_parquet(src)
 feature_cols = [c for c in ("store_id", "category_l1", "category_l2", "category_l3") if c in frame.columns]
 if not feature_cols:
     raise SystemExit("No categorical feature columns found for CARD feature-proxy item_emb.parquet")
 
-encoded = pd.get_dummies(frame[feature_cols].astype(str), dtype=np.float32)
-values = encoded.to_numpy(dtype=np.float32)
+if mode == "onehot":
+    encoded = pd.get_dummies(frame[feature_cols].astype(str), dtype=np.float32)
+    values = encoded.to_numpy(dtype=np.float32)
+elif mode == "compact":
+    values_list = []
+    for col in feature_cols:
+        codes = pd.Categorical(frame[col].astype(str)).codes.astype(np.float32)
+        denom = max(float(codes.max()), 1.0)
+        scaled = codes / denom
+        values_list.extend([scaled, np.sin(np.pi * scaled), np.cos(np.pi * scaled)])
+    item_scaled = frame["item_id"].astype(np.float32).to_numpy()
+    item_scaled = item_scaled / max(float(item_scaled.max()), 1.0)
+    values_list.append(item_scaled)
+    values = np.stack(values_list, axis=1).astype(np.float32)
+else:
+    raise SystemExit(f"Unknown CARD_FEATURE_MODE={mode}; use onehot or compact")
+
 norm = np.linalg.norm(values, axis=1, keepdims=True)
 values = values / np.maximum(norm, 1e-12)
 
