@@ -6,14 +6,16 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 
 1. `START_HERE_AUDIT_SID.md`
 2. `docs/DOCUMENT_INDEX.md`
-3. `docs/PROJECT_SPEC.md`
-4. `docs/GATE0_DECISION.md`
-5. `refine-logs/EXPERIMENT_TRACKER.md`
-6. `docs/AUTODL_GATE0A_STAGING.md`
-7. `docs/GRID_CLUSTER_A_EXPORT_PREP.md`
-8. `docs/RESID_REAL_MAPPING_SMOKE.md`
-9. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
-10. `refine-logs/EXPERIMENT_PLAN.md`
+3. `docs/ARCHIVE_INDEX.md`
+4. `docs/ARTIFACTS_INDEX.md`
+5. `docs/PROJECT_SPEC.md`
+6. `docs/GATE0_DECISION.md`
+7. `refine-logs/EXPERIMENT_TRACKER.md`
+8. `docs/AUTODL_GATE0A_STAGING.md`
+9. `docs/GRID_CLUSTER_A_EXPORT_PREP.md`
+10. `docs/RESID_REAL_MAPPING_SMOKE.md`
+11. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
+12. `refine-logs/EXPERIMENT_PLAN.md`
 
 ## Current Thesis
 

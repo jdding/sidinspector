@@ -442,3 +442,12 @@
 | 2026-05-19 01:01 | /idea-discovery | README.md | implementation | entrypoint shortened to current Gate 0 and Gate 0A docs |
 | 2026-05-19 01:01 | /idea-discovery | START_HERE_AUDIT_SID.md | implementation | read order and next task updated after Gate 0 artifact-feasibility pass |
 | 2026-05-19 01:01 | /idea-discovery | findings.md | implementation | append-only local document organization finding |
+| 2026-05-19 01:08 | /idea-discovery | docs/ARCHIVE_INDEX_20260519_010857.md | implementation | timestamped historical document archive map without moving provenance |
+| 2026-05-19 01:08 | /idea-discovery | docs/ARCHIVE_INDEX.md | implementation | latest historical document archive map |
+| 2026-05-19 01:08 | /idea-discovery | docs/ARTIFACTS_INDEX_20260519_010857.md | implementation | timestamped local Gate 0 artifact cache map |
+| 2026-05-19 01:08 | /idea-discovery | docs/ARTIFACTS_INDEX.md | implementation | latest local Gate 0 artifact cache map |
+| 2026-05-19 01:08 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_010857.md | implementation | timestamped document map updated with archive and artifact indexes |
+| 2026-05-19 01:08 | /idea-discovery | docs/DOCUMENT_INDEX.md | implementation | latest document map updated with archive and artifact indexes |
+| 2026-05-19 01:08 | /idea-discovery | README.md | implementation | start-here list includes archive and artifact indexes |
+| 2026-05-19 01:08 | /idea-discovery | START_HERE_AUDIT_SID.md | implementation | read order includes archive and artifact indexes |
+| 2026-05-19 01:08 | /idea-discovery | findings.md | implementation | append-only archive/artifact indexing finding |

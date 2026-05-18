@@ -30,17 +30,19 @@ Evaluate whether AUDIT-SID can become a public-first methodology paper:
 ## Read Order
 
 1. `docs/DOCUMENT_INDEX.md`
-2. `docs/PROJECT_SPEC.md`
-3. `docs/GATE0_DECISION.md`
-4. `refine-logs/EXPERIMENT_TRACKER.md`
-5. `docs/AUTODL_GATE0A_STAGING.md`
-6. `docs/GRID_CLUSTER_A_EXPORT_PREP.md`
-7. `docs/RESID_REAL_MAPPING_SMOKE.md`
-8. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
-9. `refine-logs/EXPERIMENT_PLAN.md`
-10. `RESEARCH_BRIEF.md`
-11. `idea-stage/LITERATURE_REVIEW.md`
-12. `idea-stage/IDEA_REPORT.md`
+2. `docs/ARCHIVE_INDEX.md`
+3. `docs/ARTIFACTS_INDEX.md`
+4. `docs/PROJECT_SPEC.md`
+5. `docs/GATE0_DECISION.md`
+6. `refine-logs/EXPERIMENT_TRACKER.md`
+7. `docs/AUTODL_GATE0A_STAGING.md`
+8. `docs/GRID_CLUSTER_A_EXPORT_PREP.md`
+9. `docs/RESID_REAL_MAPPING_SMOKE.md`
+10. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
+11. `refine-logs/EXPERIMENT_PLAN.md`
+12. `RESEARCH_BRIEF.md`
+13. `idea-stage/LITERATURE_REVIEW.md`
+14. `idea-stage/IDEA_REPORT.md`
 
 ## Active Decision
 
