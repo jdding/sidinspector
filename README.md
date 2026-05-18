@@ -51,7 +51,7 @@ Gate 0 must pass by 2026-05-24. If not, do not force a weak CIKM submission. Lon
 
 Method representativeness is part of Gate 0. A shallow RQ-VAE + ReSID comparison is not enough for submission.
 
-The must-run method coverage is cluster-based: canonical SID baseline + representative recent tokenizer innovation from Cluster B/C + sanity lower bound.
+The must-run method coverage is cluster-based: canonical SID baseline + representative recent tokenizer/codebook innovation from Cluster B + sanity lower bound.
 
 ## Boundary
 

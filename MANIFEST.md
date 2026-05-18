@@ -139,3 +139,14 @@
 | 2026-05-18 14:54 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with Gate 0A audit framework |
 | 2026-05-18 14:54 | /experiment-plan | README.md | idea-discovery | entrypoint updated with method representativeness audit link |
 | 2026-05-18 14:54 | /experiment-plan | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with method representativeness audit requirement |
+| 2026-05-18 15:07 | /research-lit | docs/SID_METHOD_CLUSTER_AUDIT_20260518_150708.md | idea-discovery | timestamped cluster taxonomy simplification; old B/C split deprecated |
+| 2026-05-18 15:07 | /research-lit | docs/SID_METHOD_CLUSTER_AUDIT.md | idea-discovery | latest copy; Cluster B now recent tokenizer/codebook innovation with B1/B2/B3 facets |
+| 2026-05-18 15:07 | /experiment-plan | docs/METHOD_REPRESENTATIVENESS_AUDIT_20260518_150708.md | implementation | timestamped Gate 0A framework updated to Cluster A + B + sanity rule |
+| 2026-05-18 15:07 | /experiment-plan | docs/METHOD_REPRESENTATIVENESS_AUDIT.md | implementation | latest copy |
+| 2026-05-18 15:07 | /research-lit | idea-stage/LITERATURE_REVIEW_20260518_150708.md | idea-discovery | timestamped literature review updated with merged Cluster B |
+| 2026-05-18 15:07 | /experiment-plan | docs/AUDIT_SID_CIKM_EXECUTION_SPEC_20260518_150708.md | implementation | timestamped CIKM spec updated with merged Cluster B rule |
+| 2026-05-18 15:07 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260518_150708.md | implementation | timestamped experiment plan updated with merged Cluster B gate |
+| 2026-05-18 15:07 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER_20260518_150708.md | implementation | timestamped tracker updated with A099 taxonomy simplification |
+| 2026-05-18 15:07 | /experiment-plan | README.md | idea-discovery | entrypoint updated with Cluster A + B + sanity rule |
+| 2026-05-18 15:07 | /experiment-plan | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with Cluster A + B + sanity rule |
+| 2026-05-18 15:07 | /idea-discovery | findings.md | idea-discovery | append-only correction documenting deprecated B/C split |

@@ -67,7 +67,7 @@ Read `docs/METHOD_REPRESENTATIVENESS_AUDIT.md` before launching any artifact ext
 - Must-have diagnostics: D1 utilization, D2 collision harm, D3 semantic-collaborative alignment, D4 head-tail capacity allocation.
 - Optional only: DACT/drift and deployment-cost proxy.
 - Do not treat RQ-VAE + ReSID as automatically sufficient; Gate 0A must verify method representativeness.
-- Must-run coverage is Cluster A canonical SID + Cluster B/C recent tokenizer innovation + sanity lower bound.
+- Must-run coverage is Cluster A canonical SID + Cluster B recent tokenizer/codebook innovation + sanity lower bound. Old B/C split is deprecated.
 
 ## Venue Plan
 
