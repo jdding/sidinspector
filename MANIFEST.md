@@ -451,3 +451,6 @@
 | 2026-05-19 01:08 | /idea-discovery | README.md | implementation | start-here list includes archive and artifact indexes |
 | 2026-05-19 01:08 | /idea-discovery | START_HERE_AUDIT_SID.md | implementation | read order includes archive and artifact indexes |
 | 2026-05-19 01:08 | /idea-discovery | findings.md | implementation | append-only archive/artifact indexing finding |
+| 2026-05-19 01:23 | /autodl-cloud-deploy | tools/autodl_audit_sid/run_remote_gate0a_grid_batch.sh | implementation | AutoDL Gate 0A clean GRID batch runner for 20k seeds 42/43/44 plus 50k seed42 |
+| 2026-05-19 01:23 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_012348.md | implementation | timestamped tracker with Gate 0A clean GRID batch runner ready |
+| 2026-05-19 01:23 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker with Gate 0A clean GRID batch runner ready |
