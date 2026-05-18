@@ -35,6 +35,7 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 29. `docs/LOCAL_RQKMEANS_PROXY.md`
 30. `docs/CLUSTER_A_PREFLIGHT.md`
 31. `docs/AUTODL_READY_HANDOFF.md`
+32. `docs/AUTODL_READINESS_REPORT.md`
 
 ## Current Thesis
 

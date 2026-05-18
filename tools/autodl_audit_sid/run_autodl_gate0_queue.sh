@@ -10,33 +10,45 @@ PYTHON_BIN="${PYTHON_BIN:-python3}"
 
 bash "$ROOT_DIR/tools/autodl_audit_sid/preflight_autodl.sh"
 
+run_card() {
+  local exp_id="$1"
+  local epochs="$2"
+  local seed="$3"
+  local widths="$4"
+  local layers="$5"
+  CARD_EPOCHS="$epochs" SEED="$seed" DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" \
+    PYTHON_BIN="$PYTHON_BIN" EXP_ID="$exp_id" CODEBOOK_WIDTHS="$widths" LAYERS="$layers" \
+    bash "$ROOT_DIR/tools/autodl_audit_sid/run_card_rqvae_export.sh"
+}
+
 case "$QUEUE_MODE" in
   quick)
     MATRIX_MODE=gate0 DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
-    CARD_EPOCHS=5 DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
-      EXP_ID=card_rqvae_feature_proxy_e5_seed42 \
-      bash "$ROOT_DIR/tools/autodl_audit_sid/run_card_rqvae_export.sh"
+    run_card "card_rqvae_feature_proxy_e5_seed42" 5 42 "32 40 19" "128 64"
     ;;
   robust)
     MATRIX_MODE=robust DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
-    CARD_EPOCHS=20 DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
-      EXP_ID=card_rqvae_feature_proxy_e20_seed42 \
-      bash "$ROOT_DIR/tools/autodl_audit_sid/run_card_rqvae_export.sh"
+    run_card "card_rqvae_feature_proxy_e20_seed42" 20 42 "32 40 19" "128 64"
+    ;;
+  sweep)
+    MATRIX_MODE=sweep DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
+      bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
+    run_card "card_rqvae_feature_proxy_e5_seed42" 5 42 "32 40 19" "128 64"
+    run_card "card_rqvae_feature_proxy_e20_seed42" 20 42 "32 40 19" "128 64"
+    run_card "card_rqvae_feature_proxy_e20_seed43" 20 43 "32 40 19" "128 64"
+    run_card "card_rqvae_feature_proxy_e20_seed42_cap_small" 20 42 "16 32 16" "128 64"
+    run_card "card_rqvae_feature_proxy_e20_seed42_cap_large" 20 42 "64 64 32" "256 128"
     ;;
   quality)
     MATRIX_MODE=quality DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
-    CARD_EPOCHS=20 DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
-      EXP_ID=card_rqvae_feature_proxy_e20_seed42 \
-      bash "$ROOT_DIR/tools/autodl_audit_sid/run_card_rqvae_export.sh"
-    CARD_EPOCHS=50 DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
-      EXP_ID=card_rqvae_feature_proxy_e50_seed42 \
-      bash "$ROOT_DIR/tools/autodl_audit_sid/run_card_rqvae_export.sh"
+    run_card "card_rqvae_feature_proxy_e20_seed42" 20 42 "32 40 19" "128 64"
+    run_card "card_rqvae_feature_proxy_e50_seed42" 50 42 "32 40 19" "256 128"
     ;;
   *)
-    echo "Unknown QUEUE_MODE=$QUEUE_MODE. Use quick, robust, or quality." >&2
+    echo "Unknown QUEUE_MODE=$QUEUE_MODE. Use quick, robust, sweep, or quality." >&2
     exit 2
     ;;
 esac

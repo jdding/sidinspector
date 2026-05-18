@@ -1,6 +1,6 @@
 # AutoDL Ready Handoff
 
-**生成时间**：2026-05-18 19:27:52 CST
+**生成时间**：2026-05-18 19:18:15 CST
 **状态**：TRANSFER_READY / RUNNER_READY / FULL_REPRO_BLOCKED_NO_GPU
 **AutoDL skill**：aligned with `autodl-cloud-deploy` after correction
 
@@ -9,7 +9,7 @@
 Local bundle:
 
 ```text
-_gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_192752.tar.gz
+_gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_191815.tar.gz
 ```
 
 Size: `30M`
@@ -17,7 +17,7 @@ Size: `30M`
 SHA256:
 
 ```text
-44c6fe8e76b250f2d2916b84ada66fcf768fd6e4516b6c6a5b34a83d2e1c553e
+51a47e0505f9dc540522ca574b3e494fdec2ec6f5093a8a1a32d8b989596cd0b
 ```
 
 The bundle includes:
@@ -44,7 +44,7 @@ After uploading the bundle to AutoDL:
 
 ```bash
 mkdir -p /root/autodl-tmp/Sec_phrase
-tar -xzf audit_sid_autodl_20260518_192752.tar.gz -C /root/autodl-tmp/Sec_phrase
+tar -xzf audit_sid_autodl_20260518_191815.tar.gz -C /root/autodl-tmp/Sec_phrase
 cd /root/autodl-tmp/Sec_phrase
 ```
 

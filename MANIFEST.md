@@ -297,3 +297,18 @@
 | 2026-05-18 19:19 | /idea-discovery | README.md | idea-discovery | entrypoint updated with AutoDL handoff link |
 | 2026-05-18 19:19 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with AutoDL remote runner |
 | 2026-05-18 19:19 | /idea-discovery | findings.md | idea-discovery | append-only AutoDL handoff finding |
+| 2026-05-18 19:27 | /run-experiment | tools/autodl_audit_sid/gate0_experiment_matrix.tsv | implementation | AutoDL queued Gate 0 experiment matrix |
+| 2026-05-18 19:27 | /run-experiment | tools/autodl_audit_sid/write_readiness_report.py | implementation | AutoDL readiness report generator |
+| 2026-05-18 19:27 | /run-experiment | tools/autodl_audit_sid/run_resid_matrix.sh | implementation | ReSID matrix extended with sweep capacity variants |
+| 2026-05-18 19:27 | /run-experiment | tools/autodl_audit_sid/run_autodl_gate0_queue.sh | implementation | AutoDL queue extended with sweep mode |
+| 2026-05-18 19:27 | /run-experiment | _gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_192752.tar.gz | implementation | ignored AutoDL transfer bundle refreshed with batched matrix |
+| 2026-05-18 19:27 | /run-experiment | docs/AUTODL_READY_HANDOFF_20260518_192650.md | implementation | timestamped AutoDL handoff with sweep queue |
+| 2026-05-18 19:27 | /run-experiment | docs/AUTODL_READY_HANDOFF_20260518_192752.md | implementation | timestamped AutoDL handoff with latest bundle checksum |
+| 2026-05-18 19:27 | /run-experiment | docs/AUTODL_READY_HANDOFF.md | implementation | latest copy |
+| 2026-05-18 19:27 | /run-experiment | docs/AUTODL_READINESS_REPORT_20260518_192752.md | implementation | timestamped AutoDL readiness report |
+| 2026-05-18 19:27 | /run-experiment | docs/AUTODL_READINESS_REPORT.md | implementation | latest copy |
+| 2026-05-18 19:27 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_192752.md | implementation | timestamped tracker after AutoDL batched matrix |
+| 2026-05-18 19:27 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after AutoDL batched matrix |
+| 2026-05-18 19:27 | /idea-discovery | README.md | idea-discovery | entrypoint updated with AutoDL readiness report |
+| 2026-05-18 19:27 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with AutoDL readiness report |
+| 2026-05-18 19:27 | /idea-discovery | findings.md | idea-discovery | append-only AutoDL batched matrix finding |
