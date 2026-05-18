@@ -19,6 +19,7 @@ BATCH_SIZE="${BATCH_SIZE:-1024}"
 CODEBOOK_WIDTHS="${CODEBOOK_WIDTHS:-32 40 19}"
 LAYERS="${LAYERS:-128 64}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
+SKIP_PIP_INSTALL="${SKIP_PIP_INSTALL:-0}"
 
 mkdir -p "$OUT_DIR" "$CKPT_DIR"
 
@@ -37,7 +38,11 @@ if [ ! -f "$ITEM_METADATA" ]; then
   exit 2
 fi
 
-"$PYTHON_BIN" -m pip install -q pandas pyarrow numpy==1.26.4 tqdm transformers scikit-learn
+if [ "$SKIP_PIP_INSTALL" != "1" ]; then
+  "$PYTHON_BIN" -m pip install -q pandas pyarrow numpy==1.26.4 tqdm transformers scikit-learn
+else
+  echo "[AUDIT-SID CARD] SKIP_PIP_INSTALL=1; using existing Python environment"
+fi
 
 ITEM_METADATA="$ITEM_METADATA" INPUT_PARQUET="$INPUT_PARQUET" "$PYTHON_BIN" - <<'PY'
 import os

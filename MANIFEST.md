@@ -312,3 +312,16 @@
 | 2026-05-18 19:27 | /idea-discovery | README.md | idea-discovery | entrypoint updated with AutoDL readiness report |
 | 2026-05-18 19:27 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with AutoDL readiness report |
 | 2026-05-18 19:27 | /idea-discovery | findings.md | idea-discovery | append-only AutoDL batched matrix finding |
+| 2026-05-18 19:33 | /run-experiment | tools/autodl_audit_sid/check_card_source.py | implementation | CARD source-integrity preflight guard |
+| 2026-05-18 19:33 | /run-experiment | tools/autodl_audit_sid/preflight_autodl.sh | implementation | preflight now reports CARD source status |
+| 2026-05-18 19:33 | /run-experiment | tools/autodl_audit_sid/run_autodl_gate0_queue.sh | implementation | CARD entries skip by default if source incomplete |
+| 2026-05-18 19:33 | /run-experiment | tools/autodl_audit_sid/summarize_gate0_runs.py | implementation | summarizer handles skipped CARD runs |
+| 2026-05-18 19:33 | /run-experiment | tools/autodl_audit_sid/write_readiness_report.py | implementation | readiness report records CARD source-integrity status |
+| 2026-05-18 19:33 | /run-experiment | _gate0_artifacts/autodl_bundle/audit_sid_autodl_20260518_193310.tar.gz | implementation | ignored AutoDL transfer bundle refreshed with CARD guard |
+| 2026-05-18 19:33 | /run-experiment | docs/AUTODL_READY_HANDOFF_20260518_193310.md | implementation | timestamped AutoDL handoff with CARD source guard |
+| 2026-05-18 19:33 | /run-experiment | docs/AUTODL_READY_HANDOFF.md | implementation | latest copy |
+| 2026-05-18 19:33 | /run-experiment | docs/AUTODL_READINESS_REPORT_20260518_193310.md | implementation | timestamped readiness report with CARD source status |
+| 2026-05-18 19:33 | /run-experiment | docs/AUTODL_READINESS_REPORT.md | implementation | latest copy |
+| 2026-05-18 19:33 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_193310.md | implementation | timestamped tracker after CARD source guard |
+| 2026-05-18 19:33 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after CARD source guard |
+| 2026-05-18 19:33 | /idea-discovery | findings.md | idea-discovery | append-only CARD source-integrity finding |

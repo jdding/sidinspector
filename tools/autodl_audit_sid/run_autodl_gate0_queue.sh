@@ -7,6 +7,7 @@ DEVICE="${DEVICE:-cuda:0}"
 NUM_WORKERS="${NUM_WORKERS:-8}"
 SUMMARY_PATH="${SUMMARY_PATH:-$ROOT_DIR/_gate0_artifacts/autodl_runs/gate0_summary.csv}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
+CARD_SOURCE_FAIL="${CARD_SOURCE_FAIL:-skip}"
 
 bash "$ROOT_DIR/tools/autodl_audit_sid/preflight_autodl.sh"
 
@@ -16,6 +17,20 @@ run_card() {
   local seed="$3"
   local widths="$4"
   local layers="$5"
+  if ! "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" \
+      --card-dir "$ROOT_DIR/_gate0_repos/CARD"; then
+    echo "[AUDIT-SID queue] CARD source incomplete for $exp_id"
+    if [ "$CARD_SOURCE_FAIL" = "skip" ]; then
+      mkdir -p "$ROOT_DIR/_gate0_artifacts/autodl_runs/$exp_id"
+      {
+        echo "status=SKIPPED_CARD_SOURCE_INCOMPLETE"
+        echo "exp_id=$exp_id"
+        date
+      } > "$ROOT_DIR/_gate0_artifacts/autodl_runs/$exp_id/SKIPPED.txt"
+      return 0
+    fi
+    return 20
+  fi
   CARD_EPOCHS="$epochs" SEED="$seed" DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" \
     PYTHON_BIN="$PYTHON_BIN" EXP_ID="$exp_id" CODEBOOK_WIDTHS="$widths" LAYERS="$layers" \
     bash "$ROOT_DIR/tools/autodl_audit_sid/run_card_rqvae_export.sh"

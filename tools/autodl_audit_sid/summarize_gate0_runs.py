@@ -15,6 +15,17 @@ def _read_csv(path: Path) -> pd.DataFrame:
 
 
 def summarize_run(run_dir: Path) -> list[dict[str, object]]:
+    skipped = run_dir / "SKIPPED.txt"
+    if skipped.exists():
+        return [
+            {
+                "run": run_dir.name,
+                "method": "SKIPPED",
+                "run_dir": str(run_dir),
+                "status": skipped.read_text().strip().splitlines()[0],
+            }
+        ]
+
     metrics_dir = run_dir / "metrics"
     if not metrics_dir.exists():
         normalized_metrics = run_dir / "normalized" / "metrics"

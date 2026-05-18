@@ -9,6 +9,19 @@ from pathlib import Path
 import pandas as pd
 
 
+def card_source_status(card_dir: Path = Path("_gate0_repos/CARD")) -> tuple[str, list[str]]:
+    required = [
+        card_dir / "rqvae4/main.py",
+        card_dir / "rqvae4/generate_code.py",
+        card_dir / "rqvae4/models/rqvae.py",
+        card_dir / "rqvae4/models/layers.py",
+        card_dir / "rqvae4/models/rq.py",
+        card_dir / "rqvae4/models/vq.py",
+    ]
+    missing = [str(path) for path in required if not path.exists()]
+    return ("OK" if not missing else "INCOMPLETE", missing)
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -31,6 +44,7 @@ def main() -> None:
     item_metadata = Path("_gate0_artifacts/resid_musical_normalized/item_metadata.parquet")
     interactions = Path("_gate0_artifacts/resid_musical_normalized/interactions.parquet")
     matrix = pd.read_csv(args.matrix, sep="\t")
+    card_status, card_missing = card_source_status()
 
     lines = [
         "# AUDIT-SID AutoDL Readiness Report",
@@ -50,11 +64,25 @@ def main() -> None:
         f"- item_metadata SHA256: `{sha256(item_metadata)}`",
         f"- interactions SHA256: `{sha256(interactions)}`",
         "",
+        "## Source Integrity",
+        "",
+        f"- CARD source status: `{card_status}`",
+    ]
+    if card_missing:
+        lines.append("- CARD missing files:")
+        for path in card_missing:
+            lines.append(f"  - `{path}`")
+        lines.append("- AutoDL queue default: `CARD_SOURCE_FAIL=skip`; ReSID runs continue and CARD runs write `SKIPPED.txt`.")
+
+    lines.extend(
+        [
+        "",
         "## Experiment Matrix",
         "",
         "| Queue | Priority | Runs |",
         "|---|---:|---:|",
-    ]
+        ]
+    )
 
     for (queue, priority), group in matrix.groupby(["queue", "priority"], sort=False):
         lines.append(f"| `{queue}` | `{priority}` | {len(group)} |")

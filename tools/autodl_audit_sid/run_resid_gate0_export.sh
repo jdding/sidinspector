@@ -19,6 +19,7 @@ B1="${B1:-32}"
 B2="${B2:-40}"
 G2="${G2:-40}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
+SKIP_PIP_INSTALL="${SKIP_PIP_INSTALL:-0}"
 
 mkdir -p "$CONFIG_DIR" "$LOG_DIR"
 
@@ -37,9 +38,13 @@ if [ ! -d "$DATASET_DIR" ]; then
   exit 2
 fi
 
-"$PYTHON_BIN" -m pip install -q \
-  pyyaml tqdm pandas pyarrow transformers scikit-learn scipy \
-  numpy==1.26.4 k-means-constrained==0.7.3
+if [ "$SKIP_PIP_INSTALL" != "1" ]; then
+  "$PYTHON_BIN" -m pip install -q \
+    pyyaml tqdm pandas pyarrow transformers scikit-learn scipy \
+    numpy==1.26.4 k-means-constrained==0.7.3
+else
+  echo "[AUDIT-SID] SKIP_PIP_INSTALL=1; using existing Python environment"
+fi
 
 "$PYTHON_BIN" - <<'PY'
 from pathlib import Path

@@ -77,6 +77,12 @@ except Exception as exc:
     print(f"[AUDIT-SID preflight] torch cuda check failed: {exc}")
 PY
 
+if "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" --card-dir "$ROOT_DIR/_gate0_repos/CARD"; then
+  echo "[AUDIT-SID preflight] CARD_SOURCE_READY"
+else
+  echo "[AUDIT-SID preflight] CARD_SOURCE_INCOMPLETE; CARD queue entries will be skipped unless CARD_SOURCE_FAIL=error"
+fi
+
 ROOT_DIR="$ROOT_DIR" "$PYTHON_BIN" - <<'PY'
 import os
 from pathlib import Path
