@@ -19,6 +19,9 @@ NUM_WORKERS="${NUM_WORKERS:-4}"
 BATCH_SIZE="${BATCH_SIZE:-2048}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 SKIP_PIP_INSTALL="${SKIP_PIP_INSTALL:-0}"
+GAOQ_USE_BALANCED_KMEANS="${GAOQ_USE_BALANCED_KMEANS:-true}"
+GAOQ_NUM_THREADS="${GAOQ_NUM_THREADS:-$NUM_WORKERS}"
+GAOQ_KMEANS_N_JOBS="${GAOQ_KMEANS_N_JOBS:-$GAOQ_NUM_THREADS}"
 
 case "$DATASET_NAME" in
   Musical_Instruments)
@@ -81,6 +84,7 @@ echo "[AUDIT-SID] dataset_name=$DATASET_NAME"
 echo "[AUDIT-SID] dataset_dir=$DATASET_DIR"
 echo "[AUDIT-SID] code_size B1=$B1 B2=$B2 G2=$G2"
 echo "[AUDIT-SID] device=$DEVICE gaoq_device=$GAOQ_DEVICE"
+echo "[AUDIT-SID] gaoq_use_balancedkmeans=$GAOQ_USE_BALANCED_KMEANS gaoq_num_threads=$GAOQ_NUM_THREADS gaoq_kmeans_n_jobs=$GAOQ_KMEANS_N_JOBS"
 
 if [ ! -d "$RESID_DIR" ]; then
   echo "Missing ReSID repo: $RESID_DIR" >&2
@@ -99,16 +103,16 @@ else
   echo "[AUDIT-SID] SKIP_PIP_INSTALL=1; using existing Python environment"
 fi
 
-RESID_DIR="$RESID_DIR" "$PYTHON_BIN" - <<'PY'
-from pathlib import Path
-import os
+case "$GAOQ_USE_BALANCED_KMEANS" in
+  true|false) ;;
+  *)
+    echo "GAOQ_USE_BALANCED_KMEANS must be true or false, got: $GAOQ_USE_BALANCED_KMEANS" >&2
+    exit 2
+    ;;
+esac
 
-path = Path(os.environ["RESID_DIR"]) / "utils.py"
-text = path.read_text()
-text = text.replace("num_workers=4,", "num_workers=getattr(args, \"num_workers\", 4),")
-text = text.replace("pin_memory=True,", "pin_memory=torch.cuda.is_available(),")
-path.write_text(text)
-PY
+"$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/patch_resid_runtime.py" \
+  --resid-dir "$RESID_DIR"
 
 cat > "$CONFIG_DIR/famae.yaml" <<YAML
 batch_size: $BATCH_SIZE
@@ -205,9 +209,17 @@ num_workers: $NUM_WORKERS
 pretrained_model_path: $FAMAE_CKPT
 random_seed: $SEED
 train_type: direct
-use_balancedkmeans: true
+use_balancedkmeans: $GAOQ_USE_BALANCED_KMEANS
 version: ${EXP_ID}_gaoq
 YAML
+
+export OMP_NUM_THREADS="$GAOQ_NUM_THREADS"
+export MKL_NUM_THREADS="$GAOQ_NUM_THREADS"
+export OPENBLAS_NUM_THREADS="$GAOQ_NUM_THREADS"
+export NUMEXPR_NUM_THREADS="$GAOQ_NUM_THREADS"
+export GAOQ_KMEANS_N_JOBS="$GAOQ_KMEANS_N_JOBS"
+echo "[AUDIT-SID] GAOQ CPU-only export: device=$GAOQ_DEVICE balanced=$GAOQ_USE_BALANCED_KMEANS"
+echo "[AUDIT-SID] GAOQ thread env: OMP=$OMP_NUM_THREADS MKL=$MKL_NUM_THREADS OPENBLAS=$OPENBLAS_NUM_THREADS NUMEXPR=$NUMEXPR_NUM_THREADS KMEANS_N_JOBS=$GAOQ_KMEANS_N_JOBS"
 
 pushd "$RESID_DIR" >/dev/null
 PYTHONPATH="$ROOT_DIR/src:$RESID_DIR" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \

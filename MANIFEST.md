@@ -177,6 +177,12 @@
 | 2026-05-18 16:25 | /experiment-plan | docs/GATE0_REPO_AUDIT.md | implementation | latest copy |
 | 2026-05-18 16:25 | /experiment-plan | docs/METHOD_REPRESENTATIVENESS_AUDIT_20260518_162509.md | implementation | timestamped Gate 0A audit updated with repo artifact evidence |
 | 2026-05-18 16:25 | /experiment-plan | docs/METHOD_REPRESENTATIVENESS_AUDIT.md | implementation | latest copy updated with repo artifact evidence |
+| 2026-05-18 22:52 | autodl-cloud-deploy | docs/AUTODL_GAOQ_STOPLOSS_20260518_225222.md | implementation | timestamped AutoDL stop-loss report for ReSID GAOQ CPU bottleneck |
+| 2026-05-18 22:52 | autodl-cloud-deploy | docs/AUTODL_GAOQ_STOPLOSS.md | implementation | latest copy of AutoDL GAOQ stop-loss report |
+| 2026-05-18 22:52 | autodl-cloud-deploy | tools/autodl_audit_sid/patch_resid_runtime.py | implementation | tracked runtime patcher for ReSID utils and GAOQ KMeansConstrained n_jobs |
+| 2026-05-18 22:52 | autodl-cloud-deploy | tools/autodl_audit_sid/run_resid_gate0_export.sh | implementation | GAOQ balanced/unbalanced and CPU thread controls added |
+| 2026-05-18 22:52 | autodl-cloud-deploy | refine-logs/EXPERIMENT_TRACKER_20260518_225222.md | implementation | timestamped tracker with GAOQ stop-loss and patch-ready state |
+| 2026-05-18 22:52 | autodl-cloud-deploy | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker updated with GAOQ stop-loss and patch-ready state |
 | 2026-05-18 16:25 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_162509.md | implementation | timestamped tracker updated after Gate 0 repo audit |
 | 2026-05-18 16:25 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest copy |
 | 2026-05-18 16:25 | /idea-discovery | README.md | idea-discovery | entrypoint updated with Gate 0 repo audit link |

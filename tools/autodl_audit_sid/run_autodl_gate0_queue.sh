@@ -5,6 +5,9 @@ ROOT_DIR="${ROOT_DIR:-$(pwd)}"
 QUEUE_MODE="${QUEUE_MODE:-quick}"
 DEVICE="${DEVICE:-cuda:0}"
 NUM_WORKERS="${NUM_WORKERS:-8}"
+GAOQ_NUM_THREADS="${GAOQ_NUM_THREADS:-$NUM_WORKERS}"
+GAOQ_KMEANS_N_JOBS="${GAOQ_KMEANS_N_JOBS:-$GAOQ_NUM_THREADS}"
+GAOQ_USE_BALANCED_KMEANS="${GAOQ_USE_BALANCED_KMEANS:-true}"
 SUMMARY_PATH="${SUMMARY_PATH:-$ROOT_DIR/_gate0_artifacts/autodl_runs/gate0_summary.csv}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 CARD_SOURCE_FAIL="${CARD_SOURCE_FAIL:-skip}"
@@ -66,22 +69,22 @@ run_card() {
 
 case "$QUEUE_MODE" in
   quick)
-    MATRIX_MODE=gate0 DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
+    MATRIX_MODE=gate0 DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" GAOQ_NUM_THREADS="$GAOQ_NUM_THREADS" GAOQ_KMEANS_N_JOBS="$GAOQ_KMEANS_N_JOBS" GAOQ_USE_BALANCED_KMEANS="$GAOQ_USE_BALANCED_KMEANS" PYTHON_BIN="$PYTHON_BIN" \
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
     run_card "card_rqvae_feature_proxy_e5_seed42" 5 42 "32 40 19" "128 64" "Musical_Instruments"
     ;;
   canonical)
-    MATRIX_MODE=canonical DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
+    MATRIX_MODE=canonical DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" GAOQ_NUM_THREADS="$GAOQ_NUM_THREADS" GAOQ_KMEANS_N_JOBS="$GAOQ_KMEANS_N_JOBS" GAOQ_USE_BALANCED_KMEANS="$GAOQ_USE_BALANCED_KMEANS" PYTHON_BIN="$PYTHON_BIN" \
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
     run_card "card_rqvae_feature_proxy_Sports_and_Outdoors_e20_seed42" 20 42 "128 128 64" "128 64" "Sports_and_Outdoors"
     ;;
   robust)
-    MATRIX_MODE=robust DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
+    MATRIX_MODE=robust DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" GAOQ_NUM_THREADS="$GAOQ_NUM_THREADS" GAOQ_KMEANS_N_JOBS="$GAOQ_KMEANS_N_JOBS" GAOQ_USE_BALANCED_KMEANS="$GAOQ_USE_BALANCED_KMEANS" PYTHON_BIN="$PYTHON_BIN" \
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
     run_card "card_rqvae_feature_proxy_Sports_and_Outdoors_e20_seed42" 20 42 "128 128 64" "128 64" "Sports_and_Outdoors"
     ;;
   sweep)
-    MATRIX_MODE=sweep DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
+    MATRIX_MODE=sweep DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" GAOQ_NUM_THREADS="$GAOQ_NUM_THREADS" GAOQ_KMEANS_N_JOBS="$GAOQ_KMEANS_N_JOBS" GAOQ_USE_BALANCED_KMEANS="$GAOQ_USE_BALANCED_KMEANS" PYTHON_BIN="$PYTHON_BIN" \
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
     run_card "card_rqvae_feature_proxy_Sports_and_Outdoors_e5_seed42" 5 42 "128 128 64" "128 64" "Sports_and_Outdoors"
     run_card "card_rqvae_feature_proxy_Sports_and_Outdoors_e20_seed42" 20 42 "128 128 64" "128 64" "Sports_and_Outdoors"
@@ -90,7 +93,7 @@ case "$QUEUE_MODE" in
     run_card "card_rqvae_feature_proxy_Sports_and_Outdoors_e20_seed42_cap_large" 20 42 "192 192 192" "256 128" "Sports_and_Outdoors"
     ;;
   quality)
-    MATRIX_MODE=quality DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
+    MATRIX_MODE=quality DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" GAOQ_NUM_THREADS="$GAOQ_NUM_THREADS" GAOQ_KMEANS_N_JOBS="$GAOQ_KMEANS_N_JOBS" GAOQ_USE_BALANCED_KMEANS="$GAOQ_USE_BALANCED_KMEANS" PYTHON_BIN="$PYTHON_BIN" \
       bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_matrix.sh"
     run_card "card_rqvae_feature_proxy_Sports_and_Outdoors_e20_seed42" 20 42 "128 128 64" "128 64" "Sports_and_Outdoors"
     run_card "card_rqvae_feature_proxy_Sports_and_Outdoors_e50_seed42" 50 42 "128 128 64" "256 128" "Sports_and_Outdoors"

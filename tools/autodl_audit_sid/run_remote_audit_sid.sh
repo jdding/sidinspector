@@ -5,6 +5,9 @@ WORKSPACE="${WORKSPACE:-/root/autodl-tmp/Sec_phrase}"
 QUEUE_MODE="${QUEUE_MODE:-robust}"
 DEVICE="${DEVICE:-cuda:0}"
 NUM_WORKERS="${NUM_WORKERS:-8}"
+GAOQ_NUM_THREADS="${GAOQ_NUM_THREADS:-$NUM_WORKERS}"
+GAOQ_KMEANS_N_JOBS="${GAOQ_KMEANS_N_JOBS:-$GAOQ_NUM_THREADS}"
+GAOQ_USE_BALANCED_KMEANS="${GAOQ_USE_BALANCED_KMEANS:-true}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 RUN_ID="${RUN_ID:-audit_sid_${QUEUE_MODE}_$(date +%Y%m%d_%H%M%S)}"
 LOG_DIR="${WORKSPACE}/_gate0_artifacts/autodl_runs/logs"
@@ -31,6 +34,9 @@ echo "Workspace: $WORKSPACE"
 echo "Queue mode: $QUEUE_MODE"
 echo "Device: $DEVICE"
 echo "Num workers: $NUM_WORKERS"
+echo "GAOQ num threads: $GAOQ_NUM_THREADS"
+echo "GAOQ KMeans n_jobs: $GAOQ_KMEANS_N_JOBS"
+echo "GAOQ balanced KMeans: $GAOQ_USE_BALANCED_KMEANS"
 echo "Python: $PYTHON_BIN"
 date
 
@@ -69,7 +75,7 @@ ps aux | grep python | grep -v grep | head -20 || true
 echo "=============================="
 
 set +e
-QUEUE_MODE="$QUEUE_MODE" DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" PYTHON_BIN="$PYTHON_BIN" \
+QUEUE_MODE="$QUEUE_MODE" DEVICE="$DEVICE" NUM_WORKERS="$NUM_WORKERS" GAOQ_NUM_THREADS="$GAOQ_NUM_THREADS" GAOQ_KMEANS_N_JOBS="$GAOQ_KMEANS_N_JOBS" GAOQ_USE_BALANCED_KMEANS="$GAOQ_USE_BALANCED_KMEANS" PYTHON_BIN="$PYTHON_BIN" \
   bash tools/autodl_audit_sid/run_autodl_gate0_queue.sh
 EXIT_CODE=$?
 
