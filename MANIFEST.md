@@ -80,3 +80,25 @@
 | 2026-05-18 13:03 | strategy | docs/FUTURE_DIRECTIONS.md | implementation | future directions updated to mark device-switch return recommendation as Top-1 excluding TOIS |
 | 2026-05-18 13:03 | strategy | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with Top-1 ranking decision excluding TOIS |
 | 2026-05-18 13:03 | strategy | findings.md | implementation | append-only semantic-ID trend Top-1 finding |
+| 2026-05-18 13:19 | /idea-discovery | AGENTS.md | idea-discovery | active branch updated to codex/audit-sid-idea-discovery |
+| 2026-05-18 13:19 | /idea-discovery | RESEARCH_BRIEF_20260518_131939.md | idea-discovery | timestamped AUDIT-SID research brief |
+| 2026-05-18 13:19 | /idea-discovery | RESEARCH_BRIEF.md | idea-discovery | latest copy |
+| 2026-05-18 13:19 | /research-lit | idea-stage/LITERATURE_REVIEW_20260518_131939.md | idea-discovery | timestamped AUDIT-SID literature review |
+| 2026-05-18 13:19 | /research-lit | idea-stage/LITERATURE_REVIEW.md | idea-discovery | latest copy |
+| 2026-05-18 13:19 | /idea-creator | idea-stage/IDEA_REPORT_20260518_131939.md | idea-discovery | timestamped AUDIT-SID ranked ideas |
+| 2026-05-18 13:19 | /idea-creator | idea-stage/IDEA_REPORT.md | idea-discovery | latest copy |
+| 2026-05-18 13:19 | /novelty-check | refine-logs/NOVELTY_CHECK_20260518_131939.md | idea-discovery | timestamped AUDIT-SID novelty check |
+| 2026-05-18 13:19 | /novelty-check | refine-logs/NOVELTY_CHECK.md | idea-discovery | latest copy |
+| 2026-05-18 13:19 | /research-review | refine-logs/REVIEW_SUMMARY_20260518_131939.md | idea-discovery | timestamped AUDIT-SID critical review summary |
+| 2026-05-18 13:19 | /research-review | refine-logs/REVIEW_SUMMARY.md | idea-discovery | latest copy |
+| 2026-05-18 13:19 | /research-refine-pipeline | refine-logs/FINAL_PROPOSAL_20260518_131939.md | implementation | timestamped AUDIT-SID final proposal |
+| 2026-05-18 13:19 | /research-refine-pipeline | refine-logs/FINAL_PROPOSAL.md | implementation | latest copy |
+| 2026-05-18 13:19 | /research-refine-pipeline | refine-logs/EXPERIMENT_PLAN_20260518_131939.md | implementation | timestamped AUDIT-SID gated experiment plan |
+| 2026-05-18 13:19 | /research-refine-pipeline | refine-logs/EXPERIMENT_PLAN.md | implementation | latest copy |
+| 2026-05-18 13:19 | /research-refine-pipeline | refine-logs/PIPELINE_SUMMARY_20260518_131939.md | implementation | timestamped AUDIT-SID pipeline summary |
+| 2026-05-18 13:19 | /research-refine-pipeline | refine-logs/PIPELINE_SUMMARY.md | implementation | latest copy |
+| 2026-05-18 13:19 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_131939.md | implementation | timestamped AUDIT-SID tracker |
+| 2026-05-18 13:19 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest copy |
+| 2026-05-18 13:19 | /idea-discovery | findings.md | idea-discovery | append-only AUDIT-SID discovery finding |
+| 2026-05-18 13:19 | /idea-discovery | README.md | idea-discovery | branch entrypoint updated for AUDIT-SID |
+| 2026-05-18 13:19 | /idea-discovery | START_HERE_AUDIT_SID.md | idea-discovery | AUDIT-SID recovery entrypoint |

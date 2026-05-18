@@ -1,28 +1,32 @@
-# Lifecycle Transition Reassessment
+# AUDIT-SID Idea Discovery
 
-This repository archives two closed exploratory passes: public OPE preflight and lifecycle-transition preference evidence.
-
-The current status is closed/no-experiment. The artifacts are retained as anti-repetition memory and pending-delete candidates.
+This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic evaluation of semantic-ID tokenizers and codebooks in generative recommendation/retrieval.
 
 ## Start Here
 
-- `START_HERE_PUBLIC_OPE.md`
-- `docs/EXPLORATION_CLOSEOUT.md`
-- `docs/FUTURE_DIRECTIONS.md`
-- `_archive_pending_delete/DELETE_CANDIDATES.md`
-- `RESEARCH_BRIEF.md`
-- `idea-stage/IDEA_REPORT.md`
-- `refine-logs/METHOD_DIRECTION_RETHINK.md`
-- `refine-logs/DORMANT_TOPIC_REASSESSMENT.md`
-- `refine-logs/NOVELTY_CHECK.md`
-- `docs/PUBLIC_DATASETS.md`
-- `refine-logs/EXPERIMENT_PLAN.md`
-- `refine-logs/EXPERIMENT_TRACKER.md`
+1. `START_HERE_AUDIT_SID.md`
+2. `RESEARCH_BRIEF.md`
+3. `idea-stage/LITERATURE_REVIEW.md`
+4. `idea-stage/IDEA_REPORT.md`
+5. `refine-logs/NOVELTY_CHECK.md`
+6. `refine-logs/REVIEW_SUMMARY.md`
+7. `refine-logs/FINAL_PROPOSAL.md`
+8. `refine-logs/EXPERIMENT_PLAN.md`
+9. `refine-logs/PIPELINE_SUMMARY.md`
+10. `refine-logs/EXPERIMENT_TRACKER.md`
 
 ## Current Thesis
 
-The durable thesis from this workspace is negative: public OPE and lifecycle-transition evidence-validity are not strong enough to justify experiments right now. Future work should move to TOIS synthesis, internal device-switch return recommendation, or LLM-assisted RecOps as separate workstreams.
+AUDIT-SID is the current public-first methodology candidate. It should be framed as representation-to-deployment diagnostics for semantic-ID tokenizers/codebooks, not as another SID generation algorithm or a simple leaderboard.
 
-## Stage Boundary
+## Current Gate
 
-This repository currently covers public research only. No Huawei business data or internal logs should be committed here.
+Gate 0 is code/artifact feasibility:
+
+> verify whether at least two public SID/tokenizer implementations can export item-to-SID mappings and generator outputs on one small public dataset.
+
+Do not launch full experiments before Gate 0 and dataset support audit pass.
+
+## Boundary
+
+This branch is public-stage only. Do not commit Huawei internal data, business logs, or proprietary implementation details.

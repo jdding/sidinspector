@@ -4,7 +4,7 @@
 
 language: zh
 active_skill: /idea-discovery
-active_branch: codex/lifecycle-transition-reassessment
+active_branch: codex/audit-sid-idea-discovery
 remote: git@github.com:jdding/lifecycle-ope-preflight.git
 
 ## Project Contract
