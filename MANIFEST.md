@@ -498,3 +498,9 @@
 | 2026-05-19 03:13 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records Gate 0A conditional pass |
 | 2026-05-19 03:13 | /idea-discovery | README.md | documentation | start-here and gate status updated after Gate 0A conditional pass |
 | 2026-05-19 03:13 | /idea-discovery | findings.md | implementation | append-only Gate 0A conditional resource-demo finding |
+| 2026-05-19 03:18 | /idea-discovery | tools/autodl_audit_sid/summarize_case_study.py | implementation | reproducible D1-D5a/D3v2 case-study summarizer |
+| 2026-05-19 03:18 | /idea-discovery | docs/CASE_STUDY_RESID_VS_SANITY_20260519_031836.md | analysis | timestamped ReSID-vs-sanity D3v2 case-study table |
+| 2026-05-19 03:18 | /idea-discovery | docs/CASE_STUDY_RESID_VS_SANITY.md | analysis | latest ReSID-vs-sanity D3v2 case-study table |
+| 2026-05-19 03:18 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_031836.md | implementation | timestamped tracker after D3v2 case-study table |
+| 2026-05-19 03:18 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records D3v2 case-study table |
+| 2026-05-19 03:18 | /idea-discovery | findings.md | implementation | append-only D3v2 case-study finding |
