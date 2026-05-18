@@ -70,7 +70,11 @@ import importlib
 
 for name in ["torch", "pandas", "numpy", "sentence_transformers"]:
     importlib.import_module(name)
+from src.components.clustering_initializers import KMeansPlusPlusInitInitializer
+from src.components.distance_functions import SquaredEuclideanDistance
+from src.models.modules.clustering.mini_batch_kmeans import MiniBatchKMeans
 print("python_imports=OK")
+print("grid_imports=OK")
 PY
 
 echo "[GATE0A preflight] READY"
