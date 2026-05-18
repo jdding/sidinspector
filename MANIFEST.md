@@ -476,3 +476,8 @@
 | 2026-05-19 02:35 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_023503.md | implementation | timestamped tracker after GAOQ optimization patch readiness |
 | 2026-05-19 02:35 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks GAOQ optimization patch ready |
 | 2026-05-19 02:35 | /idea-discovery | findings.md | implementation | append-only GAOQ CPU optimization finding |
+| 2026-05-19 02:59 | /autodl-cloud-deploy | docs/GATE0A_CLUSTER_B_PIVOT_20260519_025958.md | implementation | timestamped Gate 0A Cluster B pivot from Sports exact balanced GAOQ |
+| 2026-05-19 02:59 | /autodl-cloud-deploy | docs/GATE0A_CLUSTER_B_PIVOT.md | implementation | latest Gate 0A Cluster B pivot decision |
+| 2026-05-19 02:59 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_025958.md | implementation | timestamped tracker after ReSID Sports GAOQ stop and Cluster B pivot |
+| 2026-05-19 02:59 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records ReSID Sports GAOQ stop and Cluster B pivot |
+| 2026-05-19 02:59 | /idea-discovery | findings.md | implementation | append-only Cluster B route pivot finding |
