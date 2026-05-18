@@ -77,6 +77,24 @@ Source: https://arxiv.org/abs/2605.14434
 | Industrial generative retrieval | CQ-SID, GenRec-style systems | SID 影响 latency、beam、ranking alignment | 缺公开 deployability proxy |
 | Bottleneck analysis | AsymRec, CapsID | discrete ID 带来 input/output bottleneck | 缺 final Recall@K 之外的 decomposition |
 
+## SID 方法簇到 CIKM 选择规则
+
+CIKM 2026 Resource 版本不能只按“哪个 repo 能跑”选方法，而要按方法簇覆盖来选。
+
+| Cluster | 代表问题 | 候选方法 | CIKM v0 角色 |
+|---|---|---|---|
+| A. Canonical residual-quantization SID | 经典 semantic-ID generative recommendation baseline | TIGER / RQ-VAE / GenRec-style SID / GRID-style SID | 必须覆盖，作为 reference point |
+| B. Recommendation-native / predictability-aware tokenizer | tokenizer 服务 collaborative / ranking / sequence predictability | ReSID / DIG / AsymRec / DRIL-style variants | 必须覆盖 B 或 C 中至少一类 recent innovation |
+| C. Collision / utilization / variable-length codebook design | collision、codebook utilization、soft routing、variable length | CapsID / AdaSID / CARD / DIGER | preferred optional；如果 artifact 可导出，代表性强 |
+| D. Continual / drift-aware tokenizer | new item、catalog shift、tokenizer refresh stability | DACT / SID staleness variants | optional；不能绑架 CIKM v0 |
+| E. Industrial retrieval/search-oriented SID | semantic cluster ID, ranking alignment, beam/cost | CQ-SID / DIG retrieval framing / GenRec industrial variants | literature-motivated target；不作为 CIKM must-run |
+
+因此，CIKM v0 的真正 must-run 是：
+
+> Cluster A + Cluster B/C + sanity lower bound.
+
+`RQ-VAE + ReSID` 只是当前候选组合，不是固定结论。如果 ReSID 无法导出可解释 artifact，必须寻找 B/C 的替代 recent tokenizer；如果找不到，应该停止 CIKM 2026 投稿。
+
 ## 结构性机会
 
 1. 目前没有中立的 cross-method diagnostic standard。

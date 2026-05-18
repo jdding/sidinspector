@@ -95,6 +95,12 @@ Gate 通过条件：
 3. 至少一个诊断结果必须揭示方法间非平凡差异，而不是“ReSID 比 RQ-VAE 分数高”；
 4. paper 中必须有一张 **Method Coverage Table**，说明当前 toolkit 支持的 artifact interface 能覆盖更多近期方法，即使 CIKM v0 未全部复现。
 
+更精确地说，CIKM v0 的 must-run 是：
+
+> Cluster A canonical SID + Cluster B/C recent tokenizer innovation + sanity lower bound.
+
+不是固定的 `RQ-VAE + ReSID`。如果 ReSID 不足以代表 recent innovation 或 artifact 不可解释，应替换为 CapsID / AdaSID / CARD / DIG / AsymRec / DACT 中更合适且可导出的候选；若没有任何 B/C/D 候选可用，应停止 CIKM 2026。
+
 Gate 失败条件：
 
 - 只能跑 RQ-VAE + sanity baseline；
@@ -195,6 +201,13 @@ CIKM v0 不需要覆盖这些全部方法，但必须在文档和 paper 中解�
 ## 评测维度决策
 
 CIKM v0 只保留四个 must-have diagnostics，加两个 optional diagnostics。
+
+评测内容不是“最终推荐指标谁高”，而是回答四个 resource paper 问题：
+
+1. tokenizer 是否有效利用了 code space；
+2. collision 是否造成 recommendation harm；
+3. semantic/code neighborhood 是否和 collaborative neighborhood 对齐；
+4. head/tail item 是否获得合理表达容量。
 
 ### D1. Codebook Utilization
 

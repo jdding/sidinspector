@@ -16,6 +16,7 @@
 | A090 | Venue plan | DONE | `docs/AUDIT_SID_VENUE_PLAN.md`, `docs/AUDIT_SID_VENUE_PLAN_20260518_133645.md` | Immediate target changed to CIKM 2026 Resource Track; abstract May 30, paper Jun 6. |
 | A095 | CIKM execution spec | DONE | `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`, `docs/AUDIT_SID_CIKM_EXECUTION_SPEC_20260518_135256.md` | Freezes dataset/method/diagnostic scope for 4-page resource paper. |
 | A096 | Method representativeness correction | DONE | `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`, `refine-logs/EXPERIMENT_PLAN.md` | RQ-VAE + ReSID are no longer treated as automatically sufficient; Gate 0A added. |
+| A097 | SID method cluster audit | DONE | `docs/SID_METHOD_CLUSTER_AUDIT.md`, `docs/SID_METHOD_CLUSTER_AUDIT_20260518_144128.md` | Clarifies Cluster A+B/C+sanity lower bound as must-run coverage, and maps diagnostics to clusters. |
 | A100 | Gate 0 code/artifact feasibility | PENDING | TBD | Must pass by 2026-05-24 for CIKM 2026 submission. |
 | A100A | Gate 0A method representativeness | PENDING | TBD | Must show canonical baseline + recent tokenizer innovation + sanity baseline; otherwise no CIKM submission. |
 | A101 | ReSID repo artifact audit | TODO | TBD | Confirm item-to-SID export path and processed Amazon-2023 dataset usability. |
@@ -36,3 +37,5 @@ Venue direction: target CIKM 2026 Resource Track now, because it is the nearest 
 Frozen CIKM v0 scope: primary dataset is ReSID processed Amazon-2023 `Musical_Instruments`; backup dataset is Amazon 2014 Beauty/Sports. Must-run methods are RQ-VAE/TIGER-style SID, ReSID, and a sanity ID baseline. Must-have diagnostics are D1 utilization, D2 collision harm, D3 semantic-collaborative alignment, and D4 head-tail capacity allocation.
 
 Correction: RQ-VAE/TIGER-style SID plus ReSID is only a preferred candidate pair, not automatically sufficient. Gate 0A must verify method representativeness. If the resulting comparison is shallow or does not cover a recent tokenizer innovation in a meaningful way, abandon CIKM 2026 rather than submitting a weak resource paper.
+
+Cluster-first rule: must-run coverage is Cluster A canonical SID + Cluster B/C recent tokenizer innovation + sanity lower bound. The next artifact must be `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`, not a training launch.

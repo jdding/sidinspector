@@ -16,6 +16,7 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 10. `refine-logs/EXPERIMENT_TRACKER.md`
 11. `docs/AUDIT_SID_VENUE_PLAN.md`
 12. `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`
+13. `docs/SID_METHOD_CLUSTER_AUDIT.md`
 
 ## Current Thesis
 
@@ -48,6 +49,8 @@ Key dates:
 Gate 0 must pass by 2026-05-24. If not, do not force a weak CIKM submission. Longer-term backups are SIGIR 2027 Resource/Reproducibility-style track, RecSys 2027 Resource/Reproducibility, and CIKM 2027 Resource.
 
 Method representativeness is part of Gate 0. A shallow RQ-VAE + ReSID comparison is not enough for submission.
+
+The must-run method coverage is cluster-based: canonical SID baseline + representative recent tokenizer innovation from Cluster B/C + sanity lower bound.
 
 ## Boundary
 

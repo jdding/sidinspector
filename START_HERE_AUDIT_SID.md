@@ -58,6 +58,7 @@ No full training should start before Gate 0 passes.
 ## Frozen CIKM v0 Scope
 
 Read `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md` before changing scope.
+Read `docs/SID_METHOD_CLUSTER_AUDIT.md` before deciding methods.
 
 - Primary dataset: ReSID processed Amazon-2023 `Musical_Instruments`.
 - Backup dataset: Amazon 2014 Beauty/Sports.
@@ -65,6 +66,7 @@ Read `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md` before changing scope.
 - Must-have diagnostics: D1 utilization, D2 collision harm, D3 semantic-collaborative alignment, D4 head-tail capacity allocation.
 - Optional only: DACT/drift and deployment-cost proxy.
 - Do not treat RQ-VAE + ReSID as automatically sufficient; Gate 0A must verify method representativeness.
+- Must-run coverage is Cluster A canonical SID + Cluster B/C recent tokenizer innovation + sanity lower bound.
 
 ## Venue Plan
 

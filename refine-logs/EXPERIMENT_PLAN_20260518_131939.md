@@ -70,12 +70,14 @@ Pass condition：
 - 写出一张 method coverage table；
 - 至少一个 recent method 的技术点能对应到 D1-D4 中的诊断轴；
 - 诊断结果能解释一个 community-relevant failure mode，如 harmful collision、tail capacity collapse、semantic-collaborative mismatch。
+- 最终 must-run 组合必须覆盖 `Cluster A + Cluster B/C + sanity lower bound`。
 
 Fail condition：
 
 - 只是“两个 repo 跑通”；
 - 只是“ReSID 指标高于 RQ-VAE”；
 - 只是 utilization/collision 的浅表统计，没有 case study。
+- 只能覆盖 Cluster A，或 B/C 方法 artifact 不可解释。
 
 ## Gate 1：Dataset Support Audit
 
@@ -106,6 +108,7 @@ Pass condition：
 Pass condition：
 
 - 至少四个 metrics 能在一个数据集和两个 tokenizer variants 上输出稳定、可解释结果。
+- 每个 metric 必须对应一个明确问题：D1 容量利用，D2 harmful collision，D3 semantic-collaborative mismatch，D4 head-tail capacity。
 
 ## Gate 3：Small Empirical Correlation Check
 
@@ -162,6 +165,7 @@ CIKM outputs：
 
 - diagnostic tables；
 - failure-case visualizations；
+- Method Coverage Table；
 - toolkit README and examples；
 - result-to-claim matrix。
 
