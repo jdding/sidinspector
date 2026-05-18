@@ -488,3 +488,13 @@
 | 2026-05-19 03:09 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_030945.md | implementation | timestamped tracker after D3 upgrade |
 | 2026-05-19 03:09 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records D3 upgrade |
 | 2026-05-19 03:09 | /idea-discovery | findings.md | implementation | append-only D3 collaborative alignment finding |
+| 2026-05-19 03:13 | /idea-discovery | docs/GATE0A_EVIDENCE_MATRIX_20260519_031359.md | decision | timestamped Gate 0A evidence matrix and conditional resource-demo verdict |
+| 2026-05-19 03:13 | /idea-discovery | docs/GATE0A_EVIDENCE_MATRIX.md | decision | latest Gate 0A evidence matrix and conditional resource-demo verdict |
+| 2026-05-19 03:13 | /idea-discovery | docs/GATE0_DECISION_20260519_031359.md | decision | timestamped Gate 0 decision refreshed after D3 and Cluster B pivot |
+| 2026-05-19 03:13 | /idea-discovery | docs/GATE0_DECISION.md | decision | latest Gate 0 decision refreshed after D3 and Cluster B pivot |
+| 2026-05-19 03:13 | /idea-discovery | docs/METHOD_REPRESENTATIVENESS_AUDIT_20260519_031359.md | decision | timestamped method score update after Gate 0A evidence matrix |
+| 2026-05-19 03:13 | /idea-discovery | docs/METHOD_REPRESENTATIVENESS_AUDIT.md | decision | latest method score update after Gate 0A evidence matrix |
+| 2026-05-19 03:13 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_031359.md | implementation | timestamped tracker after Gate 0A conditional pass |
+| 2026-05-19 03:13 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records Gate 0A conditional pass |
+| 2026-05-19 03:13 | /idea-discovery | README.md | documentation | start-here and gate status updated after Gate 0A conditional pass |
+| 2026-05-19 03:13 | /idea-discovery | findings.md | implementation | append-only Gate 0A conditional resource-demo finding |

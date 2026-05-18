@@ -10,12 +10,14 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 4. `docs/ARTIFACTS_INDEX.md`
 5. `docs/PROJECT_SPEC.md`
 6. `docs/GATE0_DECISION.md`
-7. `refine-logs/EXPERIMENT_TRACKER.md`
-8. `docs/AUTODL_GATE0A_STAGING.md`
-9. `docs/GRID_CLUSTER_A_EXPORT_PREP.md`
-10. `docs/RESID_REAL_MAPPING_SMOKE.md`
-11. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
-12. `refine-logs/EXPERIMENT_PLAN.md`
+7. `docs/GATE0A_EVIDENCE_MATRIX.md`
+8. `docs/D3_COLLABORATIVE_ALIGNMENT.md`
+9. `refine-logs/EXPERIMENT_TRACKER.md`
+10. `docs/AUTODL_GATE0A_STAGING.md`
+11. `docs/GRID_CLUSTER_A_EXPORT_PREP.md`
+12. `docs/RESID_REAL_MAPPING_SMOKE.md`
+13. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
+14. `refine-logs/EXPERIMENT_PLAN.md`
 
 ## Current Thesis
 
@@ -29,11 +31,15 @@ Gate 0 artifact feasibility is **passed**:
 - Cluster B: ReSID balanced GAOQ exports 23,742 joinable `Musical_Instruments` SIDs with D1-D5a metrics.
 - Sanity baselines exist for metric sensitivity.
 
-Gate 0A is still **open**. Do not treat the current evidence as paper-ready until method representativeness, dataset alignment, D3, and stability are resolved.
+Gate 0A core is **conditionally passed for a conservative resource-demo framing**:
+
+- It is enough for a toolkit/resource demo with cross-dataset method coverage and a same-dataset ReSID-vs-sanity diagnostic case study.
+- It is not enough for a same-dataset GRID-vs-ReSID leaderboard or a claim that ReSID Sports balanced GAOQ completed.
+- D3 is no longer category-purity-only; `d3_alignment.csv` now includes co-occurrence collaborative top-k prefix recall.
 
 ## Frozen CIKM v0 Scope
 
-- Dataset: `Musical_Instruments` is quick-smoke only. Gate 0A / paper-facing evidence should use at least one canonical vertical, with `Sports_and_Outdoors` preferred and `Beauty_and_Personal_Care` as the second Amazon-2023 option.
+- Dataset: `Musical_Instruments` is now the honest smaller-dataset ReSID/GAOQ Cluster B evidence. `Sports_and_Outdoors` remains preferred for future canonical-vertical strengthening, but exact balanced ReSID GAOQ is not currently tractable enough to block Gate 0A.
 - Methods: canonical RQ-VAE/TIGER-style SID, one representative recent tokenizer innovation such as ReSID if artifact export is meaningful, and random/popularity/category sanity ID baseline.
 - Diagnostics: codebook utilization, collision harm, semantic-collaborative alignment, head-tail capacity allocation, and lightweight SID-trie deployment-cost proxy.
 - Optional only if cheap: generator-output cost proxy and DACT/drift stability.
@@ -48,13 +54,13 @@ Key dates:
 - Abstract: 2026-05-30 AoE
 - Paper: 2026-06-06 AoE
 
-Gate 0 must pass by 2026-05-24. If not, do not force a weak CIKM submission. Longer-term backups are SIGIR 2027 Resource/Reproducibility-style track, RecSys 2027 Resource/Reproducibility, and CIKM 2027 Resource.
+Gate 0 has passed, and Gate 0A has a conditional resource-demo pass. If the paper needs a stronger same-dataset method comparison, do not force a weak CIKM submission. Longer-term backups are SIGIR 2027 Resource/Reproducibility-style track, RecSys 2027 Resource/Reproducibility, and CIKM 2027 Resource.
 
 Method representativeness is part of Gate 0. A shallow RQ-VAE + ReSID comparison is not enough for submission.
 
 The must-run method coverage is cluster-based: canonical SID baseline + representative recent tokenizer/codebook innovation from Cluster B + sanity lower bound.
 
-Current public-code priority: strengthen real GRID/RQ-KMeans Cluster A evidence and align it with real ReSID Cluster B evidence. CARD is fallback/provenance only and should not be counted as primary method evidence. AutoDL Gate 0A staging is transfer-verified; next GPU use should run a larger real GRID run, not proxy strengthening.
+Current public-code priority: convert the conditional Gate 0A result into paper-ready tables and wording. CARD compact feature proxy is controlled stressor/backlog only and should not be counted as faithful named-method evidence.
 
 ## Boundary
 
