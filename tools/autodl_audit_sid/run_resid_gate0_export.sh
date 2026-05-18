@@ -22,6 +22,7 @@ SKIP_PIP_INSTALL="${SKIP_PIP_INSTALL:-0}"
 GAOQ_USE_BALANCED_KMEANS="${GAOQ_USE_BALANCED_KMEANS:-true}"
 GAOQ_NUM_THREADS="${GAOQ_NUM_THREADS:-$NUM_WORKERS}"
 GAOQ_KMEANS_N_JOBS="${GAOQ_KMEANS_N_JOBS:-$GAOQ_NUM_THREADS}"
+STOP_AFTER_FAMAE="${STOP_AFTER_FAMAE:-0}"
 
 case "$DATASET_NAME" in
   Musical_Instruments)
@@ -184,6 +185,12 @@ if [ -z "$FAMAE_CKPT" ]; then
   exit 3
 fi
 echo "[AUDIT-SID] FAMAE checkpoint: $FAMAE_CKPT"
+
+if [ "$STOP_AFTER_FAMAE" = "1" ]; then
+  echo "[AUDIT-SID] STOP_AFTER_FAMAE=1; checkpoint prepared, skipping GAOQ export"
+  echo "$FAMAE_CKPT" > "$OUT_DIR/famae_checkpoint_path.txt"
+  exit 0
+fi
 
 cat > "$CONFIG_DIR/gaoq.yaml" <<YAML
 b1: $B1
