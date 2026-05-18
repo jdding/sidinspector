@@ -428,3 +428,5 @@
 | 2026-05-19 00:28 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_002827.md | implementation | timestamped tracker after Gate 0 artifact-feasibility pass |
 | 2026-05-19 00:28 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks Gate 0 passed and Gate 0A open |
 | 2026-05-19 00:28 | /idea-discovery | findings.md | implementation | append-only Gate 0 artifact-feasibility pass finding |
+| 2026-05-19 00:34 | /run-experiment | docs/AUTODL_GATE0A_STAGING_20260519_003400.md | implementation | timestamped no-GPU AutoDL staging/runbook for Gate 0A GRID strengthening |
+| 2026-05-19 00:34 | /run-experiment | docs/AUTODL_GATE0A_STAGING.md | implementation | latest no-GPU AutoDL staging/runbook for Gate 0A GRID strengthening |
