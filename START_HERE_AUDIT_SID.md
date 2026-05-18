@@ -59,6 +59,7 @@ No full training should start before Gate 0 passes.
 
 Read `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md` before changing scope.
 Read `docs/SID_METHOD_CLUSTER_AUDIT.md` before deciding methods.
+Read `docs/METHOD_REPRESENTATIVENESS_AUDIT.md` before launching any artifact extraction or training.
 
 - Primary dataset: ReSID processed Amazon-2023 `Musical_Instruments`.
 - Backup dataset: Amazon 2014 Beauty/Sports.

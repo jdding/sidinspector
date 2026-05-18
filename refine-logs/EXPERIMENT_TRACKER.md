@@ -17,6 +17,7 @@
 | A095 | CIKM execution spec | DONE | `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`, `docs/AUDIT_SID_CIKM_EXECUTION_SPEC_20260518_135256.md` | Freezes dataset/method/diagnostic scope for 4-page resource paper. |
 | A096 | Method representativeness correction | DONE | `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`, `refine-logs/EXPERIMENT_PLAN.md` | RQ-VAE + ReSID are no longer treated as automatically sufficient; Gate 0A added. |
 | A097 | SID method cluster audit | DONE | `docs/SID_METHOD_CLUSTER_AUDIT.md`, `docs/SID_METHOD_CLUSTER_AUDIT_20260518_144128.md` | Clarifies Cluster A+B/C+sanity lower bound as must-run coverage, and maps diagnostics to clusters. |
+| A098 | Method representativeness audit framework | DONE | `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`, `docs/METHOD_REPRESENTATIVENESS_AUDIT_20260518_145445.md` | Adds cluster x diagnostic mapping, method x diagnostic feasibility template, and Gate 0A scoring. |
 | A100 | Gate 0 code/artifact feasibility | PENDING | TBD | Must pass by 2026-05-24 for CIKM 2026 submission. |
 | A100A | Gate 0A method representativeness | PENDING | TBD | Must show canonical baseline + recent tokenizer innovation + sanity baseline; otherwise no CIKM submission. |
 | A101 | ReSID repo artifact audit | TODO | TBD | Confirm item-to-SID export path and processed Amazon-2023 dataset usability. |
@@ -39,3 +40,5 @@ Frozen CIKM v0 scope: primary dataset is ReSID processed Amazon-2023 `Musical_In
 Correction: RQ-VAE/TIGER-style SID plus ReSID is only a preferred candidate pair, not automatically sufficient. Gate 0A must verify method representativeness. If the resulting comparison is shallow or does not cover a recent tokenizer innovation in a meaningful way, abandon CIKM 2026 rather than submitting a weak resource paper.
 
 Cluster-first rule: must-run coverage is Cluster A canonical SID + Cluster B/C recent tokenizer innovation + sanity lower bound. The next artifact must be `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`, not a training launch.
+
+Update: `docs/METHOD_REPRESENTATIVENESS_AUDIT.md` now exists as the Gate 0A framework. The next concrete artifact should fill the tables with real repo/artifact evidence.

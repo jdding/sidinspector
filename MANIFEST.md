@@ -134,3 +134,8 @@
 | 2026-05-18 14:41 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with SID method cluster audit |
 | 2026-05-18 14:41 | /experiment-plan | README.md | idea-discovery | entrypoint updated with cluster audit link |
 | 2026-05-18 14:41 | /experiment-plan | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with cluster-first method rule |
+| 2026-05-18 14:54 | /experiment-plan | docs/METHOD_REPRESENTATIVENESS_AUDIT_20260518_145445.md | implementation | timestamped Gate 0A method representativeness audit framework |
+| 2026-05-18 14:54 | /experiment-plan | docs/METHOD_REPRESENTATIVENESS_AUDIT.md | implementation | latest copy |
+| 2026-05-18 14:54 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with Gate 0A audit framework |
+| 2026-05-18 14:54 | /experiment-plan | README.md | idea-discovery | entrypoint updated with method representativeness audit link |
+| 2026-05-18 14:54 | /experiment-plan | START_HERE_AUDIT_SID.md | idea-discovery | recovery entrypoint updated with method representativeness audit requirement |
