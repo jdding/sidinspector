@@ -18,8 +18,8 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 cd "$WORKSPACE" || exit 2
 
-COMMIT="$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")"
-MESSAGE="$(git log -1 --format='%s' 2>/dev/null || echo "N/A")"
+COMMIT="${LOCAL_COMMIT:-$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")}"
+MESSAGE="${LOCAL_COMMIT_MESSAGE:-$(git log -1 --format='%s' 2>/dev/null || echo "N/A")}"
 
 echo "=== AUDIT-SID GATE0A GRID BATCH ==="
 echo "Run ID: $RUN_ID"
