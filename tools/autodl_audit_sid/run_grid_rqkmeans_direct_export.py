@@ -22,7 +22,15 @@ def git_commit(repo: Path) -> str:
     try:
         return subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip()
     except Exception:
-        return "unknown"
+        head_path = repo / ".git" / "HEAD"
+        try:
+            head = head_path.read_text(encoding="utf-8").strip()
+            if head.startswith("ref: "):
+                ref_path = repo / ".git" / head.split(" ", 1)[1]
+                return ref_path.read_text(encoding="utf-8").strip()
+            return head
+        except Exception:
+            return "unknown"
 
 
 def import_grid(grid_dir: Path):

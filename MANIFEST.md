@@ -430,3 +430,10 @@
 | 2026-05-19 00:28 | /idea-discovery | findings.md | implementation | append-only Gate 0 artifact-feasibility pass finding |
 | 2026-05-19 00:34 | /run-experiment | docs/AUTODL_GATE0A_STAGING_20260519_003400.md | implementation | timestamped no-GPU AutoDL staging/runbook for Gate 0A GRID strengthening |
 | 2026-05-19 00:34 | /run-experiment | docs/AUTODL_GATE0A_STAGING.md | implementation | latest no-GPU AutoDL staging/runbook for Gate 0A GRID strengthening |
+| 2026-05-19 00:55 | /run-experiment | tools/autodl_audit_sid/preflight_gate0a_grid.sh | implementation | AutoDL Gate 0A GRID path/dependency preflight script |
+| 2026-05-19 00:55 | /run-experiment | tools/autodl_audit_sid/run_gate0a_grid_batch.sh | implementation | AutoDL Gate 0A GRID launch wrapper with idle-GPU guard |
+| 2026-05-19 00:55 | /run-experiment | docs/AUTODL_GATE0A_STAGING_20260519_005523.md | implementation | timestamped transfer-verified AutoDL Gate 0A staging report |
+| 2026-05-19 00:55 | /run-experiment | docs/AUTODL_GATE0A_STAGING.md | implementation | latest transfer-verified AutoDL Gate 0A staging report |
+| 2026-05-19 00:55 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_005523.md | implementation | timestamped tracker after AutoDL Gate 0A transfer verification |
+| 2026-05-19 00:55 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks AutoDL Gate 0A staging transfer-verified |
+| 2026-05-19 00:55 | /idea-discovery | findings.md | implementation | append-only AutoDL Gate 0A transfer verification finding |
