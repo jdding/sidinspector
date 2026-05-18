@@ -504,3 +504,8 @@
 | 2026-05-19 03:18 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_031836.md | implementation | timestamped tracker after D3v2 case-study table |
 | 2026-05-19 03:18 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records D3v2 case-study table |
 | 2026-05-19 03:18 | /idea-discovery | findings.md | implementation | append-only D3v2 case-study finding |
+| 2026-05-19 03:21 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN_20260519_032126.md | writing-plan | timestamped CIKM resource abstract and 4-page plan |
+| 2026-05-19 03:21 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | writing-plan | latest CIKM resource abstract and 4-page plan |
+| 2026-05-19 03:21 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_032126.md | implementation | timestamped tracker after paper-plan handoff |
+| 2026-05-19 03:21 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records paper-plan handoff |
+| 2026-05-19 03:21 | /idea-discovery | findings.md | implementation | append-only paper-plan finding |
