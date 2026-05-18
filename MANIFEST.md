@@ -454,3 +454,10 @@
 | 2026-05-19 01:23 | /autodl-cloud-deploy | tools/autodl_audit_sid/run_remote_gate0a_grid_batch.sh | implementation | AutoDL Gate 0A clean GRID batch runner for 20k seeds 42/43/44 plus 50k seed42 |
 | 2026-05-19 01:23 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_012348.md | implementation | timestamped tracker with Gate 0A clean GRID batch runner ready |
 | 2026-05-19 01:23 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker with Gate 0A clean GRID batch runner ready |
+| 2026-05-19 01:33 | /autodl-cloud-deploy | docs/AUTODL_GATE0A_GRID_RESULTS_20260519_013300.md | implementation | timestamped AutoDL Gate 0A GRID clean batch result report |
+| 2026-05-19 01:33 | /autodl-cloud-deploy | docs/AUTODL_GATE0A_GRID_RESULTS.md | implementation | latest AutoDL Gate 0A GRID clean batch result report |
+| 2026-05-19 01:33 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_013300.md | implementation | timestamped tracker marks Gate 0A GRID clean batch done |
+| 2026-05-19 01:33 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks Gate 0A GRID clean batch done |
+| 2026-05-19 01:33 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_013300.md | implementation | timestamped document map with Gate 0A GRID result link |
+| 2026-05-19 01:33 | /idea-discovery | docs/DOCUMENT_INDEX.md | implementation | latest document map with Gate 0A GRID result link |
+| 2026-05-19 01:33 | /idea-discovery | findings.md | implementation | append-only Gate 0A GRID clean batch finding |
