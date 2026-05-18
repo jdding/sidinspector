@@ -1,0 +1,53 @@
+# Adapter Smoke: ReSID Dataset + Sanity SID
+
+**生成时间**：2026-05-18 17:12:27 CST
+**状态**：normalized dataset + sanity SID artifacts generated
+
+## Commands
+
+```bash
+PYTHONPATH=src PYTHONPYCACHEPREFIX=/private/tmp/audit_sid_pycache \
+python3 -m audit_sid.adapters.resid \
+  --dataset-root _gate0_repos/ReSID-dataset/Musical_Instruments/leave_one_out/dataset \
+  --output-dir _gate0_artifacts/resid_musical_normalized \
+  --dataset-name Musical_Instruments
+
+PYTHONPATH=src PYTHONPYCACHEPREFIX=/private/tmp/audit_sid_pycache \
+python3 -m audit_sid.adapters.sanity \
+  --item-metadata _gate0_artifacts/resid_musical_normalized/item_metadata.parquet \
+  --interactions _gate0_artifacts/resid_musical_normalized/interactions.parquet \
+  --output-dir _gate0_artifacts/sanity_musical \
+  --dataset-name Musical_Instruments
+```
+
+## Outputs
+
+Generated outputs are under ignored `_gate0_artifacts/` and are not meant to be committed.
+
+| Artifact | Rows | Columns |
+|---|---:|---|
+| `_gate0_artifacts/resid_musical_normalized/item_metadata.parquet` | 23,742 | `item_id`, `store_id`, `category_l1`, `category_l2`, `category_l3`, `category` |
+| `_gate0_artifacts/resid_musical_normalized/interactions.parquet` | 433,164 | `user_id`, `item_id`, `timestamp`, `split`, `is_target` |
+| `_gate0_artifacts/sanity_musical/sid_assignments.parquet` | 71,226 | `item_id`, `sid_level_0..3`, `sid`, `method`, `dataset` |
+
+The sanity SID file contains three deterministic baselines:
+
+- `sanity_mod_collision_hash`;
+- `sanity_category_prefix`;
+- `sanity_popularity_balanced`.
+
+## Result
+
+The AUDIT-SID interface is now executable for:
+
+- `item_metadata`;
+- `interactions`;
+- sanity `sid_assignments`.
+
+This confirms that the fixed schema is workable before real ReSID/GRID SID export. It does not yet prove Gate 0 full pass, because no real tokenizer mapping has been generated locally.
+
+## Notes
+
+PyArrow emitted harmless sandbox-related `sysctlbyname` warnings while reading parquet files. The commands completed successfully and output row counts were verified.
+
+Update: after code review, `interactions.parquet` was corrected to target-only events. Historical sequence membership is no longer counted as repeated popularity events.

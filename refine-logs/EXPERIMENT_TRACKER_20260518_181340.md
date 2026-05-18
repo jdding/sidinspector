@@ -39,7 +39,6 @@
 | A104E | AutoDL GPU experiment staging | READY | `docs/AUTODL_GPU_EXPERIMENT_PLAN.md`, `tools/autodl_audit_sid/run_resid_gate0_export.sh`, `tools/autodl_audit_sid/run_resid_matrix.sh` | Fixed target resource: 25 CPU cores, 90 GB RAM, 1 x RTX 5090. Scripts prepared for ReSID matrix; still need Cluster A path. |
 | A104F | ReSID vs sanity case study | DONE | `docs/CASE_STUDY_RESID_VS_SANITY.md` | Combined real ReSID/GAOQ with sanity baselines; metrics runner now supports mixed SID depths across methods. |
 | A104G | Second code review fix pass | DONE | `docs/CODE_REVIEW_FIXES_ROUND2.md` | Tightened D2 column semantics, partial-coverage fail-fast behavior, multi-dataset guard, and sanity metadata fallback. |
-| A104H | Local RQ-KMeans proxy baseline | DONE | `docs/LOCAL_RQKMEANS_PROXY.md`, `src/audit_sid/baselines/rqkmeans.py` | Local feature-proxy residual kmeans baseline generated for toolkit development; not a replacement for GRID/CARD public implementation Gate 0. |
 | A105 | MovieLens-1M portability smoke | DEFERRED | TBD | Half-day max only after Gate 0 is stable; no new tokenizer and no main-claim dependence. |
 
 ## Current Decision

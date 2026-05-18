@@ -40,6 +40,20 @@ Evaluate whether AUDIT-SID can become a public-first methodology paper:
 9. `refine-logs/EXPERIMENT_TRACKER.md`
 10. `docs/AUDIT_SID_VENUE_PLAN.md`
 11. `docs/PROJECT_SPEC.md`
+12. `docs/EXTERNAL_REVIEW_ABSORPTION.md`
+13. `docs/GATE0_REPO_AUDIT.md`
+14. `docs/DATASET_SCHEMA_AUDIT.md`
+15. `docs/ADAPTER_SMOKE.md`
+16. `docs/METRIC_SMOKE.md`
+17. `docs/GRID_ADAPTER_SMOKE.md`
+18. `docs/REAL_MAPPING_PREFLIGHT.md`
+19. `docs/RESID_RUN_PREFLIGHT.md`
+20. `docs/CODE_REVIEW_FIXES.md`
+21. `docs/RESID_REAL_MAPPING_SMOKE.md`
+22. `docs/AUTODL_GPU_EXPERIMENT_PLAN.md`
+23. `docs/CASE_STUDY_RESID_VS_SANITY.md`
+24. `docs/CODE_REVIEW_FIXES_ROUND2.md`
+25. `docs/LOCAL_RQKMEANS_PROXY.md`
 
 ## Active Decision
 
@@ -47,12 +61,12 @@ Proceed with caution to feasibility only. Novelty is about `7/10` if the work is
 
 ## Next Concrete Task
 
-Run Gate 0:
+Continue Gate 0:
 
-1. identify open public SID/tokenizer implementations;
-2. verify whether at least two can export item-to-SID mappings;
-3. verify whether generator outputs or candidate lists can be captured;
-4. stop and report if artifact extraction is not feasible.
+1. prepare Cluster A canonical SID mapping path, preferably GRID/RQ-VAE or RKMeans/TIGER-style;
+2. run AutoDL ReSID robustness/quality matrix once the fixed RTX 5090 instance is ready;
+3. compare real ReSID against sanity baselines and the first Cluster A mapping;
+4. stop with missing-asset list if Cluster A cannot export locally or on AutoDL by 2026-05-24.
 
 No full training should start before Gate 0 passes.
 
@@ -66,10 +80,12 @@ Read `docs/METHOD_REPRESENTATIVENESS_AUDIT.md` before launching any artifact ext
 - Primary dataset: ReSID processed Amazon-2023 `Musical_Instruments`.
 - Backup dataset: Amazon 2014 Beauty/Sports.
 - Must-run method layers: canonical RQ-VAE/TIGER-style SID, one representative recent tokenizer innovation such as ReSID if artifact export is meaningful, and a sanity ID baseline.
-- Must-have diagnostics: D1 utilization, D2 collision harm, D3 semantic-collaborative alignment, D4 head-tail capacity allocation.
-- Optional only: DACT/drift and deployment-cost proxy.
+- Must-have diagnostics: D1 utilization, D2 collision harm, D3 semantic-collaborative alignment, D4 head-tail capacity allocation, D5a lightweight deployment-cost proxy.
+- Optional only: D5b generator-output cost and DACT/drift.
 - Do not treat RQ-VAE + ReSID as automatically sufficient; Gate 0A must verify method representativeness.
 - Must-run coverage is Cluster A canonical SID + Cluster B recent tokenizer/codebook innovation + sanity lower bound. Old B/C split is deprecated.
+- Resource-first rule: strong empirical finding is a stretch goal; toolkit interface + coverage table + non-redundant case study are the CIKM core.
+- Public code screen: DIGER is backup only; CapsID/AdaSID/AsymRec stay future-only unless runnable code appears; DRIL is not an independent candidate.
 
 ## Venue Plan
 

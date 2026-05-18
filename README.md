@@ -19,6 +19,20 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 13. `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`
 14. `docs/SID_METHOD_CLUSTER_AUDIT.md`
 15. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
+16. `docs/EXTERNAL_REVIEW_ABSORPTION.md`
+17. `docs/GATE0_REPO_AUDIT.md`
+18. `docs/DATASET_SCHEMA_AUDIT.md`
+19. `docs/ADAPTER_SMOKE.md`
+20. `docs/METRIC_SMOKE.md`
+21. `docs/GRID_ADAPTER_SMOKE.md`
+22. `docs/REAL_MAPPING_PREFLIGHT.md`
+23. `docs/RESID_RUN_PREFLIGHT.md`
+24. `docs/CODE_REVIEW_FIXES.md`
+25. `docs/RESID_REAL_MAPPING_SMOKE.md`
+26. `docs/AUTODL_GPU_EXPERIMENT_PLAN.md`
+27. `docs/CASE_STUDY_RESID_VS_SANITY.md`
+28. `docs/CODE_REVIEW_FIXES_ROUND2.md`
+29. `docs/LOCAL_RQKMEANS_PROXY.md`
 
 ## Current Thesis
 
@@ -28,7 +42,7 @@ AUDIT-SID is the current public-first methodology candidate. It should be framed
 
 Gate 0 is code/artifact feasibility:
 
-> verify whether at least two public SID/tokenizer implementations can export item-to-SID mappings and generator outputs on one small public dataset.
+> verify whether GRID/RQ-VAE and ReSID, or CARD fallback, can export joinable item-to-SID mappings into `src/audit_sid/interface.py`.
 
 Do not launch full experiments before Gate 0 and dataset support audit pass.
 
@@ -36,8 +50,9 @@ Do not launch full experiments before Gate 0 and dataset support audit pass.
 
 - Dataset: ReSID processed Amazon-2023 `Musical_Instruments`; Amazon 2014 Beauty/Sports as backup.
 - Methods: canonical RQ-VAE/TIGER-style SID, one representative recent tokenizer innovation such as ReSID if artifact export is meaningful, and random/popularity/category sanity ID baseline.
-- Diagnostics: codebook utilization, collision harm, semantic-collaborative alignment, and head-tail capacity allocation.
-- Optional only if cheap: deployment-cost proxy and DACT/drift stability.
+- Diagnostics: codebook utilization, collision harm, semantic-collaborative alignment, head-tail capacity allocation, and lightweight SID-trie deployment-cost proxy.
+- Optional only if cheap: generator-output cost proxy and DACT/drift stability.
+- Paper stance: resource-first. Strong empirical finding is a stretch goal, not the core CIKM claim.
 
 ## Venue Target
 
@@ -53,6 +68,8 @@ Gate 0 must pass by 2026-05-24. If not, do not force a weak CIKM submission. Lon
 Method representativeness is part of Gate 0. A shallow RQ-VAE + ReSID comparison is not enough for submission.
 
 The must-run method coverage is cluster-based: canonical SID baseline + representative recent tokenizer/codebook innovation from Cluster B + sanity lower bound.
+
+Current public-code priority: GRID/RQ-VAE for Cluster A, ReSID for Cluster B, CARD fallback if GRID is too heavy. DIGER is backup only; CapsID/AdaSID/AsymRec stay future support unless runnable code appears. Repo-level artifact-path audit, ReSID `Musical_Instruments` schema probe, sanity SID adapter smoke, D1-D5a metric smoke, and GRID output-format adapter smoke are done. Local ReSID FAMAE -> GAOQ produced the first real Cluster B SID mapping and D1-D5a metrics. A local RQ-KMeans feature-proxy baseline is available for toolkit development, but Gate 0 remains open because Cluster A public implementation coverage is still missing.
 
 ## Boundary
 
