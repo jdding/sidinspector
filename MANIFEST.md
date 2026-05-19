@@ -563,3 +563,12 @@
 | 2026-05-19 11:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_114934.md | implementation | timestamped tracker after no-GPU post-commit sync |
 | 2026-05-19 11:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks no-GPU post-commit sync verified |
 | 2026-05-19 11:49 | autodl-no-gpu | findings.md | implementation | append-only no-GPU post-commit sync finding |
+| 2026-05-19 11:53 | /run-experiment | tools/autodl_audit_sid/run_movielens_portability_smoke.py | implementation | bounded local MovieLens portability smoke runner |
+| 2026-05-19 11:53 | /run-experiment | _gate0_artifacts/movielens_portability_smoke/ml25m_1mratings_10kitems/metrics/coverage_report.csv | evidence | local MovieLens portability smoke coverage table |
+| 2026-05-19 11:53 | /experiment-plan | docs/MOVIELENS_PORTABILITY_SMOKE_20260519_115310.md | analysis | timestamped MovieLens portability smoke report |
+| 2026-05-19 11:53 | /experiment-plan | docs/MOVIELENS_PORTABILITY_SMOKE.md | analysis | latest MovieLens portability smoke report |
+| 2026-05-19 11:53 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260519_115310.md | implementation | timestamped plan after MovieLens portability smoke |
+| 2026-05-19 11:53 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | latest plan records MovieLens portability smoke |
+| 2026-05-19 11:53 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_115310.md | implementation | timestamped tracker after MovieLens portability smoke |
+| 2026-05-19 11:53 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks MovieLens portability smoke passed |
+| 2026-05-19 11:53 | /run-experiment | findings.md | implementation | append-only MovieLens portability smoke finding |
