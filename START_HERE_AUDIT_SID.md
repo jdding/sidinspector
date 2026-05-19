@@ -29,41 +29,39 @@ Evaluate whether AUDIT-SID can become a public-first methodology paper:
 
 ## Read Order
 
-1. `docs/DOCUMENT_INDEX.md`
-2. `docs/ARCHIVE_INDEX.md`
-3. `docs/ARTIFACTS_INDEX.md`
-4. `docs/PROJECT_SPEC.md`
-5. `docs/GATE0_DECISION.md`
-6. `refine-logs/EXPERIMENT_TRACKER.md`
-7. `docs/AUTODL_GATE0A_STAGING.md`
-8. `docs/GRID_CLUSTER_A_EXPORT_PREP.md`
-9. `docs/RESID_REAL_MAPPING_SMOKE.md`
-10. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
+1. `docs/CURRENT_STATE.md`
+2. `docs/CIKM_EXPERIMENT_DESIGN.md`
+3. `docs/DOCUMENT_INDEX.md`
+4. `docs/ARCHIVE_INDEX.md`
+5. `docs/ARTIFACTS_INDEX.md`
+6. `docs/PROJECT_SPEC.md`
+7. `docs/GATE0_DECISION.md`
+8. `refine-logs/EXPERIMENT_TRACKER.md`
+9. `docs/GRID_MUSICAL_SAME_DATASET_CPU.md`
+10. `docs/CIKM_RESOURCE_PAPER_PLAN.md`
 11. `refine-logs/EXPERIMENT_PLAN.md`
-12. `RESEARCH_BRIEF.md`
-13. `idea-stage/LITERATURE_REVIEW.md`
-14. `idea-stage/IDEA_REPORT.md`
 
 ## Active Decision
 
-Gate 0 artifact feasibility has passed. Gate 0A remains open.
+Gate 0 artifact feasibility has passed. Gate 0A has a conditional pass for a
+conservative CIKM Resource Track demo.
 
-The current evidence is enough to say public artifacts can export joinable SID
-mappings, but not enough to say the CIKM case study is ready. Novelty remains
-about `7/10` if the work is a diagnostic methodology paper; pure public
-leaderboard is abandoned.
+The current evidence is enough for a mapping-first artifact diagnostic toolkit
+paper, centered on D1-D5a and the same-item-universe Musical diagnostic row.
+It is not enough for a SID leaderboard, faithful TIGER reproduction, or full
+generative recommender quality claim.
 
 ## Next Concrete Task
 
-Continue Gate 0A:
+Continue paper-readiness tightening:
 
-1. use `docs/AUTODL_GATE0A_STAGING.md` as the current AutoDL runbook;
-2. run a larger real GRID/RQ-KMeans Cluster A job when GPU is available;
-3. decide whether A/B must be aligned on one dataset or can remain artifact-feasibility cross-dataset;
-4. replace or clearly caveat category-purity D3 before paper use;
+1. verify citation metadata from primary sources;
+2. generate final method-coverage and diagnostic case-study tables;
+3. keep D1-D5a as main artifact diagnostics and D6 as optional;
+4. write strict limitations for D2/D3/D5a and generator-output gaps;
 5. keep CARD and Sports proxy rows out of primary method evidence.
 
-No proxy strengthening should start before Gate 0A priorities are resolved.
+Run locally first. Use AutoDL only when a specific local blocker is documented.
 
 ## Frozen CIKM v0 Scope
 
@@ -72,11 +70,15 @@ Read `docs/PROJECT_SPEC.md` as the unified execution contract.
 Read `docs/SID_METHOD_CLUSTER_AUDIT.md` before deciding methods.
 Read `docs/METHOD_REPRESENTATIVENESS_AUDIT.md` before launching any artifact extraction or training.
 
-- `Musical_Instruments` is quick-smoke only.
-- Paper-facing Gate 0A evidence should include at least one canonical vertical: `Sports_and_Outdoors` is preferred, and `Beauty_and_Personal_Care` is the second Amazon-2023 option.
+- `Musical_Instruments` is the current same-item-universe diagnostic case-study
+  dataset.
+- `Sports_and_Outdoors` remains future canonical-vertical strengthening, not a
+  CIKM v0 blocker.
 - Must-run method layers: canonical RQ-VAE/TIGER-style SID, one representative recent tokenizer innovation such as ReSID if artifact export is meaningful, and a sanity ID baseline.
-- Must-have diagnostics: D1 utilization, D2 collision harm, D3 semantic-collaborative alignment, D4 head-tail capacity allocation, D5a lightweight deployment-cost proxy.
-- Optional only: D5b generator-output cost and DACT/drift.
+- Must-have diagnostics: D1 utilization, D2 collision profile, D3
+  semantic-collaborative alignment, D4 head-tail capacity allocation, D5a
+  lightweight deployment-cost proxy.
+- Optional only: D6 drift/churn and future D5b/D7 generator-output diagnostics.
 - Do not treat RQ-VAE + ReSID as automatically sufficient; Gate 0A must verify method representativeness.
 - Must-run coverage is Cluster A canonical SID + Cluster B recent tokenizer/codebook innovation + sanity lower bound. Old B/C split is deprecated.
 - Resource-first rule: strong empirical finding is a stretch goal; toolkit interface + coverage table + non-redundant case study are the CIKM core.

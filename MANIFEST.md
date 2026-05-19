@@ -572,3 +572,16 @@
 | 2026-05-19 11:53 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_115310.md | implementation | timestamped tracker after MovieLens portability smoke |
 | 2026-05-19 11:53 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks MovieLens portability smoke passed |
 | 2026-05-19 11:53 | /run-experiment | findings.md | implementation | append-only MovieLens portability smoke finding |
+| 2026-05-19 12:29 | /idea-discovery | docs/CURRENT_STATE_20260519_122957.md | documentation | timestamped current state entrypoint after metric-scope absorption |
+| 2026-05-19 12:29 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state entrypoint after metric-scope absorption |
+| 2026-05-19 12:29 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260519_122957.md | writing-plan | timestamped CIKM experiment design after D1-D6 scope absorption |
+| 2026-05-19 12:29 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | writing-plan | latest CIKM experiment design after D1-D6 scope absorption |
+| 2026-05-19 12:29 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN_20260519_122957.md | writing-plan | timestamped paper plan updated with artifact-scope and D5b/D7 limits |
+| 2026-05-19 12:29 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | writing-plan | latest paper plan updated with artifact-scope and D5b/D7 limits |
+| 2026-05-19 12:29 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_122957.md | documentation | timestamped document index aligned to current Gate 0A status |
+| 2026-05-19 12:29 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index aligned to current Gate 0A status |
+| 2026-05-19 12:29 | /idea-discovery | README.md | documentation | start-here order aligned to current state and local-first policy |
+| 2026-05-19 12:29 | /idea-discovery | START_HERE_AUDIT_SID.md | documentation | current branch entrypoint aligned to conditional Gate 0A pass |
+| 2026-05-19 12:29 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_122957.md | implementation | timestamped tracker after metric-scope absorption |
+| 2026-05-19 12:29 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records metric-scope absorption |
+| 2026-05-19 12:29 | /idea-discovery | findings.md | implementation | append-only D1-D6 artifact-scope finding |

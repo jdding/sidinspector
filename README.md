@@ -5,19 +5,18 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 ## Start Here
 
 1. `START_HERE_AUDIT_SID.md`
-2. `docs/DOCUMENT_INDEX.md`
-3. `docs/ARCHIVE_INDEX.md`
-4. `docs/ARTIFACTS_INDEX.md`
-5. `docs/PROJECT_SPEC.md`
-6. `docs/GATE0_DECISION.md`
-7. `docs/GATE0A_EVIDENCE_MATRIX.md`
-8. `docs/D3_COLLABORATIVE_ALIGNMENT.md`
-9. `refine-logs/EXPERIMENT_TRACKER.md`
-10. `docs/AUTODL_GATE0A_STAGING.md`
-11. `docs/GRID_CLUSTER_A_EXPORT_PREP.md`
-12. `docs/RESID_REAL_MAPPING_SMOKE.md`
-13. `docs/METHOD_REPRESENTATIVENESS_AUDIT.md`
-14. `refine-logs/EXPERIMENT_PLAN.md`
+2. `docs/CURRENT_STATE.md`
+3. `docs/CIKM_EXPERIMENT_DESIGN.md`
+4. `docs/DOCUMENT_INDEX.md`
+5. `docs/ARCHIVE_INDEX.md`
+6. `docs/ARTIFACTS_INDEX.md`
+7. `docs/PROJECT_SPEC.md`
+8. `docs/GATE0_DECISION.md`
+9. `docs/GATE0A_EVIDENCE_MATRIX.md`
+10. `docs/GRID_MUSICAL_SAME_DATASET_CPU.md`
+11. `docs/CIKM_RESOURCE_PAPER_PLAN.md`
+12. `refine-logs/EXPERIMENT_TRACKER.md`
+13. `refine-logs/EXPERIMENT_PLAN.md`
 
 ## Current Thesis
 
@@ -33,16 +32,23 @@ Gate 0 artifact feasibility is **passed**:
 
 Gate 0A core is **conditionally passed for a conservative resource-demo framing**:
 
-- It is enough for a toolkit/resource demo with cross-dataset method coverage and a same-dataset ReSID-vs-sanity diagnostic case study.
+- It is enough for a toolkit/resource demo with method coverage and a
+  same-item-universe GRID Musical feature-text vs ReSID Musical diagnostic
+  table.
 - It is not enough for a same-dataset GRID-vs-ReSID leaderboard or a claim that ReSID Sports balanced GAOQ completed.
 - D3 is no longer category-purity-only; `d3_alignment.csv` now includes co-occurrence collaborative top-k prefix recall.
 
 ## Frozen CIKM v0 Scope
 
-- Dataset: `Musical_Instruments` is now the honest smaller-dataset ReSID/GAOQ Cluster B evidence. `Sports_and_Outdoors` remains preferred for future canonical-vertical strengthening, but exact balanced ReSID GAOQ is not currently tractable enough to block Gate 0A.
+- Dataset: `Musical_Instruments` now supports the main same-item-universe
+  diagnostic row. `Sports_and_Outdoors` remains preferred for future
+  canonical-vertical strengthening, but exact balanced ReSID GAOQ is not
+  currently tractable enough to block Gate 0A.
 - Methods: canonical RQ-VAE/TIGER-style SID, one representative recent tokenizer innovation such as ReSID if artifact export is meaningful, and random/popularity/category sanity ID baseline.
-- Diagnostics: codebook utilization, collision harm, semantic-collaborative alignment, head-tail capacity allocation, and lightweight SID-trie deployment-cost proxy.
-- Optional only if cheap: generator-output cost proxy and DACT/drift stability.
+- Diagnostics: D1-D5a artifact diagnostics over `item -> SID` mappings:
+  utilization, collision profile, semantic-collaborative alignment, head-tail
+  capacity allocation, and lightweight SID-trie deployment-cost proxy.
+- Optional only: D6 drift/churn and future generator-output D5b/D7.
 - Paper stance: resource-first. Strong empirical finding is a stretch goal, not the core CIKM claim.
 
 ## Venue Target
