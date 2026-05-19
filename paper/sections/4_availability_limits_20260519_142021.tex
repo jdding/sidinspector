@@ -1,0 +1,111 @@
+\section{Availability and Limitations}
+
+The artifact repository contains the \tool Python package, adapter scripts,
+metric runners, generated CSV, Markdown, and \LaTeX{} tables, provenance logs,
+the BibTeX/source audit used for this draft, an MIT license, and a reviewer
+quickstart. Large local artifacts are kept out of git and described through
+manifests so that reviewers can distinguish public reproducibility assets from
+local caches.
+
+\begin{table}[t]
+\caption{Reviewer-facing artifact package. The table maps repository assets to
+verification actions and claims rather than asking reviewers to reproduce all
+upstream tokenizer training from scratch.}
+\label{tab:artifact-package}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\columnwidth}{@{}p{0.42\columnwidth}Y@{}}
+\toprule
+Reviewer action & Checked claim \\
+\midrule
+Read quickstart and license & MIT-licensed resource with local verification
+commands. \\
+Run tests and table builders & D1--D5a metrics and optional D6 paths execute
+from normalized artifacts. \\
+Compare generated CSVs with Tables~\ref{tab:method-coverage}
+and~\ref{tab:musical-diagnostic} & Main numeric claims are traceable to
+generated files. \\
+Inspect manifest and claim audit & Rows are labeled as runnable, controlled,
+optional, or literature-only evidence. \\
+Open sanity, scale, churn, and MovieLens CSVs & Metric sensitivity, larger-item
+handling, D6 churn, and non-Amazon portability are documented. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The current evidence supports a conservative resource-demo claim. It does not
+support several stronger claims. \tool does not reproduce TIGER end-to-end; the
+GRID Musical row is a controlled feature-text export. The ReSID Sports balanced
+GAOQ path was stopped because constrained k-means was CPU-bound under the
+available window, so the main ReSID evidence is the bounded Musical export.
+CARD is repaired only as a fallback/stressor path and should not be presented
+as faithful CARD reproduction~\cite{wei2026card}. D2 is a collision profile,
+not strict causal harm. D3 is a diagnostic proxy and is not yet proven
+monotonic with Recall@K or NDCG. D5a is a structural cost proxy without real
+generator-output latency, and D6 remains optional drift evidence.
+
+These boundaries are intentional. The paper contributes an audit surface for
+tokenizer artifacts, not a new \sid tokenizer, a complete
+generative-recommender evaluation, or an industrial online-impact study.
+Future versions should add interaction-qualified collision harm, generator
+output diagnostics, stronger same-dataset method coverage, and unified search
+and recommendation artifact checks~\cite{penha2025jointsid}. Industrial SID
+deployment studies further motivate tracking these artifact properties as
+first-class engineering objects~\cite{ju2026snapchatsid}.
+
+The most important limitation is interpretive rather than computational.
+Artifact diagnostics can reveal pressure points before expensive generator
+training, but they do not replace ranking evaluation. A tokenizer with cleaner
+capacity allocation can still be hard for a sequence model to predict, and a
+tokenizer with collisions can sometimes be rescued by downstream ranking or
+reranking components. For that reason, \tool is best used as a preflight and
+debugging layer: it tells method authors what kind of artifact they produced,
+which slices deserve downstream evaluation, and which claims are unsafe to make
+from Recall@K alone.
+
+\paragraph{Reviewer workflow.}
+The intended reviewer workflow is short. First, inspect the manifest to decide
+which rows are named-method evidence, controlled stressors, optional
+extensions, or literature-only context. Second, rerun the metric command on the
+normalized artifacts and compare the generated CSV and \LaTeX{} tables with
+the paper-facing tables. Third, open the failure slices for any suspicious row:
+items sharing a full code, prefixes with unusually high fan-out, or tail items
+with low unique-code ratios. This workflow is deliberately lighter than
+retraining every tokenizer. It tests whether the resource is useful as an audit
+layer for artifacts that already exist.
+
+\paragraph{Claim discipline.}
+The resource separates three levels of statements. A \emph{mapping statement}
+is directly supported by the SID-assignment table: for example, the number of
+unique full codes or the full-collision rate in
+Table~\ref{tab:musical-diagnostic}. A \emph{diagnostic statement} combines the
+mapping with metadata or interaction slices: for example, D3 collaborative
+prefix recovery or D4 tail allocation. A \emph{system-quality statement}
+requires downstream generator training, ranking evaluation, or serving traces.
+The current paper makes the first two kinds of statements and explicitly does
+not make the third. This separation is the main design rule that keeps the
+resource useful even when upstream tokenizer releases differ in how much code,
+checkpoint state, or generator output they expose.
+
+\paragraph{Why this is still resource-worthy.}
+A resource paper does not need to prove that one tokenizer is better than
+another. It needs to make a reusable artifact easier to inspect, compare, and
+extend. \tool contributes that layer for SID tokenizers: adapters translate
+heterogeneous exports into one contract, validators prevent unjoinable mappings
+from entering the evidence table, diagnostics expose failure modes that are
+orthogonal to final Recall@K, and generated tables make the audit repeatable.
+The same design also gives future tokenizer papers a checklist for what to
+release: item-to-\sid mappings, item metadata, interaction slices when
+possible, generator outputs when claiming decoding behavior, and enough
+provenance to distinguish a faithful reproduction from a controlled proxy.
+
+\paragraph{Maintenance plan.}
+The public artifact is organized so that new tokenizer adapters can be added
+without changing the diagnostic definitions. Each adapter is expected to emit
+the same normalized tables, declare its evidence role, and record the source of
+item features or checkpoints. New diagnostics should be added as separate D
+modules only when they require new input contracts; otherwise they should
+extend the existing CSV schema. This keeps the resource useful for future SID
+papers without turning the main package into a collection of one-off scripts.
+Versioned manifests and fixed-name ``latest'' reports preserve both stable
+entry points and timestamped provenance for reviewers.

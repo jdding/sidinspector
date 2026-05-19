@@ -645,6 +645,13 @@
 | 2026-05-19 13:03 | /paper-write | refine-logs/EXPERIMENT_TRACKER_20260519_130335.md | implementation | timestamped tracker after paper draft |
 | 2026-05-19 13:03 | /paper-write | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records paper draft |
 | 2026-05-19 13:03 | /paper-write | findings.md | implementation | append-only paper draft finding |
+| 2026-05-19 13:11 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY_20260519_131103.md | paper | timestamped figure/table strategy for CIKM Resource draft |
+| 2026-05-19 13:11 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY.md | paper | latest figure/table strategy for CIKM Resource draft |
+| 2026-05-19 13:11 | /paper-figure | refine-logs/EXPERIMENT_TRACKER_20260519_131103.md | implementation | timestamped tracker after paper figure/table strategy |
+| 2026-05-19 13:11 | /paper-figure | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records paper figure/table strategy |
+| 2026-05-19 13:11 | /paper-figure | docs/DOCUMENT_INDEX_20260519_131103.md | documentation | timestamped document index after figure/table strategy |
+| 2026-05-19 13:11 | /paper-figure | docs/DOCUMENT_INDEX.md | documentation | document index records figure/table strategy |
+| 2026-05-19 13:11 | /paper-figure | findings.md | implementation | append-only figure/table strategy finding |
 | 2026-05-19 12:52 | /research-lit | docs/SID_REFERENCE_REFRESH_20260519_125226.md | idea-discovery | timestamped SID literature refresh and paper-reference gap scan |
 | 2026-05-19 12:52 | /research-lit | docs/SID_REFERENCE_REFRESH.md | idea-discovery | latest SID literature refresh and compact reference recommendation |
 | 2026-05-19 12:52 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_125226.md | documentation | timestamped document index updated with reference refresh entry |
@@ -652,3 +659,122 @@
 | 2026-05-19 12:52 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_125226.md | implementation | timestamped tracker after SID reference refresh |
 | 2026-05-19 12:52 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records SID reference refresh |
 | 2026-05-19 12:52 | /research-lit | findings.md | idea-discovery | append-only SID reference refresh finding |
+| 2026-05-19 13:06 | /research-refine | docs/SID_CLUSTER_DIAGNOSTIC_REFRESH_20260519_130606.md | implementation | timestamped SID method taxonomy and D1-D7 coverage refresh |
+| 2026-05-19 13:06 | /research-refine | docs/SID_CLUSTER_DIAGNOSTIC_REFRESH.md | implementation | latest SID method taxonomy and D1-D7 coverage refresh |
+| 2026-05-19 13:06 | /research-refine | docs/SID_METHOD_CLUSTER_AUDIT_20260519_130606.md | implementation | timestamped early cluster audit marked superseded by current taxonomy refresh |
+| 2026-05-19 13:06 | /research-refine | docs/SID_METHOD_CLUSTER_AUDIT.md | implementation | latest early cluster audit marked superseded by current taxonomy refresh |
+| 2026-05-19 13:06 | /research-refine | docs/METHOD_REPRESENTATIVENESS_AUDIT_20260519_130606.md | implementation | timestamped Gate 0A audit linked to current taxonomy refresh |
+| 2026-05-19 13:06 | /research-refine | docs/METHOD_REPRESENTATIVENESS_AUDIT.md | implementation | latest Gate 0A audit linked to current taxonomy refresh |
+| 2026-05-19 13:06 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260519_130606.md | writing-plan | timestamped experiment design with D1-D7 scope update |
+| 2026-05-19 13:06 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | writing-plan | latest experiment design with D1-D7 scope update |
+| 2026-05-19 13:06 | /idea-discovery | docs/CURRENT_STATE_20260519_130606.md | documentation | timestamped current state with taxonomy refresh pointer |
+| 2026-05-19 13:06 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state with taxonomy refresh pointer |
+| 2026-05-19 13:06 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_130606.md | documentation | timestamped document index with cluster/diagnostic refresh |
+| 2026-05-19 13:06 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index with cluster/diagnostic refresh |
+| 2026-05-19 13:06 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_130606.md | implementation | timestamped tracker after cluster/diagnostic taxonomy refresh |
+| 2026-05-19 13:06 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records cluster/diagnostic taxonomy refresh |
+| 2026-05-19 13:06 | /research-refine | findings.md | implementation | append-only cluster/diagnostic taxonomy finding |
+| 2026-05-19 13:21 | /paper-figure | paper/sections/2_toolkit_20260519_132153.tex | paper | timestamped toolkit section with Fig. 1 and facet-aware Table 1 |
+| 2026-05-19 13:21 | /paper-figure | paper/sections/2_toolkit.tex | paper | latest toolkit section with Fig. 1 and facet-aware Table 1 |
+| 2026-05-19 13:21 | /paper-figure | paper/sections/3_resource_demo_20260519_132153.tex | paper | timestamped resource demo section with compact Table 2 |
+| 2026-05-19 13:21 | /paper-figure | paper/sections/3_resource_demo.tex | paper | latest resource demo section with compact Table 2 |
+| 2026-05-19 13:21 | /paper-figure | paper/sections/4_availability_limits_20260519_132153.tex | paper | timestamped availability section after wording fit fix |
+| 2026-05-19 13:21 | /paper-figure | paper/sections/4_availability_limits.tex | paper | latest availability section after wording fit fix |
+| 2026-05-19 13:21 | /paper-compile | paper/main_20260519_132153.pdf | paper | timestamped compiled ACM draft after figure/table integration |
+| 2026-05-19 13:21 | /paper-compile | paper/main.pdf | paper | latest compiled ACM draft after figure/table integration |
+| 2026-05-19 13:21 | /idea-discovery | docs/CURRENT_STATE_20260519_132153.md | documentation | timestamped current state after figure/table integration |
+| 2026-05-19 13:21 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after figure/table integration |
+| 2026-05-19 13:21 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY_20260519_132153.md | paper | timestamped figure/table strategy with implementation status |
+| 2026-05-19 13:21 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY.md | paper | latest figure/table strategy with implementation status |
+| 2026-05-19 13:21 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_132153.md | implementation | timestamped tracker after figure/table integration |
+| 2026-05-19 13:21 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records figure/table integration |
+| 2026-05-19 13:21 | /paper-figure | findings.md | implementation | append-only figure/table integration finding |
+| 2026-05-19 13:27 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY_20260519_132716.md | paper | timestamped figure/table strategy after status wording cleanup |
+| 2026-05-19 13:27 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY.md | paper | latest figure/table strategy after status wording cleanup |
+| 2026-05-19 13:27 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_132716.md | documentation | timestamped document index with current compiled paper draft entry |
+| 2026-05-19 13:27 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index with current compiled paper draft entry |
+| 2026-05-19 13:30 | /paper-figure | paper/sections/2_toolkit_20260519_133039.tex | paper | timestamped toolkit section after subagent figure/table review fixes |
+| 2026-05-19 13:30 | /paper-figure | paper/sections/2_toolkit.tex | paper | latest toolkit section after subagent figure/table review fixes |
+| 2026-05-19 13:30 | /paper-figure | paper/sections/3_resource_demo_20260519_133039.tex | paper | timestamped resource demo section after subagent figure/table review fixes |
+| 2026-05-19 13:30 | /paper-figure | paper/sections/3_resource_demo.tex | paper | latest resource demo section after subagent figure/table review fixes |
+| 2026-05-19 13:30 | /paper-compile | paper/main_20260519_133039.pdf | paper | timestamped compiled 3-page draft after subagent fixes |
+| 2026-05-19 13:30 | /paper-compile | paper/main.pdf | paper | latest compiled 3-page draft after subagent fixes |
+| 2026-05-19 13:30 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_133039.md | implementation | timestamped tracker after subagent figure/table review fixes |
+| 2026-05-19 13:30 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records subagent figure/table review fixes |
+| 2026-05-19 13:30 | /paper-figure | findings.md | implementation | append-only subagent figure/table review finding |
+| 2026-05-19 13:44 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260519_134435.md | paper | timestamped strict paper claim audit after body expansion |
+| 2026-05-19 13:44 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | paper | latest strict paper claim audit after body expansion |
+| 2026-05-19 13:46 | /paper-write | paper/main_20260519_134646.tex | paper | timestamped ACM draft main file after body expansion |
+| 2026-05-19 13:46 | /paper-write | paper/main.tex | paper | latest ACM draft main file after body expansion |
+| 2026-05-19 13:46 | /paper-write | paper/sections/1_introduction_20260519_134646.tex | paper | timestamped introduction after resource-gap expansion |
+| 2026-05-19 13:46 | /paper-write | paper/sections/1_introduction.tex | paper | latest introduction after resource-gap expansion |
+| 2026-05-19 13:46 | /paper-figure | paper/sections/2_toolkit_20260519_134646.tex | paper | timestamped toolkit section with generated vector Fig. 1 and revised Table 1 |
+| 2026-05-19 13:46 | /paper-figure | paper/sections/2_toolkit.tex | paper | latest toolkit section with generated vector Fig. 1 and revised Table 1 |
+| 2026-05-19 13:46 | /paper-write | paper/sections/3_resource_demo_20260519_134646.tex | paper | timestamped resource demo section with expanded protocol and Table 2 |
+| 2026-05-19 13:46 | /paper-write | paper/sections/3_resource_demo.tex | paper | latest resource demo section with expanded protocol and Table 2 |
+| 2026-05-19 13:46 | /paper-write | paper/sections/4_availability_limits_20260519_134646.tex | paper | timestamped availability section with Table 3, reviewer workflow, and claim discipline |
+| 2026-05-19 13:46 | /paper-write | paper/sections/4_availability_limits.tex | paper | latest availability section with Table 3, reviewer workflow, and claim discipline |
+| 2026-05-19 13:46 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline.py | implementation | vector Fig. 1 generation script |
+| 2026-05-19 13:46 | /paper-figure | paper/figures/fig1_audit_sid_pipeline_20260519_134646.pdf | paper | timestamped vector Fig. 1 PDF |
+| 2026-05-19 13:46 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.pdf | paper | latest vector Fig. 1 PDF |
+| 2026-05-19 13:46 | /paper-figure | paper/figures/fig1_audit_sid_pipeline_20260519_134646.png | paper | timestamped Fig. 1 preview PNG |
+| 2026-05-19 13:46 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.png | paper | latest Fig. 1 preview PNG |
+| 2026-05-19 13:46 | /paper-compile | paper/main_20260519_134646.pdf | paper | timestamped compiled draft after body expansion; 5 pages total, body through page 4 |
+| 2026-05-19 13:46 | /paper-compile | paper/main.pdf | paper | latest compiled draft after body expansion; 5 pages total, body through page 4 |
+| 2026-05-19 13:46 | /idea-discovery | docs/CURRENT_STATE_20260519_134646.md | documentation | timestamped current state after body expansion and claim audit |
+| 2026-05-19 13:46 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after body expansion and claim audit |
+| 2026-05-19 13:46 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY_20260519_134646.md | paper | timestamped figure/table strategy after vector figure and Table 3 update |
+| 2026-05-19 13:46 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY.md | paper | latest figure/table strategy after vector figure and Table 3 update |
+| 2026-05-19 13:46 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_134646.md | documentation | timestamped document index after paper body expansion |
+| 2026-05-19 13:46 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after paper body expansion |
+| 2026-05-19 13:46 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_134646.md | implementation | timestamped tracker after paper body expansion and claim audit |
+| 2026-05-19 13:46 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records paper body expansion and claim audit |
+| 2026-05-19 13:46 | /paper-write | findings.md | implementation | append-only body expansion and strict claim audit finding |
+| 2026-05-19 13:48 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260519_134847.md | writing-plan | timestamped experiment design synchronized to vector Fig. 1, Tables 1-3, and 4-page body stance |
+| 2026-05-19 13:48 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | writing-plan | latest experiment design synchronized to vector Fig. 1, Tables 1-3, and 4-page body stance |
+| 2026-05-19 13:48 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN_20260519_134847.md | writing-plan | timestamped paper plan synchronized to vector Fig. 1, Tables 1-3, and reviewer workflow text |
+| 2026-05-19 13:48 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | writing-plan | latest paper plan synchronized to vector Fig. 1, Tables 1-3, and reviewer workflow text |
+| 2026-05-19 13:48 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_134847.md | implementation | timestamped tracker after paper plan/design sync |
+| 2026-05-19 13:48 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records paper plan/design sync |
+| 2026-05-19 14:00 | /paper-reviewer | docs/INTERNAL_REVIEW_ROUND1_20260519_140000.md | paper | timestamped internal CIKM Resource review round 1, score 7.1/10 |
+| 2026-05-19 14:00 | /paper-reviewer | docs/INTERNAL_REVIEW_ROUND1.md | paper | latest internal review round 1 |
+| 2026-05-19 14:20 | /paper-reviewer | docs/INTERNAL_REVIEW_ROUND2_20260519_142021.md | paper | timestamped internal CIKM Resource review round 2, score 8.0/10 |
+| 2026-05-19 14:20 | /paper-reviewer | docs/INTERNAL_REVIEW_ROUND2.md | paper | latest internal review round 2 |
+| 2026-05-19 14:21 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260519_142100.md | paper | timestamped strict claim audit after two internal review rounds |
+| 2026-05-19 14:21 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | paper | latest strict claim audit after two internal review rounds |
+| 2026-05-19 14:20 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY_20260519_142021.md | paper | timestamped figure/table strategy after internal review round 2 |
+| 2026-05-19 14:20 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY.md | paper | latest figure/table strategy after internal review round 2 |
+| 2026-05-19 14:20 | /paper-write | paper/main_20260519_142021.tex | paper | timestamped ACM draft after two internal review rounds |
+| 2026-05-19 14:20 | /paper-write | paper/sections/2_toolkit_20260519_142021.tex | paper | timestamped toolkit section after Fig. 1 and Table 1 review fixes |
+| 2026-05-19 14:20 | /paper-write | paper/sections/3_resource_demo_20260519_142021.tex | paper | timestamped resource-demo section after Table 2 D5a and directionality fixes |
+| 2026-05-19 14:20 | /paper-write | paper/sections/4_availability_limits_20260519_142021.tex | paper | timestamped availability section after reviewer-action Table 3 fixes |
+| 2026-05-19 14:20 | /paper-figure | paper/figures/fig1_audit_sid_pipeline_20260519_142021.pdf | paper | timestamped Fig. 1 after internal review round 2 |
+| 2026-05-19 14:20 | /paper-figure | paper/figures/fig1_audit_sid_pipeline_20260519_142021.png | paper | timestamped Fig. 1 preview after internal review round 2 |
+| 2026-05-19 14:20 | /paper-compile | paper/main_20260519_142021.pdf | paper | timestamped compiled PDF after internal review round 2; 5 pages total |
+| 2026-05-19 14:20 | /idea-discovery | docs/CURRENT_STATE_20260519_142021.md | documentation | timestamped current state after two internal review rounds |
+| 2026-05-19 14:20 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_142021.md | documentation | timestamped document index after two internal review rounds |
+| 2026-05-19 14:20 | /paper-write | ARTIFACT_QUICKSTART_20260519_142021.md | paper | timestamped reviewer quickstart after artifact-table naming fix |
+| 2026-05-19 14:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_142021.md | implementation | timestamped tracker after internal review round 2 |
+| 2026-05-19 14:20 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records internal 8.0/10 review status |
+| 2026-05-19 14:20 | /paper-write | findings.md | implementation | append-only internal review completion finding |
+| 2026-05-19 14:20 | /paper-reviewer | paper/PAPER_IMPROVEMENT_LOG.md | paper | two-round internal review log and external-review gate |
+| 2026-05-19 14:28 | /research-review | docs/EXTERNAL_SIM_REVIEW_PLAN_20260519_142800.md | paper | timestamped external simulated review plan with 8.0/10 target |
+| 2026-05-19 14:28 | /research-review | docs/EXTERNAL_SIM_REVIEW_PLAN.md | paper | latest external simulated review plan with 8.0/10 target |
+| 2026-05-19 14:54 | /research-review | docs/EXTERNAL_SIM_REVIEW_ROUND1_20260519_145431.md | paper | timestamped external simulated review round 1 and absorption summary |
+| 2026-05-19 14:54 | /research-review | docs/EXTERNAL_SIM_REVIEW_ROUND1.md | paper | latest external simulated review round 1 |
+| 2026-05-19 14:54 | /paper-write | ARTIFACT_MANIFEST.md | paper | reviewer-facing public artifact manifest and local-cache boundary |
+| 2026-05-19 14:54 | /paper-write | ARTIFACT_QUICKSTART.md | paper | pinned-tag clean-checkout reviewer quickstart |
+| 2026-05-19 14:54 | /paper-write | requirements.txt | paper | minimal dependencies for clean-checkout verification |
+| 2026-05-19 14:54 | /paper-write | tools/verify_paper_artifact.py | implementation | public artifact verifier independent of `_gate0_artifacts` |
+| 2026-05-19 14:54 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260519_145431.md | paper | timestamped strict claim audit after external-review packaging fixes |
+| 2026-05-19 14:54 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | paper | latest strict claim audit after external-review packaging fixes |
+| 2026-05-19 14:54 | /idea-discovery | docs/CURRENT_STATE_20260519_145431.md | documentation | timestamped current state after external-review packaging fixes |
+| 2026-05-19 14:54 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_145431.md | documentation | timestamped document index after external-review packaging fixes |
+| 2026-05-19 14:54 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_145431.md | implementation | timestamped tracker after external-review packaging fixes |
+| 2026-05-19 14:54 | /paper-write | ARTIFACT_QUICKSTART_20260519_145431.md | paper | timestamped quickstart after clean-checkout verifier path |
+| 2026-05-19 14:54 | /paper-write | ARTIFACT_MANIFEST_20260519_145431.md | paper | timestamped public artifact manifest |
+| 2026-05-19 14:54 | /paper-write | paper/main_20260519_145431.tex | paper | timestamped ACM draft after external-review packaging fixes |
+| 2026-05-19 14:54 | /paper-compile | paper/main_20260519_145431.pdf | paper | timestamped compiled PDF after external-review packaging fixes |
+| 2026-05-19 14:54 | /paper-write | paper/sections/2_toolkit_20260519_145431.tex | paper | timestamped toolkit section after D2/D3/D5a definition fixes |
+| 2026-05-19 14:54 | /paper-write | paper/sections/3_resource_demo_20260519_145431.tex | paper | timestamped resource demo section after Table 2 label/caption fixes |
+| 2026-05-19 14:54 | /paper-write | paper/sections/4_availability_limits_20260519_145431.tex | paper | timestamped availability section after public verifier workflow fixes |
