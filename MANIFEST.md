@@ -972,3 +972,18 @@
 | 2026-05-19 18:24 | /paper-write | tools/verify_paper_artifact_20260519_182400.py | implementation | timestamped verifier requires controlled-stressor policy file |
 | 2026-05-19 18:24 | /paper-write | tools/verify_paper_artifact.py | implementation | verifier now requires controlled-stressor policy file |
 | 2026-05-19 18:24 | /idea-discovery | findings.md | implementation | append-only finding records email drafts and controller separation |
+| 2026-05-19 19:01 | /experiment-plan | docs/CONTROLLED_STRESSOR_SELECTION_20260519_190139.md | writing-plan | timestamped method-inspired controller suite revision |
+| 2026-05-19 19:01 | /experiment-plan | docs/CONTROLLED_STRESSOR_SELECTION.md | writing-plan | latest method-inspired controller suite revision |
+| 2026-05-19 19:01 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260519_190139.md | implementation | timestamped experiment plan with controller run order |
+| 2026-05-19 19:01 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | latest experiment plan with controller run order |
+| 2026-05-19 19:01 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_190139.md | implementation | timestamped tracker with method-inspired controller plan |
+| 2026-05-19 19:01 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker with method-inspired controller plan |
+| 2026-05-19 19:01 | /idea-discovery | docs/CURRENT_STATE_20260519_190139.md | documentation | timestamped current state with controller revision |
+| 2026-05-19 19:01 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state with controller revision |
+| 2026-05-19 19:01 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_190139.md | documentation | timestamped document index with controller revision |
+| 2026-05-19 19:01 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index with controller revision |
+| 2026-05-19 19:01 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX_20260519_190139.md | writing-plan | timestamped method matrix with controller revision |
+| 2026-05-19 19:01 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX.md | writing-plan | latest method matrix with controller revision |
+| 2026-05-19 19:01 | /paper-write | ARTIFACT_MANIFEST_20260519_190139.md | paper | timestamped artifact manifest with method-inspired controller wording |
+| 2026-05-19 19:01 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest with method-inspired controller wording |
+| 2026-05-19 19:01 | /idea-discovery | findings.md | implementation | append-only finding records controller revision |
