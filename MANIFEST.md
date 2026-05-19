@@ -558,3 +558,8 @@
 | 2026-05-19 11:09 | /experiment-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | writing-plan | latest paper plan updated with GRID Musical same-dataset row caveat |
 | 2026-05-19 11:09 | audit-response | docs/THIRD_EXTERNAL_AUDIT_RESPONSE_20260519_110920.md | analysis | timestamped third external audit response |
 | 2026-05-19 11:09 | audit-response | docs/THIRD_EXTERNAL_AUDIT_RESPONSE.md | analysis | latest third external audit response |
+| 2026-05-19 11:49 | autodl-no-gpu | docs/AUTODL_NO_GPU_POST_COMMIT_SYNC_20260519_114934.md | implementation | timestamped no-GPU post-commit sync verification |
+| 2026-05-19 11:49 | autodl-no-gpu | docs/AUTODL_NO_GPU_POST_COMMIT_SYNC.md | implementation | latest no-GPU post-commit sync verification |
+| 2026-05-19 11:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_114934.md | implementation | timestamped tracker after no-GPU post-commit sync |
+| 2026-05-19 11:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks no-GPU post-commit sync verified |
+| 2026-05-19 11:49 | autodl-no-gpu | findings.md | implementation | append-only no-GPU post-commit sync finding |
