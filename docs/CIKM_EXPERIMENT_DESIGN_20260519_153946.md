@@ -4,11 +4,6 @@ Timestamp: 2026-05-19 12:29:57 CST
 
 Strong-accept planning update: 2026-05-19 15:36:33 CST
 
-Execution update: 2026-05-19 15:58:57 CST. The B2/B3 third-method screen
-found no low-risk new main-evidence tokenizer; local work therefore shifted to
-same-dataset stability, adding GRID Musical feature-text seeds 43/44 to seed
-42.
-
 ## Target Claim
 
 AUDIT-SID should be submitted as a Resource Track paper about a reusable SID artifact audit toolkit.
@@ -54,10 +49,6 @@ Scope rule:
 - Table target: Main paper Table 2.
 - Success: the table shows non-redundant differences across collision, collaborative alignment, and head-tail capacity.
 - Caveat: GRID Musical is a controlled diagnostic row, not raw-text TIGER/GRID reproduction.
-- Stability update: GRID Musical feature-text now has seeds 42/43/44 with
-  complete joins and stable high collision pressure. Use
-  `docs/GRID_MUSICAL_3SEED_LOCAL.md` as the source if the paper needs a compact
-  variance statement.
 
 ### B3: Metric Non-Redundancy And Sanity Controls
 
@@ -114,11 +105,6 @@ the most plausible path toward an 8.5-style strong Resource Track review.
   `interactions` plus at least D1/D2/D3v2/D4/D5a or a clearly justified subset.
 - Failure interpretation: keep the method in Table 1 as literature/backlog; do
   not force a proxy into main evidence.
-- Current screen result: `docs/B2_B3_METHOD_SCREEN.md` closes the current
-  screen with no new main-evidence method. QuaSID/AdaSID/CapsID are
-  paper/motivation only in this pass, DIGER is incomplete for artifact export,
-  and CARD remains proxy/control unless the original `nu-rq-vae` path is
-  repaired and reviewed.
 
 ### L2: Same-Dataset A/B Panel
 
@@ -142,8 +128,6 @@ the most plausible path toward an 8.5-style strong Resource Track review.
 
 - Existing evidence:
   - GRID All_Beauty 20k has three seeds: duplicate SID rate 0.1524--0.1748.
-  - GRID Musical feature-text now has three local CPU seeds: duplicate SID rate
-    0.8327--0.8421 and full-collision rate 0.9751--0.9769.
   - GRID All_Beauty 50k seed42 is available as scale evidence.
   - MovieLens-25M bounded smoke supports schema portability, not tokenizer
     quality.

@@ -1,6 +1,6 @@
 # CIKM Resource Paper Plan
 
-Timestamp: 2026-05-19 15:58:57 CST
+Timestamp: 2026-05-19 15:36:33 CST
 
 Working title:
 
@@ -28,20 +28,13 @@ evidence breadth rather than adding more diagnostic dimensions.
 | Lift item | Why it helps | Minimum evidence | PDF impact |
 |---|---|---|---|
 | Third true named tokenizer facet | addresses method-coverage ceiling | one B2/B3 method with joinable SID export and D1-D5a/D3v2 where feasible | Table 1 update; optional Table 2 row |
-| Same-dataset A/B panel | removes "two-row anecdote" concern | GRID Musical seeds 42/43/44, ReSID Musical, controls, and optional third method on same item universe | upgrade Table 2 or add compact Fig. 2 only if space allows |
-| Stability statement | uses existing 3-seed GRID evidence | All_Beauty 20k seeds 42/43/44 duplicate-rate range 0.1524--0.1748; Musical feature-text seeds 42/43/44 duplicate-rate range 0.8327--0.8421 | one §4 sentence plus artifact-table pointer |
+| Same-dataset A/B panel | removes "two-row anecdote" concern | GRID Musical, ReSID Musical, controls, and optional third method on same item universe | upgrade Table 2 or add compact Fig. 2 only if space allows |
+| Stability statement | uses existing 3-seed GRID evidence | All_Beauty 20k seeds 42/43/44 duplicate-rate range 0.1524--0.1748 | one §4 sentence plus artifact-table pointer |
 | Fig. 1 redesign | improves resource-paper readability | artifact contract + diagnostics + evidence maturity map | replace current linear pipeline figure |
 
 Do not reopen the Sports ReSID GAOQ bottleneck unless a bounded CPU/GPU path is
 first proven. FAMAE-only checkpoints are useful assets but are not item-to-SID
 seed evidence.
-
-Execution update: `docs/B2_B3_METHOD_SCREEN.md` did not find a safe third
-named tokenizer for current main evidence. QuaSID/AdaSID/CapsID remain
-coverage/motivation, DIGER is incomplete for artifact export, and CARD remains
-proxy/control unless the original `nu-rq-vae` path is repaired. The current
-evidence lift should therefore use `docs/GRID_MUSICAL_3SEED_LOCAL.md` for
-same-dataset stability rather than forcing a proxy method into Table 2.
 
 ## Abstract Draft
 
@@ -154,8 +147,6 @@ Content:
   - sanity lower bounds;
   - CARD/DIGER listed as controlled/backlog/future support, not main evidence.
 - Main case-study table from `docs/GRID_MUSICAL_SAME_DATASET_CPU.md`.
-- Stability support from `docs/GRID_MUSICAL_3SEED_LOCAL.md` if there is room
-  for one compact variance sentence.
 - ReSID/sanity non-redundancy controls from
   `docs/CASE_STUDY_RESID_VS_SANITY.md`.
 - Main reading: diagnostics distinguish collision collapse, metadata grouping,

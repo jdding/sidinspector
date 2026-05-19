@@ -92,10 +92,7 @@
 | A120 | Strong-accept lift plan | TODO | `docs/CIKM_EXPERIMENT_DESIGN.md`, `docs/CIKM_RESOURCE_PAPER_PLAN.md` | Optional 8.5-target package: third real named B2/B3 tokenizer if feasible, same-dataset A/B panel, existing GRID 20k three-seed stability statement, and sharper diagnostic findings. Not required for current 8.0 external gate. |
 | A121 | Fig. 1 redesign | TODO | `docs/PAPER_FIGURE_TABLE_STRATEGY.md`, `tools/paper_figures/generate_audit_sid_pipeline.py` | Redraw Fig. 1 from a linear pipeline into an artifact-contract / diagnostics / evidence-maturity map. Keep D5a vs D7 and main/control/backlog evidence boundaries visible. |
 | A122 | Same-dataset A/B panel upgrade | TODO | `paper_assets/tables/table2_musical_diagnostic.*`, `paper/sections/3_resource_demo.tex` | Current same-item Musical table has GRID feature-text and ReSID. Upgrade only if it improves the diagnostic story; do not imply faithful TIGER/GRID reproduction. |
-| A123 | Third named tokenizer feasibility screen | SCREEN_DONE_NO_NEW_MAIN_METHOD | `docs/B2_B3_METHOD_SCREEN.md` | QuaSID/AdaSID/CapsID remain paper/motivation only in this screen; DIGER public repo is illustrative/reference and lacks data/checkpoints; CARD repaired path remains proxy/control. No third named tokenizer enters main evidence from this pass. |
-| A124 | Method x diagnostic selection matrix | DONE | `docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX.md` | Added a practical method-by-D1-D7 table for choosing new methods that can produce non-redundant diagnostic findings. Prioritizes B2 first, then B3, then B4. |
-| A125 | GRID Musical three-seed local stability | LOCAL_3SEED_DONE | `docs/GRID_MUSICAL_3SEED_LOCAL.md`, `_gate0_artifacts/grid_same_dataset_runs/musical_grid_feature_text_3seed_summary_20260519_1600.csv` | Reused existing Musical feature-text embeddings and ran GRID/RQ-KMeans local CPU seeds 43/44 to join seed 42. All three seeds have zero metadata/interaction SID gaps; duplicate SID rate is 0.8327--0.8421 and full-collision rate is 0.9751--0.9769. This strengthens same-dataset artifact evidence but remains feature-text controlled GRID, not faithful raw-text TIGER/GRID. |
-| A126 | Method-selection matrix refresh after screen | DONE | `docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX.md`, `docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX_20260519_155857.md` | Matrix now records the negative third-method screen and points the near-term lift toward same-dataset stability/finding sharpening rather than proxy method expansion. |
+| A123 | Third named tokenizer feasibility screen | TODO | candidate repos/docs TBD | Screen B2/B3 candidates for a real item-to-SID export. If only proxy/stressor evidence is possible, keep it out of main evidence and Table 2. |
 
 ## Current Decision
 
@@ -223,18 +220,3 @@ B2/B3 tokenizer artifact, a stronger same-dataset A/B diagnostic panel, a
 concise use of existing GRID 20k three-seed stability evidence, and a Fig. 1
 redesign. Do not add new D metrics before these evidence-width issues are
 handled.
-
-Method-selection update: `docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX.md` is now
-the working screen for new methods. It records each candidate method/facet
-against D1-D7, artifact state, expected finding material, priority, and next
-action. Current screening order is B2 collision/capacity first
-(`QuaSID`/`AdaSID`/faithful `CARD`), then B3 ranking/retrieval (`DIGER`/joint
-search-rec SID), then B4 bottleneck/interface (`CapsID`/`AsymRec`).
-
-Third-method screen update: the 2026-05-19 B2/B3 screen did not find a
-low-risk third named tokenizer for main evidence. QuaSID/AdaSID/CapsID are
-paper/motivation only for now, DIGER is incomplete for artifact export, and
-CARD remains proxy/control unless the original `nu-rq-vae` path is repaired
-and reviewed. Local effort shifted to same-dataset stability instead: GRID
-Musical feature-text now has seeds 42/43/44 with complete joins and stable high
-collision pressure.

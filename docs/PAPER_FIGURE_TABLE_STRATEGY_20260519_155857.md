@@ -286,11 +286,6 @@ a safe new main-evidence tokenizer. Do not add DIGER or CARD-proxy rows to
 Table 2. The available evidence lift is GRID Musical feature-text three-seed
 stability from `docs/GRID_MUSICAL_3SEED_LOCAL.md`.
 
-Update 2026-05-19 16:09 CST: Fig. 1 has been redrawn as a three-band
-artifact-contract / diagnostic-surface / evidence-role map. It now makes the
-D1-D5a v0 boundary, optional D6, future D7, and main/control/resource/backlog
-evidence levels visible in the figure itself.
-
 1. Upgrade Fig. 1 using the redesign brief above.
 2. Consider turning Table 2 into a compact same-item A/B diagnostic panel if a
    third real named method is added.

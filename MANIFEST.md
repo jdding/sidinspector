@@ -787,3 +787,77 @@
 | 2026-05-19 15:10 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_151028.md | implementation | timestamped tracker after external 8/10 closure |
 | 2026-05-19 15:10 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records external 8/10 closure |
 | 2026-05-19 15:10 | /research-review | findings.md | implementation | append-only external simulated review closure finding |
+| 2026-05-19 15:36 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260519_153633.md | writing-plan | timestamped strong-accept lift package and run order |
+| 2026-05-19 15:36 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | writing-plan | latest strong-accept lift package and run order |
+| 2026-05-19 15:36 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260519_153633.md | writing-plan | timestamped CIKM experiment design with 8.5 lift package |
+| 2026-05-19 15:36 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | writing-plan | latest CIKM experiment design with 8.5 lift package |
+| 2026-05-19 15:36 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY_20260519_153633.md | paper | timestamped Fig. 1 redesign brief and strong-accept table upgrades |
+| 2026-05-19 15:36 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY.md | paper | latest Fig. 1 redesign brief and strong-accept table upgrades |
+| 2026-05-19 15:36 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN_20260519_153633.md | writing-plan | timestamped paper plan with strong-accept lift items |
+| 2026-05-19 15:36 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | writing-plan | latest paper plan with strong-accept lift items |
+| 2026-05-19 15:36 | /idea-discovery | docs/CURRENT_STATE_20260519_153633.md | documentation | timestamped current state after strong-accept todo update |
+| 2026-05-19 15:36 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after strong-accept todo update |
+| 2026-05-19 15:36 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_153633.md | documentation | timestamped document index after strong-accept todo update |
+| 2026-05-19 15:36 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after strong-accept todo update |
+| 2026-05-19 15:36 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_153633.md | implementation | timestamped tracker after strong-accept todo update |
+| 2026-05-19 15:36 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records strong-accept todo update |
+| 2026-05-19 15:36 | /experiment-plan | findings.md | implementation | append-only strong-accept planning finding |
+| 2026-05-19 15:39 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX_20260519_153946.md | writing-plan | timestamped method x D1-D7 selection matrix for future method screening |
+| 2026-05-19 15:39 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX.md | writing-plan | latest method x D1-D7 selection matrix for future method screening |
+| 2026-05-19 15:39 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260519_153946.md | writing-plan | timestamped experiment plan after linking selection matrix |
+| 2026-05-19 15:39 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | writing-plan | latest experiment plan after linking selection matrix |
+| 2026-05-19 15:39 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260519_153946.md | writing-plan | timestamped CIKM design after linking selection matrix |
+| 2026-05-19 15:39 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | writing-plan | latest CIKM design after linking selection matrix |
+| 2026-05-19 15:39 | /idea-discovery | docs/CURRENT_STATE_20260519_153946.md | documentation | timestamped current state after selection matrix update |
+| 2026-05-19 15:39 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest index points to method x diagnostic selection matrix |
+| 2026-05-19 15:39 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_153946.md | documentation | timestamped index after selection matrix update |
+| 2026-05-19 15:39 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records method-selection matrix as next-method entry point |
+| 2026-05-19 15:39 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_153946.md | implementation | timestamped tracker after method x diagnostic selection matrix |
+| 2026-05-19 15:39 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records method x diagnostic selection matrix |
+| 2026-05-19 15:39 | /experiment-plan | findings.md | implementation | append-only method-selection matrix finding |
+| 2026-05-19 15:58 | /idea-discovery | docs/B2_B3_METHOD_SCREEN_20260519_155857.md | experiment-screen | timestamped B2/B3 third-method screen; no new main-evidence tokenizer found |
+| 2026-05-19 15:58 | /idea-discovery | docs/B2_B3_METHOD_SCREEN.md | experiment-screen | latest B2/B3 third-method screen |
+| 2026-05-19 15:58 | /run-experiment | docs/GRID_MUSICAL_3SEED_LOCAL_20260519_155857.md | experiment | timestamped GRID Musical feature-text three-seed local summary |
+| 2026-05-19 15:58 | /run-experiment | docs/GRID_MUSICAL_3SEED_LOCAL.md | experiment | latest GRID Musical feature-text three-seed local summary |
+| 2026-05-19 15:58 | /run-experiment | _gate0_artifacts/grid_same_dataset_runs/musical_grid_feature_text_3seed_summary_20260519_1600.csv | local-artifact | GRID Musical feature-text seeds 42/43/44 metric summary |
+| 2026-05-19 15:58 | /run-experiment | _gate0_artifacts/grid_same_dataset_runs/musical_grid_feature_text_3seed_stats_20260519_1600.csv | local-artifact | GRID Musical feature-text seeds 42/43/44 aggregate statistics |
+| 2026-05-19 16:08 | /run-experiment | paper_assets/tables/table7_grid_musical_3seed.csv | paper | reviewer-facing CSV for GRID Musical feature-text three-seed stability |
+| 2026-05-19 16:08 | /run-experiment | paper_assets/tables/table7_grid_musical_3seed.md | paper | reviewer-facing Markdown table for GRID Musical feature-text three-seed stability |
+| 2026-05-19 16:08 | /run-experiment | paper_assets/tables/table7_grid_musical_3seed.tex | paper | reviewer-facing LaTeX table for GRID Musical feature-text three-seed stability |
+| 2026-05-19 16:08 | /paper-write | ARTIFACT_MANIFEST_20260519_155857.md | paper | timestamped artifact manifest after adding table7 GRID Musical stability |
+| 2026-05-19 16:08 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest after adding table7 GRID Musical stability |
+| 2026-05-19 16:08 | /paper-write | tools/verify_paper_artifact_20260519_155857.py | implementation | timestamped verifier after adding table7 required file |
+| 2026-05-19 16:08 | /paper-write | tools/verify_paper_artifact.py | implementation | latest verifier after adding table7 required file |
+| 2026-05-19 15:58 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX_20260519_155857.md | writing-plan | timestamped method matrix after B2/B3 screen |
+| 2026-05-19 15:58 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX.md | writing-plan | latest method matrix after B2/B3 screen |
+| 2026-05-19 15:58 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260519_155857.md | writing-plan | timestamped experiment plan after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | writing-plan | latest experiment plan after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260519_155857.md | writing-plan | timestamped CIKM design after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | writing-plan | latest CIKM design after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN_20260519_155857.md | writing-plan | timestamped paper plan after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | writing-plan | latest paper plan after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY_20260519_155857.md | paper | timestamped figure/table strategy after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY.md | paper | latest figure/table strategy after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /paper-write | paper/sections/3_resource_demo_20260519_155857.tex | paper | timestamped resource-demo section with GRID Musical 3-seed stability sentence |
+| 2026-05-19 15:58 | /paper-write | paper/sections/3_resource_demo.tex | paper | latest resource-demo section with GRID Musical 3-seed stability sentence |
+| 2026-05-19 16:05 | /paper-compile | paper/main_20260519_155857.tex | paper | timestamped ACM draft after GRID Musical 3-seed stability sentence |
+| 2026-05-19 16:05 | /paper-compile | paper/main_20260519_155857.pdf | paper | timestamped compiled PDF after GRID Musical 3-seed stability sentence |
+| 2026-05-19 16:05 | /paper-compile | paper/main.pdf | paper | latest compiled PDF after GRID Musical 3-seed stability sentence |
+| 2026-05-19 16:09 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline_20260519_155857.py | paper | timestamped Fig. 1 generator redesigned as contract/diagnostic/evidence map |
+| 2026-05-19 16:09 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline.py | paper | latest Fig. 1 generator redesigned as contract/diagnostic/evidence map |
+| 2026-05-19 16:09 | /paper-figure | paper/figures/fig1_audit_sid_pipeline_20260519_155857.pdf | paper | timestamped redesigned Fig. 1 PDF |
+| 2026-05-19 16:09 | /paper-figure | paper/figures/fig1_audit_sid_pipeline_20260519_155857.png | paper | timestamped redesigned Fig. 1 PNG |
+| 2026-05-19 16:09 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.pdf | paper | latest redesigned Fig. 1 PDF |
+| 2026-05-19 16:09 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.png | paper | latest redesigned Fig. 1 PNG |
+| 2026-05-19 16:09 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY_20260519_160900.md | paper | timestamped figure/table strategy after redesigned Fig. 1 |
+| 2026-05-19 16:09 | /paper-figure | docs/PAPER_FIGURE_TABLE_STRATEGY.md | paper | latest figure/table strategy after redesigned Fig. 1 |
+| 2026-05-19 16:09 | /paper-compile | paper/main_20260519_160900.tex | paper | timestamped ACM draft after redesigned Fig. 1 |
+| 2026-05-19 16:09 | /paper-compile | paper/main_20260519_160900.pdf | paper | timestamped compiled PDF after redesigned Fig. 1 |
+| 2026-05-19 16:09 | /paper-compile | paper/main.pdf | paper | latest compiled PDF after redesigned Fig. 1 |
+| 2026-05-19 15:58 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_155857.md | implementation | timestamped tracker after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records B2/B3 screen and GRID Musical 3-seed run |
+| 2026-05-19 15:58 | /idea-discovery | docs/CURRENT_STATE_20260519_155857.md | documentation | timestamped current state after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_155857.md | documentation | timestamped document index after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after method screen and local 3-seed run |
+| 2026-05-19 15:58 | /idea-discovery | findings.md | implementation | append-only findings after method screen and local 3-seed run |

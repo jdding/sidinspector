@@ -281,24 +281,11 @@ It should map actions to checked claims:
 These upgrades are optional for the current 8.0/8.1 external-review state but
 would help push the paper toward a stronger review:
 
-Update 2026-05-19 15:58:57 CST: the B2/B3 third-method screen did not produce
-a safe new main-evidence tokenizer. Do not add DIGER or CARD-proxy rows to
-Table 2. The available evidence lift is GRID Musical feature-text three-seed
-stability from `docs/GRID_MUSICAL_3SEED_LOCAL.md`.
-
-Update 2026-05-19 16:09 CST: Fig. 1 has been redrawn as a three-band
-artifact-contract / diagnostic-surface / evidence-role map. It now makes the
-D1-D5a v0 boundary, optional D6, future D7, and main/control/resource/backlog
-evidence levels visible in the figure itself.
-
 1. Upgrade Fig. 1 using the redesign brief above.
 2. Consider turning Table 2 into a compact same-item A/B diagnostic panel if a
    third real named method is added.
 3. Add one resource-table pointer sentence for GRID 20k three-seed stability:
    duplicate SID rate 0.1524--0.1748 across seeds 42/43/44.
-   If same-dataset stability is more useful for the prose, use GRID Musical
-   feature-text seeds 42/43/44 instead: duplicate SID rate 0.8327--0.8421 and
-   full-collision rate 0.9751--0.9769.
 4. Keep ReSID/sanity, GRID scale, DACT churn, and MovieLens portability out of
    the PDF unless they directly support a sentence in §4.
 
