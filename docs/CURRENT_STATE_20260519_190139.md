@@ -20,9 +20,12 @@ For current work, read these in order:
 12. `docs/METHOD_RELEASE_SCOUT.md`
 13. `docs/CARD_ORIGINAL_NURQVAE_EVIDENCE_GATE.md`
 14. `docs/CONTROLLED_STRESSOR_SELECTION.md`
-15. `docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md`
-16. `docs/CIKM_RESOURCE_PAPER_PLAN.md`
-17. `refine-logs/EXPERIMENT_TRACKER.md`
+15. `docs/QUALIFIED_COLLISION_PROBE.md`
+16. `docs/CAPACITY_BUDGET_SWEEP.md`
+17. `docs/VARIABLE_DEPTH_COST_PROBE.md`
+18. `docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md`
+19. `docs/CIKM_RESOURCE_PAPER_PLAN.md`
+20. `refine-logs/EXPERIMENT_TRACKER.md`
 
 Use `docs/DOCUMENT_INDEX.md` for navigation and `docs/ARCHIVE_INDEX.md` for historical provenance.
 
@@ -68,12 +71,11 @@ AUDIT-SID is a CIKM 2026 Resource Track candidate under a conservative resource/
   because no email connector or SMTP route is currently available. Drafts are
   signed `Timber Ding` and avoid mentioning AUDIT-SID, CIKM, or an active
   submission.
-- Controlled stressor/controller selection is revised in
-  `docs/CONTROLLED_STRESSOR_SELECTION.md`: the next work is a
-  method-inspired controller suite, separate from named-method coverage. Run
-  `qualified_collision_probe` first, then `capacity_budget_sweep`, then
-  `variable_depth_cost_probe`; decide later whether the third result belongs
-  in the four-page paper.
+- Method-inspired controllers are now locally executed and remain separate
+  from named-method coverage: `qualified_collision_probe`,
+  `capacity_budget_sweep`, and `variable_depth_cost_probe`. The first two are
+  strong artifact-table material; the third is paper-optional D5a boundary
+  evidence.
 - Not claimed: new tokenizer, SID leaderboard, downstream recommender superiority, faithful TIGER reproduction.
 
 ## Evidence Snapshot
@@ -85,7 +87,7 @@ AUDIT-SID is a CIKM 2026 Resource Track candidate under a conservative resource/
 | GRID Musical CPU | done | same-item-universe diagnostic contrast against ReSID Musical | processed feature-text input, not raw-text TIGER/GRID reproduction |
 | GRID Musical 3-seed | done | same-item-universe stability support for the GRID feature-text row | still controlled feature-text, not faithful raw-text TIGER/GRID |
 | Sanity baselines | done | lower-bound controls for metric interpretation | not named methods |
-| Method-inspired controllers | planned | separate stressor table for D1/D2/D4/D5a failure modes | not method coverage; no paper-method names |
+| Method-inspired controllers | local done | separate stressor tables for D1/D2/D4/D5a failure modes | not method coverage; variable-depth result is paper-optional |
 | D3v2 | done | co-occurrence collaborative alignment | diagnostic proxy, not Recall/NDCG validation |
 | DACT D6 | optional | churn/drift demonstration | optional only, not Cluster B replacement |
 | MovieLens portability | optional done | non-Amazon schema smoke | sanity SIDs only, not main empirical evidence |
@@ -186,11 +188,12 @@ Do not launch robust/sweep/quality queues by default.
     modules required by `nu-rq-vae`, so local compatibility repair cannot be
     attributed as faithful CARD.
 19. `docs/CONTROLLED_STRESSOR_SELECTION.md` is the current controller policy:
-    implement method-inspired controllers in this order:
-    `qualified_collision_probe`, `capacity_budget_sweep`, then
-    `variable_depth_cost_probe`. Keep all three outside named-method coverage;
-    include the variable-depth result in the paper only if it cleanly supports
-    D5a.
+    all three method-inspired controllers have local results. Use
+    `docs/QUALIFIED_COLLISION_PROBE.md`,
+    `docs/CAPACITY_BUDGET_SWEEP.md`, and
+    `docs/VARIABLE_DEPTH_COST_PROBE.md` as the result entry points. Keep all
+    three outside named-method coverage; include the variable-depth result in
+    the paper only if it cleanly supports D5a.
 20. `docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md` contains ready-to-send author
     artifact-request drafts for DIGER, QuaSID, AdaSID, and CapsID. They are
     not sent yet because recipient addresses and an email-sending route remain

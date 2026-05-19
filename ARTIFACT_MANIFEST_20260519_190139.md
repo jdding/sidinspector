@@ -41,10 +41,16 @@ BibTeX file, and the exact Table 2 numeric claims used in the paper.
 | `tools/paper_figures/generate_audit_sid_pipeline.py` | regenerates Fig. 1 | runnable |
 | `tools/autodl_audit_sid/preflight_metric_inputs.py` | local preflight for future metric inputs | runnable |
 | `tools/autodl_audit_sid/preflight_card_nurqvae.py` | local CPU preflight for CARD original `nu-rq-vae` source/import/export contract | runnable when the ignored CARD clone is present |
+| `tools/autodl_audit_sid/run_qualified_collision_probe.py` | D2b method-inspired controller | runnable |
+| `tools/autodl_audit_sid/run_capacity_budget_sweep.py` | D1/D2/D4/D5a method-inspired controller | runnable |
+| `tools/autodl_audit_sid/run_variable_depth_cost_probe.py` | D4/D5a variable-depth controller | runnable |
 | `docs/THIRD_METHOD_EVIDENCE_GATE.md` | admission rule for any third named tokenizer evidence | inspectable |
 | `docs/METHOD_RELEASE_SCOUT.md` | official-release screen for QuaSID/AdaSID/CapsID/DIGER | inspectable |
 | `docs/CARD_ORIGINAL_NURQVAE_EVIDENCE_GATE.md` | CARD original route failure report for v0 main evidence | inspectable |
 | `docs/CONTROLLED_STRESSOR_SELECTION.md` | method-inspired controller policy and method-coverage boundary | inspectable |
+| `docs/QUALIFIED_COLLISION_PROBE.md` | D2b controller result | inspectable |
+| `docs/CAPACITY_BUDGET_SWEEP.md` | capacity-budget controller result | inspectable |
+| `docs/VARIABLE_DEPTH_COST_PROBE.md` | variable-depth cost controller result | inspectable |
 | `paper/main.tex`, `paper/main.pdf` | current ACM draft and compiled PDF | inspectable |
 | `paper_assets/tables/` | generated CSV/Markdown/LaTeX evidence tables | inspectable/verifiable |
 | `paper_assets/references/audit_sid_references.bib` | paper reference file | inspectable |
@@ -71,6 +77,12 @@ checkout verification unless a separate full-artifact data bundle is provided.
   smoke evidence.
 - `paper_assets/tables/table7_grid_musical_3seed.*`: same-item Musical
   GRID feature-text three-seed stability evidence.
+- `paper_assets/tables/table8_qualified_collision_probe.*`: D2b
+  interaction-qualified collision controller.
+- `paper_assets/tables/table9_capacity_budget_sweep.*`: capacity-budget
+  controller across D1/D2/D4/D5a.
+- `paper_assets/tables/table10_variable_depth_cost_probe.*`: variable-depth
+  D4/D5a boundary controller, paper-optional.
 - `docs/THIRD_METHOD_EVIDENCE_GATE.md`: do-not-self-implement boundary for a
   third named tokenizer row.
 - `docs/METHOD_RELEASE_SCOUT.md`: negative release screen for current B2/B3

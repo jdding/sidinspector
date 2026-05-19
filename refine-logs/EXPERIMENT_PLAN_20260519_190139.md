@@ -22,6 +22,12 @@
 `variable_depth_cost_probe`；第三类是否进入正文取决于结果是否能清楚补强
 D5a 叙事。
 
+**2026-05-19 19:01:39 CST controller execution update**：三类
+method-inspired controllers 已本地完成。`qualified_collision_probe` 和
+`capacity_budget_sweep` 结果清楚，适合作为 artifact-table/finding 支撑；
+`variable_depth_cost_probe` 结果可作为 D5a 边界证据，是否进正文待论文
+篇幅与叙事裁剪。
+
 ## Purpose
 
 这个 plan 用来把 AUDIT-SID 收敛成 CIKM 2026 Resource Track 可提交版本。核心产物是开源 diagnostic toolkit + stable artifact interface + 小规模 public case study。强 empirical finding 是 stretch goal，不再压过 resource-first 定位。
@@ -214,11 +220,11 @@ the literature, but they are not implementations of unreleased named methods.
 
 Controller run order:
 
-| Order | Controller | Method-family concern | Diagnostics | Minimum output | Paper decision |
+| Order | Controller | Method-family concern | Diagnostics | Output | Paper decision |
 |---:|---|---|---|---|---|
-| 1 | `qualified_collision_probe` | collision qualification / harmful conflict | D2b, D3 | collision-pair vs popularity-matched non-collision-pair CSV on Musical interactions | high priority; likely paper or artifact table |
-| 2 | `capacity_budget_sweep` | adaptive capacity / capacity pressure | D1, D2, D4, D5a | synthetic fixed-depth SID assignments across several width budgets | high priority; likely artifact table and possible text finding |
-| 3 | `variable_depth_cost_probe` | variable/long SID interface cost | D4, D5a, D7-boundary | variable-depth/EOS-like synthetic SID assignments with prefix-cost summaries | run if cheap; include only if result cleanly strengthens D5a |
+| 1 | `qualified_collision_probe` | collision qualification / harmful conflict | D2b, D3 | `docs/QUALIFIED_COLLISION_PROBE.md`, `paper_assets/tables/table8_qualified_collision_probe.csv` | high priority; strong artifact-table/finding support |
+| 2 | `capacity_budget_sweep` | adaptive capacity / capacity pressure | D1, D2, D4, D5a | `docs/CAPACITY_BUDGET_SWEEP.md`, `paper_assets/tables/table9_capacity_budget_sweep.csv` | high priority; strong artifact-table/finding support |
+| 3 | `variable_depth_cost_probe` | variable/long SID interface cost | D4, D5a, D7-boundary | `docs/VARIABLE_DEPTH_COST_PROBE.md`, `paper_assets/tables/table10_variable_depth_cost_probe.csv` | done; include only if result cleanly strengthens D5a |
 
 Existing generic calibration rows remain useful but secondary:
 

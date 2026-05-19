@@ -120,8 +120,8 @@ not use it as paper evidence.
 - Do not broaden claims before evidence exists. A method marked `S` or `L` can
   motivate a diagnostic, but it cannot support an empirical finding.
 - Method-inspired controllers are now governed by
-  `docs/CONTROLLED_STRESSOR_SELECTION.md`. The planned order is
-  `qualified_collision_probe`, `capacity_budget_sweep`, then
-  `variable_depth_cost_probe`. They can calibrate D1-D5a and double-check
-  findings, but they must not be used to expand named-method coverage or
-  approximate unreleased QuaSID/AdaSID/CapsID/DIGER artifacts.
+  `docs/CONTROLLED_STRESSOR_SELECTION.md` and have local result entry points:
+  `docs/QUALIFIED_COLLISION_PROBE.md`, `docs/CAPACITY_BUDGET_SWEEP.md`, and
+  `docs/VARIABLE_DEPTH_COST_PROBE.md`. They can calibrate D1-D5a and
+  double-check findings, but they must not be used to expand named-method
+  coverage or approximate unreleased QuaSID/AdaSID/CapsID/DIGER artifacts.

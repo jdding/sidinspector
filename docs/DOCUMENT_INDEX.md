@@ -34,7 +34,10 @@ Timestamp: 2026-05-19 19:01:39 CST
 | Third-method evidence gate | `docs/THIRD_METHOD_EVIDENCE_GATE.md` | Admission rule: no self-implemented paper-inspired method as named evidence |
 | Method release scout | `docs/METHOD_RELEASE_SCOUT.md` | Official-release screen for QuaSID/AdaSID/CapsID/DIGER |
 | CARD original evidence gate | `docs/CARD_ORIGINAL_NURQVAE_EVIDENCE_GATE.md` | CARD failed for v0 main evidence because official quantizer modules are missing |
-| Controlled stressor selection | `docs/CONTROLLED_STRESSOR_SELECTION.md` | Method-inspired controller suite; separate from named-method coverage |
+| Controlled stressor selection | `docs/CONTROLLED_STRESSOR_SELECTION.md` | Method-inspired controller suite; locally executed and separate from named-method coverage |
+| Qualified collision probe | `docs/QUALIFIED_COLLISION_PROBE.md` | D2b/D3 controller result for interaction-qualified collision risk |
+| Capacity budget sweep | `docs/CAPACITY_BUDGET_SWEEP.md` | D1/D2/D4/D5a controller result for capacity pressure |
+| Variable depth cost probe | `docs/VARIABLE_DEPTH_COST_PROBE.md` | D4/D5a controller result; paper optional |
 | Author artifact email drafts | `docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md` | Ready-to-send artifact-request drafts; not sent without email connector/SMTP and recipient confirmation |
 | GRID Musical 3-seed local run | `docs/GRID_MUSICAL_3SEED_LOCAL.md` | Local same-dataset stability support for the GRID feature-text row |
 | Experiment closure audit | `docs/EXPERIMENT_PLAN_CLOSURE_AUDIT.md` | Current closure check: no additional v0 experiment required before writing/review |
@@ -156,9 +159,9 @@ Current compiled paper draft:
   failure: source/import/export-contract smoke depends on local repair files,
   not a complete official CARD quantizer implementation.
 - `docs/CONTROLLED_STRESSOR_SELECTION.md` records the controller policy:
-  implement `qualified_collision_probe`, `capacity_budget_sweep`, and
-  `variable_depth_cost_probe` as method-inspired stressors, not named-method
-  coverage.
+  `qualified_collision_probe`, `capacity_budget_sweep`, and
+  `variable_depth_cost_probe` are locally executed as method-inspired
+  stressors, not named-method coverage.
 - `docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md` records unsent author artifact
   request drafts for DIGER/QuaSID/AdaSID/CapsID.
 
@@ -171,7 +174,7 @@ Current compiled paper draft:
 | Sanity baselines | available for metric sensitivity | `docs/METRIC_SMOKE.md`, `docs/CASE_STUDY_RESID_VS_SANITY.md` |
 | CARD | failed for v0 main evidence; original `nu-rq-vae` source/import/export-contract preflight depends on local quantizer repair | `docs/CARD_ORIGINAL_NURQVAE_EVIDENCE_GATE.md`, `docs/CARD_SOURCE_REPAIR.md`, `docs/THIRD_METHOD_EVIDENCE_GATE.md`, `tools/autodl_audit_sid/preflight_card_nurqvae.py` |
 | DIGER / QuaSID / AdaSID / CapsID | official-release scout complete; not current main evidence | `docs/B2_B3_METHOD_SCREEN.md`, `docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX.md`, `docs/METHOD_RELEASE_SCOUT.md` |
-| Method-inspired controllers | planned as separate stressor evidence; not method evidence | `docs/CONTROLLED_STRESSOR_SELECTION.md`, `paper_assets/tables/table3_sanity_controls.*` |
+| Method-inspired controllers | local done as separate stressor evidence; not method evidence | `docs/CONTROLLED_STRESSOR_SELECTION.md`, `docs/QUALIFIED_COLLISION_PROBE.md`, `docs/CAPACITY_BUDGET_SWEEP.md`, `docs/VARIABLE_DEPTH_COST_PROBE.md`, `paper_assets/tables/table8_qualified_collision_probe.*`, `paper_assets/tables/table9_capacity_budget_sweep.*`, `paper_assets/tables/table10_variable_depth_cost_probe.*` |
 | Sports proxy matrix | pipeline evidence only | `docs/GATE0_RESULTS.md` |
 
 ## AutoDL State

@@ -100,7 +100,10 @@
 | A128 | Results-based paper findings polish | DONE | `docs/PAPER_FINDINGS_POLISH.md`, `paper/main_20260519_170132.pdf` | Abstract, introduction, resource demo, and limitations now turn existing v0 evidence into explicit diagnostic findings while preserving non-leaderboard claim boundaries. |
 | A129 | Additional experiment preflight code | DONE | `docs/ADDITIONAL_EXPERIMENT_PREFLIGHT_CODE.md`, `tools/autodl_audit_sid/preflight_metric_inputs.py`, `tests/test_preflight_metric_inputs.py` | Subagent-prepared local CPU preflight validates future `sid_assignments` / `item_metadata` / `interactions` inputs and can run bounded D1-D5a smoke summaries before any new method or GPU run. |
 | A130 | Author artifact email drafts | DRAFTED_NOT_SENT | `docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md` | Drafts for DIGER, QuaSID, AdaSID, and CapsID are signed `Timber Ding` and avoid mentioning AUDIT-SID/CIKM/research submission. Sending still requires confirmed recipient addresses plus Gmail/Outlook connector or SMTP route. |
-| A131 | Method-inspired controller selection | REVISED_PLAN | `docs/CONTROLLED_STRESSOR_SELECTION.md` | Controllers are separated from named-method coverage. Planned order is `qualified_collision_probe` first, `capacity_budget_sweep` second, and `variable_depth_cost_probe` third; the third result enters the paper only if it cleanly strengthens D5a. |
+| A131 | Method-inspired controller selection | DONE | `docs/CONTROLLED_STRESSOR_SELECTION.md` | Controllers are separated from named-method coverage. Planned order is `qualified_collision_probe` first, `capacity_budget_sweep` second, and `variable_depth_cost_probe` third; all three now have local results. |
+| A132 | Qualified collision probe | LOCAL_CONTROLLER_DONE | `docs/QUALIFIED_COLLISION_PROBE.md`, `tools/autodl_audit_sid/run_qualified_collision_probe.py`, `paper_assets/tables/table8_qualified_collision_probe.csv` | D2b/D3 controller passed locally. GRID feature-text collided pairs have 3.86x co-occurrence lift over popularity-matched non-collision pairs; collision-heavy hash control has only 1.19x lift. |
+| A133 | Capacity budget sweep | LOCAL_CONTROLLER_DONE | `docs/CAPACITY_BUDGET_SWEEP.md`, `tools/autodl_audit_sid/run_capacity_budget_sweep.py`, `paper_assets/tables/table9_capacity_budget_sweep.csv` | D1/D2/D4/D5a controller passed locally. Width-24 head-reserved policy preserves head unique ratio at 1.0 but leaves tail unique ratio at 0.028190, unlike rank-mod's more even allocation. |
+| A134 | Variable depth cost probe | LOCAL_CONTROLLER_DONE_PAPER_OPTIONAL | `docs/VARIABLE_DEPTH_COST_PROBE.md`, `tools/autodl_audit_sid/run_variable_depth_cost_probe.py`, `paper_assets/tables/table10_variable_depth_cost_probe.csv` | D4/D5a boundary controller passed locally. Useful artifact evidence; include in PDF only if D5a needs an extra compact boundary example. |
 
 ## Current Decision
 
@@ -309,3 +312,11 @@ The agreed order is: first `qualified_collision_probe` for D2b/D3, second
 `variable_depth_cost_probe` for D4/D5a/D7-boundary. All three remain outside
 named-method coverage; the variable-depth result is optional for the paper
 depending on whether it strengthens the D5a narrative cleanly.
+
+Controller-execution update: all three method-inspired controllers have local
+results. `qualified_collision_probe` supports the distinction between raw
+collision volume and interaction-qualified collision risk. `capacity_budget_sweep`
+supports the distinction between nominal capacity, collision pressure,
+head-tail allocation, and prefix-cost structure. `variable_depth_cost_probe`
+supports the D5a active-prefix boundary but should remain artifact-repo
+evidence unless the paper needs a compact variable-depth example.

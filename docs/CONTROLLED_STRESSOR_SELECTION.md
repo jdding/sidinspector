@@ -2,7 +2,7 @@
 
 Timestamp: 2026-05-19 19:01:39 CST
 
-Status: **method-inspired controller suite selected; no named-method evidence claimed**.
+Status: **method-inspired controller suite executed locally; no named-method evidence claimed**.
 
 Purpose: choose controlled SID/tokenizer stressors that are inspired by
 recurring method-family concerns in the SID literature, while keeping them
@@ -33,9 +33,9 @@ paper authors. Therefore:
 
 | Controller | Existing implementation | Diagnostic target | Current role | v0 action |
 |---|---|---|---|---|
-| `qualified_collision_probe` | not implemented | D2b/D3 | QuaSID-inspired interaction-qualified collision check using co-occurrence and popularity-matched non-collision pairs | **Do first**; local CPU over Musical artifacts |
-| `capacity_budget_sweep` | not implemented | D1/D2/D4/D5a | AdaSID/CARD-inspired capacity-pressure sweep over fixed-depth code widths | **Do second**; local synthetic SID assignments on the same item universe |
-| `variable_depth_cost_probe` | not implemented | D4/D5a/D7-boundary | CapsID/long-SID-inspired prefix-depth and trie-cost stress test | **Do third**; include in paper only if results strengthen D5a without distracting from main narrative |
+| `qualified_collision_probe` | `tools/autodl_audit_sid/run_qualified_collision_probe.py` | D2b/D3 | QuaSID-inspired interaction-qualified collision check using co-occurrence and popularity-matched non-collision pairs | **Done**; see `docs/QUALIFIED_COLLISION_PROBE.md` |
+| `capacity_budget_sweep` | `tools/autodl_audit_sid/run_capacity_budget_sweep.py` | D1/D2/D4/D5a | AdaSID/CARD-inspired capacity-pressure sweep over fixed-depth code widths | **Done**; see `docs/CAPACITY_BUDGET_SWEEP.md` |
+| `variable_depth_cost_probe` | `tools/autodl_audit_sid/run_variable_depth_cost_probe.py` | D4/D5a/D7-boundary | CapsID/long-SID-inspired prefix-depth and trie-cost stress test | **Done; paper optional**; see `docs/VARIABLE_DEPTH_COST_PROBE.md` |
 
 ## Existing Generic Calibration Rows
 
@@ -49,30 +49,28 @@ They are generic controls, not method-inspired controller evidence.
 | `popularity_capacity_skew` | `sanity_popularity_balanced` | D3/D4/D5a | Popularity/capacity calibration; helps interpret head-tail and prefix fan-out |
 | `drift_churn_probe` | DACT Tools 0.6 -> 0.7 smoke | D6 | Optional continual-tokenization churn example, not part of the D1-D5a v0 controller suite |
 
-## Execution Order
+## Execution Results
 
-1. `qualified_collision_probe`.
+1. `qualified_collision_probe`: **done**.
    - Reason: it directly addresses the weakest current D2 caveat: collision is
      currently a profile, not interaction-qualified harm.
-   - Minimal output: pair-level CSV comparing collided pairs against
-     popularity-matched non-collision pairs on co-occurrence or shared-user
-     evidence.
+   - Output: pair-level CSV plus `paper_assets/tables/table8_qualified_collision_probe.csv`.
    - Finding target: not all SID collisions are equally suspicious; D2 can
      separate raw collision count from interaction-qualified collision risk.
 
-2. `capacity_budget_sweep`.
+2. `capacity_budget_sweep`: **done**.
    - Reason: it tests whether D1/D2/D4 react coherently when the same item
      universe is compressed under controlled codebook budgets.
-   - Minimal output: synthetic fixed-depth SID assignments across several
-     width budgets, with D1/D2/D4/D5a summaries.
+   - Output: synthetic fixed-depth SID assignments plus
+     `paper_assets/tables/table9_capacity_budget_sweep.csv`.
    - Finding target: capacity pressure can surface as collision, tail-capacity
      loss, or prefix-cost changes; these are separable diagnostic dimensions.
 
-3. `variable_depth_cost_probe`.
+3. `variable_depth_cost_probe`: **done; paper optional**.
    - Reason: it probes the D5a boundary for long/variable SIDs without
      claiming to reproduce CapsID, ACERec, or any unreleased method.
-   - Minimal output: variable-depth/EOS-like synthetic SID assignments with
-     prefix fan-out and cost summaries.
+   - Output: variable-depth/EOS-like synthetic SID assignments plus
+     `paper_assets/tables/table10_variable_depth_cost_probe.csv`.
    - Finding target: reducing collision or increasing capacity can shift cost
      into depth/path complexity. Include in the paper only if the result is
      clean and fits the four-page narrative.

@@ -987,3 +987,23 @@
 | 2026-05-19 19:01 | /paper-write | ARTIFACT_MANIFEST_20260519_190139.md | paper | timestamped artifact manifest with method-inspired controller wording |
 | 2026-05-19 19:01 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest with method-inspired controller wording |
 | 2026-05-19 19:01 | /idea-discovery | findings.md | implementation | append-only finding records controller revision |
+| 2026-05-19 19:01 | /run-experiment | tools/autodl_audit_sid/run_qualified_collision_probe.py | implementation | D2b interaction-qualified collision controller |
+| 2026-05-19 19:01 | /run-experiment | tests/test_qualified_collision_probe.py | implementation | unit test for qualified collision controller |
+| 2026-05-19 19:01 | /run-experiment | docs/QUALIFIED_COLLISION_PROBE_20260519_190139.md | documentation | timestamped qualified collision controller result |
+| 2026-05-19 19:01 | /run-experiment | docs/QUALIFIED_COLLISION_PROBE.md | documentation | latest qualified collision controller result |
+| 2026-05-19 19:01 | /run-experiment | paper_assets/tables/table8_qualified_collision_probe.csv | paper | qualified collision controller summary CSV |
+| 2026-05-19 19:01 | /run-experiment | paper_assets/tables/table8_qualified_collision_probe.md | paper | qualified collision controller summary Markdown |
+| 2026-05-19 19:01 | /run-experiment | tools/autodl_audit_sid/run_capacity_budget_sweep.py | implementation | D1/D2/D4/D5a capacity-budget controller |
+| 2026-05-19 19:01 | /run-experiment | tests/test_capacity_budget_sweep.py | implementation | unit test for capacity-budget controller |
+| 2026-05-19 19:01 | /run-experiment | docs/CAPACITY_BUDGET_SWEEP_20260519_190139.md | documentation | timestamped capacity-budget controller result |
+| 2026-05-19 19:01 | /run-experiment | docs/CAPACITY_BUDGET_SWEEP.md | documentation | latest capacity-budget controller result |
+| 2026-05-19 19:01 | /run-experiment | paper_assets/tables/table9_capacity_budget_sweep.csv | paper | capacity-budget controller summary CSV |
+| 2026-05-19 19:01 | /run-experiment | paper_assets/tables/table9_capacity_budget_sweep.md | paper | capacity-budget controller summary Markdown |
+| 2026-05-19 19:01 | /run-experiment | tools/autodl_audit_sid/run_variable_depth_cost_probe.py | implementation | D4/D5a variable-depth cost controller |
+| 2026-05-19 19:01 | /run-experiment | tests/test_variable_depth_cost_probe.py | implementation | unit test for variable-depth cost controller |
+| 2026-05-19 19:01 | /run-experiment | docs/VARIABLE_DEPTH_COST_PROBE_20260519_190139.md | documentation | timestamped variable-depth cost controller result |
+| 2026-05-19 19:01 | /run-experiment | docs/VARIABLE_DEPTH_COST_PROBE.md | documentation | latest variable-depth cost controller result |
+| 2026-05-19 19:01 | /run-experiment | paper_assets/tables/table10_variable_depth_cost_probe.csv | paper | variable-depth cost controller summary CSV |
+| 2026-05-19 19:01 | /run-experiment | paper_assets/tables/table10_variable_depth_cost_probe.md | paper | variable-depth cost controller summary Markdown |
+| 2026-05-19 19:01 | /paper-write | tools/verify_paper_artifact_20260519_190139.py | implementation | timestamped verifier requires controller scripts, tests, docs, and tables |
+| 2026-05-19 19:01 | /paper-write | tools/verify_paper_artifact.py | implementation | verifier now requires controller scripts, tests, docs, and tables |
