@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from tools.autodl_audit_sid.preflight_card_nurqvae import (
+    audit_official_source_state,
     check_generate_code_contract,
     create_import_overlay,
     preflight_card_nurqvae,
@@ -42,9 +43,16 @@ class CardNuRQVAEPreflightTest(unittest.TestCase):
 
         self.assertEqual(out["status"], "passed")
         self.assertEqual(out["import_smoke"]["tiny_forward"]["indices_shape"], [7, 2])
-        self.assertFalse(out["faithfulness"]["core_algorithm_patched"])
-        self.assertFalse(out["faithfulness"]["quantizer_replaced"])
+        self.assertIn("official_source_audit", out)
         self.assertFalse(out["next_step_ready"])
+
+    def test_official_source_audit_detects_local_repairs(self) -> None:
+        out = audit_official_source_state(CARD_DIR)
+
+        self.assertIn(out["status"], {"local_repair_required", "official_source_complete", "no_git_metadata"})
+        if out["status"] == "local_repair_required":
+            self.assertIn("rqvae4/models/vq.py", out["missing_from_official_tree"])
+            self.assertFalse(out["faithful_named_evidence_ready"])
 
 
 if __name__ == "__main__":

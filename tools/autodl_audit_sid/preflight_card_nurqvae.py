@@ -52,6 +52,67 @@ def check_required_paths(card_dir: Path) -> dict[str, Any]:
     return {name: str(path) for name, path in paths.items()}
 
 
+def audit_official_source_state(card_dir: Path) -> dict[str, Any]:
+    """Check whether the local CARD path is runnable from official tracked files.
+
+    The public CARD repository currently exposes the NU-RQ-VAE wrapper, but the
+    wrapper imports quantizer modules that are not tracked in the official tree.
+    This check prevents a local compatibility repair from being mistaken for
+    faithful named-method evidence.
+    """
+
+    required_official = [
+        "nu-rq-vae/models/nu_rqvae.py",
+        "rqvae4/models/rq.py",
+        "rqvae4/models/vq.py",
+        "rqvae4/vq.py",
+    ]
+    result: dict[str, Any] = {
+        "status": "unknown",
+        "required_for_official_import": required_official,
+        "missing_from_official_tree": [],
+        "present_only_as_local_repairs": [],
+        "official_commit": None,
+        "faithful_named_evidence_ready": False,
+    }
+    git_dir = card_dir / ".git"
+    if not git_dir.exists():
+        result["status"] = "no_git_metadata"
+        return result
+
+    rev = subprocess.run(
+        ["git", "-C", str(card_dir), "rev-parse", "HEAD"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if rev.returncode == 0:
+        result["official_commit"] = rev.stdout.strip()
+
+    tree = subprocess.run(
+        ["git", "-C", str(card_dir), "ls-tree", "-r", "--name-only", "HEAD"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if tree.returncode != 0:
+        result["status"] = "git_tree_unavailable"
+        result["git_error"] = tree.stderr.strip()
+        return result
+
+    tracked = set(tree.stdout.splitlines())
+    missing = [path for path in required_official if path not in tracked]
+    local_repairs = [path for path in missing if (card_dir / path).exists()]
+    result["missing_from_official_tree"] = missing
+    result["present_only_as_local_repairs"] = local_repairs
+    if missing:
+        result["status"] = "local_repair_required"
+    else:
+        result["status"] = "official_source_complete"
+        result["faithful_named_evidence_ready"] = True
+    return result
+
+
 def create_import_overlay(card_dir: Path, overlay_dir: Path) -> Path:
     """Create a temporary ``nu_rqvae4`` package that points at official source."""
 
@@ -264,6 +325,8 @@ def preflight_card_nurqvae(
 ) -> dict[str, Any]:
     card_dir = card_dir.resolve()
     required = check_required_paths(card_dir)
+    source_audit = audit_official_source_state(card_dir)
+    repair_required = bool(source_audit.get("missing_from_official_tree"))
 
     temp_context = None
     if work_dir is None:
@@ -282,14 +345,16 @@ def preflight_card_nurqvae(
         result: dict[str, Any] = {
             "status": "passed",
             "card_dir": str(card_dir),
+            "official_source_audit": source_audit,
             "faithfulness": {
-                "official_code_skeleton": True,
+                "official_code_skeleton": not repair_required,
                 "original_model_file": str(card_dir / "nu-rq-vae/models/nu_rqvae.py"),
-                "core_algorithm_patched": False,
-                "quantizer_replaced": False,
+                "core_algorithm_patched": repair_required,
+                "quantizer_replaced": repair_required,
                 "repair_scope": [
                     "temporary nu_rqvae4 import package overlay for hyphenated official directory",
                     "runner env TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1 for PyTorch checkpoint compatibility",
+                    "local compatibility quantizer modules are required because the official CARD tree is incomplete",
                 ],
             },
             "required_paths": required,
@@ -301,9 +366,10 @@ def preflight_card_nurqvae(
             export_work = root / "synthetic_export"
             export_work.mkdir(parents=True, exist_ok=True)
             result["synthetic_export"] = run_synthetic_export(card_dir, overlay_dir, export_work, device=device)
-            result["next_step_ready"] = True
+            result["synthetic_export_ready"] = True
         else:
-            result["next_step_ready"] = False
+            result["synthetic_export_ready"] = False
+        result["next_step_ready"] = bool(source_audit.get("faithful_named_evidence_ready")) and bool(run_export)
         return result
     finally:
         if temp_context is not None and not keep_work_dir:

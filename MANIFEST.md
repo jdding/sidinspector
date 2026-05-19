@@ -928,3 +928,28 @@
 | 2026-05-19 17:32 | /run-experiment | docs/ADDITIONAL_EXPERIMENT_PREFLIGHT_CODE_20260519_173236.md | documentation | timestamped preflight-code note including CARD original preflight |
 | 2026-05-19 17:32 | /run-experiment | docs/ADDITIONAL_EXPERIMENT_PREFLIGHT_CODE.md | documentation | latest preflight-code note including CARD original preflight |
 | 2026-05-19 17:32 | /research-refine | docs/METHOD_RELEASE_SCOUT_20260519_173236.md | documentation | second-level timestamped release scout copy per output-versioning rule |
+| 2026-05-19 17:47 | /run-experiment | docs/CARD_ORIGINAL_NURQVAE_EVIDENCE_GATE_20260519_174729.md | documentation | timestamped CARD original v0 main-evidence failure report |
+| 2026-05-19 17:47 | /run-experiment | docs/CARD_ORIGINAL_NURQVAE_EVIDENCE_GATE.md | documentation | latest CARD original v0 main-evidence failure report |
+| 2026-05-19 17:47 | /run-experiment | tools/autodl_audit_sid/preflight_card_nurqvae.py | implementation | preflight now audits official-source completeness and flags local quantizer repair |
+| 2026-05-19 17:47 | /run-experiment | tests/test_preflight_card_nurqvae.py | implementation | unit tests cover official-source repair detection |
+| 2026-05-19 17:47 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state closes CARD original as failed for v0 main evidence |
+| 2026-05-19 17:47 | /idea-discovery | docs/CURRENT_STATE_20260519_174729.md | documentation | timestamped current state closes CARD original as failed for v0 main evidence |
+| 2026-05-19 17:47 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index adds CARD original failure report |
+| 2026-05-19 17:47 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_174729.md | documentation | timestamped document index adds CARD original failure report |
+| 2026-05-19 17:47 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX.md | writing-plan | latest method matrix downgrades CARD faithful path to failed/backlog |
+| 2026-05-19 17:47 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX_20260519_174729.md | writing-plan | timestamped method matrix downgrades CARD faithful path to failed/backlog |
+| 2026-05-19 17:47 | /experiment-plan | docs/B2_B3_METHOD_SCREEN.md | writing-plan | latest method screen closes CARD original due missing official quantizer modules |
+| 2026-05-19 17:47 | /experiment-plan | docs/B2_B3_METHOD_SCREEN_20260519_174729.md | writing-plan | timestamped method screen closes CARD original due missing official quantizer modules |
+| 2026-05-19 17:47 | /research-refine | docs/THIRD_METHOD_EVIDENCE_GATE.md | documentation | latest third-method gate records CARD revival conditions |
+| 2026-05-19 17:47 | /research-refine | docs/THIRD_METHOD_EVIDENCE_GATE_20260519_174729.md | documentation | timestamped third-method gate records CARD revival conditions |
+| 2026-05-19 17:47 | /run-experiment | docs/ADDITIONAL_EXPERIMENT_PREFLIGHT_CODE.md | documentation | latest preflight-code note explains CARD local repair boundary |
+| 2026-05-19 17:47 | /run-experiment | docs/ADDITIONAL_EXPERIMENT_PREFLIGHT_CODE_20260519_174729.md | documentation | timestamped preflight-code note explains CARD local repair boundary |
+| 2026-05-19 17:47 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest reviewer manifest includes CARD original failure report |
+| 2026-05-19 17:47 | /paper-write | ARTIFACT_MANIFEST_20260519_174729.md | paper | timestamped reviewer manifest includes CARD original failure report |
+| 2026-05-19 17:47 | /paper-write | ARTIFACT_QUICKSTART.md | paper | latest quickstart notes CARD preflight repair boundary |
+| 2026-05-19 17:47 | /paper-write | ARTIFACT_QUICKSTART_20260519_174729.md | paper | timestamped quickstart notes CARD preflight repair boundary |
+| 2026-05-19 17:47 | /paper-write | tools/verify_paper_artifact.py | implementation | verifier now requires CARD original failure report |
+| 2026-05-19 17:47 | /paper-write | tools/verify_paper_artifact_20260519_174729.py | implementation | timestamped verifier now requires CARD original failure report |
+| 2026-05-19 17:47 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records CARD original failed-for-v0-main-evidence decision |
+| 2026-05-19 17:47 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_174729.md | implementation | timestamped tracker records CARD original failed-for-v0-main-evidence decision |
+| 2026-05-19 17:47 | /idea-discovery | findings.md | implementation | append-only finding closes CARD original as non-faithful without author artifacts |
