@@ -71,6 +71,31 @@ class MetricsTest(unittest.TestCase):
         self.assertGreater(out["items"].sum(), 0)
         self.assertIn("head", set(out["bucket"]))
 
+    def test_alignment_allows_missing_category_metadata(self) -> None:
+        sid = pd.DataFrame(
+            {
+                "dataset": ["toy"] * 2,
+                "method": ["m"] * 2,
+                "item_id": [1, 2],
+                "sid": ["0", "0"],
+                "sid_level_0": [0, 0],
+            }
+        )
+        metadata = pd.DataFrame({"dataset": ["toy"] * 2, "item_id": [1, 2]})
+        interactions = pd.DataFrame(
+            {
+                "dataset": ["toy"] * 2,
+                "user_id": [1, 1],
+                "item_id": [1, 2],
+                "split": ["train", "train"],
+            }
+        )
+
+        out = alignment(sid, metadata, interactions, top_k=1)
+
+        self.assertAlmostEqual(out.iloc[0]["mean_collab_prefix_recall"], 1.0)
+        self.assertTrue(pd.isna(out.iloc[0]["level0_category_purity_mean"]))
+
 
 if __name__ == "__main__":
     unittest.main()

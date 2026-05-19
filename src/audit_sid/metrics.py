@@ -182,6 +182,19 @@ def collision(sid: pd.DataFrame, interactions: pd.DataFrame) -> pd.DataFrame:
 
 def _category_alignment(sid: pd.DataFrame, item_metadata: pd.DataFrame) -> pd.DataFrame:
     rows = []
+    if "category" not in item_metadata.columns:
+        for group_key, group in sid.groupby(_group_cols(sid)):
+            if not isinstance(group_key, tuple):
+                group_key = (group_key,)
+            key_values = dict(zip(_group_cols(sid), group_key))
+            rows.append(
+                {
+                    **key_values,
+                    "level0_category_purity_mean": np.nan,
+                    "level0_non_singleton_buckets": 0,
+                }
+            )
+        return pd.DataFrame(rows)
     if item_metadata["category"].isna().any():
         raise ValueError("item_metadata contains null category values")
     for group_key, group in sid.groupby(_group_cols(sid)):

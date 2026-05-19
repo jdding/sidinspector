@@ -514,3 +514,47 @@
 | 2026-05-19 03:24 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_032407.md | implementation | timestamped tracker after citation scaffold |
 | 2026-05-19 03:24 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records citation scaffold |
 | 2026-05-19 03:24 | /idea-discovery | findings.md | implementation | append-only citation scaffold finding |
+| 2026-05-19 09:35 | /experiment-plan | docs/DACT_DRIFT_SMOKE_20260519_093506.md | implementation | timestamped DACT optional D6 drift artifact smoke |
+| 2026-05-19 09:35 | /experiment-plan | docs/DACT_DRIFT_SMOKE.md | implementation | latest DACT optional D6 drift artifact smoke |
+| 2026-05-19 09:35 | /experiment-plan | docs/CIKM_RESOURCE_PAPER_PLAN_20260519_093506.md | implementation | timestamped paper plan updated with optional DACT D6 caveat |
+| 2026-05-19 09:35 | /experiment-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | implementation | latest paper plan updated with optional DACT D6 caveat |
+| 2026-05-19 09:35 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260519_093506.md | implementation | timestamped plan updated with optional DACT D6 route |
+| 2026-05-19 09:35 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | latest plan updated with optional DACT D6 route |
+| 2026-05-19 09:35 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_093506.md | implementation | timestamped tracker updated with DACT optional D6 smoke |
+| 2026-05-19 09:35 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker updated with DACT optional D6 smoke |
+| 2026-05-19 09:35 | /research-refine | src/audit_sid/adapters/dact.py | implementation | DACT code-array normalizer |
+| 2026-05-19 09:35 | /research-refine | tools/autodl_audit_sid/run_dact_artifact_smoke.py | implementation | local DACT smoke runner with D1-D5a and D6 output |
+| 2026-05-19 09:35 | /research-refine | tools/autodl_audit_sid/compute_sid_churn.py | implementation | reusable D6 SID churn tool |
+| 2026-05-19 09:35 | /research-refine | tests/test_sid_churn.py | implementation | unit test for D6 common-item denominator and collision columns |
+| 2026-05-19 09:56 | autodl-no-gpu | docs/AUTODL_NO_GPU_DELTA_SYNC_20260519_095633.md | implementation | timestamped no-GPU remote delta-sync verification |
+| 2026-05-19 09:56 | autodl-no-gpu | docs/AUTODL_NO_GPU_DELTA_SYNC.md | implementation | latest no-GPU remote delta-sync verification |
+| 2026-05-19 09:56 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_095633.md | implementation | timestamped tracker updated with no-GPU delta sync |
+| 2026-05-19 09:56 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker updated with no-GPU delta sync |
+| 2026-05-19 09:56 | autodl-no-gpu | findings.md | implementation | append-only no-GPU delta-sync finding |
+| 2026-05-19 10:16 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_101646.md | implementation | timestamped tracker after AutoDL GPU quick smoke launch |
+| 2026-05-19 10:16 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks AutoDL GPU quick smoke running |
+| 2026-05-19 10:16 | autodl-gpu-quick | findings.md | implementation | append-only GPU quick smoke running finding |
+| 2026-05-19 10:23 | autodl-gpu-quick | docs/AUTODL_GPU_QUICK_SMOKE_20260519_102320.md | implementation | timestamped AutoDL GPU quick-smoke completion report |
+| 2026-05-19 10:23 | autodl-gpu-quick | docs/AUTODL_GPU_QUICK_SMOKE.md | implementation | latest AutoDL GPU quick-smoke completion report |
+| 2026-05-19 10:23 | autodl-gpu-quick | _gate0_artifacts/autodl_runs/gate0_summary_remote_quick_20260519_101555.csv | evidence | pulled remote quick summary CSV |
+| 2026-05-19 10:23 | autodl-gpu-quick | _gate0_artifacts/autodl_runs/logs/audit_sid_quick_20260519_101555.log | evidence | pulled remote quick screen log |
+| 2026-05-19 10:23 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_102320.md | implementation | timestamped tracker after AutoDL GPU quick smoke completion |
+| 2026-05-19 10:23 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks AutoDL GPU quick smoke done |
+| 2026-05-19 10:23 | autodl-gpu-quick | findings.md | implementation | append-only GPU quick smoke completion finding |
+| 2026-05-19 10:29 | audit-handoff | docs/AUDIT_SID_EXTERNAL_AUDIT_HANDOFF_20260519_102944.md | documentation | timestamped external audit handoff |
+| 2026-05-19 10:29 | audit-handoff | docs/AUDIT_SID_EXTERNAL_AUDIT_HANDOFF.md | documentation | latest external audit handoff |
+| 2026-05-19 10:29 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_102944.md | implementation | timestamped tracker after external audit handoff |
+| 2026-05-19 10:29 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks external audit handoff done |
+| 2026-05-19 10:29 | audit-handoff | findings.md | implementation | append-only post-run code review and audit handoff finding |
+| 2026-05-19 11:09 | /run-experiment | tools/autodl_audit_sid/prepare_resid_feature_grid_inputs.py | implementation | ReSID feature-text input builder for local GRID Musical same-dataset row |
+| 2026-05-19 11:09 | /run-experiment | tools/autodl_audit_sid/run_grid_musical_cpu_smoke.sh | implementation | local CPU runner for GRID-on-Musical controlled same-dataset row |
+| 2026-05-19 11:09 | /run-experiment | _gate0_artifacts/grid_same_dataset_runs/musical_same_dataset_grid_vs_resid_summary_20260519_110722.csv | evidence | same-dataset GRID-vs-ReSID Musical diagnostic summary |
+| 2026-05-19 11:09 | /experiment-plan | docs/GRID_MUSICAL_SAME_DATASET_CPU_20260519_110920.md | analysis | timestamped GRID Musical same-dataset CPU run report |
+| 2026-05-19 11:09 | /experiment-plan | docs/GRID_MUSICAL_SAME_DATASET_CPU.md | analysis | latest GRID Musical same-dataset CPU run report |
+| 2026-05-19 11:09 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_110920.md | implementation | timestamped tracker after GRID Musical same-dataset CPU row |
+| 2026-05-19 11:09 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marks GRID Musical same-dataset CPU row done |
+| 2026-05-19 11:09 | /experiment-plan | findings.md | implementation | append-only third-audit cross-dataset gap response finding |
+| 2026-05-19 11:09 | /experiment-plan | docs/CIKM_RESOURCE_PAPER_PLAN_20260519_110920.md | writing-plan | timestamped paper plan updated with GRID Musical same-dataset row caveat |
+| 2026-05-19 11:09 | /experiment-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | writing-plan | latest paper plan updated with GRID Musical same-dataset row caveat |
+| 2026-05-19 11:09 | audit-response | docs/THIRD_EXTERNAL_AUDIT_RESPONSE_20260519_110920.md | analysis | timestamped third external audit response |
+| 2026-05-19 11:09 | audit-response | docs/THIRD_EXTERNAL_AUDIT_RESPONSE.md | analysis | latest third external audit response |

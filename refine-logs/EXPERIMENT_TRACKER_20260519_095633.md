@@ -70,10 +70,6 @@
 | A104AJ | Citation scaffold | DONE | `docs/CITATION_SCAFFOLD.md`, `docs/CITATION_SCAFFOLD_20260519_032407.md` | Created a citation scaffold with source links and explicit no-BibTeX-from-memory rules. All citation metadata still needs verification before LaTeX. |
 | A104AK | DACT optional D6 drift smoke | LOCAL_SMOKE_PASSED_OPTIONAL | `docs/DACT_DRIFT_SMOKE.md`, `_gate0_artifacts/dact_tools_smoke/d6_churn_0.6_to_0.7.csv`, `tools/autodl_audit_sid/compute_sid_churn.py` | DACT bundled Tools 0.6 -> 0.7 common-item SID churn is `2271/9610=0.236316`; 0.7 has only `3` full-collision groups / `6` items. Keep as optional drift/continual artifact evidence, not a replacement for Cluster B. |
 | A104AL | AutoDL no-GPU delta sync | TRANSFER_VERIFIED_NO_GPU | `docs/AUTODL_NO_GPU_DELTA_SYNC.md`, remote `/root/autodl-tmp/Sec_phrase` | Synced docs/refine-logs/src/tools/tests plus DACT smoke artifacts to remote. Remote unit tests pass, D6 churn recomputes, preflight reports `ASSETS_READY RUNNER_READY`, and `torch.cuda.is_available=False`; no queue launched. |
-| A104AM | AutoDL GPU quick smoke | DONE | `docs/AUTODL_GPU_QUICK_SMOKE.md`, `_gate0_artifacts/autodl_runs/gate0_summary_remote_quick_20260519_101555.csv` | GPU quick screen completed without auto-shutdown. ReSID Musical balanced GAOQ exported 23,742 SIDs with zero missing joins and zero full collisions; CARD Musical compact proxy exported 4,891 unique SIDs with 0.793994 duplicate rate. This is smoke/provenance evidence only; robust/sweep/quality remain blocked unless a new evidence gap is explicit. |
-| A104AN | External audit handoff | DONE | `docs/AUDIT_SID_EXTERNAL_AUDIT_HANDOFF.md` | Subagent review found no blocker and fixed one paper-plan timestamp consistency issue. Handoff summarizes current verdict, evidence entry points, AutoDL state, verification commands, and remaining paper-draft work. |
-| A104AO | GRID Musical same-dataset CPU row | DONE | `docs/GRID_MUSICAL_SAME_DATASET_CPU.md`, `_gate0_artifacts/grid_same_dataset_runs/musical_same_dataset_grid_vs_resid_summary_20260519_110722.csv` | Responds to third external audit's cross-dataset gap. Local CPU official GRID MiniBatchKMeans ran on ReSID Musical processed feature-text embeddings: 23,742 items, zero missing joins, unique SID 3,749, duplicate SID rate 0.842094, full collision rate 0.976876. Same dataset comparison to ReSID GAOQ is now available, but this is not a faithful raw-text TIGER/GRID reproduction. |
-| A104AP | Third external audit response | DONE | `docs/THIRD_EXTERNAL_AUDIT_RESPONSE.md` | Accepted the cross-dataset critique, documented the local CPU GRID Musical response, and updated the CIKM paper plan to use same-item-universe wording with explicit feature-text caveat. |
 | A105 | MovieLens-1M portability smoke | DEFERRED | TBD | Half-day max only after Gate 0 is stable; no new tokenizer and no main-claim dependence. |
 
 ## Current Decision
@@ -91,11 +87,9 @@ DACT local smoke is now available as optional D6 drift evidence only: it can
 support a small continual-tokenization extension, but it must not change the
 main paper route or replace ReSID/CARD/DIGER Cluster B decisions.
 
-Remote no-GPU state was transfer-verified as of 2026-05-19 09:56 CST. After
-GPU power-on, `REQUIRE_CUDA=1` preflight passed at 2026-05-19 10:15 CST and a
-bounded `QUEUE_MODE=quick` screen completed at 2026-05-19 10:21 CST. Do not
-escalate to robust/sweep/quality after this pass; it is smoke/provenance
-evidence only.
+Remote no-GPU state is transfer-verified as of 2026-05-19 09:56 CST: file
+sync and preflight are useful, but all GPU queues remain blocked until
+`REQUIRE_CUDA=1` preflight passes.
 
 Venue direction: target CIKM 2026 Resource Track now, because it is the nearest track that explicitly accepts resource/protocol/software/evaluation-tool work. Abstract deadline is 2026-05-30 AoE and paper deadline is 2026-06-06 AoE. Gate 0 must pass by 2026-05-24; otherwise do not force a weak submission.
 

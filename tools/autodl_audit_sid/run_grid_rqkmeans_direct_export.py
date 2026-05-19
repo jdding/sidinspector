@@ -192,7 +192,7 @@ def main() -> None:
         "coverage_report.csv": validate_inputs(sid, item_metadata, interactions),
         "d1_utilization.csv": utilization(sid),
         "d2_collision.csv": collision(sid, interactions),
-        "d3_alignment.csv": alignment(sid, item_metadata),
+        "d3_alignment.csv": alignment(sid, item_metadata, interactions),
         "d4_head_tail.csv": head_tail_capacity(sid, interactions),
         "d5a_deployment_cost.csv": deployment_cost(sid),
     }
