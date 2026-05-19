@@ -1039,3 +1039,24 @@
 | 2026-05-19 19:34 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_193420.md | implementation | timestamped tracker after paper controller integration |
 | 2026-05-19 19:34 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker after paper controller integration |
 | 2026-05-19 19:34 | /idea-discovery | findings.md | implementation | append-only finding for paper controller integration |
+| 2026-05-19 20:06 | /paper-write | paper/main_20260519_200630.tex | paper | timestamped ACM draft after controlled-stressor table and prose polish |
+| 2026-05-19 20:06 | /paper-compile | paper/main_20260519_200630.pdf | paper | timestamped compiled PDF after controlled-stressor table and prose polish |
+| 2026-05-19 20:06 | /paper-write | paper/main.tex | paper | latest ACM draft with controlled-stressor Table 3 |
+| 2026-05-19 20:06 | /paper-compile | paper/main.pdf | paper | latest compiled PDF, 5 pages total with body through page 4 |
+| 2026-05-19 20:06 | /paper-write | paper/sections/1_introduction_20260519_200630.tex | paper | timestamped polished introduction |
+| 2026-05-19 20:06 | /paper-write | paper/sections/2_toolkit_20260519_200630.tex | paper | timestamped toolkit section with bounded D2 controller wording |
+| 2026-05-19 20:06 | /paper-write | paper/sections/3_resource_demo_20260519_200630.tex | paper | timestamped resource-demo section with controlled-stressor table |
+| 2026-05-19 20:06 | /paper-write | paper/sections/4_availability_limits_20260519_200630.tex | paper | timestamped polished availability and limitations section |
+| 2026-05-19 20:06 | /idea-discovery | docs/CURRENT_STATE_20260519_200630.md | documentation | timestamped current state after table/prose polish |
+| 2026-05-19 20:06 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after table/prose polish |
+| 2026-05-19 20:06 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_200630.md | documentation | timestamped document index after table/prose polish |
+| 2026-05-19 20:06 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after table/prose polish |
+| 2026-05-19 20:06 | /paper-write | docs/PAPER_CONTROLLER_INTEGRATION_20260519_200630.md | paper | timestamped paper-controller note after real table insertion |
+| 2026-05-19 20:06 | /paper-write | docs/PAPER_CONTROLLER_INTEGRATION.md | paper | latest paper-controller note after real table insertion |
+| 2026-05-19 20:06 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260519_200630.md | documentation | timestamped claim audit after controlled-stressor table |
+| 2026-05-19 20:06 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | documentation | latest claim audit after controlled-stressor table |
+| 2026-05-19 20:06 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_200630.md | implementation | timestamped tracker after controlled-stressor table |
+| 2026-05-19 20:06 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker after controlled-stressor table |
+| 2026-05-19 20:06 | /paper-write | ARTIFACT_MANIFEST_20260519_200630.md | paper | timestamped artifact manifest after controlled-stressor table |
+| 2026-05-19 20:06 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest after controlled-stressor table |
+| 2026-05-19 20:06 | /idea-discovery | findings.md | implementation | append-only finding for controlled-stressor table and prose polish |
