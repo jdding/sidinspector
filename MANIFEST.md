@@ -874,3 +874,31 @@
 | 2026-05-19 16:26 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260519_162626.md | writing-plan | timestamped CIKM experiment design with v0 closure status |
 | 2026-05-19 16:26 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | writing-plan | latest CIKM experiment design with v0 closure status |
 | 2026-05-19 16:26 | /idea-discovery | findings.md | implementation | append-only experiment-plan closure finding |
+| 2026-05-19 17:01 | /paper-write | docs/PAPER_FINDINGS_POLISH_20260519_170132.md | paper | timestamped results-based paper findings polish note |
+| 2026-05-19 17:01 | /paper-write | docs/PAPER_FINDINGS_POLISH.md | paper | latest results-based paper findings polish note |
+| 2026-05-19 17:01 | /paper-write | paper/main_20260519_170132.tex | paper | timestamped ACM draft after findings polish |
+| 2026-05-19 17:01 | /paper-compile | paper/main_20260519_170132.pdf | paper | timestamped compiled PDF after findings polish |
+| 2026-05-19 17:01 | /paper-write | paper/main.tex | paper | latest ACM draft after findings polish |
+| 2026-05-19 17:01 | /paper-compile | paper/main.pdf | paper | latest compiled PDF after findings polish |
+| 2026-05-19 17:01 | /paper-write | paper/sections/1_introduction_20260519_170132.tex | paper | timestamped introduction after diagnostic-finding framing |
+| 2026-05-19 17:01 | /paper-write | paper/sections/1_introduction.tex | paper | latest introduction after diagnostic-finding framing |
+| 2026-05-19 17:01 | /paper-write | paper/sections/3_resource_demo_20260519_170132.tex | paper | timestamped resource demo with explicit diagnostic findings |
+| 2026-05-19 17:01 | /paper-write | paper/sections/3_resource_demo.tex | paper | latest resource demo with explicit diagnostic findings |
+| 2026-05-19 17:01 | /paper-write | paper/sections/4_availability_limits_20260519_170132.tex | paper | timestamped availability/limitations after resource-worthiness polish |
+| 2026-05-19 17:01 | /paper-write | paper/sections/4_availability_limits.tex | paper | latest availability/limitations after resource-worthiness polish |
+| 2026-05-19 17:01 | /idea-discovery | docs/CURRENT_STATE_20260519_170132.md | documentation | timestamped current state after paper findings polish |
+| 2026-05-19 17:01 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after paper findings polish |
+| 2026-05-19 17:01 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_170132.md | documentation | timestamped document index after paper findings polish |
+| 2026-05-19 17:01 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after paper findings polish |
+| 2026-05-19 17:01 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_170132.md | implementation | timestamped tracker after paper findings polish |
+| 2026-05-19 17:01 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records paper findings polish |
+| 2026-05-19 17:01 | /run-experiment | tools/autodl_audit_sid/preflight_metric_inputs.py | implementation | local CPU input-contract preflight for future metric experiments |
+| 2026-05-19 17:01 | /run-experiment | tests/test_preflight_metric_inputs.py | implementation | unit tests for local metric-input preflight |
+| 2026-05-19 17:01 | /run-experiment | docs/ADDITIONAL_EXPERIMENT_PREFLIGHT_CODE_20260519_170132.md | documentation | timestamped note for additional experiment preflight code |
+| 2026-05-19 17:01 | /run-experiment | docs/ADDITIONAL_EXPERIMENT_PREFLIGHT_CODE.md | documentation | latest note for additional experiment preflight code |
+| 2026-05-19 17:06 | /paper-write | ARTIFACT_QUICKSTART_20260519_170629.md | paper | timestamped quickstart after adding full test discovery and preflight compile path |
+| 2026-05-19 17:06 | /paper-write | ARTIFACT_QUICKSTART.md | paper | latest quickstart after adding full test discovery and preflight compile path |
+| 2026-05-19 17:06 | /paper-write | ARTIFACT_MANIFEST_20260519_170629.md | paper | timestamped artifact manifest after adding preflight script |
+| 2026-05-19 17:06 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest after adding preflight script |
+| 2026-05-19 17:06 | /paper-write | tools/verify_paper_artifact_20260519_170629.py | implementation | timestamped verifier with Table 7 stability checks and preflight file checks |
+| 2026-05-19 17:06 | /paper-write | tools/verify_paper_artifact.py | implementation | latest verifier with Table 7 stability checks and preflight file checks |
