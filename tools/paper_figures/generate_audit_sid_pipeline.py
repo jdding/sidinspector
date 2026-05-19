@@ -136,7 +136,18 @@ def main():
         color="#4b5563",
     )
 
-    fig.savefig(OUT_DIR / "fig1_audit_sid_pipeline.pdf", bbox_inches="tight", pad_inches=0.015)
+    pdf_metadata = {
+        "Creator": "AUDIT-SID figure generator",
+        "Producer": "Matplotlib",
+        "CreationDate": None,
+        "ModDate": None,
+    }
+    fig.savefig(
+        OUT_DIR / "fig1_audit_sid_pipeline.pdf",
+        bbox_inches="tight",
+        pad_inches=0.015,
+        metadata=pdf_metadata,
+    )
     fig.savefig(OUT_DIR / "fig1_audit_sid_pipeline.png", dpi=300, bbox_inches="tight", pad_inches=0.015)
 
 
