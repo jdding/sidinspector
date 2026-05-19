@@ -585,3 +585,27 @@
 | 2026-05-19 12:29 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_122957.md | implementation | timestamped tracker after metric-scope absorption |
 | 2026-05-19 12:29 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records metric-scope absorption |
 | 2026-05-19 12:29 | /idea-discovery | findings.md | implementation | append-only D1-D6 artifact-scope finding |
+| 2026-05-19 12:41 | /paper-plan | docs/CIKM_RESOURCE_FORMAT_AUDIT_20260519_124113.md | writing-plan | timestamped CIKM Resource page-limit audit |
+| 2026-05-19 12:41 | /paper-plan | docs/CIKM_RESOURCE_FORMAT_AUDIT.md | writing-plan | latest CIKM Resource page-limit audit |
+| 2026-05-19 12:41 | /paper-plan | docs/CITATION_AUDIT_20260519_124113.md | writing-plan | timestamped citation metadata audit from primary pages |
+| 2026-05-19 12:41 | /paper-plan | docs/CITATION_AUDIT.md | writing-plan | latest citation metadata audit from primary pages |
+| 2026-05-19 12:41 | /run-experiment | tools/autodl_audit_sid/build_paper_tables.py | implementation | reproducible paper table builder |
+| 2026-05-19 12:41 | /run-experiment | paper_assets/tables/table1_method_coverage.csv | evidence | generated method coverage table |
+| 2026-05-19 12:41 | /run-experiment | paper_assets/tables/table2_musical_diagnostic.csv | evidence | generated same-item Musical diagnostic table |
+| 2026-05-19 12:41 | /run-experiment | paper_assets/tables/table3_sanity_controls.csv | evidence | generated sanity non-redundancy table for artifact repo |
+| 2026-05-19 12:41 | /run-experiment | paper_assets/tables/table4_grid_scale.csv | evidence | generated GRID scale table for artifact repo |
+| 2026-05-19 12:41 | /run-experiment | paper_assets/tables/table5_dact_d6_churn.csv | evidence | generated DACT D6 table for artifact repo |
+| 2026-05-19 12:41 | /run-experiment | paper_assets/tables/table6_movielens_portability.csv | evidence | generated MovieLens portability table for artifact repo |
+| 2026-05-19 12:41 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN_20260519_124113.md | writing-plan | timestamped paper plan updated for no-appendix strategy and generated tables |
+| 2026-05-19 12:41 | /paper-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | writing-plan | latest paper plan updated for no-appendix strategy and generated tables |
+| 2026-05-19 12:41 | /idea-discovery | docs/CURRENT_STATE_20260519_124113.md | documentation | timestamped current state after citation and table generation |
+| 2026-05-19 12:41 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after citation and table generation |
+| 2026-05-19 12:41 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260519_124113.md | writing-plan | timestamped experiment design after no-appendix update |
+| 2026-05-19 12:41 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | writing-plan | latest experiment design after no-appendix update |
+| 2026-05-19 12:41 | /idea-discovery | docs/GATE0A_EVIDENCE_MATRIX_20260519_124113.md | decision | timestamped Gate 0A evidence matrix aligned to same-item Musical table |
+| 2026-05-19 12:41 | /idea-discovery | docs/GATE0A_EVIDENCE_MATRIX.md | decision | latest Gate 0A evidence matrix aligned to same-item Musical table |
+| 2026-05-19 12:41 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_124113.md | implementation | timestamped tracker after table and citation audit |
+| 2026-05-19 12:41 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records table and citation audit |
+| 2026-05-19 12:41 | /idea-discovery | findings.md | implementation | append-only CIKM format and paper-table finding |
+| 2026-05-19 12:41 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_124113.md | documentation | timestamped document index with format, citation, and table assets |
+| 2026-05-19 12:41 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index with format, citation, and table assets |

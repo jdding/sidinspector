@@ -1,0 +1,4 @@
+| system            | method                                    |   items |   unique_sid |   duplicate_sid_rate |   full_collision_rate |   D3 L1 collab |   D4 head |   D4 mid |   D4 tail | prefix_counts   |
+|:------------------|:------------------------------------------|--------:|-------------:|---------------------:|----------------------:|---------------:|----------:|---------:|----------:|:----------------|
+| GRID feature-text | grid_official_rqkmeans_resid_feature_text |   23742 |         3749 |               0.8421 |                0.9769 |         0.0552 |     0.353 |    0.359 |    0.3695 | 64;3440;3749    |
+| ReSID GAOQ        | resid_gaoq                                |   23742 |        23742 |               0      |                0      |         0.1535 |     1     |    1     |    1      | 32;1280;23742   |
