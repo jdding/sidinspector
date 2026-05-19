@@ -8,9 +8,26 @@ reviewer entry point is the tag
 published tables and figure. Large local artifacts are kept out of git and
 described through manifests so reviewers can separate public reproducibility
 assets from local caches.
-The artifact ships with a clean-checkout verifier script that checks table
-files, figure inputs, and claim-facing CSVs from manifest-pinned assets;
-reviewer entry points are documented in the repository quickstart.
+
+\begin{table}[t]
+\caption{Reviewer workflow exposed by the artifact. Each step has a bounded
+check and a paper claim it can verify; expensive metric rebuilds remain
+optional and manifest-documented.}
+\label{tab:artifact-package}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.15\columnwidth}>{\raggedright\arraybackslash}p{0.39\columnwidth}>{\raggedright\arraybackslash}p{0.36\columnwidth}@{}}
+\toprule
+Step & Reviewer check & Claim verified \\
+\midrule
+1 & inspect quickstart and license & artifact availability \\
+2 & run clean-check verifier & adapter and table reproducibility \\
+3 & compare CSVs with PDF tables & numeric claims in Tables 1--3 \\
+4 & inspect manifest row roles & named vs controlled evidence boundary \\
+5 & review optional panels & portability and D6 extension \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 The resource is intended to be used in three modes. A paper reviewer can run
 the clean-check verifier and compare published CSVs with the PDF tables. A

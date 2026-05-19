@@ -77,6 +77,52 @@ EXPECTED_TABLE7 = {
 }
 
 
+EXPECTED_TABLE3 = {
+    "sanity_category_prefix": {
+        "unique_sid": "23742.0",
+        "full_collision_rate": "0.0",
+        "D3 L1 collab": "0.447",
+        "D4 tail": "1.0",
+    },
+    "sanity_mod_collision_hash": {
+        "unique_sid": "256.0",
+        "full_collision_rate": "1.0",
+        "D3 L1 collab": "0.0037",
+        "D4 tail": "0.0322",
+    },
+    "sanity_popularity_balanced": {
+        "unique_sid": "22707.0",
+        "full_collision_rate": "0.086",
+        "D3 L1 collab": "0.3026",
+        "D4 tail": "0.9619",
+    },
+}
+
+
+EXPECTED_TABLE8 = {
+    "grid_official_rqkmeans_resid_feature_text": {
+        "interaction_qualified_collision_lift": "3.8631578947368426",
+    },
+    "sanity_mod_collision_hash": {
+        "interaction_qualified_collision_lift": "1.1851851851851851",
+    },
+}
+
+
+EXPECTED_TABLE9_WIDTH24 = {
+    "head_unique_ratio": "1.0",
+    "tail_unique_ratio": "0.0281902844198338",
+}
+
+
+EXPECTED_TABLE10 = {
+    "controller_variable_depth_head_long_tail_short_w64_maxd4": {
+        "standard_prefix_counts": "64;4096;12010;19924",
+        "effective_prefix_counts": "64;4096;7914;7914",
+    }
+}
+
+
 def require_file(rel_path: str) -> None:
     path = ROOT / rel_path
     if not path.exists():
@@ -123,11 +169,70 @@ def check_table7() -> None:
                 raise ValueError(f"Table 7 seed {seed} {col}: expected {expected}, got {actual}")
 
 
+def load_csv(rel_path: str, key: str) -> dict[str, dict[str, str]]:
+    path = ROOT / rel_path
+    with path.open(newline="", encoding="utf-8") as handle:
+        return {row[key]: row for row in csv.DictReader(handle)}
+
+
+def check_expected_rows(table: dict[str, dict[str, str]], expected: dict[str, dict[str, str]], label: str) -> None:
+    missing = sorted(set(expected) - set(table))
+    if missing:
+        raise ValueError(f"missing {label} rows: {missing}")
+    for row_key, expected_cols in expected.items():
+        row = table[row_key]
+        for col, expected_value in expected_cols.items():
+            actual = row[col]
+            if actual != expected_value:
+                raise ValueError(f"{label} {row_key} {col}: expected {expected_value}, got {actual}")
+
+
+def check_table3() -> None:
+    check_expected_rows(
+        load_csv("paper_assets/tables/table3_sanity_controls.csv", "method"),
+        EXPECTED_TABLE3,
+        "Table 3 sanity",
+    )
+
+
+def check_table8() -> None:
+    check_expected_rows(
+        load_csv("paper_assets/tables/table8_qualified_collision_probe.csv", "method"),
+        EXPECTED_TABLE8,
+        "Table 8 collision probe",
+    )
+
+
+def check_table9() -> None:
+    rows = []
+    with (ROOT / "paper_assets/tables/table9_capacity_budget_sweep.csv").open(newline="", encoding="utf-8") as handle:
+        rows = [row for row in csv.DictReader(handle)]
+    matches = [row for row in rows if row["policy"] == "head_reserved" and row["width"] == "24"]
+    if len(matches) != 1:
+        raise ValueError("missing Table 9 head_reserved width 24 row")
+    for col, expected_value in EXPECTED_TABLE9_WIDTH24.items():
+        actual = matches[0][col]
+        if actual != expected_value:
+            raise ValueError(f"Table 9 head_reserved width 24 {col}: expected {expected_value}, got {actual}")
+
+
+def check_table10() -> None:
+    check_expected_rows(
+        load_csv("paper_assets/tables/table10_variable_depth_cost_probe.csv", "method"),
+        EXPECTED_TABLE10,
+        "Table 10 variable depth",
+    )
+
+
 def main() -> None:
     for rel_path in REQUIRED_FILES:
         require_file(rel_path)
     check_table2()
     check_table7()
+    check_table3()
+    check_table8()
+    check_table9()
+    check_table10()
     print("AUDIT-SID public artifact verification passed.")
 
 

@@ -15,8 +15,8 @@ and reference-breadth review.
   5. Availability, Reproducibility, and Limits.
 - The old mixed `Toolkit and Diagnostics` / `Resource Demo` structure is no
   longer used by `paper/main.tex`.
-- The older Table 4 artifact checklist was deleted; the availability section now
-  carries a compact clean-checkout verifier and reviewer-workflow paragraph.
+- Table 4 was replaced by a more compact reviewer-facing artifact contract
+  inside the availability section.
 - Fig. 1 was moved to a one-column figure to avoid a float-only page while
   keeping the core Table 1 coverage matrix.
 - The compiled PDF is `paper/main.pdf`: 5 pages total, with body through page 4.

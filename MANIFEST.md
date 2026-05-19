@@ -674,6 +674,9 @@
 | 2026-05-19 13:06 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_130606.md | implementation | timestamped tracker after cluster/diagnostic taxonomy refresh |
 | 2026-05-19 13:06 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records cluster/diagnostic taxonomy refresh |
 | 2026-05-19 13:06 | /research-refine | findings.md | implementation | append-only cluster/diagnostic taxonomy finding |
+| 2026-05-20 00:42 | /run-experiment | refine-logs/archive/2026-05-20-round4-cleanup/EXPERIMENT_TRACKER_20260520_004231.md | implementation | timestamped tracker after stopping local prefix-matched full run |
+| 2026-05-20 00:42 | /run-experiment | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records stopped local prefix-matched full run |
+| 2026-05-20 00:42 | /run-experiment | findings.md | implementation | append-only stopped local full-run finding |
 | 2026-05-19 13:21 | /paper-figure | paper/sections/2_toolkit_20260519_132153.tex | paper | timestamped toolkit section with Fig. 1 and facet-aware Table 1 |
 | 2026-05-19 13:21 | /paper-figure | paper/sections/2_toolkit.tex | paper | latest toolkit section with Fig. 1 and facet-aware Table 1 |
 | 2026-05-19 13:21 | /paper-figure | paper/sections/3_resource_demo_20260519_132153.tex | paper | timestamped resource demo section with compact Table 2 |
@@ -1112,3 +1115,49 @@
 | 2026-05-19 21:56 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_215633.md | implementation | timestamped tracker after reference-layout update |
 | 2026-05-19 21:56 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after reference-layout update |
 | 2026-05-19 21:56 | /idea-discovery | findings.md | implementation | append-only finding for reference-layout update |
+| 2026-05-19 22:23 | /paper-write | paper/archive/2026-05-20-round4-cleanup/main_20260519_222342.tex | paper | timestamped ACM draft after CIKM literal class-option update |
+| 2026-05-19 22:23 | /paper-compile | paper/archive/2026-05-20-round4-cleanup/main_20260519_222342.pdf | paper | timestamped compiled PDF without review-mode line numbers |
+| 2026-05-19 22:23 | /paper-write | paper/main.tex | paper | latest ACM draft using `sigconf,natbib=true,anonymous=true` |
+| 2026-05-19 22:23 | /paper-compile | paper/main.pdf | paper | latest compiled PDF under CIKM literal class options |
+| 2026-05-19 22:23 | /paper-write | docs/archive/2026-05-20-round4-cleanup/PAPER_STRUCTURE_REFERENCE_UPDATE_20260519_222342.md | paper | timestamped structure/reference note after CIKM class-option correction |
+| 2026-05-19 22:23 | /paper-write | docs/PAPER_STRUCTURE_REFERENCE_UPDATE.md | paper | latest structure/reference note after CIKM class-option correction |
+| 2026-05-19 22:23 | /idea-discovery | docs/archive/2026-05-20-round4-cleanup/CURRENT_STATE_20260519_222342.md | documentation | timestamped current state after CIKM class-option correction |
+| 2026-05-19 22:23 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state updated after CIKM class-option correction |
+| 2026-05-19 22:23 | /idea-discovery | docs/archive/2026-05-20-round4-cleanup/DOCUMENT_INDEX_20260519_222342.md | documentation | timestamped document index after CIKM class-option correction |
+| 2026-05-19 22:23 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index updated after CIKM class-option correction |
+| 2026-05-19 22:23 | /idea-discovery | refine-logs/archive/2026-05-20-round4-cleanup/EXPERIMENT_TRACKER_20260519_222342.md | implementation | timestamped tracker after CIKM class-option correction |
+| 2026-05-19 22:23 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after CIKM class-option correction |
+| 2026-05-19 22:23 | /idea-discovery | findings.md | implementation | append-only finding for CIKM class-option correction |
+| 2026-05-19 23:08 | /experiment-audit | docs/archive/2026-05-20-round4-cleanup/EXPERIMENT_PLAN_FULL_AUDIT_20260519_230854.md | audit | timestamped full experiment-plan closure audit |
+| 2026-05-19 23:08 | /experiment-audit | docs/EXPERIMENT_PLAN_FULL_AUDIT.md | audit | latest full experiment-plan closure audit |
+| 2026-05-19 23:08 | /experiment-audit | docs/archive/2026-05-20-round4-cleanup/EXPERIMENT_PLAN_FULL_AUDIT_20260519_230854.json | audit | timestamped machine-readable experiment-plan audit summary |
+| 2026-05-19 23:08 | /experiment-audit | docs/EXPERIMENT_PLAN_FULL_AUDIT.json | audit | latest machine-readable experiment-plan audit summary |
+| 2026-05-19 23:08 | /idea-discovery | docs/archive/2026-05-20-round4-cleanup/CURRENT_STATE_20260519_230854.md | documentation | timestamped current state after full experiment-plan audit |
+| 2026-05-19 23:08 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after full experiment-plan audit |
+| 2026-05-19 23:08 | /idea-discovery | docs/archive/2026-05-20-round4-cleanup/DOCUMENT_INDEX_20260519_230854.md | documentation | timestamped document index after full experiment-plan audit |
+| 2026-05-19 23:08 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after full experiment-plan audit |
+| 2026-05-19 23:08 | /idea-discovery | refine-logs/archive/2026-05-20-round4-cleanup/EXPERIMENT_TRACKER_20260519_230854.md | implementation | timestamped tracker after full experiment-plan audit |
+| 2026-05-19 23:08 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after full experiment-plan audit |
+| 2026-05-19 23:08 | /idea-discovery | findings.md | implementation | append-only finding for full experiment-plan audit |
+| 2026-05-20 00:49 | /experiment-plan | docs/archive/2026-05-20-round4-cleanup/CURRENT_STATE_20260520_004916.md | documentation | timestamped current state after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /experiment-plan | docs/CURRENT_STATE.md | documentation | latest current state after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /experiment-plan | docs/archive/2026-05-20-round4-cleanup/DOCUMENT_INDEX_20260520_004916.md | documentation | timestamped document index after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /experiment-plan | docs/DOCUMENT_INDEX.md | documentation | latest document index after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /experiment-plan | docs/archive/2026-05-20-round4-cleanup/CIKM_EXPERIMENT_DESIGN_20260520_004916.md | documentation | timestamped CIKM experiment design after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | documentation | latest CIKM experiment design after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /experiment-plan | docs/archive/2026-05-20-round4-cleanup/CIKM_RESOURCE_PAPER_PLAN_20260520_004916.md | paper | timestamped CIKM paper plan after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /experiment-plan | docs/CIKM_RESOURCE_PAPER_PLAN.md | paper | latest CIKM paper plan after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /paper-claim-audit | docs/archive/2026-05-20-round4-cleanup/PAPER_STRICT_CLAIM_AUDIT_20260520_004916.md | audit | timestamped strict claim audit after Round 4 table-shape sync |
+| 2026-05-20 00:49 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | audit | latest strict claim audit after Round 4 table-shape sync |
+| 2026-05-20 00:49 | /paper-write | docs/archive/2026-05-20-round4-cleanup/PAPER_STRUCTURE_REFERENCE_UPDATE_20260520_004916.md | paper | timestamped structure/reference note after Table 4 deletion sync |
+| 2026-05-20 00:49 | /paper-write | docs/PAPER_STRUCTURE_REFERENCE_UPDATE.md | paper | latest structure/reference note after Table 4 deletion sync |
+| 2026-05-20 00:49 | /experiment-audit | docs/archive/2026-05-20-round4-cleanup/EXPERIMENT_PLAN_FULL_AUDIT_20260520_004916.md | audit | timestamped full audit with Round 4 absorption addendum |
+| 2026-05-20 00:49 | /experiment-audit | docs/EXPERIMENT_PLAN_FULL_AUDIT.md | audit | latest full audit with Round 4 absorption addendum |
+| 2026-05-20 00:49 | /experiment-plan | refine-logs/archive/2026-05-20-round4-cleanup/EXPERIMENT_PLAN_20260520_004916.md | implementation | timestamped experiment plan after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | latest experiment plan after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /idea-discovery | refine-logs/archive/2026-05-20-round4-cleanup/EXPERIMENT_TRACKER_20260520_004916.md | implementation | timestamped tracker after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after Round 4 latest-doc sync |
+| 2026-05-20 00:49 | /idea-discovery | findings.md | implementation | append-only finding for Round 4 latest-doc sync |
+| 2026-05-20 00:56 | /idea-discovery | docs/ARCHIVE_INDEX.md | documentation | archive index updated for explicit Round 4 physical cleanup |
+| 2026-05-20 00:56 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index points to Round 4 physical archive |
+| 2026-05-20 00:56 | /idea-discovery | findings.md | implementation | append-only finding for local cleanup before GitHub push |

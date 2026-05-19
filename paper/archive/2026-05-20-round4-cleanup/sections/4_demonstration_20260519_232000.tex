@@ -20,20 +20,16 @@ of TIGER, GRID, or the full ReSID pipeline.
 \caption{Same-item Musical artifact profiles on 23,742 items. Higher unique
 full codes, D3 L1 co-occurrence prefix recall, and D4 tail unique-SID ratio are
 better; lower D2 full-collision rate is better. D5a prefixes are level-wise
-prefix counts, not latency. A dagger marks structural one-full-code-per-item
-rows where D2=0 and D4 tail=1.0 are forced by the export design.}
+prefix counts, not latency.}
 \label{tab:musical-diagnostic}
-\footnotesize
-\setlength{\tabcolsep}{1.0pt}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.24\columnwidth}rrrr>{\raggedright\arraybackslash}p{0.19\columnwidth}@{}}
+\small
+\setlength{\tabcolsep}{2.0pt}
+\begin{tabular}{@{}lrrrrl@{}}
 \toprule
 System & Unique & D2 full & D3 L1 & D4 tail & D5a prefixes \\
 \midrule
-\textbf{GRID ft} (3s) & 3,857$\pm$112 & .9759$\pm$.0009 & .0519$\pm$.0037 & .377$\pm$.008 & 64/3.4--3.7k/3.7--4.0k \\
-\textbf{ReSID}\textsuperscript{\dag} & 23,742 & .0000 & .1535 & 1.0000 & 32/1280/23.7k \\
-\emph{Cat-prefix}\textsuperscript{\dag} & 23,742 & .0000 & .4470 & 1.0000 & 30/83/313/23.7k \\
-\emph{Hash-collide} & 256 & 1.0000 & .0037 & .0322 & 256/256/256/256 \\
-\emph{Pop-balanced} & 22,707 & .0860 & .3026 & .9619 & 4/1024/22.7k \\
+GRID feature-text & 3,749 & 0.9769 & 0.0552 & 0.3695 & 64/3440/3749 \\
+ReSID bounded & 23,742 & 0.0000 & 0.1535 & 1.0000 & 32/1280/23742 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -45,28 +41,24 @@ quantization module, not a faithful raw-text TIGER reproduction. Under that
 controlled setup, the row exposes high collision pressure and limited tail
 capacity. The ReSID/GAOQ row exports one full code per item in this bounded
 run, yielding zero full-code collisions and higher D3-L1 collaborative prefix
-recovery. The daggered rows make the structural floor explicit: collision-free
-full codes are not by themselves evidence of better recommendation quality.
-Across seeds 42--44, the GRID duplicate-\sid rate remains 0.8327--0.8421 and
-full-collision rate remains 0.9751--0.9769, so the collision pressure is not a
-single-seed artifact. The comparison is also architecturally biased: GRID is
-capacity-constrained, while the bounded ReSID export reaches an item-unique
-leaf level. A same-capacity ablation is future work, not a hidden claim.
+recovery. Across seeds 42--44, the GRID duplicate-\sid rate remains
+0.8327--0.8421 and full-collision rate remains 0.9751--0.9769, so the collision
+pressure is not a single-seed artifact.
 
 \begin{table}[t]
-\caption{Controlled stressors isolate diagnostic mechanisms. Each row activates
-one failure mode and asks whether the corresponding diagnostic separates the
-two conditions. Full numeric tables are shipped in the artifact.}
+\caption{Controlled stressors isolate diagnostic mechanisms. These rows are
+not named-tokenizer evidence; they are checks that the audit reacts to the
+failure mode each diagnostic is meant to expose.}
 \label{tab:controller-stressors}
-\scriptsize
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\columnwidth}>{\raggedright\arraybackslash}p{0.13\columnwidth}>{\raggedright\arraybackslash}p{0.24\columnwidth}>{\raggedright\arraybackslash}p{0.17\columnwidth}>{\raggedright\arraybackslash}p{0.17\columnwidth}@{}}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\columnwidth}>{\raggedright\arraybackslash}p{0.24\columnwidth}>{\raggedright\arraybackslash}p{0.39\columnwidth}@{}}
 \toprule
-Stressor & D & Test & Baseline & Under stress \\
+Stressor & Target & Observed signal \\
 \midrule
-Qualified collision & D2b & co-occur $\ne$ hash collisions & hash: 1.19x risk & co-occur: 3.86x risk \\
-Capacity budget & D1/D4 & tight codebooks skew capacity & head: 1.000 unique & tail: 0.028 unique \\
-Variable depth & D5a & active cost $\ne$ max-depth view & max-depth: 12,010 & active: 7,914 \\
+Qualified collision & D2b risk & co-occurring collisions: 3.86x vs hash: 1.19x \\
+Capacity budget & D1/D4 pressure & head unique: 1.000; tail unique: 0.028 \\
+Variable depth & D5a boundary & active-prefix cost differs from max-depth view \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -84,8 +76,7 @@ in the repository recovers more level-1 co-occurrence neighbors without being a
 learned tokenizer. Third, D4 and D5a separate capacity allocation from prefix
 structure: in the capacity stressor, head uniqueness reaches 1.000 while tail
 uniqueness remains 0.028, and variable-depth stressors show that active prefix
-cost (7,914 realized prefixes) need not match a fixed maximum-depth view
-(12,010 prefixes).
+cost need not match a fixed maximum-depth view.
 
 Repository tables extend these checks without changing the paper claims:
 sanity rows calibrate D1--D5a, GRID scale rows test larger item counts, DACT

@@ -94,6 +94,11 @@ def main() -> None:
     parser.add_argument("--dataset-name", default="All_Beauty")
     parser.add_argument("--method", default="grid_official_rqkmeans")
     parser.add_argument("--codebook-width", type=int, default=128)
+    parser.add_argument(
+        "--per-level-widths",
+        default=None,
+        help="Optional comma-separated per-level codebook widths, e.g. 32,1280,1280. Overrides --codebook-width.",
+    )
     parser.add_argument("--num-hierarchies", type=int, default=3)
     parser.add_argument("--batch-size", type=int, default=4096)
     parser.add_argument("--steps-per-layer", type=int, default=80)
@@ -112,8 +117,18 @@ def main() -> None:
         raise ValueError(f"Expected embeddings to be 2D, got {tuple(embeddings.shape)}")
     if len(item_ids) != embeddings.shape[0]:
         raise ValueError(f"item_ids length {len(item_ids)} != embedding rows {embeddings.shape[0]}")
-    if args.codebook_width > embeddings.shape[0]:
-        raise ValueError("codebook width cannot exceed number of items")
+    if args.per_level_widths:
+        per_level_widths = [int(part.strip()) for part in args.per_level_widths.split(",") if part.strip()]
+        if not per_level_widths:
+            raise ValueError("--per-level-widths was provided but no widths were parsed")
+        args.num_hierarchies = len(per_level_widths)
+    else:
+        per_level_widths = [args.codebook_width] * args.num_hierarchies
+    for width in per_level_widths:
+        if width <= 0:
+            raise ValueError(f"codebook width must be positive, got {width}")
+        if width > embeddings.shape[0]:
+            raise ValueError(f"codebook width {width} cannot exceed number of items {embeddings.shape[0]}")
 
     device = torch.device(args.device if torch.cuda.is_available() or args.device == "cpu" else "cpu")
     embeddings = l2_normalize(embeddings.to(device))
@@ -122,13 +137,13 @@ def main() -> None:
     layer_summaries: list[dict] = []
 
     distance = SquaredEuclideanDistance()
-    for level in range(args.num_hierarchies):
+    for level, level_width in enumerate(per_level_widths):
         layer = MiniBatchKMeans(
-            n_clusters=args.codebook_width,
+            n_clusters=level_width,
             n_features=embeddings.shape[1],
             distance_function=distance,
             initializer=KMeansPlusPlusInitInitializer(
-                n_clusters=args.codebook_width,
+                n_clusters=level_width,
                 distance_function=distance,
                 initialize_on_cpu=False,
             ),
@@ -141,7 +156,7 @@ def main() -> None:
         residuals = residuals - quantized
         codes.append(ids.numpy().astype(np.int64))
         unique = int(np.unique(codes[-1]).shape[0])
-        layer_summaries.append({"level": level, "unique_codes": unique, "codebook_width": args.codebook_width})
+        layer_summaries.append({"level": level, "unique_codes": unique, "codebook_width": level_width})
 
     code_array = np.stack(codes, axis=1)
     np.save(args.output_dir / "grid_rqkmeans_codes.npy", code_array)
@@ -165,6 +180,7 @@ def main() -> None:
                 "num_items": int(embeddings.shape[0]),
                 "embedding_dim": int(embeddings.shape[1]),
                 "codebook_width": args.codebook_width,
+                "per_level_widths": per_level_widths,
                 "num_hierarchies": args.num_hierarchies,
                 "steps_per_layer": args.steps_per_layer,
                 "device": str(device),

@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-05-19 23:08:54 CST",
+  "auditor": "Codex local plan-to-evidence audit",
+  "target": "CIKM 2026 Resource Track",
+  "overall_verdict": "closed_for_cikm_resource_v0",
+  "claim_frame": "conservative_resource_demo",
+  "gates": {
+    "gate0_artifact_feasibility": "pass",
+    "gate0a_method_representativeness": "conditional_pass_resource_demo",
+    "gate1_dataset_support": "closed_for_v0",
+    "gate2_diagnostics": "closed_for_d1_d5a",
+    "gate3_empirical_check": "closed_by_resource_scoped_evidence_not_downstream_correlation",
+    "gate4_paper_viability": "pass_for_resource_track_route"
+  },
+  "verification": {
+    "artifact_verifier": "pass",
+    "unit_tests": "pass_16_tests",
+    "pdf_pages": 5,
+    "review_mode": "not_used",
+    "latex_warning": "local_acmart_reports_unused_key_value_options_for_natbib_true_anonymous_true"
+  },
+  "completed_or_closed": [
+    "gate0",
+    "conditional_gate0a",
+    "d1_d5a_metrics",
+    "same_item_musical_panel",
+    "grid_musical_three_seed_stability",
+    "third_named_tokenizer_negative_screen",
+    "method_inspired_controller_suite",
+    "fig1_redesign",
+    "public_artifact_verifier",
+    "current_paper_compile"
+  ],
+  "not_experiment_blockers": [
+    "final_citation_drift_check",
+    "real_single_blind_author_metadata",
+    "copy_edit_and_final_claim_audit",
+    "optional_external_review_rerun",
+    "author_artifact_request_email_sending"
+  ],
+  "future_evidence_gaps": [
+    "third_true_named_b2_b3_b4_tokenizer",
+    "downstream_recall_ndcg_or_d7_generator_outputs",
+    "resid_sports_exact_balanced_gaoq_or_other_canonical_vertical",
+    "faithful_card_from_complete_author_artifacts",
+    "serving_latency_or_online_impact"
+  ]
+}

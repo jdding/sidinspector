@@ -6,22 +6,19 @@ opaque component of a trained recommender. The minimum input is a table
 metadata, interactions, refresh pairs, and generator outputs. This
 mapping-first contract lets adapters normalize heterogeneous
 repositories while keeping the audit independent of a particular training loop.
-Figure~\ref{fig:audit-sid-pipeline} summarizes the workflow and previews the
-diagnostic outputs that the resource is designed to expose.
+Figure~\ref{fig:audit-sid-pipeline} summarizes the resource workflow.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{figures/fig1_audit_sid_pipeline.pdf}
-\caption{\tool normalizes heterogeneous \sid exports through a mapping-first
-contract and reports D1--D5a diagnostics. The bottom panels preview
-representative outputs from the Musical case study and controllers: capacity
-pressure, full-code collisions, collaborative-prefix recovery, head-tail
-allocation, and realized prefix cost. D6 is optional churn evidence; D7
-requires generator outputs or beam traces.}
-\Description{Pipeline plus diagnostic preview. A top row shows SID artifact,
-adapter, validator, D1-D5a reports, and audit tables. Four small panels show
-capacity/collision, collaborative prefix recovery, head-tail capacity, and
-prefix-cost boundary examples.}
+\caption{\tool turns heterogeneous SID tokenizer exports into comparable audit
+artifacts. Exports are normalized into a mapping-first contract, validated for
+joinability and provenance, and summarized through D1--D5a diagnostics. D6 is
+optional churn evidence; D7 is enabled only when generator outputs or beam
+traces are provided.}
+\Description{Pipeline diagram showing tokenizer exports normalized into
+sid assignments, metadata, interactions, optional generator outputs, validation
+checks, artifact diagnostics, and generated audit tables.}
 \label{fig:audit-sid-pipeline}
 \end{figure}
 

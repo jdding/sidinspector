@@ -1,12 +1,12 @@
 # AUDIT-SID Archive Index
 
-Timestamp: 2026-05-19 01:08:57 CST
+Timestamp: 2026-05-20 00:56:00 CST
 
 ## Policy
 
-This repository keeps timestamped markdown files as provenance. Do not delete or
-move them during the CIKM sprint unless the user explicitly approves a physical
-archive migration.
+This repository keeps timestamped files as provenance. Do not delete them. A
+physical archive migration is allowed only when the user explicitly asks for
+local cleanup and fixed-name latest entry points remain in place.
 
 For daily work, read `docs/DOCUMENT_INDEX.md` first. Use this file only when
 you need to understand historical decisions, older proxy runs, or prior scope
@@ -27,6 +27,28 @@ These files remain active and should stay in their current locations:
 | Active AutoDL runbook | `docs/AUTODL_GATE0A_STAGING.md` |
 | Cluster A evidence | `docs/GRID_CLUSTER_A_EXPORT_PREP.md` |
 | Cluster B evidence | `docs/RESID_REAL_MAPPING_SMOKE.md` |
+
+## Physical Archive Migrations
+
+### 2026-05-20 Round 4 Cleanup
+
+The user explicitly requested local file cleanup before committing to GitHub.
+The following timestamped snapshots were moved out of active working
+directories while keeping fixed-name latest files in place:
+
+- `docs/archive/2026-05-20-round4-cleanup/`: Round 4 planning/state/audit
+  timestamped snapshots.
+- `paper/archive/2026-05-20-round4-cleanup/`: timestamped paper draft/PDF
+  snapshots.
+- `paper/archive/2026-05-20-round4-cleanup/sections/`: timestamped section
+  snapshots.
+- `refine-logs/archive/2026-05-20-round4-cleanup/`: timestamped experiment
+  plan/tracker snapshots.
+- `tools/archive/2026-05-20-round4-cleanup/`: timestamped figure-generator
+  script snapshot.
+
+This migration does not change the current paper source, fixed-name docs, or
+evidence interpretation. `MANIFEST.md` records the archived paths.
 
 ## Historical Buckets
 
