@@ -778,3 +778,12 @@
 | 2026-05-19 14:54 | /paper-write | paper/sections/2_toolkit_20260519_145431.tex | paper | timestamped toolkit section after D2/D3/D5a definition fixes |
 | 2026-05-19 14:54 | /paper-write | paper/sections/3_resource_demo_20260519_145431.tex | paper | timestamped resource demo section after Table 2 label/caption fixes |
 | 2026-05-19 14:54 | /paper-write | paper/sections/4_availability_limits_20260519_145431.tex | paper | timestamped availability section after public verifier workflow fixes |
+| 2026-05-19 15:10 | /research-review | docs/EXTERNAL_SIM_REVIEW_ROUND2_20260519_151028.md | paper | timestamped external simulated review closure at 8.0/8.1 after pushed tag and clean checkout |
+| 2026-05-19 15:10 | /research-review | docs/EXTERNAL_SIM_REVIEW_ROUND2.md | paper | latest external simulated review closure at 8.0/8.1 |
+| 2026-05-19 15:10 | /idea-discovery | docs/CURRENT_STATE_20260519_151028.md | documentation | timestamped current state after external 8/10 closure |
+| 2026-05-19 15:10 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after external 8/10 closure |
+| 2026-05-19 15:10 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_151028.md | documentation | timestamped document index after external 8/10 closure |
+| 2026-05-19 15:10 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after external 8/10 closure |
+| 2026-05-19 15:10 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_151028.md | implementation | timestamped tracker after external 8/10 closure |
+| 2026-05-19 15:10 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records external 8/10 closure |
+| 2026-05-19 15:10 | /research-review | findings.md | implementation | append-only external simulated review closure finding |
