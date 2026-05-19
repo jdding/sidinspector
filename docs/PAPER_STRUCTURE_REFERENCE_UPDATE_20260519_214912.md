@@ -48,4 +48,3 @@ named methods are reproduced in AUDIT-SID v0.
   column-balancing warning after the bibliography.
 - `paper/references.bib` and
   `paper_assets/references/audit_sid_references.bib` are synchronized.
-

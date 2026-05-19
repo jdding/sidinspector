@@ -1099,3 +1099,16 @@
 | 2026-05-19 21:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_214912.md | implementation | timestamped tracker after structure/reference update |
 | 2026-05-19 21:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after structure/reference update |
 | 2026-05-19 21:49 | /idea-discovery | findings.md | implementation | append-only finding for structure/reference update |
+| 2026-05-19 21:56 | /paper-write | paper/main_20260519_215633.tex | paper | timestamped ACM draft after GenAI-before-references layout update |
+| 2026-05-19 21:56 | /paper-compile | paper/main_20260519_215633.pdf | paper | timestamped compiled PDF after GenAI-before-references layout update |
+| 2026-05-19 21:56 | /paper-write | paper/main.tex | paper | latest ACM draft with GenAI Usage Disclosure before References |
+| 2026-05-19 21:56 | /paper-compile | paper/main.pdf | paper | latest compiled PDF with references following naturally after GenAI disclosure |
+| 2026-05-19 21:56 | /paper-write | docs/PAPER_STRUCTURE_REFERENCE_UPDATE_20260519_215633.md | paper | timestamped structure/reference note after GenAI-before-references layout update |
+| 2026-05-19 21:56 | /paper-write | docs/PAPER_STRUCTURE_REFERENCE_UPDATE.md | paper | latest structure/reference note after GenAI-before-references layout update |
+| 2026-05-19 21:56 | /idea-discovery | docs/CURRENT_STATE_20260519_215633.md | documentation | timestamped current state after reference-layout update |
+| 2026-05-19 21:56 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after reference-layout update |
+| 2026-05-19 21:56 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_215633.md | documentation | timestamped document index after reference-layout update |
+| 2026-05-19 21:56 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after reference-layout update |
+| 2026-05-19 21:56 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_215633.md | implementation | timestamped tracker after reference-layout update |
+| 2026-05-19 21:56 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after reference-layout update |
+| 2026-05-19 21:56 | /idea-discovery | findings.md | implementation | append-only finding for reference-layout update |
