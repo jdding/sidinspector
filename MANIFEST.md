@@ -1060,3 +1060,21 @@
 | 2026-05-19 20:06 | /paper-write | ARTIFACT_MANIFEST_20260519_200630.md | paper | timestamped artifact manifest after controlled-stressor table |
 | 2026-05-19 20:06 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest after controlled-stressor table |
 | 2026-05-19 20:06 | /idea-discovery | findings.md | implementation | append-only finding for controlled-stressor table and prose polish |
+| 2026-05-19 20:22 | /paper-write | paper/main_20260519_202255.tex | paper | timestamped ACM draft after table-structure polish |
+| 2026-05-19 20:22 | /paper-compile | paper/main_20260519_202255.pdf | paper | timestamped compiled PDF after table-structure polish |
+| 2026-05-19 20:22 | /paper-write | paper/main.tex | paper | latest ACM draft after table-structure polish |
+| 2026-05-19 20:22 | /paper-compile | paper/main.pdf | paper | latest compiled PDF after table-structure polish |
+| 2026-05-19 20:22 | /paper-write | paper/sections/2_toolkit_20260519_202255.tex | paper | timestamped toolkit section with coverage-matrix Table 1 |
+| 2026-05-19 20:22 | /paper-write | paper/sections/3_resource_demo_20260519_202255.tex | paper | timestamped resource-demo section with stressor-signal Table 3 |
+| 2026-05-19 20:22 | /paper-write | paper/sections/4_availability_limits_20260519_202255.tex | paper | timestamped availability section with artifact-checklist Table 4 |
+| 2026-05-19 20:22 | /idea-discovery | docs/CURRENT_STATE_20260519_202255.md | documentation | timestamped current state after table-structure polish |
+| 2026-05-19 20:22 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after table-structure polish |
+| 2026-05-19 20:22 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_202255.md | documentation | timestamped document index after table-structure polish |
+| 2026-05-19 20:22 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after table-structure polish |
+| 2026-05-19 20:22 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260519_202255.md | documentation | timestamped claim audit after table-structure polish |
+| 2026-05-19 20:22 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | documentation | latest claim audit after table-structure polish |
+| 2026-05-19 20:22 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_202255.md | implementation | timestamped tracker after table-structure polish |
+| 2026-05-19 20:22 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker after table-structure polish |
+| 2026-05-19 20:22 | /paper-write | ARTIFACT_MANIFEST_20260519_202255.md | paper | timestamped artifact manifest after table-structure polish |
+| 2026-05-19 20:22 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest after table-structure polish |
+| 2026-05-19 20:22 | /idea-discovery | findings.md | implementation | append-only finding for table-structure polish |
