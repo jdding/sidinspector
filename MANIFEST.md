@@ -1078,3 +1078,24 @@
 | 2026-05-19 20:22 | /paper-write | ARTIFACT_MANIFEST_20260519_202255.md | paper | timestamped artifact manifest after table-structure polish |
 | 2026-05-19 20:22 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest after table-structure polish |
 | 2026-05-19 20:22 | /idea-discovery | findings.md | implementation | append-only finding for table-structure polish |
+| 2026-05-19 21:49 | /paper-write | docs/PAPER_STRUCTURE_REFERENCE_UPDATE_20260519_214912.md | paper | timestamped five-section structure and reference-breadth update |
+| 2026-05-19 21:49 | /paper-write | docs/PAPER_STRUCTURE_REFERENCE_UPDATE.md | paper | latest five-section structure and reference-breadth update |
+| 2026-05-19 21:49 | /paper-write | paper/main_20260519_214912.tex | paper | timestamped ACM draft after structure/reference update |
+| 2026-05-19 21:49 | /paper-compile | paper/main_20260519_214912.pdf | paper | timestamped compiled PDF after structure/reference update |
+| 2026-05-19 21:49 | /paper-write | paper/main.tex | paper | latest ACM draft using five Resource Track sections |
+| 2026-05-19 21:49 | /paper-compile | paper/main.pdf | paper | latest compiled PDF, 5 pages total with body through page 4 and references on page 5 |
+| 2026-05-19 21:49 | /paper-write | paper/sections/2_resource_scope_20260519_214912.tex | paper | timestamped resource scope and interface section |
+| 2026-05-19 21:49 | /paper-write | paper/sections/3_diagnostics_20260519_214912.tex | paper | timestamped diagnostic design and method-space section |
+| 2026-05-19 21:49 | /paper-write | paper/sections/4_demonstration_20260519_214912.tex | paper | timestamped demonstration and findings section |
+| 2026-05-19 21:49 | /paper-write | paper/sections/5_availability_limits_20260519_214912.tex | paper | timestamped availability/reproducibility/limits section |
+| 2026-05-19 21:49 | /citation-audit | paper/references_20260519_214912.bib | paper | timestamped expanded 27-entry paper bibliography |
+| 2026-05-19 21:49 | /citation-audit | paper/references.bib | paper | latest expanded 27-entry paper bibliography |
+| 2026-05-19 21:49 | /citation-audit | paper_assets/references/audit_sid_references_20260519_214912.bib | paper | timestamped synchronized artifact bibliography |
+| 2026-05-19 21:49 | /citation-audit | paper_assets/references/audit_sid_references.bib | paper | synchronized expanded paper bibliography for artifact assets |
+| 2026-05-19 21:49 | /idea-discovery | docs/CURRENT_STATE_20260519_214912.md | documentation | timestamped current state after structure/reference update |
+| 2026-05-19 21:49 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after structure/reference update |
+| 2026-05-19 21:49 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_214912.md | documentation | timestamped document index after structure/reference update |
+| 2026-05-19 21:49 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after structure/reference update |
+| 2026-05-19 21:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_214912.md | implementation | timestamped tracker after structure/reference update |
+| 2026-05-19 21:49 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after structure/reference update |
+| 2026-05-19 21:49 | /idea-discovery | findings.md | implementation | append-only finding for structure/reference update |
