@@ -1007,3 +1007,35 @@
 | 2026-05-19 19:01 | /run-experiment | paper_assets/tables/table10_variable_depth_cost_probe.md | paper | variable-depth cost controller summary Markdown |
 | 2026-05-19 19:01 | /paper-write | tools/verify_paper_artifact_20260519_190139.py | implementation | timestamped verifier requires controller scripts, tests, docs, and tables |
 | 2026-05-19 19:01 | /paper-write | tools/verify_paper_artifact.py | implementation | verifier now requires controller scripts, tests, docs, and tables |
+| 2026-05-19 19:34 | /paper-write | docs/PAPER_CONTROLLER_INTEGRATION_20260519_193420.md | paper | timestamped paper writing note integrating controller findings |
+| 2026-05-19 19:34 | /paper-write | docs/PAPER_CONTROLLER_INTEGRATION.md | paper | latest paper writing note integrating controller findings |
+| 2026-05-19 19:34 | /paper-write | ARTIFACT_MANIFEST_20260519_193420.md | paper | timestamped public artifact manifest after paper controller integration |
+| 2026-05-19 19:34 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest public artifact manifest after paper controller integration |
+| 2026-05-19 19:34 | /paper-write | tools/verify_paper_artifact_20260519_193420.py | implementation | timestamped verifier requiring paper controller integration and strict claim audit |
+| 2026-05-19 19:34 | /paper-write | tools/verify_paper_artifact.py | implementation | latest verifier requiring paper controller integration and strict claim audit |
+| 2026-05-19 19:34 | /paper-write | paper/main_20260519_193227.tex | paper | timestamped CIKM draft after controller integration |
+| 2026-05-19 19:34 | /paper-write | paper/main_20260519_193227.pdf | paper | timestamped compiled CIKM draft after controller integration |
+| 2026-05-19 19:34 | /paper-write | paper/main.tex | paper | latest CIKM draft with controller findings in Section 3 |
+| 2026-05-19 19:34 | /paper-write | paper/main.pdf | paper | latest compiled CIKM draft, 5 pages total with body through page 4 |
+| 2026-05-19 19:34 | /paper-write | paper/sections/1_introduction_20260519_193227.tex | paper | timestamped introduction with controller framing |
+| 2026-05-19 19:34 | /paper-write | paper/sections/1_introduction.tex | paper | latest introduction with controller framing |
+| 2026-05-19 19:34 | /paper-write | paper/sections/3_resource_demo_20260519_193227.tex | paper | timestamped resource-demo section with controller findings |
+| 2026-05-19 19:34 | /paper-write | paper/sections/3_resource_demo.tex | paper | latest resource-demo section with controller findings |
+| 2026-05-19 19:34 | /paper-write | paper/sections/4_availability_limits_20260519_193227.tex | paper | timestamped limitations section with controller claim boundary |
+| 2026-05-19 19:34 | /paper-write | paper/sections/4_availability_limits.tex | paper | latest limitations section with controller claim boundary |
+| 2026-05-19 19:34 | /paper-write | paper/main_20260519_193420.tex | paper | timestamped latest CIKM draft after controller integration and claim-audit line wrap |
+| 2026-05-19 19:34 | /paper-write | paper/main_20260519_193420.pdf | paper | timestamped latest compiled CIKM draft after controller integration |
+| 2026-05-19 19:34 | /paper-write | paper/sections/1_introduction_20260519_193420.tex | paper | timestamped latest introduction after controller integration |
+| 2026-05-19 19:34 | /paper-write | paper/sections/3_resource_demo_20260519_193420.tex | paper | timestamped latest resource-demo section after controller integration |
+| 2026-05-19 19:34 | /paper-write | paper/sections/4_availability_limits_20260519_193420.tex | paper | timestamped latest limitations section after controller integration |
+| 2026-05-19 19:34 | /idea-discovery | docs/CURRENT_STATE_20260519_193420.md | documentation | timestamped current state after paper controller integration |
+| 2026-05-19 19:34 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after paper controller integration |
+| 2026-05-19 19:34 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_193420.md | documentation | timestamped document index after paper controller integration |
+| 2026-05-19 19:34 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after paper controller integration |
+| 2026-05-19 19:34 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260519_193420.md | documentation | timestamped strict claim audit after controller integration |
+| 2026-05-19 19:34 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | documentation | latest strict claim audit after controller integration |
+| 2026-05-19 19:34 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260519_193420.md | implementation | timestamped experiment plan after controller writing update |
+| 2026-05-19 19:34 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | latest experiment plan after controller writing update |
+| 2026-05-19 19:34 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_193420.md | implementation | timestamped tracker after paper controller integration |
+| 2026-05-19 19:34 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker after paper controller integration |
+| 2026-05-19 19:34 | /idea-discovery | findings.md | implementation | append-only finding for paper controller integration |
