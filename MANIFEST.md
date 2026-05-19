@@ -621,3 +621,34 @@
 | 2026-05-19 13:10 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_131012.md | implementation | timestamped tracker after BibTeX generation |
 | 2026-05-19 13:10 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker after BibTeX generation |
 | 2026-05-19 13:10 | /idea-discovery | findings.md | implementation | append-only BibTeX generation finding |
+| 2026-05-19 13:03 | /paper-write | paper/main_20260519_130335.tex | paper | timestamped CIKM Resource paper draft main file |
+| 2026-05-19 13:03 | /paper-write | paper/main.tex | paper | latest CIKM Resource paper draft main file |
+| 2026-05-19 13:03 | /paper-write | paper/references_20260519_130335.bib | paper | timestamped paper bibliography after reference refresh |
+| 2026-05-19 13:03 | /paper-write | paper/references.bib | paper | latest paper bibliography after reference refresh |
+| 2026-05-19 13:03 | /paper-write | paper/sections/1_introduction_20260519_130335.tex | paper | timestamped introduction section |
+| 2026-05-19 13:03 | /paper-write | paper/sections/1_introduction.tex | paper | latest introduction section |
+| 2026-05-19 13:03 | /paper-write | paper/sections/2_toolkit_20260519_130335.tex | paper | timestamped toolkit section |
+| 2026-05-19 13:03 | /paper-write | paper/sections/2_toolkit.tex | paper | latest toolkit section |
+| 2026-05-19 13:03 | /paper-write | paper/sections/3_resource_demo_20260519_130335.tex | paper | timestamped resource demo section |
+| 2026-05-19 13:03 | /paper-write | paper/sections/3_resource_demo.tex | paper | latest resource demo section |
+| 2026-05-19 13:03 | /paper-write | paper/sections/4_availability_limits_20260519_130335.tex | paper | timestamped availability and limitations section |
+| 2026-05-19 13:03 | /paper-write | paper/sections/4_availability_limits.tex | paper | latest availability and limitations section |
+| 2026-05-19 13:03 | /paper-compile | paper/main.pdf | paper | compiled 3-page ACM draft PDF |
+| 2026-05-19 13:03 | /paper-write | docs/CURRENT_STATE_20260519_130335.md | documentation | timestamped current state after paper draft |
+| 2026-05-19 13:03 | /paper-write | docs/CURRENT_STATE.md | documentation | latest current state after paper draft |
+| 2026-05-19 13:03 | /paper-write | docs/DOCUMENT_INDEX_20260519_130335.md | documentation | timestamped document index after paper draft |
+| 2026-05-19 13:03 | /paper-write | docs/DOCUMENT_INDEX.md | documentation | latest document index after paper draft |
+| 2026-05-19 13:03 | /paper-write | docs/CITATION_AUDIT_20260519_130335.md | documentation | timestamped citation audit after reference refresh |
+| 2026-05-19 13:03 | /paper-write | docs/CITATION_AUDIT.md | documentation | latest citation audit after reference refresh |
+| 2026-05-19 13:03 | /paper-write | docs/BIBTEX_AUDIT_20260519_130335.md | documentation | timestamped BibTeX audit after reference refresh |
+| 2026-05-19 13:03 | /paper-write | docs/BIBTEX_AUDIT.md | documentation | latest BibTeX audit after reference refresh |
+| 2026-05-19 13:03 | /paper-write | refine-logs/EXPERIMENT_TRACKER_20260519_130335.md | implementation | timestamped tracker after paper draft |
+| 2026-05-19 13:03 | /paper-write | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records paper draft |
+| 2026-05-19 13:03 | /paper-write | findings.md | implementation | append-only paper draft finding |
+| 2026-05-19 12:52 | /research-lit | docs/SID_REFERENCE_REFRESH_20260519_125226.md | idea-discovery | timestamped SID literature refresh and paper-reference gap scan |
+| 2026-05-19 12:52 | /research-lit | docs/SID_REFERENCE_REFRESH.md | idea-discovery | latest SID literature refresh and compact reference recommendation |
+| 2026-05-19 12:52 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_125226.md | documentation | timestamped document index updated with reference refresh entry |
+| 2026-05-19 12:52 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index updated with reference refresh entry |
+| 2026-05-19 12:52 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_125226.md | implementation | timestamped tracker after SID reference refresh |
+| 2026-05-19 12:52 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records SID reference refresh |
+| 2026-05-19 12:52 | /research-lit | findings.md | idea-discovery | append-only SID reference refresh finding |

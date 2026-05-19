@@ -1,0 +1,28 @@
+\section{Availability and Limitations}
+
+The artifact repository contains the \tool Python package, adapter scripts,
+metric runners, generated CSV, Markdown, and \LaTeX{} tables, provenance logs,
+and
+the BibTeX/source audit used for this draft. Large local artifacts are kept out
+of git and described through manifests so that reviewers can distinguish
+public reproducibility assets from local caches.
+
+The current evidence supports a conservative resource-demo claim. It does not
+support several stronger claims. \tool does not reproduce TIGER end-to-end; the
+GRID Musical row is a controlled feature-text export. The ReSID Sports balanced
+GAOQ path was stopped because constrained k-means was CPU-bound under the
+available window, so the main ReSID evidence is the bounded Musical export.
+CARD is repaired only as a fallback/stressor path and should not be presented
+as faithful CARD reproduction~\cite{wei2026card}. D2 is a collision profile,
+not strict causal harm. D3 is a diagnostic proxy and is not yet proven
+monotonic with Recall@K or NDCG. D5a is a structural cost proxy without real
+generator-output latency, and D6 remains optional drift evidence.
+
+These boundaries are intentional. The paper contributes a reusable audit
+surface for tokenizer artifacts, not a new \sid tokenizer, a complete
+generative-recommender evaluation, or an industrial online-impact study.
+Future versions should add interaction-qualified collision harm, generator
+output diagnostics, stronger same-dataset method coverage, and unified search
+and recommendation artifact checks~\cite{penha2025jointsid}. Industrial SID
+deployment studies further motivate tracking these artifact properties as
+first-class engineering objects~\cite{ju2026snapchatsid}.

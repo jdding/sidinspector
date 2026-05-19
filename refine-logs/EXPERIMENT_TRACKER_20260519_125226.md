@@ -78,8 +78,7 @@
 | A105 | MovieLens portability smoke | LOCAL_SMOKE_PASSED_NON_AMAZON_SCHEMA | `docs/MOVIELENS_PORTABILITY_SMOKE.md`, `tools/autodl_audit_sid/run_movielens_portability_smoke.py`, `_gate0_artifacts/movielens_portability_smoke/ml25m_1mratings_10kitems/metrics/coverage_report.csv` | Local CPU bounded MovieLens-25M smoke passed on first 1,000,000 ratings / 10,000 movie items with sanity SIDs only. It validates non-Amazon schema portability, not a main tokenizer benchmark. |
 | A106 | Paper-facing metric scope absorption | DONE | `docs/CURRENT_STATE.md`, `docs/CIKM_EXPERIMENT_DESIGN.md`, `docs/CIKM_RESOURCE_PAPER_PLAN.md` | Accepted local paper-readiness docs and tightened D1-D6 scope: D1-D5a are main item-to-SID artifact diagnostics, D6 is optional, D2 is profile not causal harm, D5b/D7 require generator outputs, and full SID system quality is out of scope. |
 | A107 | CIKM no-appendix paper tables and citation audit | DONE | `docs/CIKM_RESOURCE_FORMAT_AUDIT.md`, `docs/CITATION_AUDIT.md`, `tools/autodl_audit_sid/build_paper_tables.py`, `paper_assets/tables/table1_method_coverage.csv`, `paper_assets/tables/table2_musical_diagnostic.csv` | Official Resource page confirms 4 pages include appendices/acknowledgments; paper should be no-appendix. Generated paper-facing tables: Table 1 method coverage and Table 2 same-item Musical diagnostics for PDF, with Tables 3-6 for GitHub artifact. Citation metadata verified from primary pages. |
-| A109 | Verified BibTeX generation | DONE | `docs/BIBTEX_AUDIT.md`, `paper_assets/references/audit_sid_references.bib` | Generated paper-ready BibTeX from verified arXiv/official pages and then expanded it with the reference-refresh must-cites. Keep one final citation drift check before submission, but final BibTeX is no longer an open blocker. |
-| A110 | CIKM Resource paper draft | COMPILES_3P_DRAFT | `paper/main.tex`, `paper/main.pdf`, `paper/references.bib` | Created an ACM CIKM Resource draft with no appendix, Table 1 method coverage, Table 2 same-item Musical diagnostics, conservative limitations, and expanded reference framing. `latexmk -pdf` succeeds and `pdfinfo` reports 3 pages. |
+| A108 | Verified BibTeX generation | DONE | `docs/BIBTEX_AUDIT.md`, `paper_assets/references/audit_sid_references.bib` | Generated paper-ready BibTeX from verified arXiv/official pages. Keep one final citation drift check before submission, but final BibTeX is no longer an open blocker. |
 | A109 | SID reference refresh | DONE | `docs/SID_REFERENCE_REFRESH.md`, `docs/SID_REFERENCE_REFRESH_20260519_125226.md` | Re-ran literature refresh against the AUDIT-SID spec. Current scaffold is too narrow: add identifier foundations, RecList-style diagnostic tooling, CoST/LETTER collaborative-tokenizer work, and recent 2026 SID papers including Snapchat SID, AdaSID, CapsID, AsymRec, and SID staleness before finalizing paper references. |
 
 ## Current Decision
@@ -109,8 +108,7 @@ foundations, behavioral/diagnostic evaluation, collaborative tokenization,
 collision qualification, industrial SID deployment, and drift/staleness.
 
 Do not launch full experiments until the next evidence gap is explicit. AutoDL
-Sports exact GAOQ is no longer the blocker. The current paper draft compiles to
-3 pages, so the next blocker is wording/claim audit rather than new GPU work.
+Sports exact GAOQ is no longer the blocker.
 
 DACT local smoke is now available as optional D6 drift evidence only: it can
 support a small continual-tokenization extension, but it must not change the

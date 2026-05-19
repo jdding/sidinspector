@@ -1,4 +1,13 @@
 .DS_Store
+.agents/
+.aris/
 .aris/meta/
 _gate0_repos/
 _gate0_artifacts/
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
