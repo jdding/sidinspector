@@ -861,3 +861,16 @@
 | 2026-05-19 15:58 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_155857.md | documentation | timestamped document index after method screen and local 3-seed run |
 | 2026-05-19 15:58 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after method screen and local 3-seed run |
 | 2026-05-19 15:58 | /idea-discovery | findings.md | implementation | append-only findings after method screen and local 3-seed run |
+| 2026-05-19 16:26 | /idea-discovery | docs/EXPERIMENT_PLAN_CLOSURE_AUDIT_20260519_162152.md | documentation | timestamped closure audit for CIKM Resource v0 experiment package |
+| 2026-05-19 16:26 | /idea-discovery | docs/EXPERIMENT_PLAN_CLOSURE_AUDIT.md | documentation | latest closure audit for CIKM Resource v0 experiment package |
+| 2026-05-19 16:26 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260519_162626.md | writing-plan | timestamped experiment plan with v0 experiment closure status |
+| 2026-05-19 16:26 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | writing-plan | latest experiment plan with v0 experiment closure status |
+| 2026-05-19 16:26 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_162626.md | implementation | timestamped tracker marking v0 experiment closure and stale todos closed |
+| 2026-05-19 16:26 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker marking v0 experiment closure and stale todos closed |
+| 2026-05-19 16:26 | /idea-discovery | docs/CURRENT_STATE_20260519_162626.md | documentation | timestamped current state after v0 experiment closure audit |
+| 2026-05-19 16:26 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after v0 experiment closure audit |
+| 2026-05-19 16:26 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_162626.md | documentation | timestamped document index with closure audit entry |
+| 2026-05-19 16:26 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index with closure audit entry |
+| 2026-05-19 16:26 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260519_162626.md | writing-plan | timestamped CIKM experiment design with v0 closure status |
+| 2026-05-19 16:26 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | writing-plan | latest CIKM experiment design with v0 closure status |
+| 2026-05-19 16:26 | /idea-discovery | findings.md | implementation | append-only experiment-plan closure finding |
