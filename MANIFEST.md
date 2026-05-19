@@ -609,3 +609,15 @@
 | 2026-05-19 12:41 | /idea-discovery | findings.md | implementation | append-only CIKM format and paper-table finding |
 | 2026-05-19 12:41 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_124113.md | documentation | timestamped document index with format, citation, and table assets |
 | 2026-05-19 12:41 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index with format, citation, and table assets |
+| 2026-05-19 13:10 | /paper-plan | docs/BIBTEX_AUDIT_20260519_131012.md | writing-plan | timestamped BibTeX audit from verified primary pages |
+| 2026-05-19 13:10 | /paper-plan | docs/BIBTEX_AUDIT.md | writing-plan | latest BibTeX audit from verified primary pages |
+| 2026-05-19 13:10 | /paper-plan | paper_assets/references/audit_sid_references.bib | writing-plan | generated paper reference file |
+| 2026-05-19 13:10 | /idea-discovery | docs/CURRENT_STATE_20260519_131012.md | documentation | timestamped current state after BibTeX generation |
+| 2026-05-19 13:10 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after BibTeX generation |
+| 2026-05-19 13:10 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_131012.md | documentation | timestamped document index after BibTeX generation |
+| 2026-05-19 13:10 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after BibTeX generation |
+| 2026-05-19 13:10 | /idea-discovery | docs/CITATION_AUDIT_20260519_131012.md | writing-plan | timestamped citation audit linked to generated BibTeX |
+| 2026-05-19 13:10 | /idea-discovery | docs/CITATION_AUDIT.md | writing-plan | latest citation audit linked to generated BibTeX |
+| 2026-05-19 13:10 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_131012.md | implementation | timestamped tracker after BibTeX generation |
+| 2026-05-19 13:10 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker after BibTeX generation |
+| 2026-05-19 13:10 | /idea-discovery | findings.md | implementation | append-only BibTeX generation finding |
