@@ -902,3 +902,29 @@
 | 2026-05-19 17:06 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest after adding preflight script |
 | 2026-05-19 17:06 | /paper-write | tools/verify_paper_artifact_20260519_170629.py | implementation | timestamped verifier with Table 7 stability checks and preflight file checks |
 | 2026-05-19 17:06 | /paper-write | tools/verify_paper_artifact.py | implementation | latest verifier with Table 7 stability checks and preflight file checks |
+| 2026-05-19 17:32 | /research-refine | docs/THIRD_METHOD_EVIDENCE_GATE_20260519_172626.md | documentation | timestamped admission rule for third named tokenizer evidence |
+| 2026-05-19 17:32 | /research-refine | docs/THIRD_METHOD_EVIDENCE_GATE.md | documentation | latest admission rule: no self-implemented paper-inspired method as named evidence |
+| 2026-05-19 17:32 | /research-refine | docs/METHOD_RELEASE_SCOUT_20260519.md | documentation | subagent release scout for QuaSID/AdaSID/CapsID/DIGER |
+| 2026-05-19 17:32 | /research-refine | docs/METHOD_RELEASE_SCOUT.md | documentation | latest release scout: no third B2/B3 method enters v0 evidence |
+| 2026-05-19 17:32 | /run-experiment | tools/autodl_audit_sid/preflight_card_nurqvae.py | implementation | local CPU source/import/export-contract preflight for CARD original nu-rq-vae |
+| 2026-05-19 17:32 | /run-experiment | tests/test_preflight_card_nurqvae.py | implementation | unit tests for CARD original nu-rq-vae preflight |
+| 2026-05-19 17:32 | /paper-write | ARTIFACT_QUICKSTART.md | paper | latest quickstart includes CARD preflight compile/boundary note |
+| 2026-05-19 17:32 | /paper-write | ARTIFACT_QUICKSTART_20260519_173236.md | paper | timestamped quickstart includes CARD preflight compile/boundary note |
+| 2026-05-19 17:32 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest reviewer manifest includes third-method gate and CARD preflight |
+| 2026-05-19 17:32 | /paper-write | ARTIFACT_MANIFEST_20260519_173236.md | paper | timestamped reviewer manifest includes third-method gate and CARD preflight |
+| 2026-05-19 17:32 | /paper-write | tools/verify_paper_artifact.py | implementation | latest verifier requires third-method gate, release scout, and CARD preflight files |
+| 2026-05-19 17:32 | /paper-write | tools/verify_paper_artifact_20260519_173236.py | implementation | timestamped verifier requires third-method gate, release scout, and CARD preflight files |
+| 2026-05-19 17:32 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state records release-scout negative and CARD preflight-only status |
+| 2026-05-19 17:32 | /idea-discovery | docs/CURRENT_STATE_20260519_173236.md | documentation | timestamped current state records release-scout negative and CARD preflight-only status |
+| 2026-05-19 17:32 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index adds third-method gate and release scout entries |
+| 2026-05-19 17:32 | /idea-discovery | docs/DOCUMENT_INDEX_20260519_173236.md | documentation | timestamped document index adds third-method gate and release scout entries |
+| 2026-05-19 17:32 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX.md | writing-plan | latest method matrix marks CARD original as preflight-only candidate |
+| 2026-05-19 17:32 | /experiment-plan | docs/METHOD_DIAGNOSTIC_SELECTION_MATRIX_20260519_173236.md | writing-plan | timestamped method matrix marks CARD original as preflight-only candidate |
+| 2026-05-19 17:32 | /experiment-plan | docs/B2_B3_METHOD_SCREEN.md | writing-plan | latest method screen updated after CARD original preflight |
+| 2026-05-19 17:32 | /experiment-plan | docs/B2_B3_METHOD_SCREEN_20260519_173236.md | writing-plan | timestamped method screen updated after CARD original preflight |
+| 2026-05-19 17:32 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records no-self-implementation rule, release scout, and CARD preflight |
+| 2026-05-19 17:32 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260519_173236.md | implementation | timestamped tracker records no-self-implementation rule, release scout, and CARD preflight |
+| 2026-05-19 17:32 | /idea-discovery | findings.md | implementation | append-only finding for third-method gate and CARD preflight |
+| 2026-05-19 17:32 | /run-experiment | docs/ADDITIONAL_EXPERIMENT_PREFLIGHT_CODE_20260519_173236.md | documentation | timestamped preflight-code note including CARD original preflight |
+| 2026-05-19 17:32 | /run-experiment | docs/ADDITIONAL_EXPERIMENT_PREFLIGHT_CODE.md | documentation | latest preflight-code note including CARD original preflight |
+| 2026-05-19 17:32 | /research-refine | docs/METHOD_RELEASE_SCOUT_20260519_173236.md | documentation | second-level timestamped release scout copy per output-versioning rule |
