@@ -15,9 +15,6 @@ REQUIRED_FILES = [
     "ARTIFACT_QUICKSTART.md",
     "ARTIFACT_MANIFEST.md",
     "LICENSE",
-    "paper/main.tex",
-    "paper/main.pdf",
-    "paper/figures/fig1_audit_sid_pipeline.pdf",
     "paper_assets/tables/table1_method_coverage.csv",
     "paper_assets/tables/table2_musical_diagnostic.csv",
     "paper_assets/tables/table3_sanity_controls.csv",
@@ -560,7 +557,7 @@ def main() -> None:
     check_table13()
     check_table14()
     check_table15()
-    print("SIDInspector/AUDIT-SID public artifact verification passed.")
+    print("SIDInspector/AUDIT-SID reviewer artifact verification passed.")
 
 
 if __name__ == "__main__":

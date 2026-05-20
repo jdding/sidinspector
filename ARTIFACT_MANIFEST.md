@@ -2,7 +2,7 @@
 
 Timestamp: 2026-05-20 19:32:36 CST
 
-This manifest is the reviewer-facing public artifact index. It is intentionally
+This manifest is the reviewer-facing artifact index. It is intentionally
 shorter than `MANIFEST.md`, which is the full ARIS provenance ledger.
 
 ## Frozen Artifact Entry
@@ -10,7 +10,7 @@ shorter than `MANIFEST.md`, which is the full ARIS provenance ledger.
 - Target venue/track: CIKM 2026 Resource Track
 - Review tag: `audit-sid-cikm-resource-v0.1`
 - Review branch: `main`
-- Repository: `https://github.com/jdding/sidinspector`
+- Anonymous review URL: `https://anonymous.4open.science/r/sidinspector-9BB2`
 - License: MIT, see `LICENSE`
 
 ## Public Verification Path
@@ -21,14 +21,13 @@ as `_gate0_artifacts/`.
 ```bash
 python3 -m pip install -r requirements.txt
 python3 -m unittest discover -s tests
-MPLCONFIGDIR=/tmp/audit_sid_mpl python3 tools/paper_figures/generate_audit_sid_pipeline.py
 python3 tools/verify_paper_artifact.py
 ```
 
-The verifier checks the published paper tables, figure, license, quickstart,
-BibTeX file, the main Table 2 numeric claims, the auxiliary B4/B6/B7 vertical /
-fixed-reranker / Sports numbers, the All_Beauty B6 replication, and the
-RQ-min reference-adapter row now referenced in the paper.
+The verifier checks the frozen evidence tables, license, quickstart, BibTeX
+metadata snapshot, the main Table 2 numeric claims, the auxiliary B4/B6/B7
+vertical / fixed-reranker / Sports numbers, the All_Beauty B6 replication, and
+the RQ-min reference-adapter row referenced by the submitted manuscript.
 
 ## Public Files
 
@@ -40,7 +39,6 @@ RQ-min reference-adapter row now referenced in the paper.
 | `src/audit_sid/` | mapping-first interface, adapters, metrics | import/test |
 | `tests/` | metric and churn unit tests | runnable |
 | `tools/verify_paper_artifact.py` | clean-checkout artifact verifier | runnable |
-| `tools/paper_figures/generate_audit_sid_pipeline.py` | regenerates Fig. 1 | runnable |
 | `tools/autodl_audit_sid/preflight_metric_inputs.py` | local preflight for future metric inputs | runnable |
 | `tools/autodl_audit_sid/preflight_card_nurqvae.py` | local CPU preflight for CARD original `nu-rq-vae` source/import/export contract | runnable when the ignored CARD clone is present |
 | `tools/autodl_audit_sid/run_d3_ranking_context.py` | bounded D3 prefix-candidate context probe | runnable with local artifacts |
@@ -62,10 +60,9 @@ RQ-min reference-adapter row now referenced in the paper.
 | `docs/D3_RANKING_VALIDATION_ALL_BEAUTY.md` | B6 All_Beauty temporal-LOO replication report | inspectable |
 | `docs/RQVAE_MINIMAL_REFERENCE_GATE.md` | RQ-min reference-adapter gate report | inspectable |
 | `docs/SPORTS_GRID_THIRD_VERTICAL.md` | B7 Sports GRID third-vertical report | inspectable |
-| `docs/PAPER_CONTROLLER_INTEGRATION.md` | paper-writing note for controlled mechanism-probe Table 3 and named-method boundary | inspectable |
-| `paper/main.tex`, `paper/main.pdf` | current ACM draft and compiled PDF | inspectable |
 | `paper_assets/tables/` | generated CSV/Markdown/LaTeX evidence tables | inspectable/verifiable |
-| `paper_assets/references/audit_sid_references.bib` | paper reference file | inspectable |
+| `paper_assets/references/audit_sid_references.bib` | reference metadata snapshot | inspectable |
+| `docs/PAPER_CONTROLLER_INTEGRATION.md` | submitted-paper note for controlled mechanism-probe Table 3 and named-method boundary | inspectable |
 | `docs/PAPER_STRICT_CLAIM_AUDIT.md` | claim and numeric-audit trail | inspectable |
 
 ## Local-Cache Boundary
@@ -81,7 +78,7 @@ checkout verification unless a separate full-artifact data bundle is provided.
 - `paper_assets/tables/table1_method_coverage.*`: method/facet coverage and
   claim boundary.
 - `paper_assets/tables/table2_musical_diagnostic.*`: same-item Musical case
-  study used in the PDF.
+  study used by the submitted manuscript.
 - `paper_assets/tables/table3_sanity_controls.*`: metric-sensitivity controls.
 - `paper_assets/tables/table4_grid_scale.*`: GRID scale/stability evidence.
 - `paper_assets/tables/table5_dact_d6_churn.*`: optional D6 churn evidence.

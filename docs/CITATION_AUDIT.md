@@ -2,15 +2,10 @@
 
 Timestamp: 2026-05-21 01:58:00 CST
 
-Scope: active CIKM 2026 Resource Track paper sources:
+Scope: the CIKM 2026 Resource Track manuscript reference set and the reviewer
+artifact metadata snapshot:
 
-- `paper/main.tex`
-- `paper/sections/1_introduction.tex`
-- `paper/sections/2_resource_scope.tex`
-- `paper/sections/3_diagnostics.tex`
-- `paper/sections/4_demonstration.tex`
-- `paper/sections/5_availability_limits.tex`
-- `paper/references.bib`
+- `paper_assets/references/audit_sid_references.bib`
 
 ## Verdict
 
@@ -27,7 +22,7 @@ deployment surfaces.
 
 | Item | Count | Note |
 |---|---:|---|
-| BibTeX entries in `paper/references.bib` | 27 | all active after this pass |
+| BibTeX entries in `paper_assets/references/audit_sid_references.bib` | 27 | all active after this pass |
 | Unique cite keys in active paper source | 27 | no uncited bib entries remain |
 | Missing cited keys | 0 | all cited keys exist in the bib |
 | 2024--2026 references | 20 | main recent-SID coverage |
@@ -49,10 +44,9 @@ deployment surfaces.
 | `penha2025jointsid` | RecSys late-breaking entry had no final proceedings pages in the active bib | represented as arXiv:2508.10478 with accepted-by-RecSys-LBR note |
 | `anelli2021elliot` | ACM entry lacked publisher/address/series fields | added ACM publisher/address and SIGIR '21 series metadata |
 
-The same fixes were applied to both:
-
-- `paper/references.bib`
-- `paper_assets/references/audit_sid_references.bib`
+The reviewer artifact ships the resulting metadata snapshot as
+`paper_assets/references/audit_sid_references.bib`; manuscript source files are
+handled outside the artifact repository.
 
 ## Recent-Coverage Assessment
 

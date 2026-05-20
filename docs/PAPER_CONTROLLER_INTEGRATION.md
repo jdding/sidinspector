@@ -18,22 +18,20 @@ that are discussed in the SID literature.
 | `capacity_budget_sweep` | D1/D2/D4/D5 support for capacity pressure and popularity allocation | Width-24 head-reserved policy keeps head unique ratio at 1.0 while tail unique ratio is 0.028190 | Controlled allocation probe, not an adaptive-codebook method |
 | `variable_depth_cost_probe` | D5 boundary support for active-prefix cost | Active prefix structure can differ from a fixed maximum-depth schema | Interface/cost probe, not generator-output D7 evidence |
 
-## Paper Edits
+## Manuscript Edits
 
-- `paper/sections/4_demonstration.tex` now adds
-  Table~\ref{tab:mechanism-probes} as a controlled mechanism-probe table and
-  rewrites the diagnostic findings around Tables 2 and 3.
-- `paper/main.tex`, `paper/sections/1_introduction.tex`, and
-  `paper/sections/5_availability_limits.tex` were polished to reduce
+- The submitted manuscript adds Table 3 as a controlled mechanism-probe table
+  and rewrites the diagnostic findings around Tables 2 and 3.
+- The introduction and availability/limits text were polished to reduce
   experiment-note wording and use a more compact resource-paper style.
-- `paper/sections/5_availability_limits.tex` now records that D2 has a bounded
-  interaction-qualified mechanism probe but is still not strict causal harm.
+- The limits text records that D2 has a bounded interaction-qualified mechanism
+  probe but is still not strict causal harm.
 
 ## Compile Status
 
-`paper/main.pdf` compiles to 5 pages total. The body fills through page 4, and
-references plus the GenAI disclosure occupy page 5. The timestamped snapshot is
-`paper/main_20260519_200630.pdf`.
+The manuscript compiled to 5 pages total during this pass. The body filled
+through page 4, and references plus the GenAI disclosure occupied page 5. The
+manuscript source/PDF is handled outside this reviewer artifact repository.
 
 ## Claim Boundary
 

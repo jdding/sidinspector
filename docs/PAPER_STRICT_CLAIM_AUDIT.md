@@ -2,11 +2,11 @@
 
 Timestamp: 2026-05-20 19:40:00 CST
 
-Scope: active CIKM Resource draft in `paper/main.tex` and
-`paper/sections/{1_introduction,2_resource_scope,3_diagnostics,4_demonstration,5_availability_limits}.tex`
-after integrating the AutoDL matched-capacity GRID row (`GRID ft-cap`), B6
-fixed-reranker validation, B7 Sports GRID third-vertical evidence, and the
-R3-delta wording fixes.
+Scope: the CIKM Resource manuscript submitted outside this reviewer artifact,
+cross-checked against the frozen evidence tables shipped here after integrating
+the AutoDL matched-capacity GRID row (`GRID ft-cap`), B6 fixed-reranker
+validation, B7 Sports GRID third-vertical evidence, and the R3-delta wording
+fixes.
 
 ## Verdict
 
@@ -84,7 +84,7 @@ The remaining caveats are still material for review:
 
 ## Issues Fixed During This Audit
 
-1. `GRID ft-cap` D3 was displayed as `.0795` in `paper/sections/4_demonstration.tex`, while the paper-facing CSV and raw weighted D3 value round to `.0796`. Fixed to `.0796` in Table 2 and the D3 range sentence.
+1. `GRID ft-cap` D3 was displayed as `.0795` in the manuscript Table 2, while the paper-facing CSV and raw weighted D3 value round to `.0796`. Fixed to `.0796` in Table 2 and the D3 range sentence.
 2. The abstract previously did not mention the matched-capacity ablation. It now states that the GRID capacity-matched row reduces aliasing to 0.7785 but does not eliminate it.
 3. Active naming was rechecked after the earlier working-name drift. Active paper/artifact files now use `SIDInspector`; older timestamped snapshots are not active submission inputs.
 4. R3-delta wording fixes added the All_Beauty D3 replication sentence and the
@@ -99,9 +99,9 @@ The remaining caveats are still material for review:
 
 ## Verification
 
-- `paper/main.pdf` compiles successfully, 5 pages total.
+- The submitted manuscript PDF compiled successfully during the final paper pass.
 - PDF title: `SIDInspector: A Mapping-First Diagnostic Resource for Semantic-ID Tokenizers`.
-- `tools/verify_paper_artifact.py` passes and now checks the `GRID ft-cap`,
+- `tools/verify_paper_artifact.py` passes and checks the `GRID ft-cap`,
   B4 All_Beauty D3, B6 fixed-reranker, and B7 Sports GRID rows.
 - `python3 -m unittest discover -s tests`: 24 passed.
 - `git diff --check`: pass.

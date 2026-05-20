@@ -6,30 +6,30 @@ mappings and reports diagnostic probes over capacity utilization, full-code
 aliasing, collaborative prefix alignment, head-to-tail allocation, and
 structural cost, with optional hooks for refresh churn and generator traces.
 
-The repository is the public reviewer artifact for the CIKM 2026 Resource Track
-draft:
+The repository is the reviewer artifact for the CIKM 2026 Resource Track draft:
 
 > SIDInspector: A Mapping-First Diagnostic Resource for Semantic-ID Tokenizers
 
+The submitted manuscript PDF is handled through the submission system. This
+artifact intentionally ships code, frozen evidence tables, and provenance notes,
+but not the manuscript source, compiled PDF, or figure-generation scripts.
+
 ## Reviewer Quickstart
 
-Use the pinned tag when reviewing the artifact:
+Use the anonymous review URL when reviewing the artifact:
 
 ```bash
-git clone --branch audit-sid-cikm-resource-v0.1 --depth 1 \
-  https://github.com/jdding/sidinspector.git sidinspector
+git clone https://anonymous.4open.science/r/sidinspector-9BB2 sidinspector
 cd sidinspector
 python3 -m pip install -r requirements.txt
 python3 -m unittest discover -s tests
-MPLCONFIGDIR=/tmp/audit_sid_mpl \
-  python3 tools/paper_figures/generate_audit_sid_pipeline.py
 python3 tools/verify_paper_artifact.py
 ```
 
 The final verifier line should be:
 
 ```text
-SIDInspector/AUDIT-SID public artifact verification passed.
+SIDInspector/AUDIT-SID reviewer artifact verification passed.
 ```
 
 ## Repository Layout
@@ -38,11 +38,9 @@ SIDInspector/AUDIT-SID public artifact verification passed.
 - `methods/rqvae_minimal_reference/`: local residual-quantization reference
   adapter used to exercise an independent code path, not a published-method
   reproduction.
-- `tools/`: clean-checkout verifier, figure generator, and bounded mechanism
-  probe scripts.
+- `tools/`: clean-checkout verifier and bounded mechanism-probe scripts.
 - `tests/`: unit tests for metrics, churn, ranking-context probes, mechanism
   probes, and the reference adapter.
-- `paper/`: ACM draft PDF/source and Figure 1.
 - `paper_assets/tables/`: frozen CSV/Markdown/LaTeX evidence tables checked by
   the verifier.
 - `docs/`: public evidence notes for method boundaries, controlled probes,
@@ -53,6 +51,7 @@ SIDInspector/AUDIT-SID public artifact verification passed.
 SIDInspector audits exported tokenizer artifacts. It is not a new tokenizer, a
 leaderboard, a faithful TIGER/GRID/ReSID reproduction, or a claim of downstream
 ranking superiority. Larger local experiment caches are intentionally omitted;
-the clean-checkout verifier checks the paper-facing frozen artifacts.
+the clean-checkout verifier checks the submitted-paper-facing frozen artifacts
+without requiring manuscript sources.
 
 License: MIT.
