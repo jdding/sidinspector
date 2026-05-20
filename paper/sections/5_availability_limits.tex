@@ -5,20 +5,21 @@ metric runners, generated CSV/Markdown/\LaTeX{} tables, provenance logs,
 BibTeX/source-audit notes, an MIT license, and a reviewer quickstart. The
 reviewer entry point is the tag
 \texttt{audit-sid-cikm-resource-v0.1}, with a clean-checkout verifier for the
-published tables and figure. Large local artifacts are kept out of git and
+published tables and figure; the anonymous review artifact is available at
+\url{https://anonymous.4open.science/r/sidinspector-9BB2}. Large local artifacts are kept out of git and
 described through manifests so reviewers can separate public reproducibility
 assets from local caches.
 
-The resource is intended to be used in three modes. A paper reviewer can run
-the clean-check verifier and compare published CSVs with the PDF tables. A
-method author can add an adapter that emits the normalized
-\texttt{sid\_assignments} table, then receive D1--D5 reports without changing
-their training loop. A downstream recommender researcher can use the same
-diagnostics as a pre-training triage step: artifacts with missing items,
-inconsistent depth, severe aliasing, or weak collaborative-prefix recovery can
-be flagged for inspection before generator training consumes GPU time. These
-signals do not replace Recall@K or NDCG; they make tokenizer artifacts
-inspectable before a full benchmark or generator-training run.
+The resource is intended to be used in three modes. A downstream recommender
+researcher can use the diagnostics as a pre-training triage step: artifacts
+with missing items, inconsistent depth, severe aliasing, or weak
+collaborative-prefix recovery can be flagged for inspection before generator
+training consumes GPU time. A method author can add an adapter that emits the
+normalized SID-assignment table, then receive D1--D5 reports without
+changing their training loop. A paper reviewer can run the clean-check verifier
+and compare published CSVs with the PDF tables. These signals do not replace
+Recall@K or NDCG; they make tokenizer artifacts inspectable before a full
+benchmark or generator-training run.
 
 The evidence supports a resource-interface claim, not broad method coverage.
 The GRID Musical row is a controlled feature-text export rather than an
