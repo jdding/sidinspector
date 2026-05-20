@@ -1,0 +1,7 @@
+dataset,seed,method,unique_sid,duplicate_sid_rate,full_collision_rate,D3 L1 collab,D4 tail,prefix_counts,category_metadata_scope
+All_Beauty,seed42,grid_official_rqkmeans_all_beauty_20k_seed42,16718.0,0.1641,0.25555,0.081147,0.923065,128;7126;16718,coarse category fallback
+All_Beauty,seed42,sanity_category_prefix,20000.0,0.0,0.0,0.968438,1.0,2;2;2;20000,coarse category fallback
+All_Beauty,seed43,grid_rqkmeans_seed43,16951.0,0.15245,0.2379,0.08724,0.920966,128;7104;16951,coarse category fallback
+All_Beauty,seed43,sanity_category_prefix,20000.0,0.0,0.0,0.968438,1.0,2;2;2;20000,coarse category fallback
+All_Beauty,seed44,grid_rqkmeans_seed44,16503.0,0.17485,0.26605,0.089778,0.895471,128;6891;16503,coarse category fallback
+All_Beauty,seed44,sanity_category_prefix,20000.0,0.0,0.0,0.968438,1.0,2;2;2;20000,coarse category fallback

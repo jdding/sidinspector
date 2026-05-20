@@ -1,0 +1,14 @@
+\begin{table}
+\caption{Same-item Musical diagnostic table.}
+\label{tab:musical-diagnostic}
+\begin{tabular}{lllrrrrrrrrl}
+\toprule
+system & method & config & items & unique\_sid & duplicate\_sid\_rate & full\_collision\_rate & D3 L1 collab & D4 head & D4 mid & D4 tail & prefix\_counts \\
+\midrule
+GRID feature-text & grid\_official\_rqkmeans\_resid\_feature\_text & feature-text RQ-KMeans; widths 64/default/default & 23742.000000 & 3749.000000 & 0.842100 & 0.976900 & 0.055200 & 0.353000 & 0.359000 & 0.369500 & 64;3440;3749 \\
+GRID ft-cap & grid\_official\_rqkmeans\_resid\_feature\_text\_prefix\_matched & same feature-text path; widths 32/1280/1280 & 23742.000000 & 9874.000000 & 0.584100 & 0.778500 & 0.079600 & 0.599900 & 0.639700 & 0.639100 & 32;9300;9874 \\
+RQ-min reference & rqvae\_minimal\_reference & minimal residual-quantization reference; widths 32/128/128 & 23742.000000 & 17247.000000 & 0.273600 & 0.440100 & 0.065000 & 0.850100 & 0.866200 & 0.883100 & 32;2368;17247 \\
+ReSID GAOQ & resid\_gaoq & bounded FAMAE-to-GAOQ export & 23742.000000 & 23742.000000 & 0.000000 & 0.000000 & 0.153500 & 1.000000 & 1.000000 & 1.000000 & 32;1280;23742 \\
+\bottomrule
+\end{tabular}
+\end{table}
