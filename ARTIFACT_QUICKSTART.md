@@ -17,8 +17,16 @@ https://anonymous.4open.science/r/sidinspector-9BB2
 
 License: MIT, see `LICENSE`.
 
-Tested local environment: Python 3.9 on macOS. The clean-checkout verifier uses
-only the dependencies in `requirements.txt` plus the Python standard library.
+## Environment
+
+- Python: tested with Python 3.9.6 on macOS.
+- Dependencies: `requirements.txt` installs `pandas`, `numpy`, `pyarrow`,
+  `scikit-learn`, and `torch`.
+- Hardware: CPU only. The reviewer verifier does not require GPU access,
+  private datasets, manuscript sources, or local experiment caches.
+- Expected runtime: typically under two minutes after dependencies are
+  installed. Some unit tests are expected to skip optional checks when ignored
+  upstream clones or local experiment caches are not present.
 
 ## Clean-Checkout Verification
 
@@ -33,14 +41,11 @@ python3 -m unittest discover -s tests
 python3 tools/verify_paper_artifact.py
 ```
 
-Expected final line:
+Expected verifier output:
 
 ```text
 SIDInspector/AUDIT-SID reviewer artifact verification passed.
 ```
-
-Typical runtime on a laptop is under one minute after dependencies are
-installed.
 
 ## Local Full-Artifact Rebuild
 

@@ -26,7 +26,17 @@ python3 -m unittest discover -s tests
 python3 tools/verify_paper_artifact.py
 ```
 
-The final verifier line should be:
+Environment and runtime:
+
+- Python: tested with Python 3.9.6 on macOS.
+- Dependencies: install exactly from `requirements.txt` (`pandas`, `numpy`,
+  `pyarrow`, `scikit-learn`, and `torch`).
+- Hardware: CPU only; no GPU is needed for the reviewer verifier.
+- Expected runtime: typically under two minutes after dependencies are
+  installed. The unit tests may skip optional checks when ignored upstream
+  clones or local experiment caches are absent.
+
+The verifier should finish with:
 
 ```text
 SIDInspector/AUDIT-SID reviewer artifact verification passed.
