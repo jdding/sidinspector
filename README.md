@@ -31,7 +31,9 @@ Environment and runtime:
 - Python: tested with Python 3.9.6 on macOS.
 - Dependencies: install exactly from `requirements.txt` (`pandas`, `numpy`,
   `pyarrow`, `scikit-learn`, and `torch`).
-- Hardware: CPU only; no GPU is needed for the reviewer verifier.
+- Hardware: no GPU is required for this reviewer verification path. SID
+  tokenizer training/export may use GPU in normal research or production
+  settings; the clean-checkout verifier audits frozen mappings and tables.
 - Expected runtime: typically under two minutes after dependencies are
   installed. The unit tests may skip optional checks when ignored upstream
   clones or local experiment caches are absent.

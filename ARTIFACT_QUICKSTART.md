@@ -22,8 +22,10 @@ License: MIT, see `LICENSE`.
 - Python: tested with Python 3.9.6 on macOS.
 - Dependencies: `requirements.txt` installs `pandas`, `numpy`, `pyarrow`,
   `scikit-learn`, and `torch`.
-- Hardware: CPU only. The reviewer verifier does not require GPU access,
-  private datasets, manuscript sources, or local experiment caches.
+- Hardware: no GPU is required for the reviewer verification path. SID
+  tokenizer training/export may use GPU in normal research or production
+  settings; this clean-checkout path audits frozen mappings and tables without
+  requiring private datasets, manuscript sources, or local experiment caches.
 - Expected runtime: typically under two minutes after dependencies are
   installed. Some unit tests are expected to skip optional checks when ignored
   upstream clones or local experiment caches are not present.
