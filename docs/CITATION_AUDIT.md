@@ -1,37 +1,88 @@
-# Citation Audit
+# SIDInspector Citation Audit
 
-Timestamp: 2026-05-19 12:41:13 CST
+Timestamp: 2026-05-21 12:23:46 CST
 
-Purpose: verify paper metadata from primary public pages before LaTeX writing.
-The generated BibTeX file is `paper_assets/references/audit_sid_references.bib`;
-see `docs/BIBTEX_AUDIT.md`.
+Scope: final high-risk metadata polish plus an ICML 2026 official-list scan for
+missing SID/tokenizer references in the active CIKM 2026 Resource Track paper
+sources:
 
-## Verified Primary Sources
+- `paper/main.tex`
+- `paper/sections/1_introduction.tex`
+- `paper/sections/2_resource_scope.tex`
+- `paper/sections/3_diagnostics.tex`
+- `paper/sections/4_demonstration.tex`
+- `paper/sections/5_availability_limits.tex`
+- `paper/references.bib`
 
-| Key | Verified source | Title | Authors / venue note | Paper role |
-|---|---|---|---|---|
-| `rajput2023tiger` | `https://arxiv.org/abs/2305.05065` | Recommender Systems with Generative Retrieval | Shashank Rajput et al.; arXiv says NeurIPS 2023 | motivates semantic-ID generative recommendation |
-| `hua2023indexids` | `https://arxiv.org/abs/2305.06569` | How to Index Item IDs for Recommendation Foundation Models | Wenyue Hua et al. | pre-TIGER item-indexing foundation |
-| `singh2023bettersemanticids` | `https://arxiv.org/abs/2306.08121` | Better Generalization with Semantic IDs: A Case Study in Ranking for Recommendations | Adit Krishan Singh et al. | industrial ranking/generalization motivation |
-| `chia2022reclist` | `https://arxiv.org/abs/2111.09963` | Beyond NDCG: Behavioral Testing of Recommender Systems with RecList | Patrick John Chia et al.; WWW Companion 2022 | diagnostic-tooling precedent beyond aggregate ranking metrics |
-| `zhu2024cost` | `https://arxiv.org/abs/2404.14774` | Collaborative Semantic Tokenization for Generative Retrieval | Han Zhu et al. | D3 collaborative alignment motivation |
-| `wang2024letter` | `https://arxiv.org/abs/2405.07314` | LETTER: A LLM-Enhanced Two-Tower Recommender System | Bowen Wang et al. | collaborative/diversity-aware tokenizer context |
-| `ju2025grid` | `https://arxiv.org/abs/2507.22224`; `https://github.com/snap-research/GRID` | Generative Recommendation with Semantic IDs: A Practitioner's Handbook | Clark Mingxuan Ju et al.; GRID GitHub public repo observed | canonical open framework / Cluster A artifact path |
-| `liang2026resid` | `https://arxiv.org/abs/2602.02338`; `https://github.com/FuCongResearchSquad/ReSID` | Rethinking Generative Recommender Tokenizer: Recsys-Native Encoding and Semantic Quantization Beyond LLMs | Yu Liang et al.; ReSID GitHub and Hugging Face dataset linked from repo | Cluster B tokenizer/codebook motivation and artifact path |
-| `fu2026diger` | `https://arxiv.org/abs/2601.19711`; `https://github.com/junchen-fu/DIGER` | Differentiable Semantic ID for Generative Recommendation | Junchen Fu et al.; arXiv says accepted by SIGIR 2026 | future/literature support for recommendation-aligned SIDs |
-| `feng2026dact` | `https://arxiv.org/abs/2603.29705`; `https://github.com/HomesAmaranta/DACT` | Drift-Aware Continual Tokenization for Generative Recommendation | Yuebo Feng et al.; code availability stated on arXiv | optional D6 drift/churn motivation |
-| `hu2026quasid` | `https://arxiv.org/abs/2603.00632` | Stop Treating Collisions Equally: Qualification-Aware Semantic ID Learning for Recommendation at Industrial Scale | Zheng Hu et al. | justifies D2b as future interaction-qualified collision harm |
-| `penha2025jointsid` | `https://arxiv.org/abs/2508.10478` | Semantic IDs for Joint Generative Search and Recommendation | Gustavo Penha et al.; arXiv says RecSys 2025 LBR | future unified search-rec scope boundary |
-| `wei2026card` | `https://arxiv.org/abs/2604.26427`; `https://github.com/HAI-UESTC/CARD` | CARD: Non-Uniform Quantization of Visual Semantic Unit for Generative Recommendation | Yibiao Wei et al.; code availability stated on arXiv | method coverage/backlog only; do not cite proxy as CARD result |
-| `ju2026snapchatsid` | `https://arxiv.org/abs/2604.03949` | Semantic IDs for Recommendation Systems | Clark Mingxuan Ju et al. | industry/deployment motivation for SID artifact auditing |
-| `cikm2026resource` | `https://cikm2026.diag.uniroma1.it/resource-papers/` | CIKM 2026 Resource Papers submission page | official track page | confirms 4-page rule and supplementary-material boundary |
+## Verdict
 
-## Citation Use Rules
+PASS after proceedings-record upgrades and one ICML 2026 SID/tokenizer addition.
 
-- Use TIGER/GRID/ReSID in the introduction and method-coverage narrative.
-- Use DIGER/CARD/QuaSID/DACT/joint search-rec to motivate diagnostic gaps and
-  future extensions, not as completed AUDIT-SID experimental evidence.
-- Do not write BibTeX from memory. The current BibTeX file was generated from
-  verified arXiv/official pages.
-- Recheck public code release status before final submission because repository
-  availability can change.
+The active paper cites 28 unique keys, all 28 exist in `paper/references.bib`,
+and there are no uncited bib entries in the active bibliography. The final pass
+focused on high-risk SID/resource references: RecList, TIGER, GRID, ReSID, DACT,
+QuaSID/AdaSID/CARD/CapsID/AsymRec, Snapchat SID, SID-Coord, recently accepted
+ACM records, and ICML 2026 SID/tokenizer candidates.
+
+## Fixes Applied
+
+| Key | Change |
+|---|---|
+| `hua2023indexids` | Upgraded from arXiv `@misc` to the official SIGIR-AP 2023 ACM proceedings record with DOI `10.1145/3624918.3625339`. |
+| `wang2024letter` | Upgraded from arXiv `@misc` to the official CIKM 2024 ACM proceedings record with DOI `10.1145/3627673.3679569`. |
+| `liu2024elit` | Upgraded from arXiv `@misc` to the official SIGIR 2025 ACM proceedings record with DOI `10.1145/3726302.3729989`. |
+| `zhang2026hgrec` | Added from the official ICML 2026 poster record because it directly concerns hyperbolic RQ-VAE, generative recommendation, differential-length codebooks, codebook utilization, and collision rates. |
+| `baikalov2026staleness` | Kept as arXiv because the DOI is not yet resolved by Crossref; added accepted-by-SIGIR-2026 note from arXiv. |
+| `li2026sidcoord` | Kept as arXiv because the related DOI is not yet resolved by Crossref; added accepted-by-SIGIR-2026 note from arXiv. |
+| `ju2026snapchatsid` | Added SIGIR 2026 Industry Track acceptance note from arXiv. |
+
+The same BibTeX content is now synchronized in:
+
+- `paper/references.bib`
+- `paper_assets/references/audit_sid_references.bib`
+
+## ICML 2026 Scan Result
+
+Official ICML 2026 sources checked:
+
+- `https://icml.cc/virtual/2026/papers.html`
+- `https://icml.cc/Downloads/2026`
+- `https://icml.cc/virtual/2026/poster/65614`
+- `https://icml.cc/virtual/2026/poster/63723`
+
+Strong relevant addition:
+
+- `Hyperbolic RQ-VAE enhanced Generative Recommendation with Differential-Length Codebook Strategy` (ICML 2026 poster 65614). Official abstract states that the method enhances residual quantization in hyperbolic space, uses a differential-length codebook strategy, and reports lower collision rates, more uniform codebook usage, and less training time. This supports the D5 structural-cost discussion and is now cited there.
+
+Screened but not added:
+
+- `SynGR: Unleashing the Potential of Cross-Modal Synergy for Generative Recommendation` is about cross-modal synergy in generative recommendation and item identifiers, but the official abstract does not make a SID tokenizer/codebook artifact claim. It is not strong enough for the current four-page SIDInspector paper.
+- Other ICML 2026 recommendation papers found by title search are broader recommender/generative-rec work, not SID/tokenizer artifact diagnostics.
+
+## Spot-Checked Sources
+
+Primary source checks included ACM/Crossref metadata for RecList, SIGIR-AP
+2023, CIKM 2024, and SIGIR 2025 records; NeurIPS proceedings for TIGER; ICML
+2026 official poster/list pages for HG-Rec and SynGR; and arXiv pages for
+ReSID, DACT, QuaSID, AdaSID, CARD, CapsID, AsymRec, ACERec, SID staleness,
+SID-Coord, Snapchat SID, GRID, DIGER, DiscRec, LETTER, CoST, and related
+SID/tokenizer work.
+
+## Compile / Verification
+
+- `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex`: passed.
+- Output PDF: 5 pages; page 5 contains GenAI Usage Disclosure and references.
+- Remaining LaTeX warnings: local `acmart` unused `natbib=true` option and
+  `balance` second-column warning only.
+- `python3 tools/verify_paper_artifact.py`: passed.
+
+## Remaining Watch Items
+
+1. Do not add more citations for count; the active 28-entry bibliography is
+   enough for a four-page Resource paper.
+2. If submitting after a long delay, recheck the 2026 arXiv accepted-paper
+   entries and ICML 2026 papers whose official DOI/PMLR metadata were not yet
+   resolvable.
+3. The anonymous artifact URL should still be tested manually in a browser;
+   command-line `curl` can hit a Cloudflare challenge and is not a reliable
+   reviewer-experience test.

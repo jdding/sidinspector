@@ -1,0 +1,2 @@
+dataset,method,sid_length,unique_sid,duplicate_sid_rate,prefix_counts
+Musical_Instruments,rqvae_minimal_reference,3,17247,0.27356583270154156,32;2368;17247

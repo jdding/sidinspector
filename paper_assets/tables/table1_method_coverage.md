@@ -1,8 +1,9 @@
-| line                        | cluster   | dataset                                  | artifact                     | diagnostics   | paper_role                             | caveat                                                      |
-|:----------------------------|:----------|:-----------------------------------------|:-----------------------------|:--------------|:---------------------------------------|:------------------------------------------------------------|
-| GRID/RQ-KMeans              | A         | All_Beauty; Musical_Instruments          | real SID export              | D1-D5a/D3v2   | main A evidence; same-item Musical row | Musical row uses processed feature text, not raw-text TIGER |
-| ReSID/GAOQ                  | B         | Musical_Instruments                      | real SID export              | D1-D5a/D3v2   | main B evidence                        | bounded 1-epoch FAMAE; Sports balanced GAOQ stopped         |
-| Sanity tokenizers           | control   | Musical_Instruments; MovieLens-25M smoke | deterministic synthetic SIDs | D1-D5a/D3v2   | metric non-redundancy controls         | not named SID methods                                       |
-| CARD compact                | B/control | Musical_Instruments; Sports_and_Outdoors | proxy/stressor               | D1-D5a        | backlog or stressor only               | not faithful CARD evidence                                  |
-| DACT                        | drift     | Tools                                    | bundled code arrays          | D6 optional   | optional churn demo                    | not a Cluster B replacement                                 |
-| DIGER/CapsID/AdaSID/AsymRec | future    | not run                                  | literature/code-screen only  | not claimed   | coverage table context                 | verify public releases before submission                    |
+| row | type | items | seeds | D coverage |
+|:--|:--|--:|:--:|:--|
+| GRID ft | named (A) | 23,742 | 3 | D1-D5 |
+| GRID ft-cap | named (A, capacity ablation) | 23,742 | 1 | D1-D5 |
+| RQ-min ref | reference adapter | 23,742 | 1 | D1-D5 |
+| ReSID† | named (B) | 23,742 | 1 | D1-D5 |
+| Cat-prefix, Pop-bal, Hash-coll | controls | 23,742 | n/a | D1-D5 |
+| Mechanism probes (3) | controlled | synth. | n/a | D2,D4,D5 |
+| All_Beauty, Sports, MovieLens, DACT | portability/extension | varies | varies | D1-D5, D6 |

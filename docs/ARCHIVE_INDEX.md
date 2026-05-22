@@ -1,6 +1,6 @@
 # AUDIT-SID Archive Index
 
-Timestamp: 2026-05-20 00:56:00 CST
+Timestamp: 2026-05-22 12:39:49 CST
 
 ## Policy
 
@@ -21,6 +21,7 @@ These files remain active and should stay in their current locations:
 | Repository overview | `README.md` |
 | Recovery entrypoint | `START_HERE_AUDIT_SID.md` |
 | Current document map | `docs/DOCUMENT_INDEX.md` |
+| Post-submission workspace map | `docs/WORKSPACE_ORGANIZATION.md` |
 | Project contract | `docs/PROJECT_SPEC.md` |
 | Current gate verdict | `docs/GATE0_DECISION.md` |
 | Live tracker | `refine-logs/EXPERIMENT_TRACKER.md` |
@@ -29,6 +30,23 @@ These files remain active and should stay in their current locations:
 | Cluster B evidence | `docs/RESID_REAL_MAPPING_SMOKE.md` |
 
 ## Physical Archive Migrations
+
+### 2026-05-22 Post-Submission Snapshot Deletion
+
+After the first paper submission draft, the user explicitly requested a
+systematic local cleanup because timestamped sprint files made navigation
+confusing. The first pass moved these files into a temporary local archive;
+after review, the user authorized deletion because the files were redundant
+historical snapshots and recoverable from git history if needed.
+
+Removed scope: timestamp snapshots across root docs, `docs/`, `refine-logs/`,
+`paper/`, `paper_assets/`, `review-stage/`, `src/`, and `tools/`. Current
+fixed-name latest files, current paper sources, current paper PDF, tests,
+verifier, and `_gate0_artifacts/` evidence bundles remain in place.
+
+The active map for post-submission work is:
+
+- `docs/WORKSPACE_ORGANIZATION.md`
 
 ### 2026-05-20 Round 4 Cleanup
 
@@ -49,6 +67,27 @@ directories while keeping fixed-name latest files in place:
 
 This migration does not change the current paper source, fixed-name docs, or
 evidence interpretation. `MANIFEST.md` records the archived paths.
+
+### 2026-05-20 D3 Dedup Cleanup
+
+The user explicitly requested archiving duplicate local notes to avoid confusing
+future evidence reads. The following scratch notes were moved out of the active
+docs directory:
+
+- `docs/archive/2026-05-20-dedup/VERTICAL_D3_REPLICATION_NOTE.md`
+- `docs/archive/2026-05-20-dedup/D3_PREFIX_RANKING_CONTEXT.md`
+
+The earlier lightweight ranking-probe runner and its obsolete outputs were also
+archived because the canonical implementation is now
+`tools/autodl_audit_sid/run_d3_ranking_context.py`:
+
+- `tools/archive/2026-05-20-dedup/run_prefix_ranking_probe.py`
+- `_gate0_artifacts/archive/2026-05-20-dedup/prefix_ranking_probe/`
+
+Current active entry points are:
+
+- `docs/VERTICAL_D3_REPLICATION_ALL_BEAUTY.md`
+- `docs/D3_RANKING_CONTEXT_MUSICAL.md`
 
 ## Historical Buckets
 
@@ -144,12 +183,6 @@ execution state:
 
 ## Future Physical Cleanup
 
-After the submission decision is settled, a safer physical cleanup would be:
-
-1. create `docs/archive/2026-05-18-sprint/`;
-2. move timestamped historical docs there with `git mv`;
-3. update `MANIFEST.md` with migration rows;
-4. keep all fixed-name latest docs in place.
-
-Do not do this during active Gate 0A execution unless repository navigation
-becomes a direct blocker.
+The 2026-05-22 snapshot deletion removed the main navigation blocker. Future
+cleanup should be limited to obvious generated caches or a reviewer-package
+refresh, and should keep fixed-name latest files in place.

@@ -1,7 +1,12 @@
-\documentclass[sigconf,natbib=true,anonymous=true]{acmart}
+\documentclass[sigconf,natbib=true]{acmart}
 
-\settopmatter{printacmref=true}
-\pagestyle{plain}
+\settopmatter{printacmref=true, printfolios=true}
+\setcopyright{none}
+\acmConference[CIKM '26]{CIKM '26}{November 7--11, 2026}{Rome, Italy}
+\acmBooktitle{CIKM '26, November 7--11, 2026, Rome, Italy}
+\acmYear{2026}
+\acmDOI{}
+\acmISBN{}
 \raggedbottom
 
 \usepackage{booktabs}
@@ -12,16 +17,21 @@
 \usepackage{xspace}
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-\newcommand{\tool}{AUDIT-SID\xspace}
+\newcommand{\tool}{SIDInspector\xspace}
 \newcommand{\sid}{SID\xspace}
+\newcommand{\emailcomma}{,}
 
-\title{\tool: Artifact-Level Diagnostics for Semantic-ID Tokenizers in Generative Recommendation}
+\title{\tool: A Mapping-First Diagnostic Resource for Semantic-ID Tokenizers}
 
-\author{Anonymous Local Draft}
+\author{Jiandong Ding\emailcomma{} Heng Chang\emailcomma{} Huijie Qin\emailcomma{} and Tianying Liu}
+\email{{dingjiandong2\emailcomma heng.chang\emailcomma qinhuijie\emailcomma liutianying2}@huawei.com}
 \affiliation{%
-  \institution{Anonymous Institution}
-  \country{}
+  \institution{Huawei Technologies}
+  \city{Shanghai}
+  \country{China}
 }
+
+\renewcommand{\shortauthors}{Ding et al.}
 
 \begin{document}
 
@@ -42,27 +52,39 @@
 
 \ccsdesc[500]{Information systems~Recommender systems}
 \ccsdesc[300]{Information systems~Retrieval models and ranking}
-\keywords{semantic IDs, generative recommendation, tokenizer diagnostics, recommender systems}
+\keywords{semantic IDs, generative recommendation, tokenizer artifacts, diagnostic evaluation, recommender systems}
 
 \begin{abstract}
-Semantic-ID tokenizers have become an interface layer in generative
-recommendation: they turn items into discrete addresses that a sequence model
-can generate. Aggregate Recall@K or NDCG, however, often gives little
-information about the address space itself. Codebook collapse, full-code
-collisions, behaviorally weak prefixes, tail compression, and large prefix
-fan-out can remain hidden until after expensive generator training. We present
-\tool, a mapping-first diagnostic toolkit for item-to-\sid tokenizer artifacts.
-\tool normalizes item mappings, metadata, interactions, and optional generator
-outputs, then reports utilization, collision profile, semantic-collaborative
-alignment, head-tail allocation, and structural cost proxies. On a same-item
-Musical case study with 23,742 items, a GRID/RQ-KMeans-style feature-text
-export has 3,749 unique full \sid{}s and a 0.9769 full-collision rate, while a
-bounded ReSID/GAOQ export is collision-free under its exported mapping; the
-GRID collision rate remains 0.9751--0.9769 across three seeds. Controlled
-stressors further show that raw collision volume, interaction-qualified
-collision risk, tail capacity, and active-prefix cost are distinct artifact
-signals. The contribution is a reusable artifact audit suite, not a new
-tokenizer or a generative-recommender leaderboard.
+Semantic-ID (\sid) tokenizers are increasingly reused as standalone artifacts
+in generative recommendation: an exported item-to-code mapping becomes the
+address space that a later sequence generator must use. Yet these mappings
+rarely come with a common inspection interface. Before training a generator, a
+user lacks a single way to check whether the catalog is covered, whether full
+codes alias many items, whether prefixes reflect user
+co-occurrence, whether tail items receive capacity, or whether the prefix
+structure creates large fan-out. We present \tool, a mapping-first diagnostic
+resource for \sid tokenizer artifacts. \tool defines a small adapter contract
+over item mappings, metadata, interactions, and optional generator traces;
+validates the contract; and reports mapping-level probes for utilization,
+aliasing, neighborhood alignment, popularity allocation, and structural cost,
+with hooks for temporal churn and generator traces.
+
+The value of \tool is not a leaderboard but an inspectable artifact profile.
+On a 23,742-item Musical worked example, the same adapter contract
+shows that a controlled GRID/RQ-KMeans-style feature-text export has 3,749
+unique full codes and a 0.977 full-code aliasing rate, while a bounded
+ReSID/GAOQ export is aliasing-free in its exported mapping. More importantly,
+the strongest prefix--co-occurrence alignment comes
+from a deterministic category-prefix control, not from either learned export
+row (0.447 versus 0.154 and 0.055--0.080). This counterintuitive result
+shows why addressability and behaviorally meaningful prefixes should be audited
+separately. Auxiliary checks replicate the diagnostic direction on All\_Beauty,
+add a real Sports GRID export with complete joins, and show that D3 is
+positively associated with candidate recall under a fixed train-only reranker.
+Mechanism probes further separate raw aliasing volume, interaction-qualified
+aliasing risk, head-to-tail capacity, and realized prefix cost. \tool is not a
+new tokenizer or a benchmark suite; it turns \sid tokenizer exports into
+inspectable resource artifacts before downstream generator training.
 \end{abstract}
 
 \maketitle
@@ -74,12 +96,15 @@ tokenizer or a generative-recommender leaderboard.
 \input{sections/5_availability_limits}
 
 \section*{GenAI Usage Disclosure}
-The authors used generative AI tools for drafting assistance, code-review
-support, and experiment-log organization. The reported claims, tables, and
-citations were checked against the artifact repository and cited sources during
-paper preparation.
+Generative AI tools assisted with language editing and code debugging. All
+experimental results were produced by author-written scripts and verified
+against saved artifacts.
 
+\begingroup
+\sloppy
+\hbadness=10000
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
+\endgroup
 
 \end{document}

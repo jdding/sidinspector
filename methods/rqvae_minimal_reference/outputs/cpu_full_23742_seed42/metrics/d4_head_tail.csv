@@ -1,0 +1,4 @@
+dataset,method,bucket,items,sid_unique_ratio,level0_entropy
+Musical_Instruments,rqvae_minimal_reference,head,7898,0.8500886300329197,4.764807384561229
+Musical_Instruments,rqvae_minimal_reference,mid,7898,0.8661686502912129,4.779218213007647
+Musical_Instruments,rqvae_minimal_reference,tail,7946,0.8830858293480996,4.793612679949291

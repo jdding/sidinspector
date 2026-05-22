@@ -1,6 +1,6 @@
-# AUDIT-SID Reviewer Artifact Manifest
+# SIDInspector / AUDIT-SID Reviewer Artifact Manifest
 
-Timestamp: 2026-05-19 20:22:55 CST
+Timestamp: 2026-05-20 19:32:36 CST
 
 This manifest is the reviewer-facing public artifact index. It is intentionally
 shorter than `MANIFEST.md`, which is the full ARIS provenance ledger.
@@ -9,14 +9,14 @@ shorter than `MANIFEST.md`, which is the full ARIS provenance ledger.
 
 - Target venue/track: CIKM 2026 Resource Track
 - Review tag: `audit-sid-cikm-resource-v0.1`
-- Review branch: `codex/audit-sid-idea-discovery`
-- Repository: `https://github.com/jdding/lifecycle-ope-preflight`
+- Anonymous review URL: `https://anonymous.4open.science/r/sidinspector-9BB2`
 - License: MIT, see `LICENSE`
 
 ## Public Verification Path
 
 The clean-checkout verification path does not require ignored local caches such
-as `_gate0_artifacts/`.
+as `_gate0_artifacts/`. Open the anonymous URL in a browser, use the page's
+Download/ZIP entry, unzip the archive, then run:
 
 ```bash
 python3 -m pip install -r requirements.txt
@@ -26,7 +26,9 @@ python3 tools/verify_paper_artifact.py
 ```
 
 The verifier checks the published paper tables, figure, license, quickstart,
-BibTeX file, and the exact Table 2 numeric claims used in the paper.
+BibTeX file, the main Table 2 numeric claims, the auxiliary B4/B6/B7 vertical /
+fixed-reranker / Sports numbers, the All_Beauty B6 replication, and the
+RQ-min reference-adapter row now referenced in the paper.
 
 ## Public Files
 
@@ -41,17 +43,26 @@ BibTeX file, and the exact Table 2 numeric claims used in the paper.
 | `tools/paper_figures/generate_audit_sid_pipeline.py` | regenerates Fig. 1 | runnable |
 | `tools/autodl_audit_sid/preflight_metric_inputs.py` | local preflight for future metric inputs | runnable |
 | `tools/autodl_audit_sid/preflight_card_nurqvae.py` | local CPU preflight for CARD original `nu-rq-vae` source/import/export contract | runnable when the ignored CARD clone is present |
-| `tools/autodl_audit_sid/run_qualified_collision_probe.py` | D2b method-inspired controller | runnable |
-| `tools/autodl_audit_sid/run_capacity_budget_sweep.py` | D1/D2/D4/D5a method-inspired controller | runnable |
-| `tools/autodl_audit_sid/run_variable_depth_cost_probe.py` | D4/D5a variable-depth controller | runnable |
+| `tools/autodl_audit_sid/run_d3_ranking_context.py` | bounded D3 prefix-candidate context probe | runnable with local artifacts |
+| `tools/autodl_audit_sid/run_d3_ranking_validation.py` | B6 fixed-reranker D3 validation | runnable with local artifacts |
+| `tools/autodl_audit_sid/run_rqvae_minimal_reference.py` | RQ-min reference-adapter gate runner | runnable with local artifacts |
+| `tools/autodl_audit_sid/run_grid_rqkmeans_direct_export.py` | GRID/RQ-KMeans export path used for B2/B7 rows | runnable with local artifacts and GRID source |
+| `tools/autodl_audit_sid/run_qualified_collision_probe.py` | D2 method-inspired mechanism probe | runnable |
+| `tools/autodl_audit_sid/run_capacity_budget_sweep.py` | D1/D2/D4/D5 method-inspired mechanism probe | runnable |
+| `tools/autodl_audit_sid/run_variable_depth_cost_probe.py` | D5 variable-depth mechanism probe | runnable |
 | `docs/THIRD_METHOD_EVIDENCE_GATE.md` | admission rule for any third named tokenizer evidence | inspectable |
 | `docs/METHOD_RELEASE_SCOUT.md` | official-release screen for QuaSID/AdaSID/CapsID/DIGER | inspectable |
 | `docs/CARD_ORIGINAL_NURQVAE_EVIDENCE_GATE.md` | CARD original route failure report for v0 main evidence | inspectable |
-| `docs/CONTROLLED_STRESSOR_SELECTION.md` | method-inspired controller policy and method-coverage boundary | inspectable |
-| `docs/QUALIFIED_COLLISION_PROBE.md` | D2b controller result | inspectable |
-| `docs/CAPACITY_BUDGET_SWEEP.md` | capacity-budget controller result | inspectable |
-| `docs/VARIABLE_DEPTH_COST_PROBE.md` | variable-depth cost controller result | inspectable |
-| `docs/PAPER_CONTROLLER_INTEGRATION.md` | paper-writing note for controlled-stressor Table 3 and named-method boundary | inspectable |
+| `docs/DIAGNOSTIC_PROBE_TAXONOMY.md` | D1-D7 diagnostic-probe naming and D6/D7 scope boundary | inspectable |
+| `docs/CONTROLLED_STRESSOR_SELECTION.md` | method-inspired mechanism-probe policy and method-coverage boundary | inspectable |
+| `docs/QUALIFIED_COLLISION_PROBE.md` | D2 mechanism-probe result | inspectable |
+| `docs/CAPACITY_BUDGET_SWEEP.md` | capacity-budget mechanism-probe result | inspectable |
+| `docs/VARIABLE_DEPTH_COST_PROBE.md` | variable-depth cost mechanism-probe result | inspectable |
+| `docs/D3_RANKING_VALIDATION_MUSICAL.md` | B6 fixed-reranker D3 validation report | inspectable |
+| `docs/D3_RANKING_VALIDATION_ALL_BEAUTY.md` | B6 All_Beauty temporal-LOO replication report | inspectable |
+| `docs/RQVAE_MINIMAL_REFERENCE_GATE.md` | RQ-min reference-adapter gate report | inspectable |
+| `docs/SPORTS_GRID_THIRD_VERTICAL.md` | B7 Sports GRID third-vertical report | inspectable |
+| `docs/PAPER_CONTROLLER_INTEGRATION.md` | paper-writing note for controlled mechanism-probe Table 3 and named-method boundary | inspectable |
 | `paper/main.tex`, `paper/main.pdf` | current ACM draft and compiled PDF | inspectable |
 | `paper_assets/tables/` | generated CSV/Markdown/LaTeX evidence tables | inspectable/verifiable |
 | `paper_assets/references/audit_sid_references.bib` | paper reference file | inspectable |
@@ -78,12 +89,27 @@ checkout verification unless a separate full-artifact data bundle is provided.
   smoke evidence.
 - `paper_assets/tables/table7_grid_musical_3seed.*`: same-item Musical
   GRID feature-text three-seed stability evidence.
-- `paper_assets/tables/table8_qualified_collision_probe.*`: D2b
-  interaction-qualified collision controller.
+- `paper_assets/tables/table8_qualified_collision_probe.*`: D2
+  interaction-qualified aliasing mechanism probe.
 - `paper_assets/tables/table9_capacity_budget_sweep.*`: capacity-budget
-  controller across D1/D2/D4/D5a.
+  mechanism probe across D1/D2/D4/D5.
 - `paper_assets/tables/table10_variable_depth_cost_probe.*`: variable-depth
-  D4/D5a boundary controller, paper-optional.
+  D5 boundary mechanism probe, paper-optional.
+- `paper_assets/tables/table11_d3_ranking_validation.*`: B6 Musical
+  fixed-reranker validation table; paper wording must keep the Recall/NDCG
+  values scoped to the fixed reranker, not a trained generator.
+- `paper_assets/tables/table12_sports_grid_vertical.*`: B7 Sports GRID
+  third-vertical portability table; this is a real GRID export row, not a third
+  named tokenizer.
+- `paper_assets/tables/table13_all_beauty_vertical_d3.*`: B4 All_Beauty
+  vertical D3 replication table; category metadata is explicitly marked as a
+  coarse fallback.
+- `paper_assets/tables/table14_all_beauty_d3_ranking_validation.*`: B6
+  All_Beauty fixed-reranker replication table; the split is constructed
+  temporal leave-one-out because the local native interactions are splitless.
+- `paper_assets/tables/table15_rqvae_minimal_reference.*`: RQ-min full-Musical
+  reference-adapter table; this demonstrates an independent adapter path, not
+  third named-method coverage.
 - `docs/THIRD_METHOD_EVIDENCE_GATE.md`: do-not-self-implement boundary for a
   third named tokenizer row.
 - `docs/METHOD_RELEASE_SCOUT.md`: negative release screen for current B2/B3
@@ -92,9 +118,9 @@ checkout verification unless a separate full-artifact data bundle is provided.
   CARD original `nu-rq-vae` cannot enter v0 main evidence from the current
   public repo.
 - `docs/CONTROLLED_STRESSOR_SELECTION.md`: policy for keeping method-inspired
-  controllers separate from named-method evidence.
+  controlled mechanism probes separate from named-method evidence.
 - `docs/PAPER_CONTROLLER_INTEGRATION.md`: writing note showing where the
-  controller results are used in the paper and where the claim boundary is
+  mechanism-probe results are used in the paper and where the claim boundary is
   preserved.
 
 ## Maintenance

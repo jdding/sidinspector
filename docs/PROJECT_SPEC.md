@@ -1,4 +1,4 @@
-# AUDIT-SID Project Spec
+# AUDIT-SID / SIDInspector Project Spec
 
 **生成时间**：2026-05-18 16:00:32 CST
 **项目状态**：external-review absorbed；rapid CIKM resource sprint / Gate 0A evidence 阶段
@@ -8,7 +8,10 @@
 
 ## 1. Project Thesis
 
-AUDIT-SID 不是一个新的 SID tokenizer，也不是一个普通 leaderboard。它的核心 thesis 是：
+SIDInspector 是 AUDIT-SID 项目的 paper-facing 名称。AUDIT-SID 保留为 repo /
+历史代号；投稿正文使用 SIDInspector。
+
+SIDInspector 不是一个新的 SID tokenizer，也不是一个普通 leaderboard。它的核心 thesis 是：
 
 > Semantic-ID tokenizer/codebook 不能只用 final Recall@K / NDCG 评估；一个可复用的 artifact-level diagnostic suite 能揭示 utilization collapse、harmful collision、semantic-collaborative mismatch 和 head-tail capacity allocation 等隐藏 failure mode。
 
@@ -16,10 +19,17 @@ CIKM 版本的目标是提交一个小而可信的 resource paper。论文主 cl
 
 - open diagnostic toolkit；
 - public Amazon case study；
-- method coverage table；
+- adapter/evidence-role table；
 - 至少一个能说明 diagnostics 非冗余、可解释、有行动价值的 case study。
 
 强 empirical finding 是 stretch goal，不再作为 resource paper 的主贡献前提。若 D2/D3/D4/D5 给出清楚 failure mode，就足够支撑 4-page resource 叙事；若只剩 D1 utilization summary，则 no-go。
+
+**2026-05-20 framing freeze**：CIKM v0 走 **diagnostic / interface
+resource**，不走 RecBole/BARS 式 coverage resource。GRID 和 ReSID 是 worked
+examples / public export paths；sanity rows 和 controlled mechanism probes 是
+诊断敏感性证据；贡献中心是 mapping-first adapter contract + D1-D5，而不是
+method count。Type 1 coverage resource 是后续平台化路线，不能混入当前 4-page
+claim。详细决策见 `docs/RESOURCE_FRAMING_DECISION.md`。
 
 ## 2. Non-Goals
 
@@ -32,12 +42,16 @@ CIKM 版本的目标是提交一个小而可信的 resource paper。论文主 cl
 - Huawei 内部上线或业务数据分析；
 - 长周期 drift / online / A-B 实验。
 - 为了赶 CIKM 而补很多新 tokenizer；Cluster B 只查当前可用代码，不能演变成 2026 SID 复现大扫荡。
+- RecBole/BARS 式覆盖型 resource claim；当前 v0 不承诺多方法 benchmark
+  breadth。
 
 如果 Gate 0A 只能形成浅层 `RQ-VAE + ReSID + utilization table`，应停止 CIKM 2026，而不是硬投。
 
 ## 3. Required Method Coverage
 
-方法选择不按“哪个 repo 好跑”决定，而按代表性 coverage 决定。
+方法选择不按“哪个 repo 好跑”决定，而按是否能支撑 adapter / diagnostic
+demonstration 决定。下表是 **evidence-role coverage**，不是 benchmark breadth
+claim。
 
 | Cluster | Role | CIKM v0 要求 |
 |---|---|---|
@@ -58,6 +72,12 @@ Gate 0A 的硬条件：
 > Cluster A + Cluster B + sanity lower bound.
 
 如果没有可解释的 Cluster B artifact，CIKM v0 no-go。
+
+Controlled mechanism probes 不是 named-method coverage，但它们是 diagnostic
+resource 的一等证据：它们验证 D1-D5 是否对 collision qualification、capacity
+budget、variable depth 等已知机制变化敏感。自实现 reference artifact 允许使用，
+但必须标注为 `AUDIT-SID reference implementation` 或 probe，不能冒充 CARD、
+AdaSID、CapsID 等 named reproduction。
 
 当前快速可用性筛查结论：
 
@@ -94,23 +114,19 @@ Toolkit v0 的输入契约必须先于训练冻结。最小 schema：
 
 ## 5. Required Diagnostics
 
-CIKM v0 必须实现 D1-D4 和 D5a required-light。
+CIKM v0 必须实现 D1-D5 mapping-level probes。
 
 | ID | Diagnostic | Core question | Required |
 |---|---|---|---|
-| D1 | Codebook utilization | code space 是否塌缩或严重不均衡？ | yes |
-| D2 | Collision harm | collision 是否造成 recommendation-relevant harm？ | yes |
-| D3 | Semantic-collaborative alignment | SID/code neighborhood 是否匹配 collaborative neighborhood？ | yes |
-| D4 | Head-tail capacity allocation | tail item 是否被过度压缩或 collision？ | yes |
-| D5 | Deployment-cost proxy | SID trie / beam / candidate cost 是否可诊断？ | required-light |
-| D6 | Drift stability | tokenizer refresh 是否造成 SID churn？ | optional |
+| D1 | Utilization | code space 是否塌缩或严重不均衡？ | yes |
+| D2 | Aliasing | full/prefix code aliasing 是否压缩 item address space？ | yes |
+| D3 | Neighborhood alignment | SID/code prefixes 是否匹配 user co-occurrence neighborhood？ | yes |
+| D4 | Popularity allocation | head/mid/tail item 是否获得不同 address capacity？ | yes |
+| D5 | Structural cost | SID length / prefix fan-out / trie-like structure 是否可诊断？ | yes |
+| D6 | Temporal churn | tokenizer refresh 是否造成 SID churn？ | optional |
+| D7 | Generation traces | generator outputs 是否出现 invalid paths / duplicate candidates？ | future hook |
 
-D5 拆成两层：
-
-- D5a required-light：只依赖 SID mapping，计算 SID length、prefix fan-out、trie branching、duplicate/ambiguous SID rate；
-- D5b optional：若能拿到 generator outputs，再算 invalid generation、duplicate candidates、beam/candidate coverage。
-
-至少一个 D2/D3/D4/D5a 结果必须形成 case study，不能只给 D1 utilization summary。
+至少一个 D2/D3/D4/D5 结果必须形成 case study，不能只给 D1 utilization summary。
 
 ## 6. Dataset Scope
 

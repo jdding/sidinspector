@@ -110,20 +110,29 @@
 | A138 | Full experiment-plan audit | CLOSED_FOR_V0 | `docs/EXPERIMENT_PLAN_FULL_AUDIT.md`, `docs/archive/2026-05-20-round4-cleanup/EXPERIMENT_PLAN_FULL_AUDIT_20260519_230854.md`, `docs/EXPERIMENT_PLAN_FULL_AUDIT.json` | Full plan-to-evidence audit confirms the CIKM Resource v0 experiment package is closed: required experiments are complete, explicitly negative-closed, or future-scoped. Remaining work is submission hygiene and final paper QA, not new local/GPU experiments. |
 | A139 | Stop local prefix-matched full run | STOPPED_BY_USER_REQUEST | `_gate0_artifacts/grid_same_dataset_runs/matched_capacity_grid_32_1280_1280_seed42_20260520_000320/grid_export` | User requested stopping local experiments. Two CPU `run_grid_rqkmeans_direct_export.py` processes using `--per-level-widths 32,1280,1280` were located by elevated process-table check and terminated with SIGTERM: PIDs 39608 and 41850. Recheck shows no remaining matching run process; the run directory exists but has no files/metrics. |
 | A140 | Round 4 latest-doc sync | DOC_SYNC_DONE | `docs/CURRENT_STATE.md`, `docs/DOCUMENT_INDEX.md`, `docs/CIKM_EXPERIMENT_DESIGN.md`, `docs/CIKM_RESOURCE_PAPER_PLAN.md`, `docs/PAPER_STRICT_CLAIM_AUDIT.md`, `docs/PAPER_STRUCTURE_REFERENCE_UPDATE.md`, `docs/EXPERIMENT_PLAN_FULL_AUDIT.md`, `refine-logs/EXPERIMENT_PLAN.md` | Synced fixed-name docs to the latest paper source: Table 3 is now the controlled-stressor signal table, the old Table 4 artifact checklist is deleted, Section 5 carries the clean-checkout verifier paragraph, Gate 3 wording is resource-scoped diagnostic separability, and matched-capacity GRID remains caveat/future work. Supersedes the stale Table 4 wording in A137 without rewriting that historical row. |
+| A141 | Resource framing decision | DOC_SYNC_DONE | `docs/RESOURCE_FRAMING_DECISION.md`, `docs/PROJECT_SPEC.md`, `docs/CIKM_RESOURCE_PAPER_PLAN.md`, `docs/CIKM_EXPERIMENT_DESIGN.md`, `docs/CURRENT_STATE.md`, `refine-logs/EXPERIMENT_PLAN.md` | Froze CIKM v0 as a Type 4 diagnostic/interface resource rather than a Type 1 coverage resource. GRID/ReSID are worked examples; controlled stressors are reframed as controlled mechanism probes; optional self-implemented artifacts must be labeled reference implementations/probes, not named-method reproductions. |
+| A142 | Diagnostic probe terminology pass | COMPILES_4P_BODY | `docs/DIAGNOSTIC_PROBE_TAXONOMY.md`, `paper/main.pdf`, `paper/main_20260520_013454.pdf`, `tools/verify_paper_artifact.py` | Paper-facing names are now D1 utilization, D2 aliasing, D3 neighborhood alignment, D4 popularity allocation, D5 structural cost, D6 temporal churn, and D7 generation traces. D1-D5 are current main evidence, D6 is optional extension evidence from DACT, and D7 remains a generator-output hook rather than a new synthetic experiment. `paper/main.pdf` compiles to 5 pages total with body through page 4; artifact verifier and 16 unit tests pass. |
+| A143 | SIDInspector title and abstract rewrite | COMPILES_4P_BODY | `paper/main.tex`, `paper/main.pdf`, `docs/CURRENT_STATE.md`, `docs/CIKM_RESOURCE_PAPER_PLAN.md`, `docs/PAPER_STRICT_CLAIM_AUDIT.md` | Paper-facing name changed from AUDIT-SID to SIDInspector without global repo rename. Title is `SIDInspector: A Mapping-First Diagnostic Resource for Semantic-ID Tokenizers`. Abstract now starts from the missing artifact-inspection interface, keeps numeric anchors for the 23,742-item Musical worked example, and preserves the non-tokenizer/non-leaderboard boundary. PDF remains 5 pages total with body through page 4; verifier and 16 unit tests pass. |
+| A144 | 17-day 8/10 lift plan | ACTIVE | `docs/CIKM_17_DAY_8PT_LIFT_PLAN.md`, `docs/CURRENT_STATE.md`, `docs/DOCUMENT_INDEX.md`, `refine-logs/EXPERIMENT_PLAN.md` | User selected a more optimistic path given the real 17-day paper window. Active blocks are B1 D3 inversion as main finding, B2 matched-capacity GRID defense, B3 D3-vs-ranking context, B4 vertical replication preflight, and B5 optional reference/third-method stretch. This supersedes pure conservative closure while preserving evidence-gated claims. |
+| A145 | Matched-capacity GRID AutoDL run | COMPLETED_AUTODL_GPU | `docs/MATCHED_CAPACITY_GRID_AUTODL_RESULT.md`, `_gate0_artifacts/grid_same_dataset_runs/matched_capacity_grid_32_1280_1280_seed42_20260520/grid_export/metrics/`, `paper_assets/tables/table2_musical_diagnostic.csv` | B2 completed on AutoDL port 21551. The planned `32,1280,1280` GRID/RQ-KMeans feature-text row produced complete D1-D5 metrics for 23,742 Musical items: 9,874 unique full SIDs, duplicate SID rate 0.584113, D2 full-code aliasing 0.778452, D3 L1 weighted co-occurrence recall 0.079595, D4 tail unique-SID ratio 0.639064, and D5 prefixes `32;9300;9874`. This clarifies the capacity critique: capacity matters, but aliasing and weak D3 alignment remain visible. |
+| A146 | B6 D3 fixed-reranker validation | LOCAL_DONE | `docs/D3_RANKING_VALIDATION_MUSICAL.md`, `tools/autodl_audit_sid/run_d3_ranking_validation.py`, `_gate0_artifacts/d3_ranking_validation/musical_fixed_rerank_5000_20260520/`, `paper_assets/tables/table11_d3_ranking_validation.csv` | B6 completed locally with 1k and 5k Musical runs. SID mappings define candidate sets and all rows share the same train-only co-occurrence/popularity reranker. In the 5k depth-1 co-occurrence reranker run, D3 has Spearman 0.9429 with candidate recall, 0.8857 with fixed-reranker Recall@20, and 0.9429 with fixed-reranker NDCG@20/MRR@20 across six artifact/control rows. This supports D3 as early candidate/ranking-context evidence, not trained generator validation. |
+| A147 | B7 Sports GRID third vertical | LOCAL_20K_DONE | `docs/SPORTS_GRID_THIRD_VERTICAL.md`, `_gate0_artifacts/grid_sports_feature_text_runs/grid_official_rqkmeans_Sports_and_Outdoors_resid_feature_text_20000_cpu_seed42_20260520/grid_export/metrics/`, `paper_assets/tables/table12_sports_grid_vertical.csv` | B7 now has a real third-vertical learned/export row, not a proxy: Sports_and_Outdoors GRID/RQ-KMeans feature-text export. The 20k run has zero coverage gaps, 8,165 unique full SIDs, duplicate SID rate 0.59175, D3 L1 weighted 0.054982, D4 tail unique ratio 0.652840, and D5 prefixes `128;7986;8165`. This is third-vertical GRID portability evidence, not a third named tokenizer. |
+| A148 | B8 qualified-aliasing backup review | READ_ONLY_REVIEW_DONE | `docs/QUALIFIED_COLLISION_PROBE.md`, `paper_assets/tables/table8_qualified_collision_probe.csv` | Read-only subagent review found B8 usable as a backup memorable finding only under interaction-qualified early-warning wording. Existing evidence supports `raw aliasing volume and behaviorally qualified aliasing are separable`: GRID feature-text collision pairs have 3.86x train co-occurrence lift over popularity-matched non-collision pairs, while hash has 1.19x. It does not support causal collision-harm or QuaSID reproduction claims. |
 
 ## Current Decision
 
 Proceed from Gate 0/Gate 0A into paper-readiness tightening:
 
 > preserve the conservative resource-demo claim, build the same-item-universe
-> Musical diagnostic table from D1-D5a/D3v2, keep ReSID-vs-sanity as secondary
+> Musical diagnostic table from D1-D5/D3, keep ReSID-vs-sanity as secondary
 > non-redundancy controls, and avoid leaderboard or faithful-CARD claims until
 > new evidence appears.
 
 Paper scope update: D1-D6 are an artifact-level audit suite, not a complete SID
-system-quality benchmark. Main text should emphasize D1-D5a over `item -> SID`
-artifacts; D6 stays optional. D2 is collision profile rather than causal harm,
-and generator predictability/invalid generated paths remain future D5b/D7.
+system-quality benchmark. Main text should emphasize D1-D5 mapping-level
+diagnostic probes over `item -> SID` artifacts; D6 temporal churn stays
+optional. D2 is collision profile rather than causal harm, and generator
+predictability/invalid generated paths remain future D7 generation traces.
 
 CIKM format update: Resource papers have only 4 pages including appendices and
 acknowledgments, so AUDIT-SID must be written with no required appendix. The PDF
@@ -141,7 +150,7 @@ Cluster taxonomy update: use `docs/SID_CLUSTER_DIAGNOSTIC_REFRESH.md` for
 paper-facing method grouping. Cluster B is no longer one homogeneous bucket; it
 has B1 collaborative/predictability, B2 collision/capacity, B3
 ranking/differentiable/retrieval, and B4 bottleneck/interface facets. Current
-evidence implements D1-D5a plus optional D6; D7 requires `generator_outputs`.
+evidence implements D1-D5 plus optional D6; D7 requires `generator_outputs`.
 
 Figure/table update: use `docs/PAPER_FIGURE_TABLE_STRATEGY.md` for the next
 paper edit. The PDF should have one Fig. 1 interface/diagnostic map, a
@@ -218,7 +227,7 @@ beyond current artifact evidence.
 
 External review Round 1 update: reviewers scored the draft 7.2 and 7.4 before
 packaging fixes. After adding `requirements.txt`, `ARTIFACT_MANIFEST.md`,
-`tools/verify_paper_artifact.py`, pinned-tag quickstart commands, D2/D3/D5a
+`tools/verify_paper_artifact.py`, pinned-tag quickstart commands, D2/D3/D5
 definitions, and clean-checkout wording in Section 4/Table 3, both reviewers
 rescored local state at 7.7 and stated 8.0 is reachable after commit/tag/push
 and clean-checkout verification. No new experiment is required for external
@@ -259,7 +268,7 @@ collision pressure.
 
 Experiment closure update: `docs/EXPERIMENT_PLAN_CLOSURE_AUDIT.md` closes the
 current CIKM 2026 Resource v0 experiment package. Gate 0, conditional Gate 0A,
-D1-D5a/D3v2 implementation, same-item Musical contrast, GRID Musical
+D1-D5/D3 implementation, same-item Musical contrast, GRID Musical
 three-seed stability, third-method screen, Fig. 1 redesign, public verifier,
 unit tests, and paper compile are all closed for v0. Remaining work is
 submission hygiene and final writing/review discipline, not additional local or
@@ -276,7 +285,7 @@ ranking claims.
 Additional-experiment code update: `tools/autodl_audit_sid/preflight_metric_inputs.py`
 is now the local gate for future method/artifact additions. It validates table
 contracts and join coverage before metric execution, with an optional bounded
-D1-D5a smoke summary. This supports future 8.5-lift work without reopening GPU
+D1-D5 smoke summary. This supports future 8.5-lift work without reopening GPU
 experiments or admitting proxy artifacts directly into paper evidence.
 
 Third-method evidence gate update: self-implemented paper-inspired tokenizers
@@ -311,31 +320,31 @@ Ding. They have not been sent from this Codex session because there is no
 email connector/SMTP route and recipient addresses still need confirmation
 from official author/project pages.
 
-Controller-selection revision: `docs/CONTROLLED_STRESSOR_SELECTION.md` now
-uses a method-inspired controller suite, not only generic sanity calibration.
+Mechanism-probe selection revision: `docs/CONTROLLED_STRESSOR_SELECTION.md` now
+uses a controlled mechanism probe suite, not only generic sanity calibration.
 The agreed order is: first `qualified_collision_probe` for D2b/D3, second
-`capacity_budget_sweep` for D1/D2/D4/D5a, and third
-`variable_depth_cost_probe` for D4/D5a/D7-boundary. All three remain outside
+`capacity_budget_sweep` for D1/D2/D4/D5, and third
+`variable_depth_cost_probe` for D4/D5/D7-boundary. All three remain outside
 named-method coverage; the variable-depth result is optional for the paper
-depending on whether it strengthens the D5a narrative cleanly.
+depending on whether it strengthens the D5 narrative cleanly.
 
-Controller-execution update: all three method-inspired controllers have local
+Mechanism-probe execution update: all three controlled mechanism probes have local
 results. `qualified_collision_probe` supports the distinction between raw
 collision volume and interaction-qualified collision risk. `capacity_budget_sweep`
 supports the distinction between nominal capacity, collision pressure,
 head-tail allocation, and prefix-cost structure. `variable_depth_cost_probe`
-supports the D5a active-prefix boundary but should remain artifact-repo
+supports the D5 active-prefix boundary but should remain artifact-repo
 evidence unless the paper needs a compact variable-depth example.
 
-Paper-controller integration update: `docs/PAPER_CONTROLLER_INTEGRATION.md`
-records the writing pass that folds all three controller results into the draft
-as stressor evidence. The draft now uses qualified collision for D2b,
-capacity-budget pressure for D1/D2/D4/D5a, and variable-depth active-prefix
-structure for D5a boundary wording, while keeping these rows out of named
+Paper mechanism-probe integration update: `docs/PAPER_CONTROLLER_INTEGRATION.md`
+records the writing pass that folds all three mechanism-probe results into the draft
+as calibration evidence. The draft now uses qualified collision for D2b,
+capacity-budget pressure for D1/D2/D4/D5, and variable-depth active-prefix
+structure for D5 boundary wording, while keeping these rows out of named
 tokenizer coverage.
 
-Paper-style polish update: the controller evidence is now a real main-text
-controlled-stressor table rather than only prose. The abstract, introduction,
+Paper-style polish update: the mechanism-probe evidence is now a real main-text
+controlled mechanism probe table rather than only prose. The abstract, introduction,
 resource demo, and limitations were tightened toward a CIKM/SIGIR-style
 resource-paper narrative: artifact problem, reusable interface, compact
 evidence, and explicit boundary.
@@ -366,8 +375,8 @@ log confirms review mode is not active.
 Full experiment-plan audit update: `docs/EXPERIMENT_PLAN_FULL_AUDIT.md` is now
 the current closure report. Verdict: the experiment plan is complete for the
 CIKM 2026 Resource v0 evidence package under conservative resource-demo
-framing. Gate 0 is passed, Gate 0A is conditionally closed, D1-D5a are closed,
-the same-item Musical panel and controller suite are closed, and the third
+framing. Gate 0 is passed, Gate 0A is conditionally closed, D1-D5 are closed,
+the same-item Musical panel and mechanism-probe suite are closed, and the third
 named tokenizer screen is closed negative. Remaining items are citation drift,
 single-blind metadata, copy-editing, final claim audit after text changes, and
 author-contact logistics.
@@ -377,6 +386,32 @@ Local run stop update: the later prefix-matched full Musical run
 producing metrics. Keep it out of evidence tables unless a new explicit rerun is
 selected.
 
+Author-contact update: Gmail is now connected for `jdding.cs@gmail.com`.
+Drafts, not sent messages, were created for DIGER, QuaSID, AdaSID, and CapsID
+artifact-availability requests. Recipients and draft IDs are recorded in
+`docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md`; sending remains a separate explicit
+action.
+
+Author-contact framing update: after the 2026-05-20 diagnostic/interface
+resource framing freeze, author artifact requests are no longer needed for CIKM
+v0 evidence. They are optional future-adapter/release-roadmap contacts only.
+Because QuaSID and AdaSID share the same corresponding-author route, the AdaSID
+Gmail draft was deleted and the retained set is now DIGER, QuaSID, and CapsID.
+QuaSID is retained over AdaSID because it best matches the current D2b
+collision-qualification narrative.
+
+Author-contact send update: the retained Gmail drafts for DIGER, QuaSID, and
+CapsID were sent on 2026-05-20 CST from `jdding.cs@gmail.com`. This does not
+change the CIKM v0 evidence plan: author replies are optional future-adapter
+inputs, not blockers or current-paper claims. Sent message IDs are recorded in
+`docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md`.
+
+Author-reply update: Junchen Fu replied to the DIGER artifact request and said
+datasets plus the RQ-VAE checkpoint are planned before SIGIR conference, July
+20th, matching the GitHub release note. A short thank-you reply was sent; this
+remains future-adapter information and does not change the current CIKM v0
+evidence package.
+
 Round 4 latest-doc sync update: current paper source has three main tables, not
 four. Table 1 is evidence/facet coverage, Table 2 is the same-item Musical
 diagnostic table with sanity/calibration rows and GRID three-seed summary, and
@@ -384,3 +419,440 @@ Table 3 is the controlled-stressor signal table. The older artifact-checklist
 Table 4 is deleted; Section 5 now contains the clean-checkout verifier and
 reviewer-workflow paragraph. The matched-capacity GRID ablation has not run and
 should remain caveat/future work unless explicitly reopened as an evidence gap.
+
+Resource framing decision update: CIKM v0 should not pursue a RecBole/BARS-like
+coverage-resource claim. The current paper should instead make AUDIT-SID's
+adapter contract, validator, D1-D5 diagnostic probes, and controlled mechanism
+probes the main contribution. Type 1 coverage is a post-v0 platform route that
+requires many more faithful adapters or author-provided mappings.
+
+Diagnostic terminology update: `docs/DIAGNOSTIC_PROBE_TAXONOMY.md` is the
+current naming source. D1-D5 are the main mapping-level diagnostic probes, D6
+temporal churn is already implemented as optional DACT refresh-pair evidence,
+and D7 generation traces should not be implemented for CIKM v0 without real
+generator outputs or beam logs.
+
+Diagnostic terminology verification update: the 2026-05-20 01:38 CST pass
+compiled `paper/main.pdf` to 5 pages total with the body through page 4, saved
+`paper/main_20260520_013454.pdf`, passed `tools/verify_paper_artifact.py`,
+passed 16 unit tests, and left only the known local `acmart` unused-option
+warning plus `Not using review mode` in the log scan. D6 remains optional
+because the DACT refresh-pair churn tool already covers temporal SID drift; no
+new D6 experiment is needed unless continual-tokenization drift becomes a main
+paper claim.
+
+SIDInspector title/abstract update: the 2026-05-20 02:17 CST pass sets the
+paper-facing name to `SIDInspector` while preserving AUDIT-SID as the repo and
+historical artifact name. The abstract now follows the stronger Resource Track
+logic: exported SID mappings lack a common inspection interface; SIDInspector
+provides the adapter/validator/probe resource; the 23,742-item Musical worked
+example and mechanism probes provide evidence. The PDF metadata title is
+`SIDInspector: A Mapping-First Diagnostic Resource for Semantic-ID Tokenizers`;
+page count remains 5 total with body through page 4.
+
+SIDInspector terminology/code sync update: the 2026-05-20 13:36 CST pass
+standardized active paper prose, Fig. 1, reviewer quickstart, artifact manifest,
+and CLI descriptions around SIDInspector plus D1-D5 diagnostic probes. The code
+keeps legacy `audit_sid`, `collision`, and `d5a_deployment_cost.csv` names as
+backward-compatible provenance keys rather than renaming generated artifacts.
+Verification passed: Fig. 1 regeneration, paper table rebuild, public verifier,
+16 unit tests, `git diff --check`, and `paper/main.pdf` compilation. The only
+known hygiene items left are real single-blind author metadata, citation drift
+check, and final strict claim audit after any later text edits.
+
+Submission-hygiene status update: active paper-facing name is now
+`SIDInspector`. Experiments remain closed for CIKM Resource v0. Not yet closed:
+real single-blind author metadata, final citation/code-release drift check,
+final claim audit after any further text edits, and final artifact URL/tag
+freeze after the next submission-ready commit.
+
+External LM review setup update: `review-stage/EXTERNAL_REVIEW_REQUEST_20260520_141500.md`
+and `review-stage/REVIEW_STATE.json` initialize a max-3-round simulated review
+for CIKM 2026 Resource Track with an 8/10 target. The external call is not yet
+launched because `auto-review-loop-llm` requires explicit provider/model/scope
+egress approval before sending unpublished manuscript content to a third-party
+LLM.
+
+External LM review result update: user approved sending full manuscript and
+artifact-review context to DeepSeek V4 Pro. Round 1 scored 7.5/10 and requested
+minor resource-track fixes around variable-length SID scope, D6/D7 status, and
+portability evidence. After local text/table fixes and verification, Round 2
+scored 8/10 with Accept and confidence 4/5. Stop rule is satisfied; no third
+round is needed. Reports are in `review-stage/EXTERNAL_REVIEW_ROUND1_20260520_142000.md`,
+`review-stage/EXTERNAL_REVIEW_ROUND2_20260520_143500.md`, and
+`review-stage/EXTERNAL_REVIEW_SUMMARY_20260520_143500.md`.
+
+D1-D6 literature-coverage audit update: `docs/SID_PROBLEM_COVERAGE_AUDIT.md`
+closes the current coverage question. D1--D6 cover the main item-to-SID
+artifact pressures surfaced by SID method papers, including utilization,
+aliasing/collision qualification, neighborhood alignment, popularity
+allocation, structural prefix cost, and temporal churn. They do not cover full
+SID system quality: generator next-token behavior, invalid paths, generated
+candidate duplication, measured serving latency, downstream ranking impact, and
+unified search-rec tradeoffs remain D7/system-evaluation territory.
+
+Reference recency/accuracy audit update: `docs/CITATION_AUDIT.md` was
+refreshed after checking active cite keys and spot-checking primary arXiv/
+official pages. The paper now has 27 cited references and 27 BibTeX entries,
+with no missing or uncited keys. Metadata drift was fixed for
+`hua2023indexids`, `singh2023bettersemanticids`, `zhu2024cost`,
+`wang2024letter`, and `ju2026snapchatsid`; DiscRec and AsymRec are now cited
+to strengthen 2025--2026 method-space coverage. `paper/main.pdf` recompiles to
+5 pages and the public artifact verifier passes.
+
+CIKM anonymous-review metadata update: `paper/main.tex` now disables the ACM
+camera-ready reference strip with `printacmref=false`, clears copyright/DOI/ISBN
+metadata, and uses concise `CIKM 2026` anonymous-submission conference
+metadata. `paper/main.pdf` recompiles to 5 pages, has no undefined citations or
+references, and the public artifact verifier still passes.
+
+R3 simulated-review absorption update: the 2026-05-20 15:39 CST R3 review is
+accepted as the active hardening checklist despite its lower 5/10 score. The
+paper has been updated for the issues that do not require new evidence: compact
+adapter schema in Section 2, D3 category-prefix inversion surfaced as a
+diagnostic warning in Section 4, D3 softened from pre-training gate to
+pre-training triage in Section 5, and D6/D7 scoped as optional extension /
+generator-trace hook rather than demonstrated main contributions. The reopened
+matched-capacity GRID ablation was attempted locally with per-level widths
+32/1280/1280 but stopped under `BLOCKED_LOCAL_CPU_STOPLOSS` after no artifacts
+were produced; it remains an unresolved W2 caveat/future-work item, not
+current evidence. The next simulated-review round should focus on whether
+these changes reduce W2/W3/W6/W7 risk without overstating method coverage.
+
+R3 absorption verification update: after the text/table edits, `paper/main.pdf`
+recompiled successfully to 5 pages with title `SIDInspector: A Mapping-First
+Diagnostic Resource for Semantic-ID Tokenizers`. The public artifact verifier
+passes, 16 unit tests pass, `git diff --check` passes, and the log scan finds no
+undefined references/citations, overfull boxes, or invalid math-mode warnings.
+Known expected warnings remain the ACM reference-strip warning caused by
+`printacmref=false` for anonymous review and the harmless final-page balance
+warning.
+
+AutoDL matched-capacity GRID plan update: `docs/AUTODL_MATCHED_CAPACITY_GRID_PLAN.md`
+is now the prepared launch plan for the only immediate GPU-worthy follow-up.
+It targets the R3 W2 capacity-mismatch critique with one bounded Musical
+GRID/RQ-KMeans run using per-level widths `32,1280,1280` and `--device cuda`.
+Status is `RUNNER_PLAN_READY`, not launched. The run should use a private remote
+root/session on port 10197 and a 2--5 minute utilization stop-loss; it should
+enter the paper only if it materially clarifies the current capacity caveat.
+
+AutoDL matched-capacity GRID result update: user provided a new same-config
+AutoDL instance at `ssh -p 21551 root@connect.westc.seetacloud.com`. Read-only
+preflight showed RTX 5090 idle, no GPU process, and only historical dead
+screens. The matched-capacity GRID/RQ-KMeans run launched in private screen
+`audit_sid_matched_grid_1600` under `/root/autodl-tmp/audit-sid-matched-grid-20260520`.
+Stop-loss passed with 97--99% GPU SM utilization and about 20.8GB allocated.
+The run exited 0 at 2026-05-20 16:38:59 CST and results were pulled back to
+`_gate0_artifacts/grid_same_dataset_runs/matched_capacity_grid_32_1280_1280_seed42_20260520/`.
+Key metrics: 23,742 items, widths `32/1280/1280`, unique full SIDs 9,874,
+D2 full-code aliasing 0.778452, D3 L1 0.0796, D4 tail unique-SID ratio
+0.639064, and D5 prefixes `32/9300/9874`. Paper Table 2 now includes the row as
+`GRID ft-cap`; interpretation is capacity-sensitive but not capacity-eliminated
+aliasing.
+
+SIDInspector naming correction update: after the matched-capacity integration,
+verification exposed a regression where active PDF metadata and verifier output
+had reverted to the older `SIDInspect` spelling. Active paper/artifact files were mechanically
+corrected back to `SIDInspector`, Fig. 1 and paper tables were regenerated, and
+`tools/verify_paper_artifact.py` now also checks the `GRID ft-cap` row. The
+latest `paper/main.pdf` title is `SIDInspector: A Mapping-First Diagnostic
+Resource for Semantic-ID Tokenizers`, 5 pages total.
+
+Post-matched-capacity claim-audit update: `docs/PAPER_STRICT_CLAIM_AUDIT.md`
+was refreshed after the AutoDL `GRID ft-cap` row entered the abstract and Table
+2. Verdict is PASS with conservative scope retained. The audit fixed one
+rounding inconsistency (`GRID ft-cap` D3 L1 is `.0796`, not `.0795`) and added
+the abstract sentence that the matched-capacity GRID row reduces D2 aliasing to
+0.7785 but does not eliminate it. Verification after the fix: PDF compiles to 5
+pages, `tools/verify_paper_artifact.py` passes with `GRID ft-cap` checks, 16
+unit tests pass, `git diff --check` passes, and the log scan finds no undefined
+references/citations, invalid math-mode warnings, or overfull boxes.
+
+17-day lift-plan update: the 2026-05-20 16:14 CST plan reopens explicit
+evidence gaps for an 8/10 attempt rather than staying in conservative closure.
+The dominant finding is now the category-prefix D3 inversion; matched-capacity
+GRID is the first defense experiment; additional vertical D3 replication and a
+bounded D3-vs-ranking context are active but gated; reference implementation or
+third-method breadth is stretch only. The plan is optimistic, but every new
+claim must pass the spec-to-experiment gate before entering the main paper.
+
+R3-delta external-review launch update: after the AutoDL matched-capacity result
+entered Table 2 and the strict claim audit passed, a targeted external
+simulated-review job was launched through `deepseek-v4-pro` with the current
+manuscript text and the original R3 W1/W2/W3 concerns. The requested judgment is
+whether W2 is now resolved or only partially resolved, whether W1/W3 still cap
+the score, and whether any P0/P1 blocker remains before final PDF freeze.
+Local consistency checks before launch: no active `SIDInspect` spelling in
+paper/artifact files, `tools/verify_paper_artifact.py` passed, 16 unit tests
+passed, and `paper/main.pdf` remained 5 pages with title `SIDInspector`.
+
+B4 vertical D3 replication update: existing local All_Beauty GRID+controls
+panels were reviewed and promoted to a documented lift-plan result. On
+All_Beauty 20k, category-prefix D3-L1 is 0.968 while GRID feature-text is
+0.081; on All_Beauty 5k, category-prefix D3-L1 is 0.945 while GRID is 0.075.
+This supports the D3-inversion finding beyond the Musical table, but it remains
+diagnostic-context evidence only and does not validate D3 against Recall/NDCG.
+See `docs/VERTICAL_D3_REPLICATION_ALL_BEAUTY.md`; the duplicate scratch note
+was archived under `docs/archive/2026-05-20-dedup/`.
+
+R3-delta external-review result update: the targeted post-`GRID ft-cap` external
+review returned **6/10**, not the 8/10 target. It says W2 is partially resolved
+and downgraded from high to moderate because the matched-capacity row shows
+capacity matters but does not eliminate aliasing. W1 named-method coverage
+remains the dominant score ceiling at roughly 6--7, and W3 downstream grounding
+for D3 remains a P1 concern. Current decision: do not claim 8/10 readiness from
+this draft; next lift must either add a real named artifact or run a bounded
+D3-vs-ranking context.
+
+R3-delta half-day writing patch update: Section 4 now clarifies that the
+`32/1280/1280` GRID ft-cap ablation is not a full item-unique leaf match and
+that additional capacity could reduce aliasing further. Section 4 also adds
+the All_Beauty 20k D3 replication sentence (category-prefix 0.968 vs GRID
+0.081), and Section 5 states that the current demonstration covers two
+controlled public export paths rather than broad tokenizer coverage. Verification
+after the patch: `paper/main.pdf` compiles to 5 pages, artifact verifier passes,
+16 tests pass, `git diff --check` passes, and the LaTeX log scan has no
+undefined references/citations or overfull boxes.
+
+B4 vertical replication update: AutoDL port 21551 completed the All_Beauty 20k
+GRID-vs-sanity D3 run. Local artifact:
+`_gate0_artifacts/vertical_replication/all_beauty_20k_grid_sanity_20260520/`.
+Result doc: `docs/VERTICAL_D3_REPLICATION_ALL_BEAUTY.md`. Key signal:
+category-prefix D3 L1 weighted `0.9684` vs GRID `0.0811`, with coarse category
+fallback recorded in the manifest. Status: `COMPLETED_REMOTE_CPU`; admissible
+as diagnostic portability/stressor evidence, not as downstream or rich hierarchy
+validation.
+
+B3 ranking-context update: a bounded Musical prefix-retrieval proxy completed
+locally with 1,000 users. Script:
+`tools/autodl_audit_sid/run_d3_ranking_context.py`; test:
+`tests/test_d3_ranking_context.py`; artifact:
+`_gate0_artifacts/d3_ranking_context/musical_prefix_retrieval_1000_20260520/`;
+result note: `docs/D3_RANKING_CONTEXT_MUSICAL.md`. Depth-1 D3/candidate
+coverage are broadly aligned (category-prefix `0.4393/0.6047`, ReSID
+`0.1308/0.3647`, GRID ft-cap `0.0761/0.2590`, GRID feature-text
+`0.0525/0.1964`), but Hit@20 remains low for all rows. Status:
+`COMPLETED_LOCAL_CONTEXT`; use as cautious ranking-context evidence, not
+downstream Recall/NDCG validation.
+
+Sports proxy/control supplement update: AutoDL port 21551 completed the bounded
+Sports D3v2 supplement and results were pulled back locally. Artifact:
+`_gate0_artifacts/vertical_replication/sports_proxy_d3v2_20260520/`; result
+note: `docs/SPORTS_PROXY_D3V2_SUPPLEMENT.md`. Key D3 L1 weighted values:
+category-prefix `0.4827`, popularity-balanced `0.4811`, ReSID unbalanced proxy
+`0.1075`, CARD feature proxy `0.0514`, mod-collision hash `0.0039`. Status:
+`COMPLETED_REMOTE_SUPPLEMENT`; keep out of main named-method evidence because
+the learned rows are proxy exports.
+
+Paper writing update: B3/B4/Sports are now folded into the active draft with
+claim boundaries. Files changed: `paper/main.tex`,
+`paper/sections/1_introduction.tex`, `paper/sections/4_demonstration.tex`, and
+`paper/sections/5_availability_limits.tex`. The category-prefix D3 inversion is
+now stated in the abstract/introduction as the diagnostic finding; All_Beauty
+and Sports remain auxiliary portability/support evidence; B3 remains
+ranking-context evidence, not Recall/NDCG validation. Verification:
+`paper/main.pdf` compiles to 5 pages, `tools/verify_paper_artifact.py` passes,
+18 unit tests pass, `git diff --check` passes for touched paper files, and the
+paper log scan has no undefined references/citations, overfull boxes, or stale
+`SIDInspect` spelling in active paper files.
+
+Reviewer-attack wording update: a read-only subagent pass found remaining
+phrases that could make the draft look like a tokenizer leaderboard or faithful
+method reproduction. The active paper now uses `two controlled public SID
+export examples`, frames Table 2 rows as artifact profiles rather than
+tokenizer-quality rankings, labels GRID/ReSID as controlled/bounded exports in
+the method-space table, weakens B3 to prefix-candidate context rather than
+downstream Recall/NDCG validation, and keeps Sports as a proxy/control
+supplement outside the main evidence. Verification after the patch: active
+paper scan has no stale `SIDInspect` spelling or flagged leaderboard/D3
+overclaim phrases, `paper/main.pdf` metadata title is `SIDInspector: A
+Mapping-First Diagnostic Resource for Semantic-ID Tokenizers`, and 18 unit
+tests pass.
+
+D3 dedup cleanup update: duplicate scratch notes were moved to
+`docs/archive/2026-05-20-dedup/`, and the older lightweight
+`tools/autodl_audit_sid/run_prefix_ranking_probe.py` plus its
+`_gate0_artifacts/prefix_ranking_probe/` outputs were moved to
+`tools/archive/2026-05-20-dedup/` and
+`_gate0_artifacts/archive/2026-05-20-dedup/`. Canonical active entry points are
+`docs/VERTICAL_D3_REPLICATION_ALL_BEAUTY.md`,
+`docs/D3_RANKING_CONTEXT_MUSICAL.md`, and
+`tools/autodl_audit_sid/run_d3_ranking_context.py`. No new experiment claim was
+added in this cleanup.
+
+B3 robustness update: the Musical prefix-neighborhood retrieval context probe
+was rerun locally with 5,000 users, prefix depths 1/2, and 500,000 D3
+co-occurrence pair events. Artifact:
+`_gate0_artifacts/d3_ranking_context/musical_prefix_retrieval_5000_20260520/`.
+Depth-1 D3/candidate-coverage direction remains stable: category-prefix
+`0.4383/0.6126`, popularity-balanced `0.3442/0.7141`, ReSID
+`0.1353/0.3601`, GRID ft-cap `0.0760/0.2487`, GRID feature-text
+`0.0523/0.1859`, and hash `0.0039/0.0195`. Hit@20 remains low for every row,
+so the result strengthens D3 as prefix-candidate context but not as downstream
+Recall@K/NDCG validation.
+
+MovieLens D3 sanity portability update: the existing
+`_gate0_artifacts/movielens_portability_smoke/ml25m_1mratings_10kitems/`
+artifact was programmatically validated and promoted to a bounded summary in
+`docs/MOVIELENS_D3_SANITY_SUMMARY.md`. No rerun was needed and no raw MovieLens
+zip/data was copied into the repo. Coverage gaps are zero for category-prefix,
+popularity-balanced, and mod-collision hash controls. Key D3 L1 weighted values
+are category-prefix `0.2788`, popularity-balanced `0.7698`, and hash `0.0038`.
+Status: `COMPLETED_LOCAL_SANITY_SUMMARY`; claim boundary is non-Amazon
+schema/probe portability only, not named SID tokenizer benchmarking, learned
+tokenizer evidence, or downstream Recall/NDCG validation.
+
+All_Beauty 3-seed vertical D3 update: no-GPU AutoDL port 21551 completed
+seed43/44 panels and results were pulled locally. Artifacts:
+`_gate0_artifacts/vertical_replication/all_beauty_20k_grid_sanity_seed43_20260520/`
+and
+`_gate0_artifacts/vertical_replication/all_beauty_20k_grid_sanity_seed44_20260520/`.
+Together with seed42, GRID D3 L1 weighted is `0.0811/0.0872/0.0898`
+(mean `0.0861`) while category-prefix remains `0.9684`. This supports the
+All_Beauty direction as non-single-seed diagnostic portability evidence, with
+the existing coarse-category caveat retained.
+
+B5 release recheck update: no new official third named-method artifact is ready
+for v0. DIGER still has only `refs/heads/main` in the local `git ls-remote`
+check and no ready mapping/checkpoint package; the prior author reply remains a
+future-release signal near SIGIR/July 20. QuaSID, AdaSID, CapsID, and CARD
+still lack an official public mapping/checkpoint/export path that passes
+`docs/THIRD_METHOD_EVIDENCE_GATE.md`. Decision: do not start B5 reference
+implementation for the CIKM sprint; keep B5 as release-watch/backlog only.
+
+Aggressive 8/10 acceptance-plan update: user explicitly selected a more
+ambitious path than borderline acceptance. `docs/CIKM_17_DAY_8PT_LIFT_PLAN.md`
+now adds B6/B7/B8. B6 is a small mapping-dependent ranking validation attempt
+for D3 using fixed candidate/rerank protocol and Recall/NDCG if valid. B7 is a
+third-vertical preflight that only closes if a real learned/export row has
+complete joins and D1-D5/D3 metrics. B8 promotes qualified aliasing as a backup
+memorable finding: mapping-level diagnostics can flag interaction-qualified
+aliasing risk before generator training. B5 remains blocked as named-method
+evidence, but a clearly labeled SIDInspector reference RQ/RQ-VAE adapter is
+allowed only if it cannot be mistaken for a named-method reproduction.
+
+B6/B7/B8 execution update: B6 completed locally with fixed-reranker validation
+on Musical. The 5,000-user depth-1 co-occurrence reranker run gives D3
+Spearman `0.9429` with candidate recall, `0.8857` with fixed-reranker
+Recall@20, and `0.9429` with fixed-reranker NDCG@20/MRR@20 across six
+artifact/control rows. B7 also moved from preflight to evidence: Sports_and_Outdoors
+now has a real GRID/RQ-KMeans feature-text export at 20,000 items with zero
+coverage gaps, 8,165 unique full SIDs, duplicate SID rate `0.59175`, and D3 L1
+weighted `0.054982`. B8 read-only review approves qualified aliasing only as
+an interaction-qualified early-warning finding, not causal downstream harm.
+
+Paper integration update: Sections 4 and 5 now absorb B6/B7 with conservative
+wording. B6 is described as fixed-reranker ranking context rather than trained
+generator validation. B7 is described as third-vertical GRID portability rather
+than a third named tokenizer. Verification after the edit: `paper/main.pdf`
+compiles to 5 pages with metadata title `SIDInspector: A Mapping-First
+Diagnostic Resource for Semantic-ID Tokenizers`, `tools/verify_paper_artifact.py`
+passes, 21 unit tests pass, and `git diff --check` passes. Follow-up verifier
+hardening added `paper_assets/tables/table11_d3_ranking_validation.csv` and
+`paper_assets/tables/table12_sports_grid_vertical.csv`; the verifier now checks
+the B6 six-row Spearman values and the Sports 20k zero-join-gap / D3 /
+duplicate-SID row.
+
+Writing-priority update: user instructed not to optimize prematurely for the
+4-page limit. The active draft now prioritizes clear logic over page fit:
+Abstract/Introduction/Section 4 explain how B4, B6, and B7 defend the central
+D3 diagnostic finding rather than listing experiments. A fresh zero-context
+paper-to-evidence audit returned WARN, with no arithmetic mismatches but four
+evidence-attachment gaps. Fixes applied: `table13_all_beauty_vertical_d3`
+freezes the All_Beauty D3 claim; `table11_d3_ranking_validation` records
+candidate source, train-only ranker source, and eval splits; Table 2 records the
+matched-capacity `32/1280/1280` config; Table 1 now lists Sports for the GRID
+row. Current checks pass: `tools/verify_paper_artifact.py`, 24 unit tests, and
+`git diff --check`. The PDF now compiles to 6 pages by design for the clarity
+draft; later compression remains a separate task.
+
+Writing-polish update: the 2026-05-20 20:25 pass rewrites the active abstract,
+introduction, Section 4, and limits section around the resource-interface
+argument. The draft now foregrounds exported SID mappings as generator address
+spaces that lack a common inspection interface; SIDInspector is presented as a
+mapping-first diagnostic resource, not a tokenizer or benchmark suite. The D3
+inversion remains the memorable finding, while B4 All_Beauty, B6
+fixed-reranker context, and B7 Sports GRID are used as robustness/ranking-context/
+vertical-portability checks rather than a raw experiment list. Verification
+after this pass: `latexmk` builds `paper/main.pdf` to 6 pages, PDF metadata title
+is correct, `tools/verify_paper_artifact.py` passes, 24 unit tests pass, `git
+diff --check` passes, and the LaTeX log has no undefined references/citations
+or overfull boxes. No AutoDL GPU was started.
+
+Sixth-round closure update: simulated-review v2 is frozen in
+`docs/SIMULATED_REVIEW_V2_DECISION.md`. W2 is patched in the paper: All_Beauty's
+very high category-prefix D3 is now described as dataset-level taxonomy /
+co-occurrence alignment exposed by D3, not as category-tokenizer superiority.
+Fig. 1 has been regenerated as a finding preview with D3 inversion,
+matched-capacity GRID, fixed-reranker context, and portability/risk panels. B6
+was replicated on All_Beauty using a constructed temporal leave-one-out split
+because the local native interactions are splitless; the depth-1 panel gives D3
+Spearman `1.0000` with candidate recall and `0.8000` with fixed-reranker
+Recall@20/NDCG@20/MRR@20 across four rows, so it is supplementary
+ranking-context evidence only. `rqvae_minimal_reference` now passes a
+full-Musical local CPU gate: 23,742 items, 17,247 unique full SIDs, D2 aliasing
+`0.4401`, D3 `0.0650`, D4 tail `0.8831`, D5 prefixes `32;2368;17247`. Table 1
+and Table 2 include this as `RQ-min ref` / reference-adapter evidence, not
+third named-method coverage. Public verifier now requires table14/table15,
+the RQ-min docs/runner/test files, and checks the new rows. No AutoDL/GPU was
+started.
+
+Seventh-round review absorption update: no new experiment was launched. The
+paper absorbed the external review's cheapest remaining content fixes: Section
+4 now states the D2/D3 dissociation across GRID ft, GRID ft-cap, and RQ-min;
+the All_Beauty B6 temporal-LOO replication is cooled to supplementary
+directional evidence rather than a statistical Spearman claim; Figure 1 label
+copy is cleaned up; and the abstract ending is tightened around inspectable
+resource artifacts. Verification after the patch: `paper/main.pdf` compiles to
+6 pages, PDF metadata title is correct, `tools/verify_paper_artifact.py`
+passes, 26 unit tests pass, `git diff --check` passes, and the LaTeX log scan
+finds no undefined references/citations or overfull boxes. Remaining P0 is
+body-page compression, not additional experiments.
+
+Pre-compression table redesign update: no experiment or evidence value changed.
+The three paper tables were rewritten as paper tables rather than execution
+logs. Table 1 is now a compact evidence-role map without Items/Seeds/Caveat
+columns. Table 2 uses `Artifact`, `Unique full SIDs`, and D2--D5 columns with
+`mean +- sd` only where repeated-run variation is directly shown; the separate
+seed explanation was removed from body prose. Table 3 is now a three-row
+mechanism-check summary (`Probe`, `Question`, `Observed contrast`) rather than
+a detailed artifact table. Verification passes: `paper/main.pdf` compiles to 6
+pages, `tools/verify_paper_artifact.py` passes, and `git diff --check` passes.
+Only a minor 1.48pt overfull vbox remains for the later page-compression pass.
+
+Pre-compression figure/table naming update: no experiment or evidence value
+changed. Figure 1 is now a double-column, landscape finding preview with the
+short title `From SID exports to diagnostics`; its caption is reduced to a
+single sentence. Table 1 is renamed `SIDInspector artifact contents` and uses
+plain `Component / Examples / Purpose / Limit` columns rather than `evidence
+role` or `v0` wording. Table 2 is renamed `SID diagnostics on Amazon Reviews
+2023 Musical Instruments`, and its second column is `Unique SIDs`. The former
+Table 3 mechanism-check table was removed; the three mechanism signals remain
+in the diagnostic-findings prose. Verification passes: `paper/main.pdf`
+compiles to 6 pages, `tools/verify_paper_artifact.py` passes, `git diff
+--check` passes, and the LaTeX log scan reports no undefined citations,
+undefined references, or overfull boxes.
+
+Single-column artifact-table alignment update: no experiment or evidence value
+changed. Figure 1 is back to a compact single-column finding preview; Table 1
+now uses the two-column `Resource part / Artifacts` design, and Table 2 starts
+with `Artifact`, so the resource inventory and the Musical diagnostic rows can
+be read together. Table 2 D4 was widened to remove the previous crowding with
+D5. Verification passes: `paper/main.pdf` compiles to 5 pages,
+`tools/verify_paper_artifact.py` passes, `git diff --check` passes, and the
+LaTeX log scan reports no undefined citations, undefined references, or
+overfull/underfull boxes.
+
+Body-polish and reference-format update: no experiment value or claim boundary
+changed. The active draft received sentence-level polishing in the abstract,
+introduction, resource-scope, demonstration, and limits sections while keeping
+the 5-page total PDF / 4-page body layout. A read-only subagent traced the
+reference-format issue to duplicate arXiv identity fields in BibTeX. The fixed
+`paper/references.bib` and synced `paper_assets/references/audit_sid_references.bib`
+now keep pure arXiv entries as `@misc` with one `eprint`, remove arXiv DOI
+fields, and remove arXiv IDs from formally published entries and notes.
+Verification passes: `paper/main.pdf` compiles to 5 pages,
+`tools/verify_paper_artifact.py` passes, 26 unit tests pass, `git diff --check`
+passes, `main.bbl` has no `arXiv preprint arXiv`, `shownote{...arXiv}`, or
+`10.48550/arXiv` pattern, and the LaTeX log scan reports no undefined
+citations, undefined references, overfull boxes, or underfull boxes.

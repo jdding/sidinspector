@@ -1,54 +1,63 @@
 \section{Introduction}
 
-Semantic-ID (\sid) tokenization has become a practical design point for
+Semantic-ID (\sid) tokenization has become a practical artifact boundary for
 generative recommendation. Systems such as TIGER map items into discrete code
 sequences so that a sequence model can generate candidate identifiers rather
-than score every catalog item directly~\cite{rajput2023tiger}. This shift has
-made the tokenizer itself a first-order artifact. Recent work has expanded the
-space quickly: residual quantization frameworks, recommender-native encoding,
-collaborative tokenization, differentiable tokenization, non-uniform capacity,
-qualified collisions, variable-length interfaces, and drift-aware refreshes all
-change the item address space exposed to a generator~\cite{ju2025grid,liang2026resid,zhu2024cost,fu2026diger,wei2026card,hu2026quasid,cheng2026capsid,feng2026dact}.
+than score every catalog item directly~\cite{rajput2023tiger}. Once exported,
+that item-to-code mapping becomes the address space exposed to the generator.
+Recent work has expanded this space quickly: residual quantization frameworks,
+recommender-native encoding, collaborative tokenization, differentiable
+tokenization, non-uniform capacity, qualified collisions, variable-length
+interfaces, and drift-aware refreshes all change the artifact that downstream
+users must inspect before generator training~\cite{ju2025grid,liang2026resid,zhu2024cost,fu2026diger,wei2026card,hu2026quasid,cheng2026capsid,feng2026dact}.
+This paper treats those exports as a shared artifact interface: the goal is not
+to reimplement the literature, but to make item-to-code mappings
+inspectable under the same contract.
 
-The evaluation practice has not caught up with this artifact boundary. Prior
-recommender tooling has argued for behavioral tests beyond NDCG-style
-aggregates~\cite{chia2022reclist}, but SID tokenizers introduce a distinct
-artifact: the generated item address space. A
-tokenizer can support a usable downstream Recall@K while still hiding failure
-modes that are hard to diagnose from aggregate ranking metrics: underused
-codebooks, repeated full codes, semantically neat but behaviorally poor
-prefixes, tail items sharing too little capacity, or prefix structures that
-increase serving cost. These issues matter because \sid{}s are not merely
-features. They define the address space exposed to the generator.
+The reusable artifact interface has not caught up with this boundary. A new
+tokenizer repository may expose checkpoints, item mappings, codebooks, or only
+intermediate feature files. Downstream users then need to answer basic
+engineering questions before training a generator: do all catalog items have
+valid codes, are many items aliased to the same full code, do prefixes reflect
+user co-occurrence rather than only metadata taxonomy, are tail items allocated
+enough address capacity, and does the prefix structure create large fan-out?
+Today these checks are usually reimplemented ad hoc inside each paper. The
+resulting evidence is difficult to compare because each method reports a
+different mixture of codebook usage, downstream ranking, and qualitative
+examples.
 
-This gap is especially awkward for resource reuse. A new tokenizer repository
-may expose checkpoints, item mappings, codebooks, or only intermediate feature
-files. Downstream users then need to answer basic engineering questions before
-training a generator: do all catalog items have valid codes, are many items
-aliased to the same full code, are collisions concentrated in the tail, and do
-prefix neighborhoods reflect user co-occurrence rather than only metadata
-taxonomy? Today these checks are usually reimplemented ad hoc inside each
-paper. The resulting evidence is difficult to compare because each method
-reports a different mixture of codebook usage, downstream ranking, and
-qualitative examples.
+Aggregate ranking metrics remain necessary, but they are the wrong interface
+for inspecting the exported address space itself. Prior recommender tooling has
+argued for behavioral tests beyond NDCG-style aggregates~\cite{chia2022reclist};
+\sid tokenizers add a more concrete resource problem: the item mapping should
+be validated and profiled before a full generator consumes GPU time. Underused
+codebooks, repeated full codes, behaviorally weak prefixes, tail compression,
+and large prefix fan-out can be hidden by a downstream score, yet they are
+direct properties of the reusable tokenizer artifact.
 
-We present \tool, a resource for auditing item-to-\sid{} tokenizer artifacts
-before or alongside downstream recommendation evaluation. The goal is
-deliberately narrower than proposing a new tokenizer. \tool asks a concrete
-question: given a public tokenizer artifact that maps items to code sequences,
-what can be said about its capacity use, collisions, behavioral alignment,
-head-tail allocation, and deployment cost without retraining a full generator?
+We present \tool, a diagnostic/interface resource for inspecting item-to-\sid{}
+tokenizer artifacts before or alongside downstream recommendation evaluation.
+\tool is deliberately neither a new tokenizer nor a RecBole-style coverage
+benchmark. It asks a narrower and reusable question: given any tokenizer
+artifact that can emit item-level code sequences, what can be said about its
+capacity use, aliasing, behavioral alignment, head-tail allocation, and
+structural cost before retraining a full generator?
 
-The resource contribution is threefold. First, \tool defines a small
-mapping-first interface for \sid assignments, item metadata, interaction
-histories, and optional generator outputs. Second, it implements D1--D5a
-diagnostics for utilization, collisions, semantic-collaborative alignment,
-head-tail capacity, and structural serving-cost proxies, with D6 churn support
-for continual-tokenizer settings. Third, it demonstrates the audit on public
-GRID/RQ-KMeans-style, ReSID/GAOQ, sanity, and controlled-stressor artifacts.
-The same-item Musical case study and stressor table support diagnostic claims:
-they separate full-code collision pressure, interaction-qualified collision
+The resource contribution is threefold. First, \tool defines a small adapter
+contract for \sid assignments, item metadata, interaction histories, and
+optional generator outputs, plus validators that reject incomplete or
+ambiguous artifacts before metrics are reported. Second, it implements
+D1--D5 mapping-level diagnostic probes for utilization, aliasing,
+neighborhood alignment, popularity allocation, and structural cost, with D6
+churn support for continual-tokenizer settings.
+Third, it provides worked examples and controlled mechanism probes that make
+the probes interpretable rather than just available. Two public \sid export
+paths show how adapters become comparable artifact-profile rows; controlled
+probes separate full-code aliasing pressure, interaction-qualified aliasing
 risk, collaborative-prefix recovery, tail capacity, and structural prefix
-fan-out before a downstream generator is trained. The paper follows the CIKM
-Resource four-page constraint, where appendices count toward the limit and
-detailed logs are therefore placed in the online artifact~\cite{cikm2026resource}.
+fan-out. The resulting diagnostic finding is simple but important: in the
+bounded Musical worked example, a category-prefix control recovers more
+co-occurrence prefix neighbors than the learned export rows. Learned
+addressability and behavioral prefix alignment therefore require separate
+inspection. Auxiliary vertical, fixed-reranker, and portability checks defend
+this finding without turning the paper into a method leaderboard~\cite{cikm2026resource}.

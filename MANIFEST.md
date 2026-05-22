@@ -218,6 +218,18 @@
 | 2026-05-18 17:34 | /idea-discovery | findings.md | idea-discovery | append-only GRID adapter smoke finding |
 | 2026-05-18 17:35 | /experiment-plan | docs/REAL_MAPPING_PREFLIGHT_20260518_173550.md | implementation | timestamped real SID mapping availability preflight |
 | 2026-05-18 17:35 | /experiment-plan | docs/REAL_MAPPING_PREFLIGHT.md | implementation | latest copy |
+| 2026-05-20 19:05 | experiment | docs/D3_RANKING_VALIDATION_MUSICAL_20260520_190525.md | implementation | timestamped B6 fixed-reranker validation for D3 on Musical |
+| 2026-05-20 19:05 | experiment | docs/D3_RANKING_VALIDATION_MUSICAL.md | implementation | latest copy of B6 fixed-reranker validation |
+| 2026-05-20 19:05 | experiment | docs/SPORTS_GRID_THIRD_VERTICAL_20260520_190525.md | implementation | timestamped B7 Sports GRID third-vertical export report |
+| 2026-05-20 19:05 | experiment | docs/SPORTS_GRID_THIRD_VERTICAL.md | implementation | latest copy of B7 Sports GRID third-vertical export report |
+| 2026-05-20 19:05 | experiment | tools/autodl_audit_sid/run_d3_ranking_validation.py | implementation | fixed-reranker validation script for D3 candidate/ranking context |
+| 2026-05-20 19:05 | experiment | tests/test_d3_ranking_validation.py | implementation | unit tests for B6 fixed-reranker validation |
+| 2026-05-20 19:05 | experiment | docs/CIKM_17_DAY_8PT_LIFT_PLAN_20260520_190525.md | implementation | timestamped 8/10 lift plan updated with B6/B7/B8 execution status |
+| 2026-05-20 19:05 | experiment | docs/CIKM_17_DAY_8PT_LIFT_PLAN.md | implementation | latest 8/10 lift plan updated with B6/B7/B8 execution status |
+| 2026-05-20 19:12 | paper-writing | paper/sections/4_demonstration_20260520_191200.tex | paper | timestamped Section 4 B6/B7 integration |
+| 2026-05-20 19:12 | paper-writing | paper/sections/5_availability_limits_20260520_191200.tex | paper | timestamped Section 5 B6/B7 boundary integration |
+| 2026-05-20 19:12 | paper-writing | paper/main_20260520_191200.pdf | paper | timestamped compiled PDF after B6/B7 integration |
+| 2026-05-20 19:12 | paper-writing | paper/main_20260520_191200.tex | paper | timestamped main LaTeX source after B6/B7 integration |
 | 2026-05-18 17:35 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260518_173550.md | implementation | timestamped tracker with real mapping blocker |
 | 2026-05-18 17:35 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with real mapping blocker |
 | 2026-05-18 17:35 | /idea-discovery | README.md | idea-discovery | entrypoint updated with real mapping preflight link |
@@ -1161,3 +1173,648 @@
 | 2026-05-20 00:56 | /idea-discovery | docs/ARCHIVE_INDEX.md | documentation | archive index updated for explicit Round 4 physical cleanup |
 | 2026-05-20 00:56 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index points to Round 4 physical archive |
 | 2026-05-20 00:56 | /idea-discovery | findings.md | implementation | append-only finding for local cleanup before GitHub push |
+| 2026-05-20 01:09 | /research-refine | docs/RESOURCE_FRAMING_DECISION_20260520_010923.md | documentation | timestamped Type 4 diagnostic/interface resource framing decision |
+| 2026-05-20 01:09 | /research-refine | docs/RESOURCE_FRAMING_DECISION.md | documentation | latest Type 4 diagnostic/interface resource framing decision |
+| 2026-05-20 01:09 | /research-refine | docs/PROJECT_SPEC.md | documentation | project spec updated with Type 4 framing freeze |
+| 2026-05-20 01:09 | /research-refine | docs/CIKM_RESOURCE_PAPER_PLAN.md | paper | paper plan updated for adapter/interface resource framing |
+| 2026-05-20 01:09 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | documentation | experiment design updated to separate Type 4 v0 from future Type 1 route |
+| 2026-05-20 01:09 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state updated with resource framing decision |
+| 2026-05-20 01:09 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index updated with resource framing decision entry |
+| 2026-05-20 01:09 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | experiment plan updated with Type 4 framing decision |
+| 2026-05-20 01:09 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated with resource framing decision row |
+| 2026-05-20 01:09 | /idea-discovery | findings.md | implementation | append-only finding for resource framing decision |
+| 2026-05-20 01:15 | /gmail | docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS_20260520_011500.md | documentation | timestamped author-contact draft record with confirmed recipients and Gmail draft IDs |
+| 2026-05-20 01:15 | /gmail | docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md | documentation | latest author-contact draft record; drafts created but not sent |
+| 2026-05-20 01:15 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after Gmail draft creation |
+| 2026-05-20 01:15 | /idea-discovery | findings.md | implementation | append-only finding for Gmail draft creation |
+| 2026-05-20 01:29 | /gmail | docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS_20260520_012900.md | documentation | timestamped author-contact record after deleting duplicate AdaSID draft |
+| 2026-05-20 01:29 | /gmail | docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md | documentation | latest author-contact record; retained drafts are DIGER, QuaSID, and CapsID only |
+| 2026-05-20 01:29 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after author-contact reframing |
+| 2026-05-20 01:29 | /idea-discovery | findings.md | implementation | append-only finding for author-contact reframing |
+| 2026-05-20 01:36 | /gmail | docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS_20260520_013600.md | documentation | timestamped author-contact record after sending DIGER, QuaSID, and CapsID emails |
+| 2026-05-20 01:36 | /gmail | docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md | documentation | latest author-contact record with sent message IDs |
+| 2026-05-20 01:36 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after author-contact send |
+| 2026-05-20 01:36 | /idea-discovery | findings.md | implementation | append-only finding for author-contact send |
+| 2026-05-20 01:45 | /gmail | docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS_20260520_014500.md | documentation | timestamped DIGER author-reply and follow-up record |
+| 2026-05-20 01:45 | /gmail | docs/AUTHOR_ARTIFACT_EMAIL_DRAFTS.md | documentation | latest author-contact record with DIGER reply and follow-up |
+| 2026-05-20 01:45 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after DIGER author reply |
+| 2026-05-20 01:45 | /idea-discovery | findings.md | implementation | append-only finding for DIGER author reply |
+| 2026-05-20 01:34 | /paper-write | docs/DIAGNOSTIC_PROBE_TAXONOMY_20260520_013454.md | documentation | timestamped canonical D1-D7 diagnostic probe taxonomy |
+| 2026-05-20 01:34 | /paper-write | docs/DIAGNOSTIC_PROBE_TAXONOMY.md | documentation | latest canonical D1-D7 diagnostic probe taxonomy |
+| 2026-05-20 01:34 | /paper-write | paper/main_20260520_013454.tex | paper | timestamped ACM draft after diagnostic-probe terminology pass |
+| 2026-05-20 01:34 | /paper-write | paper/main.tex | paper | latest ACM draft using D1-D5 main, D6 optional, and D7 future-hook terminology |
+| 2026-05-20 01:34 | /paper-write | paper/sections/1_introduction_20260520_013454.tex | paper | timestamped introduction after D1-D7 terminology pass |
+| 2026-05-20 01:34 | /paper-write | paper/sections/2_resource_scope_20260520_013454.tex | paper | timestamped resource-scope section after adapter/probe terminology pass |
+| 2026-05-20 01:34 | /paper-write | paper/sections/3_diagnostics_20260520_013454.tex | paper | timestamped diagnostic-design section with D1-D5 main probes and D6/D7 extensions |
+| 2026-05-20 01:34 | /paper-write | paper/sections/4_demonstration_20260520_013454.tex | paper | timestamped worked-example section with controlled mechanism probe wording |
+| 2026-05-20 01:34 | /paper-write | paper/sections/5_availability_limits_20260520_013454.tex | paper | timestamped availability/limits section with D6/D7 boundary wording |
+| 2026-05-20 01:34 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline_20260520_013454.py | paper | timestamped Fig. 1 generator using D1-D5, D6, and D7 labels |
+| 2026-05-20 01:34 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline.py | paper | latest Fig. 1 generator using D1-D5, D6, and D7 labels |
+| 2026-05-20 01:34 | /paper-figure | paper/figures/fig1_audit_sid_pipeline_20260520_013454.pdf | paper | timestamped generated vector Fig. 1 after diagnostic-probe terminology pass |
+| 2026-05-20 01:34 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.pdf | paper | latest generated vector Fig. 1 after diagnostic-probe terminology pass |
+| 2026-05-20 01:34 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260520_013454.md | audit | timestamped claim audit after diagnostic-probe terminology pass |
+| 2026-05-20 01:34 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | audit | latest claim audit after diagnostic-probe terminology pass |
+| 2026-05-20 01:34 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN_20260520_013454.md | documentation | timestamped experiment design with D1-D5 main and D6 optional scope |
+| 2026-05-20 01:34 | /experiment-plan | docs/CIKM_EXPERIMENT_DESIGN.md | documentation | latest experiment design with D1-D5 main and D6 optional scope |
+| 2026-05-20 01:34 | /paper-write | docs/CIKM_RESOURCE_PAPER_PLAN_20260520_013454.md | paper | timestamped paper plan after diagnostic-probe terminology pass |
+| 2026-05-20 01:34 | /paper-write | docs/CIKM_RESOURCE_PAPER_PLAN.md | paper | latest paper plan after diagnostic-probe terminology pass |
+| 2026-05-20 01:34 | /idea-discovery | docs/CURRENT_STATE_20260520_013454.md | documentation | timestamped current state after D6/D7 boundary update |
+| 2026-05-20 01:34 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after D6/D7 boundary update |
+| 2026-05-20 01:34 | /idea-discovery | docs/DOCUMENT_INDEX_20260520_013454.md | documentation | timestamped document index with diagnostic taxonomy entry |
+| 2026-05-20 01:34 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index with diagnostic taxonomy entry |
+| 2026-05-20 01:34 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260520_013454.md | implementation | timestamped experiment plan after diagnostic terminology update |
+| 2026-05-20 01:34 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | latest experiment plan after diagnostic terminology update |
+| 2026-05-20 01:34 | /paper-write | ARTIFACT_MANIFEST_20260520_013454.md | paper | timestamped artifact manifest before diagnostic terminology verification |
+| 2026-05-20 01:34 | /paper-write | ARTIFACT_MANIFEST.md | paper | latest artifact manifest after diagnostic terminology verification |
+| 2026-05-20 01:36 | /paper-compile | paper/main_20260520_013454.pdf | paper | timestamped compiled PDF after diagnostic-probe terminology pass |
+| 2026-05-20 01:36 | /paper-compile | paper/main.pdf | paper | latest compiled PDF, 5 pages total with body through page 4 |
+| 2026-05-20 01:38 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker marks diagnostic terminology pass as compiled and verified |
+| 2026-05-20 01:38 | /idea-discovery | findings.md | implementation | append-only finding for D6 optional/D7 future-hook decision |
+| 2026-05-20 01:38 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260520_013839.md | implementation | timestamped experiment plan with current D1-D5/D6/D7 terminology sync |
+| 2026-05-20 01:38 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_013839.md | implementation | timestamped tracker with current D1-D5/D6/D7 terminology sync |
+| 2026-05-20 01:38 | /paper-write | MANIFEST_20260520_013839.md | paper | timestamped research output manifest after diagnostic terminology verification |
+| 2026-05-20 02:17 | /paper-write | paper/main_20260520_021710.tex | paper | timestamped ACM draft after SIDInspector title and abstract rewrite |
+| 2026-05-20 02:17 | /paper-compile | paper/main_20260520_021710.pdf | paper | timestamped compiled SIDInspector PDF, 5 pages total with body through page 4 |
+| 2026-05-20 02:17 | /paper-write | paper/main.tex | paper | latest ACM draft with SIDInspector paper-facing name |
+| 2026-05-20 02:17 | /paper-compile | paper/main.pdf | paper | latest compiled PDF titled SIDInspector |
+| 2026-05-20 02:17 | /paper-write | paper/sections/1_introduction_20260520_021710.tex | paper | timestamped introduction after artifact-inspection framing rewrite |
+| 2026-05-20 02:17 | /paper-write | paper/sections/1_introduction.tex | paper | latest introduction aligned to artifact-inspection framing |
+| 2026-05-20 02:17 | /idea-discovery | docs/CURRENT_STATE_20260520_021710.md | documentation | timestamped current state after SIDInspector naming decision |
+| 2026-05-20 02:17 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state after SIDInspector naming decision |
+| 2026-05-20 02:17 | /idea-discovery | docs/DOCUMENT_INDEX_20260520_021710.md | documentation | timestamped document index after SIDInspector naming decision |
+| 2026-05-20 02:17 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index after SIDInspector naming decision |
+| 2026-05-20 02:17 | /paper-write | docs/CIKM_RESOURCE_PAPER_PLAN_20260520_021710.md | paper | timestamped paper plan after SIDInspector title and abstract rewrite |
+| 2026-05-20 02:17 | /paper-write | docs/CIKM_RESOURCE_PAPER_PLAN.md | paper | latest paper plan after SIDInspector title and abstract rewrite |
+| 2026-05-20 02:17 | /research-refine | docs/PROJECT_SPEC_20260520_021710.md | documentation | timestamped project spec with SIDInspector paper-facing name |
+| 2026-05-20 02:17 | /research-refine | docs/PROJECT_SPEC.md | documentation | latest project spec with SIDInspector paper-facing name |
+| 2026-05-20 02:17 | /research-refine | docs/RESOURCE_FRAMING_DECISION_20260520_021710.md | documentation | timestamped framing decision with SIDInspector naming |
+| 2026-05-20 02:17 | /research-refine | docs/RESOURCE_FRAMING_DECISION.md | documentation | latest framing decision with SIDInspector naming |
+| 2026-05-20 02:17 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260520_021710.md | audit | timestamped claim audit after SIDInspector title and abstract rewrite |
+| 2026-05-20 02:17 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | audit | latest claim audit after SIDInspector title and abstract rewrite |
+| 2026-05-20 02:17 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260520_021710.md | implementation | timestamped experiment plan after SIDInspector naming update |
+| 2026-05-20 02:17 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | latest experiment plan after SIDInspector naming update |
+| 2026-05-20 02:17 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_021710.md | implementation | timestamped tracker after SIDInspector naming update |
+| 2026-05-20 02:17 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after SIDInspector naming update |
+| 2026-05-20 02:17 | /paper-write | tools/verify_paper_artifact_20260520_021710.py | paper | timestamped verifier with SIDInspector/AUDIT-SID output label |
+| 2026-05-20 02:17 | /paper-write | tools/verify_paper_artifact.py | paper | latest verifier with SIDInspector/AUDIT-SID output label |
+| 2026-05-20 02:17 | /idea-discovery | findings.md | implementation | append-only finding for SIDInspector title and abstract rewrite |
+| 2026-05-20 02:17 | /paper-write | MANIFEST_20260520_021710.md | paper | timestamped research output manifest after SIDInspector title and abstract rewrite |
+| 2026-05-20 02:17 | /paper-write | MANIFEST.md | paper | latest manifest after SIDInspector title and abstract rewrite |
+| 2026-05-20 13:36 | /paper-write | paper/sections/1_introduction.tex | paper | latest introduction after SIDInspector D1-D5 naming sync |
+| 2026-05-20 13:36 | /paper-write | paper/sections/2_resource_scope.tex | paper | latest resource-scope section after aliasing/structural-cost wording sync |
+| 2026-05-20 13:36 | /paper-write | paper/sections/3_diagnostics.tex | paper | latest diagnostics section with D2 aliasing terminology |
+| 2026-05-20 13:36 | /paper-write | paper/sections/4_demonstration.tex | paper | latest worked-example section with controlled mechanism-probe and aliasing wording |
+| 2026-05-20 13:36 | /paper-write | paper/sections/5_availability_limits.tex | paper | latest availability/limits section after D5 structural-cost wording sync |
+| 2026-05-20 13:36 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline.py | paper | latest Fig. 1 generator with SIDInspector title and D1/D2 aliasing panel |
+| 2026-05-20 13:36 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.pdf | paper | regenerated vector Fig. 1 after SIDInspector terminology sync |
+| 2026-05-20 13:36 | /paper-write | ARTIFACT_QUICKSTART.md | paper | reviewer quickstart updated to SIDInspector/AUDIT-SID verification output and Table 3 mechanism-probe role |
+| 2026-05-20 13:36 | /paper-write | ARTIFACT_MANIFEST.md | paper | artifact manifest updated with SIDInspector name and D2 aliasing mechanism-probe wording |
+| 2026-05-20 13:36 | /paper-write | README.md | documentation | repository README updated with SIDInspector paper-facing name and D1-D5 terminology |
+| 2026-05-20 13:36 | /paper-write | src/audit_sid/metrics.py | code | CLI/docstring updated while preserving legacy artifact filenames for provenance |
+| 2026-05-20 13:36 | /paper-table-build | paper_assets/tables/table1_method_coverage.csv | paper | regenerated paper-facing table assets after terminology sync |
+| 2026-05-20 13:36 | /paper-compile | paper/main.pdf | paper | latest compiled PDF after terminology sync, 5 pages total with body through page 4 |
+| 2026-05-20 13:36 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state updated after terminology/code sync verification |
+| 2026-05-20 13:36 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | experiment plan updated with submission-hygiene status |
+| 2026-05-20 13:36 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker updated after terminology/code sync verification |
+| 2026-05-20 13:36 | /idea-discovery | findings.md | implementation | append-only finding for SIDInspector terminology/code sync |
+| 2026-05-20 14:00 | /paper-write | paper/main.tex | paper | latest ACM draft with SIDInspector paper-facing title/tool name |
+| 2026-05-20 14:00 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline.py | paper | Fig. 1 generator updated to SIDInspector title |
+| 2026-05-20 14:00 | /paper-write | README.md | documentation | README uses SIDInspector as paper-facing name and AUDIT-SID as provenance name |
+| 2026-05-20 14:00 | /paper-write | ARTIFACT_QUICKSTART.md | paper | quickstart uses SIDInspector/AUDIT-SID verification wording |
+| 2026-05-20 14:00 | /paper-write | ARTIFACT_MANIFEST.md | paper | artifact manifest uses SIDInspector/AUDIT-SID naming |
+| 2026-05-20 14:00 | /paper-write | tools/verify_paper_artifact.py | paper | verifier output label updated to SIDInspector/AUDIT-SID |
+| 2026-05-20 14:00 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records SIDInspector title and remaining single-blind author blocker |
+| 2026-05-20 14:00 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | experiment plan records SIDInspector naming and pending final artifact freeze |
+| 2026-05-20 14:00 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records remaining submission-hygiene items |
+| 2026-05-20 14:00 | /idea-discovery | findings.md | implementation | append-only finding for SIDInspector rename update |
+| 2026-05-20 14:15 | /auto-review-loop-llm | review-stage/EXTERNAL_REVIEW_REQUEST_20260520_141500.md | review | external LM review request prepared for CIKM 2026 Resource Track, max three rounds |
+| 2026-05-20 14:15 | /auto-review-loop-llm | review-stage/REVIEW_STATE.json | review | external review state initialized and waiting for provider/model/scope egress approval |
+| 2026-05-20 14:15 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records external-review setup and egress gate |
+| 2026-05-20 14:20 | /auto-review-loop-llm | review-stage/EXTERNAL_REVIEW_ROUND1_20260520_142000.md | review | DeepSeek V4 Pro external review round 1, score 7.5/10 weak accept |
+| 2026-05-20 14:30 | /paper-write | paper/sections/2_resource_scope.tex | paper | round-1 fix: variable-length SID adapter boundary and D6/D7 status |
+| 2026-05-20 14:30 | /paper-write | paper/sections/3_diagnostics.tex | paper | round-1 fix: Table 1 adds DACT refresh pair and MovieLens portability rows |
+| 2026-05-20 14:30 | /paper-write | paper/sections/4_demonstration.tex | paper | round-1 fix: auxiliary rows framed as resource portability |
+| 2026-05-20 14:30 | /paper-write | paper/sections/5_availability_limits.tex | paper | round-1 fix: adapter entry and table-builder quickstart guidance |
+| 2026-05-20 14:35 | /auto-review-loop-llm | review-stage/EXTERNAL_REVIEW_ROUND2_20260520_143500.md | review | DeepSeek V4 Pro external review round 2, score 8/10 accept |
+| 2026-05-20 14:35 | /auto-review-loop-llm | review-stage/EXTERNAL_REVIEW_SUMMARY_20260520_143500.md | review | external review loop summary; stop rule satisfied at round 2 |
+| 2026-05-20 14:35 | /auto-review-loop-llm | review-stage/REVIEW_STATE.json | review | external review state completed with last score 8/10 accept |
+| 2026-05-20 14:35 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records external LM review completion |
+| 2026-05-20 14:25 | /research-lit | docs/SID_PROBLEM_COVERAGE_AUDIT_20260520_142504.md | implementation | timestamped D1-D6 coverage audit against SID literature problem claims |
+| 2026-05-20 14:25 | /research-lit | docs/SID_PROBLEM_COVERAGE_AUDIT.md | implementation | latest D1-D6 coverage audit against SID literature problem claims |
+| 2026-05-20 14:25 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state updated with D1-D6 artifact-level coverage boundary |
+| 2026-05-20 14:25 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index adds SID problem coverage audit entry |
+| 2026-05-20 14:25 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records D1-D6 literature-coverage verdict |
+| 2026-05-20 14:34 | /citation-audit | docs/CITATION_AUDIT_20260520_143458.md | implementation | timestamped reference recency and metadata accuracy audit |
+| 2026-05-20 14:34 | /citation-audit | docs/CITATION_AUDIT.md | implementation | latest reference recency and metadata accuracy audit |
+| 2026-05-20 14:34 | /citation-audit | paper/references.bib | paper | corrected metadata for five drifted SID references and activated recent coverage entries |
+| 2026-05-20 14:34 | /citation-audit | paper_assets/references/audit_sid_references.bib | paper | synced paper-facing BibTeX metadata fixes |
+| 2026-05-20 14:34 | /paper-write | paper/sections/3_diagnostics.tex | paper | added DiscRec and AsymRec citations to recent method-space coverage |
+| 2026-05-20 14:34 | /paper-compile | paper/main.pdf | paper | recompiled after reference audit; 5 pages total with 27 bibliography items |
+| 2026-05-20 14:34 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state updated with completed citation audit |
+| 2026-05-20 14:34 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index updates citation audit description |
+| 2026-05-20 14:34 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records reference recency and accuracy audit completion |
+| 2026-05-20 14:46 | /paper-write | paper/main_20260520_144600.tex | paper | timestamped pre-edit snapshot before CIKM anonymous review metadata fix |
+| 2026-05-20 14:46 | /paper-write | paper/main.tex | paper | disabled ACM camera-ready reference strip and set concise CIKM 2026 anonymous-review metadata |
+| 2026-05-20 14:46 | /paper-compile | paper/main.pdf | paper | recompiled after anonymous-review metadata fix; 5 pages total |
+| 2026-05-20 14:46 | /paper-compile | tools/verify_paper_artifact.py | paper | public verifier passed after metadata-format fix |
+| 2026-05-20 15:39 | /paper-reviewer | docs/R3_REVIEW_ABSORPTION_20260520_153908.md | review | timestamped R3 simulated CIKM Resource review absorption and action matrix |
+| 2026-05-20 15:39 | /paper-reviewer | docs/R3_REVIEW_ABSORPTION.md | review | latest R3 simulated-review absorption and action matrix |
+| 2026-05-20 15:39 | /experiment-plan | docs/MATCHED_CAPACITY_GRID_GATE_20260520_153908.md | implementation | timestamped matched-capacity GRID gate report, local CPU stop-loss without evidence |
+| 2026-05-20 15:39 | /experiment-plan | docs/MATCHED_CAPACITY_GRID_GATE.md | implementation | latest matched-capacity GRID gate report, local CPU stop-loss without evidence |
+| 2026-05-20 15:57 | /paper-write | paper/sections/2_resource_scope.tex | paper | compact adapter-schema listing repaired after R3 W6 action and LaTeX warning |
+| 2026-05-20 15:57 | /paper-write | paper/sections/4_demonstration.tex | paper | R3 W3 fix: category-prefix D3 inversion framed as diagnostic warning, not quality win |
+| 2026-05-20 15:57 | /paper-write | paper/sections/5_availability_limits.tex | paper | R3 W3/W7 fix: D3 softened to triage signal and D6/D7 scoped conservatively |
+| 2026-05-20 15:57 | /idea-discovery | docs/CURRENT_STATE_20260520_155756.md | documentation | timestamped current state before R3 absorption status update |
+| 2026-05-20 15:57 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state records R3 review absorption and matched-capacity gate status |
+| 2026-05-20 15:57 | /idea-discovery | docs/DOCUMENT_INDEX_20260520_155756.md | documentation | timestamped document index before R3 absorption entries |
+| 2026-05-20 15:57 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index adds R3 absorption and matched-capacity GRID gate entry points |
+| 2026-05-20 15:57 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_155756.md | implementation | timestamped tracker before R3 absorption update |
+| 2026-05-20 15:57 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records R3 review absorption and matched-capacity GRID stop-loss |
+| 2026-05-20 15:57 | /idea-discovery | findings.md | implementation | append-only finding for R3 review absorption and unresolved W2/W3 risks |
+| 2026-05-20 16:00 | /paper-write | paper/sections/3_diagnostics.tex | paper | R3 table-readability fix: Table 1 GRID item counts rewritten as 23.7k Musical and 50k Beauty scale |
+| 2026-05-20 16:00 | /paper-compile | paper/main.pdf | paper | recompiled after R3 absorption edits; 5 pages total, no undefined references/citations or overfull boxes |
+| 2026-05-20 16:00 | /paper-compile | tools/verify_paper_artifact.py | paper | public artifact verifier passed after R3 absorption edits |
+| 2026-05-20 16:00 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state records R3 absorption verification results |
+| 2026-05-20 16:00 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records R3 absorption verification results |
+| 2026-05-20 16:03 | /autodl-cloud-deploy | docs/AUTODL_MATCHED_CAPACITY_GRID_PLAN_20260520_160300.md | implementation | timestamped AutoDL launch plan for matched-capacity GRID follow-up |
+| 2026-05-20 16:03 | /autodl-cloud-deploy | docs/AUTODL_MATCHED_CAPACITY_GRID_PLAN.md | implementation | latest AutoDL launch plan for matched-capacity GRID follow-up |
+| 2026-05-20 16:03 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index adds AutoDL matched-capacity GRID launch plan |
+| 2026-05-20 16:43 | /autodl-cloud-deploy | docs/MATCHED_CAPACITY_GRID_GATE_20260520_164306.md | implementation | timestamped matched-capacity GRID gate before AutoDL result update |
+| 2026-05-20 16:43 | /autodl-cloud-deploy | docs/MATCHED_CAPACITY_GRID_GATE.md | implementation | latest matched-capacity GRID gate updated with completed AutoDL GPU result |
+| 2026-05-20 16:43 | /autodl-cloud-deploy | docs/AUTODL_MATCHED_CAPACITY_GRID_PLAN_20260520_164306.md | implementation | timestamped AutoDL matched-capacity plan before completion update |
+| 2026-05-20 16:43 | /autodl-cloud-deploy | docs/AUTODL_MATCHED_CAPACITY_GRID_PLAN.md | implementation | latest AutoDL matched-capacity plan marked completed on port 21551 |
+| 2026-05-20 16:43 | /autodl-cloud-deploy | _gate0_artifacts/grid_same_dataset_runs/matched_capacity_grid_32_1280_1280_seed42_20260520/grid_export/metrics/d2_collision.csv | local-artifact | pulled AutoDL matched-capacity GRID D2 metric table, full-code aliasing 0.778452 |
+| 2026-05-20 16:43 | /autodl-cloud-deploy | _gate0_artifacts/grid_same_dataset_runs/matched_capacity_grid_32_1280_1280_seed42_20260520/grid_export/metrics/d3_alignment.csv | local-artifact | pulled AutoDL matched-capacity GRID D3 metric table, L1 co-occurrence recall 0.079539 |
+| 2026-05-20 16:43 | /paper-write | paper/sections/4_demonstration_20260520_164306.tex | paper | timestamped demonstration section before matched-capacity Table 2 integration |
+| 2026-05-20 16:43 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 adds GRID ft-cap row and interpretation after AutoDL matched-capacity result |
+| 2026-05-20 16:48 | /paper-write | paper/main_20260520_164800.tex | paper | timestamped main.tex before SIDInspector naming correction |
+| 2026-05-20 16:48 | /paper-write | paper/main.tex | paper | active title/tool macro corrected back to SIDInspector |
+| 2026-05-20 16:48 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline.py | paper | Fig. 1 generator corrected to SIDInspector and rerun |
+| 2026-05-20 16:48 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.pdf | paper | regenerated Fig. 1 after SIDInspector naming correction |
+| 2026-05-20 16:48 | /paper-write | tools/verify_paper_artifact.py | paper | verifier corrected to SIDInspector and extended to check GRID ft-cap row |
+| 2026-05-20 16:48 | /paper-compile | paper/main.pdf | paper | recompiled after SIDInspector naming correction and matched-capacity integration |
+| 2026-05-20 16:55 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260520_165522.md | audit | timestamped strict claim audit before post-matched-capacity refresh |
+| 2026-05-20 16:55 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | audit | refreshed strict claim audit after GRID ft-cap entered abstract and Table 2 |
+| 2026-05-20 16:55 | /paper-write | paper/main.tex | paper | abstract now states GRID ft-cap reduces aliasing to 0.7785 but does not eliminate it |
+| 2026-05-20 16:55 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 and D3 range use GRID ft-cap D3 L1 `.0796` after claim audit |
+| 2026-05-20 16:55 | /idea-discovery | docs/CURRENT_STATE_20260520_165522.md | documentation | timestamped current state before post-matched-capacity claim-audit update |
+| 2026-05-20 16:55 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records post-matched-capacity claim-audit PASS |
+| 2026-05-20 16:55 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_165522.md | implementation | timestamped tracker before post-matched-capacity claim-audit update |
+| 2026-05-20 16:55 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records post-matched-capacity claim-audit PASS and verification |
+| 2026-05-20 16:57 | /paper-reviewer | review-stage/EXTERNAL_REVIEW_R3_DELTA_REQUEST_20260520_165753.md | review | timestamped external review request for R3 delta pass after matched-capacity ablation |
+| 2026-05-20 16:57 | /paper-reviewer | review-stage/EXTERNAL_REVIEW_R3_DELTA_REQUEST.md | review | latest external review request for R3 delta pass after matched-capacity ablation |
+| 2026-05-20 17:03 | /auto-review-loop-llm | docs/R3_REVIEW_ABSORPTION_20260520_170300.md | review | timestamped R3 absorption plan before post-AutoDL completion refresh |
+| 2026-05-20 17:03 | /auto-review-loop-llm | docs/R3_REVIEW_ABSORPTION.md | review | latest R3 absorption plan marks matched-capacity GRID as completed evidence and prepares R3-delta review |
+| 2026-05-20 17:03 | /idea-discovery | docs/CURRENT_STATE_20260520_170300.md | documentation | timestamped current state before removing stale matched-capacity future-work wording |
+| 2026-05-20 17:03 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state removes stale matched-capacity future-work wording and records W2 as under R3-delta review |
+| 2026-05-20 17:03 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_170300.md | implementation | timestamped tracker before R3-delta external-review launch record |
+| 2026-05-20 17:03 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records R3-delta external-review launch and fixes the SIDInspect/SIDInspector typo |
+| 2026-05-20 17:03 | /idea-discovery | MANIFEST_20260520_170300.md | implementation | timestamped manifest before 17:03 bookkeeping entries |
+| 2026-05-20 17:10 | /idea-discovery | docs/CIKM_17_DAY_8PT_LIFT_PLAN_20260520_171000.md | documentation | timestamped lift plan before B2/B4 completion-status refresh |
+| 2026-05-20 17:10 | /idea-discovery | docs/CIKM_17_DAY_8PT_LIFT_PLAN.md | documentation | lift plan now records B2 matched-capacity and B4 All_Beauty D3 replication as locally done |
+| 2026-05-20 17:10 | /idea-discovery | docs/archive/2026-05-20-dedup/VERTICAL_D3_REPLICATION_NOTE.md | documentation | superseded duplicate scratch note for All_Beauty D3 replication; canonical entry is docs/VERTICAL_D3_REPLICATION_ALL_BEAUTY.md |
+| 2026-05-20 17:10 | /idea-discovery | docs/DOCUMENT_INDEX_20260520_171000.md | documentation | timestamped document index before adding vertical D3 replication entry |
+| 2026-05-20 17:10 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index adds vertical D3 replication entry and updates matched-capacity status |
+| 2026-05-20 17:10 | /idea-discovery | docs/CIKM_EXPERIMENT_DESIGN_20260520_171000.md | documentation | timestamped experiment design before lift execution status refresh |
+| 2026-05-20 17:10 | /idea-discovery | docs/CIKM_EXPERIMENT_DESIGN.md | documentation | experiment design records B2/B4 closed and B3 downstream context still open |
+| 2026-05-20 17:14 | /auto-review-loop-llm | review-stage/EXTERNAL_REVIEW_R3_DELTA_RESULT_20260520_171400.md | review | timestamped external R3-delta review result after matched-capacity GRID |
+| 2026-05-20 17:14 | /auto-review-loop-llm | review-stage/EXTERNAL_REVIEW_R3_DELTA_RESULT.md | review | latest external R3-delta review result: 6/10, W2 moderate, W1/W3 still ceiling |
+| 2026-05-20 17:14 | /auto-review-loop-llm | review-stage/REVIEW_STATE.json | review | review state updated to round 3 score 6.0 after R3-delta pass |
+| 2026-05-20 17:14 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records R3-delta 6/10 result and remaining W1/W3 score ceiling |
+| 2026-05-20 17:14 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index adds external R3-delta result entry |
+| 2026-05-20 17:14 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records R3-delta result and next score-lift requirements |
+| 2026-05-20 17:18 | /paper-write | paper/main_20260520_171800.tex | paper | timestamped main.tex before R3-delta half-day wording patch |
+| 2026-05-20 17:18 | /paper-write | paper/sections/4_demonstration_20260520_171800.tex | paper | timestamped Section 4 before capacity-boundary and All_Beauty D3 replication wording |
+| 2026-05-20 17:18 | /paper-write | paper/sections/5_availability_limits_20260520_171800.tex | paper | timestamped Section 5 before controlled-export limitation wording |
+| 2026-05-20 17:18 | /paper-write | paper/sections/4_demonstration.tex | paper | Section 4 clarifies GRID ft-cap capacity boundary and adds All_Beauty D3 replication sentence |
+| 2026-05-20 17:18 | /paper-write | paper/sections/5_availability_limits.tex | paper | Section 5 explicitly states the current demonstration uses two controlled public export paths |
+| 2026-05-20 17:20 | /paper-compile | paper/main.pdf | paper | recompiled after R3-delta writing patch; 5 pages, title SIDInspector |
+| 2026-05-20 17:20 | /paper-compile | tools/verify_paper_artifact.py | paper | verifier passed after R3-delta writing patch |
+| 2026-05-20 17:20 | /paper-compile | tests/ | tests | 16 unit tests passed after R3-delta writing patch |
+| 2026-05-20 17:22 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT_20260520_172200.md | audit | timestamped strict claim audit before R3-delta wording patch refresh |
+| 2026-05-20 17:22 | /paper-claim-audit | docs/PAPER_STRICT_CLAIM_AUDIT.md | audit | strict claim audit now includes All_Beauty D3 replication and two-controlled-export limitation checks |
+| 2026-05-20 17:22 | /idea-discovery | docs/CURRENT_STATE_20260520_172200.md | documentation | timestamped current state before R3-delta writing patch verification update |
+| 2026-05-20 17:22 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records R3-delta half-day writing patch and verification |
+| 2026-05-20 17:23 | /idea-discovery | MANIFEST_20260520_172358.md | implementation | timestamped manifest before D3 duplicate-note archive bookkeeping |
+| 2026-05-20 17:23 | /idea-discovery | docs/archive/2026-05-20-dedup/VERTICAL_D3_REPLICATION_NOTE.md | documentation | archived duplicate scratch note; active All_Beauty D3 replication entry is docs/VERTICAL_D3_REPLICATION_ALL_BEAUTY.md |
+| 2026-05-20 17:23 | /idea-discovery | docs/archive/2026-05-20-dedup/D3_PREFIX_RANKING_CONTEXT.md | documentation | archived duplicate scratch note; active Musical D3 ranking-context entry is docs/D3_RANKING_CONTEXT_MUSICAL.md |
+| 2026-05-20 17:23 | /idea-discovery | docs/ARCHIVE_INDEX.md | documentation | archive index records the D3 duplicate-note cleanup and current active entry points |
+| 2026-05-20 17:23 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index now points D3 replication and ranking-context readers to the canonical docs |
+| 2026-05-20 17:23 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state now references canonical D3 docs instead of duplicate scratch notes |
+| 2026-05-20 17:23 | /idea-discovery | docs/CIKM_17_DAY_8PT_LIFT_PLAN.md | implementation | lift plan now references canonical D3 docs after duplicate-note archive cleanup |
+| 2026-05-20 17:23 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records the duplicate D3 scratch-note archive cleanup |
+| 2026-05-20 17:27 | /idea-discovery | tools/archive/2026-05-20-dedup/run_prefix_ranking_probe.py | implementation | archived duplicate lightweight ranking-probe runner; canonical implementation is tools/autodl_audit_sid/run_d3_ranking_context.py |
+| 2026-05-20 17:27 | /idea-discovery | _gate0_artifacts/archive/2026-05-20-dedup/prefix_ranking_probe/ | local-artifact | archived obsolete prefix-ranking probe outputs superseded by _gate0_artifacts/d3_ranking_context/ |
+| 2026-05-20 17:27 | /idea-discovery | docs/ARCHIVE_INDEX.md | documentation | archive index records code and artifact dedup cleanup for the D3 ranking-context line |
+| 2026-05-20 17:28 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records canonical D3 entry points after duplicate note/script/artifact archive cleanup |
+| 2026-05-20 17:29 | /experiment-plan | tests/test_d3_ranking_context.py | test | targeted B3 ranking-context tests passed after duplicate runner/artifact archive cleanup |
+| 2026-05-20 17:22 | /idea-discovery | MANIFEST_20260520_172200.md | implementation | timestamped manifest before R3-delta writing patch entries |
+| 2026-05-20 16:14 | /experiment-plan | docs/CIKM_17_DAY_8PT_LIFT_PLAN_20260520_161452.md | implementation | timestamped 17-day CIKM Resource 8/10 lift plan after user risk-calibration update |
+| 2026-05-20 16:14 | /experiment-plan | docs/CIKM_17_DAY_8PT_LIFT_PLAN.md | implementation | latest 17-day CIKM Resource 8/10 lift plan |
+| 2026-05-20 16:14 | /idea-discovery | docs/CURRENT_STATE_20260520_161452.md | documentation | timestamped current state after activating the 17-day lift plan |
+| 2026-05-20 16:14 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state records optimistic 17-day lift strategy |
+| 2026-05-20 16:14 | /idea-discovery | docs/DOCUMENT_INDEX_20260520_161452.md | documentation | timestamped document index after adding the 17-day lift entry point |
+| 2026-05-20 16:14 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index points to the 17-day lift plan |
+| 2026-05-20 16:14 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20260520_161452.md | implementation | timestamped experiment plan after 17-day lift update |
+| 2026-05-20 16:14 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | latest experiment plan records the reopened targeted evidence gaps |
+| 2026-05-20 16:14 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_161452.md | implementation | timestamped tracker after adding A144 17-day lift plan row |
+| 2026-05-20 16:14 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records A144 active 17-day lift plan |
+| 2026-05-20 16:14 | /paper-write | docs/CIKM_RESOURCE_PAPER_PLAN_20260520_161452.md | paper | timestamped paper plan after more ambitious 17-day 8/10 strategy update |
+| 2026-05-20 16:14 | /paper-write | docs/CIKM_RESOURCE_PAPER_PLAN.md | paper | latest paper plan aligns framing with the D3 inversion lift path |
+| 2026-05-20 16:14 | /paper-write | paper/main_20260520_161452.tex | paper | timestamped paper source after correcting paper-facing tool name to SIDInspect |
+| 2026-05-20 16:17 | /paper-compile | paper/main_20260520_161452.pdf | paper | timestamped compiled PDF after 17-day plan and SIDInspect naming checks |
+| 2026-05-20 16:17 | /paper-write | paper/main.tex | paper | latest paper source uses SIDInspect as the paper-facing tool name |
+| 2026-05-20 16:17 | /paper-compile | paper/main.pdf | paper | latest compiled PDF after SIDInspect naming and 17-day plan verification |
+| 2026-05-20 16:17 | /paper-compile | tools/verify_paper_artifact_20260520_161452.py | paper | timestamped verifier after SIDInspect naming consistency update |
+| 2026-05-20 16:17 | /paper-compile | tools/verify_paper_artifact.py | paper | public artifact verifier passes after SIDInspect naming consistency update |
+| 2026-05-20 16:18 | /idea-discovery | findings_20260520_161452.md | implementation | timestamped findings snapshot after optimistic 17-day lift-plan finding |
+| 2026-05-20 16:18 | /idea-discovery | findings.md | implementation | append-only finding for optimistic 17-day 8/10 lift plan |
+| 2026-05-20 16:18 | /idea-discovery | MANIFEST_20260520_161452.md | implementation | timestamped manifest snapshot after 17-day lift-plan bookkeeping |
+| 2026-05-20 16:18 | /idea-discovery | MANIFEST.md | implementation | latest manifest records 17-day lift-plan outputs and verification artifacts |
+| 2026-05-20 16:51 | /autodl-cloud-deploy | docs/MATCHED_CAPACITY_GRID_AUTODL_RESULT_20260520_164300.md | implementation | timestamped AutoDL B2 matched-capacity GRID result report |
+| 2026-05-20 16:51 | /autodl-cloud-deploy | docs/MATCHED_CAPACITY_GRID_AUTODL_RESULT.md | implementation | latest AutoDL B2 matched-capacity GRID result report |
+| 2026-05-20 16:51 | /autodl-cloud-deploy | docs/AUTODL_MATCHED_CAPACITY_GRID_PLAN.md | implementation | latest AutoDL matched-capacity plan marked completed on port 21551 |
+| 2026-05-20 16:51 | /idea-discovery | docs/CURRENT_STATE_20260520_165100.md | documentation | timestamped current state after B2 AutoDL result and SIDInspect naming correction |
+| 2026-05-20 16:51 | /idea-discovery | docs/CURRENT_STATE.md | documentation | latest current state records B2 AutoDL completion |
+| 2026-05-20 16:51 | /idea-discovery | docs/DOCUMENT_INDEX_20260520_165100.md | documentation | timestamped document index with matched-capacity GRID result entry |
+| 2026-05-20 16:51 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | latest document index points to matched-capacity GRID result report |
+| 2026-05-20 16:51 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_165100.md | implementation | timestamped tracker after A145 matched-capacity GRID AutoDL completion |
+| 2026-05-20 16:51 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | latest tracker records A145 matched-capacity GRID AutoDL completion |
+| 2026-05-20 16:51 | /idea-discovery | findings_20260520_165100.md | implementation | timestamped findings after matched-capacity GRID AutoDL finding |
+| 2026-05-20 16:51 | /idea-discovery | findings.md | implementation | append-only finding for matched-capacity GRID AutoDL result |
+| 2026-05-20 16:51 | /paper-table-build | tools/autodl_audit_sid/build_paper_tables_20260520_165100.py | paper | timestamped table builder after automatic GRID ft-cap row support |
+| 2026-05-20 16:51 | /paper-table-build | tools/autodl_audit_sid/build_paper_tables.py | paper | table builder appends GRID ft-cap row when matched-capacity artifacts exist |
+| 2026-05-20 16:51 | /paper-table-build | paper_assets/tables/table2_musical_diagnostic.csv | paper | regenerated same-item Musical diagnostic CSV with GRID ft-cap row |
+| 2026-05-20 16:51 | /paper-table-build | paper_assets/tables/table2_musical_diagnostic.md | paper | regenerated same-item Musical diagnostic markdown with GRID ft-cap row |
+| 2026-05-20 16:51 | /paper-table-build | paper_assets/tables/table2_musical_diagnostic.tex | paper | regenerated same-item Musical diagnostic LaTeX table with GRID ft-cap row |
+| 2026-05-20 16:51 | /paper-write | paper/main_20260520_165100.tex | paper | timestamped paper source after SIDInspect naming correction |
+| 2026-05-20 16:51 | /paper-compile | paper/main_20260520_165100.pdf | paper | timestamped compiled PDF after B2 result integration; 5 pages |
+| 2026-05-20 16:51 | /paper-write | paper/main.tex | paper | latest paper source keeps SIDInspector tool macro |
+| 2026-05-20 16:51 | /paper-compile | paper/main.pdf | paper | latest compiled PDF titled SIDInspector; 5 pages |
+| 2026-05-20 17:02 | /autodl-cloud-deploy | tools/autodl_audit_sid/run_vertical_d3_replication.py | implementation | reusable B4 vertical D3 replication runner for learned SID rows plus sanity controls |
+| 2026-05-20 17:02 | /autodl-cloud-deploy | _gate0_artifacts/vertical_replication/all_beauty_20k_grid_sanity_20260520/vertical_d3_summary.csv | local-artifact | pulled AutoDL B4 All_Beauty 20k GRID-vs-sanity D3 summary |
+| 2026-05-20 17:02 | /autodl-cloud-deploy | docs/VERTICAL_D3_REPLICATION_ALL_BEAUTY_20260520_170200.md | implementation | timestamped B4 All_Beauty vertical D3 replication result report |
+| 2026-05-20 17:02 | /autodl-cloud-deploy | docs/VERTICAL_D3_REPLICATION_ALL_BEAUTY.md | implementation | latest B4 All_Beauty vertical D3 replication result report |
+| 2026-05-20 17:02 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records B4 All_Beauty vertical D3 replication completion |
+| 2026-05-20 17:02 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index points to the B4 All_Beauty vertical D3 replication report |
+| 2026-05-20 17:02 | /experiment-plan | docs/CIKM_17_DAY_8PT_LIFT_PLAN.md | implementation | lift plan marks B4 All_Beauty completed with coarse-category caveat |
+| 2026-05-20 17:02 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records B4 All_Beauty completion and paper-use caveat |
+| 2026-05-20 17:02 | /idea-discovery | findings.md | implementation | append-only finding for B4 All_Beauty vertical D3 replication |
+| 2026-05-20 17:30 | /experiment-plan | tools/autodl_audit_sid/run_d3_ranking_context.py | implementation | B3 bounded prefix-retrieval ranking-context probe for D3 |
+| 2026-05-20 17:30 | /experiment-plan | tests/test_d3_ranking_context.py | test | unit tests for the B3 prefix-retrieval ranking-context probe |
+| 2026-05-20 17:30 | /experiment-plan | _gate0_artifacts/d3_ranking_context/musical_prefix_retrieval_1000_20260520/d3_ranking_context_summary.csv | local-artifact | B3 Musical 1,000-user prefix-retrieval summary with D3 context columns |
+| 2026-05-20 17:30 | /experiment-plan | docs/D3_RANKING_CONTEXT_MUSICAL_20260520_173000.md | documentation | timestamped B3 D3 ranking-context result note |
+| 2026-05-20 17:30 | /experiment-plan | docs/D3_RANKING_CONTEXT_MUSICAL.md | documentation | latest B3 D3 ranking-context result note |
+| 2026-05-20 17:30 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records B3 bounded ranking-context completion |
+| 2026-05-20 17:30 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index points to the B3 ranking-context result note |
+| 2026-05-20 17:30 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records B3 ranking-context completion and claim boundary |
+| 2026-05-20 17:30 | /idea-discovery | findings.md | implementation | append-only finding for B3 ranking-context result |
+| 2026-05-20 17:40 | /autodl-cloud-deploy | _gate0_artifacts/vertical_replication/sports_proxy_d3v2_20260520/resid_unbalanced_proxy/vertical_d3_summary.csv | local-artifact | Sports supplement D3v2 summary for ReSID unbalanced proxy and sanity controls |
+| 2026-05-20 17:40 | /autodl-cloud-deploy | _gate0_artifacts/vertical_replication/sports_proxy_d3v2_20260520/card_feature_proxy/vertical_d3_summary.csv | local-artifact | Sports supplement D3v2 summary for CARD feature proxy and sanity controls |
+| 2026-05-20 17:40 | /autodl-cloud-deploy | docs/SPORTS_PROXY_D3V2_SUPPLEMENT_20260520_174000.md | documentation | timestamped Sports proxy/control D3v2 supplement note |
+| 2026-05-20 17:40 | /autodl-cloud-deploy | docs/SPORTS_PROXY_D3V2_SUPPLEMENT.md | documentation | latest Sports proxy/control D3v2 supplement note |
+| 2026-05-20 17:40 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records Sports supplement as non-main evidence |
+| 2026-05-20 17:40 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index points to Sports proxy/control D3v2 supplement |
+| 2026-05-20 17:40 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records Sports supplement completion and evidence boundary |
+| 2026-05-20 17:40 | /idea-discovery | findings.md | implementation | append-only finding for Sports proxy/control D3v2 supplement |
+| 2026-05-20 17:45 | /paper-write | paper/main_20260520_174500.tex | paper | timestamped paper source before B3/B4/Sports writing integration |
+| 2026-05-20 17:45 | /paper-write | paper/sections/4_demonstration_20260520_174500.tex | paper | timestamped Section 4 before B3/B4/Sports writing integration |
+| 2026-05-20 17:45 | /paper-write | paper/sections/5_availability_limits_20260520_174500.tex | paper | timestamped Section 5 before B3/B4/Sports writing integration |
+| 2026-05-20 17:45 | /paper-write | paper/main.tex | paper | abstract elevates category-prefix D3 inversion as the diagnostic finding |
+| 2026-05-20 17:45 | /paper-write | paper/sections/1_introduction.tex | paper | introduction adds the category-prefix D3 inversion as a resource-level finding |
+| 2026-05-20 17:45 | /paper-write | paper/sections/4_demonstration.tex | paper | Section 4 integrates All_Beauty, Sports supplement, and B3 context with claim boundaries |
+| 2026-05-20 17:45 | /paper-write | paper/sections/5_availability_limits.tex | paper | Section 5 clarifies B3 is not Recall/NDCG validation and Sports is proxy-only supplement |
+| 2026-05-20 17:45 | /paper-compile | paper/main.pdf | paper | compiled after B3/B4/Sports writing integration; 5 pages total |
+| 2026-05-20 17:45 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records conservative B3/B4/Sports writing integration |
+| 2026-05-20 17:45 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index records latest writing integration entry |
+| 2026-05-20 17:45 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records writing integration and verification |
+| 2026-05-20 17:45 | /idea-discovery | findings.md | implementation | append-only finding for B3/B4/Sports paper writing integration |
+| 2026-05-20 17:45 | /paper-write | paper/main.tex | paper | reviewer-attack wording patch: controlled examples and artifact profiles rather than tokenizer-quality rankings |
+| 2026-05-20 17:45 | /paper-write | paper/sections/1_introduction.tex | paper | introduction adds explicit v0 boundary that it does not execute the full literature set |
+| 2026-05-20 17:45 | /paper-write | paper/sections/3_diagnostics.tex | paper | method-space table labels GRID/ReSID as controlled/bounded exports and removes broad coverage wording |
+| 2026-05-20 17:45 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 and B3/Sports wording now emphasize artifact profiles, prefix-candidate context, and proxy-only supplement boundaries |
+| 2026-05-20 17:45 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records subagent reviewer-attack wording patch and final verification |
+| 2026-05-20 17:45 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records reviewer-attack wording patch and verification |
+| 2026-05-20 17:45 | /idea-discovery | findings.md | implementation | append-only finding for reviewer-attack wording patch |
+| 2026-05-20 18:02 | /experiment-plan | _gate0_artifacts/d3_ranking_context/musical_prefix_retrieval_5000_20260520/d3_ranking_context_summary.csv | local-artifact | B3 5,000-user prefix-neighborhood retrieval robustness summary |
+| 2026-05-20 18:02 | /experiment-plan | docs/D3_RANKING_CONTEXT_MUSICAL.md | documentation | B3 note updated with 5,000-user robustness result |
+| 2026-05-20 18:02 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records B3 robustness result and Recall/NDCG boundary |
+| 2026-05-20 18:02 | /idea-discovery | findings.md | implementation | append-only finding for B3 robustness result |
+| 2026-05-20 18:18 | /idea-discovery | docs/MOVIELENS_D3_SANITY_SUMMARY_20260520_181854.md | documentation | timestamped MovieLens non-Amazon D3 sanity portability summary |
+| 2026-05-20 18:18 | /idea-discovery | docs/MOVIELENS_D3_SANITY_SUMMARY.md | documentation | latest MovieLens non-Amazon D3 sanity portability summary |
+| 2026-05-20 18:18 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_181854.md | implementation | timestamped tracker after MovieLens D3 sanity summary |
+| 2026-05-20 18:18 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records MovieLens D3 sanity summary and claim boundary |
+| 2026-05-20 18:18 | /idea-discovery | findings.md | implementation | append-only finding for MovieLens D3 sanity portability |
+| 2026-05-20 18:18 | /autodl-cloud-deploy | _gate0_artifacts/vertical_replication/all_beauty_20k_grid_sanity_seed43_20260520/vertical_d3_summary.csv | local-artifact | All_Beauty seed43 vertical D3 summary pulled from no-GPU AutoDL CPU run |
+| 2026-05-20 18:18 | /autodl-cloud-deploy | _gate0_artifacts/vertical_replication/all_beauty_20k_grid_sanity_seed44_20260520/vertical_d3_summary.csv | local-artifact | All_Beauty seed44 vertical D3 summary pulled from no-GPU AutoDL CPU run |
+| 2026-05-20 18:18 | /experiment-plan | docs/VERTICAL_D3_REPLICATION_ALL_BEAUTY.md | documentation | All_Beauty vertical D3 note updated from seed42-only to 3-seed stability |
+| 2026-05-20 18:18 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records All_Beauty 3-seed vertical D3 result |
+| 2026-05-20 18:18 | /idea-discovery | findings.md | implementation | append-only finding for All_Beauty 3-seed vertical D3 result |
+| 2026-05-20 18:25 | /experiment-plan | docs/B5_RELEASE_RECHECK_20260520.md | documentation | timestamped B5 third-method release recheck |
+| 2026-05-20 18:25 | /experiment-plan | docs/B5_RELEASE_RECHECK.md | documentation | latest B5 release recheck says no-go for third named-method implementation |
+| 2026-05-20 18:25 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records B5 release-watch decision |
+| 2026-05-20 18:25 | /idea-discovery | findings.md | implementation | append-only finding for B5 release recheck |
+| 2026-05-20 18:40 | /experiment-plan | docs/CIKM_17_DAY_8PT_LIFT_PLAN.md | implementation | upgraded aggressive 8/10 plan with B6 ranking validation, B7 third vertical, and B8 qualified-aliasing backup |
+| 2026-05-20 18:40 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records aggressive acceptance strategy rather than borderline safety plan |
+| 2026-05-20 18:40 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index points to upgraded 17-day lift plan scope |
+| 2026-05-20 18:40 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records B6/B7/B8 aggressive acceptance plan update |
+| 2026-05-20 18:40 | /idea-discovery | findings.md | implementation | append-only finding for aggressive 8/10 acceptance plan update |
+| 2026-05-20 19:32 | /experiment-audit | tests/test_d3_ranking_validation.py | implementation | B6 code-review hardening adds explicit no-history target denominator test |
+| 2026-05-20 19:32 | /experiment-audit | paper_assets/tables/table11_d3_ranking_validation.csv | implementation | B6 fixed-reranker validation table frozen for clean-check verifier |
+| 2026-05-20 19:32 | /experiment-audit | paper_assets/tables/table12_sports_grid_vertical.csv | implementation | B7 Sports GRID third-vertical table frozen for clean-check verifier |
+| 2026-05-20 19:32 | /experiment-audit | tools/verify_paper_artifact.py | implementation | verifier now requires B6/B7 scripts, docs, tests, table11/table12, and checks B6/B7 paper numbers |
+| 2026-05-20 19:32 | /idea-discovery | ARTIFACT_MANIFEST.md | documentation | reviewer artifact manifest synced with B6/B7 clean-check scope |
+| 2026-05-20 19:32 | /idea-discovery | ARTIFACT_QUICKSTART.md | documentation | quickstart expected outputs now include table11/table12 |
+| 2026-05-20 19:32 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records B6/B7 verifier hardening and fixed-reranker wording |
+| 2026-05-20 19:32 | /idea-discovery | findings.md | implementation | append-only finding for B6/B7 code-review closure |
+| 2026-05-20 19:46 | /paper-write | paper/main.tex | paper | abstract expands B4/B6/B7 as defensive evidence for the D3 diagnostic finding |
+| 2026-05-20 19:46 | /paper-write | paper/sections/1_introduction.tex | paper | introduction reframes auxiliary checks as evidence defense rather than page-constrained detail |
+| 2026-05-20 19:46 | /paper-write | paper/sections/4_demonstration.tex | paper | Section 4 rewrites B4/B6/B7 into reviewer-question answers instead of experiment-list prose |
+| 2026-05-20 19:46 | /paper-write | paper/main.pdf | paper | clarity-first draft compiles to 6 pages; later compression deferred |
+| 2026-05-20 19:46 | /experiment-audit | paper_assets/tables/table13_all_beauty_vertical_d3.csv | implementation | All_Beauty D3 auxiliary claim now has frozen paper-asset evidence |
+| 2026-05-20 19:46 | /experiment-audit | tools/verify_paper_artifact.py | implementation | verifier now checks B4 table13 in addition to B6/B7 |
+| 2026-05-20 19:46 | /idea-discovery | docs/PAPER_STRICT_CLAIM_AUDIT.md | audit | strict claim audit refreshed after B4/B6/B7 evidence attachment fixes |
+| 2026-05-20 19:46 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records clarity-first 6-page draft and deferred compression |
+| 2026-05-20 19:46 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records zero-context paper claim audit fixes and writing priority shift |
+| 2026-05-20 19:46 | /idea-discovery | findings.md | implementation | append-only finding for clarity-first writing and evidence-attachment closure |
+| 2026-05-20 20:25 | /paper-write | paper/main_20260520_202532.tex | paper | timestamped paper source after second clarity-first writing polish |
+| 2026-05-20 20:25 | /paper-compile | paper/main_20260520_202532.pdf | paper | timestamped compiled PDF after second clarity-first writing polish |
+| 2026-05-20 20:25 | /paper-write | paper/sections/1_introduction_20260520_202532.tex | paper | timestamped introduction after second clarity-first writing polish |
+| 2026-05-20 20:25 | /paper-write | paper/sections/4_demonstration_20260520_202532.tex | paper | timestamped demonstration section after second clarity-first writing polish |
+| 2026-05-20 20:25 | /paper-write | paper/sections/5_availability_limits_20260520_202532.tex | paper | timestamped limits section after second clarity-first writing polish |
+| 2026-05-20 20:25 | /paper-write | paper/main.tex | paper | latest paper source after second clarity-first writing polish |
+| 2026-05-20 20:25 | /paper-compile | paper/main.pdf | paper | latest 6-page clarity-first PDF after second writing polish |
+| 2026-05-20 20:25 | /idea-discovery | docs/CURRENT_STATE_20260520_202532.md | documentation | timestamped current state after second clarity-first writing polish |
+| 2026-05-20 20:25 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records second clarity-first writing polish and verification |
+| 2026-05-20 20:25 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_202532.md | implementation | timestamped tracker after second clarity-first writing polish |
+| 2026-05-20 20:25 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records second clarity-first writing polish and verification |
+| 2026-05-20 20:25 | /idea-discovery | findings.md | implementation | append-only finding for second clarity-first writing polish |
+| 2026-05-20 21:23 | /experiment-plan | docs/SIMULATED_REVIEW_V2_DECISION_20260520_212332.md | documentation | timestamped simulated-review v2 decision and Lift5 boundary |
+| 2026-05-20 21:23 | /experiment-plan | docs/SIMULATED_REVIEW_V2_DECISION.md | documentation | latest simulated-review v2 decision and Lift5 boundary |
+| 2026-05-20 21:25 | /experiment-audit | docs/D3_RANKING_VALIDATION_ALL_BEAUTY.md | documentation | B6 All_Beauty temporal-LOO fixed-reranker replication report |
+| 2026-05-20 21:25 | /experiment-audit | paper_assets/tables/table14_all_beauty_d3_ranking_validation.csv | implementation | B6 All_Beauty ranking-context replication frozen CSV |
+| 2026-05-20 21:31 | /experiment-audit | methods/rqvae_minimal_reference/IMPL_NOTES.md | implementation | RQ-min reference-adapter implementation notes and boundaries |
+| 2026-05-20 21:31 | /experiment-audit | methods/rqvae_minimal_reference/exporter.py | implementation | local residual-quantization reference exporter |
+| 2026-05-20 21:31 | /experiment-audit | tools/autodl_audit_sid/run_rqvae_minimal_reference.py | implementation | local RQ-min reference-adapter gate runner |
+| 2026-05-20 21:31 | /experiment-audit | tests/test_rqvae_minimal_reference.py | implementation | RQ-min reference-adapter unit tests |
+| 2026-05-20 21:31 | /experiment-audit | docs/RQVAE_MINIMAL_REFERENCE_GATE.md | documentation | RQ-min full-Musical CPU gate report |
+| 2026-05-20 21:31 | /experiment-audit | paper_assets/tables/table15_rqvae_minimal_reference.csv | implementation | RQ-min reference-adapter frozen summary table |
+| 2026-05-20 21:31 | /paper-write | paper/sections/3_diagnostics.tex | paper | Table 1 admits RQ-min as reference adapter only |
+| 2026-05-20 21:31 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 and Section 4 add RQ-min and All_Beauty B6 with boundaries |
+| 2026-05-20 21:31 | /paper-write | paper/sections/5_availability_limits.tex | paper | limits section clarifies RQ-min is not published tokenizer reproduction |
+| 2026-05-20 21:31 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.pdf | paper | Figure 1 regenerated as finding preview |
+| 2026-05-20 21:31 | /experiment-audit | tools/verify_paper_artifact.py | implementation | verifier now checks table14/table15 and RQ-min reference-adapter files |
+| 2026-05-20 21:31 | /idea-discovery | ARTIFACT_MANIFEST.md | documentation | reviewer manifest includes B6 Beauty and RQ-min reference-adapter evidence |
+| 2026-05-20 21:31 | /idea-discovery | ARTIFACT_QUICKSTART.md | documentation | quickstart expected tables include table14/table15 |
+| 2026-05-20 21:31 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records sixth-round closure and verification |
+| 2026-05-20 21:31 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records sixth-round closure and verification |
+| 2026-05-20 21:31 | /idea-discovery | findings.md | implementation | append-only finding for sixth-round closure |
+| 2026-05-20 21:36 | /paper-write | paper/main_20260520_213614.tex | paper | timestamped paper source after sixth-round closure |
+| 2026-05-20 21:36 | /paper-compile | paper/main_20260520_213614.pdf | paper | timestamped PDF after sixth-round closure |
+| 2026-05-20 21:36 | /paper-write | paper/sections/3_diagnostics_20260520_213614.tex | paper | timestamped diagnostics section with RQ-min reference-adapter row |
+| 2026-05-20 21:36 | /paper-write | paper/sections/4_demonstration_20260520_213614.tex | paper | timestamped demonstration section with All_Beauty B6 and RQ-min rows |
+| 2026-05-20 21:36 | /paper-write | paper/sections/5_availability_limits_20260520_213614.tex | paper | timestamped limits section with RQ-min boundary |
+| 2026-05-20 21:36 | /idea-discovery | docs/CURRENT_STATE_20260520_213614.md | documentation | timestamped current state after sixth-round closure |
+| 2026-05-20 21:36 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_213614.md | implementation | timestamped tracker after sixth-round closure |
+| 2026-05-20 21:36 | /idea-discovery | ARTIFACT_MANIFEST_20260520_213614.md | documentation | timestamped reviewer artifact manifest after table14/table15 addition |
+| 2026-05-20 21:36 | /idea-discovery | ARTIFACT_QUICKSTART_20260520_213614.md | documentation | timestamped reviewer quickstart after table14/table15 addition |
+| 2026-05-20 21:36 | /experiment-audit | paper_assets/tables/table15_rqvae_minimal_reference_20260520_213614.csv | implementation | timestamped RQ-min reference-adapter frozen CSV |
+| 2026-05-20 22:11 | /paper-write | paper/sections/4_demonstration.tex | paper | seventh-review patch adds D2/D3 dissociation and cools All_Beauty B6 to directional evidence |
+| 2026-05-20 22:11 | /paper-write | paper/main.tex | paper | abstract final sentence tightened around inspectable resource artifacts |
+| 2026-05-20 22:11 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.pdf | paper | Figure 1 labels cleaned up for GRID range and cross-vertical alias-risk panel |
+| 2026-05-20 22:11 | /paper-compile | paper/main.pdf | paper | latest 6-page clarity draft after seventh-round review absorption |
+| 2026-05-20 22:11 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state records seventh-round writing-only review absorption and verification |
+| 2026-05-20 22:11 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records seventh-round review absorption and page-compression next step |
+| 2026-05-20 22:11 | /idea-discovery | findings.md | implementation | append-only finding for seventh-round review absorption |
+| 2026-05-20 22:11 | /paper-write | paper/main_20260520_221109.tex | paper | timestamped paper source after seventh-round review absorption |
+| 2026-05-20 22:11 | /paper-compile | paper/main_20260520_221109.pdf | paper | timestamped compiled PDF after seventh-round review absorption |
+| 2026-05-20 22:11 | /paper-write | paper/sections/4_demonstration_20260520_221109.tex | paper | timestamped demonstration section after D2/D3 dissociation patch |
+| 2026-05-20 22:11 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline_20260520_221109.py | paper | timestamped Figure 1 generator after label cleanup |
+| 2026-05-20 22:11 | /idea-discovery | docs/CURRENT_STATE_20260520_221109.md | documentation | timestamped current state after seventh-round review absorption |
+| 2026-05-20 22:11 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_221109.md | implementation | timestamped tracker after seventh-round review absorption |
+| 2026-05-20 22:11 | /idea-discovery | findings_20260520_221109.md | implementation | timestamped finding log snapshot after seventh-round review absorption |
+| 2026-05-20 22:11 | /idea-discovery | MANIFEST_20260520_221109.md | documentation | timestamped manifest after seventh-round review absorption |
+| 2026-05-20 22:19 | /paper-write | paper/main.tex | paper | display numeric style normalized to three decimals with leading zero in abstract |
+| 2026-05-20 22:19 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 and Section 4 display values normalized to three decimals with leading zero |
+| 2026-05-20 22:19 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline.py | paper | Figure 1 labels normalized to leading-zero decimals |
+| 2026-05-20 22:19 | /paper-compile | paper/main.pdf | paper | latest 6-page PDF after numeric-style normalization |
+| 2026-05-20 22:19 | /paper-write | paper/main_20260520_221944.tex | paper | timestamped paper source after numeric-style normalization |
+| 2026-05-20 22:19 | /paper-compile | paper/main_20260520_221944.pdf | paper | timestamped compiled PDF after numeric-style normalization |
+| 2026-05-20 22:19 | /paper-write | paper/sections/4_demonstration_20260520_221944.tex | paper | timestamped demonstration section after numeric-style normalization |
+| 2026-05-20 22:19 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline_20260520_221944.py | paper | timestamped Figure 1 generator after numeric-style normalization |
+| 2026-05-20 22:19 | /idea-discovery | MANIFEST_20260520_221944.md | documentation | timestamped manifest after numeric-style normalization |
+| 2026-05-20 22:45 | /paper-write | paper/sections/3_diagnostics.tex | paper | Table 1 redesigned as compact evidence-role map without Items/Seeds/Caveat columns |
+| 2026-05-20 22:45 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 and Table 3 redesigned as artifact-profile and mechanism-check tables |
+| 2026-05-20 22:45 | /paper-compile | paper/main.pdf | paper | latest 6-page PDF after pre-compression table redesign |
+| 2026-05-20 22:45 | /paper-write | paper/main_20260520_224509.tex | paper | timestamped paper source after pre-compression table redesign |
+| 2026-05-20 22:45 | /paper-compile | paper/main_20260520_224509.pdf | paper | timestamped PDF after pre-compression table redesign |
+| 2026-05-20 22:45 | /paper-write | paper/sections/3_diagnostics_20260520_224509.tex | paper | timestamped diagnostics section after Table 1 redesign |
+| 2026-05-20 22:45 | /paper-write | paper/sections/4_demonstration_20260520_224509.tex | paper | timestamped demonstration section after Table 2/Table 3 redesign |
+| 2026-05-20 22:45 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records pre-compression table redesign and verification |
+| 2026-05-20 22:45 | /idea-discovery | findings.md | implementation | append-only finding for pre-compression table redesign |
+| 2026-05-20 22:45 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_224509.md | implementation | timestamped tracker after pre-compression table redesign |
+| 2026-05-20 22:45 | /idea-discovery | findings_20260520_224509.md | implementation | timestamped finding log after pre-compression table redesign |
+| 2026-05-20 22:45 | /idea-discovery | MANIFEST_20260520_224509.md | documentation | timestamped manifest after pre-compression table redesign |
+| 2026-05-20 23:12 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.pdf | paper | Figure 1 converted to wider double-column landscape finding preview |
+| 2026-05-20 23:12 | /paper-write | paper/sections/2_resource_scope.tex | paper | Figure 1 caption shortened and figure widened to figure* |
+| 2026-05-20 23:12 | /paper-write | paper/sections/3_diagnostics.tex | paper | Table 1 renamed to artifact contents with plain column labels |
+| 2026-05-20 23:12 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 renamed to Amazon Reviews 2023 Musical Instruments and former Table 3 folded into prose |
+| 2026-05-20 23:12 | /paper-compile | paper/main.pdf | paper | latest 6-page PDF after figure/table naming cleanup |
+| 2026-05-20 23:12 | /paper-write | paper/main_20260520_231207.tex | paper | timestamped paper source after figure/table naming cleanup |
+| 2026-05-20 23:12 | /paper-compile | paper/main_20260520_231207.pdf | paper | timestamped PDF after figure/table naming cleanup |
+| 2026-05-20 23:12 | /paper-write | paper/sections/2_resource_scope_20260520_231207.tex | paper | timestamped resource-scope section after figure widening |
+| 2026-05-20 23:12 | /paper-write | paper/sections/3_diagnostics_20260520_231207.tex | paper | timestamped diagnostics section after Table 1 naming cleanup |
+| 2026-05-20 23:12 | /paper-write | paper/sections/4_demonstration_20260520_231207.tex | paper | timestamped demonstration section after Table 2 naming and Table 3 removal |
+| 2026-05-20 23:12 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline_20260520_231207.py | paper | timestamped Figure 1 generator after landscape redesign |
+| 2026-05-20 23:12 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records figure/table naming cleanup |
+| 2026-05-20 23:12 | /idea-discovery | findings.md | implementation | append-only finding for figure/table naming cleanup |
+| 2026-05-20 23:12 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_231207.md | implementation | timestamped tracker after figure/table naming cleanup |
+| 2026-05-20 23:12 | /idea-discovery | findings_20260520_231207.md | implementation | timestamped finding log after figure/table naming cleanup |
+| 2026-05-20 23:12 | /idea-discovery | MANIFEST_20260520_231207.md | documentation | timestamped manifest after figure/table naming cleanup |
+| 2026-05-20 23:32 | /paper-figure | paper/figures/fig1_audit_sid_pipeline.pdf | paper | Figure 1 returned to compact single-column finding preview |
+| 2026-05-20 23:32 | /paper-write | paper/sections/2_resource_scope.tex | paper | Figure 1 float changed back to single-column |
+| 2026-05-20 23:32 | /paper-write | paper/sections/3_diagnostics.tex | paper | Table 1 redesigned as two-column Resource part / Artifacts inventory |
+| 2026-05-20 23:32 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 first column aligned as Artifact and D4/D5 spacing fixed |
+| 2026-05-20 23:32 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after single-column table/figure alignment |
+| 2026-05-20 23:32 | /paper-write | paper/main_20260520_233228.tex | paper | timestamped paper source after single-column table/figure alignment |
+| 2026-05-20 23:32 | /paper-compile | paper/main_20260520_233228.pdf | paper | timestamped PDF after single-column table/figure alignment |
+| 2026-05-20 23:32 | /paper-write | paper/sections/2_resource_scope_20260520_233228.tex | paper | timestamped resource-scope section after single-column figure restoration |
+| 2026-05-20 23:32 | /paper-write | paper/sections/3_diagnostics_20260520_233228.tex | paper | timestamped diagnostics section after Table 1 artifact alignment |
+| 2026-05-20 23:32 | /paper-write | paper/sections/4_demonstration_20260520_233228.tex | paper | timestamped demonstration section after Table 2 artifact alignment |
+| 2026-05-20 23:32 | /paper-figure | tools/paper_figures/generate_audit_sid_pipeline_20260520_233228.py | paper | timestamped Figure 1 generator after single-column restoration |
+| 2026-05-20 23:32 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records single-column artifact-table alignment |
+| 2026-05-20 23:32 | /idea-discovery | findings.md | implementation | append-only finding for single-column artifact-table alignment |
+| 2026-05-20 23:32 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_233228.md | implementation | timestamped tracker after single-column artifact-table alignment |
+| 2026-05-20 23:32 | /idea-discovery | findings_20260520_233228.md | implementation | timestamped finding log after single-column artifact-table alignment |
+| 2026-05-20 23:32 | /idea-discovery | MANIFEST_20260520_233228.md | documentation | timestamped manifest after single-column artifact-table alignment |
+| 2026-05-20 23:54 | /paper-write | paper/main.tex | paper | sentence-level body polish and local bibliography warning control |
+| 2026-05-20 23:54 | /paper-write | paper/sections/1_introduction.tex | paper | sentence-level introduction polish without claim changes |
+| 2026-05-20 23:54 | /paper-write | paper/sections/2_resource_scope.tex | paper | sentence-level resource-scope polish without claim changes |
+| 2026-05-20 23:54 | /paper-write | paper/sections/3_diagnostics.tex | paper | sentence-level diagnostics section polish without claim changes |
+| 2026-05-20 23:54 | /paper-write | paper/sections/4_demonstration.tex | paper | sentence-level demonstration section polish without value changes |
+| 2026-05-20 23:54 | /paper-write | paper/sections/5_availability_limits.tex | paper | sentence-level limits section polish without claim changes |
+| 2026-05-20 23:54 | /citation-audit | paper/references.bib | paper | arXiv identity fields deduplicated for ACM reference output |
+| 2026-05-20 23:54 | /citation-audit | paper_assets/references/audit_sid_references.bib | paper | synced bibliography copy after arXiv identity deduplication |
+| 2026-05-20 23:54 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after body polish and reference-format cleanup |
+| 2026-05-20 23:54 | /paper-write | paper/main_20260520_235406.tex | paper | timestamped paper source after body polish and reference-format cleanup |
+| 2026-05-20 23:54 | /paper-compile | paper/main_20260520_235406.pdf | paper | timestamped PDF after body polish and reference-format cleanup |
+| 2026-05-20 23:54 | /paper-write | paper/sections/1_introduction_20260520_235406.tex | paper | timestamped introduction after body polish |
+| 2026-05-20 23:54 | /paper-write | paper/sections/2_resource_scope_20260520_235406.tex | paper | timestamped resource-scope section after body polish |
+| 2026-05-20 23:54 | /paper-write | paper/sections/3_diagnostics_20260520_235406.tex | paper | timestamped diagnostics section after body polish |
+| 2026-05-20 23:54 | /paper-write | paper/sections/4_demonstration_20260520_235406.tex | paper | timestamped demonstration section after body polish |
+| 2026-05-20 23:54 | /paper-write | paper/sections/5_availability_limits_20260520_235406.tex | paper | timestamped limits section after body polish |
+| 2026-05-20 23:54 | /citation-audit | paper/references_20260520_235406.bib | paper | timestamped bibliography after arXiv identity deduplication |
+| 2026-05-20 23:54 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER.md | implementation | tracker records body polish and reference-format cleanup |
+| 2026-05-20 23:54 | /idea-discovery | findings.md | implementation | append-only finding for body polish and reference-format cleanup |
+| 2026-05-20 23:54 | /idea-discovery | refine-logs/EXPERIMENT_TRACKER_20260520_235406.md | implementation | timestamped tracker after body polish and reference-format cleanup |
+| 2026-05-20 23:54 | /idea-discovery | findings_20260520_235406.md | implementation | timestamped finding log after body polish and reference-format cleanup |
+| 2026-05-20 23:54 | /idea-discovery | MANIFEST_20260520_235406.md | documentation | timestamped manifest after body polish and reference-format cleanup |
+| 2026-05-20 23:56 | /paper-write | paper/main.tex | paper | GenAI Usage Disclosure updated and keywords refined |
+| 2026-05-20 23:56 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after disclosure and keyword update |
+| 2026-05-20 23:56 | /paper-write | paper/main_20260520_235648.tex | paper | timestamped paper source after disclosure and keyword update |
+| 2026-05-20 23:56 | /paper-compile | paper/main_20260520_235648.pdf | paper | timestamped PDF after disclosure and keyword update |
+| 2026-05-20 23:56 | /idea-discovery | MANIFEST_20260520_235648.md | documentation | timestamped manifest after disclosure and keyword update |
+| 2026-05-21 00:03 | /paper-write | paper/sections/3_diagnostics.tex | paper | Table 1 retitled as resource catalog with Category/Artifacts columns |
+| 2026-05-21 00:03 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 GRID ft row simplified to seed42 display while keeping 3-seed stability in artifacts |
+| 2026-05-21 00:03 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after table-label and GRID ft display cleanup |
+| 2026-05-21 00:03 | /paper-write | paper/main_20260521_000342.tex | paper | timestamped paper source after table-label and GRID ft display cleanup |
+| 2026-05-21 00:03 | /paper-compile | paper/main_20260521_000342.pdf | paper | timestamped PDF after table-label and GRID ft display cleanup |
+| 2026-05-21 00:03 | /paper-write | paper/sections/3_diagnostics_20260521_000342.tex | paper | timestamped diagnostics section after Table 1 label cleanup |
+| 2026-05-21 00:03 | /paper-write | paper/sections/4_demonstration_20260521_000342.tex | paper | timestamped demonstration section after Table 2 GRID ft display cleanup |
+| 2026-05-21 00:03 | /idea-discovery | MANIFEST_20260521_000342.md | documentation | timestamped manifest after table-label and GRID ft display cleanup |
+| 2026-05-21 00:07 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 D5 header shortened and numeric columns redistributed with right-aligned values |
+| 2026-05-21 00:07 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after Table 2 layout cleanup |
+| 2026-05-21 00:07 | /paper-write | paper/main_20260521_000704.tex | paper | timestamped paper source after Table 2 layout cleanup |
+| 2026-05-21 00:07 | /paper-compile | paper/main_20260521_000704.pdf | paper | timestamped PDF after Table 2 layout cleanup |
+| 2026-05-21 00:07 | /paper-write | paper/sections/4_demonstration_20260521_000704.tex | paper | timestamped demonstration section after Table 2 layout cleanup |
+| 2026-05-21 00:07 | /idea-discovery | MANIFEST_20260521_000704.md | documentation | timestamped manifest after Table 2 layout cleanup |
+| 2026-05-21 00:09 | /paper-write | paper/sections/3_diagnostics.tex | paper | Table 1 rows reordered by evidentiary role |
+| 2026-05-21 00:09 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 rows reordered to match the diagnostic reading path |
+| 2026-05-21 00:09 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after Table 1/Table 2 row-order cleanup |
+| 2026-05-21 00:09 | /paper-write | paper/main_20260521_000939.tex | paper | timestamped paper source after Table 1/Table 2 row-order cleanup |
+| 2026-05-21 00:09 | /paper-compile | paper/main_20260521_000939.pdf | paper | timestamped PDF after Table 1/Table 2 row-order cleanup |
+| 2026-05-21 00:09 | /paper-write | paper/sections/3_diagnostics_20260521_000939.tex | paper | timestamped diagnostics section after Table 1 row-order cleanup |
+| 2026-05-21 00:09 | /paper-write | paper/sections/4_demonstration_20260521_000939.tex | paper | timestamped demonstration section after Table 2 row-order cleanup |
+| 2026-05-21 00:09 | /idea-discovery | MANIFEST_20260521_000939.md | documentation | timestamped manifest after Table 1/Table 2 row-order cleanup |
+| 2026-05-21 00:23 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 2 typography clarified: bold named exports, plain ablation/reference rows, italic controls |
+| 2026-05-21 00:23 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after Table 2 typography cleanup |
+| 2026-05-21 00:23 | /paper-write | paper/main_20260521_002355.tex | paper | timestamped paper source after Table 2 typography cleanup |
+| 2026-05-21 00:23 | /paper-compile | paper/main_20260521_002355.pdf | paper | timestamped PDF after Table 2 typography cleanup |
+| 2026-05-21 00:23 | /paper-write | paper/sections/4_demonstration_20260521_002355.tex | paper | timestamped demonstration section after Table 2 typography cleanup |
+| 2026-05-21 00:23 | /idea-discovery | MANIFEST_20260521_002355.md | documentation | timestamped manifest after Table 2 typography cleanup |
+| 2026-05-21 00:42 | /paper-write | paper/sections/2_resource_scope.tex | paper | Figure 1 caption expanded to describe workflow and preview-panel evidence |
+| 2026-05-21 00:42 | /paper-write | paper/sections/3_diagnostics.tex | paper | Table 1 restored as compact evidence catalog with role/items/runs/probes |
+| 2026-05-21 00:42 | /paper-write | paper/sections/4_demonstration.tex | paper | compact controlled mechanism-probe table restored and linked from the finding text |
+| 2026-05-21 00:42 | /paper-write | paper/sections/5_availability_limits.tex | paper | availability and limits section compressed to fund restored high-density tables |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table1_method_coverage.csv | paper | latest evidence-catalog table data |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table1_method_coverage.md | paper | latest evidence-catalog table markdown |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table1_method_coverage.tex | paper | latest evidence-catalog table LaTeX |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table3_mechanism_probes.csv | paper | controlled mechanism-probe table data restored for artifact verification |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table3_mechanism_probes.md | paper | controlled mechanism-probe table markdown |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table3_mechanism_probes.tex | paper | controlled mechanism-probe table LaTeX |
+| 2026-05-21 00:42 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after Round 8 evidence-table repair |
+| 2026-05-21 00:42 | /paper-write | paper/main_20260521_004252.tex | paper | timestamped paper source after Round 8 evidence-table repair |
+| 2026-05-21 00:42 | /paper-compile | paper/main_20260521_004252.pdf | paper | timestamped PDF after Round 8 evidence-table repair |
+| 2026-05-21 00:42 | /paper-write | paper/sections/2_resource_scope_20260521_004252.tex | paper | timestamped Figure 1 caption section after Round 8 repair |
+| 2026-05-21 00:42 | /paper-write | paper/sections/3_diagnostics_20260521_004252.tex | paper | timestamped diagnostics section after evidence-catalog repair |
+| 2026-05-21 00:42 | /paper-write | paper/sections/4_demonstration_20260521_004252.tex | paper | timestamped demonstration section after mechanism-probe table restoration |
+| 2026-05-21 00:42 | /paper-write | paper/sections/5_availability_limits_20260521_004252.tex | paper | timestamped compressed availability/limits section |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table1_method_coverage_20260521_004252.csv | paper | timestamped evidence-catalog CSV |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table1_method_coverage_20260521_004252.md | paper | timestamped evidence-catalog markdown |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table1_method_coverage_20260521_004252.tex | paper | timestamped evidence-catalog LaTeX |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table3_mechanism_probes_20260521_004252.csv | paper | timestamped controlled mechanism-probe CSV |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table3_mechanism_probes_20260521_004252.md | paper | timestamped controlled mechanism-probe markdown |
+| 2026-05-21 00:42 | /paper-write | paper_assets/tables/table3_mechanism_probes_20260521_004252.tex | paper | timestamped controlled mechanism-probe LaTeX |
+| 2026-05-21 00:42 | /paper-write | tools/verify_paper_artifact.py | implementation | verifier now requires and validates the restored mechanism-probe table |
+| 2026-05-21 00:42 | /paper-write | tools/verify_paper_artifact_20260521_004252.py | implementation | timestamped verifier after restored mechanism-probe checks |
+| 2026-05-21 00:42 | /idea-discovery | MANIFEST_20260521_004252.md | documentation | timestamped manifest after Round 8 evidence-table repair |
+| 2026-05-21 00:44 | /paper-write | paper/sections/3_diagnostics.tex | paper | Table 1 caption tightened after PDF text review |
+| 2026-05-21 00:44 | /paper-write | paper_assets/tables/table1_method_coverage.tex | paper | Table 1 asset caption aligned with latest manuscript |
+| 2026-05-21 00:44 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after Table 1 caption polish |
+| 2026-05-21 00:44 | /paper-write | paper/main_20260521_004458.tex | paper | timestamped paper source after Table 1 caption polish |
+| 2026-05-21 00:44 | /paper-compile | paper/main_20260521_004458.pdf | paper | timestamped PDF after Table 1 caption polish |
+| 2026-05-21 00:44 | /paper-write | paper/sections/3_diagnostics_20260521_004458.tex | paper | timestamped diagnostics section after Table 1 caption polish |
+| 2026-05-21 00:44 | /paper-write | paper_assets/tables/table1_method_coverage_20260521_004458.tex | paper | timestamped Table 1 LaTeX asset after caption polish |
+| 2026-05-21 00:44 | /idea-discovery | MANIFEST_20260521_004458.md | documentation | timestamped manifest after Table 1 caption polish |
+| 2026-05-21 00:51 | /paper-write | paper/main.tex | paper | topmatter switched to CIKM Resource single-blind ACM sigconf metadata with ACM reference strip and folios |
+| 2026-05-21 00:51 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after Resource-track topmatter update |
+| 2026-05-21 00:51 | /paper-write | paper/main_20260521_005116.tex | paper | timestamped paper source after Resource-track topmatter update |
+| 2026-05-21 00:51 | /paper-compile | paper/main_20260521_005116.pdf | paper | timestamped PDF after Resource-track topmatter update |
+| 2026-05-21 00:51 | /idea-discovery | MANIFEST_20260521_005116.md | documentation | timestamped manifest after Resource-track topmatter update |
+| 2026-05-21 00:53 | /paper-write | paper/sections/4_demonstration.tex | paper | Table 3 changed to before/after mechanism-probe contrast columns |
+| 2026-05-21 00:53 | /paper-write | paper_assets/tables/table3_mechanism_probes.csv | paper | latest mechanism-probe data with without/with probe columns |
+| 2026-05-21 00:53 | /paper-write | paper_assets/tables/table3_mechanism_probes.md | paper | latest mechanism-probe markdown with before/after contrast |
+| 2026-05-21 00:53 | /paper-write | paper_assets/tables/table3_mechanism_probes.tex | paper | latest mechanism-probe LaTeX asset with before/after contrast |
+| 2026-05-21 00:53 | /paper-write | tools/verify_paper_artifact.py | implementation | verifier aligned with Table 3 without/with probe columns |
+| 2026-05-21 00:53 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after Table 3 before/after redesign |
+| 2026-05-21 00:53 | /paper-write | paper/main_20260521_005329.tex | paper | timestamped paper source after Table 3 before/after redesign |
+| 2026-05-21 00:53 | /paper-compile | paper/main_20260521_005329.pdf | paper | timestamped PDF after Table 3 before/after redesign |
+| 2026-05-21 00:53 | /paper-write | paper/sections/4_demonstration_20260521_005329.tex | paper | timestamped demonstration section after Table 3 before/after redesign |
+| 2026-05-21 00:53 | /paper-write | paper_assets/tables/table3_mechanism_probes_20260521_005329.csv | paper | timestamped mechanism-probe CSV after before/after redesign |
+| 2026-05-21 00:53 | /paper-write | paper_assets/tables/table3_mechanism_probes_20260521_005329.md | paper | timestamped mechanism-probe markdown after before/after redesign |
+| 2026-05-21 00:53 | /paper-write | paper_assets/tables/table3_mechanism_probes_20260521_005329.tex | paper | timestamped mechanism-probe LaTeX after before/after redesign |
+| 2026-05-21 00:53 | /paper-write | tools/verify_paper_artifact_20260521_005329.py | implementation | timestamped verifier after Table 3 before/after redesign |
+| 2026-05-21 00:53 | /idea-discovery | MANIFEST_20260521_005329.md | documentation | timestamped manifest after Table 3 before/after redesign |
+| 2026-05-21 00:57 | /paper-write | paper/sections/3_diagnostics.tex | paper | Table 1 changed to Row/Type/Items/Seeds/D coverage evidence catalog |
+| 2026-05-21 00:57 | /paper-write | paper_assets/tables/table1_method_coverage.csv | paper | latest Table 1 data with type/seeds/D coverage columns |
+| 2026-05-21 00:57 | /paper-write | paper_assets/tables/table1_method_coverage.md | paper | latest Table 1 markdown with type/seeds/D coverage columns |
+| 2026-05-21 00:57 | /paper-write | paper_assets/tables/table1_method_coverage.tex | paper | latest Table 1 LaTeX asset with type/seeds/D coverage columns |
+| 2026-05-21 00:57 | /paper-write | tools/verify_paper_artifact.py | implementation | verifier now validates Table 1 evidence-catalog rows |
+| 2026-05-21 00:57 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after Table 1 evidence-catalog redesign |
+| 2026-05-21 00:57 | /paper-write | paper/main_20260521_005742.tex | paper | timestamped paper source after Table 1 evidence-catalog redesign |
+| 2026-05-21 00:57 | /paper-compile | paper/main_20260521_005742.pdf | paper | timestamped PDF after Table 1 evidence-catalog redesign |
+| 2026-05-21 00:57 | /paper-write | paper/sections/3_diagnostics_20260521_005742.tex | paper | timestamped diagnostics section after Table 1 redesign |
+| 2026-05-21 00:57 | /paper-write | paper_assets/tables/table1_method_coverage_20260521_005742.csv | paper | timestamped Table 1 CSV after evidence-catalog redesign |
+| 2026-05-21 00:57 | /paper-write | paper_assets/tables/table1_method_coverage_20260521_005742.md | paper | timestamped Table 1 markdown after evidence-catalog redesign |
+| 2026-05-21 00:57 | /paper-write | paper_assets/tables/table1_method_coverage_20260521_005742.tex | paper | timestamped Table 1 LaTeX after evidence-catalog redesign |
+| 2026-05-21 00:57 | /paper-write | tools/verify_paper_artifact_20260521_005742.py | implementation | timestamped verifier after Table 1 validation update |
+| 2026-05-21 00:57 | /idea-discovery | MANIFEST_20260521_005742.md | documentation | timestamped manifest after Table 1 evidence-catalog redesign |
+| 2026-05-21 01:07 | /paper-write | paper/main.tex | paper | CIKM metadata shortened so ACM Reference Format stays in the left column |
+| 2026-05-21 01:07 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after CIKM metadata shortening |
+| 2026-05-21 01:07 | /paper-write | paper/main_20260521_010735.tex | paper | timestamped paper source after CIKM metadata shortening |
+| 2026-05-21 01:07 | /paper-compile | paper/main_20260521_010735.pdf | paper | timestamped PDF after CIKM metadata shortening |
+| 2026-05-21 01:07 | /idea-discovery | MANIFEST_20260521_010735.md | documentation | timestamped manifest after CIKM metadata shortening |
+| 2026-05-21 01:36 | /paper-write | paper/main_20260521_013627.tex | paper | timestamped paper source before single-affiliation author block update |
+| 2026-05-21 01:36 | /paper-write | paper/main.tex | paper | author block updated with Jiandong Ding, Huijie Qin, Tianying Liu, shared Huawei Technologies affiliation, no city field |
+| 2026-05-21 01:36 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after author block update |
+| 2026-05-21 01:36 | /paper-compile | paper/main_20260521_013627.pdf | paper | timestamped PDF after author block update |
+| 2026-05-21 01:36 | /idea-discovery | MANIFEST_20260521_013627.md | documentation | timestamped manifest before author block bookkeeping |
+| 2026-05-21 01:39 | /paper-write | paper/main_20260521_013931.tex | paper | timestamped paper source before reverting to official separate ACM author blocks |
+| 2026-05-21 01:39 | /paper-write | paper/main.tex | paper | author block uses official separate ACM author macros with Shanghai, China affiliation for all authors |
+| 2026-05-21 01:39 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after official separate author-block update |
+| 2026-05-21 01:39 | /paper-compile | paper/main_20260521_013931.pdf | paper | timestamped PDF after official separate author-block update |
+| 2026-05-21 01:39 | /idea-discovery | MANIFEST_20260521_013931.md | documentation | timestamped manifest before official separate author-block bookkeeping |
+| 2026-05-21 01:52 | /paper-write | paper/main_20260521_015201.tex | paper | timestamped paper source before removing Tianying Liu from author block |
+| 2026-05-21 01:52 | /paper-write | paper/main.tex | paper | author block now includes only Jiandong Ding and Huijie Qin |
+| 2026-05-21 01:52 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after removing Tianying Liu from author block |
+| 2026-05-21 01:52 | /paper-compile | paper/main_20260521_015201.pdf | paper | timestamped PDF after removing Tianying Liu from author block |
+| 2026-05-21 01:52 | /idea-discovery | MANIFEST_20260521_015201.md | documentation | timestamped manifest before two-author block bookkeeping |
+| 2026-05-22 00:08 | /paper-write | paper/main_20260522_000827.tex | paper | timestamped paper source before latest four-author block update |
+| 2026-05-22 00:08 | /paper-write | paper/main.tex | paper | author block updated to Jiandong Ding, Heng Chang, Huijie Qin, Tianying Liu with Huawei Technologies affiliation |
+| 2026-05-22 00:08 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after four-author block update |
+| 2026-05-22 00:08 | /paper-compile | paper/main_20260522_000827.pdf | paper | timestamped PDF after four-author block update |
+| 2026-05-22 00:08 | /idea-discovery | MANIFEST_20260522_000827.md | documentation | timestamped manifest before four-author block bookkeeping |
+| 2026-05-22 00:11 | /paper-write | paper/main_20260522_001107.tex | paper | timestamped paper source before compact one-line author block update |
+| 2026-05-22 00:11 | /paper-write | paper/main.tex | paper | author block compacted to one visual line with shared Huawei email suffix and affiliation |
+| 2026-05-22 00:11 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after compact one-line author block update |
+| 2026-05-22 00:11 | /paper-compile | paper/main_20260522_001107.pdf | paper | timestamped PDF after compact one-line author block update |
+| 2026-05-22 00:11 | /idea-discovery | MANIFEST_20260522_001107.md | documentation | timestamped manifest before compact one-line author block bookkeeping |
+| 2026-05-22 00:21 | /paper-compile | paper/main.pdf | paper | final forced submission-check PDF build; 5 pages with main content ending on page 4 and references on page 5 |
+| 2026-05-22 00:21 | /paper-claim-audit | docs/FINAL_SUBMISSION_CHECK_20260522_002118.md | documentation | timestamped final CIKM Resource submission readiness check |
+| 2026-05-22 00:21 | /paper-claim-audit | docs/FINAL_SUBMISSION_CHECK.md | documentation | fixed latest final CIKM Resource submission readiness check |
+| 2026-05-22 00:33 | /paper-write | paper/sections/2_resource_scope.tex | paper | section title polished to Artifact Interface and Validation |
+| 2026-05-22 00:33 | /paper-write | paper/sections/3_diagnostics.tex | paper | section title polished to Diagnostic Probes and Evidence Roles |
+| 2026-05-22 00:33 | /paper-write | paper/sections/4_demonstration.tex | paper | section title polished to Worked Examples and Probe Evidence |
+| 2026-05-22 00:33 | /paper-write | paper/sections/5_availability_limits.tex | paper | section title polished to Artifact Availability and Limits |
+| 2026-05-22 00:33 | /paper-compile | paper/main.pdf | paper | latest 5-page PDF after section-title polish |
+| 2026-05-22 00:33 | /paper-compile | paper/main_20260522_003338.pdf | paper | timestamped PDF after section-title polish |
+| 2026-05-22 00:33 | /paper-write | paper/sections/2_resource_scope_20260522_003338.tex | paper | timestamped interface section after title polish |
+| 2026-05-22 00:33 | /paper-write | paper/sections/3_diagnostics_20260522_003338.tex | paper | timestamped diagnostics section after title polish |
+| 2026-05-22 00:33 | /paper-write | paper/sections/4_demonstration_20260522_003338.tex | paper | timestamped demonstration section after title polish |
+| 2026-05-22 00:33 | /paper-write | paper/sections/5_availability_limits_20260522_003338.tex | paper | timestamped availability section after title polish |
+| 2026-05-22 00:33 | /paper-claim-audit | docs/FINAL_SUBMISSION_CHECK_20260522_003338.md | documentation | timestamped final check refreshed after section-title polish |
+| 2026-05-22 12:39 | /idea-discovery | timestamp sprint snapshots | documentation | removed redundant timestamp snapshots after first paper submission; latest files retained |
+| 2026-05-22 12:39 | /idea-discovery | docs/WORKSPACE_ORGANIZATION.md | documentation | fixed latest post-submission workspace organization map |
+| 2026-05-22 12:39 | /idea-discovery | docs/ARCHIVE_INDEX.md | documentation | archive index updated with 2026-05-22 post-submission snapshot deletion |
+| 2026-05-22 12:39 | /idea-discovery | docs/DOCUMENT_INDEX.md | documentation | document index updated for post-submission workspace map and 28-entry citation audit |
+| 2026-05-22 12:39 | /idea-discovery | docs/CURRENT_STATE.md | documentation | current state updated with post-submission cleanup and follow-up boundary |

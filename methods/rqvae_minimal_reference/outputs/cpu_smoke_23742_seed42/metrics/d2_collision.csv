@@ -1,0 +1,4 @@
+dataset,method,prefix_depth,full_collision_groups,full_collision_items,full_collision_rate,prefix_collision_groups,prefix_collision_items,prefix_collision_rate,mean_popularity_full_collision_items,mean_popularity_prefix_collision_items
+Musical_Instruments,rqvae_minimal_reference,1,55,137,0.267578125,31,511,0.998046875,11.576642335766424,11.446183953033268
+Musical_Instruments,rqvae_minimal_reference,2,55,137,0.267578125,108,292,0.5703125,11.576642335766424,11.085616438356164
+Musical_Instruments,rqvae_minimal_reference,3,55,137,0.267578125,55,137,0.267578125,11.576642335766424,11.576642335766424

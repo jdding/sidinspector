@@ -1,4 +1,11 @@
-"""Mapping-first AUDIT-SID diagnostic metrics."""
+"""Mapping-first SIDInspector/AUDIT-SID diagnostic metrics.
+
+The public paper uses D1--D5 names: utilization, aliasing, neighborhood
+alignment, popularity allocation, and structural cost. Function and CSV names
+retain their original AUDIT-SID labels (for example, ``collision`` and
+``d5a_deployment_cost.csv``) so previously generated artifacts remain
+reproducible.
+"""
 
 from __future__ import annotations
 
@@ -409,7 +416,7 @@ def deployment_cost(sid: pd.DataFrame) -> pd.DataFrame:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run AUDIT-SID mapping-first metrics.")
+    parser = argparse.ArgumentParser(description="Run SIDInspector/AUDIT-SID mapping-first diagnostic probes.")
     parser.add_argument("--sid-assignments", type=Path, required=True)
     parser.add_argument("--item-metadata", type=Path, required=True)
     parser.add_argument("--interactions", type=Path, required=True)

@@ -1,22 +1,27 @@
 # Author Artifact Email Drafts
 
-Timestamp: 2026-05-19 18:24:00 CST
+Timestamp: 2026-05-20 01:45:00 CST
 
-Status: **NOT_SENT**.
+Status: **SENT**.
 
-Current Codex session does not have an email-sending connector or SMTP
-credentials. These drafts are ready to send after a Gmail/Outlook connector or
-SMTP route is available. Recipient addresses are intentionally left as `TODO`
-until confirmed from official paper/project pages.
+Gmail connector is available for `jdding.cs@gmail.com`. Three Gmail drafts are
+were sent on 2026-05-20 CST: DIGER, QuaSID, and CapsID.
+Recipient addresses were confirmed from public arXiv/PDF/source pages before
+draft creation. The earlier AdaSID draft was removed because AdaSID and QuaSID
+share the same corresponding-author route, and QuaSID is the cleaner single
+contact for the current D2b/collision-qualification narrative.
 
-Boundary: these emails do not mention AUDIT-SID, CIKM, an active submission, a
-benchmark, or a research project. They ask only about public artifacts needed
-to reproduce or inspect the public-data setup.
+Boundary: under the 2026-05-20 framing freeze, these emails are not required
+for CIKM v0. The current paper is a diagnostic/interface resource, not a
+coverage resource. These emails are optional future-adapter/release-roadmap
+contacts only; the v0 evidence package must not depend on author replies. If
+authors provide non-public artifacts, do not include them in public-stage
+materials without explicit redistribution permission.
 
 ## Shared Sending Notes
 
 - Sender/signature: `Timber Ding`.
-- Use one email per method, not a bulk email.
+- Use one email per author group, not a duplicate per closely related method.
 - Prefer the corresponding author or the artifact-maintainer email from the
   official paper/project page.
 - Do not attach unpublished local results.
@@ -26,7 +31,33 @@ to reproduce or inspect the public-data setup.
 
 ## DIGER
 
-To: TODO official corresponding-author email
+To: `j.fu.3@research.gla.ac.uk`
+
+Recipient source: public DIGER PDF/front matter lists Junchen Fu at this email.
+
+Gmail draft ID: `r-97352255383468744`
+
+Gmail sent message ID: `19e413e5e55ca0ab`
+
+Author reply: Junchen Fu replied on 2026-05-19 UTC that DIGER plans to release
+datasets and the RQ-VAE checkpoint before SIGIR conference, July 20th, as
+mentioned on GitHub.
+
+Follow-up sent: `19e414542c6ef6b0`
+
+Follow-up body:
+
+```text
+Hi Junchen,
+
+Thank you for the quick reply. That sounds great, and I will keep an eye on the GitHub release before SIGIR.
+
+I appreciate your time and look forward to the datasets and RQ-VAE checkpoint becoming available.
+
+Best regards,
+
+Timber
+```
 
 Subject: Question about DIGER artifact availability
 
@@ -54,7 +85,14 @@ Timber Ding
 
 ## QuaSID
 
-To: TODO official corresponding-author email
+To: `chenyuxin06@kuaishou.com, renfuji@uestc.edu.cn`
+
+Recipient source: arXiv source for QuaSID marks corresponding authors and
+emails as Yuxin Chen and Fuji Ren.
+
+Gmail draft ID: `r796495522097508964`
+
+Gmail sent message ID: `19e413e7f8dcba90`
 
 Subject: Question about QuaSID artifact availability
 
@@ -80,37 +118,29 @@ Best regards,
 
 Timber Ding
 
-## AdaSID
+## Removed Draft: AdaSID
 
-To: TODO official corresponding-author email
+Previous Gmail draft ID: `r-3819217541872903045`
 
-Subject: Question about AdaSID artifact availability
+Previous Gmail message ID: `19e4133145ea4c38`
 
-Dear AdaSID authors,
+Status: deleted from Gmail drafts on 2026-05-20 CST.
 
-I recently read your AdaSID paper and tried to locate the public artifacts for
-running the public-data setup.
-
-May I ask whether you plan to release any of the following materials?
-
-- code for adaptive SID/tokenizer construction;
-- processed public-dataset files or preprocessing scripts;
-- tokenizer checkpoints or learned code assignments;
-- an item-id to SID/code mapping, or the export script that generates it;
-- configuration files needed to reproduce the public-data experiments.
-
-If these materials are already available somewhere, a pointer to the repository,
-release page, or artifact instructions would be very helpful.
-
-Thank you for your time.
-
-Best regards,
-
-Timber Ding
+Reason: AdaSID and QuaSID use the same public corresponding-author route.
+Keeping both would duplicate the request. QuaSID is retained because it aligns
+more directly with the current D2b collision-qualification probe and paper
+narrative; AdaSID remains a literature/backlog facet, not a separate email.
 
 ## CapsID
 
-To: TODO official corresponding-author email
+To: `zhengwei.zzw@gmail.com`
+
+Recipient source: arXiv source for CapsID marks Zhengwei Zheng as
+corresponding author and lists this correspondence email.
+
+Gmail draft ID: `r-1463516045817830839`
+
+Gmail sent message ID: `19e413e9e84476af`
 
 Subject: Question about CapsID artifact availability
 

@@ -23,6 +23,21 @@ clean-checkout verification is summarized in Section 5. Gate 3 wording remains
 resource-scoped diagnostic separability, not the original downstream-metric
 Gate 3 pass.
 
+Framing decision update: 2026-05-20 01:09:23 CST. CIKM v0 should be treated as
+a Type 4 diagnostic/interface resource, not a Type 1 coverage resource. The
+claim is adapter contract + D1-D5 diagnostic probes + controlled mechanism
+probes.
+GRID/ReSID are worked examples. Extra named methods or reference
+implementations are optional future evidence only after the interface framing is
+stable.
+
+Lift execution update: 2026-05-20 17:10 CST. The two selected low-risk
+evidence gaps are now locally closed: B2 matched-capacity GRID completed on
+AutoDL and entered Table 2 as `GRID ft-cap`; B4 D3 vertical replication is
+available for All_Beauty 5k/20k and should be used only as artifact-repository
+or one-sentence diagnostic-context evidence. B3 downstream/ranking context
+remains open and should not be claimed without a separate bounded evaluator.
+
 ## Target Claim
 
 AUDIT-SID should be submitted as a Resource Track paper about a reusable SID artifact audit toolkit.
@@ -37,17 +52,18 @@ Anti-claims:
 - not a leaderboard;
 - not a faithful TIGER reproduction;
 - not a downstream superiority claim.
+- not a RecBole/BARS-style coverage resource in v0.
 
 ## Must-Run Experiment Blocks
 
 Scope rule:
 
-- Main paper diagnostics are D1-D5a over `item -> SID` artifacts.
-- D6 drift/churn is optional.
-- D7 generator/retrieval behavior is a future/interface diagnostic that requires
+- Main paper diagnostic probes are D1-D5 over `item -> SID` artifacts.
+- D6 temporal churn is optional and already has DACT refresh-pair smoke evidence.
+- D7 generation-trace behavior is a future/interface diagnostic that requires
   `generator_outputs`.
-- D2 is reported as collision profile in v0; the bounded qualified-collision
-  controller adds D2b calibration evidence but does not prove causal downstream
+- D2 is reported as aliasing in v0; the bounded qualified-collision
+  mechanism probe adds calibration evidence but does not prove causal downstream
   harm.
 - Generator predictability, invalid generated paths, and candidate duplication
   require `generator_outputs`; treat old D5b wording as future D7.
@@ -57,7 +73,7 @@ Scope rule:
 - Purpose: show the toolkit can ingest real public SID artifacts.
 - Systems: GRID/RQ-KMeans, ReSID/GAOQ, sanity baselines.
 - Metrics: coverage report plus supported diagnostics.
-- Table target: Method Coverage Table.
+- Table target: adapter/evidence-role table.
 - Success: every main method has `sid_assignments`, `item_metadata`, and `interactions` joinable with zero missing SID joins.
 
 ### B2: Same-Item-Universe Diagnostic Case Study
@@ -65,7 +81,7 @@ Scope rule:
 - Purpose: answer the strongest audit concern: A/B evidence must share a dataset.
 - Dataset: ReSID processed Amazon-2023 `Musical_Instruments`.
 - Systems: GRID official MiniBatchKMeans over processed feature-text embeddings; ReSID balanced GAOQ; sanity controls if space allows.
-- Metrics: D1, D2, D3v2, D4, D5a.
+- Metrics: D1, D2, D3, D4, D5.
 - Table target: Main paper Table 2.
 - Success: the table shows non-redundant differences across collision, collaborative alignment, and head-tail capacity.
 - Caveat: GRID Musical is a controlled diagnostic row, not raw-text TIGER/GRID reproduction.
@@ -76,10 +92,12 @@ Scope rule:
 
 ### B3: Metric Non-Redundancy And Sanity Controls
 
-- Purpose: show D1-D5a are not one repeated statistic.
+- Purpose: show D1-D5 are not one repeated statistic and that controlled
+  mechanism probes can validate diagnostic sensitivity.
 - Dataset: Musical.
-- Systems: ReSID plus category-prefix, mod-collision hash, popularity-balanced controls.
-- Metrics: D2 collision, D3v2, D4, D5a.
+- Systems: ReSID plus category-prefix, mod-collision hash, popularity-balanced
+  controls, qualified-collision, capacity-budget, and variable-depth probes.
+- Metrics: D2 aliasing, D3, D4, D5.
 - Table target: appendix or compressed main table.
 - Success: collision-heavy, category-heavy, and popularity-balanced controls are separated by different diagnostics.
 
@@ -89,14 +107,14 @@ Required readings in the table narrative:
 - D3 separates semantic grouping from collaborative co-occurrence alignment.
 - D4 must appear in the main table because head/tail capacity is central to
   recommender SID quality.
-- D5a is a structural trie/prefix cost proxy without generator outputs.
+- D5 is a structural trie/prefix cost proxy without generator outputs.
 
 ### B4: Scale/Stability Evidence
 
 - Purpose: show the canonical exporter works beyond toy size.
 - Dataset: All_Beauty.
 - Systems: GRID/RQ-KMeans 20k seeds 42/43/44; 50k seed42 optional.
-- Metrics: D1-D5a summary, duplicate SID rate, D3v2.
+- Metrics: D1-D5 summary, duplicate SID rate, D3.
 - Table target: appendix or one compact robustness row.
 - Success: 20k seed range is reported; 50k is marked preliminary unless more seeds are added.
 
@@ -131,7 +149,7 @@ and claim-discipline task, not an experiment blocker.
   3. CARD only if it can be presented as a faithful named-method artifact, not
      as the current compact feature proxy.
 - Success criterion: joinable `sid_assignments`, `item_metadata`, and
-  `interactions` plus at least D1/D2/D3v2/D4/D5a or a clearly justified subset.
+  `interactions` plus at least D1/D2/D3/D4/D5 or a clearly justified subset.
 - Failure interpretation: keep the method in Table 1 as literature/backlog; do
   not force a proxy into main evidence.
 - Current screen result: `docs/B2_B3_METHOD_SCREEN.md` closes the current
@@ -139,6 +157,20 @@ and claim-discipline task, not an experiment blocker.
   paper/motivation only in this pass, DIGER is incomplete for artifact export,
   and CARD remains proxy/control unless the original `nu-rq-vae` path is
   repaired and reviewed.
+- Framing note: this is no longer a v0 priority unless the paper has already
+  made the Type 4 adapter/interface contribution clear.
+
+### L1b: Optional Reference Implementation Or Mechanism Probe
+
+- Goal: strengthen framework extensibility without pretending to reproduce a
+  named recent tokenizer.
+- Allowed artifact: `AUDIT-SID reference implementation of a minimal RQ
+  tokenizer` or another clearly labeled controlled mechanism probe.
+- Required documentation: `IMPL_NOTES.md` with paper/mechanism followed,
+  simplifications, inputs, unsupported claims, and supported diagnostics.
+- Paper role: optional extension/probe evidence, not named-method coverage.
+- Stop condition: if the implementation would be described by a recent method
+  name without faithful source/checkpoint alignment, do not run it.
 
 ### L2: Same-Dataset A/B Panel
 
@@ -150,7 +182,7 @@ and claim-discipline task, not an experiment blocker.
   - sanity controls as calibration rows in artifact tables;
   - optional third named method if L1 succeeds.
 - Metrics: D2 full collision, D3 L1 collaborative prefix recall, D4 head/tail
-  unique capacity, D5a prefix counts.
+  unique capacity, D5 prefix counts.
 - Main-paper target: either an upgraded Table 2 or a small two-panel Fig. 2 if
   page budget allows.
 - Safe claim: diagnostics expose capacity/collision/alignment tradeoffs on the
@@ -199,25 +231,25 @@ stronger 10-second argument:
 
 - Claim supported: AUDIT-SID is an artifact-audit contract with diagnostics and
   evidence maturity levels, not just a data-processing pipeline.
-- Reader takeaway: what inputs are required, what D1-D5a can be computed now,
+- Reader takeaway: what inputs are required, what D1-D5 can be computed now,
   what D6/D7 require, and which evidence levels are main/control/backlog.
 - Visual grammar: three-band schema:
   1. artifact contract inputs (`sid_assignments`, `item_metadata`,
      `interactions`, optional `generator_outputs`);
-  2. diagnostic facets D1-D5a / optional D6 / future D7;
+  2. diagnostic facets D1-D5 / optional D6 / future D7;
   3. evidence maturity output (`main named exports`, `controls`,
      `resource-only tables`, `future/backlog`).
 - Review risk: avoid a decorative architecture diagram; the figure must reduce
-  reviewer confusion about D5a/D7 and named-method evidence boundaries.
+  reviewer confusion about D5/D6/D7 and named-method evidence boundaries.
 
 ## Paper Tables
 
 | Table | Required | Content | Source |
 |---|---|---|---|
-| Fig. 1 | yes | Generated vector artifact pipeline and D1-D7 boundary | `paper/figures/fig1_audit_sid_pipeline.pdf` |
-| Table 1 | yes | Facet-aware method coverage, evidence role, diagnostics, and claim boundary | `paper/sections/2_toolkit.tex` |
-| Table 2 | yes | GRID Musical feature-text vs bounded ReSID Musical diagnostic profile plus sanity/calibration rows and GRID three-seed summary | `paper/sections/4_demonstration.tex`, `paper_assets/tables/table2_musical_diagnostic.*` |
-| Table 3 | yes | Controlled stressor / diagnostic / baseline / under-stress signal table | `paper/sections/4_demonstration.tex`, `paper_assets/tables/table8_qualified_collision_probe.*`, `paper_assets/tables/table9_capacity_budget_sweep.*`, `paper_assets/tables/table10_variable_depth_cost_probe.*` |
+| Fig. 1 | yes | Generated vector artifact pipeline and D1-D5 main / D6-D7 extension boundary | `paper/figures/fig1_audit_sid_pipeline.pdf` |
+| Table 1 | yes | Adapter/evidence-role coverage, supported diagnostics, and claim boundary | `paper/sections/2_toolkit.tex` |
+| Table 2 | yes | Worked example: GRID Musical feature-text vs bounded ReSID Musical diagnostic profile plus sanity/calibration rows and GRID three-seed summary | `paper/sections/4_demonstration.tex`, `paper_assets/tables/table2_musical_diagnostic.*` |
+| Table 3 | yes | Controlled mechanism probes / diagnostic / baseline / under-probe signal table | `paper/sections/4_demonstration.tex`, `paper_assets/tables/table8_qualified_collision_probe.*`, `paper_assets/tables/table9_capacity_budget_sweep.*`, `paper_assets/tables/table10_variable_depth_cost_probe.*` |
 | Artifact table | no | ReSID/sanity non-redundancy controls | `paper_assets/tables/table3_sanity_controls.*` |
 | Artifact table | no | GRID All_Beauty scale/stability | `paper_assets/tables/table4_grid_scale.*` |
 | Artifact table | no | DACT D6 churn | `paper_assets/tables/table5_dact_d6_churn.*` |
@@ -237,7 +269,7 @@ Problem: SID tokenizers are evaluated mostly by final ranking metrics, while the
 Contributions:
 
 1. standardized artifact interface;
-2. D1-D5a diagnostics;
+2. D1-D5 diagnostic probes;
 3. public method coverage and same-item-universe case study;
 4. reproducible toolkit and explicit limitations.
 
@@ -249,14 +281,14 @@ Define:
 - `item_metadata`;
 - `interactions`;
 - optional `generator_outputs`;
-- D1-D5a, optional D6, and future D7.
+- D1-D5, optional D6, and future D7.
 
 Use this exact scope sentence:
 
 > AUDIT-SID covers a seven-axis artifact diagnostic plan: capacity utilization,
 > collision profile, semantic-collaborative alignment, head-tail allocation,
 > structural deployment-cost proxy, drift stability, and generator/retrieval
-> behavior. The current v0 implements D1-D5a over item-to-SID mappings, includes
+> behavior. The current v0 implements D1-D5 over item-to-SID mappings, includes
 > optional D6 churn support, and reserves D7 for artifacts that expose generated
 > candidates or beam traces.
 
@@ -270,7 +302,7 @@ Narrative:
 
 - AUDIT-SID ingests both Cluster A and Cluster B artifacts.
 - On the same Musical item universe, the diagnostics reveal sharply different capacity/collision/alignment profiles.
-- Sanity baselines show why D2/D3/D4/D5a are non-redundant.
+- Sanity baselines show why D2/D3/D4/D5 are non-redundant.
 
 ### Section 4: Limitations And Resource Release
 
@@ -280,7 +312,7 @@ State:
 - TIGER is future support; GRID is used because it exposes a clean residual-quantization export path.
 - D3v2 is a diagnostic proxy, not a downstream performance proof.
 - D2 is a collision profile, not strict causal harm.
-- D5a has no generator outputs and is therefore a structure-cost proxy.
+- D5 has no generator outputs and is therefore a structure-cost proxy.
 - D6 is optional continual-tokenization evidence.
 - D7 is not implemented in current evidence because no main artifact exposes
   per-user generated candidates or beam traces.

@@ -1,4 +1,4 @@
-"""AUDIT-SID toolkit interface contracts."""
+"""SIDInspector/AUDIT-SID toolkit interface contracts."""
 
 from .interface import (
     GENERATOR_OUTPUTS_REQUIRED,

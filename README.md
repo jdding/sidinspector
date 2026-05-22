@@ -1,6 +1,9 @@
-# AUDIT-SID Idea Discovery
+# SIDInspector / AUDIT-SID Idea Discovery
 
-This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic evaluation of semantic-ID tokenizers and codebooks in generative recommendation/retrieval.
+This branch runs a public-first idea-discovery pass for SIDInspector, the
+paper-facing name for the AUDIT-SID code line: diagnostic evaluation of
+semantic-ID tokenizer mappings and codebooks in generative
+recommendation/retrieval.
 
 ## Start Here
 
@@ -20,14 +23,16 @@ This branch runs a public-first idea-discovery pass for AUDIT-SID: diagnostic ev
 
 ## Current Thesis
 
-AUDIT-SID is the current public-first methodology candidate. It should be framed as representation-to-deployment diagnostics for semantic-ID tokenizers/codebooks, not as another SID generation algorithm or a simple leaderboard.
+SIDInspector is the current public-first methodology candidate. It should be
+framed as mapping-first diagnostics for semantic-ID tokenizers/codebooks, not
+as another SID generation algorithm or a simple leaderboard.
 
 ## Current Gate
 
 Gate 0 artifact feasibility is **passed**:
 
-- Cluster A: GRID official-module RQ-KMeans exports 5,000 joinable `All_Beauty` SIDs with D1-D5a metrics.
-- Cluster B: ReSID balanced GAOQ exports 23,742 joinable `Musical_Instruments` SIDs with D1-D5a metrics.
+- Cluster A: GRID official-module RQ-KMeans exports joinable SID mappings with D1-D5 diagnostic probes.
+- Cluster B: bounded ReSID/GAOQ exports 23,742 joinable `Musical_Instruments` SIDs with D1-D5 diagnostic probes.
 - Sanity baselines exist for metric sensitivity.
 
 Gate 0A core is **conditionally passed for a conservative resource-demo framing**:
@@ -45,10 +50,10 @@ Gate 0A core is **conditionally passed for a conservative resource-demo framing*
   canonical-vertical strengthening, but exact balanced ReSID GAOQ is not
   currently tractable enough to block Gate 0A.
 - Methods: canonical RQ-VAE/TIGER-style SID, one representative recent tokenizer innovation such as ReSID if artifact export is meaningful, and random/popularity/category sanity ID baseline.
-- Diagnostics: D1-D5a artifact diagnostics over `item -> SID` mappings:
-  utilization, collision profile, semantic-collaborative alignment, head-tail
-  capacity allocation, and lightweight SID-trie deployment-cost proxy.
-- Optional only: D6 drift/churn and future generator-output D5b/D7.
+- Diagnostics: D1-D5 artifact diagnostics over `item -> SID` mappings:
+  utilization, aliasing profile, neighborhood alignment, popularity allocation,
+  and structural-cost proxy.
+- Optional only: D6 drift/churn and future generator-output D7.
 - Paper stance: resource-first. Strong empirical finding is a stretch goal, not the core CIKM claim.
 
 ## Venue Target
@@ -66,7 +71,44 @@ Method representativeness is part of Gate 0. A shallow RQ-VAE + ReSID comparison
 
 The must-run method coverage is cluster-based: canonical SID baseline + representative recent tokenizer/codebook innovation from Cluster B + sanity lower bound.
 
-Current public-code priority: convert the conditional Gate 0A result into paper-ready tables and wording. CARD compact feature proxy is controlled stressor/backlog only and should not be counted as faithful named-method evidence.
+Current public-code priority: keep the paper-ready tables, terminology, and
+artifact verifier aligned. CARD compact feature proxy is a controlled
+mechanism-probe/backlog path only and should not be counted as faithful
+named-method evidence.
+
+## Reviewer Artifact Environment
+
+Reviewer-facing verification uses the anonymous artifact URL:
+
+```text
+https://anonymous.4open.science/r/sidinspector-9BB2
+```
+
+The clean-checkout reviewer verification path does not require GPU access and
+has been tested with Python 3.9.6 on macOS. Open the anonymous URL in a browser,
+use the page's Download/ZIP entry, unzip the archive, then run the local
+verification commands from the extracted directory. Do not rely on command-line
+access to `anonymous.4open.science`; Cloudflare may block non-browser clients.
+SID tokenizer training/export may use GPU in normal research or production
+settings; this verifier audits frozen mappings and tables. Install the
+dependencies from `requirements.txt`, run the
+unit tests, and then run the verifier:
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 -m unittest discover -s tests
+python3 tools/verify_paper_artifact.py
+```
+
+Expected final verifier line:
+
+```text
+SIDInspector/AUDIT-SID reviewer artifact verification passed.
+```
+
+Typical runtime is under two minutes after dependencies are installed. Optional
+tests may skip when ignored upstream clones or local experiment caches are not
+present.
 
 ## Boundary
 

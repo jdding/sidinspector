@@ -1,0 +1,17 @@
+\begin{table}
+\caption{Fixed-reranker Musical D3 validation context.}
+\label{tab:d3-ranking-validation}
+\begin{tabular}{llrllllrrrrrrr}
+\toprule
+dataset & method & prefix\_depth & ranker & candidate\_source & ranker\_training\_source & eval\_splits & top\_k & targets\_evaluated & D3 L1 collab & candidate\_recall & fixed\_reranker\_recall\_at\_20 & fixed\_reranker\_ndcg\_at\_20 & fixed\_reranker\_mrr\_at\_20 \\
+\midrule
+Musical\_Instruments & sanity\_category\_prefix & 1.000000 & cooccurrence\_popularity & SID prefix candidate sets & train-only interactions & valid,test & 20.000000 & 9986.000000 & 0.438287 & 0.612558 & 0.061787 & 0.029202 & 0.020107 \\
+Musical\_Instruments & sanity\_popularity\_balanced & 1.000000 & cooccurrence\_popularity & SID prefix candidate sets & train-only interactions & valid,test & 20.000000 & 9986.000000 & 0.344242 & 0.714100 & 0.061987 & 0.028989 & 0.019811 \\
+Musical\_Instruments & resid\_gaoq & 1.000000 & cooccurrence\_popularity & SID prefix candidate sets & train-only interactions & valid,test & 20.000000 & 9986.000000 & 0.135273 & 0.360104 & 0.052774 & 0.025177 & 0.017537 \\
+Musical\_Instruments & grid\_official\_rqkmeans\_resid\_feature\_text\_prefix\_matched & 1.000000 & cooccurrence\_popularity & SID prefix candidate sets & train-only interactions & valid,test & 20.000000 & 9986.000000 & 0.076009 & 0.248748 & 0.032145 & 0.016215 & 0.011757 \\
+Musical\_Instruments & grid\_official\_rqkmeans\_resid\_feature\_text & 1.000000 & cooccurrence\_popularity & SID prefix candidate sets & train-only interactions & valid,test & 20.000000 & 9986.000000 & 0.052332 & 0.185860 & 0.034048 & 0.017148 & 0.012386 \\
+Musical\_Instruments & sanity\_mod\_collision\_hash & 1.000000 & cooccurrence\_popularity & SID prefix candidate sets & train-only interactions & valid,test & 20.000000 & 9986.000000 & 0.003851 & 0.019527 & 0.007010 & 0.003560 & 0.002586 \\
+\bottomrule
+\end{tabular}
+\end{table}
+

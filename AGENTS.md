@@ -28,7 +28,7 @@ This repository must follow the ARIS skill protocols from:
 <!-- ARIS-CODEX:BEGIN -->
 ## ARIS Codex Skill Scope
 ARIS Codex packages installed in this project: skills-codex
-Managed entries: 85
+Managed entries: 90
 Manifest: `.aris/installed-skills-codex.txt`
 ARIS repo root: `/Users/timber/aris-source`
 Project skill path: `.agents/skills/<skill-name>`

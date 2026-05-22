@@ -1,0 +1,4 @@
+dataset,method,level,items,unique_codes,entropy,gini,max_code
+Musical_Instruments,rqvae_minimal_reference,sid_level_0,23742,32,4.786854457811671,0.27975475949793616,32
+Musical_Instruments,rqvae_minimal_reference,sid_level_1,23742,128,6.217091167938106,0.5559530578721255,128
+Musical_Instruments,rqvae_minimal_reference,sid_level_2,23742,128,5.913818467424534,0.635804297236964,128

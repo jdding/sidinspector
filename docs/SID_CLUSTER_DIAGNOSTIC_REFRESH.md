@@ -135,16 +135,18 @@ are main-paper runnable in v0.
 | D2 collision profile / harm | full/prefix collisions; future qualified harm | QuaSID, AdaSID, CapsID, TIGER | v0 profile implemented; D2b harm future |
 | D3 semantic-collaborative alignment | SID neighborhood vs co-occurrence neighborhood | LC-Rec, CoST, LETTER, ReSID, DiscRec | D3v2 implemented as diagnostic proxy |
 | D4 head-tail capacity | capacity allocation across popularity buckets | Better Generalization, AsymRec, CapsID, Snapchat SID | v0 implemented |
-| D5 structural deployment proxy | SID length, trie fan-out, ambiguous prefixes | TIGER, GRID, Long SID, CapsID, AsymRec | v0 D5a implemented |
-| D6 drift/staleness | churn under tokenizer refresh/catalog evolution | DACT, SID staleness, Snapchat SID | optional DACT smoke implemented |
-| D7 generator/retrieval behavior | invalid generated SID paths, duplicate candidates, beam coverage, SID likelihood/entropy | TIGER generation, DIGER, AsymRec, search-rec SID, industrial SID | interface hook only; needs `generator_outputs` |
+| D5 structural cost | SID length, trie fan-out, ambiguous prefixes | TIGER, GRID, Long SID, CapsID, AsymRec | v0 implemented; legacy files may say `d5a` |
+| D6 temporal churn | churn under tokenizer refresh/catalog evolution | DACT, SID staleness, Snapchat SID | optional DACT smoke implemented |
+| D7 generation traces | invalid generated SID paths, duplicate candidates, beam coverage, SID likelihood/entropy | TIGER generation, DIGER, AsymRec, search-rec SID, industrial SID | interface hook only; needs `generator_outputs` |
 
 Terminology recommendation:
 
-- Keep **D5a** as structural deployment proxy over `item -> SID` mappings.
-- Rename the old "D5b generator-output cost" concept to **D7 generator/retrieval
-  behavior** in planning docs. This avoids overloading D5 and makes clear why
-  D7 is not currently covered by mapping-only artifacts.
+- Use **D5 structural cost** as the paper-facing name for structural
+  deployment proxies over `item -> SID` mappings. Existing filenames may keep
+  `d5a` for reproducibility.
+- Rename the old "D5b generator-output cost" concept to **D7 generation
+  traces** in planning docs. This avoids overloading D5 and makes clear why D7
+  is not currently covered by mapping-only artifacts.
 
 ## Method Reassignment Summary
 
@@ -209,6 +211,6 @@ Avoid:
 
 The accurate v0 statement is:
 
-> AUDIT-SID implements D1-D5a over standardized item-to-SID artifacts, includes
-> optional D6 churn support, and reserves D7 generator/retrieval behavior for
+> AUDIT-SID implements D1-D5 over standardized item-to-SID artifacts, includes
+> optional D6 temporal-churn support, and reserves D7 generation traces for
 > artifacts that expose per-user generated candidates or beam traces.

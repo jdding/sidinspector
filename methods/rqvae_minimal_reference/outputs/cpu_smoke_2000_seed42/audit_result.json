@@ -1,0 +1,94 @@
+{
+  "codebooks": [
+    {
+      "effective_width": 32,
+      "inertia": 127.40090942382812,
+      "level": 0,
+      "requested_width": 32,
+      "residual_l2_mean": 0.247634619474411,
+      "unique_codes": 32
+    },
+    {
+      "effective_width": 128,
+      "inertia": 90.20542907714844,
+      "level": 1,
+      "requested_width": 128,
+      "residual_l2_mean": 0.20508812367916107,
+      "unique_codes": 128
+    },
+    {
+      "effective_width": 128,
+      "inertia": 73.7777099609375,
+      "level": 2,
+      "requested_width": 128,
+      "residual_l2_mean": 0.18148382008075714,
+      "unique_codes": 128
+    }
+  ],
+  "config": {
+    "batch_size": 512,
+    "d3_max_pair_events": 10000,
+    "d3_max_user_items": 50,
+    "d3_top_k": 5,
+    "dataset_name": "Musical_Instruments",
+    "l2_normalize": true,
+    "max_items": 2000,
+    "max_iter": 20,
+    "method": "rqvae_minimal_reference",
+    "seed": 42,
+    "widths": [
+      32,
+      128,
+      128
+    ]
+  },
+  "coverage": [
+    {
+      "dataset": "Musical_Instruments",
+      "interaction_items": 1999,
+      "interaction_without_sid": 0,
+      "metadata_items": 2000,
+      "metadata_without_sid": 0,
+      "method": "rqvae_minimal_reference",
+      "sid_items": 2000
+    }
+  ],
+  "d5_summary": {
+    "dataset": "Musical_Instruments",
+    "duplicate_sid_rate": 0.18300000000000005,
+    "method": "rqvae_minimal_reference",
+    "prefix_counts": "32;989;1634",
+    "sid_length": 3,
+    "unique_sid": 1634
+  },
+  "docs": {
+    "latest": "/Users/timber/Documents/Sec_phrase/docs/RQVAE_MINIMAL_REFERENCE_GATE.md",
+    "versioned": "/Users/timber/Documents/Sec_phrase/docs/RQVAE_MINIMAL_REFERENCE_GATE_20260520_212652.md"
+  },
+  "embedding_dim": 384,
+  "environment": {
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.9.6"
+  },
+  "gate_passed": true,
+  "gpu_worthy": true,
+  "gpu_worthy_condition": "Run GPU/full-data only after 2k CPU smoke passes and duplicate_sid_rate < 0.5.",
+  "inputs": {
+    "embeddings": "_gate0_artifacts/grid_same_dataset_runs/grid_official_rqkmeans_Musical_Instruments_resid_feature_text_cpu_max23742_20260519_110722/input/item_embeddings.pt",
+    "interactions": "_gate0_artifacts/grid_same_dataset_runs/grid_official_rqkmeans_Musical_Instruments_resid_feature_text_cpu_max23742_20260519_110722/input/interactions.parquet",
+    "item_ids": "_gate0_artifacts/grid_same_dataset_runs/grid_official_rqkmeans_Musical_Instruments_resid_feature_text_cpu_max23742_20260519_110722/input/item_ids.npy",
+    "item_metadata": "_gate0_artifacts/grid_same_dataset_runs/grid_official_rqkmeans_Musical_Instruments_resid_feature_text_cpu_max23742_20260519_110722/input/item_metadata.parquet"
+  },
+  "items": 2000,
+  "label_boundary": "minimal residual-quantization reference; not TIGER, GRID, ReSID, or CARD",
+  "method": "rqvae_minimal_reference",
+  "outputs": {
+    "codes": "/Users/timber/Documents/Sec_phrase/methods/rqvae_minimal_reference/outputs/cpu_smoke_2000_seed42/rqvae_minimal_reference_codes.npy",
+    "item_ids": "/Users/timber/Documents/Sec_phrase/methods/rqvae_minimal_reference/outputs/cpu_smoke_2000_seed42/rqvae_minimal_reference_item_ids.npy",
+    "metrics_dir": "/Users/timber/Documents/Sec_phrase/methods/rqvae_minimal_reference/outputs/cpu_smoke_2000_seed42/metrics",
+    "sid_assignments": "/Users/timber/Documents/Sec_phrase/methods/rqvae_minimal_reference/outputs/cpu_smoke_2000_seed42/normalized/sid_assignments.parquet"
+  },
+  "status": "passed"
+}

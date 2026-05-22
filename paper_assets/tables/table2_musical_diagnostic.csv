@@ -1,3 +1,5 @@
-system,method,items,unique_sid,duplicate_sid_rate,full_collision_rate,D3 L1 collab,D4 head,D4 mid,D4 tail,prefix_counts
-GRID feature-text,grid_official_rqkmeans_resid_feature_text,23742.0,3749.0,0.8421,0.9769,0.0552,0.353,0.359,0.3695,64;3440;3749
-ReSID GAOQ,resid_gaoq,23742.0,23742.0,0.0,0.0,0.1535,1.0,1.0,1.0,32;1280;23742
+system,method,config,items,unique_sid,duplicate_sid_rate,full_collision_rate,D3 L1 collab,D4 head,D4 mid,D4 tail,prefix_counts
+GRID feature-text,grid_official_rqkmeans_resid_feature_text,feature-text RQ-KMeans; widths 64/default/default,23742.0,3749.0,0.8421,0.9769,0.0552,0.353,0.359,0.3695,64;3440;3749
+GRID ft-cap,grid_official_rqkmeans_resid_feature_text_prefix_matched,same feature-text path; widths 32/1280/1280,23742.0,9874.0,0.5841,0.7785,0.0796,0.5999,0.6397,0.6391,32;9300;9874
+RQ-min reference,rqvae_minimal_reference,minimal residual-quantization reference; widths 32/128/128,23742.0,17247.0,0.2736,0.4401,0.0650,0.8501,0.8662,0.8831,32;2368;17247
+ReSID GAOQ,resid_gaoq,bounded FAMAE-to-GAOQ export,23742.0,23742.0,0.0,0.0,0.1535,1.0,1.0,1.0,32;1280;23742
