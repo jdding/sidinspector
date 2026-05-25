@@ -1,11 +1,10 @@
-# AUDIT-SID / SIDInspector Document Index
+# SIDInspector Document Index
 
 Timestamp: 2026-05-22 12:39:49 CST
 
 ## Current Status
 
-- Paper-facing name: **SIDInspector**. AUDIT-SID remains the repository and
-  historical provenance name.
+- Public project name: **SIDInspector**.
 - Gate 0: **passed for artifact feasibility**.
 - Gate 0A: **conditional pass for conservative resource-demo framing**.
 - Paper case study: **ready at diagnostic-resource level**, not as a SID
@@ -94,8 +93,8 @@ Timestamp: 2026-05-22 12:39:49 CST
 | Artifact quickstart | `ARTIFACT_QUICKSTART.md` | Pinned-tag clean-checkout verifier commands |
 | BibTeX audit | `docs/BIBTEX_AUDIT.md` | Paper-ready BibTeX generated from verified pages |
 | BibTeX file | `paper_assets/references/audit_sid_references.bib` | Current paper reference file |
-| CIKM paper draft | `paper/main.tex` | SIDInspector ACM draft using CIKM literal `sigconf,natbib=true,anonymous=true`; `paper/main.pdf` compiles to 5 pages total, no review-mode line numbers, GenAI precedes References |
-| Latest writing integration | `paper/sections/4_demonstration.tex` | B3/B4/Sports evidence is written as diagnostic context/support, not downstream validation or named-method coverage |
+| CIKM paper PDF snapshot | `paper/main.pdf` | Submitted SIDInspector PDF snapshot retained for reviewer-side comparison; TeX source is not part of the public artifact |
+| Latest writing integration | `paper/main.pdf` | B3/B4/Sports evidence is written as diagnostic context/support, not downstream validation or named-method coverage |
 | Paper-facing tables | `paper_assets/tables/` | Generated CSV/MD/TeX tables; Table 1 and Table 2 are PDF candidates |
 | Project contract | `docs/PROJECT_SPEC.md` | Unified thesis, gates, method coverage, diagnostics |
 | Current gate verdict | `docs/GATE0_DECISION.md` | Gate 0 artifact-feasibility pass; Gate 0A conservative resource-demo pass |
@@ -162,13 +161,9 @@ Current compiled paper draft:
   Table 3.
   The body fills through page 4; references and GenAI disclosure extend to
   page 5.
-- `paper/sections/2_toolkit.tex` contains the artifact pipeline figure and
-  facet-aware coverage table.
-- `paper/sections/4_demonstration.tex` contains the same-item Musical
-  diagnostic table and the controlled mechanism-probe table.
-- `paper/sections/5_availability_limits.tex` contains the availability,
-  reviewer workflow, clean-checkout verifier, and claim-discipline text. The
-  current paper has no Table 4.
+- The public artifact retains only the compiled `paper/main.pdf`, generated
+  figure assets, and generated evidence tables. Paper TeX sources are excluded
+  from the reviewer package to avoid stale manuscript snapshots.
 - `docs/INTERNAL_REVIEW_ROUND1.md` and `docs/INTERNAL_REVIEW_ROUND2.md`
   record the two internal reviews requested before external simulated review.
 - `docs/EXTERNAL_SIM_REVIEW_PLAN.md` fixes the external simulated review target

@@ -10,7 +10,7 @@ files, not timestamp snapshots:
 | Area | Active path |
 |---|---|
 | Paper PDF | `paper/main.pdf` |
-| Paper source | `paper/main.tex`, `paper/sections/*.tex`, `paper/references.bib` |
+| Paper source | not part of the reviewer artifact; keep source in the submission workspace, not this public package |
 | Reviewer quickstart | `README.md`, `ARTIFACT_QUICKSTART.md`, `ARTIFACT_MANIFEST.md` |
 | Project state | `docs/CURRENT_STATE.md`, `docs/FINAL_SUBMISSION_CHECK.md` |
 | Citation state | `docs/CITATION_AUDIT.md`, `paper_assets/references/audit_sid_references.bib` |
@@ -39,12 +39,14 @@ tables, old review prompts, and timestamped script copies.
 ## What Was Intentionally Kept
 
 - Current fixed-name latest files.
-- Current `paper/main.*` build outputs needed for local paper work.
+- Current `paper/main.pdf` snapshot for reviewer-side comparison.
 - `_gate0_artifacts/` evidence bundles and run artifacts.
-- Existing earlier archive directories such as `paper/archive/` and
-  `refine-logs/archive/`.
+- Existing earlier non-paper archive directories such as `refine-logs/archive/`.
 
 ## Operating Rule Going Forward
 
 Use fixed-name latest files for active work. Older timestamp histories are now
 recoverable from git history rather than from duplicate working-tree files.
+Paper TeX sources and historical paper snapshots should stay out of the public
+reviewer artifact to avoid stale wording, authoring metadata, or historical
+brand names leaking into code review.

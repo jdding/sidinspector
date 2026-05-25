@@ -3,23 +3,16 @@
 Timestamp: 2026-05-21 12:23:46 CST
 
 Scope: final high-risk metadata polish plus an ICML 2026 official-list scan for
-missing SID/tokenizer references in the active CIKM 2026 Resource Track paper
-sources:
-
-- `paper/main.tex`
-- `paper/sections/1_introduction.tex`
-- `paper/sections/2_resource_scope.tex`
-- `paper/sections/3_diagnostics.tex`
-- `paper/sections/4_demonstration.tex`
-- `paper/sections/5_availability_limits.tex`
-- `paper/references.bib`
+missing SID/tokenizer references in the CIKM 2026 Resource Track paper source
+used to generate the submitted PDF snapshot. The public reviewer artifact keeps
+the compiled PDF and verified BibTeX asset, but not the TeX source tree.
 
 ## Verdict
 
 PASS after proceedings-record upgrades and one ICML 2026 SID/tokenizer addition.
 
-The active paper cites 28 unique keys, all 28 exist in `paper/references.bib`,
-and there are no uncited bib entries in the active bibliography. The final pass
+The active paper cites 28 unique keys, all 28 exist in the verified BibTeX
+asset, and there are no uncited bib entries in the active bibliography. The final pass
 focused on high-risk SID/resource references: RecList, TIGER, GRID, ReSID, DACT,
 QuaSID/AdaSID/CARD/CapsID/AsymRec, Snapchat SID, SID-Coord, recently accepted
 ACM records, and ICML 2026 SID/tokenizer candidates.
@@ -38,7 +31,6 @@ ACM records, and ICML 2026 SID/tokenizer candidates.
 
 The same BibTeX content is now synchronized in:
 
-- `paper/references.bib`
 - `paper_assets/references/audit_sid_references.bib`
 
 ## ICML 2026 Scan Result

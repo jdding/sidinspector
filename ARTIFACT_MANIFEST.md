@@ -29,8 +29,8 @@ MPLCONFIGDIR=/tmp/sidinspector_mpl python3 tools/paper_figures/generate_audit_si
 python3 tools/verify_paper_artifact.py
 ```
 
-The verifier checks the published paper tables, figure, license, quickstart,
-BibTeX file, the main Table 2 numeric claims, the auxiliary B4/B6/B7 vertical /
+The verifier checks the published paper tables, figure, PDF snapshot, license,
+quickstart, BibTeX file, the main Table 2 numeric claims, the auxiliary B4/B6/B7 vertical /
 fixed-reranker / Sports numbers, the All_Beauty B6 replication, and the
 RQ-min reference-adapter row now referenced in the paper.
 
@@ -71,8 +71,8 @@ RQ-min reference-adapter row now referenced in the paper.
 | `docs/SPORTS_GRID_THIRD_VERTICAL.md` | B7 Sports GRID third-vertical report | inspectable |
 | `docs/ADAPTER_TEMPLATE.md` | minimal adapter tutorial and evidence-role boundary | inspectable |
 | `docs/PAPER_CONTROLLER_INTEGRATION.md` | paper-writing note for controlled mechanism-probe Table 3 and named-method boundary | inspectable |
-| `paper/main.tex`, `paper/main.pdf` | current ACM draft and compiled PDF | inspectable |
-| `paper_assets/tables/` | generated CSV/Markdown/LaTeX evidence tables | inspectable/verifiable |
+| `paper/main.pdf` | submitted ACM PDF snapshot | inspectable |
+| `paper_assets/tables/` | generated CSV/Markdown evidence tables | inspectable/verifiable |
 | `paper_assets/tables/table16_runtime_profile.*` | local D1-D5 runtime profile for the Musical bundle | inspectable |
 | `paper_assets/references/audit_sid_references.bib` | paper reference file | inspectable |
 | `docs/PAPER_STRICT_CLAIM_AUDIT.md` | claim and numeric-audit trail | inspectable |

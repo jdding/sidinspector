@@ -1,4 +1,4 @@
-# AUDIT-SID / SIDInspector Current State
+# SIDInspector Current State
 
 Timestamp: 2026-05-25 12:26:37 CST
 
@@ -38,9 +38,8 @@ Use `docs/DOCUMENT_INDEX.md` for navigation and `docs/ARCHIVE_INDEX.md` for hist
 
 ## Current Verdict
 
-SIDInspector is the current paper-facing name for the AUDIT-SID project. The
-repository and historical artifacts keep the AUDIT-SID internal name for
-provenance, but the CIKM draft title is now:
+SIDInspector is the current public project name. Historical local notes may use
+an older internal name, but the reviewer artifact and CIKM submission use:
 
 > SIDInspector: A Mapping-First Diagnostic Resource for Semantic-ID Tokenizers
 
@@ -295,9 +294,8 @@ Do not launch robust/sweep/quality queues by default.
     methods/facets to D1-D7, finding material, priority, and screen actions;
     use `docs/DIAGNOSTIC_PROBE_TAXONOMY.md` for current paper-facing names.
 12. External simulated review Round 2 closes the requested 8/10 gate:
-    the pushed tag `audit-sid-cikm-resource-v0.1` resolves to `d24dfec`,
-    a fresh tag clone passes the public verifier and stays clean, and external
-    reviewers score the artifact 8.0/10 and 8.1/10 with no P0 blockers.
+    a fresh public-artifact checkout passes the verifier and stays clean, and
+    external reviewers score the artifact 8.0/10 and 8.1/10 with no P0 blockers.
 13. Final submission metadata still needs real single-blind author and
     affiliation information plus a frozen artifact branch or release tag.
 14. `docs/B2_B3_METHOD_SCREEN.md` closes the current third-method screen with
@@ -313,7 +311,7 @@ Do not launch robust/sweep/quality queues by default.
 17. `docs/METHOD_RELEASE_SCOUT.md` records the official-release screen:
     QuaSID/AdaSID/CapsID have no located official artifact, while DIGER's
     official repo is still illustrative/reference and lacks the data/checkpoint
-    assets needed for AUDIT-SID v0.
+    assets needed for SIDInspector v0.
 18. `docs/CARD_ORIGINAL_NURQVAE_EVIDENCE_GATE.md` closes the CARD original
     route for v0 main evidence: the official CARD tree is missing the quantizer
     modules required by `nu-rq-vae`, so local compatibility repair cannot be
@@ -358,11 +356,9 @@ Do not launch robust/sweep/quality queues by default.
     undefined citations/references were found. Remaining submission-hygiene
     blockers are real single-blind author metadata, final citation drift check,
     and a final strict claim audit after any further text changes.
-25. The current paper-facing title/tool name is `SIDInspector`; AUDIT-SID
-    remains the repository/provenance name. The final author block is not yet
-    closed: `paper/main.tex` still uses the anonymous local draft block because
-    real single-blind author, affiliation, country, and email metadata must be
-    supplied before the submission PDF is frozen.
+25. The current paper-facing title/tool name is `SIDInspector`. The reviewer
+    artifact now keeps the submitted `paper/main.pdf` snapshot and strips paper
+    TeX sources from the public package to avoid stale manuscript metadata.
 26. R3 simulated CIKM 2026 Resource Track review is now the active
     pre-submission risk register. The review scored the draft 5/10
     borderline/weak-reject leaning, with three high-priority risks:

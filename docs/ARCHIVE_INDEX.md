@@ -1,4 +1,4 @@
-# AUDIT-SID Archive Index
+# SIDInspector Archive Index
 
 Timestamp: 2026-05-22 12:39:49 CST
 
@@ -41,8 +41,9 @@ historical snapshots and recoverable from git history if needed.
 
 Removed scope: timestamp snapshots across root docs, `docs/`, `refine-logs/`,
 `paper/`, `paper_assets/`, `review-stage/`, `src/`, and `tools/`. Current
-fixed-name latest files, current paper sources, current paper PDF, tests,
-verifier, and `_gate0_artifacts/` evidence bundles remain in place.
+fixed-name docs, current paper PDF, tests, verifier, and `_gate0_artifacts/`
+evidence bundles remain in place. Paper TeX sources are intentionally excluded
+from the reviewer artifact.
 
 The active map for post-submission work is:
 
@@ -56,17 +57,15 @@ directories while keeping fixed-name latest files in place:
 
 - `docs/archive/2026-05-20-round4-cleanup/`: Round 4 planning/state/audit
   timestamped snapshots.
-- `paper/archive/2026-05-20-round4-cleanup/`: timestamped paper draft/PDF
-  snapshots.
-- `paper/archive/2026-05-20-round4-cleanup/sections/`: timestamped section
-  snapshots.
+- Paper draft/PDF snapshots were removed from the reviewer artifact; recover
+  them from git history if needed.
 - `refine-logs/archive/2026-05-20-round4-cleanup/`: timestamped experiment
   plan/tracker snapshots.
 - `tools/archive/2026-05-20-round4-cleanup/`: timestamped figure-generator
   script snapshot.
 
-This migration does not change the current paper source, fixed-name docs, or
-evidence interpretation. `MANIFEST.md` records the archived paths.
+This migration does not change fixed-name docs or evidence interpretation.
+`MANIFEST.md` records historical archived paths.
 
 ### 2026-05-20 D3 Dedup Cleanup
 
@@ -167,7 +166,7 @@ primary method evidence:
 
 ### Older Idea-Discovery Material
 
-These are background for the original broader branch, not current AUDIT-SID
+These are background for the original broader branch, not current SIDInspector
 execution state:
 
 - `START_HERE_PUBLIC_OPE.md`

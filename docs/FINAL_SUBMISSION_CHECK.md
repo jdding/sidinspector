@@ -68,12 +68,12 @@ Current author block in the active PDF:
 
 | Command | Result |
 |---|---|
-| `latexmk -pdf -interaction=nonstopmode -halt-on-error -cd paper/main.tex` | PASS after post-review utility polish |
+| Historical LaTeX compile before source stripping | PASS after post-review utility polish |
 | `python3 tools/verify_paper_artifact.py` | PASS |
 | `python3 -m pytest tests -q` | PASS: 26 passed |
 | `git diff --check` | PASS |
 | Active-paper stale marker scan | PASS for active paper; expected anonymous-artifact wording remains in artifact docs |
-| BibTeX warning scan | PASS: `warning$ -- 0` in `paper/main.blg` |
+| BibTeX warning scan | PASS before source stripping: `warning$ -- 0` in `paper/main.blg` |
 
 Remaining LaTeX warnings:
 
@@ -95,7 +95,6 @@ The valid project test command is `python3 -m pytest tests -q`, which passed.
 
 ## Artifact / Availability
 
-- Reviewer tag recorded in paper and docs: `audit-sid-cikm-resource-v0.1`.
 - Anonymous artifact URL recorded in paper and docs:
   `https://anonymous.4open.science/r/sidinspector-9BB2`.
 - License recorded: MIT.
