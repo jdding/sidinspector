@@ -23,7 +23,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from audit_sid.interface import validate_columns
+from sidinspector.interface import validate_columns
 
 
 def normalize_sid_export(input_csv: Path, method: str, dataset: str) -> pd.DataFrame:

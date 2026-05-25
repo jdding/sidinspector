@@ -1,4 +1,4 @@
-# SIDInspector / AUDIT-SID Reviewer Artifact Manifest
+# SIDInspector Reviewer Artifact Manifest
 
 Timestamp: 2026-05-20 19:32:36 CST
 
@@ -8,9 +8,13 @@ shorter than `MANIFEST.md`, which is the full ARIS provenance ledger.
 ## Frozen Artifact Entry
 
 - Target venue/track: CIKM 2026 Resource Track
-- Review tag: `audit-sid-cikm-resource-v0.1`
+- Public artifact label: `sidinspector-9BB2`
 - Anonymous review URL: `https://anonymous.4open.science/r/sidinspector-9BB2`
 - License: MIT, see `LICENSE`
+
+Some code paths use the legacy `audit_sid` module name. They are kept stable so
+published verifier commands and generated artifacts remain reproducible; the
+public resource name is SIDInspector.
 
 ## Public Verification Path
 
@@ -21,7 +25,7 @@ Download/ZIP entry, unzip the archive, then run:
 ```bash
 python3 -m pip install -r requirements.txt
 python3 -m unittest discover -s tests
-MPLCONFIGDIR=/tmp/audit_sid_mpl python3 tools/paper_figures/generate_audit_sid_pipeline.py
+MPLCONFIGDIR=/tmp/sidinspector_mpl python3 tools/paper_figures/generate_audit_sid_pipeline.py
 python3 tools/verify_paper_artifact.py
 ```
 
@@ -37,7 +41,8 @@ RQ-min reference-adapter row now referenced in the paper.
 | `ARTIFACT_QUICKSTART.md` | reviewer command entry point | required |
 | `LICENSE` | MIT license | required |
 | `requirements.txt` | minimal local verification dependencies | required |
-| `src/audit_sid/` | mapping-first interface, adapters, metrics | import/test |
+| `src/sidinspector/` | public import namespace for interface and metrics | import/test |
+| `src/audit_sid/` | legacy-compatible implementation modules | import/test |
 | `tests/` | metric and churn unit tests | runnable |
 | `tools/verify_paper_artifact.py` | clean-checkout artifact verifier | runnable |
 | `tools/paper_figures/generate_audit_sid_pipeline.py` | regenerates Fig. 1 | runnable |

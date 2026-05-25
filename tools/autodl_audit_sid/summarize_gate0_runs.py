@@ -1,4 +1,4 @@
-"""Summarize AUDIT-SID AutoDL Gate 0 run directories."""
+"""Summarize SIDInspector AutoDL Gate 0 run directories."""
 
 from __future__ import annotations
 
@@ -127,7 +127,7 @@ def summarize_run(run_dir: Path, errors: list[str], strict: bool = False) -> lis
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Summarize AUDIT-SID Gate 0 run metrics.")
+    parser = argparse.ArgumentParser(description="Summarize SIDInspector Gate 0 run metrics.")
     parser.add_argument("--run-root", type=Path, default=Path("_gate0_artifacts/autodl_runs"))
     parser.add_argument("--output", type=Path, default=None)
     parser.add_argument("--strict", action="store_true")

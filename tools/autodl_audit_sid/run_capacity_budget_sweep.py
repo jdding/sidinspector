@@ -215,7 +215,7 @@ def parse_str_list(value: str) -> list[str]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run AUDIT-SID capacity-budget controller sweep.")
+    parser = argparse.ArgumentParser(description="Run SIDInspector capacity-budget controller sweep.")
     parser.add_argument("--item-metadata", type=Path, required=True)
     parser.add_argument("--interactions", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)

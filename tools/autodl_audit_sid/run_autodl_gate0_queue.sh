@@ -27,8 +27,8 @@ if ! "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" \
 fi
 
 if [ "$CARD_READY" != "1" ] && [ "$QUEUE_MODE" != "quick" ] && [ "$QUEUE_MODE" != "canonical" ] && [ "$ALLOW_RESID_ONLY" != "1" ]; then
-  echo "[AUDIT-SID queue] CARD/Cluster-A source is incomplete; refusing QUEUE_MODE=$QUEUE_MODE." >&2
-  echo "[AUDIT-SID queue] Run QUEUE_MODE=quick for bounded smoke, QUEUE_MODE=canonical for Sports-only data readiness, or set ALLOW_RESID_ONLY=1 explicitly." >&2
+  echo "[SIDInspector queue] CARD/Cluster-A source is incomplete; refusing QUEUE_MODE=$QUEUE_MODE." >&2
+  echo "[SIDInspector queue] Run QUEUE_MODE=quick for bounded smoke, QUEUE_MODE=canonical for Sports-only data readiness, or set ALLOW_RESID_ONLY=1 explicitly." >&2
   exit 21
 fi
 
@@ -37,7 +37,7 @@ if [ "$SKIP_QUEUE_PIP_INSTALL" != "1" ]; then
     pyyaml tqdm pandas pyarrow transformers scikit-learn scipy \
     numpy==1.26.4 k-means-constrained==0.7.3
 else
-  echo "[AUDIT-SID queue] SKIP_QUEUE_PIP_INSTALL=1; using existing Python environment"
+  echo "[SIDInspector queue] SKIP_QUEUE_PIP_INSTALL=1; using existing Python environment"
 fi
 
 export SKIP_PIP_INSTALL=1
@@ -50,7 +50,7 @@ run_card() {
   local layers="$5"
   local dataset_name="${6:-Musical_Instruments}"
   if [ "$CARD_READY" != "1" ]; then
-    echo "[AUDIT-SID queue] CARD source incomplete for $exp_id"
+    echo "[SIDInspector queue] CARD source incomplete for $exp_id"
     if [ "$CARD_SOURCE_FAIL" = "skip" ]; then
       mkdir -p "$ROOT_DIR/_gate0_artifacts/autodl_runs/$exp_id"
       {
@@ -109,4 +109,4 @@ PYTHONPATH="$ROOT_DIR/src" "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/summa
   --output "$SUMMARY_PATH" \
   --strict
 
-echo "[AUDIT-SID queue] summary=$SUMMARY_PATH"
+echo "[SIDInspector queue] summary=$SUMMARY_PATH"

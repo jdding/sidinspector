@@ -24,13 +24,13 @@ SEED="${SEED:-42}"
 
 mkdir -p "$INPUT_DIR" "$GRID_OUT" "$OUT_DIR/logs"
 
-echo "[AUDIT-SID GRID-MUSICAL] root=$ROOT_DIR"
-echo "[AUDIT-SID GRID-MUSICAL] exp_id=$EXP_ID"
-echo "[AUDIT-SID GRID-MUSICAL] item_metadata=$ITEM_METADATA"
-echo "[AUDIT-SID GRID-MUSICAL] interactions=$INTERACTIONS"
-echo "[AUDIT-SID GRID-MUSICAL] model_path=$MODEL_PATH"
-echo "[AUDIT-SID GRID-MUSICAL] max_items=$MAX_ITEMS codebook_width=$CODEBOOK_WIDTH hierarchies=$NUM_HIERARCHIES"
-echo "[AUDIT-SID GRID-MUSICAL] device=cpu"
+echo "[SIDInspector GRID-MUSICAL] root=$ROOT_DIR"
+echo "[SIDInspector GRID-MUSICAL] exp_id=$EXP_ID"
+echo "[SIDInspector GRID-MUSICAL] item_metadata=$ITEM_METADATA"
+echo "[SIDInspector GRID-MUSICAL] interactions=$INTERACTIONS"
+echo "[SIDInspector GRID-MUSICAL] model_path=$MODEL_PATH"
+echo "[SIDInspector GRID-MUSICAL] max_items=$MAX_ITEMS codebook_width=$CODEBOOK_WIDTH hierarchies=$NUM_HIERARCHIES"
+echo "[SIDInspector GRID-MUSICAL] device=cpu"
 
 for required in "$ITEM_METADATA" "$INTERACTIONS" "$MODEL_PATH" "$ROOT_DIR/_gate0_repos/GRID"; do
   if [ ! -e "$required" ]; then
@@ -71,5 +71,5 @@ PYTHONPATH="$ROOT_DIR/src" "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/run_g
   --seed "$SEED" \
   2>&1 | tee "$OUT_DIR/logs/grid_export.log"
 
-echo "[AUDIT-SID GRID-MUSICAL] DONE: $GRID_OUT"
+echo "[SIDInspector GRID-MUSICAL] DONE: $GRID_OUT"
 find "$GRID_OUT" -maxdepth 3 -type f | sort

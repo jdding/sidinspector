@@ -195,7 +195,7 @@ def main() -> None:
             indent=2,
         )
 
-    # Run AUDIT-SID metrics immediately so the export is join-validated.
+    # Run SIDInspector metrics immediately so the export is join-validated.
     from audit_sid.metrics import (
         alignment,
         collision,

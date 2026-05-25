@@ -28,7 +28,7 @@ fi
 mkdir -p "$LOG_DIR"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
-echo "=== AUDIT-SID REMOTE RUNNER ==="
+echo "=== SIDInspector REMOTE RUNNER ==="
 echo "Run ID: $RUN_ID"
 echo "Workspace: $WORKSPACE"
 echo "Queue mode: $QUEUE_MODE"
@@ -114,7 +114,7 @@ if [ "$EXIT_CODE" != "0" ] || [ "$SUMMARY_EXIT_CODE" != "0" ]; then
 fi
 
 echo "=========================================="
-echo "AUDIT-SID runner finished. Auto shutdown in 300 seconds."
+echo "SIDInspector runner finished. Auto shutdown in 300 seconds."
 echo "To keep the instance, disable AutoDL console auto-shutdown or interrupt this runner now."
 echo "=========================================="
 sleep 300

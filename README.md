@@ -1,13 +1,13 @@
-# SIDInspector / AUDIT-SID Idea Discovery
+# SIDInspector
 
-This branch runs a public-first idea-discovery pass for SIDInspector, the
-paper-facing name for the AUDIT-SID code line: diagnostic evaluation of
+This branch contains SIDInspector, a public-facing diagnostic resource for
 semantic-ID tokenizer mappings and codebooks in generative
-recommendation/retrieval.
+recommendation/retrieval. Some internal module and script paths retain the
+legacy `audit_sid` name for compatibility with earlier experiment artifacts.
 
 ## Start Here
 
-1. `START_HERE_AUDIT_SID.md`
+1. `ARTIFACT_QUICKSTART.md`
 2. `docs/CURRENT_STATE.md`
 3. `docs/CIKM_EXPERIMENT_DESIGN.md`
 4. `docs/DOCUMENT_INDEX.md`
@@ -103,7 +103,7 @@ python3 tools/verify_paper_artifact.py
 Expected final verifier line:
 
 ```text
-SIDInspector/AUDIT-SID reviewer artifact verification passed.
+SIDInspector reviewer artifact verification passed.
 ```
 
 Typical runtime is under two minutes after dependencies are installed. Optional

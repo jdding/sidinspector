@@ -68,7 +68,7 @@ def popularity_balanced_sid(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate SIDInspector/AUDIT-SID sanity SID baselines.")
+    parser = argparse.ArgumentParser(description="Generate SIDInspector sanity SID baselines.")
     parser.add_argument("--item-metadata", type=Path, required=True)
     parser.add_argument("--interactions", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)

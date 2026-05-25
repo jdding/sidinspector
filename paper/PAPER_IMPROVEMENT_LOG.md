@@ -1,4 +1,4 @@
-# AUDIT-SID Paper Improvement Log
+# SIDInspector Paper Improvement Log
 
 Started: 2026-05-19 13:53:21 CST
 
@@ -12,7 +12,7 @@ Rules:
 - Use at most 4 review/fix rounds.
 - Use fresh reviewer context for every round.
 - Do not strengthen claims beyond current artifact evidence.
-- Preserve the core claim: AUDIT-SID audits item-to-SID tokenizer artifacts; it
+- Preserve the core claim: SIDInspector audits item-to-SID tokenizer artifacts; it
   is not a new tokenizer, not a SID leaderboard, and not a full generative
   recommender evaluation.
 - Third-party LLM review requires explicit provider/model/scope approval before

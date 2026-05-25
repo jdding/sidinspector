@@ -1,4 +1,4 @@
-"""Download selected PIIR/ReSID-dataset categories for AUDIT-SID."""
+"""Download selected PIIR/ReSID-dataset categories for SIDInspector."""
 
 from __future__ import annotations
 

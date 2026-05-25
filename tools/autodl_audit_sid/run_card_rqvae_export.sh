@@ -37,13 +37,13 @@ if [ ! -f "$ITEM_METADATA" ] && [ "$DATASET_NAME" = "Musical_Instruments" ]; the
   fi
 fi
 
-echo "[AUDIT-SID CARD] root=$ROOT_DIR"
-echo "[AUDIT-SID CARD] exp_id=$EXP_ID"
-echo "[AUDIT-SID CARD] card_dir=$CARD_DIR"
-echo "[AUDIT-SID CARD] dataset=$DATASET_NAME"
-echo "[AUDIT-SID CARD] item_metadata=$ITEM_METADATA"
-echo "[AUDIT-SID CARD] device=$DEVICE"
-echo "[AUDIT-SID CARD] feature_mode=$CARD_FEATURE_MODE"
+echo "[SIDInspector CARD] root=$ROOT_DIR"
+echo "[SIDInspector CARD] exp_id=$EXP_ID"
+echo "[SIDInspector CARD] card_dir=$CARD_DIR"
+echo "[SIDInspector CARD] dataset=$DATASET_NAME"
+echo "[SIDInspector CARD] item_metadata=$ITEM_METADATA"
+echo "[SIDInspector CARD] device=$DEVICE"
+echo "[SIDInspector CARD] feature_mode=$CARD_FEATURE_MODE"
 
 if [ ! -d "$CARD_DIR" ]; then
   echo "Missing CARD repo: $CARD_DIR" >&2
@@ -57,7 +57,7 @@ fi
 if [ "$SKIP_PIP_INSTALL" != "1" ]; then
   "$PYTHON_BIN" -m pip install -q pandas pyarrow numpy==1.26.4 tqdm transformers scikit-learn
 else
-  echo "[AUDIT-SID CARD] SKIP_PIP_INSTALL=1; using existing Python environment"
+  echo "[SIDInspector CARD] SKIP_PIP_INSTALL=1; using existing Python environment"
 fi
 
 ITEM_METADATA="$ITEM_METADATA" INPUT_PARQUET="$INPUT_PARQUET" CARD_FEATURE_MODE="$CARD_FEATURE_MODE" "$PYTHON_BIN" - <<'PY'
@@ -122,7 +122,7 @@ if [ -z "$BEST_CKPT" ]; then
   echo "CARD best_collision_model.pth not found under $CKPT_DIR" >&2
   exit 3
 fi
-echo "[AUDIT-SID CARD] checkpoint: $BEST_CKPT"
+echo "[SIDInspector CARD] checkpoint: $BEST_CKPT"
 
 pushd "$CARD_DIR/rqvae4" >/dev/null
 PYTHONPATH="$CARD_DIR" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \
@@ -149,5 +149,5 @@ PYTHONPATH="$ROOT_DIR/src" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \
   --interactions "$INTERACTIONS" \
   --output-dir "$OUT_DIR/metrics"
 
-echo "[AUDIT-SID CARD] DONE: $OUT_DIR"
+echo "[SIDInspector CARD] DONE: $OUT_DIR"
 find "$OUT_DIR" -maxdepth 3 -type f | sort

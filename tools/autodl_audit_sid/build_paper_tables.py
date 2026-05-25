@@ -1,6 +1,6 @@
 """Build paper-facing SIDInspector tables from local metric artifacts.
 
-Internal CSV filenames preserve the original AUDIT-SID/D5a naming for
+Internal CSV filenames preserve the original SIDInspector/D5a naming for
 provenance compatibility; generated captions and labels use the paper-facing
 SIDInspector D1--D5 diagnostic-probe terminology.
 """

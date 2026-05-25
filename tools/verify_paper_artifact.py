@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the public SIDInspector/AUDIT-SID artifact without private local caches."""
+"""Verify the public SIDInspector artifact without private local caches."""
 
 from __future__ import annotations
 
@@ -39,6 +39,9 @@ REQUIRED_FILES = [
     "paper_assets/tables/table16_runtime_profile.csv",
     "paper_assets/tables/table16_runtime_profile.md",
     "paper_assets/references/audit_sid_references.bib",
+    "src/sidinspector/__init__.py",
+    "src/sidinspector/interface.py",
+    "src/sidinspector/metrics.py",
     "examples/minimal_adapter.py",
     "tools/autodl_audit_sid/preflight_metric_inputs.py",
     "tools/autodl_audit_sid/preflight_card_nurqvae.py",
@@ -565,7 +568,7 @@ def main() -> None:
     check_table13()
     check_table14()
     check_table15()
-    print("SIDInspector/AUDIT-SID public artifact verification passed.")
+    print("SIDInspector public artifact verification passed.")
 
 
 if __name__ == "__main__":

@@ -81,14 +81,14 @@ G2="${G2:-$B2}"
 
 mkdir -p "$CONFIG_DIR" "$LOG_DIR"
 
-echo "[AUDIT-SID] root=$ROOT_DIR"
-echo "[AUDIT-SID] exp_id=$EXP_ID"
-echo "[AUDIT-SID] resid_dir=$RESID_DIR"
-echo "[AUDIT-SID] dataset_name=$DATASET_NAME"
-echo "[AUDIT-SID] dataset_dir=$DATASET_DIR"
-echo "[AUDIT-SID] code_size B1=$B1 B2=$B2 G2=$G2"
-echo "[AUDIT-SID] device=$DEVICE gaoq_device=$GAOQ_DEVICE"
-echo "[AUDIT-SID] gaoq_use_balancedkmeans=$GAOQ_USE_BALANCED_KMEANS gaoq_num_threads=$GAOQ_NUM_THREADS gaoq_kmeans_n_jobs=$GAOQ_KMEANS_N_JOBS gaoq_kmeans_n_init=$GAOQ_KMEANS_N_INIT gaoq_level2_parallel_jobs=$GAOQ_LEVEL2_PARALLEL_JOBS gaoq_level2_parallel_backend=$GAOQ_LEVEL2_PARALLEL_BACKEND"
+echo "[SIDInspector] root=$ROOT_DIR"
+echo "[SIDInspector] exp_id=$EXP_ID"
+echo "[SIDInspector] resid_dir=$RESID_DIR"
+echo "[SIDInspector] dataset_name=$DATASET_NAME"
+echo "[SIDInspector] dataset_dir=$DATASET_DIR"
+echo "[SIDInspector] code_size B1=$B1 B2=$B2 G2=$G2"
+echo "[SIDInspector] device=$DEVICE gaoq_device=$GAOQ_DEVICE"
+echo "[SIDInspector] gaoq_use_balancedkmeans=$GAOQ_USE_BALANCED_KMEANS gaoq_num_threads=$GAOQ_NUM_THREADS gaoq_kmeans_n_jobs=$GAOQ_KMEANS_N_JOBS gaoq_kmeans_n_init=$GAOQ_KMEANS_N_INIT gaoq_level2_parallel_jobs=$GAOQ_LEVEL2_PARALLEL_JOBS gaoq_level2_parallel_backend=$GAOQ_LEVEL2_PARALLEL_BACKEND"
 
 if [ ! -d "$RESID_DIR" ]; then
   echo "Missing ReSID repo: $RESID_DIR" >&2
@@ -104,7 +104,7 @@ if [ "$SKIP_PIP_INSTALL" != "1" ]; then
     pyyaml tqdm pandas pyarrow transformers scikit-learn scipy \
     numpy==1.26.4 k-means-constrained==0.7.3
 else
-  echo "[AUDIT-SID] SKIP_PIP_INSTALL=1; using existing Python environment"
+  echo "[SIDInspector] SKIP_PIP_INSTALL=1; using existing Python environment"
 fi
 
 case "$GAOQ_USE_BALANCED_KMEANS" in
@@ -187,10 +187,10 @@ if [ -z "$FAMAE_CKPT" ]; then
   echo "FAMAE best_model.pth not found under $LOG_DIR" >&2
   exit 3
 fi
-echo "[AUDIT-SID] FAMAE checkpoint: $FAMAE_CKPT"
+echo "[SIDInspector] FAMAE checkpoint: $FAMAE_CKPT"
 
 if [ "$STOP_AFTER_FAMAE" = "1" ]; then
-  echo "[AUDIT-SID] STOP_AFTER_FAMAE=1; checkpoint prepared, skipping GAOQ export"
+  echo "[SIDInspector] STOP_AFTER_FAMAE=1; checkpoint prepared, skipping GAOQ export"
   echo "$FAMAE_CKPT" > "$OUT_DIR/famae_checkpoint_path.txt"
   exit 0
 fi
@@ -231,8 +231,8 @@ export GAOQ_KMEANS_N_JOBS="$GAOQ_KMEANS_N_JOBS"
 export GAOQ_KMEANS_N_INIT="$GAOQ_KMEANS_N_INIT"
 export GAOQ_LEVEL2_PARALLEL_JOBS="$GAOQ_LEVEL2_PARALLEL_JOBS"
 export GAOQ_LEVEL2_PARALLEL_BACKEND="$GAOQ_LEVEL2_PARALLEL_BACKEND"
-echo "[AUDIT-SID] GAOQ CPU-only export: device=$GAOQ_DEVICE balanced=$GAOQ_USE_BALANCED_KMEANS"
-echo "[AUDIT-SID] GAOQ thread env: OMP=$OMP_NUM_THREADS MKL=$MKL_NUM_THREADS OPENBLAS=$OPENBLAS_NUM_THREADS NUMEXPR=$NUMEXPR_NUM_THREADS KMEANS_N_JOBS=$GAOQ_KMEANS_N_JOBS KMEANS_N_INIT=$GAOQ_KMEANS_N_INIT LEVEL2_PARALLEL_JOBS=$GAOQ_LEVEL2_PARALLEL_JOBS LEVEL2_PARALLEL_BACKEND=$GAOQ_LEVEL2_PARALLEL_BACKEND"
+echo "[SIDInspector] GAOQ CPU-only export: device=$GAOQ_DEVICE balanced=$GAOQ_USE_BALANCED_KMEANS"
+echo "[SIDInspector] GAOQ thread env: OMP=$OMP_NUM_THREADS MKL=$MKL_NUM_THREADS OPENBLAS=$OPENBLAS_NUM_THREADS NUMEXPR=$NUMEXPR_NUM_THREADS KMEANS_N_JOBS=$GAOQ_KMEANS_N_JOBS KMEANS_N_INIT=$GAOQ_KMEANS_N_INIT LEVEL2_PARALLEL_JOBS=$GAOQ_LEVEL2_PARALLEL_JOBS LEVEL2_PARALLEL_BACKEND=$GAOQ_LEVEL2_PARALLEL_BACKEND"
 
 pushd "$RESID_DIR" >/dev/null
 PYTHONPATH="$ROOT_DIR/src:$RESID_DIR" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \
@@ -245,7 +245,7 @@ if [ -z "$GAOQ_MAPPING" ]; then
   echo "GAOQ item_code_mapping.parquet not found under $LOG_DIR" >&2
   exit 4
 fi
-echo "[AUDIT-SID] GAOQ mapping: $GAOQ_MAPPING"
+echo "[SIDInspector] GAOQ mapping: $GAOQ_MAPPING"
 
 PYTHONPATH="$ROOT_DIR/src" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \
   "$PYTHON_BIN" -m audit_sid.adapters.resid \
@@ -261,5 +261,5 @@ PYTHONPATH="$ROOT_DIR/src" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \
   --interactions "$OUT_DIR/normalized/interactions.parquet" \
   --output-dir "$OUT_DIR/metrics"
 
-echo "[AUDIT-SID] DONE: $OUT_DIR"
+echo "[SIDInspector] DONE: $OUT_DIR"
 find "$OUT_DIR" -maxdepth 3 -type f | sort

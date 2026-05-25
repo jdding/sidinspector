@@ -27,12 +27,12 @@ SKIP_PIP_INSTALL="${SKIP_PIP_INSTALL:-0}"
 
 mkdir -p "$INPUT_DIR" "$GRID_OUT" "$OUT_DIR/logs"
 
-echo "[AUDIT-SID GRID] root=$ROOT_DIR"
-echo "[AUDIT-SID GRID] exp_id=$EXP_ID"
-echo "[AUDIT-SID GRID] meta=$META_JSONL_GZ"
-echo "[AUDIT-SID GRID] reviews=$REVIEWS_JSONL_GZ"
-echo "[AUDIT-SID GRID] model_path=$MODEL_PATH"
-echo "[AUDIT-SID GRID] max_items=$MAX_ITEMS codebook_width=$CODEBOOK_WIDTH hierarchies=$NUM_HIERARCHIES"
+echo "[SIDInspector GRID] root=$ROOT_DIR"
+echo "[SIDInspector GRID] exp_id=$EXP_ID"
+echo "[SIDInspector GRID] meta=$META_JSONL_GZ"
+echo "[SIDInspector GRID] reviews=$REVIEWS_JSONL_GZ"
+echo "[SIDInspector GRID] model_path=$MODEL_PATH"
+echo "[SIDInspector GRID] max_items=$MAX_ITEMS codebook_width=$CODEBOOK_WIDTH hierarchies=$NUM_HIERARCHIES"
 
 for required in "$META_JSONL_GZ" "$REVIEWS_JSONL_GZ" "$MODEL_PATH" "$ROOT_DIR/_gate0_repos/GRID"; do
   if [ ! -e "$required" ]; then
@@ -44,7 +44,7 @@ done
 if [ "$SKIP_PIP_INSTALL" != "1" ]; then
   "$PYTHON_BIN" -m pip install -q sentence-transformers lightning pytorch-lightning torchmetrics pandas pyarrow numpy
 else
-  echo "[AUDIT-SID GRID] SKIP_PIP_INSTALL=1; using existing Python environment"
+  echo "[SIDInspector GRID] SKIP_PIP_INSTALL=1; using existing Python environment"
 fi
 
 export MPLCONFIGDIR="${MPLCONFIGDIR:-/tmp/audit_sid_mpl}"
@@ -79,5 +79,5 @@ PYTHONPATH="$ROOT_DIR/src" "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/run_g
   --seed "$SEED" \
   2>&1 | tee "$OUT_DIR/logs/grid_export.log"
 
-echo "[AUDIT-SID GRID] DONE: $GRID_OUT"
+echo "[SIDInspector GRID] DONE: $GRID_OUT"
 find "$GRID_OUT" -maxdepth 3 -type f | sort

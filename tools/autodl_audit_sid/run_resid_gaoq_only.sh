@@ -21,13 +21,13 @@ GAOQ_KMEANS_N_JOBS="${GAOQ_KMEANS_N_JOBS:-$GAOQ_NUM_THREADS}"
 GAOQ_USE_BALANCED_KMEANS_OVERRIDE="${GAOQ_USE_BALANCED_KMEANS_OVERRIDE:-}"
 GAOQ_METHOD_NAME="${GAOQ_METHOD_NAME:-resid_gaoq}"
 
-echo "[AUDIT-SID GAOQ-only] root=$ROOT_DIR"
-echo "[AUDIT-SID GAOQ-only] exp_id=$EXP_ID"
-echo "[AUDIT-SID GAOQ-only] source_exp_id=$SOURCE_EXP_ID"
-echo "[AUDIT-SID GAOQ-only] dataset=$DATASET_NAME"
-echo "[AUDIT-SID GAOQ-only] out_dir=$OUT_DIR"
-echo "[AUDIT-SID GAOQ-only] device=$GAOQ_DEVICE threads=$GAOQ_NUM_THREADS n_jobs=$GAOQ_KMEANS_N_JOBS"
-echo "[AUDIT-SID GAOQ-only] method=$GAOQ_METHOD_NAME balanced_override=${GAOQ_USE_BALANCED_KMEANS_OVERRIDE:-none}"
+echo "[SIDInspector GAOQ-only] root=$ROOT_DIR"
+echo "[SIDInspector GAOQ-only] exp_id=$EXP_ID"
+echo "[SIDInspector GAOQ-only] source_exp_id=$SOURCE_EXP_ID"
+echo "[SIDInspector GAOQ-only] dataset=$DATASET_NAME"
+echo "[SIDInspector GAOQ-only] out_dir=$OUT_DIR"
+echo "[SIDInspector GAOQ-only] device=$GAOQ_DEVICE threads=$GAOQ_NUM_THREADS n_jobs=$GAOQ_KMEANS_N_JOBS"
+echo "[SIDInspector GAOQ-only] method=$GAOQ_METHOD_NAME balanced_override=${GAOQ_USE_BALANCED_KMEANS_OVERRIDE:-none}"
 
 if [ ! -d "$SOURCE_OUT_DIR" ]; then
   echo "Missing source ReSID run dir: $SOURCE_OUT_DIR" >&2
@@ -90,7 +90,7 @@ if [ -z "$GAOQ_MAPPING" ]; then
   echo "GAOQ item_code_mapping.parquet not found under $LOG_DIR" >&2
   exit 4
 fi
-echo "[AUDIT-SID GAOQ-only] mapping=$GAOQ_MAPPING"
+echo "[SIDInspector GAOQ-only] mapping=$GAOQ_MAPPING"
 
 PYTHONPATH="$ROOT_DIR/src" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \
   "$PYTHON_BIN" -m audit_sid.adapters.resid \
@@ -107,4 +107,4 @@ PYTHONPATH="$ROOT_DIR/src" PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache \
   --interactions "$OUT_DIR/normalized/interactions.parquet" \
   --output-dir "$OUT_DIR/metrics"
 
-echo "[AUDIT-SID GAOQ-only] DONE: $OUT_DIR"
+echo "[SIDInspector GAOQ-only] DONE: $OUT_DIR"

@@ -1,4 +1,4 @@
-"""Build a compact paper-facing summary from AUDIT-SID metric CSVs."""
+"""Build a compact paper-facing summary from SIDInspector metric CSVs."""
 
 from __future__ import annotations
 
@@ -64,7 +64,7 @@ def summarize(metrics_dir: Path) -> pd.DataFrame:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Summarize an AUDIT-SID case-study metrics directory.")
+    parser = argparse.ArgumentParser(description="Summarize an SIDInspector case-study metrics directory.")
     parser.add_argument("--metrics-dir", type=Path, required=True)
     parser.add_argument("--output-csv", type=Path, required=True)
     parser.add_argument("--output-md", type=Path)

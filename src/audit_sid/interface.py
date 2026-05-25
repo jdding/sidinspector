@@ -1,4 +1,4 @@
-"""Stable input contracts for SIDInspector/AUDIT-SID adapters.
+"""Stable input contracts for SIDInspector adapters.
 
 Adapters for ReSID, GRID, CARD, or sanity baselines should emit tables that
 match these contracts before diagnostic metrics run.
@@ -43,7 +43,7 @@ class TableContract:
 
 @dataclass(frozen=True)
 class AuditSidTables:
-    """Filesystem paths for a normalized SIDInspector/AUDIT-SID artifact bundle."""
+    """Filesystem paths for a normalized SIDInspector artifact bundle."""
 
     sid_assignments: Path
     item_metadata: Path

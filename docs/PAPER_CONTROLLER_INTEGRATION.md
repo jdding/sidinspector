@@ -7,7 +7,7 @@ Timestamp: 2026-05-19 20:06:30 CST
 This note records the writing pass that turns the completed method-inspired
 mechanism-probe suite into a compact main-text table in the CIKM 2026 Resource
 draft. The probes remain outside named-tokenizer method coverage. Their role
-is to check whether AUDIT-SID diagnostics react to known artifact mechanisms
+is to check whether SIDInspector diagnostics react to known artifact mechanisms
 that are discussed in the SID literature.
 
 ## Integrated Evidence

@@ -1,4 +1,4 @@
-# AUDIT-SID Diagnostic Probe Taxonomy
+# SIDInspector Diagnostic Probe Taxonomy
 
 Timestamp: 2026-05-20 01:34:54 CST
 
@@ -37,7 +37,7 @@ table in the artifact package.
 
 D7 should not be implemented for the current v0 unless a real method artifact
 exports generator candidates, beam traces, or per-step scores. A synthetic D7
-toy would demonstrate only that the parser can read a file, not that AUDIT-SID
+toy would demonstrate only that the parser can read a file, not that SIDInspector
 audits a real SID generator. For CIKM v0, D7 stays as an interface hook and
 future adapter target.
 
@@ -50,7 +50,7 @@ structural cost**.
 
 ## Safe Paper Wording
 
-> AUDIT-SID implements five mapping-level diagnostic probes: D1 utilization,
+> SIDInspector implements five mapping-level diagnostic probes: D1 utilization,
 > D2 aliasing, D3 neighborhood alignment, D4 popularity allocation, and D5
 > structural cost. D6 temporal churn is available when paired tokenizer
 > snapshots exist, and D7 generation traces are reserved for artifacts that

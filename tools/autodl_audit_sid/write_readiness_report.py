@@ -1,4 +1,4 @@
-"""Write a local AutoDL readiness report for AUDIT-SID."""
+"""Write a local AutoDL readiness report for SIDInspector."""
 
 from __future__ import annotations
 
@@ -35,7 +35,7 @@ def count_rows(path: Path) -> int:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Write AUDIT-SID AutoDL readiness report.")
+    parser = argparse.ArgumentParser(description="Write SIDInspector AutoDL readiness report.")
     parser.add_argument("--bundle", type=Path, required=True)
     parser.add_argument("--matrix", type=Path, default=Path("tools/autodl_audit_sid/gate0_experiment_matrix.tsv"))
     parser.add_argument("--output", type=Path, required=True)
@@ -62,7 +62,7 @@ def main() -> None:
         )
 
     lines = [
-        "# AUDIT-SID AutoDL Readiness Report",
+        "# SIDInspector AutoDL Readiness Report",
         "",
         f"**Status**: {status}",
         "",

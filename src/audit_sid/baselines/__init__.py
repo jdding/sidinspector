@@ -1,3 +1,3 @@
-"""Local baseline generators for AUDIT-SID development."""
+"""Local baseline generators for SIDInspector development."""
 
 __all__ = ["rqkmeans"]

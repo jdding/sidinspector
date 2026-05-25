@@ -14,14 +14,14 @@ run_one() {
   local b1="${5:-}"
   local b2="${6:-}"
   local g2="${7:-}"
-  echo "[AUDIT-SID matrix] starting $exp_id dataset=$dataset_name epochs=$epochs seed=$seed"
+  echo "[SIDInspector matrix] starting $exp_id dataset=$dataset_name epochs=$epochs seed=$seed"
   DATASET_NAME="$dataset_name" EXP_ID="$exp_id" FAMAE_EPOCHS="$epochs" SEED="$seed" \
     B1="$b1" B2="$b2" G2="$g2" \
     GAOQ_NUM_THREADS="${GAOQ_NUM_THREADS:-$NUM_WORKERS}" \
     GAOQ_KMEANS_N_JOBS="${GAOQ_KMEANS_N_JOBS:-${GAOQ_NUM_THREADS:-$NUM_WORKERS}}" \
     GAOQ_USE_BALANCED_KMEANS="${GAOQ_USE_BALANCED_KMEANS:-true}" \
     bash "$ROOT_DIR/tools/autodl_audit_sid/run_resid_gate0_export.sh"
-  echo "[AUDIT-SID matrix] finished $exp_id"
+  echo "[SIDInspector matrix] finished $exp_id"
 }
 
 case "$MATRIX_MODE" in

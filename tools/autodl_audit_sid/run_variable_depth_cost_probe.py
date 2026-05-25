@@ -222,7 +222,7 @@ def parse_str_list(value: str) -> list[str]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run AUDIT-SID variable-depth cost controller.")
+    parser = argparse.ArgumentParser(description="Run SIDInspector variable-depth cost controller.")
     parser.add_argument("--item-metadata", type=Path, required=True)
     parser.add_argument("--interactions", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)

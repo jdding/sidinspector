@@ -15,21 +15,21 @@ if [ -z "$PYTHON_BIN" ]; then
 fi
 
 if [ -z "$PYTHON_BIN" ]; then
-  echo "[AUDIT-SID preflight] no python interpreter found" >&2
+  echo "[SIDInspector preflight] no python interpreter found" >&2
   exit 2
 fi
 
-echo "[AUDIT-SID preflight] root=$ROOT_DIR"
-echo "[AUDIT-SID preflight] python=$PYTHON_BIN"
+echo "[SIDInspector preflight] root=$ROOT_DIR"
+echo "[SIDInspector preflight] python=$PYTHON_BIN"
 date
 uname -a
 
 if command -v nvidia-smi >/dev/null 2>&1; then
   nvidia-smi --query-gpu=index,name,memory.used,memory.total,driver_version --format=csv,noheader
 else
-  echo "[AUDIT-SID preflight] nvidia-smi not found"
+  echo "[SIDInspector preflight] nvidia-smi not found"
   if [ "$REQUIRE_CUDA" = "1" ]; then
-    echo "[AUDIT-SID preflight] REQUIRE_CUDA=1 but nvidia-smi is unavailable" >&2
+    echo "[SIDInspector preflight] REQUIRE_CUDA=1 but nvidia-smi is unavailable" >&2
     exit 4
   fi
 fi
@@ -37,7 +37,7 @@ fi
 if command -v screen >/dev/null 2>&1; then
   screen -ls || true
 else
-  echo "[AUDIT-SID preflight] screen not found"
+  echo "[SIDInspector preflight] screen not found"
 fi
 
 required_paths=(
@@ -54,9 +54,9 @@ required_paths=(
 
 for path in "${required_paths[@]}"; do
   if [ -e "$path" ]; then
-    echo "[AUDIT-SID preflight] OK $path"
+    echo "[SIDInspector preflight] OK $path"
   else
-    echo "[AUDIT-SID preflight] MISSING $path" >&2
+    echo "[SIDInspector preflight] MISSING $path" >&2
     exit 3
   fi
 done
@@ -71,21 +71,21 @@ for mod in mods:
     try:
         m = importlib.import_module(mod)
         version = getattr(m, "__version__", "unknown")
-        print(f"[AUDIT-SID preflight] import {mod}: OK {version}")
+        print(f"[SIDInspector preflight] import {mod}: OK {version}")
     except Exception as exc:
-        print(f"[AUDIT-SID preflight] import {mod}: MISSING {type(exc).__name__}: {exc}")
+        print(f"[SIDInspector preflight] import {mod}: MISSING {type(exc).__name__}: {exc}")
         missing.append(mod)
 if missing:
-    print(f"[AUDIT-SID preflight] missing required modules: {missing}", file=sys.stderr)
+    print(f"[SIDInspector preflight] missing required modules: {missing}", file=sys.stderr)
     raise SystemExit(5)
 
 try:
     import torch
-    print(f"[AUDIT-SID preflight] torch.cuda.is_available={torch.cuda.is_available()}")
+    print(f"[SIDInspector preflight] torch.cuda.is_available={torch.cuda.is_available()}")
     if torch.cuda.is_available():
-        print(f"[AUDIT-SID preflight] cuda_device={torch.cuda.get_device_name(0)}")
+        print(f"[SIDInspector preflight] cuda_device={torch.cuda.get_device_name(0)}")
 except Exception as exc:
-    print(f"[AUDIT-SID preflight] torch cuda check failed: {exc}")
+    print(f"[SIDInspector preflight] torch cuda check failed: {exc}")
 PY
 
 if [ "$REQUIRE_CUDA" = "1" ]; then
@@ -94,18 +94,18 @@ import sys
 import torch
 
 if not torch.cuda.is_available():
-    print("[AUDIT-SID preflight] REQUIRE_CUDA=1 but torch.cuda.is_available=False", file=sys.stderr)
+    print("[SIDInspector preflight] REQUIRE_CUDA=1 but torch.cuda.is_available=False", file=sys.stderr)
     raise SystemExit(4)
-print("[AUDIT-SID preflight] CUDA_REQUIRED_OK")
+print("[SIDInspector preflight] CUDA_REQUIRED_OK")
 PY
 fi
 
 "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/repair_card_source.py" --card-dir "$ROOT_DIR/_gate0_repos/CARD"
 
 if "$PYTHON_BIN" "$ROOT_DIR/tools/autodl_audit_sid/check_card_source.py" --card-dir "$ROOT_DIR/_gate0_repos/CARD"; then
-  echo "[AUDIT-SID preflight] CARD_SOURCE_READY"
+  echo "[SIDInspector preflight] CARD_SOURCE_READY"
 else
-  echo "[AUDIT-SID preflight] CARD_SOURCE_INCOMPLETE; CARD queue entries will be skipped unless CARD_SOURCE_FAIL=error"
+  echo "[SIDInspector preflight] CARD_SOURCE_INCOMPLETE; CARD queue entries will be skipped unless CARD_SOURCE_FAIL=error"
 fi
 
 ROOT_DIR="$ROOT_DIR" "$PYTHON_BIN" - <<'PY'
@@ -119,10 +119,10 @@ interactions = root / "_gate0_artifacts/resid_musical_normalized/interactions.pa
 
 meta = pd.read_parquet(item_metadata)
 inter = pd.read_parquet(interactions)
-print(f"[AUDIT-SID preflight] item_metadata rows={len(meta)} unique_items={meta['item_id'].nunique()}")
-print(f"[AUDIT-SID preflight] interactions rows={len(inter)} unique_items={inter['item_id'].nunique()}")
+print(f"[SIDInspector preflight] item_metadata rows={len(meta)} unique_items={meta['item_id'].nunique()}")
+print(f"[SIDInspector preflight] interactions rows={len(inter)} unique_items={inter['item_id'].nunique()}")
 splits = {str(k): int(v) for k, v in inter["split"].value_counts().sort_index().items()}
-print(f"[AUDIT-SID preflight] interaction splits={splits}")
+print(f"[SIDInspector preflight] interaction splits={splits}")
 PY
 
 if command -v sha256sum >/dev/null 2>&1; then
@@ -135,4 +135,4 @@ elif command -v shasum >/dev/null 2>&1; then
     "$ROOT_DIR/_gate0_artifacts/resid_musical_normalized/interactions.parquet"
 fi
 
-echo "[AUDIT-SID preflight] ASSETS_READY RUNNER_READY"
+echo "[SIDInspector preflight] ASSETS_READY RUNNER_READY"

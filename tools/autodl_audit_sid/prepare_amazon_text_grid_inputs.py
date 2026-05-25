@@ -1,6 +1,6 @@
 """Prepare Amazon-2023 text embeddings for a GRID RQ-KMeans export.
 
-This prepares public raw Amazon review data into the AUDIT-SID schema plus a
+This prepares public raw Amazon review data into the SIDInspector schema plus a
 row-aligned embedding tensor. It intentionally does not train a tokenizer.
 The tokenizer/export step is handled by `run_grid_rqkmeans_direct_export.py`.
 """

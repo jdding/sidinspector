@@ -1,4 +1,4 @@
-"""Compute SID churn between two AUDIT-SID sid_assignments tables."""
+"""Compute SID churn between two SIDInspector sid_assignments tables."""
 
 from __future__ import annotations
 

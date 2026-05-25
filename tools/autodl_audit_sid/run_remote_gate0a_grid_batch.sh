@@ -21,7 +21,7 @@ cd "$WORKSPACE" || exit 2
 COMMIT="${LOCAL_COMMIT:-$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")}"
 MESSAGE="${LOCAL_COMMIT_MESSAGE:-$(git log -1 --format='%s' 2>/dev/null || echo "N/A")}"
 
-echo "=== AUDIT-SID GATE0A GRID BATCH ==="
+echo "=== SIDInspector GATE0A GRID BATCH ==="
 echo "Run ID: $RUN_ID"
 echo "Workspace: $WORKSPACE"
 echo "Python: $PYTHON_BIN"

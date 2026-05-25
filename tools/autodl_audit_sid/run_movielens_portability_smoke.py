@@ -1,4 +1,4 @@
-"""Run a bounded non-Amazon AUDIT-SID portability smoke on MovieLens."""
+"""Run a bounded non-Amazon SIDInspector portability smoke on MovieLens."""
 
 from __future__ import annotations
 
@@ -134,7 +134,7 @@ def run_metrics(item_metadata_path: Path, interactions_path: Path, output_dir: P
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Bounded MovieLens portability smoke for AUDIT-SID.")
+    parser = argparse.ArgumentParser(description="Bounded MovieLens portability smoke for SIDInspector.")
     parser.add_argument("--zip-path", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--dataset-name", default="MovieLens_25M_smoke")

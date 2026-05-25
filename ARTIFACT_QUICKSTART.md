@@ -1,4 +1,4 @@
-# SIDInspector / AUDIT-SID Artifact Quickstart
+# SIDInspector Artifact Quickstart
 
 Timestamp: 2026-05-20 19:32:36 CST
 
@@ -46,7 +46,7 @@ python3 tools/verify_paper_artifact.py
 Expected verifier output:
 
 ```text
-SIDInspector/AUDIT-SID reviewer artifact verification passed.
+SIDInspector reviewer artifact verification passed.
 ```
 
 ## Minimal Adapter Template
@@ -122,7 +122,7 @@ reproduction.
   clean-checkout verification path above. The full rebuild path depends on
   local experiment caches that are not committed to git.
 - If Python bytecode cache writes are blocked, set
-  `PYTHONPYCACHEPREFIX=/tmp/audit_sid_pycache`.
+  `PYTHONPYCACHEPREFIX=/tmp/sidinspector_pycache`.
 - `tests/test_preflight_card_nurqvae.py` skips automatically when the ignored
   upstream CARD clone is absent. When `_gate0_repos/CARD` is present, it checks
   only the original source/import/export contract; it does not make CARD a

@@ -423,7 +423,7 @@ def run_probe(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run AUDIT-SID qualified collision controller.")
+    parser = argparse.ArgumentParser(description="Run SIDInspector qualified collision controller.")
     parser.add_argument("--sid-assignments", type=Path, action="append", required=True)
     parser.add_argument("--item-metadata", type=Path, required=True)
     parser.add_argument("--interactions", type=Path, required=True)

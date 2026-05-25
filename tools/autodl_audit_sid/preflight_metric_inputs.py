@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bounded local preflight for AUDIT-SID metric-runner inputs."""
+"""Bounded local preflight for SIDInspector metric-runner inputs."""
 
 from __future__ import annotations
 
@@ -129,7 +129,7 @@ def preflight_inputs(
     max_pair_events: int = 10_000,
     max_user_items: int = 50,
 ) -> dict[str, Any]:
-    """Validate AUDIT-SID input contracts and optionally run bounded metrics."""
+    """Validate SIDInspector input contracts and optionally run bounded metrics."""
 
     paths = {
         "sid_assignments": sid_assignments,
@@ -184,7 +184,7 @@ def preflight_inputs(
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Validate sid_assignments/item_metadata/interactions contract before running AUDIT-SID metrics. "
+            "Validate sid_assignments/item_metadata/interactions contract before running SIDInspector metrics. "
             "Optionally emits a bounded D1-D5a JSON smoke summary for local follow-up experiments."
         )
     )

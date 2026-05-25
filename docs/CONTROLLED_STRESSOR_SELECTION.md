@@ -25,7 +25,7 @@ paper authors. Therefore:
 3. probes can support metric-sensitivity or finding-interpretation claims,
    not method-superiority claims;
 4. a probe is admitted only if it maps to D1-D5 and corresponds to either
-   an existing AUDIT-SID finding or a public related-work failure mode;
+   an existing SIDInspector finding or a public related-work failure mode;
 5. D7/generator behavior remains out of scope unless real `generator_outputs`
    or candidate traces are available.
 
@@ -98,14 +98,14 @@ Artifact repository:
 
 Allowed:
 
-- "AUDIT-SID includes method-inspired controlled mechanism probes for collision
+- "SIDInspector includes method-inspired controlled mechanism probes for collision
   qualification, capacity pressure, and variable-depth cost."
 - "These probes test whether D1-D5 respond to known SID tokenizer failure
   modes."
 
 Not allowed:
 
-- "AUDIT-SID reproduces QuaSID/AdaSID/CARD/CapsID/ACERec."
+- "SIDInspector reproduces QuaSID/AdaSID/CARD/CapsID/ACERec."
 - "Probe results are evidence for named method quality."
 - "Synthetic probes solve the method coverage breadth gap."
 

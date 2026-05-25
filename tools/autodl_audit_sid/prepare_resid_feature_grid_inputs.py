@@ -1,6 +1,6 @@
 """Prepare ReSID item-feature text embeddings for same-dataset GRID export.
 
-This is a controlled same-item-universe bridge for AUDIT-SID diagnostics. It
+This is a controlled same-item-universe bridge for SIDInspector diagnostics. It
 uses ReSID's public processed item features and interactions, not raw Amazon
 titles/reviews, then feeds row-aligned embeddings into the official GRID
 MiniBatchKMeans exporter.

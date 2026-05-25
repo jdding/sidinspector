@@ -1,4 +1,4 @@
-"""Run AUDIT-SID metrics on public DACT bundled code artifacts."""
+"""Run SIDInspector metrics on public DACT bundled code artifacts."""
 
 from __future__ import annotations
 
