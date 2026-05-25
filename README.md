@@ -110,6 +110,11 @@ Typical runtime is under two minutes after dependencies are installed. Optional
 tests may skip when ignored upstream clones or local experiment caches are not
 present.
 
+For new tokenizer exports, start from `examples/minimal_adapter.py`; it
+normalizes `item_id, sid_0, ..., sid_L` into `sid_assignments.parquet`. Runtime
+notes for the public Musical bundle are in
+`paper_assets/tables/table16_runtime_profile.md`.
+
 ## Boundary
 
 This branch is public-stage only. Do not commit Huawei internal data, business logs, or proprietary implementation details.

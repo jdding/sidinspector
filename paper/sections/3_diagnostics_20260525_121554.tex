@@ -7,13 +7,13 @@ differentiable tokenization, representation-source sensitivity,
 code-assignment diversity, semantic-collaborative disentanglement, collision
 qualification, variable-length or asymmetric interfaces, drift, and deployment
 surfaces~\cite{zheng2023lcrec,zhu2024cost,wang2024letter,liu2024elit,liu2025discrec,fu2026diger,qiao2026textasvision,hu2026quasid,pan2026adasid,yan2026aktrec,cheng2026capsid,huang2026asymrec,baikalov2026staleness,ju2026snapchatsid}.
-The literature space is broader than the artifacts that \tool currently
-executes. Table~\ref{tab:method-coverage} summarizes what the released artifact
+The literature space is broader than the artifacts that \tool can honestly
+execute. Table~\ref{tab:method-coverage} summarizes what the review artifact
 ships rather than counting baselines. The taxonomy guides future
 adapters; it is not presented as reproduced-method coverage.
 
 \begin{table}[t]
-\caption{Evidence catalog for the released artifact.}
+\caption{Evidence catalog for the review artifact.}
 \label{tab:method-coverage}
 \scriptsize
 \setlength{\tabcolsep}{1.2pt}
@@ -55,4 +55,4 @@ It is implemented as optional refresh-pair evidence, not a required main-paper
 claim.
 D7, \emph{generation traces}, covers invalid paths, next-token entropy, and
 duplicate generated candidates. D7 requires generator-output tables or beam
-traces and is left as an interface hook in the current release.
+traces and is deliberately not implemented as current evidence.

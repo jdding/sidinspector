@@ -1,10 +1,10 @@
 \section{Artifact Availability and Limits}
 
-The repository contains the \tool Python package, adapter scripts, metric
-runners, generated CSV/Markdown/\LaTeX{} tables, provenance logs,
-BibTeX/source-audit notes, an MIT license, and a reviewer quickstart. The entry
-point is the tag
-\texttt{audit-sid-cikm-\allowbreak resource-v0.1}, with a clean-checkout verifier for the
+The artifact repository contains the \tool Python package, adapter scripts,
+metric runners, generated CSV/Markdown/\LaTeX{} tables, provenance logs,
+BibTeX/source-audit notes, an MIT license, and a reviewer quickstart. The
+reviewer entry point is the tag
+\texttt{audit-sid-cikm-resource-v0.1}, with a clean-checkout verifier for the
 published tables and figure; the anonymous review artifact is available at
 \url{https://anonymous.4open.science/r/sidinspector-9BB2}. Large local artifacts are kept out of git and
 described through manifests so reviewers can separate public reproducibility
@@ -31,8 +31,8 @@ current rows.
 
 New adapters emit the same normalized tables, declare their evidence role, and
 record feature or checkpoint provenance. A named tokenizer improves coverage
-only after item-level codes pass the validator and join to metadata or
-interactions. A controlled mechanism probe improves diagnostic calibration but
+only when item-level codes pass the validator and join to metadata or
+interactions; a controlled mechanism probe improves diagnostic calibration but
 does not count as named-method coverage; a generator trace activates D7.
 Future versions should add causal collision-harm validation, broader faithful
 adapter coverage, generator-output diagnostics, and unified search/recommendation

@@ -49,6 +49,22 @@ Expected verifier output:
 SIDInspector/AUDIT-SID reviewer artifact verification passed.
 ```
 
+## Minimal Adapter Template
+
+If a tokenizer already exports item-level codes, use the template adapter:
+
+```bash
+python3 examples/minimal_adapter.py \
+  --input-csv path/to/item_codes.csv \
+  --output-dir runs/my_tokenizer/normalized \
+  --method my_tokenizer \
+  --dataset my_dataset
+```
+
+The template writes `sid_assignments.parquet`. Pair it with metadata and
+interactions to run D1-D5. See `docs/ADAPTER_TEMPLATE.md` for the column
+contract and evidence-role boundary.
+
 ## Local Full-Artifact Rebuild
 
 This path is for authors or reviewers who also have the ignored local
@@ -77,6 +93,7 @@ Expected outputs:
 - `paper_assets/tables/table13_all_beauty_vertical_d3.csv`
 - `paper_assets/tables/table14_all_beauty_d3_ranking_validation.csv`
 - `paper_assets/tables/table15_rqvae_minimal_reference.csv`
+- `paper_assets/tables/table16_runtime_profile.csv`
 
 ## Paper-Facing Evidence
 
@@ -88,7 +105,8 @@ Expected outputs:
   portability, All_Beauty D3 replication, fixed-reranker D3 validation, and
   Sports GRID third-vertical portability. `table14` freezes the bounded
   All_Beauty temporal-LOO ranking-context replication; `table15` freezes the
-  RQ-min reference-adapter row. These are not numbered as main-paper tables.
+  RQ-min reference-adapter row; `table16` records local D1-D5 runtime. These
+  are not numbered as main-paper tables.
 
 ## Boundary
 

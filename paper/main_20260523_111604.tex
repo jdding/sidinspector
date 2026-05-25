@@ -55,32 +55,36 @@
 \keywords{semantic IDs, generative recommendation, tokenizer artifacts, diagnostic evaluation, recommender systems}
 
 \begin{abstract}
-Semantic-ID (\sid) tokenizers are increasingly released as item-to-code
-mappings that define the address space for generative recommenders. Yet public
-mappings rarely share an inspection interface: before training a generator,
-users must separately check catalog coverage, full-code aliasing,
-prefix--co-occurrence alignment, tail capacity, and prefix fan-out. We present
-\tool, a mapping-first diagnostic resource for \sid tokenizer artifacts. \tool
-defines a small adapter contract over item mappings, metadata, interactions,
-and optional traces; validates the contract; and reports
-mapping-level probes for utilization, aliasing, neighborhood alignment,
-popularity allocation, and structural cost, with hooks for temporal churn and
-trace-based checks.
+Semantic-ID (\sid) tokenizers are increasingly reused as standalone artifacts
+in generative recommendation: an exported item-to-code mapping becomes the
+address space that a later sequence generator must use. Yet these mappings
+rarely come with a common inspection interface. Before training a generator, a
+user lacks a single way to check whether the catalog is covered, whether full
+codes alias many items, whether prefixes reflect user
+co-occurrence, whether tail items receive capacity, or whether the prefix
+structure creates large fan-out. We present \tool, a mapping-first diagnostic
+resource for \sid tokenizer artifacts. \tool defines a small adapter contract
+over item mappings, metadata, interactions, and optional generator traces;
+validates the contract; and reports mapping-level probes for utilization,
+aliasing, neighborhood alignment, popularity allocation, and structural cost,
+with hooks for temporal churn and generator traces.
 
-\tool produces inspectable profiles, not a leaderboard. On a 23,742-item
-Musical worked example, a controlled GRID/RQ-KMeans-style feature-text export
-has 3,749 unique full codes and a 0.977 full-code aliasing rate, while a
-bounded ReSID/GAOQ export is aliasing-free in its exported mapping. The
-strongest prefix--co-occurrence alignment, however, comes from a deterministic
-category-prefix control rather than either learned export row (0.447 versus
-0.154 and 0.055--0.080). This separates addressability from behaviorally
-meaningful prefixes. Auxiliary checks replicate the diagnostic direction on
-All\_Beauty, add a real Sports GRID export with complete joins, and show that
-D3 is positively associated with candidate recall under a fixed train-only
-reranker. Mechanism probes further separate raw aliasing volume,
-interaction-qualified aliasing risk, head-to-tail capacity, and realized prefix
-cost. \tool is not a new tokenizer or a benchmark suite; it makes \sid
-tokenizer exports auditable before downstream generator training.
+The value of \tool is not a leaderboard but an inspectable artifact profile.
+On a 23,742-item Musical worked example, the same adapter contract
+shows that a controlled GRID/RQ-KMeans-style feature-text export has 3,749
+unique full codes and a 0.977 full-code aliasing rate, while a bounded
+ReSID/GAOQ export is aliasing-free in its exported mapping. More importantly,
+the strongest prefix--co-occurrence alignment comes
+from a deterministic category-prefix control, not from either learned export
+row (0.447 versus 0.154 and 0.055--0.080). This counterintuitive result
+shows why addressability and behaviorally meaningful prefixes should be audited
+separately. Auxiliary checks replicate the diagnostic direction on All\_Beauty,
+add a real Sports GRID export with complete joins, and show that D3 is
+positively associated with candidate recall under a fixed train-only reranker.
+Mechanism probes further separate raw aliasing volume, interaction-qualified
+aliasing risk, head-to-tail capacity, and realized prefix cost. \tool is not a
+new tokenizer or a benchmark suite; it turns \sid tokenizer exports into
+inspectable resource artifacts before downstream generator training.
 \end{abstract}
 
 \maketitle

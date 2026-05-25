@@ -869,13 +869,3 @@ Sections 3 and 5 plus `paper/references.bib` and the mirrored
 `paper/main.pdf` compiles to 5 pages, `tools/verify_paper_artifact.py` passes,
 `git diff --check` passes, `main.bbl` has 31 bibitems, and the LaTeX log scan
 reports no undefined citations, undefined references, or BibTeX warnings.
-
-Post-submission prose-polish update: no experiment value, citation set, or claim
-boundary changed. The active paper received a full-text readability pass to
-reduce repeated `artifact/interface/profile` phrasing, replace record-like
-transitions such as "Table shows" with claim-facing prose, and fix the
-post-polish `texttt` tag overfull by adding an allowed line break. Verification
-passes: `paper/main.pdf` compiles to 5 pages, `tools/verify_paper_artifact.py`
-passes, `git diff --check` passes, and the LaTeX log scan reports no undefined
-citations, undefined references, overfull boxes, underfull boxes, or BibTeX
-warnings.

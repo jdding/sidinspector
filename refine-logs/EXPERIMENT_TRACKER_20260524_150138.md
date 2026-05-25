@@ -857,25 +857,3 @@ Verification passes: `paper/main.pdf` compiles to 5 pages,
 passes, `main.bbl` has no `arXiv preprint arXiv`, `shownote{...arXiv}`, or
 `10.48550/arXiv` pattern, and the LaTeX log scan reports no undefined
 citations, undefined references, overfull boxes, or underfull boxes.
-
-Post-submission reference-refresh update: no experiment value or claim boundary
-changed. The active short-paper PDF now cites three recent paper-watch matches:
-`yan2026aktrec` / arXiv:2605.23310 for head-tail semantic-ID transfer,
-`wang2026varlenrec` / arXiv:2605.17779 for variable-length tokenization, and
-`xu2026largescalegenrec` / arXiv:2605.23312 for production-scale generative
-recommender constraints. The refresh touches only existing citation clusters in
-Sections 3 and 5 plus `paper/references.bib` and the mirrored
-`paper_assets/references/audit_sid_references.bib`. Verification passes:
-`paper/main.pdf` compiles to 5 pages, `tools/verify_paper_artifact.py` passes,
-`git diff --check` passes, `main.bbl` has 31 bibitems, and the LaTeX log scan
-reports no undefined citations, undefined references, or BibTeX warnings.
-
-Post-submission prose-polish update: no experiment value, citation set, or claim
-boundary changed. The active paper received a full-text readability pass to
-reduce repeated `artifact/interface/profile` phrasing, replace record-like
-transitions such as "Table shows" with claim-facing prose, and fix the
-post-polish `texttt` tag overfull by adding an allowed line break. Verification
-passes: `paper/main.pdf` compiles to 5 pages, `tools/verify_paper_artifact.py`
-passes, `git diff --check` passes, and the LaTeX log scan reports no undefined
-citations, undefined references, overfull boxes, underfull boxes, or BibTeX
-warnings.
