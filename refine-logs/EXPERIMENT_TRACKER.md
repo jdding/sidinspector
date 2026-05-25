@@ -13,6 +13,14 @@
 | A060 | Refine proposal | DONE | `refine-logs/FINAL_PROPOSAL.md`, `refine-logs/FINAL_PROPOSAL_20260518_131939.md` | Final thesis: representation-to-deployment diagnostics for SID tokenizers. |
 | A070 | Draft gated experiment plan | DONE | `refine-logs/EXPERIMENT_PLAN.md`, `refine-logs/EXPERIMENT_PLAN_20260518_131939.md` | Gate 0 is code/artifact feasibility, not training. |
 | A080 | Pipeline summary | DONE | `refine-logs/PIPELINE_SUMMARY.md`, `refine-logs/PIPELINE_SUMMARY_20260518_131939.md` | AUDIT-SID is public-first Top-1 methodology line. |
+| ASR000 | Create Agent Skill opportunity branch | DONE | `codex/AgentSkill-recsearh-opportunity` | Independent exploration branch; existing dirty paper worktree preserved. |
+| ASR001 | Invoke ARIS idea-discovery / research-refine | DONE | ARIS meta logger best-effort calls | Topic: Agent Skill research opportunity across attribution, router, lifecycle policy, and technical debt. |
+| ASR010 | Research plan summary | DONE | `idea-stage/RESEARCH_PLAN_SUMMARY.md`, `idea-stage/RESEARCH_PLAN_SUMMARY_20260526_010213.md` | No-training idea-discovery scope, falsifiers, and contribution target frozen. |
+| ASR020 | Literature landscape | DONE | `idea-stage/LITERATURE_REVIEW.md`, `idea-stage/LITERATURE_REVIEW_20260526_010213.md` | Uses local 22-paper agent-skill watch plus online arXiv verification. |
+| ASR030 | Four-direction idea ranking | DONE | `idea-stage/IDEA_REPORT.md`, `idea-stage/IDEA_REPORT_20260526_010213.md` | Top-1: Skill Attribution Ledger; router/lifecycle/debt demoted to supporting modules. |
+| ASR040 | Novelty gate | DONE | `refine-logs/NOVELTY_CHECK.md`, `refine-logs/NOVELTY_CHECK_20260526_010213.md` | SAL novelty 8.5/10; standalone router/debt directions downgraded due close work. |
+| ASR050 | Reviewer-style critique | DONE | `refine-logs/REVIEW_SUMMARY.md`, `refine-logs/REVIEW_SUMMARY_20260526_010213.md` | Main risk: logging-only critique; fix is decision utility. |
+| ASR060 | Refined proposal and experiment plan | DONE | `refine-logs/FINAL_PROPOSAL.md`, `refine-logs/EXPERIMENT_PLAN.md`, timestamped copies | No run launched; first gate is public harness feasibility. |
 | A090 | Venue plan | DONE | `docs/AUDIT_SID_VENUE_PLAN.md`, `docs/AUDIT_SID_VENUE_PLAN_20260518_133645.md` | Immediate target changed to CIKM 2026 Resource Track; abstract May 30, paper Jun 6. |
 | A095 | CIKM execution spec | DONE | `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`, `docs/AUDIT_SID_CIKM_EXECUTION_SPEC_20260518_135256.md` | Freezes dataset/method/diagnostic scope for 4-page resource paper. |
 | A096 | Method representativeness correction | DONE | `docs/AUDIT_SID_CIKM_EXECUTION_SPEC.md`, `refine-logs/EXPERIMENT_PLAN.md` | RQ-VAE + ReSID are no longer treated as automatically sufficient; Gate 0A added. |

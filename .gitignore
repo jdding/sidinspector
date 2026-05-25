@@ -11,3 +11,17 @@ paper/*.fdb_latexmk
 paper/*.fls
 paper/*.log
 paper/*.out
+
+# Generated timestamp snapshots are useful locally during ARIS workflows but
+# should not be committed to the public reviewer/source branch.
+MANIFEST_[0-9]*.md
+docs/*_[0-9]*.md
+refine-logs/*_[0-9]*.md
+examples/*_[0-9]*.py
+tools/*_[0-9]*.py
+paper/main_[0-9]*.pdf
+paper/main_[0-9]*.tex
+paper/references_[0-9]*.bib
+paper/sections/*_[0-9]*.tex
+paper_assets/tables/*_[0-9]*.csv
+paper_assets/tables/*_[0-9]*.md
