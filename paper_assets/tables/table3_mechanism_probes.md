@@ -1,5 +1,0 @@
-| probe | D | without probe | with probe |
-|:--|:--:|:--|:--|
-| Qualified aliasing | D2 | hash 1.19x | co-occur 3.86x |
-| Capacity budget | D1/D4 | head 1.000 | tail 0.028 |
-| Variable depth | D5 | max-depth 12,010 | active 7,914 |

@@ -1,5 +1,0 @@
-dataset,prefix_depth,old_items,new_items,common_items,new_only_items,changed_items,churn_rate_common,new_unique_prefixes,new_prefix_collision_rate
-Tools,1.0,9610.0,9885.0,9610.0,275.0,2271.0,0.2363,256.0,1.0
-Tools,2.0,9610.0,9885.0,9610.0,275.0,2271.0,0.2363,8331.0,0.2421
-Tools,3.0,9610.0,9885.0,9610.0,275.0,2271.0,0.2363,9715.0,0.0259
-Tools,4.0,9610.0,9885.0,9610.0,275.0,2271.0,0.2363,9882.0,0.0006

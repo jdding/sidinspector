@@ -1,4 +1,0 @@
-dataset,method,prefix_depth,collab_reference,collab_top_k,users_used,pair_events,collab_items,mean_collab_prefix_recall,weighted_collab_prefix_recall,collab_edges_same_prefix_rate,level0_category_purity_mean,level0_non_singleton_buckets
-Musical_Instruments,rqvae_minimal_reference,1,cooccurrence,5,335,9991,1602,0.06802954640033292,0.06497646880218612,0.06497646880218612,0.28113857511618934,32
-Musical_Instruments,rqvae_minimal_reference,2,cooccurrence,5,335,9991,1602,0.0029962546816479406,0.003491726127220282,0.003491726127220282,0.28113857511618934,32
-Musical_Instruments,rqvae_minimal_reference,3,cooccurrence,5,335,9991,1602,0.0007490636704119849,0.0007590708972218005,0.0007590708972218005,0.28113857511618934,32

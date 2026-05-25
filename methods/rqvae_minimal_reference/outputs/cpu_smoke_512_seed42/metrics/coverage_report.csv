@@ -1,2 +1,0 @@
-dataset,method,sid_items,metadata_items,interaction_items,metadata_without_sid,interaction_without_sid
-Musical_Instruments,rqvae_minimal_reference,512,512,512,0,0

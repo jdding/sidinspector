@@ -1,4 +1,0 @@
-dataset,method,sid_items,metadata_without_sid,interaction_without_sid,unique_sid,duplicate_sid_rate,D3 L1 collab,prefix_counts
-MovieLens_25M_smoke,sanity_category_prefix,10000.0,0.0,0.0,10000.0,0.0,0.2788,19;19;19;10000
-MovieLens_25M_smoke,sanity_mod_collision_hash,10000.0,0.0,0.0,256.0,0.9744,0.0038,256;256;256;256
-MovieLens_25M_smoke,sanity_popularity_balanced,10000.0,0.0,0.0,9824.0,0.0176,0.7698,4;1024;9824;9824

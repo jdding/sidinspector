@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from tools.autodl_audit_sid.preflight_metric_inputs import preflight_inputs
+from sidinspector.preflight import preflight_inputs
 
 
 class PreflightMetricInputsTest(unittest.TestCase):

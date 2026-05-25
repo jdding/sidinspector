@@ -10,6 +10,7 @@ from .interface import (
     missing_columns,
     validate_columns,
 )
+from .preflight import preflight_inputs
 
 __all__ = [
     "AuditSidTables",
@@ -19,5 +20,6 @@ __all__ = [
     "SID_ASSIGNMENTS_REQUIRED",
     "TableContract",
     "missing_columns",
+    "preflight_inputs",
     "validate_columns",
 ]

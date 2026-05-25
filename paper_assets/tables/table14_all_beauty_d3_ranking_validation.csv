@@ -1,5 +1,0 @@
-dataset,method,prefix_depth,ranker,targets_evaluated,D3 L1 collab,candidate_recall,fixed_reranker_recall_at_20,fixed_reranker_ndcg_at_20,fixed_reranker_mrr_at_20
-All_Beauty,category-prefix sanity,1,cooccurrence_popularity,1000,0.9531972265023112,0.514,0.048,0.0222885132480993,0.0153812385112307
-All_Beauty,popularity-balanced sanity,1,cooccurrence_popularity,1000,0.2675269645608629,0.236,0.017,0.0071840925794072,0.0044759230965113
-All_Beauty,GRID RQ-KMeans 20k seed42,1,cooccurrence_popularity,1000,0.0597072419106317,0.085,0.029,0.016183396290365,0.0124628718503718
-All_Beauty,mod-collision hash sanity,1,cooccurrence_popularity,1000,0.0034668721109399,0.006,0.002,0.0015,0.0013333333333333

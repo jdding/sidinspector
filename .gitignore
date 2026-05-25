@@ -4,16 +4,18 @@
 .aris/meta/
 _gate0_repos/
 _gate0_artifacts/
-paper/*.aux
-paper/*.bbl
-paper/*.blg
-paper/*.fdb_latexmk
-paper/*.fls
-paper/*.log
-paper/*.out
+_archive_pending_delete/
+explorations/
+idea-stage/
+refine-logs/
+review-stage/
+methods/
+paper/
+paper_assets/
+examples/toy_output/
 
-# Generated timestamp snapshots are useful locally during ARIS workflows but
-# should not be committed to the public reviewer/source branch.
+# Generated timestamp snapshots are useful locally during experiments but
+# should not be committed to the public source package.
 MANIFEST_[0-9]*.md
 docs/*_[0-9]*.md
 refine-logs/*_[0-9]*.md
