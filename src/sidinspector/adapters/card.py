@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from audit_sid.interface import validate_columns
+from sidinspector.interface import validate_columns
 
 
 def _default_item_ids_path(codes_path: Path) -> Path:

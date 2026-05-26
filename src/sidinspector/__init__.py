@@ -1,7 +1,31 @@
-"""Public SIDInspector import namespace.
+"""SIDInspector toolkit interface contracts."""
 
-The legacy ``audit_sid`` package remains available for compatibility with
-previously generated experiment artifacts.
-"""
+from .interface import (
+    GENERATOR_OUTPUTS_REQUIRED,
+    INTERACTIONS_REQUIRED,
+    ITEM_METADATA_REQUIRED,
+    SID_ASSIGNMENTS_REQUIRED,
+    AuditSidTables,
+    TableContract,
+    missing_columns,
+    validate_columns,
+)
+__all__ = [
+    "AuditSidTables",
+    "GENERATOR_OUTPUTS_REQUIRED",
+    "INTERACTIONS_REQUIRED",
+    "ITEM_METADATA_REQUIRED",
+    "SID_ASSIGNMENTS_REQUIRED",
+    "TableContract",
+    "missing_columns",
+    "preflight_inputs",
+    "validate_columns",
+]
 
-from audit_sid import *  # noqa: F401,F403
+
+def preflight_inputs(*args, **kwargs):
+    """Lazily run the preflight helper without preloading the CLI module."""
+
+    from .preflight import preflight_inputs as _preflight_inputs
+
+    return _preflight_inputs(*args, **kwargs)

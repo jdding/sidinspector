@@ -10,7 +10,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from audit_sid.interface import validate_columns
+from sidinspector.interface import validate_columns
 
 
 def _read_pt(path: Path) -> np.ndarray:

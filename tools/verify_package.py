@@ -19,9 +19,8 @@ REQUIRED = [
     "src/sidinspector/metrics.py",
     "src/sidinspector/preflight.py",
     "src/sidinspector/churn.py",
-    "src/audit_sid/metrics.py",
-    "src/audit_sid/preflight.py",
-    "src/audit_sid/churn.py",
+    "src/sidinspector/adapters/grid.py",
+    "src/sidinspector/baselines/rqkmeans.py",
     "examples/minimal_adapter.py",
     "examples/run_toy_diagnostic.py",
     "examples/sample_data/sid_codes.csv",
@@ -31,16 +30,8 @@ REQUIRED = [
 ]
 
 
-FORBIDDEN_PREFIXES = [
-    "idea-stage/",
-    "refine-logs/",
-    "review-stage/",
-    "paper/",
-    "paper_assets/",
-    "tools/autodl_audit_sid/",
-    "_gate0_artifacts/",
-    "_archive_pending_delete/",
-]
+FORBIDDEN_SUFFIXES = (".pdf", ".tex", ".pt", ".ckpt", ".tar.gz", ".zip")
+FORBIDDEN_DIR_PARTS = {"archive", "logs", "cache"}
 
 
 def require_file(path: str) -> None:
@@ -53,7 +44,13 @@ def main() -> None:
         require_file(path)
 
     tracked = subprocess.check_output(["git", "ls-files"], cwd=ROOT, text=True).splitlines()
-    leaked = [path for path in tracked if any(path.startswith(prefix) for prefix in FORBIDDEN_PREFIXES)]
+    leaked = []
+    for path in tracked:
+        parts = set(Path(path).parts)
+        if path.endswith(FORBIDDEN_SUFFIXES):
+            leaked.append(path)
+        elif parts & FORBIDDEN_DIR_PARTS:
+            leaked.append(path)
     if leaked:
         formatted = "\n".join(f"  - {path}" for path in leaked[:40])
         raise RuntimeError(f"non-package files are still tracked:\n{formatted}")

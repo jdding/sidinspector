@@ -1,29 +1,10 @@
 .DS_Store
-.agents/
-.aris/
-.aris/meta/
-_gate0_repos/
-_gate0_artifacts/
-_archive_pending_delete/
-explorations/
-idea-stage/
-refine-logs/
-review-stage/
-methods/
-paper/
-paper_assets/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
 examples/toy_output/
-
-# Generated timestamp snapshots are useful locally during experiments but
-# should not be committed to the public source package.
-MANIFEST_[0-9]*.md
-docs/*_[0-9]*.md
-refine-logs/*_[0-9]*.md
-examples/*_[0-9]*.py
-tools/*_[0-9]*.py
-paper/main_[0-9]*.pdf
-paper/main_[0-9]*.tex
-paper/references_[0-9]*.bib
-paper/sections/*_[0-9]*.tex
-paper_assets/tables/*_[0-9]*.csv
-paper_assets/tables/*_[0-9]*.md

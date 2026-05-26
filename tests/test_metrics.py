@@ -6,7 +6,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from audit_sid.metrics import alignment, head_tail_capacity
+from sidinspector.metrics import alignment, head_tail_capacity
 
 
 class MetricsTest(unittest.TestCase):

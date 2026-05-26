@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from audit_sid.interface import validate_columns
+from sidinspector.interface import validate_columns
 
 
 def _sid_from_levels(frame: pd.DataFrame, level_cols: list[str]) -> pd.Series:

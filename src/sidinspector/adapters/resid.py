@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from audit_sid.interface import validate_columns
+from sidinspector.interface import validate_columns
 
 
 def _read_parquet_dir(path: Path) -> pd.DataFrame:

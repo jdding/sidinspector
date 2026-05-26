@@ -14,7 +14,7 @@ import pandas as pd
 from sklearn.cluster import MiniBatchKMeans
 from sklearn.preprocessing import StandardScaler
 
-from audit_sid.interface import validate_columns
+from sidinspector.interface import validate_columns
 
 
 def _feature_matrix(item_metadata: pd.DataFrame, feature_cols: list[str]) -> np.ndarray:
