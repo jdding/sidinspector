@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -18,9 +19,16 @@ from sidinspector.metrics import alignment, collision, deployment_cost, head_tai
 from sidinspector.preflight import preflight_inputs
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Run SIDInspector on the bundled toy data.")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "examples" / "toy_output")
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
     sample_dir = Path(__file__).resolve().parent / "sample_data"
-    out_dir = ROOT / "examples" / "toy_output"
+    out_dir = args.output_dir.resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
 
     sid = normalize_sid_export(sample_dir / "sid_codes.csv", method="toy_tokenizer", dataset="toy")

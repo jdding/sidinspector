@@ -1,0 +1,13 @@
+dataset,item_id,category,title
+mini_music,101,guitar,Acoustic Guitar Strings
+mini_music,102,guitar,Classical Guitar Strings
+mini_music,103,guitar,Electric Guitar Cable
+mini_music,104,guitar,Guitar Cable Variant
+mini_music,105,keyboard,Portable Keyboard Stand
+mini_music,106,keyboard,Sustain Pedal
+mini_music,107,keyboard,Keyboard Bench
+mini_music,108,drums,Practice Drum Pad
+mini_music,109,drums,Drum Sticks
+mini_music,110,studio,USB Audio Interface
+mini_music,111,studio,Studio Headphones
+mini_music,112,studio,Microphone Stand

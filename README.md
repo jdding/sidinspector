@@ -18,8 +18,10 @@ item metadata and interactions.
 ## Install
 
 ```bash
-python3 -m pip install -r requirements.txt
+python3 -m pip install -e .
 ```
+
+This installs the `sidinspector` package from the repository's `src/` layout.
 
 ## Run The Bundled Smoke Example
 
@@ -35,6 +37,29 @@ Wrote SIDInspector toy diagnostic outputs to .../examples/toy_output
 
 The example writes normalized parquet inputs and D1-D5 CSV reports under
 `examples/toy_output/`.
+
+## Reviewer Quickstart
+
+The reviewer quickstart uses a small music-like export slice and exercises the
+same command path a new adapter user would run: adapter normalization,
+preflight validation, and D1-D5 CSV generation.
+
+```bash
+python3 examples/run_reviewer_quickstart.py
+```
+
+Expected outputs:
+
+```text
+examples/reviewer_quickstart_output/preflight_summary.json
+examples/reviewer_quickstart_output/diagnostics/d1_utilization.csv
+examples/reviewer_quickstart_output/diagnostics/d2_collision.csv
+examples/reviewer_quickstart_output/diagnostics/d3_alignment.csv
+examples/reviewer_quickstart_output/diagnostics/d4_head_tail.csv
+examples/reviewer_quickstart_output/diagnostics/d5a_deployment_cost.csv
+```
+
+This quickstart is a usability example, not a reproduction of the paper tables.
 
 ## Use Your Own Tokenizer Export
 
@@ -77,6 +102,10 @@ See `docs/ADAPTER_TEMPLATE.md` for the required table contract.
 ## Development Checks
 
 ```bash
+python3 -m pip install -e .
 python3 -m unittest discover -s tests
 python3 tools/verify_package.py
 ```
+
+`tools/verify_package.py` checks package importability, the toy diagnostic, the
+reviewer quickstart, and unit tests from a clean checkout.
