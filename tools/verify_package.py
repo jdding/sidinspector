@@ -38,7 +38,16 @@ REQUIRED = [
     "examples/reviewer_quickstart_data/interactions.csv",
     "docs/ADAPTER_TEMPLATE.md",
     "docs/DIAGNOSTICS.md",
+    "docs/REPRODUCIBILITY_MATRIX.md",
+    "docs/reproducibility_matrix.csv",
+    "docs/reproducibility/table1_evidence_catalog.csv",
+    "docs/reproducibility/table2_musical_diagnostic.csv",
+    "docs/reproducibility/table3_probe_calibration.csv",
+    "docs/reproducibility/official_adapter_metrics_snapshot.csv",
+    "docs/reproducibility/extension_checks_snapshot.csv",
+    "docs/reproducibility/rqmin_reference_snapshot.csv",
     "docs/VALIDATED_ADAPTERS.md",
+    "tools/verify_reproducibility_matrix.py",
 ]
 
 
@@ -89,9 +98,10 @@ def main() -> None:
             cwd=ROOT,
             check=True,
         )
+    subprocess.run([sys.executable, "tools/verify_reproducibility_matrix.py"], cwd=ROOT, check=True)
     subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests"], cwd=ROOT, check=True)
     print("SIDInspector package verification passed.")
-    print("Verified: package import, toy diagnostic, reviewer quickstart, and unit tests.")
+    print("Verified: package import, toy diagnostic, reviewer quickstart, reproducibility matrix, and unit tests.")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,3 @@
+adapter,dataset,items,unique_sids,d2_aliasing_rate,d3_l1_weighted,d4_tail_unique_ratio,d5_active_prefix_counts,source_evidence,release_status
+LETTER,LETTER_Instruments,9922,9897,0.0048377343277565005,0.10857744697362917,0.9984880556395525,150/6702/9608/9897,_gate0_artifacts/artifact_refresh_20260527/letter_instruments_official_metrics/*.csv,public upstream artifact; adapter released
+LC-Rec,LCRec_Instruments,9922,9897,0.0048377343277565005,0.05236873800009071,0.9984880556395525,162/6996/9172/9897,_gate0_artifacts/lcrec_official_instruments_metrics/*.csv,public upstream artifact; adapter released

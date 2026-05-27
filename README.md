@@ -61,6 +61,23 @@ examples/reviewer_quickstart_output/diagnostics/d5a_deployment_cost.csv
 
 This quickstart is a usability example, not a reproduction of the paper tables.
 
+## Paper Evidence Reproducibility
+
+The paper-facing evidence map is tracked in
+`docs/REPRODUCIBILITY_MATRIX.md` and `docs/reproducibility_matrix.csv`. It
+separates evidence that is fully runnable from this release checkout from
+evidence that depends on upstream public artifacts or saved local experiment
+manifests. Compact snapshots for the paper's Table 1/2/3 values are under
+`docs/reproducibility/`.
+
+```bash
+python3 tools/verify_reproducibility_matrix.py
+```
+
+This command checks that the matrix and tracked evidence snapshots are present
+and internally consistent. It does not claim to regenerate large local
+experiment caches that are intentionally omitted from the release package.
+
 ## Optional Downstream Probe
 
 SIDInspector also includes an optional fixed-reranker probe for users who want
@@ -150,7 +167,9 @@ See `docs/ADAPTER_TEMPLATE.md` for the required table contract and
 python3 -m pip install -e .
 python3 -m unittest discover -s tests
 python3 tools/verify_package.py
+python3 tools/verify_reproducibility_matrix.py
 ```
 
 `tools/verify_package.py` checks package importability, the toy diagnostic, the
-reviewer quickstart, and unit tests from a clean checkout.
+reviewer quickstart, unit tests, and the reproducibility-matrix index from a
+clean checkout.

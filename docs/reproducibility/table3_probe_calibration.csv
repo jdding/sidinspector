@@ -1,0 +1,4 @@
+probe,d,without_probe,with_probe,source_evidence
+Qualified aliasing,D2,hash 1.19x,co-occur 3.86x,_gate0_artifacts/controllers/qualified_collision_probe_20260519_1901/qualified_collision_summary.csv
+Capacity budget,D1/D4,head 1.000,tail 0.028,_gate0_artifacts/controllers/capacity_budget_sweep_20260519_1901/capacity_budget_summary.csv
+Variable depth,D5,"max-depth 12,010","active 7,914",_gate0_artifacts/controllers/variable_depth_cost_probe_20260519_1901/variable_depth_cost_summary.csv

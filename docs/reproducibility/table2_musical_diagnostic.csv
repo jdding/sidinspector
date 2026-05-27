@@ -1,0 +1,8 @@
+artifact,group,items,seeds,unique_sids,d2_aliasing_rate,d3_l1_weighted,d4_tail_unique_ratio,d5_active_prefix_counts,source_evidence
+GRID-style ft,RQ-style exports,23742,3,3749,0.9768764215314631,0.0551755939778614,0.3694940850742512,64/3440/3749,_gate0_artifacts/grid_same_dataset_runs/musical_grid_feature_text_3seed_summary_20260519_1600.csv
+GRID-style cap,RQ-style exports,23742,1,9874,0.7784516889899755,0.07959536124184992,0.6390636798389127,32/9300/9874,_gate0_artifacts/grid_same_dataset_runs/matched_capacity_grid_32_1280_1280_seed42_20260520/grid_export/metrics/*.csv
+RQ-min ref,RQ-style exports,23742,1,17247,0.4401,0.0650,0.8831,32/2368/17247,docs/reproducibility/rqmin_reference_snapshot.csv
+ReSID,Named contrast,23742,1,23742,0.0,0.1535441362629664,1.0,32/1280/23742,_gate0_artifacts/grid_same_dataset_runs/musical_same_dataset_grid_vs_resid_summary_20260519_110722.csv
+Cat-prefix,Controls,23742,n/a,23742,0.0,0.4469788910982484,1.0,30/83/313/23742,_gate0_artifacts/case_study/resid_sanity_d3v2_summary.csv
+Pop-balanced,Controls,23742,n/a,22707,0.0859657990059809,0.3026051462723587,0.961867606342814,4/1024/22707/22707,_gate0_artifacts/case_study/resid_sanity_d3v2_summary.csv
+Hash-collide,Controls,23742,n/a,256,1.0,0.0037358284363799,0.0322174679083815,256/256/256/256,_gate0_artifacts/case_study/resid_sanity_d3v2_summary.csv

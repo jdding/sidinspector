@@ -1,0 +1,10 @@
+row,role,items,seeds,signal,source_evidence,release_status
+GRID-style ft,same-item tokenizer,23742,3,"D2 0.977; D3 0.055","_gate0_artifacts/grid_same_dataset_runs/musical_grid_feature_text_3seed_summary_20260519_1600.csv","snapshot tracked; raw local artifact not shipped"
+ReSID,same-item tokenizer,23742,1,"D2 0.000; D3 0.154","_gate0_artifacts/grid_same_dataset_runs/musical_same_dataset_grid_vs_resid_summary_20260519_110722.csv","snapshot tracked; raw local artifact not shipped"
+LETTER,released index,9922,1,"9897 unique SIDs; D3 0.109","_gate0_artifacts/artifact_refresh_20260527/letter_instruments_official_metrics/*.csv","public upstream artifact; adapter released"
+LC-Rec,released index,9922,1,"9897 unique SIDs; D3 0.052","_gate0_artifacts/lcrec_official_instruments_metrics/*.csv","public upstream artifact; adapter released"
+GRID-style cap,capacity ablation,23742,1,"D2 0.779; D3 0.080","_gate0_artifacts/grid_same_dataset_runs/matched_capacity_grid_32_1280_1280_seed42_20260520/grid_export/metrics/*.csv","snapshot tracked; raw local artifact not shipped"
+RQ-min ref,reference adapter,23742,1,"D2 0.440; D3 0.065","docs/reproducibility/rqmin_reference_snapshot.csv","snapshot tracked; raw local artifact not shipped"
+"Cat-prefix, Pop-bal, Hash-coll",controls,23742,n/a,"D3 scale; alias bounds","_gate0_artifacts/case_study/resid_sanity_d3v2_summary.csv","snapshot tracked; controls implemented in package"
+Mechanism probes (3),controlled,synthetic,n/a,D2/D4/D5 separation,"_gate0_artifacts/controllers/*/*_summary.csv","snapshot tracked; raw local artifact not shipped"
+"All_Beauty, Sports, MovieLens, DACT",portability/extension,varies,varies,"D1-D5, D6 checks","_gate0_artifacts/vertical_replication; _gate0_artifacts/downstream_probe_20260527; _gate0_artifacts/dact_tools_smoke","snapshot tracked where paper-relevant; raw local artifact not shipped"
