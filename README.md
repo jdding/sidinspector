@@ -17,6 +17,12 @@ item metadata and interactions.
 
 ## Install
 
+The release verifier is CPU-only. It was checked with Python 3.9, and should run
+on Python 3.9+ with the dependencies in `pyproject.toml` / `requirements.txt`.
+No GPU is required for the bundled verifier, quickstart, or D1-D6 diagnostics;
+GPU use belongs to external tokenizer training pipelines, not to SIDInspector's
+artifact inspection step.
+
 ```bash
 python3 -m pip install -e .
 ```
@@ -172,4 +178,5 @@ python3 tools/verify_reproducibility_matrix.py
 
 `tools/verify_package.py` checks package importability, the toy diagnostic, the
 reviewer quickstart, unit tests, and the reproducibility-matrix index from a
-clean checkout.
+clean checkout. On a typical laptop CPU, the bundled checks should finish in
+seconds to a few minutes, depending mostly on first-time dependency imports.
