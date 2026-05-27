@@ -22,8 +22,10 @@ REQUIRED = [
     "src/sidinspector/preflight.py",
     "src/sidinspector/downstream_probe.py",
     "src/sidinspector/churn.py",
+    "src/sidinspector/adapters/card.py",
     "src/sidinspector/adapters/grid.py",
     "src/sidinspector/adapters/letter.py",
+    "src/sidinspector/adapters/lcrec.py",
     "src/sidinspector/baselines/rqkmeans.py",
     "examples/minimal_adapter.py",
     "examples/run_toy_diagnostic.py",
@@ -36,6 +38,7 @@ REQUIRED = [
     "examples/reviewer_quickstart_data/interactions.csv",
     "docs/ADAPTER_TEMPLATE.md",
     "docs/DIAGNOSTICS.md",
+    "docs/VALIDATED_ADAPTERS.md",
 ]
 
 

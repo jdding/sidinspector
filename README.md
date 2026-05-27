@@ -82,7 +82,7 @@ bootstrap inputs, and D3-vs-recovery correlations.
 ## Normalize LETTER/LC-Rec Style JSON Indexes
 
 For releases that store semantic IDs as JSON token lists such as
-`{"item_id": ["<a_1>", "<b_7>"]}`, use the bundled normalizer:
+`{"item_id": ["<a_1>", "<b_7>"]}`, use the bundled normalizers:
 
 ```bash
 python3 -m sidinspector.adapters.letter \
@@ -92,11 +92,37 @@ python3 -m sidinspector.adapters.letter \
   --dataset-name Instruments \
   --method letter_official_rqvae \
   --output-dir runs/letter_instruments
+
+python3 -m sidinspector.adapters.lcrec \
+  --index-json path/to/Instruments.index.json \
+  --item-json path/to/Instruments.item.json \
+  --inter-json path/to/Instruments.inter.json \
+  --dataset-name LCRec_Instruments \
+  --output-dir runs/lcrec_instruments
 ```
 
 The adapter emits the same normalized `sid_assignments.parquet`,
 `item_metadata.parquet`, and `interactions.parquet` files used by preflight and
 D1-D5 metrics.
+
+## Normalize CARD Generated Codes
+
+For CARD-style RQ-VAE or NU-RQ-VAE exports, normalize the generated code array
+with explicit item ids:
+
+```bash
+python3 -m sidinspector.adapters.card \
+  --codes-path path/to/card_codes.npy \
+  --item-ids path/to/card_codes_item_ids.npy \
+  --dataset-name CARD_Beauty \
+  --method card_nurqvae \
+  --output-dir runs/card_beauty
+```
+
+If no item-id file is available, SIDInspector requires an explicit
+`--unsafe-assume-dense-item-ids` flag before using row order as item identity.
+This keeps CARD pipeline checks from being mistaken for faithful named-method
+evidence when item ids are ambiguous.
 
 ## Use Your Own Tokenizer Export
 
@@ -134,7 +160,8 @@ python3 -m sidinspector.metrics \
   --output-dir runs/my_tokenizer/diagnostics
 ```
 
-See `docs/ADAPTER_TEMPLATE.md` for the required table contract.
+See `docs/ADAPTER_TEMPLATE.md` for the required table contract and
+`docs/VALIDATED_ADAPTERS.md` for current named-adapter status.
 
 ## Development Checks
 
