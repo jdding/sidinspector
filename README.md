@@ -61,6 +61,43 @@ examples/reviewer_quickstart_output/diagnostics/d5a_deployment_cost.csv
 
 This quickstart is a usability example, not a reproduction of the paper tables.
 
+## Optional Downstream Probe
+
+SIDInspector also includes an optional fixed-reranker probe for users who want
+to test whether SID prefixes recover held-out targets under a fixed protocol.
+This is candidate-exposure evidence, not a trained generator evaluation, and is
+kept outside the core D1-D5 diagnostics.
+
+```bash
+python3 -m sidinspector.downstream_probe \
+  --manifest path/to/probe_manifest.csv \
+  --output-dir path/to/probe_output
+```
+
+The manifest needs one row per SID artifact with `sid_assignments` and
+`interactions` paths; optional `dataset`, `method`, and `label` columns select
+or name rows. The output contains per-artifact summary metrics, per-user
+bootstrap inputs, and D3-vs-recovery correlations.
+
+## Normalize LETTER/LC-Rec Style JSON Indexes
+
+For releases that store semantic IDs as JSON token lists such as
+`{"item_id": ["<a_1>", "<b_7>"]}`, use the bundled normalizer:
+
+```bash
+python3 -m sidinspector.adapters.letter \
+  --index-json path/to/Instruments.index.json \
+  --item-json path/to/Instruments.item.json \
+  --inter-json path/to/Instruments.inter.json \
+  --dataset-name Instruments \
+  --method letter_official_rqvae \
+  --output-dir runs/letter_instruments
+```
+
+The adapter emits the same normalized `sid_assignments.parquet`,
+`item_metadata.parquet`, and `interactions.parquet` files used by preflight and
+D1-D5 metrics.
+
 ## Use Your Own Tokenizer Export
 
 If your tokenizer already exports one row per item:
