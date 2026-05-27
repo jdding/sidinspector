@@ -105,25 +105,6 @@ The adapter emits the same normalized `sid_assignments.parquet`,
 `item_metadata.parquet`, and `interactions.parquet` files used by preflight and
 D1-D5 metrics.
 
-## Normalize CARD Generated Codes
-
-For CARD-style RQ-VAE or NU-RQ-VAE exports, normalize the generated code array
-with explicit item ids:
-
-```bash
-python3 -m sidinspector.adapters.card \
-  --codes-path path/to/card_codes.npy \
-  --item-ids path/to/card_codes_item_ids.npy \
-  --dataset-name CARD_Beauty \
-  --method card_nurqvae \
-  --output-dir runs/card_beauty
-```
-
-If no item-id file is available, SIDInspector requires an explicit
-`--unsafe-assume-dense-item-ids` flag before using row order as item identity.
-This keeps CARD pipeline checks from being mistaken for faithful named-method
-evidence when item ids are ambiguous.
-
 ## Use Your Own Tokenizer Export
 
 If your tokenizer already exports one row per item:

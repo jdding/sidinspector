@@ -43,31 +43,9 @@ python3 -m sidinspector.metrics \
   --output-dir runs/lcrec_instruments/diagnostics
 ```
 
-## Adapter-Ready But Not Faithful Evidence Yet
+## Local-Only Adapter Checks
 
-### CARD
-
-- Source: official CARD repository.
-- Artifact shape expected by SIDInspector: generated `.npy` code array plus
-  explicit item ids.
-- SIDInspector entry point: `python3 -m sidinspector.adapters.card`.
-- Validation status: the adapter path and D1-D5 pass on a CARD-compatible local
-  smoke artifact. The official repository currently provides a full
-  raw-data-to-code pipeline rather than a ready item-code mapping/checkpoint
-  bundle in the cloned repository, so this should not be described as faithful
-  CARD evidence until an official generated-code artifact is produced and
-  joined.
-
-Example:
-
-```bash
-python3 -m sidinspector.adapters.card \
-  --codes-path path/to/card_codes.npy \
-  --item-ids path/to/card_codes_item_ids.npy \
-  --dataset-name CARD_Beauty \
-  --method card_nurqvae \
-  --output-dir runs/card_beauty
-```
-
-If no explicit item-id file is available, the adapter requires
-`--unsafe-assume-dense-item-ids` before using row order as item identity.
+Some method-specific code paths are useful engineering checks but are not
+listed here until an official item-code artifact passes the validation
+standard above. These local-only records are kept out of the public validated
+adapter catalog so they are not mistaken for named-method evidence.
