@@ -1,0 +1,41 @@
+\section{Artifact Availability and Limits}
+
+The released repository contains the \tool Python package, adapter template,
+metric runners, sample inputs, tests, documentation, an MIT license, and a
+clean-checkout verifier. The released resource is available at
+\url{https://github.com/jdding/sidinspector} under tag
+\texttt{sidinspector-cikm2026-resource-v0.6}. It is intended as a reusable
+diagnostic resource: a user can clone the package, run the toy
+diagnostic, validate a new item-to-\sid{} mapping, and obtain D1--D5 reports
+without experiment caches. The released repository focuses on the reusable
+interface and diagnostic implementation; selected experimental evidence is
+reported in the paper.
+
+The resource supports three modes. A downstream recommender
+researcher can use the diagnostics as a pre-training triage step: artifacts
+with missing items, inconsistent depth, severe aliasing, or weak
+collaborative-prefix recovery are flagged for inspection before generator
+training consumes GPU time. A method author can add an adapter that emits the
+normalized SID-assignment table, then receive D1--D5 reports without
+changing their training loop. A reader can run the clean-check verifier
+against the reusable package. These signals complement
+Recall@K and NDCG by making tokenizer artifacts inspectable before a full
+benchmark or generator-training run.
+
+The evidence supports a resource-interface claim over four tokenizer lines:
+GRID-style RQ-KMeans, ReSID/GAOQ, LETTER, and LC-Rec. RQ-min and the controlled
+stressors are reference rows for interpreting the diagnostics; CARD enters the
+catalog once generated codes can be joined and validated. D2 reports mapping
+aliasing; D3 uses prefix-neighborhood and reranker checks; D5 measures
+structural cost; D6 is available for paired refresh mappings; D7 activates when generator
+traces are supplied.
+
+New adapters emit the same normalized tables and record feature or checkpoint
+provenance. A tokenizer line enters the catalog when item-level codes pass the
+validator and join to metadata or interactions; mechanism probes remain
+diagnostic calibration rows. Future versions should add causal collision-harm
+validation, broader adapter coverage, generator-output diagnostics, and
+cross-domain or unified search/recommendation checks~\cite{li2024survey,hu2025gencdr,penha2025jointsid}.
+Industrial SID deployment and
+ranking studies further motivate treating these artifact properties as
+engineering objects~\cite{singh2023bettersemanticids,li2026sidcoord,ju2026snapchatsid,xu2026largescalegenrec}.

@@ -1,0 +1,134 @@
+\section{Worked Examples and Probe Evidence}
+
+\tool is evaluated through interface coverage and diagnostic separation. The
+evidence has two layers. First, a same-item Musical
+contrast compares GRID-style RQ-KMeans and ReSID/GAOQ under one adapter
+contract, which is the right setting for the addressability-versus-alignment
+finding. Second, LETTER and LC-Rec exercise released item-index artifacts,
+showing that the same contract is not tied to the Musical case study. Controls
+and mechanism probes then separate structural, behavioral, and capacity-driven
+signals.
+
+\paragraph{Worked-example protocol.}
+The case study uses the same 23,742 Musical items for the GRID and ReSID rows.
+GRID is a controlled feature-text export: ReSID processed feature text is
+embedded and passed through a released GRID/RQ-KMeans-style residual k-means
+module. ReSID is a bounded FAMAE-to-GAOQ export on the same item universe. The
+protocol supports a same-item diagnostic contrast; end-to-end pipeline
+reproduction is outside this artifact-layer protocol.
+In Table~\ref{tab:musical-diagnostic}, D2 is full-code aliasing, D3 is level-1
+weighted co-occurrence-prefix recall, D4 is tail unique-\sid ratio, and D5
+lists active prefix counts by depth. Daggered rows are structurally
+item-unique; bold rows mark the primary same-item contrast and italics mark
+controls.
+
+\begin{table}[t]
+\caption{Musical diagnostic profile.}
+\label{tab:musical-diagnostic}
+\scriptsize
+\setlength{\tabcolsep}{1.8pt}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrrrrl@{}}
+\toprule
+Artifact & Unique SIDs & D2 & D3 & D4 & D5 levels \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{RQ-style exports}} \\
+\textbf{GRID-style ft} & 3,749 & 0.977 & 0.055 & 0.370 & 64/3.4k/3.7k \\
+GRID-style cap & 9,874 & 0.779 & 0.080 & 0.639 & 32/9.3k/9.9k \\
+RQ-min ref & 17,247 & 0.440 & 0.065 & 0.883 & 32/2.4k/17.2k \\
+\addlinespace[1pt]
+\multicolumn{6}{@{}l}{\emph{ReSID/GAOQ export}} \\
+\textbf{ReSID}\textsuperscript{\dag} & 23,742 & 0.000 & 0.154 & 1.000 & 32/1.3k/23.7k \\
+\addlinespace[1pt]
+\multicolumn{6}{@{}l}{\emph{Controls}} \\
+\emph{Cat-prefix}\textsuperscript{\dag} & 23,742 & 0.000 & 0.447 & 1.000 & 30/83/313/23.7k \\
+\emph{Pop-balanced} & 22,707 & 0.086 & 0.303 & 0.962 & 4/1.0k/22.7k/22.7k \\
+\emph{Hash-collide} & 256 & 1.000 & 0.004 & 0.032 & 256/256/256/256 \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\begin{table}[t]
+\caption{Mechanism-probe calibration.}
+\label{tab:mechanism-probes}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}p{0.29\columnwidth}>{\centering\arraybackslash}p{0.11\columnwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Mechanism & D & Baseline signal & Activated signal \\
+\midrule
+Qualified aliasing & D2 & hash 1.19x & co-occur 3.86x \\
+Capacity budget & D1/D4 & head 1.000 & tail 0.028 \\
+Variable depth & D5 & max-depth 12,010 & active 7,914 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Table~\ref{tab:musical-diagnostic} makes the same-item rows comparable under
+one schema. The GRID and ReSID rows are the tokenizer contrast; the capacity
+ablation, RQ-min reference, and controls explain which parts of the contrast
+come from capacity, addressability, or prefix semantics. In this setup, GRID-style ft
+exposes high aliasing pressure and limited tail capacity, while the ReSID/GAOQ
+row exports one full code per item and has higher D3-L1 collaborative prefix
+recovery. The daggered rows mark a structural floor: collision-free full codes
+capture addressability, while recommendation quality depends on downstream
+generation and ranking.
+
+The capacity-matched GRID row tests whether the original GRID pressure is only
+a budget artifact. With a larger 32/1280/1280 budget, unique full codes rise to
+9,874 and D2 aliasing drops to 0.779, but the row remains far from the
+structurally item-unique ReSID and category-prefix rows. Capacity explains part
+of the pressure, while the non-item-unique leaf keeps the contrast at the
+artifact-profile layer. RQ-min is a
+minimal residual-quantization reference adapter that passes the same validator;
+it tests adapter independence on the full Musical item universe and is reported
+as a reference row rather than an additional tokenizer line.
+
+\paragraph{Diagnostic findings.}
+The worked example supports one central finding: addressability is not
+behavioral prefix alignment. ReSID is structurally item-unique, and the
+category-prefix control is also alias-free, but D3 separates their profiles.
+ReSID is a learned export, whereas the category row is a deterministic control
+for interpreting the metric scale.
+The non-learned category-prefix row recovers more level-1 co-occurrence
+neighbors (0.447) than ReSID (0.154) or either GRID row (0.055--0.080). The
+result locates a prefix-alignment gap: learned or item-unique addresses can
+still fail to group behaviorally related items. This failure mode is visible
+only when the mapping is inspected directly.
+
+The supporting evidence is diagnostic separation. Across the RQ-style rows,
+D2 aliasing falls from 0.977 (GRID-style ft) to 0.779 (GRID-style cap) and 0.440
+(RQ-min), while D3 stays in the narrow 0.055--0.080 range. Capacity and
+aliasing can improve without producing behaviorally aligned prefixes, making
+D2 and D3 complementary diagnostics. The ablation weakens a simple ``too little
+capacity'' objection without making the row item-unique. Table~\ref{tab:mechanism-probes}
+gives the same point as controlled checks: qualified aliasing separates
+co-occurrence aliases from hash aliases, capacity probes separate head and tail
+allocation, and variable-depth probes separate maximum-depth from realized
+prefix cost.
+
+Released item-index adapters test the resource beyond the same-item case.
+LETTER and LC-Rec Instruments artifacts both pass the same validation path on
+9,922 items; both expose 9,897 unique full \sid{}s, with D3-L1 0.109 for LETTER
+and 0.052 for LC-Rec. They appear in the catalog rather than the same-item
+table because they use a different item universe; their role is to show that
+\tool ingests released tokenizer mappings as well as locally generated
+contrasts.
+
+Additional checks bound the D3 claim and are indexed in the released
+reproducibility matrix. On an All\_Beauty 20k vertical, a coarse
+category-prefix control reaches D3-L1 0.968 while GRID/RQ-KMeans feature-text
+rows are 0.081, 0.087, and 0.090 across seeds 42--44. Here D3 measures
+taxonomy--co-occurrence alignment under the available coarse category signal,
+which differs across datasets. The high All\_Beauty value therefore remains a diagnostic signal:
+the available coarse taxonomy is more aligned with observed co-occurrence there
+than in Musical. Two unified 5,000-user fixed-reranker probes sharpen the
+boundary. Across eight Musical rows and six All\_Beauty rows, D3 is strongly
+associated with candidate target recovery under train-only prefix retrieval
+(depth-1 Spearman 0.976 and 1.000). At \(K=20\), the corresponding Spearman
+values with ranked Recall/NDCG are 0.970/0.952 on Musical and 0.657/0.657 on
+All\_Beauty. D3 exposes candidate-exposure structure before the reranker or
+generator decides final ordering. A Sports 20k GRID export has
+complete metadata and interaction joins, D3-L1 0.055, duplicate-\sid rate
+0.592, and D5 prefixes 128/7986/8165. Sports, MovieLens, DACT, LETTER, and
+LC-Rec rows exercise portability and adapter coverage around the same-item
+Musical finding.

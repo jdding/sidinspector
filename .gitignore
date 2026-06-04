@@ -9,3 +9,13 @@ dist/
 *.egg-info/
 examples/toy_output/
 examples/reviewer_quickstart_output/
+
+# LaTeX build byproducts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz

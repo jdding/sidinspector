@@ -1,0 +1,111 @@
+<mxfile host="app.diagrams.net" modified="2026-05-28T00:00:00.000Z" agent="Codex" version="30.0.4" type="device">
+  <diagram id="sidinspector-fig1" name="SIDInspector Figure 1">
+    <mxGraphModel dx="1200" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="760" pageHeight="530" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Adapter layer: architecture element, with method examples as chips -->
+        <mxCell id="adapterLayer" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.6;strokeColor=#B8C1CF;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="36" y="24" width="688" height="92" as="geometry"/>
+        </mxCell>
+        <mxCell id="adapterStripe" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#2F66B1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="38" width="8" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="adapterTitle" value="Adapter layer" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=24;fontStyle=1;fontColor=#172033;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="250" y="32" width="260" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="adapterSub" value="normalizes tokenizer artifacts" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=13;fontColor=#667085;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="250" y="58" width="260" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="gridChip" value="GRID" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;strokeWidth=1;strokeColor=#D8DEE8;fillColor=#F8FAFC;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="105" y="82" width="96" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="residChip" value="ReSID" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;strokeWidth=1;strokeColor=#D8DEE8;fillColor=#F8FAFC;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="218" y="82" width="96" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="letterChip" value="LETTER" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;strokeWidth=1;strokeColor=#D8DEE8;fillColor=#F8FAFC;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="331" y="82" width="96" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="lcrecChip" value="LC-Rec" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;strokeWidth=1;strokeColor=#D8DEE8;fillColor=#F8FAFC;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="444" y="82" width="96" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="rqminChip" value="RQ-min ref" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;strokeWidth=1;strokeColor=#D8DEE8;fillColor=#F8FAFC;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="557" y="82" width="120" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- Canonical contract -->
+        <mxCell id="contractBox" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.8;strokeColor=#B8C1CF;fillColor=#F7F9FC;" vertex="1" parent="1">
+          <mxGeometry x="36" y="174" width="688" height="104" as="geometry"/>
+        </mxCell>
+        <mxCell id="contractStripe" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#2F66B1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="188" width="10" height="76" as="geometry"/>
+        </mxCell>
+        <mxCell id="contractTitle" value="SID artifact contract" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=28;fontStyle=1;fontColor=#172033;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="205" y="194" width="350" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="contractSub1" value="canonical item-code table" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=15;fontColor=#667085;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="190" y="230" width="380" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="contractSub2" value="stable keys, SID levels, joinable side tables" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=13;fontColor=#667085;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="165" y="252" width="430" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Validation and probe engine -->
+        <mxCell id="validatorBox" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;strokeColor=#B8C1CF;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="36" y="340" width="310" height="66" as="geometry"/>
+        </mxCell>
+        <mxCell id="validatorStripe" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#178A7A;" vertex="1" parent="1">
+          <mxGeometry x="49" y="351" width="9" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="validatorTitle" value="Validation gate" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=20;fontStyle=1;fontColor=#172033;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="86" y="349" width="210" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="validatorSub" value="schema / joins / provenance" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=#667085;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="82" y="373" width="220" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="probeBox" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;strokeColor=#B8C1CF;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="414" y="340" width="310" height="66" as="geometry"/>
+        </mxCell>
+        <mxCell id="probeStripe" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#6E56CF;" vertex="1" parent="1">
+          <mxGeometry x="427" y="351" width="9" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="probeTitle" value="Probe engine" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=20;fontStyle=1;fontColor=#172033;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="468" y="349" width="200" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="probeSub" value="D1-D5 probes; D6/D7 hooks" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=#667085;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="460" y="373" width="220" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Report schema aligned beneath the probe engine -->
+        <mxCell id="reportsBox" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;strokeColor=#B8C1CF;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="36" y="452" width="688" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="reportsStripe" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#6E56CF;" vertex="1" parent="1">
+          <mxGeometry x="49" y="462" width="9" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="reportsTitle" value="Report schema" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=20;fontStyle=1;fontColor=#172033;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="296" y="459" width="168" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="reportsSub" value="tables, CSVs, extension outputs" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=12;fontColor=#667085;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="278" y="481" width="205" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- Edges: explicit points keep the pipeline readable after export -->
+        <mxCell id="edgeAdapter" value="normalize" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#667085;strokeColor=#AEB8C7;strokeWidth=1.7;endArrow=block;endFill=1;" edge="1" parent="1" source="adapterLayer" target="contractBox">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edgeValidate" value="validate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#667085;strokeColor=#AEB8C7;strokeWidth=1.7;endArrow=block;endFill=1;" edge="1" parent="1" source="contractBox" target="validatorBox">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edgeProbe" value="valid artifact" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontFamily=Helvetica;fontSize=11;fontColor=#667085;strokeColor=#AEB8C7;strokeWidth=1.7;endArrow=block;endFill=1;" edge="1" parent="1" source="validatorBox" target="probeBox">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edgeReports" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#AEB8C7;strokeWidth=1.7;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.774;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="probeBox" target="reportsBox">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

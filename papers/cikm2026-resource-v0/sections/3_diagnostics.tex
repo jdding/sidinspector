@@ -1,0 +1,85 @@
+\section{Diagnostic Probes and Artifact Catalog}
+
+SID papers now optimize different artifact properties. Learned item indexing
+and TIGER-style generative retrieval established the interface~\cite{hua2023indexids,rajput2023tiger}.
+Later systems diversify how codes are learned and used: collaborative or
+learnable tokenization~\cite{zheng2023lcrec,wang2024letter,liu2024elit},
+behavior-semantic or multimodal evidence~\cite{wang2024eager,chen2026syngr},
+collision and head-tail objectives~\cite{hu2026quasid,pan2026adasid,yan2026aktrec},
+and variable-length, drift, or deployment-facing SID designs~\cite{cheng2026capsid,baikalov2026staleness,ju2026snapchatsid}
+all expose different inspection needs.
+The literature space is broader than the artifacts that \tool currently
+executes. Table~\ref{tab:method-coverage} therefore catalogs the released
+resource surfaces rather than repeating the experimental rows. The quantitative
+diagnostic evidence appears in Tables~\ref{tab:musical-diagnostic}
+and~\ref{tab:mechanism-probes}; Table~\ref{tab:method-coverage} tells a
+reviewer what can be inspected in the artifact and where to start.
+
+\begin{table}[t]
+\caption{Released resource surfaces.}
+\label{tab:method-coverage}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}p{0.24\columnwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.24\columnwidth}@{}}
+\toprule
+Resource part & Reviewer-facing check & Entry point \\
+\midrule
+Adapter contract & New tokenizer exports can be normalized into stable
+item-code rows with optional side tables. & README; template \\
+Validation gate & Keys, SID levels, joins, and provenance are checked before
+diagnostics run. & package verifier \\
+D1--D5 probes & Valid artifacts produce utilization, aliasing, alignment,
+allocation, and cost reports. & package verifier; CLIs \\
+Released adapters & LETTER and LC-Rec item-index files enter the same
+contract as local exports. & adapter registry \\
+Evidence index & Paper-table numbers are linked to compact snapshots and
+commands. &
+reproducibility matrix \\
+Calibration assets & Control rows and mechanism probes check that D2, D4, and
+D5 respond to known stressors. &
+evidence snapshots \\
+Extension hooks & D6 churn, downstream probes, and D7 trace inputs expose the
+extension path. & README; CLIs \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Notation.}
+Let \(\mathcal{I}\) be the inspected item set and let a tokenizer export a code
+sequence \(z(i)=(z_1(i),\ldots,z_L(i))\) for each item \(i\). We write the
+level-\(\ell\) prefix as \(p_\ell(i)=(z_1(i),\ldots,z_\ell(i))\) and the full
+alias set for code \(c\) as \(A(c)=\{i\in\mathcal{I}:z(i)=c\}\). The probes
+below operate on \(z\), with metadata and interactions added only when a
+diagnostic needs semantic or collaborative slices.
+
+\paragraph{D1--D5 mapping-level probes.}
+D1, \emph{utilization}, reports per-level usage, prefix counts, imbalance
+summaries, and dead or underused code indicators. D2, \emph{aliasing},
+measures the fraction of items whose full \sid belongs to a non-singleton code
+bucket, plus the same quantity for prefixes. This is an item-in-alias-set
+profile rather than the number of duplicate code values; causal harm requires
+intervention or downstream exposure checks beyond this mapping profile. A
+bounded interaction-qualified mechanism probe is included because collision-aware work argues that duplicate-code
+assignments are not uniformly harmful, and recent tokenizer-comparison work
+shows that SID-level evaluation can diverge from item-level recommendation under
+full-code collisions~\cite{hu2026quasid,zhang2026sidreliability}. D3,
+\emph{neighborhood alignment}, asks whether prefix neighborhoods recover
+train-only item co-occurrence neighbors. For each user, \tool forms item pairs
+among bounded train interactions, ranks neighbors by co-occurrence count, keeps
+top-\(k\) directed neighbors per item, and reports the fraction whose neighbor
+shares \(p_\ell(i)\); the weighted score averages edges, while the mean score
+averages items. Metadata purity is auxiliary context, not collaborative
+quality. D4, \emph{popularity allocation}, splits items by popularity and measures whether
+full-code capacity and prefix structure are allocated differently across head,
+mid, and tail items. D5, \emph{structural cost}, reports \sid length, prefix
+fan-out, duplicate codes, and trie-like expansion pressure. Measured serving
+latency depends on the generator and decoding stack; long, variable-length, or asymmetric SID methods make that distinction
+necessary~\cite{xia2026acerec,cheng2026capsid,huang2026asymrec,zhang2026hgrec,wang2026sa2crq,hou2026expressiveness}.
+
+\paragraph{Extension probes.}
+D6, \emph{temporal churn}, computes mapping changes between tokenizer
+refreshes for drift-aware settings~\cite{feng2026dact,baikalov2026staleness}.
+It is implemented as an optional refresh-pair extension.
+D7, \emph{generation traces}, covers invalid paths, next-token entropy, and
+duplicate generated candidates. D7 requires generator-output tables or beam
+traces; the current evidence focuses on the mapping layer.
