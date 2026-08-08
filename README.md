@@ -74,15 +74,22 @@ The paper-facing evidence map is tracked in
 separates evidence that is fully runnable from this release checkout from
 evidence that depends on upstream public artifacts or saved local experiment
 manifests. Compact snapshots for the paper's Table 1/2/3 values are under
-`docs/reproducibility/`.
+`docs/reproducibility/`. Direct metric summaries and run manifests for Tables 2
+and 3 are released under `docs/reproducibility/sources/`, so a clean checkout
+can rebuild the reported table CSVs:
+
+```bash
+python3 tools/build_paper_tables.py \
+  --output-dir /tmp/sidinspector_paper_tables
+```
 
 ```bash
 python3 tools/verify_reproducibility_matrix.py
 ```
 
-This command checks that the matrix and tracked evidence snapshots are present
-and internally consistent. It does not claim to regenerate large local
-experiment caches that are intentionally omitted from the release package.
+This command checks the matrix and snapshots, rebuilds Tables 2 and 3 from the
+released source summaries, and verifies that the reconstructed rows match. It
+does not retrain upstream tokenizers or regenerate omitted training caches.
 
 ## Optional Downstream Probe
 
@@ -164,8 +171,10 @@ python3 -m sidinspector.metrics \
   --output-dir runs/my_tokenizer/diagnostics
 ```
 
-See `docs/ADAPTER_TEMPLATE.md` for the required table contract and
-`docs/VALIDATED_ADAPTERS.md` for current named-adapter status.
+See `docs/ADAPTER_TEMPLATE.md` for the required table contract,
+`docs/VALIDATED_ADAPTERS.md` for current named-adapter status, and
+`docs/PROBE_INTERPRETATION.md` for the artifact risk and next inspection action
+associated with each D1-D5 signal.
 
 ## Development Checks
 

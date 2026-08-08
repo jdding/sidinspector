@@ -1,0 +1,4 @@
+dataset,method,width,max_depth,items,unique_sid,duplicate_sid_rate,full_collision_rate,mean_effective_depth,head_unique_ratio,mid_unique_ratio,tail_unique_ratio,standard_prefix_counts,effective_prefix_counts
+Musical_Instruments,controller_variable_depth_head_long_tail_short_w64_maxd4,64,4,23742,19924,0.1608120630106984,0.3216241260213967,3.0,1.0,1.0,0.5395167379813742,64;4096;12010;19924,64;4096;7914;7914
+Musical_Instruments,controller_variable_depth_head_short_tail_long_w64_maxd4,64,4,23742,19924,0.1608120630106984,0.3216241260213967,3.0,0.5374778424917701,1.0,1.0,64;4096;12010;19924,64;4096;7914;7914
+Musical_Instruments,controller_variable_depth_uniform_depth3_w64_maxd4,64,4,23742,23742,0.0,0.0,3.0,1.0,1.0,1.0,6;371;23742;23742,6;371;23742;0

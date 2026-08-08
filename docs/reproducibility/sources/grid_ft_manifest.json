@@ -1,0 +1,29 @@
+{
+  "method": "grid_official_rqkmeans_resid_feature_text",
+  "dataset": "Musical_Instruments",
+  "grid_repository": "https://github.com/snap-research/GRID",
+  "grid_commit": "2fe3475b2d369580234093f35d52b1a2f54d0472",
+  "num_items": 23742,
+  "embedding_dim": 384,
+  "codebook_width": 64,
+  "num_hierarchies": 3,
+  "steps_per_layer": 40,
+  "device": "cpu",
+  "layers": [
+    {
+      "level": 0,
+      "unique_codes": 64,
+      "codebook_width": 64
+    },
+    {
+      "level": 1,
+      "unique_codes": 64,
+      "codebook_width": 64
+    },
+    {
+      "level": 2,
+      "unique_codes": 64,
+      "codebook_width": 64
+    }
+  ]
+}

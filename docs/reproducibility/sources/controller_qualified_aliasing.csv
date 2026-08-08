@@ -1,0 +1,6 @@
+dataset,method,full_collision_groups,full_collision_items,collision_pairs_possible,users_used,pair_events,cooccurrence_pairs,collision_pairs_sampled,collision_shares_user_rate,collision_mean_co_count,collision_same_category_rate,matched_pairs_sampled,matched_shares_user_rate,matched_mean_co_count,matched_same_category_rate,interaction_qualified_collision_lift,status
+Musical_Instruments,grid_official_rqkmeans_resid_feature_text,3200,23193,135528,27759,799894,742273,30000,0.012233333333333334,0.014633333333333333,0.4389,30000,0.0031666666666666666,0.0035,0.020733333333333333,3.8631578947368426,ok
+Musical_Instruments,resid_gaoq,0,0,0,27759,799894,742273,0,0.0,0.0,0.0,0,0.0,0.0,0.0,,no_full_sid_collisions
+Musical_Instruments,sanity_category_prefix,0,0,0,27759,799894,742273,0,0.0,0.0,0.0,0,0.0,0.0,0.0,,no_full_sid_collisions
+Musical_Instruments,sanity_mod_collision_hash,256,23742,1089096,27759,799894,742273,30000,0.0032,0.0036333333333333335,0.019566666666666666,30000,0.0027,0.0029,0.019833333333333335,1.1851851851851851,ok
+Musical_Instruments,sanity_popularity_balanced,1006,2041,1066,27759,799894,742273,1066,0.009380863039399626,0.01594746716697936,0.024390243902439025,1066,0.004690431519699813,0.004690431519699813,0.029080675422138838,2.0,ok

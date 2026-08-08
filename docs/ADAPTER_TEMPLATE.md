@@ -43,6 +43,34 @@ D4 additionally need interaction histories; metadata enables category and
 semantic slices. Paired refresh mappings activate D6, and generator traces
 activate D7.
 
+## Optional Side Tables
+
+- `item_metadata`: one row per `item_id`; category or other semantic fields are
+  optional and enable metadata slices.
+- `interactions`: `user_id`, `item_id`, and optional `split`; train events
+  enable D3 co-occurrence neighborhoods and D4 popularity buckets.
+- Refresh pair: old and new normalized SID tables with the same item keys for D6.
+- Generator outputs: trace rows supplied by an external generator for D7.
+
+The adapter does not implement a metric. It emits normalized tables and
+provenance; the shared validator and probe engine do the rest.
+
+## Integration Checklist
+
+1. Export one stable `item_id` and one discrete value per SID level.
+2. Run `examples/minimal_adapter.py` or write an equivalent thin normalizer.
+3. Record method, dataset, upstream source, and checkpoint or artifact version.
+4. Run `python3 -m sidinspector.preflight ... --run-metric-smoke`.
+5. Resolve duplicate keys, missing mappings, inconsistent depths, and failed
+   side-table joins before reporting metrics.
+6. Run D1-D5 and compare the result with the intended codebook budget and
+   same-dataset controls.
+
+For a tokenizer that already exposes item-level codes, integration is a schema
+normalization task. Checkpoint-only releases require method-specific export
+logic upstream and should not be listed as validated named-method coverage
+until item-level codes pass preflight.
+
 ## Contract Boundary
 
 - A named tokenizer row counts as method evidence only when the item-level export

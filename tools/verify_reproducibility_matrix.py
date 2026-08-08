@@ -10,12 +10,17 @@ paper-facing snapshot values that anchor the main finding have not drifted.
 from __future__ import annotations
 
 import csv
+import json
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX = ROOT / "docs" / "reproducibility_matrix.csv"
 SNAPSHOT_DIR = ROOT / "docs" / "reproducibility"
+SOURCE_DIR = SNAPSHOT_DIR / "sources"
 
 
 REQUIRED_MATRIX_COLUMNS = {
@@ -73,6 +78,25 @@ REQUIRED_SNAPSHOTS = {
     },
 }
 
+REQUIRED_SOURCES = [
+    "README.md",
+    "grid_ft_seed_summary.csv",
+    "grid_resid_comparison.csv",
+    "control_summary.csv",
+    "rqmin_reference.csv",
+    "controller_qualified_aliasing.csv",
+    "controller_capacity_budget.csv",
+    "controller_variable_depth.csv",
+    "grid_ft_manifest.json",
+    "grid_cap_manifest.json",
+    "grid_cap_metrics/coverage_report.csv",
+    "grid_cap_metrics/d1_utilization.csv",
+    "grid_cap_metrics/d2_collision.csv",
+    "grid_cap_metrics/d3_alignment.csv",
+    "grid_cap_metrics/d4_head_tail.csv",
+    "grid_cap_metrics/d5a_deployment_cost.csv",
+]
+
 
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
@@ -110,6 +134,33 @@ def main() -> None:
     for name, columns in REQUIRED_SNAPSHOTS.items():
         require_columns(SNAPSHOT_DIR / name, columns)
 
+    for name in REQUIRED_SOURCES:
+        path = SOURCE_DIR / name
+        if not path.is_file():
+            raise FileNotFoundError(path)
+
+    with tempfile.TemporaryDirectory(prefix="sidinspector-paper-tables-") as tmp:
+        output_dir = Path(tmp)
+        subprocess.run(
+            [sys.executable, str(ROOT / "tools" / "build_paper_tables.py"), "--output-dir", str(output_dir)],
+            cwd=ROOT,
+            check=True,
+        )
+        for name in ["table2_musical_diagnostic.csv", "table3_probe_calibration.csv"]:
+            rebuilt = read_csv(output_dir / name)
+            tracked = read_csv(SNAPSHOT_DIR / name)
+            if rebuilt != tracked:
+                raise RuntimeError(f"{name} does not match its released source summaries")
+
+    with (SOURCE_DIR / "grid_ft_manifest.json").open(encoding="utf-8") as handle:
+        grid_ft_manifest = json.load(handle)
+    with (SOURCE_DIR / "grid_cap_manifest.json").open(encoding="utf-8") as handle:
+        grid_cap_manifest = json.load(handle)
+    if grid_ft_manifest.get("num_hierarchies") != 3 or grid_ft_manifest.get("codebook_width") != 64:
+        raise RuntimeError("GRID-style feature-text budget must be three width-64 levels")
+    if grid_cap_manifest.get("per_level_widths") != [32, 1280, 1280]:
+        raise RuntimeError("GRID-style capacity budget must be 32/1280/1280")
+
     table2 = {row["artifact"]: row for row in read_csv(SNAPSHOT_DIR / "table2_musical_diagnostic.csv")}
     for artifact in ["GRID-style ft", "ReSID", "Cat-prefix", "RQ-min ref"]:
         if artifact not in table2:
@@ -141,7 +192,10 @@ def main() -> None:
             raise RuntimeError(f"{probe} values drifted: {row}")
 
     print("SIDInspector reproducibility matrix verification passed.")
-    print(f"Verified {len(matrix_rows)} matrix rows and {len(REQUIRED_SNAPSHOTS)} evidence snapshots.")
+    print(
+        f"Verified {len(matrix_rows)} matrix rows, {len(REQUIRED_SNAPSHOTS)} evidence snapshots, "
+        f"and deterministic Table 2/3 reconstruction from {len(REQUIRED_SOURCES)} source files."
+    )
 
 
 if __name__ == "__main__":

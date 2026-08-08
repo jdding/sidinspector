@@ -1,0 +1,4 @@
+dataset,method,level,items,unique_codes,entropy,gini,max_code
+Musical_Instruments,grid_official_rqkmeans_resid_feature_text_prefix_matched,sid_level_0,23742,32,4.705609338468075,0.3311641816190718,31
+Musical_Instruments,grid_official_rqkmeans_resid_feature_text_prefix_matched,sid_level_1,23742,1280,9.745395641989536,0.48807249547215914,1279
+Musical_Instruments,grid_official_rqkmeans_resid_feature_text_prefix_matched,sid_level_2,23742,1278,9.744649746213126,0.48689709367879996,1279

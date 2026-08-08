@@ -1,0 +1,2 @@
+dataset,method,items,unique_sid,duplicate_sid_rate,full_collision_rate,d3_l1_weighted,d4_head_unique_ratio,d4_mid_unique_ratio,d4_tail_unique_ratio,prefix_counts,evidence_role,caveat,source_config
+Musical_Instruments,rqvae_minimal_reference,23742,17247,0.2736,0.4401,0.0650,0.8501,0.8662,0.8831,32/2368/17247,reference adapter,not named-method coverage or TIGER/GRID/ReSID reproduction,"widths 32/128/128; seed 42; CPU full-Musical gate"

@@ -1,0 +1,3 @@
+system,method,dataset,sid_items,metadata_without_sid,interaction_without_sid,unique_sid,duplicate_sid_rate,full_collision_rate,d3_level1_weighted_recall,d3_level2_weighted_recall,d3_level3_weighted_recall,level0_category_purity_mean,d4_head_sid_unique_ratio,d4_mid_sid_unique_ratio,d4_tail_sid_unique_ratio,prefix_counts
+GRID feature-text,grid_official_rqkmeans_resid_feature_text,Musical_Instruments,23742,0,0,3749,0.8420941790919046,0.9768764215314631,0.0551755939778614,0.0041767445778805,0.0039971711645003,0.2687833775053548,0.3530007596859965,0.3589516333248924,0.3694940850742512,64;3440;3749
+ReSID GAOQ,resid_gaoq,Musical_Instruments,23742,0,0,23742,0.0,0.0,0.1535441362629664,0.0171592372785538,0.0,0.5481709307739595,1.0,1.0,1.0,32;1280;23742

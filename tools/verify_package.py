@@ -38,6 +38,7 @@ REQUIRED = [
     "examples/reviewer_quickstart_data/interactions.csv",
     "docs/ADAPTER_TEMPLATE.md",
     "docs/DIAGNOSTICS.md",
+    "docs/PROBE_INTERPRETATION.md",
     "docs/REPRODUCIBILITY_MATRIX.md",
     "docs/reproducibility_matrix.csv",
     "docs/reproducibility/table1_evidence_catalog.csv",
@@ -47,6 +48,7 @@ REQUIRED = [
     "docs/reproducibility/extension_checks_snapshot.csv",
     "docs/reproducibility/rqmin_reference_snapshot.csv",
     "docs/VALIDATED_ADAPTERS.md",
+    "tools/build_paper_tables.py",
     "tools/verify_reproducibility_matrix.py",
 ]
 

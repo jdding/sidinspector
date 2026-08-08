@@ -1,0 +1,4 @@
+dataset,method,bucket,items,sid_unique_ratio,level0_entropy
+Musical_Instruments,grid_official_rqkmeans_resid_feature_text_prefix_matched,head,7898,0.599898708533806,4.6904985457582455
+Musical_Instruments,grid_official_rqkmeans_resid_feature_text_prefix_matched,mid,7898,0.6396556090149405,4.69943497071516
+Musical_Instruments,grid_official_rqkmeans_resid_feature_text_prefix_matched,tail,7946,0.6390636798389127,4.709486122526373
