@@ -31,6 +31,7 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/jdding/sidinspector"
 Repository = "https://github.com/jdding/sidinspector"
+Paper = "https://arxiv.org/abs/2606.10375"
 
 [tool.setuptools.packages.find]
 where = ["src"]

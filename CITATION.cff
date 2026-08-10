@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use SIDInspector, please cite the CIKM 2026 paper."
+title: "SIDInspector"
+type: software
+version: 1.0.0
+date-released: 2026-08-10
+url: "https://github.com/jdding/sidinspector"
+repository-code: "https://github.com/jdding/sidinspector"
+license: MIT
+authors:
+  - family-names: "Ding"
+    given-names: "Jiandong"
+  - family-names: "Chang"
+    given-names: "Heng"
+  - family-names: "Qin"
+    given-names: "Huijie"
+  - family-names: "Liu"
+    given-names: "Tianying"
+preferred-citation:
+  type: conference-paper
+  title: "SIDInspector: A Mapping-First Diagnostic Resource for Semantic-ID Tokenizers"
+  authors:
+    - family-names: "Ding"
+      given-names: "Jiandong"
+    - family-names: "Chang"
+      given-names: "Heng"
+    - family-names: "Qin"
+      given-names: "Huijie"
+    - family-names: "Liu"
+      given-names: "Tianying"
+  collection-title: "Proceedings of the 35th ACM International Conference on Information and Knowledge Management"
+  year: 2026
+  url: "https://arxiv.org/abs/2606.10375"
