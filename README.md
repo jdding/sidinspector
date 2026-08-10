@@ -5,6 +5,9 @@ exports before training or evaluating a downstream generative recommender. It
 does not train a tokenizer. It checks an existing `item_id -> SID` mapping plus
 item metadata and interactions.
 
+The CIKM 2026 Resource Track artifact is released as
+`sidinspector-cikm2026-resource-v1.0` (Python package version `1.0.0`).
+
 ## What It Reports
 
 - D1 utilization: per-level code usage, entropy, and imbalance.
