@@ -4,7 +4,6 @@
 
 [Paper](https://arxiv.org/abs/2606.10375) |
 [CIKM 2026 Resource Track](https://cikm2026.diag.uniroma1.it/resource-papers/) |
-[Citation](#citation) |
 [Release v1.0](https://github.com/jdding/sidinspector/tree/sidinspector-cikm2026-resource-v1.0) |
 [MIT license](LICENSE)
 
@@ -19,27 +18,6 @@ or replace downstream Recall/NDCG evaluation.
 > 2026). The ACM proceedings DOI and page range are not yet available. The
 > public artifact release is `sidinspector-cikm2026-resource-v1.0` (Python
 > package version `1.0.0`).
-
-## Citation
-
-Until ACM publishes the final DOI and page range, use this accepted,
-forthcoming citation:
-
-```bibtex
-@inproceedings{ding2026sidinspector,
-  author    = {Jiandong Ding and Heng Chang and Huijie Qin and Tianying Liu},
-  title     = {{SIDInspector}: A Mapping-First Diagnostic Resource for
-               Semantic-ID Tokenizers},
-  booktitle = {Proceedings of the 35th ACM International Conference on
-               Information and Knowledge Management},
-  year      = {2026},
-  note      = {Accepted to the CIKM 2026 Resource Track; forthcoming},
-  url       = {https://arxiv.org/abs/2606.10375}
-}
-```
-
-[`CITATION.cff`](CITATION.cff) provides the same preferred citation through
-GitHub's **Cite this repository** interface.
 
 ## Quickstart
 
@@ -126,3 +104,24 @@ python3 tools/verify_package.py
 ```
 
 SIDInspector is released under the [MIT License](LICENSE).
+
+## Citation
+
+Until ACM publishes the final DOI and page range, use this accepted,
+forthcoming citation:
+
+```bibtex
+@inproceedings{ding2026sidinspector,
+  author    = {Jiandong Ding and Heng Chang and Huijie Qin and Tianying Liu},
+  title     = {{SIDInspector}: A Mapping-First Diagnostic Resource for
+               Semantic-ID Tokenizers},
+  booktitle = {Proceedings of the 35th ACM International Conference on
+               Information and Knowledge Management},
+  year      = {2026},
+  note      = {Accepted to the CIKM 2026 Resource Track; forthcoming},
+  url       = {https://arxiv.org/abs/2606.10375}
+}
+```
+
+[`CITATION.cff`](CITATION.cff) provides the same preferred citation through
+GitHub's **Cite this repository** interface.
