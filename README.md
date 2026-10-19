@@ -12,13 +12,13 @@ SIDInspector inspects an exported item-to-semantic-ID mapping for people working
 [DOI](https://doi.org/10.1145/3799682.3840174) |
 [Project page](https://jdding.github.io/sidinspector) |
 [CIKM 2026 Resource Track](https://cikm2026.diag.uniroma1.it/resource-papers/) |
-[Release v1.0](https://github.com/jdding/sidinspector/tree/sidinspector-cikm2026-resource-v1.0)
+[Release v1.0.1](https://github.com/jdding/sidinspector/tree/sidinspector-cikm2026-resource-v1.0.1)
 
 ![SIDInspector workflow. Adapters turn GRID-style, ReSID/GAOQ, LETTER, and LC-Rec exports into one item-to-code table. A validation gate checks schema, joins, and provenance. The probe engine then writes D1–D5 reports, with optional D6 churn and a D7 trace hook.](assets/sidinspector_workflow.png)
 
 *Workflow figure from Ding et al., CIKM 2026 ([arXiv:2606.10375](https://arxiv.org/abs/2606.10375)), included under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Adapters normalize GRID-style, ReSID/GAOQ, LETTER, and LC-Rec exports into one item-to-code contract. Validation precedes the D1–D5 reports; paired mappings enable D6 churn, and D7 stays a trace-input hook.*
 
-Published in the Resource Track of CIKM 2026. The main conference is 9–11 November 2026 in Rome; the proceedings front matter dates the event 7–11 November 2026. The public artifact is tag `sidinspector-cikm2026-resource-v1.0` (Python package `1.0.0`). Install from a local checkout. This package is not published on PyPI.
+Published in the Resource Track of CIKM 2026. The main conference is 9–11 November 2026 in Rome; the proceedings front matter dates the event 7–11 November 2026. The public artifact is tag `sidinspector-cikm2026-resource-v1.0.1` (Python package `1.0.0`). Install from a local checkout. This package is not published on PyPI.
 
 ## Quickstart
 
@@ -27,7 +27,7 @@ The bundled workflow is CPU-only and supports Python 3.9+.
 ```bash
 git clone https://github.com/jdding/sidinspector.git
 cd sidinspector
-git checkout sidinspector-cikm2026-resource-v1.0
+git checkout sidinspector-cikm2026-resource-v1.0.1
 python3 -m pip install -e .
 python3 examples/run_reviewer_quickstart.py
 ```
