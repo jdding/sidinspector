@@ -29,5 +29,15 @@ preferred-citation:
     - family-names: "Liu"
       given-names: "Tianying"
   collection-title: "Proceedings of the 35th ACM International Conference on Information and Knowledge Management"
+  conference:
+    name: "35th ACM International Conference on Information and Knowledge Management"
+    city: "Rome"
+    country: "IT"
+    date-start: 2026-11-07
+    date-end: 2026-11-11
+  publisher:
+    name: "Association for Computing Machinery"
   year: 2026
-  url: "https://arxiv.org/abs/2606.10375"
+  doi: "10.1145/3799682.3840174"
+  isbn: "979-8-4007-2539-5"
+  url: "https://doi.org/10.1145/3799682.3840174"
