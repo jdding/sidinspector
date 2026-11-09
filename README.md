@@ -1,12 +1,12 @@
 # SIDInspector
 
-[![arXiv](https://img.shields.io/badge/arXiv-2606.10375-b31b1b.svg)](https://arxiv.org/abs/2606.10375)
-[![DOI](https://img.shields.io/badge/DOI-10.1145%2F3799682.3840174-blue)](https://doi.org/10.1145/3799682.3840174)
-[![CIKM 2026](https://img.shields.io/badge/CIKM-2026-0B3D91.svg)](https://cikm2026.diag.uniroma1.it/resource-papers/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-3776AB.svg)](https://www.python.org/downloads/)
 
-SIDInspector inspects an exported item-to-semantic-ID mapping for people working on semantic IDs and generative recommendation, before a downstream generator is trained or evaluated.
+SIDInspector checks exported item-to-semantic-ID mappings before you train or
+evaluate a downstream generator. Use it to find collisions, check which
+prefixes preserve item neighborhoods, and see how unique codes are distributed
+across popular and rare items.
 
 [ACM paper](https://doi.org/10.1145/3799682.3840174) |
 [arXiv preprint](https://arxiv.org/abs/2606.10375) |
@@ -14,15 +14,11 @@ SIDInspector inspects an exported item-to-semantic-ID mapping for people working
 [CIKM 2026 Resource Track](https://cikm2026.diag.uniroma1.it/resource-papers/) |
 [Release v1.0.1](https://github.com/jdding/sidinspector/tree/sidinspector-cikm2026-resource-v1.0.1)
 
-![SIDInspector workflow. Adapters turn GRID-style, ReSID/GAOQ, LETTER, and LC-Rec exports into one item-to-code table. A validation gate checks schema, joins, and provenance. The probe engine then writes D1–D5 reports, with optional D6 churn and a D7 trace hook.](assets/sidinspector_workflow.png)
-
-*Workflow figure from Ding et al., CIKM 2026 ([arXiv:2606.10375](https://arxiv.org/abs/2606.10375)), included under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Adapters normalize GRID-style, ReSID/GAOQ, LETTER, and LC-Rec exports into one item-to-code contract. Validation precedes the D1–D5 reports; paired mappings enable D6 churn, and D7 stays a trace-input hook.*
-
-Published in the Resource Track of CIKM 2026. The main conference is 9–11 November 2026 in Rome; the proceedings front matter dates the event 7–11 November 2026. The public artifact is tag `sidinspector-cikm2026-resource-v1.0.1` (Python package `1.0.0`). Install from a local checkout. This package is not published on PyPI.
-
 ## Quickstart
 
-The bundled workflow is CPU-only and supports Python 3.9+.
+The CPU demo requires Python 3.9 or later. Use the CIKM 2026 Resource Track
+artifact tagged `sidinspector-cikm2026-resource-v1.0.1` (package version `1.0.0`).
+Install it from a checkout; the package is not on PyPI.
 
 ```bash
 git clone https://github.com/jdding/sidinspector.git
@@ -32,13 +28,18 @@ python3 -m pip install -e .
 python3 examples/run_reviewer_quickstart.py
 ```
 
-The quickstart normalizes a small music-like SID export shipped in this repository, validates its joins, and writes `preflight_summary.json` plus D1–D5 CSV reports under `examples/reviewer_quickstart_output/`. It is a usability check, not a reproduction of the paper tables.
-
-The same demo is in [`examples/quickstart.ipynb`](examples/quickstart.ipynb). After that file is on the default branch, Colab can open it from [`main`](https://colab.research.google.com/github/jdding/sidinspector/blob/main/examples/quickstart.ipynb).
+The demo normalizes a bundled music-like export, checks its joins, and writes
+`preflight_summary.json` and D1–D5 CSV reports to
+`examples/reviewer_quickstart_output/`. The [notebook](examples/quickstart.ipynb)
+runs the same demo from an installed checkout. This checks that the workflow
+runs. For the paper tables and their evidence, see the
+[reproducibility matrix](docs/REPRODUCIBILITY_MATRIX.md).
 
 ## Key findings
 
-On one Musical Instruments catalog of 23,742 items, full-code aliasing and neighborhood alignment move apart. A larger GRID-style budget lowers aliasing, and the ReSID/GAOQ export is alias-free, while level-1 neighborhood alignment stays below a deterministic category-prefix control.
+On the same catalog of 23,742 Musical Instruments items, a larger GRID-style
+budget reduced aliasing and ReSID/GAOQ had no full-code collisions. The
+category-prefix control scored highest on neighborhood alignment (D3).
 
 | Artifact | Unique SIDs | D2 full-code aliasing | D3 level-1 neighborhood alignment |
 | --- | ---: | ---: | ---: |
@@ -47,11 +48,21 @@ On one Musical Instruments catalog of 23,742 items, full-code aliasing and neigh
 | ReSID/GAOQ | 23,742 | 0.000 | 0.154 |
 | Category-prefix control | 23,742 | 0.000 | 0.447 |
 
-These figures are copied from Table 2 of the CIKM 2026 paper. The same rows, before that table's printed rounding, are in [`docs/reproducibility/table2_musical_diagnostic.csv`](docs/reproducibility/table2_musical_diagnostic.csv). GRID-style feature-text is a controlled export through a released residual k-means module, not an end-to-end GRID reproduction. The category-prefix row is a deterministic control for the D3 scale, not a learned tokenizer. These measurements describe the mappings. They are not recommendation-quality results.
+The [unrounded Table 2 values](docs/reproducibility/table2_musical_diagnostic.csv)
+are included in the repo. The GRID-style feature-text row is a controlled
+export from a released residual k-means module; it does not reproduce GRID end
+to end. The deterministic category-prefix row calibrates D3. Recommendation
+quality requires downstream evaluation.
 
-On the same 23,742 items, the RQ-min reference row in that table has 17,247 unique SIDs, D2 0.440, and D3 0.065. On a separate Instruments index of 9,922 items, the released LETTER and LC-Rec mappings each have 9,897 unique full SIDs, with D3 level-1 alignment 0.109 for LETTER and 0.052 for LC-Rec.
+On the same catalog, the RQ-min reference has 17,247 unique SIDs (D2: 0.440;
+D3: 0.065). On a separate Instruments index of 9,922 items, LETTER and LC-Rec
+each have 9,897 unique full SIDs, with D3 of 0.109 and 0.052, respectively.
 
 ## Diagnostics
+
+![SIDInspector workflow. Adapters turn GRID-style, ReSID/GAOQ, LETTER, and LC-Rec exports into one item-to-code table. A validation gate checks schema, joins, and provenance. The probe engine then writes D1–D5 reports, with optional D6 churn and a D7 trace hook.](assets/sidinspector_workflow.png)
+
+*Workflow figure from Ding et al., CIKM 2026 ([arXiv:2606.10375](https://arxiv.org/abs/2606.10375)), reproduced under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
 
 | Probe | Signal | Typical next check |
 | --- | --- | --- |
@@ -62,11 +73,11 @@ On the same 23,742 items, the RQ-min reference row in that table has 17,247 uniq
 | D5 structural cost | SID depth, unique IDs, and active prefixes | Inspect fan-out and depth before choosing a decoding stack. |
 | D6 churn (optional) | Refresh-to-refresh mapping stability | Trace changed items and affected prefixes. |
 
-The core workflow consumes `sid_assignments`, `item_metadata`, and
-`interactions` tables. D7 is an optional generator-trace input hook, not an
-empirical result in the CIKM 2026 resource paper.
+The workflow validates `sid_assignments`, `item_metadata`, and `interactions`
+before running the probes. D7 accepts optional generator traces; the CIKM paper
+does not report D7 results.
 
-## Inspect Your Own Mapping
+## Inspect your own mapping
 
 For an export with one row per item:
 
@@ -103,24 +114,21 @@ See the [adapter template](docs/ADAPTER_TEMPLATE.md),
 [probe interpretation guide](docs/PROBE_INTERPRETATION.md) for the full
 contract and supported official artifact paths.
 
-## Scope
+## Interpreting the results
 
-- SIDInspector is an inspector for exported mappings, not a tokenizer
-  leaderboard.
-- D2 reports aliasing but does not prove causal recommendation harm.
-- D3 is dataset-dependent and should be interpreted with same-dataset controls.
-- D5 reports structural pressure, not measured serving latency.
-- The fixed-reranker probe concerns candidate exposure, not trained-generator
-  quality.
+- D2 measures code sharing. It cannot establish causal harm to recommendations.
+- D3 depends on the dataset. Compare against controls on the same catalog.
+- D5 describes structure. Measure serving latency separately.
+- The fixed-reranker probe measures candidate exposure. Assess trained
+  generator quality downstream.
 
-Run the complete package, quickstart, table, and test gate with:
+Run the package, quickstart, table, and test checks with:
 
 ```bash
 python3 tools/verify_package.py
 ```
 
-SIDInspector is released under the [MIT License](LICENSE). The workflow figure
-above is reproduced from the paper and remains under CC BY 4.0.
+The software is released under the [MIT License](LICENSE).
 
 ## Citation
 
@@ -144,5 +152,6 @@ above is reproduced from the paper and remains under CC BY 4.0.
 }
 ```
 
-The proceedings version appears on pages 8890–8894. [`CITATION.cff`](CITATION.cff)
-provides the same preferred citation through GitHub's **Cite this repository** interface.
+GitHub's **Cite this repository** uses the same reference from
+[`CITATION.cff`](CITATION.cff). The proceedings cover 7–11 November 2026 in
+Rome, including the main conference on 9–11 November.
