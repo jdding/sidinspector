@@ -38,6 +38,8 @@ preferred-citation:
   publisher:
     name: "Association for Computing Machinery"
   year: 2026
+  start: 8890
+  end: 8894
   doi: "10.1145/3799682.3840174"
   isbn: "979-8-4007-2539-5"
   url: "https://doi.org/10.1145/3799682.3840174"

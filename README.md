@@ -8,8 +8,8 @@
 
 SIDInspector inspects an exported item-to-semantic-ID mapping for people working on semantic IDs and generative recommendation, before a downstream generator is trained or evaluated.
 
-[Paper](https://arxiv.org/abs/2606.10375) |
-[DOI](https://doi.org/10.1145/3799682.3840174) |
+[ACM paper](https://doi.org/10.1145/3799682.3840174) |
+[arXiv preprint](https://arxiv.org/abs/2606.10375) |
 [Project page](https://jdding.github.io/sidinspector) |
 [CIKM 2026 Resource Track](https://cikm2026.diag.uniroma1.it/resource-papers/) |
 [Release v1.0.1](https://github.com/jdding/sidinspector/tree/sidinspector-cikm2026-resource-v1.0.1)
@@ -133,15 +133,16 @@ above is reproduced from the paper and remains under CC BY 4.0.
                Information and Knowledge Management},
   series    = {CIKM '26},
   year      = {2026},
-  address   = {Rome, Italy},
+  address   = {New York, NY, USA},
+  location  = {Rome, Italy},
   publisher = {ACM},
   doi       = {10.1145/3799682.3840174},
   url       = {https://doi.org/10.1145/3799682.3840174},
   isbn      = {979-8-4007-2539-5},
+  pages     = {8890--8894},
   numpages  = {5}
 }
 ```
 
-The ACM reference format records this article as 5 pages. It does not print a
-start–end page range. [`CITATION.cff`](CITATION.cff) provides the same
-preferred citation through GitHub's **Cite this repository** interface.
+The proceedings version appears on pages 8890–8894. [`CITATION.cff`](CITATION.cff)
+provides the same preferred citation through GitHub's **Cite this repository** interface.
