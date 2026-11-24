@@ -1,117 +1,188 @@
 # SIDInspector
 
-**Mapping-first diagnostics for Semantic-ID tokenizer artifacts (CIKM '26 Resource Track).**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-3776AB.svg)](https://www.python.org/downloads/)
 
-[Browser Workbench (`index.html`)](index.html) |
-[Paper (ACM DOI)](https://doi.org/10.1145/3799682.3840174) |
-[Preprint (arXiv)](https://arxiv.org/abs/2606.10375) |
-[SIDScope (TOIS Extension)](https://github.com/jdding/SIDscope) |
-[MIT License](LICENSE)
+SIDInspector checks exported item-to-semantic-ID mappings before you train or
+evaluate a downstream generator. Use it to find collisions, check which
+prefixes preserve item neighborhoods, and see how unique codes are distributed
+across popular and rare items.
 
-SIDInspector (`v1.1.0`) is an open-source diagnostic toolkit and reproducibility package for inspecting exported `item_id -> SID` tokenizer artifacts **before** training or evaluating a downstream generative recommender. Without retraining a tokenizer, SIDInspector validates the item-code contract and runs three core diagnostic workflows:
+[ACM paper](https://doi.org/10.1145/3799682.3840174) |
+[arXiv preprint](https://arxiv.org/abs/2606.10375) |
+[Project page](https://jdding.github.io/sidinspector) |
+[CIKM 2026 Resource Track](https://cikm2026.diag.uniroma1.it/resource-papers/) |
+[Release v1.0.1](https://github.com/jdding/sidinspector/tree/sidinspector-cikm2026-resource-v1.0.1)
 
-| Workflow | Core question | Entry point |
-| --- | --- | --- |
-| **1. Mapping Audit (D1–D5)** | Are all items mapped, how concentrated is codebook usage, which leaves collide, do prefixes recover co-occurrence neighbors, and is tail capacity compressed? | `sidinspector audit` · [Diagnostics](docs/DIAGNOSTICS.md) |
-| **2. Mechanism & Churn Probes (D2/D4/D5/D6)** | Do diagnostics react to qualified aliasing, head-reserved capacity, variable depth, and refresh-to-refresh mapping churn? | `sidinspector churn` · [Probe guide](docs/PROBE_INTERPRETATION.md) |
-| **3. Exposure & CIKM '26 Benchmark Replay** | How do released mappings compare on a fixed item universe, and does prefix alignment track candidate exposure? | `sidinspector verify-tables` · `sidinspector probe` |
+## Quickstart
 
-See [what this release supports](docs/RESOURCE_CAPABILITIES.md) for package-only, browser-only, and own-data workflows, and [how SIDInspector relates to SIDScope and SIDDuet](docs/RELATION_TO_SIDSCOPE_AND_SIDDUET.md).
+The CPU demo requires Python 3.9 or later. Use the CIKM 2026 Resource Track
+artifact tagged `sidinspector-cikm2026-resource-v1.0.1` (package version `1.0.0`).
+Install it from a checkout; the package is not on PyPI.
 
-## Browser Workbench (Zero-Install Pyodide & Local HTTP)
-
-Serve [`index.html`](index.html) from a local static server (`python3 -m http.server 8766`) — or open the target GitHub Pages URL (`https://jdding.github.io/sidinspector/`, which serves the v1.0 paper page until `v1.1.0` is published to Pages) — to run SIDInspector directly in your browser using a pinned standard-library Pyodide runtime (`v314.0.7`):
-
-- **Tab 1 · Mapping Audit (D1–D5):** Executes real Python D1–D5 diagnostics on the bundled music-like fixture with an interactive depth-1 prefix and full-code alias inspector.
-- **Tab 2 · Mechanism Controls & D6 Churn:** Demonstrates live collision injection and 25% refresh churn on the fixture, and runs `tools/build_paper_tables.py` live to verify CIKM Table 3.
-- **Tab 3 · Published CIKM '26 Benchmark:** Rebuilds and row-checks CIKM Table 2 across all seven same-item Musical profiles (23,742 items) plus LETTER/LC-Rec, All_Beauty, Sports, and fixed-reranker snapshots.
-- **Tab 4 · Inspect Your Own Mapping (BYO CSV):** Paste or pick a local `item_id,sid_0,sid_1,...` CSV (plus optional interactions and metadata) to run preflight, D1–D5, and Table 1 triage cards **100% client-side** — nothing leaves your browser.
-
-All executed scripts and source tables are SHA-256 verified against `PACKAGE_MANIFEST.json` before execution.
-
-## Install and Quickstart
-
-The entire toolkit is CPU-only (Python 3.9+). Pure-CSV audits (`sidinspector audit`), table verification, and the local web demo run with the Python standard library; Parquet adapters and the full pandas/pyarrow pipeline install via `pip install -e .`.
-
-```sh
+```bash
 git clone https://github.com/jdding/sidinspector.git
 cd sidinspector
+git checkout sidinspector-cikm2026-resource-v1.0.1
 python3 -m pip install -e .
+python3 examples/run_reviewer_quickstart.py
+```
 
-# 1. Rebuild & verify CIKM '26 Tables 2 & 3 from compact sources
+The demo normalizes a bundled music-like export, checks its joins, and writes
+`preflight_summary.json` and D1–D5 CSV reports to
+`examples/reviewer_quickstart_output/`. The [notebook](examples/quickstart.ipynb)
+runs the same demo from an installed checkout. This checks that the workflow
+runs. For the paper tables and their evidence, see the
+[reproducibility matrix](docs/REPRODUCIBILITY_MATRIX.md).
+
+## v1.1 workbench
+
+The v1.1 candidate adds an interactive browser workbench and the
+`sidinspector` CLI. From this checkout, run
+`python3 -m http.server 8766 --bind 127.0.0.1` and open
+<http://127.0.0.1:8766>. The workbench loads Pyodide and checks its scripts
+and data against the release manifest. It runs D1–D6 examples, verifies
+CIKM Tables 2 and 3, and processes your CSV files in the browser.
+The project page linked above hosts the paper.
+
+To use the CLI from this checkout, install it with a recent version of pip:
+
+```bash
+python3 -m pip install -e .
 sidinspector verify-tables
-
-# 2. Run SHA-256 manifest integrity check, quickstart, and test suite
 sidinspector validate
-
-# 3. Audit a CSV mapping directly (no manual normalization needed)
-sidinspector audit \
-  --sid-csv examples/reviewer_quickstart_data/sid_codes.csv \
-  --interactions-csv examples/reviewer_quickstart_data/interactions.csv \
-  --metadata-csv examples/reviewer_quickstart_data/item_metadata.csv \
-  --output-dir /tmp/sidinspector_audit
-
-# 4. Launch the local browser workbench
 sidinspector demo --port 8765
 ```
 
-All v1.0 CIKM camera-ready commands (`examples/run_reviewer_quickstart.py`, `python3 -m sidinspector.preflight`, `python3 -m sidinspector.metrics`, `tools/verify_package.py`) remain fully supported for backward compatibility. See [ARTIFACT_QUICKSTART.md](ARTIFACT_QUICKSTART.md) and [docs/BRING_YOUR_OWN_DATA.md](docs/BRING_YOUR_OWN_DATA.md).
+See the [artifact quickstart](ARTIFACT_QUICKSTART.md) for an end-to-end run,
+the [CSV guide](docs/BRING_YOUR_OWN_DATA.md) for `sidinspector audit`, and the
+[release notes](CHANGELOG.md) for the relationship to
+[SIDScope](docs/RELATION_TO_SIDSCOPE_AND_SIDDUET.md).
 
-## Measured CPU Runtime and Memory
+| CPU workload (macOS arm64) | Wall time | Peak RSS |
+| --- | ---: | ---: |
+| Verify CIKM Tables 2 and 3 and the reproducibility matrix | 0.08 s | 15 MiB |
+| Audit a bundled CSV with 12 items | 0.05 s | 16 MiB |
+| Audit a synthetic CSV with 20,000 items and 50,000 interactions | 0.54 s | 124 MiB |
+| Validate the release package and run tests | 3.75 s | 99 MiB |
 
-Single-machine CPU benchmarks (macOS arm64, no GPU required; measured in `v1.1.0`):
+## Key findings
 
-| Workload | Scale | Wall time | Peak RSS |
-| --- | --- | ---: | ---: |
-| `sidinspector verify-tables` | CIKM Tables 2 & 3 + reproducibility matrix | 0.08 s | 15 MiB |
-| `sidinspector audit` (quickstart CSV) | 12 items, D1–D5 pure-Python CSV | 0.05 s | 16 MiB |
-| `sidinspector audit` (synthetic 20k CSV) | 20,000 items, 50,000 interactions, D1–D5 | 0.54 s | 124 MiB |
-| `sidinspector validate` | SHA-256 manifest + package smoke + unit tests | 3.75 s | 99 MiB |
+On the same catalog of 23,742 Musical Instruments items, a larger GRID-style
+budget reduced aliasing and ReSID/GAOQ had no full-code collisions. The
+category-prefix control scored highest on neighborhood alignment (D3).
 
-## Relationship to SIDScope and SIDDuet
+| Artifact | Unique SIDs | D2 full-code aliasing | D3 level-1 neighborhood alignment |
+| --- | ---: | ---: | ---: |
+| GRID-style feature-text (seed 42, widths 64/64/64) | 3,749 | 0.977 | 0.055 |
+| GRID-style capacity (budget 32/1280/1280) | 9,874 | 0.779 | 0.080 |
+| ReSID/GAOQ | 23,742 | 0.000 | 0.154 |
+| Category-prefix control | 23,742 | 0.000 | 0.447 |
 
-SIDInspector is the published **CIKM '26** mapping-first foundation of a three-resource Semantic-ID diagnostic family:
+The [unrounded Table 2 values](docs/reproducibility/table2_musical_diagnostic.csv)
+are included in the repo. The GRID-style feature-text row is a controlled
+export from a released residual k-means module; it does not reproduce GRID end
+to end. The deterministic category-prefix row calibrates D3. Recommendation
+quality requires downstream evaluation.
 
-| Resource | Primary Question | Scope & Status |
+On the same catalog, the RQ-min reference has 17,247 unique SIDs (D2: 0.440;
+D3: 0.065). On a separate Instruments index of 9,922 items, LETTER and LC-Rec
+each have 9,897 unique full SIDs, with D3 of 0.109 and 0.052, respectively.
+
+## Diagnostics
+
+![SIDInspector workflow. Adapters turn GRID-style, ReSID/GAOQ, LETTER, and LC-Rec exports into one item-to-code table. A validation gate checks schema, joins, and provenance. The probe engine then writes D1–D5 reports, with optional D6 churn and a D7 trace hook.](assets/sidinspector_workflow.png)
+
+*Workflow figure from Ding et al., CIKM 2026 ([arXiv:2606.10375](https://arxiv.org/abs/2606.10375)), reproduced under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
+
+| Probe | Signal | Typical next check |
 | --- | --- | --- |
-| **SIDInspector** (this repo) | Is an exported `item_id -> SID` mapping structurally healthy (D1–D5) and stable across refreshes (D6) before generator training? | Published at **CIKM '26 Resource Track** (`10.1145/3799682.3840174`). Frozen paper evidence (`v1.0.0`); actively maintained resource (`v1.1.0+`). |
-| **[SIDScope](https://github.com/jdding/SIDscope)** | How do mapping differences affect fixed-budget prefix retrieval, trained-beam D7 path-to-item resolution, and refresh generator handoff, with C0–C5/G0–G5 conformance and immutable EvidenceBundles? | Substantial journal extension (**TOIS** under review). Compatible `sidinspector` import namespace; expanded `sidscope` SDK & CLI. |
-| **[SIDDuet](https://github.com/jdding/SIDDuet)** | When search and recommendation share one SID space, do co-coded items diverge in task allocation, and should task counts be pooled or kept separate? | Companion dual-task resource (**search vs. recommendation** paired observation contract). |
+| D1 utilization | Per-level code use, entropy, and imbalance | Compare active codes with the intended budget. |
+| D2 aliasing | Full-code and prefix collisions | Inspect duplicate groups and capacity settings. |
+| D3 neighborhood alignment | Prefix recovery of co-occurrence neighborhoods | Compare same-dataset controls and candidate exposure. |
+| D4 popularity allocation | Head/mid/tail allocation of unique SIDs | Check whether tail items are disproportionately compressed. |
+| D5 structural cost | SID depth, unique IDs, and active prefixes | Inspect fan-out and depth before choosing a decoding stack. |
+| D6 churn (optional) | Refresh-to-refresh mapping stability | Trace changed items and affected prefixes. |
 
-See [docs/RELATION_TO_SIDSCOPE_AND_SIDDUET.md](docs/RELATION_TO_SIDSCOPE_AND_SIDDUET.md) for the detailed boundary matrix.
+The workflow validates `sid_assignments`, `item_metadata`, and `interactions`
+before running the probes. D7 accepts optional generator traces; the CIKM paper
+does not report D7 results.
 
-## Artifact and Provenance Coverage
+## Inspect your own mapping
 
-| Evidence | Verified scope |
-| --- | --- |
-| Same-item Musical benchmark (Table 2) | 23,742 items: GRID-style FT (`64/64/64`), GRID-style capacity (`32/1280/1280`), RQ-min ref, ReSID/GAOQ, plus 3 deterministic controls |
-| Paired mechanism controls (Table 3) | D2 qualified aliasing (`1.19x -> 3.86x`), D1/D4 head-reserved capacity (`1.000 -> 0.028`), D5 realized depth (`12,010 -> 7,914`) |
-| Official item-index portability | Released `LETTER` & `LC-Rec` Instruments artifacts (9,922 items; 9,897 unique SIDs) |
-| Cross-dataset & exposure extensions | `All_Beauty 20k`, `Sports 20k`, 5,000-user fixed-reranker probes (Musical & All_Beauty), MovieLens schema, DACT D6 churn |
+For an export with one row per item:
 
-## Scope, License, and Maintenance
+```csv
+item_id,sid_0,sid_1,sid_2
+1,12,3,91
+2,12,8,17
+```
 
-- **Scope:** SIDInspector inspects exported mappings, not downstream ranking quality. D2 characterizes aliasing without claiming causal harm; D3 is dataset-dependent and requires same-dataset controls; D5 reports structural pressure, not serving latency.
-- **License:** [MIT License](LICENSE). Upstream tokenizer checkpoints and large caches are never redistributed; see [docs/REPRODUCIBILITY_MATRIX.md](docs/REPRODUCIBILITY_MATRIX.md).
-- **Maintenance:** The CIKM '26 paper numbers (`docs/reproducibility/table2_musical_diagnostic.csv` and `table3_probe_calibration.csv`) are frozen. Ongoing releases (`v1.1+`) maintain CLI ergonomics, adapters, bug fixes, and the browser workbench; see [MAINTENANCE.md](MAINTENANCE.md) and [CHANGELOG.md](CHANGELOG.md).
+normalize and inspect it:
+
+```bash
+python3 examples/minimal_adapter.py \
+  --input-csv path/to/item_codes.csv \
+  --output-dir runs/my_tokenizer \
+  --method my_tokenizer \
+  --dataset my_dataset
+
+python3 -m sidinspector.preflight \
+  --sid-assignments runs/my_tokenizer/sid_assignments.parquet \
+  --item-metadata runs/my_tokenizer/item_metadata.parquet \
+  --interactions runs/my_tokenizer/interactions.parquet \
+  --run-metric-smoke
+
+python3 -m sidinspector.metrics \
+  --sid-assignments runs/my_tokenizer/sid_assignments.parquet \
+  --item-metadata runs/my_tokenizer/item_metadata.parquet \
+  --interactions runs/my_tokenizer/interactions.parquet \
+  --output-dir runs/my_tokenizer/diagnostics
+```
+
+See the [adapter template](docs/ADAPTER_TEMPLATE.md),
+[validated adapters](docs/VALIDATED_ADAPTERS.md), and
+[probe interpretation guide](docs/PROBE_INTERPRETATION.md) for the full
+contract and supported official artifact paths.
+
+## Interpreting the results
+
+- D2 measures code sharing. It cannot establish causal harm to recommendations.
+- D3 depends on the dataset. Compare against controls on the same catalog.
+- D5 describes structure. Measure serving latency separately.
+- The fixed-reranker probe measures candidate exposure. Assess trained
+  generator quality downstream.
+
+Run the package, quickstart, table, and test checks with:
+
+```bash
+python3 tools/verify_package.py
+```
+
+The software is released under the [MIT License](LICENSE).
 
 ## Citation
 
 ```bibtex
 @inproceedings{ding2026sidinspector,
   author    = {Jiandong Ding and Heng Chang and Huijie Qin and Tianying Liu},
-  title     = {{SIDInspector}: A Mapping-First Diagnostic Resource for Semantic-ID Tokenizers},
-  booktitle = {Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM '26)},
+  title     = {{SIDInspector}: A Mapping-First Diagnostic Resource for
+               Semantic-ID Tokenizers},
+  booktitle = {Proceedings of the 35th ACM International Conference on
+               Information and Knowledge Management},
+  series    = {CIKM '26},
   year      = {2026},
-  month     = nov,
-  location  = {Rome, Italy},
-  pages     = {1--5},
-  publisher = {Association for Computing Machinery},
   address   = {New York, NY, USA},
-  isbn      = {979-8-4007-2539-5/2026/11},
+  location  = {Rome, Italy},
+  publisher = {ACM},
   doi       = {10.1145/3799682.3840174},
-  url       = {https://doi.org/10.1145/3799682.3840174}
+  url       = {https://doi.org/10.1145/3799682.3840174},
+  isbn      = {979-8-4007-2539-5},
+  pages     = {8890--8894},
+  numpages  = {5}
 }
 ```
 
-[`CITATION.cff`](CITATION.cff) provides the same preferred citation through GitHub's **Cite this repository** button.
+GitHub's **Cite this repository** uses the same reference from
+[`CITATION.cff`](CITATION.cff). The proceedings cover 7–11 November 2026 in
+Rome, including the main conference on 9–11 November.

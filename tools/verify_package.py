@@ -30,6 +30,8 @@ REQUIRED = [
     "examples/minimal_adapter.py",
     "examples/run_toy_diagnostic.py",
     "examples/run_reviewer_quickstart.py",
+    "examples/quickstart.ipynb",
+    "assets/sidinspector_workflow.png",
     "examples/sample_data/sid_codes.csv",
     "examples/sample_data/item_metadata.csv",
     "examples/sample_data/interactions.csv",

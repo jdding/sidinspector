@@ -1,9 +1,8 @@
 cff-version: 1.2.0
-message: "If you use SIDInspector, please cite the CIKM 2026 Resource Track paper."
+message: "If you use SIDInspector, please cite the CIKM 2026 paper."
 title: "SIDInspector"
 type: software
 version: 1.1.0
-date-released: 2026-11-24
 url: "https://github.com/jdding/sidinspector"
 repository-code: "https://github.com/jdding/sidinspector"
 license: MIT
@@ -28,11 +27,18 @@ preferred-citation:
       given-names: "Huijie"
     - family-names: "Liu"
       given-names: "Tianying"
-  collection-title: "Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM '26)"
+  collection-title: "Proceedings of the 35th ACM International Conference on Information and Knowledge Management"
+  conference:
+    name: "35th ACM International Conference on Information and Knowledge Management"
+    city: "Rome"
+    country: "IT"
+    date-start: 2026-11-07
+    date-end: 2026-11-11
   publisher:
     name: "Association for Computing Machinery"
   year: 2026
-  month: 11
+  start: 8890
+  end: 8894
   doi: "10.1145/3799682.3840174"
-  isbn: "979-8-4007-2539-5/2026/11"
+  isbn: "979-8-4007-2539-5"
   url: "https://doi.org/10.1145/3799682.3840174"

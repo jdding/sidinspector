@@ -2,7 +2,7 @@
   "schema": "sidinspector.package_manifest.v1",
   "name": "SIDInspector",
   "version": "1.1.0",
-  "file_count": 93,
+  "file_count": 95,
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/adapter_request.md",
@@ -16,8 +16,8 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "661bde6b2f55c864af02a3f8bae4ee7c5adc0d581ad62e9f4d6c63663c961a45",
-      "bytes": 144
+      "sha256": "d7155019e01f4396cced59abe702aa5c12fa61283d5c6102d0ad05cfe7bb52f6",
+      "bytes": 164
     },
     {
       "path": ".nojekyll",
@@ -36,8 +36,8 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "ade4f1cf951464a44ab7153ed15c4098c8d364691aa89235a3ad5e28b022c554",
-      "bytes": 1207
+      "sha256": "513615519d5f1a5236836d93f51dd3b764575e8661a4be362cf2b5444f9f7156",
+      "bytes": 1348
     },
     {
       "path": "EXPECTED_OUTPUTS.md",
@@ -56,13 +56,18 @@
     },
     {
       "path": "README.md",
-      "sha256": "035a46b34a7b3168d6355222ece1e3f1eecf9a76d7925755766d3d318332c3b1",
-      "bytes": 8645
+      "sha256": "6f99bce3ebd673a963e52f1fcf7143800eb5a9189b4684c761ee011c09d0a403",
+      "bytes": 8031
     },
     {
       "path": "RELEASE_STATUS.json",
       "sha256": "abeba238e0319e30a5e368f5aea326050114146365e21cd96db744a534b39db5",
       "bytes": 1203
+    },
+    {
+      "path": "assets/sidinspector_workflow.png",
+      "sha256": "7d3aaba863231da778980b851c8c39ae0ba7181d8bad3cb137d504a8c2916899",
+      "bytes": 73582
     },
     {
       "path": "demo/browser-example.js",
@@ -255,6 +260,11 @@
       "bytes": 2255
     },
     {
+      "path": "examples/quickstart.ipynb",
+      "sha256": "312ca843371ebe1d682928bbd8eb4ef307b1b426d09205b4b13ffec8231171e2",
+      "bytes": 3780
+    },
+    {
       "path": "examples/reviewer_quickstart_data/interactions.csv",
       "sha256": "831cb44cbca592ac0c76eb4b6d189ddbbac57903f6ce58ac1b26e4073aa2961b",
       "bytes": 482
@@ -301,8 +311,8 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "0f8b0e54eb11b37904bf0c57ca94673d2d9cf1be2f4da8bf914bdc2d5fcfde0a",
-      "bytes": 1009
+      "sha256": "c11c19eea6e1d29aa3a8f683d5f11e43b8f14d5477db21454c35dfa02039b246",
+      "bytes": 988
     },
     {
       "path": "requirements.txt",
@@ -461,8 +471,8 @@
     },
     {
       "path": "tools/verify_package.py",
-      "sha256": "aee452b34d100e695be8bbad5d83f177b3fef459a5ebf10bf94534eb65db9531",
-      "bytes": 3754
+      "sha256": "c61f7fb668ab8d71b058c1211f0cb8d4550246429962c6a4a323a7c86e65cc40",
+      "bytes": 3827
     },
     {
       "path": "tools/verify_reproducibility_matrix.py",
