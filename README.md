@@ -2,7 +2,7 @@
 
 **Mapping-first diagnostics for Semantic-ID tokenizer artifacts (CIKM '26 Resource Track).**
 
-[Live Browser Demo](https://jdding.github.io/sidinspector/) |
+[Browser Workbench (`index.html`)](index.html) |
 [Paper (ACM DOI)](https://doi.org/10.1145/3799682.3840174) |
 [Preprint (arXiv)](https://arxiv.org/abs/2606.10375) |
 [SIDScope (TOIS Extension)](https://github.com/jdding/SIDscope) |
@@ -18,9 +18,9 @@ SIDInspector (`v1.1.0`) is an open-source diagnostic toolkit and reproducibility
 
 See [what this release supports](docs/RESOURCE_CAPABILITIES.md) for package-only, browser-only, and own-data workflows, and [how SIDInspector relates to SIDScope and SIDDuet](docs/RELATION_TO_SIDSCOPE_AND_SIDDUET.md).
 
-## Try it online (zero install)
+## Browser Workbench (Zero-Install Pyodide & Local HTTP)
 
-Open the [live browser workbench](https://jdding.github.io/sidinspector/) to run SIDInspector directly in your browser using a pinned standard-library Pyodide runtime (`v314.0.7`):
+Serve [`index.html`](index.html) from a local static server (`python3 -m http.server 8766`) — or open the target GitHub Pages URL (`https://jdding.github.io/sidinspector/`, which serves the v1.0 paper page until `v1.1.0` is published to Pages) — to run SIDInspector directly in your browser using a pinned standard-library Pyodide runtime (`v314.0.7`):
 
 - **Tab 1 · Mapping Audit (D1–D5):** Executes real Python D1–D5 diagnostics on the bundled music-like fixture with an interactive depth-1 prefix and full-code alias inspector.
 - **Tab 2 · Mechanism Controls & D6 Churn:** Demonstrates live collision injection and 25% refresh churn on the fixture, and runs `tools/build_paper_tables.py` live to verify CIKM Table 3.

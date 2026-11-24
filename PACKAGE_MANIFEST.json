@@ -26,8 +26,8 @@
     },
     {
       "path": "ARTIFACT_QUICKSTART.md",
-      "sha256": "54c6baf45dc9650f27b0376dd14d93968f2f79ccdb9f416a79faec1ee1311e82",
-      "bytes": 2769
+      "sha256": "9d57b6a3bb5b46b5e278cad9dcb305fdd7531fe6d881514052a129da76507512",
+      "bytes": 2890
     },
     {
       "path": "CHANGELOG.md",
@@ -36,7 +36,7 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "6a84ae08fcd2e6102e43d7b3db586432d7a1d98b4aebf11cf715ae1f3b00a51c",
+      "sha256": "ade4f1cf951464a44ab7153ed15c4098c8d364691aa89235a3ad5e28b022c554",
       "bytes": 1207
     },
     {
@@ -56,13 +56,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "34749478a55f1253eca42efb967e1822cdd5b130cc634771eee1b5f142a30011",
-      "bytes": 8457
+      "sha256": "035a46b34a7b3168d6355222ece1e3f1eecf9a76d7925755766d3d318332c3b1",
+      "bytes": 8645
     },
     {
       "path": "RELEASE_STATUS.json",
-      "sha256": "2b891b97546a583a8ebd6fa36f3656f0a533ed5605b02197b1d1e1942b423fb5",
-      "bytes": 1138
+      "sha256": "abeba238e0319e30a5e368f5aea326050114146365e21cd96db744a534b39db5",
+      "bytes": 1203
     },
     {
       "path": "demo/browser-example.js",
@@ -96,8 +96,8 @@
     },
     {
       "path": "docs/BRING_YOUR_OWN_DATA.md",
-      "sha256": "1ce8a74cb2d6b8ea83c0260dc93594da4840b7faa3579b3385268b9e34d2ee51",
-      "bytes": 2631
+      "sha256": "845162567ec82354814ec9a5c9b5bd38def2c018be13c00dd0042b721b02b706",
+      "bytes": 2905
     },
     {
       "path": "docs/DIAGNOSTICS.md",
@@ -301,7 +301,7 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "c7b58e18929392477e74b59991657d3e0ed6027d98510fed506d3e9cb8bf32b2",
+      "sha256": "0f8b0e54eb11b37904bf0c57ca94673d2d9cf1be2f4da8bf914bdc2d5fcfde0a",
       "bytes": 1009
     },
     {
@@ -396,8 +396,8 @@
     },
     {
       "path": "src/sidinspector/pure_diagnostics.py",
-      "sha256": "f8c0c19d785b9e40771d39e16a13b997a74467fe09a298ca01e2a93aab0f92f9",
-      "bytes": 27045
+      "sha256": "e95fc6b77d2a7c06d8a1136e94b31388a54c383a9fdf6a318a362099d1ba94e3",
+      "bytes": 27822
     },
     {
       "path": "tests/test_card_adapter.py",
@@ -436,8 +436,8 @@
     },
     {
       "path": "tests/test_v1_1_resource_upgrade.py",
-      "sha256": "1bd2dbac81e7aa20fa1563bb416d069b6eca733395b84d276fa78bedfece7205",
-      "bytes": 9033
+      "sha256": "fe9e64d8cb09f3675b0a7055737c0635fb1b2f7c3a9f3d428cffd7c25e616407",
+      "bytes": 10535
     },
     {
       "path": "tools/build_paper_tables.py",

@@ -32,7 +32,7 @@ dependencies = [
 sidinspector = "sidinspector.cli:main"
 
 [project.urls]
-Homepage = "https://jdding.github.io/sidinspector/"
+Homepage = "https://github.com/jdding/sidinspector"
 Repository = "https://github.com/jdding/sidinspector"
 Paper = "https://doi.org/10.1145/3799682.3840174"
 Preprint = "https://arxiv.org/abs/2606.10375"

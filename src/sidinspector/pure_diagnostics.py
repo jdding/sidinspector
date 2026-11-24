@@ -184,14 +184,28 @@ def _sort_item_key(item_id: str) -> tuple[int, int | str]:
         return (1, item_id)
 
 
-def _train_events(interactions: list[dict[str, str]]) -> list[dict[str, str]]:
+_UNSPLIT_LABELS = {"", "all", "full", "reference"}
+
+
+def _select_train_events(interactions: list[dict[str, str]]) -> tuple[list[dict[str, str]], str]:
+    """Select training interactions without ever falling back to held-out valid/test splits."""
     if not interactions:
-        return []
-    has_split = any(e.get("split") for e in interactions)
-    if not has_split:
-        return interactions
-    train = [e for e in interactions if e.get("split") == "train"]
-    return train if train else interactions
+        return [], "none"
+    non_empty_splits = {
+        e.get("split", "").strip().lower()
+        for e in interactions
+        if e.get("split", "").strip()
+    }
+    if not non_empty_splits or non_empty_splits <= _UNSPLIT_LABELS:
+        return interactions, "unsplit_reference"
+    train = [e for e in interactions if e.get("split", "").strip().lower() == "train"]
+    if not train:
+        labels = ", ".join(sorted(non_empty_splits))
+        raise ValueError(
+            f"Interactions declare explicit split labels ({labels}) with zero 'train' rows; "
+            "held-out splits (valid/test) cannot be used for training-only D3/D4 diagnostics."
+        )
+    return train, "train_only"
 
 
 def run_mapping_diagnostics(
@@ -227,8 +241,10 @@ def run_mapping_diagnostics(
         "sid_depth": depth,
     }
 
-    # Train interaction popularity (matching metrics.py)
-    train = _train_events(interactions)
+    # Train interaction popularity (strict train-only when split labels are declared)
+    train, split_mode = _select_train_events(interactions)
+    coverage["interaction_split_mode"] = split_mode
+    coverage["train_events_used"] = len(train)
     pop_counts: Counter[str] = Counter()
     for ev in train:
         if ev["item_id"] in sid_item_ids:

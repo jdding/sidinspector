@@ -2,7 +2,7 @@
 
 Use Python 3.9+ on CPU (no GPU required). Run commands from the repository root, or install the unified `sidinspector` CLI with `python3 -m pip install -e .`.
 
-The [online browser workbench](https://jdding.github.io/sidinspector/) executes the released Python scripts directly in your browser (pinned Pyodide `v314.0.7`, SHA-256 verified against `PACKAGE_MANIFEST.json`) with zero installation and also lets you audit your own CSV files client-side.
+The browser workbench ([`index.html`](index.html), served locally via `python3 -m http.server 8766`, or at `https://jdding.github.io/sidinspector/` once `v1.1.0` is published to GitHub Pages) executes the released Python scripts directly in your browser (pinned Pyodide `v314.0.7`, SHA-256 verified against `PACKAGE_MANIFEST.json`) with zero installation and also lets you audit your own CSV files client-side.
 
 See [docs/RESOURCE_CAPABILITIES.md](docs/RESOURCE_CAPABILITIES.md) for what runs standalone from the release versus with upstream tokenizer exports.
 

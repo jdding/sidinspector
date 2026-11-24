@@ -4,7 +4,7 @@ SIDInspector audits any exported item-to-SID mapping without modifying or retrai
 
 ## Option 1 · Zero-Install Browser Audit (CSV)
 
-Open the [live browser workbench](https://jdding.github.io/sidinspector/) and switch to **Tab 4 · Inspect Your Own Mapping**. Paste CSV text or pick local `.csv` files; all validation and D1–D5 computations run inside Pyodide in your browser and nothing is uploaded.
+Serve [`index.html`](../index.html) locally (`python3 -m http.server 8766`, or open `https://jdding.github.io/sidinspector/` once `v1.1.0` is published to GitHub Pages) and switch to **Tab 4 · Inspect Your Own Mapping**. Paste CSV text or pick local `.csv` files; all validation and D1–D5 computations run inside Pyodide in your browser and nothing is uploaded. Note: if `interactions.csv` declares an explicit `split` column (`train`/`valid`/`test`), SIDInspector uses `train` rows only and fails closed when zero `train` rows are present.
 
 ## Option 2 · One-Command CLI CSV Audit
 
