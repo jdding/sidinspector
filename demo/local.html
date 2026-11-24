@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIDInspector · Local Diagnostic Workbench</title>
+<style>
+:root{color-scheme:light;--ink:#1a2736;--muted:#526171;--accent:#1d3557;--line:#cfd6dc;--paper:#faf9f4;--card:#f2f4f7}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Avenir Next","Trebuchet MS",sans-serif}main{max-width:1100px;margin:34px auto;padding:0 28px 50px}header{border-top:5px solid var(--accent);padding-top:17px}.eyebrow{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}h1{font:normal clamp(26px,4vw,38px)/1.15 Georgia,serif;margin:12px 0}h2{font:normal 21px/1.25 Georgia,serif;margin:24px 0 11px}p{margin:8px 0}.lede{max-width:82ch;color:var(--muted)}.notice{padding:13px 16px;background:#edf1f6;border-left:3px solid var(--accent);margin:22px 0 17px;font-size:14px}.notice strong{display:block}.meta{font-size:12px;color:var(--muted)}.action{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:19px 0 24px}button{border:0;border-radius:3px;background:var(--accent);color:white;padding:11px 18px;font:700 15px "Avenir Next","Trebuchet MS",sans-serif;cursor:pointer}button:hover{background:#13253e}button:disabled{opacity:.65;cursor:wait}#status,#audit-status{font-size:14px;color:var(--muted)}#status.error,#audit-status.error{color:#9a3023;font-weight:600}.results{border-top:1px solid var(--line);padding-top:22px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px}.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px;white-space:nowrap}caption{text-align:left;color:var(--muted);font-size:13px;margin-bottom:8px}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}th{font-size:12px;font-weight:700;color:var(--muted);border-top:1px solid var(--ink)}th:first-child,td:first-child{text-align:left}tbody tr:nth-child(even){background:#f2f4f1}textarea{width:100%;min-height:110px;font:12.5px/1.45 ui-monospace,Menlo,monospace;padding:9px;border:1px solid var(--line);border-radius:4px}footer{border-top:1px solid var(--line);margin-top:28px;padding-top:14px;color:var(--muted);font-size:12px}[hidden]{display:none!important}@media(max-width:760px){main{padding:0 16px}.pair{grid-template-columns:1fr}}
+</style>
+<main>
+<header>
+  <div class="eyebrow">SIDInspector / v1.1.0 local workbench</div>
+  <h1>Mapping-First Diagnostics for Semantic-ID Tokenizers</h1>
+  <p class="lede">Run an isolated local verification of SIDInspector's D1–D6 diagnostics and CIKM '26 Table 2 &amp; Table 3 rebuilds, or audit a local CSV in memory.</p>
+</header>
+<aside class="notice">
+  <strong>Local isolated verification · SHA-256 checked</strong>
+  Each verification run copies manifest-listed files to a fresh temporary directory, validates SHA-256 hashes, runs D1–D6 diagnostics, and verifies CIKM '26 Tables 2 &amp; 3.
+  <p class="meta" id="metadata">Reading release state…</p>
+</aside>
+<div class="action">
+  <button id="run" type="button">Run isolated verification</button>
+  <span id="status" role="status" aria-live="polite">Ready. Loopback only (127.0.0.1).</span>
+</div>
+<section class="results" id="results" hidden>
+  <h2>1. Quickstart D1–D5 Profile (Bundled Music Fixture)</h2>
+  <div class="pair">
+    <div class="scroll"><table><caption>D1 utilization</caption><thead><tr><th>Level</th><th>Unique</th><th>Entropy</th><th>Gini</th></tr></thead><tbody id="d1"></tbody></table></div>
+    <div class="scroll"><table><caption>D2 aliasing</caption><thead><tr><th>Depth</th><th>Prefixes</th><th>Prefix col.</th><th>Full D2</th></tr></thead><tbody id="d2"></tbody></table></div>
+  </div>
+  <h2>2. Live CIKM '26 Table 2 Verification (23,742 Musical Items)</h2>
+  <div class="scroll"><table><thead><tr><th>Artifact</th><th>Group</th><th>Unique SIDs</th><th>D2 alias</th><th>D3 align</th><th>D4 tail</th><th>D5 prefixes</th></tr></thead><tbody id="t2"></tbody></table></div>
+  <h2>3. Live CIKM '26 Table 3 Mechanism Controls</h2>
+  <div class="scroll"><table><thead><tr><th>Probe</th><th>Dim.</th><th>Control</th><th>Activated</th></tr></thead><tbody id="t3"></tbody></table></div>
+</section>
+<section style="border-top:1px solid var(--line);margin-top:26px;padding-top:18px;">
+  <h2>4. Quick Local CSV Audit (In-Memory)</h2>
+  <textarea id="csv-input" spellcheck="false">item_id,sid_0,sid_1,sid_2
+1,10,1,1
+2,10,1,1
+3,10,2,1
+4,20,1,1</textarea>
+  <div class="action">
+    <button id="audit-btn" type="button">Audit CSV</button>
+    <span id="audit-status">Paste any item_id,sid_0,... CSV above.</span>
+  </div>
+  <pre id="audit-out" style="background:var(--card);padding:12px;border-radius:4px;overflow-x:auto;font-size:12.5px;" hidden></pre>
+</section>
+<footer>Loopback-only server with CSP nonces and isolated temporary-directory execution.</footer>
+</main>
+<script nonce="__SCRIPT_NONCE__">
+const runBtn=document.getElementById('run'),st=document.getElementById('status');
+const fixed=(v,d=3)=>Number(v).toFixed(d);
+function row(id,vals){const tr=document.createElement('tr');for(const v of vals){const td=document.createElement('td');td.textContent=String(v);tr.append(td)}document.getElementById(id).append(tr)}
+fetch('/health').then(r=>r.json()).then(i=>{document.getElementById('metadata').textContent=`v${i.version} · ${i.publication_status} · DOI ${i.paper_doi}`}).catch(()=>{});
+runBtn.addEventListener('click',async()=>{
+  runBtn.disabled=true;runBtn.textContent='Running…';st.className='';st.textContent='Running isolated SHA-256 verification and workflows…';
+  try{
+    const resp=await fetch('/api/run',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
+    const r=await resp.json();if(!resp.ok)throw new Error(r.error||'Run failed');
+    for(const id of ['d1','d2','t2','t3'])document.getElementById(id).replaceChildren();
+    for(const x of r.quickstart.d1)row('d1',[x.level,x.unique_codes,fixed(x.entropy),fixed(x.gini)]);
+    for(const x of r.quickstart.d2)row('d2',[x.prefix_depth,x.active_prefixes,fixed(x.prefix_collision_rate),fixed(x.full_collision_rate)]);
+    for(const x of r.table2)row('t2',[x.artifact,x.group,Number(x.unique_sids).toLocaleString('en-US'),fixed(x.d2_aliasing_rate),fixed(x.d3_l1_weighted),fixed(x.d4_tail_unique_ratio),x.d5_active_prefix_counts]);
+    for(const x of r.table3)row('t3',[x.probe,x.d,x.without_probe,x.with_probe]);
+    document.getElementById('results').hidden=false;
+    st.textContent=`Complete in ${fixed(r.elapsed_seconds,2)} s · isolated run ${r.run_id} (${r.manifest_files_verified} files SHA-256 verified)`;
+  }catch(e){st.className='error';st.textContent=e.message}finally{runBtn.disabled=false;runBtn.textContent='Run isolated verification'}
+});
+document.getElementById('audit-btn').addEventListener('click',async()=>{
+  const out=document.getElementById('audit-out'),ast=document.getElementById('audit-status');
+  ast.className='';ast.textContent='Auditing CSV…';
+  try{
+    const resp=await fetch('/api/audit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sid_csv:document.getElementById('csv-input').value})});
+    const r=await resp.json();if(!resp.ok)throw new Error(r.error||'Audit failed');
+    out.textContent=JSON.stringify({d5:r.report.d5,d2:r.report.d2,triage:r.report.triage},null,2);
+    out.hidden=false;ast.textContent=`Audited ${r.report.d5.items} items (${r.report.d5.unique_sid} unique SIDs).`;
+  }catch(e){ast.className='error';ast.textContent=e.message}
+});
+</script>
+</html>

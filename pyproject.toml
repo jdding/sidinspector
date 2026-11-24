@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sidinspector"
-version = "1.0.0"
-description = "Mapping-first diagnostics for semantic-ID tokenizer artifacts"
+version = "1.1.0"
+description = "Mapping-first diagnostics for semantic-ID tokenizer artifacts (CIKM 2026 Resource Track)"
 readme = "README.md"
 requires-python = ">=3.9"
 license = {file = "LICENSE"}
@@ -28,10 +28,15 @@ dependencies = [
   "scikit-learn>=1.3",
 ]
 
+[project.scripts]
+sidinspector = "sidinspector.cli:main"
+
 [project.urls]
-Homepage = "https://github.com/jdding/sidinspector"
+Homepage = "https://jdding.github.io/sidinspector/"
 Repository = "https://github.com/jdding/sidinspector"
-Paper = "https://arxiv.org/abs/2606.10375"
+Paper = "https://doi.org/10.1145/3799682.3840174"
+Preprint = "https://arxiv.org/abs/2606.10375"
+SIDScope = "https://github.com/jdding/SIDscope"
 
 [tool.setuptools.packages.find]
 where = ["src"]

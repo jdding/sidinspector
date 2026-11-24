@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIDInspector · Mapping-First Diagnostics for Semantic-ID Tokenizers</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="demo/browser.css">
+  <script src="demo/browser-example.js" defer></script>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">SIDInspector / v1.1.0 · CIKM '26 Resource Track</div>
+    <h1>Mapping-First Diagnostics for Semantic-ID Tokenizers</h1>
+    <p class="lede">Inspect exported <code>item_id → SID</code> address spaces before downstream generator training: validate mapping contracts, profile D1–D5 utilization, aliasing, neighborhood alignment, tail allocation, and structural cost, verify CIKM '26 Tables 2 &amp; 3 live, or audit your own CSV entirely inside your browser.</p>
+    <nav aria-label="Resource links">
+      <a href="https://doi.org/10.1145/3799682.3840174">CIKM '26 Paper (ACM DOI)</a>
+      <a href="https://github.com/jdding/sidinspector/blob/main/ARTIFACT_QUICKSTART.md">Quickstart</a>
+      <a href="https://github.com/jdding/sidinspector/blob/main/docs/BRING_YOUR_OWN_DATA.md">Use your own data</a>
+      <a href="https://github.com/jdding/SIDscope">SIDScope (TOIS Extension)</a>
+      <a href="https://jdding.github.io/SIDDuet/">SIDDuet (Search &amp; Rec)</a>
+      <a href="https://github.com/jdding/sidinspector">Source on GitHub</a>
+    </nav>
+  </header>
+
+  <aside class="notice">
+    <strong>Zero-install browser runtime · SHA-256 verified release files</strong>
+    Clicking below loads a pinned standard-library Pyodide runtime (<code>v314.0.7</code>), verifies SHA-256 hashes against <code>PACKAGE_MANIFEST.json</code>, runs the released pure-Python D1–D6 diagnostics, and executes <code>tools/build_paper_tables.py</code> live against the frozen CIKM '26 snapshots. You can also audit your own CSV files in Tab 4 without uploading any data.
+  </aside>
+
+  <div class="action">
+    <button id="run" type="button">Run all diagnostic workflows</button>
+    <span id="status" role="status" aria-live="polite">Ready. The first run loads Python in your browser; repeat runs reuse the runtime.</span>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="SIDInspector diagnostic tabs">
+    <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="t1">1. Mapping Audit (D1–D5)</button>
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="t2">2. Mechanism &amp; D6 Churn</button>
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="t3">3. CIKM '26 Benchmark</button>
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="t4">4. Inspect Your Own CSV</button>
+  </div>
+
+  <section class="results" id="results" hidden>
+    <!-- TAB 1 -->
+    <div data-panel="t1">
+      <h2>Workflow 1 · Mapping-first diagnostics on bundled music fixture <span class="badge">Live Python</span></h2>
+      <div class="kpi-grid" id="t1-kpis"></div>
+
+      <div class="pair">
+        <section>
+          <h3>D1 · Per-level utilization</h3>
+          <div class="scroll">
+            <table>
+              <caption>Active codes, base-2 entropy, and Gini imbalance per SID level.</caption>
+              <thead><tr><th>Level</th><th>Items</th><th>Unique</th><th>Entropy</th><th>Gini</th></tr></thead>
+              <tbody id="t1-d1"></tbody>
+            </table>
+          </div>
+        </section>
+        <section>
+          <h3>D2 · Aliasing profile by prefix depth</h3>
+          <div class="scroll">
+            <table>
+              <caption>Item-weighted collision rates at each prefix depth and full-code leaf.</caption>
+              <thead><tr><th>Depth</th><th>Prefixes</th><th>Col. groups</th><th>Prefix col.</th><th>Full D2</th></tr></thead>
+              <tbody id="t1-d2"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="pair">
+        <section>
+          <h3>D3 · Co-occurrence neighborhood alignment</h3>
+          <div class="scroll">
+            <table>
+              <caption>Train-only co-occurrence prefix recall and level-0 category purity.</caption>
+              <thead><tr><th>Depth</th><th>Edges</th><th>Edge-micro</th><th>Item-mean</th><th>L0 purity</th></tr></thead>
+              <tbody id="t1-d3"></tbody>
+            </table>
+          </div>
+        </section>
+        <section>
+          <h3>D4 · Popularity allocation &amp; global addressability</h3>
+          <div class="scroll">
+            <table>
+              <caption>Stratum unique-SID ratio vs. catalog-wide singleton fraction.</caption>
+              <thead><tr><th>Bucket</th><th>Items</th><th>Unique</th><th>Allocation</th><th>Singleton</th><th>L0 H</th></tr></thead>
+              <tbody id="t1-d4"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="inspector">
+        <div class="inspector-head">
+          <strong>Interactive Depth-1 Prefix &amp; Alias Inspector</strong>
+          <label for="prefix-select">Prefix: <select id="prefix-select"></select></label>
+        </div>
+        <p id="prefix-note" class="note"></p>
+        <div id="prefix-members"></div>
+      </div>
+
+      <h3>CIKM Table 1 · Actionable triage cards</h3>
+      <div class="triage-grid" id="t1-triage"></div>
+    </div>
+
+    <!-- TAB 2 -->
+    <div data-panel="t2" hidden>
+      <h2>Workflow 2 · Controlled mechanism probes &amp; D6 refresh churn</h2>
+      <div class="pair">
+        <section>
+          <h3>2A. Live collision-injection check <span class="badge">Live Python</span></h3>
+          <div class="scroll">
+            <table>
+              <caption>Collapsing half of the fixture leaves triggers D2 aliasing, D5 leaf loss, and D4 tail compression.</caption>
+              <thead><tr><th>Diagnostic signal</th><th>Baseline</th><th>After injection</th></tr></thead>
+              <tbody id="t2-mech-live"></tbody>
+            </table>
+          </div>
+        </section>
+        <section>
+          <h3>2B. Live D6 refresh churn (25% leaf refresh) <span class="badge">Live Python</span></h3>
+          <div class="scroll">
+            <table>
+              <caption>Paired old-vs-new mapping comparison across prefix depths.</caption>
+              <thead><tr><th>Depth</th><th>Common</th><th>Changed</th><th>Stable</th><th>Churn</th><th>New col.</th></tr></thead>
+              <tbody id="t2-d6"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <h3>2C. CIKM '26 Table 3 · Live verification via <code>tools/build_paper_tables.py</code> <span class="badge published">Published CIKM '26 · live verify</span></h3>
+      <div class="scroll">
+        <table>
+          <caption>Rebuilt in-browser from shipped mechanism source CSVs and checked row-by-row against frozen Table 3.</caption>
+          <thead><tr><th>Probe</th><th>Dim.</th><th>Baseline / control</th><th>Activated condition</th><th>Source</th></tr></thead>
+          <tbody id="t2-table3"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3 -->
+    <div data-panel="t3" hidden>
+      <h2>Workflow 3 · Published CIKM '26 benchmark &amp; portability</h2>
+      <h3>3A. CIKM '26 Table 2 · Same-item Musical profiles (23,742 items) <span class="badge published">Published CIKM '26 · live verify</span></h3>
+      <div class="scroll">
+        <table>
+          <caption>Rebuilt live by <code>tools/build_paper_tables.py</code> and verified against frozen <code>table2_musical_diagnostic.csv</code>.</caption>
+          <thead><tr><th>Artifact</th><th>Group</th><th>Unique SIDs</th><th>D2 alias (↓)</th><th>D3 align (↑)</th><th>D4 tail (↑)</th><th>D5 prefixes</th></tr></thead>
+          <tbody id="t3-table2"></tbody>
+        </table>
+      </div>
+
+      <div class="inspector">
+        <div class="inspector-head"><strong>Addressability (D2) vs. Behavioral Alignment (D3) Separation</strong></div>
+        <p class="note">Full-code uniqueness (low D2) and neighborhood alignment (high D3) vary independently across the same 23,742 items.</p>
+        <div id="table2-bars"></div>
+      </div>
+
+      <h3>3B. Official released item-index portability (LETTER &amp; LC-Rec) <span class="badge published">Published snapshot</span></h3>
+      <div class="scroll">
+        <table>
+          <caption>Same validation &amp; probe contract applied to official Amazon Instruments indexes.</caption>
+          <thead><tr><th>Adapter</th><th>Dataset</th><th>Items</th><th>Unique SIDs</th><th>D2</th><th>D3 L1</th><th>D4 tail</th><th>D5 prefixes</th></tr></thead>
+          <tbody id="t3-official"></tbody>
+        </table>
+      </div>
+
+      <h3>3C. Cross-dataset &amp; fixed-reranker exposure checks <span class="badge published">Published snapshot</span></h3>
+      <div class="scroll">
+        <table>
+          <caption>Dataset scale sensitivity, 5,000-user candidate-exposure correlations, and DACT D6 churn.</caption>
+          <thead><tr><th>Check</th><th>Dataset</th><th>Scale</th><th>Key signal</th></tr></thead>
+          <tbody id="t3-ext"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <details>
+      <summary>Executed release scripts and SHA-256 integrity log</summary>
+      <ul id="steps"></ul>
+      <p id="runtime" class="note"></p>
+    </details>
+  </section>
+
+  <!-- TAB 4 (always accessible without requiring built-in run first) -->
+  <section data-panel="t4" hidden style="border-top: 1px solid var(--line); padding-top: 22px;">
+    <h2>Inspect Your Own Item-to-SID Mapping <span class="badge client">100% Client-Side Pyodide</span></h2>
+    <p class="lede">Paste CSV text or select local CSV files below. Everything executes locally inside WebAssembly Python in your browser — <strong>zero bytes leave your machine</strong>.</p>
+
+    <div class="presets">
+      <strong style="font-size:13px;">Quick presets:</strong>
+      <button type="button" class="secondary" data-preset="clean">Clean injective</button>
+      <button type="button" class="secondary" data-preset="aliased">Aliased collisions</button>
+      <button type="button" class="secondary" data-preset="tail_compressed">Head-heavy tail compression</button>
+    </div>
+
+    <div class="byo-grid">
+      <div class="byo-field">
+        <label for="byo-sid-csv">
+          <span>Required: SID assignments CSV (<code>item_id,sid_0,sid_1,...</code>)</span>
+          <input type="file" id="byo-sid-file" accept=".csv,text/csv" style="font-size:12px;font-weight:400;">
+        </label>
+        <textarea id="byo-sid-csv" spellcheck="false"></textarea>
+      </div>
+      <div class="byo-field">
+        <label for="byo-inter-csv">
+          <span>Optional: Interactions CSV (<code>user_id,item_id,split</code>)</span>
+          <input type="file" id="byo-inter-file" accept=".csv,text/csv" style="font-size:12px;font-weight:400;">
+        </label>
+        <textarea id="byo-inter-csv" spellcheck="false"></textarea>
+      </div>
+    </div>
+    <div class="byo-field" style="margin-top:12px;">
+      <label for="byo-meta-csv">
+        <span>Optional: Item metadata CSV (<code>item_id,category[,title]</code>)</span>
+        <input type="file" id="byo-meta-file" accept=".csv,text/csv" style="font-size:12px;font-weight:400;">
+      </label>
+      <textarea id="byo-meta-csv" style="min-height:82px;" spellcheck="false"></textarea>
+    </div>
+
+    <div class="action">
+      <button id="byo-run" type="button">Audit my CSV in browser</button>
+      <span id="byo-status" role="status" aria-live="polite">Ready. Accepts up to 50,000 items client-side.</span>
+    </div>
+
+    <div id="byo-results" hidden>
+      <p id="byo-summary" style="font-weight:700;font-size:15px;"></p>
+      <div class="triage-grid" id="byo-triage"></div>
+      <div class="pair">
+        <section>
+          <h3>D1 · Utilization</h3>
+          <div class="scroll"><table><thead><tr><th>Level</th><th>Unique</th><th>Entropy</th><th>Gini</th></tr></thead><tbody id="byo-d1"></tbody></table></div>
+        </section>
+        <section>
+          <h3>D2 · Aliasing</h3>
+          <div class="scroll"><table><thead><tr><th>Depth</th><th>Prefixes</th><th>Col. groups</th><th>Prefix col.</th><th>Full D2</th></tr></thead><tbody id="byo-d2"></tbody></table></div>
+        </section>
+      </div>
+      <div class="pair">
+        <section>
+          <h3>D3 · Alignment</h3>
+          <div class="scroll"><table><thead><tr><th>Depth</th><th>Edges</th><th>Edge-micro</th><th>Item-mean</th><th>L0 purity</th></tr></thead><tbody id="byo-d3"></tbody></table></div>
+        </section>
+        <section>
+          <h3>D4 · Popularity Allocation</h3>
+          <div class="scroll"><table><thead><tr><th>Bucket</th><th>Items</th><th>Unique</th><th>Allocation</th><th>Singleton</th></tr></thead><tbody id="byo-d4"></tbody></table></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    SIDInspector v1.1.0 (MIT License) · CIKM '26 DOI <a href="https://doi.org/10.1145/3799682.3840174">10.1145/3799682.3840174</a> ·
+    Python runs locally in your browser via pinned Pyodide with SHA-256 verification against <code>PACKAGE_MANIFEST.json</code>.
+  </footer>
+</main>
+</body>
+</html>
